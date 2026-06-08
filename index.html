@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 趨勢檔案庫</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --lime-s:#e2f8e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400}
+  a{color:inherit;text-decoration:none}
+
+  header{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  header::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hd-in{position:relative;max-width:920px;margin:0 auto;padding:44px 26px 40px;z-index:2;color:#fff}
+  .brand{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+  .brand .mk{width:30px;height:30px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:20px;letter-spacing:.05em;text-transform:uppercase}
+  header h1{font-family:"Anton",sans-serif;font-size:clamp(36px,7vw,64px);line-height:.95;text-transform:uppercase;
+    text-shadow:3px 3px 0 var(--ink);margin-bottom:8px}
+  header h1 .yl{color:var(--yellow)}
+  header .zh{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(18px,3.4vw,26px);
+    text-shadow:2px 2px 0 var(--ink);margin-bottom:6px}
+  header .sub{font-family:"Oswald",sans-serif;font-size:14px;letter-spacing:.03em;opacity:.95}
+
+  main{max-width:920px;margin:0 auto;padding:34px 26px 80px}
+  .meta{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);
+    margin-bottom:22px;border-left:3px solid var(--ink);padding-left:12px}
+  .meta b{color:var(--ink)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+  .card{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;
+    box-shadow:5px 5px 0 rgba(0,0,0,.85);transition:transform .14s,box-shadow .14s;display:flex;flex-direction:column}
+  .card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .card .top{padding:18px 20px 14px;border-bottom:2px dashed var(--ink);position:relative}
+  .card .datebadge{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-weight:700;
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--ink);
+    padding:4px 11px;transform:skewX(-7deg);margin-bottom:12px}
+  .card .datebadge>span{display:inline-block;transform:skewX(7deg)}
+  .card .datebadge .dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}
+  .card .big{font-family:"Anton",sans-serif;font-size:30px;letter-spacing:.01em}
+  .card .wk{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-top:2px}
+  .card .desc{padding:14px 20px 4px;font-size:13.5px;color:var(--ink-soft);flex:1}
+  .card .btns{display:flex;gap:0;border-top:2px solid var(--ink);margin-top:14px}
+  .card .btns a{flex:1;text-align:center;font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;
+    letter-spacing:.05em;text-transform:uppercase;padding:13px 8px;transition:.12s}
+  .card .btns a.open{background:var(--blue-s);color:var(--blue);border-right:2px solid var(--ink)}
+  .card .btns a.dl{background:var(--lime-s);color:#1f9c30}
+  .card .btns a:hover{background:var(--yellow);color:var(--ink)}
+
+  .tip{margin-top:30px;background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:16px 20px;
+    font-size:13px;color:var(--ink-soft);line-height:1.75}
+  .tip b{color:var(--ink)}
+  .tip .h{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);
+    font-size:12px;margin-bottom:7px;display:block}
+
+  footer{text-align:center;padding:26px;border-top:3px solid var(--ink);background:var(--ink);color:#fff;
+    font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="hd-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span style="color:var(--yellow)">GEN</span> DAILY</span></div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh">遊戲時事日報 · 趨勢檔案庫</div>
+      <div class="sub">Trend-to-Game Radar · 點日期開當天 / 下載分享</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="meta">共 <b>5</b> 期 · 最後更新 <b>2026 / 06 / 08</b> · 新到舊排序</div>
+
+    <div class="card" style="margin-bottom:22px;border-color:var(--violet)">
+      <div class="top" style="border-bottom-color:var(--violet)">
+        <span class="datebadge" style="background:var(--violet)"><span>📊 固定分頁 · 工具</span></span>
+        <div class="big disp" style="font-size:24px">X 競品追蹤表</div>
+        <div class="wk">AI Gamedev / Vibe Coding / Text-to-Game · 真數據</div>
+      </div>
+      <div class="desc">10 個競品/KOL 帳號的追蹤數＋近期貼文互動＋互動率＋圖表。重點：內容＞追蹤數（507 追蹤衝 270 萬觀看）。快照式，需 CC 接 API 才能每日自動更新。</div>
+      <div class="btns">
+        <a class="open" href="GameGen_X競品追蹤表_2026-06-08.html" target="_blank">開啟 ↗</a>
+        <a class="dl" href="GameGen_X競品追蹤表_2026-06-08.html" download>下載 ⬇</a>
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="top">
+          <span class="datebadge"><span class="dot"></span><span>最新一期</span></span>
+          <div class="big disp">06 / 08</div>
+          <div class="wk">2026 · Monday</div>
+        </div>
+        <div class="desc">TOP STORY（完整版）：即時榜 + 早期訊號 + 高討論文章 + 迷因遊戲（Bow-wow 汪汪大戰）+ 機制靈感（unityroom）+ 繁中 Threads 熱話（@meta.ai 三國/武俠 AI 人生模擬爆紅，近萬讚）+ CJ 2B LinkedIn 題材。</div>
+        <div class="btns">
+          <a class="open" href="GameGen_遊戲時事日報_2026-06-08.html" target="_blank">開啟 ↗</a>
+          <a class="dl" href="GameGen_遊戲時事日報_2026-06-08.html" download>下載 ⬇</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <span class="datebadge"><span>過往</span></span>
+          <div class="big disp">06 / 07</div>
+          <div class="wk">2026 · Sunday</div>
+        </div>
+        <div class="desc">TOP STORY：兩個注意力高峰交棒 —— SGF 2026 收官（FF7 Revelation 壓軸 / Alien Isolation 2 / Wolf Among Us 2）＋ 世界盃 6/11 倒數 4 天；週末是趕世界盃 demo 的最後窗口。</div>
+        <div class="btns">
+          <a class="open" href="GameGen_遊戲時事日報_2026-06-07.html" target="_blank">開啟 ↗</a>
+          <a class="dl" href="GameGen_遊戲時事日報_2026-06-07.html" download>下載 ⬇</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <span class="datebadge"><span>過往</span></span>
+          <div class="big disp">06 / 06</div>
+          <div class="wk">2026 · Saturday</div>
+        </div>
+        <div class="desc">TOP STORY：SGF 收場剩「看大廠」AAA reveal 牆（RE Veronica / Palworld 1.0 / Saw Genesis）；同週 Roblox 推 Moments「3 秒從看到玩」搶 Share→Play loop。</div>
+        <div class="btns">
+          <a class="open" href="GameGen_遊戲時事日報_2026-06-06.html" target="_blank">開啟 ↗</a>
+          <a class="dl" href="GameGen_遊戲時事日報_2026-06-06.html" download>下載 ⬇</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <span class="datebadge"><span>過往</span></span>
+          <div class="big disp">06 / 05</div>
+          <div class="wk">2026 · Friday</div>
+        </div>
+        <div class="desc">TOP STORY：Summer Game Fest 今晚開幕 + 世界盃 6/11 + Netflix FIFA 手遊；外媒定調 Astrocade「社交快做小遊戲」＝GameGen 主場。</div>
+        <div class="btns">
+          <a class="open" href="GameGen_遊戲時事日報_2026-06-05.html" target="_blank">開啟 ↗</a>
+          <a class="dl" href="GameGen_遊戲時事日報_2026-06-05.html" download>下載 ⬇</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <span class="datebadge"><span>過往</span></span>
+          <div class="big disp">06 / 02</div>
+          <div class="wk">2026 · Tuesday</div>
+        </div>
+        <div class="desc">TOP STORY：世界盃 newsjacking 缺口 + Astrocade 募資 $56M；BGaming 足球主題卡位、Star Fox / FF7 Rebirth 登 Switch 2。</div>
+        <div class="btns">
+          <a class="open" href="GameGen_遊戲時事日報_2026-06-02.html" target="_blank">開啟 ↗</a>
+          <a class="dl" href="GameGen_遊戲時事日報_2026-06-02.html" download>下載 ⬇</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tip">
+      <span class="h">◆ 怎麼用 / 怎麼分享</span>
+      <b>開啟</b>＝在瀏覽器看當天日報。<b>下載</b>＝把那份 HTML 存下來傳給別人（對方雙擊就開、不用安裝）。<br>
+      要整包分享：把這個資料夾裡的 <b>GameGen日報目錄.html</b> 連同各日報 HTML 一起傳（壓成 zip 最省事），對方解壓後開目錄頁就能瀏覽全部。<br>
+      想要「點連結就看」：把資料夾拖到 <b>Netlify Drop</b>（app.netlify.com/drop）或 GitHub Pages，會得到一個網址，傳連結給別人即可。<br>
+      ⚠️ 本目錄由每日排程自動更新（新日報產出後自動加一張卡片）；手動移動檔案時，請讓目錄頁與日報 HTML 保持在同一資料夾，相對連結才不會斷。
+    </div>
+  </main>
+
+  <footer>GameGen 遊戲時事日報 · 趨勢檔案庫 · 每日 08:00 自動更新</footer>
+
+</body>
+</html>
