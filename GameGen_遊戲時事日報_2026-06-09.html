@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/06/09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#ai">AI 遊戲</a><a href="#ig">iGaming</a><a href="#rl">新遊戲</a><a href="#tr">趨勢題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">06 · 09 · TUE</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 06 / 09 · 收錄 6 則 · 來源 9 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報</div>
+      <div class="tagline">今天的梗，<b>今天就能玩</b> — 每日遊戲時事與題材雷達</div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>世界盃倒數 2 天（6/11 開踢），全球注意力衝頂 —— 做應援小遊戲的最後窗口就是今明兩天。</b>分析機構 H2 預估本屆全球投注流水上看 <span class="hl">$600 億</span>、光美國端就 $29 億（去年同期兩倍），代表「足球 × 遊戲 × 隨身可玩」的搜尋與內容需求正集中爆發。</p>
+        <p>同一天最值得看的不是大賽本身，是 <b>Roblox 把「6-7 迷因」幾天內變成官方可戴道具</b>（6/6 上架 Sk67r 帽）—— 這是「今天的梗、幾天內變成能玩 / 能戴的東西」最新鮮的現實證據，正好是 GameGen 的論點。我們的籌碼不是更大更深，而是<b>更快 + 人人能改</b>。</p>
+        <div class="pull">▸ 可立即落地：今天就把「世界盃反應罰球」demo 收尾（泛化卡通前鋒 / 守門員，避開真實球員與 FIFA 標誌），趕在 6/11 開踢前發出去蹭流量。</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- AI -->
+    <section id="ai">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>AI 生成遊戲</span></h2><span class="en">AI Game Tools</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>對標</span></span>Astrocade $56M 的賽道＝GameGen 主場：社交、快做、可 remix 的小遊戲</h3>
+        <div class="sum">Sea 領 A、Sequoia 領 B 共 $56M（NVIDIA、Google AI Futures、LG 等跟投）；公開 8 個月 2,000 萬活躍用戶、80 國 7.5 萬款，外加 $10M 創作者激勵計畫。核心機制：describe-and-play + 社交發現 + remix + 輕量變現。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>對手把賽道定義講白了 —— 那條「社交快做小遊戲 + remix」就是 GameGen 主場。差異點不在工具誰強，而在 <b>Trend Response Time + Create/Share Rate</b>。它砸 $10M 養創作者，值得逐週追它「玩家→創作者」轉換與分享機制怎麼設計，當我們漏斗的對照組。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>IP 低</span></span></div></div>
+          </div>
+          <div class="src">FORTUNE · <a href="https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>對標</span></span>Rosebud 站「完整 3D 生態」另一條路，提醒我們不要被帶偏</h3>
+        <div class="sum">Rosebud 主打把 prompt 直接變成可玩的 2D / 3D / voxel 瀏覽器遊戲，附可分享連結 + 內建變現與創作者社群，定位「完整世界、長線」。市場正分成「淺而快的社交小遊戲」與「深而完整的世界」兩條路。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Rosebud 把「做更深」這條路占住了 —— 那不是我們的仗。GameGen 該<b>明確站「淺、快、梗、可分享」</b>並做到極致，別在內部討論時被「要不要做得更完整」帶走資源。我們贏的是 Trend Response Time，不是世界規模。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ROSEBUD LAB · <a href="https://lab.rosebud.ai/blog/rosebud-ai-vs-competitors-the-only-fully-integrated-ai-game-creation-platform" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- iGaming -->
+    <section id="ig">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>iGaming / 博弈</span></h2><span class="en">iGaming</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>市場</span></span>H2 估世界盃全球流水 $600 億、美國端 $29 億（去年兩倍）</h3>
+        <div class="sum">研究機構 H2 預估本屆世界盃帶動全球投注流水上看 $600 億；美國一地預估 $29 億、是 2025 同期足球量的兩倍多。超過 60% 投注已是賽中 live 下注；38 州已開放合法運動投注。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條只取<b>「大賽帶動市場、operator 口袋變深、急要主題內容」</b>的角度 —— 是 CJ 那條 2B 線的順風，不是我們直接賣的東西。對外發文一律<b>避開賭場語言</b>（投注 / payout / big win）。對我們有用的是「live 下注 60%」＝觀眾要的是即時、輕量、跟著賽況變的互動，正好對應我們的即時小遊戲。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>賭場語言</span></span></div></div>
+          </div>
+          <div class="src">COVERS · <a href="https://www.covers.com/industry/h2-projects-60-billion-global-sports-betting-handle-for-2026-world-cup-june-8-2026" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>市場</span></span>operator 全面備戰：Caesars 辦觀賽派對、FIRST 推一站式世界盃方案</h3>
+        <div class="sum">Caesars 在拉斯維加斯、鳳凰城、大西洋城等市場辦 USMNT 觀賽派對；供應商 FIRST 推出 UltraCup 一站式世界盃交易方案，大小 operator 都在趕行銷與產品上線。整個 B2B 供應鏈都在卡這檔期。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>供應商搶著做「世界盃即時內容包」＝市場已驗證「大賽事件需要快速主題內容」的需求真的存在。對 GameGen，這是<b>產品論點的外部背書</b>：把「事件 → 當天可玩」做成標準能力，就是這個需求的 C 側版本。可當素材給 CJ 談 B2B Campaign 角度（漏斗上游，不背 closed deal）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>賭場語言</span></span></div></div>
+          </div>
+          <div class="src">SBC NEWS · <a href="https://sbcnews.co.uk/sportsbook/2026/06/03/first-ultra-cup-sportsbook-world-cup/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- New Release -->
+    <section id="rl">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>新遊戲 / 熱門</span></h2><span class="en">New Release</span></div>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>趨勢</span></span>最強現實證據：Roblox 把「6-7 迷因」幾天內變成官方可戴道具</h3>
+        <div class="sum">官方帳號 6/6 上架 Sk67r 帽 + Bling 67 項鍊（創作者 Alpkurt2），直接把 2025 在 TikTok / Reels 爆紅的「6-7 迷因」變成人人能戴的 UGC 道具。同期 Grow a Garden、Steal a Brainrot、99 Nights in the Forest 靠單支影片衝上數百萬同時在線，開發者刻意做「可被拍成迷因」的瞬間。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是 GameGen 論點的<b>最新鮮活證據</b> —— 病毒不靠玩法深度，靠「梗 + 可拍 + 可改」，而且速度就是一切。連 Roblox 都得花幾天才把梗變道具；我們主打的是<b>當天</b>把梗變成能玩的小遊戲。Create Rate / Share Rate / Play-to-Remix 就該對著這個設計。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NAAVIK · <a href="https://naavik.co/deep-dives/the-state-of-ugc-games-2026/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>話題</span></span>Sony State of Play 大爆發 + NBA The Run 今日（6/9）上市</h3>
+        <div class="sum">本月初 State of Play 開出 Marvel's Wolverine、God of War Laufey，並與 Xbox Games Showcase 一起確認 Persona 6；全球遊戲聲量仍在高檔。今天 6/9 NBA The Run 上市，把籃球玩法與生涯敘事綁在一起。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>大廠 reveal 牆給的是<b>現成蹭點</b>：趁全網討論大作，發「只能看大廠發表 vs 你今天就能自己做一款」的對打內容最順。NBA The Run 上市則順手吃一波「籃球熱」——可做泛化角色的「反應投籃」小遊戲。一律避免直接挪用大作 IP 與真實球員。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk hi"><span>大作 IP</span></span></div></div>
+          </div>
+          <div class="src">SCREEN RANT · <a href="https://screenrant.com/june-2026-video-games-releases-schedule-lineup/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>世界盃倒數 2 天（6/11）</td><td><span class="tmpl">反應罰球 / 點球 Boss</span></td><td>分數挑戰 + 國家隊應援</td><td class="rk-hi">高 · 真人肖像</td><td>今明收尾上架，泛化卡通前鋒 / 守門員</td></tr>
+          <tr><td>Roblox 6-7 迷因 → 道具</td><td><span class="tmpl">迷因模板 / 一句話生成</span></td><td>可拍成 TikTok 的瞬間</td><td class="rk-low">低</td><td>做「梗 → 當天可玩」示範，比 Roblox 還快</td></tr>
+          <tr><td>State of Play 大作熱</td><td><span class="tmpl">猜題 / 反應搶答</span></td><td>跟著討論即時玩</td><td class="rk-mid">中 · 避免 IP</td><td>用泛化角色，打「人人做遊戲」對打角度</td></tr>
+          <tr><td>NBA The Run 上市（籃球熱）</td><td><span class="tmpl">反應投籃 / 連續罰球</span></td><td>連線比分數</td><td class="rk-low">低</td><td>泛化球員，吃籃球流量備胎題材</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭世界盃倒數：「48 小時後開踢，你今天就能做一款應援小遊戲」＋ demo gif</li><li>蹭 Roblox 6-7 帽：「梗一出，Roblox 花幾天變道具 —— 我們今天就把它變成能玩的」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>世界盃「反應罰球」收尾上架（泛化角色，趕 6/11 前）</li><li>「6-7 迷因」一句話生成小遊戲，示範速度優勢</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的競品</h4><ul><li>Astrocade：$10M 創作者激勵、玩家轉創作者數據</li><li>Roblox UGC：迷因 → 道具 / 病毒款的擴散與分享機制</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>真實球員 / 球隊與 FIFA 官方標誌 → 用泛化角色</li><li>大作 IP（Wolverine / God of War / NBA）直接挪用</li><li>對外文案的賭場語言（投注 / payout / big win）</li></ul></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>分數說明</b>　相關性＝對 GameGen 相關度 · 分享＝社群擴散潛力 · 可玩＝能否轉小遊戲（皆 0–5，為排序提示非數據）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 2026/06/09 · 來源為公開媒體當日 / 近日報導 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
