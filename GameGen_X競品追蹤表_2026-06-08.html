@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen X 競品追蹤表 — 2026/06/08</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{--paper:#f3efe4;--card:#fff;--ink:#16161a;--ink-soft:#46474f;--ink-dim:#8a8a93;--blue:#1c64ff;--red:#ff2e3f;--yellow:#ffd21e;--lime:#27c93f;--violet:#7b4bff;--blue-s:#e3ecff;--lime-s:#e2f8e6;--yellow-s:#fff5cc;--red-s:#ffe5e7}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Noto Sans TC",-apple-system,"PingFang TC",sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  header{background:linear-gradient(135deg,var(--blue),var(--violet) 60%,var(--red) 120%);color:#fff;border-bottom:3px solid var(--ink);padding:38px 26px}
+  .hd{max-width:1080px;margin:0 auto}
+  header h1{font-family:"Anton",sans-serif;font-size:clamp(30px,5vw,52px);text-shadow:3px 3px 0 var(--ink);text-transform:uppercase}
+  header .sub{font-family:"Oswald",sans-serif;font-size:14px;letter-spacing:.04em;margin-top:6px;opacity:.95}
+  main{max-width:1080px;margin:0 auto;padding:28px 26px 80px}
+  .note{background:#fff;border:3px solid var(--ink);border-radius:4px;padding:16px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:13.5px;color:var(--ink-soft);margin-bottom:26px}
+  .note b{color:var(--ink)}
+  h2{font-family:"Anton",sans-serif;font-size:24px;text-transform:uppercase;background:var(--ink);color:#fff;display:inline-block;padding:3px 14px;transform:skewX(-7deg);margin:26px 0 16px}
+  h2 span{display:inline-block;transform:skewX(7deg)}
+  .wrap{overflow-x:auto;border:3px solid var(--ink);border-radius:4px;box-shadow:5px 5px 0 rgba(0,0,0,.85);background:#fff}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:880px}
+  th{font-family:"Oswald",sans-serif;background:var(--violet);color:#fff;text-align:left;padding:11px 10px;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;border-bottom:3px solid var(--ink);white-space:nowrap}
+  td{padding:10px;border-bottom:1.5px solid #e4e0d4;vertical-align:top}
+  tr:hover td{background:var(--yellow-s)}
+  td.acct{font-weight:900;white-space:nowrap}
+  td.acct a{color:var(--blue);text-decoration:none;border-bottom:2px solid var(--blue)}
+  td.num{font-family:"Oswald",sans-serif;text-align:right;white-space:nowrap}
+  .pri{font-family:"Oswald",sans-serif;font-weight:700;font-size:11px;padding:2px 8px;border:2px solid var(--ink);border-radius:4px;display:inline-block}
+  .pa{background:var(--lime-s);color:#1f9c30}.pb{background:var(--blue-s);color:var(--blue)}.pc{background:#eee;color:#666}
+  .flag{font-size:11px;color:var(--red);font-weight:700}
+  .actb{font-family:"Oswald",sans-serif;font-weight:700;font-size:11px;padding:2px 7px;border:2px solid var(--ink);border-radius:4px;white-space:nowrap;display:inline-block}
+  .act-on{background:var(--lime-s);color:#1f9c30}.act-mid{background:var(--yellow-s);color:#b78a00}.act-off{background:var(--red-s);color:var(--red)}
+  .chartbox{background:#fff;border:3px solid var(--ink);border-radius:4px;box-shadow:5px 5px 0 rgba(0,0,0,.85);padding:18px;margin-bottom:26px}
+  .chartbox h3{font-family:"Oswald",sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--ink-soft)}li{margin-bottom:5px}
+  footer{text-align:center;font-family:"Oswald",sans-serif;font-size:12px;color:var(--ink-dim);padding:20px}
+</style>
+</head>
+<body>
+<header><div class="hd">
+  <h1>GameGen × AI Gamedev Tracker</h1>
+  <div class="sub">X 競品 / KOL 追蹤表 · 2026/06/08 · 真數據（瀏覽器實抓）· AI Gamedev / Vibe Coding / Text-to-Game</div>
+</div></header>
+
+<main>
+  <div class="note">
+    <b>方法</b>：追蹤數為 X 個人頁實抓；互動為各帳號「近 5 則貼文」的平均（含部分回覆貼，屬小樣本快照）。互動率＝(讚+回覆+轉發)÷追蹤數×100%。<br>
+    <b>誠實邊界</b>：① 5 則樣本含回覆，會低估純內容貼的表現（如 @chongdashu 近期多為回覆，其代表作 Street Fighter clone 自述 175 讚）。② 小帳出現單篇爆款會讓互動率爆表，已標 <span class="flag">爆款離群</span>，不代表穩定水準。③ 部分大帳（@karpathy 288 萬 / @amasad 46 萬）僅列追蹤數作脈絡，未抓互動。要穩定數據需連續追蹤 7–30 天。<br>
+    <b>活躍度規則</b>（以最後發文回推今天）：🟢 活躍 ≤7 天 ｜ 🟡 趨緩 8–30 天 ｜ 🔴 休眠 &gt;30 天。<b>每次刷新此表都會一次標記完。</b>
+  </div>
+
+  <h2><span>前 10 名追蹤表</span></h2>
+  <div class="wrap">
+  <table>
+    <thead><tr><th>#</th><th>帳號</th><th>類型</th><th>追蹤數</th><th>活躍度<br>(最後發文)</th><th>avg 讚</th><th>avg 回覆</th><th>avg 轉發</th><th>avg 觀看</th><th>互動率</th><th>優先</th><th>GameGen 對標</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="acct"><a href="https://x.com/chongdashu" target="_blank">@chongdashu</a></td><td>AI Gamedev Builder / Claude Code</td><td class="num">12,732</td><td><span class="actb act-on">🟢 6/8</span></td><td class="num">4*</td><td class="num">2*</td><td class="num">0*</td><td class="num">727*</td><td class="num">0.05%*</td><td><span class="pri pa">A+</span></td><td>最近對標：教學/Demo/repo/AI 工具鏈</td></tr>
+      <tr><td>2</td><td class="acct"><a href="https://x.com/Rosebud_AI" target="_blank">@Rosebud_AI</a></td><td>Text-to-game 平台</td><td class="num">8,541</td><td><span class="actb act-off">🔴 4/22 休眠</span></td><td class="num">96</td><td class="num">8</td><td class="num">12</td><td class="num">8,315</td><td class="num">1.36%</td><td><span class="pri pa">A</span></td><td>最直接平台競品：prompt→可玩</td></tr>
+      <tr><td>3</td><td class="acct"><a href="https://x.com/inworld_ai" target="_blank">@inworld_ai</a></td><td>AI NPC / realtime voice</td><td class="num">10,000</td><td><span class="actb act-on">🟢 6/5</span></td><td class="num">165</td><td class="num">22</td><td class="num">56</td><td class="num">65,064</td><td class="num">2.43%</td><td><span class="pri pa">A-</span></td><td>AI 角色互動 / NPC（未來向）</td></tr>
+      <tr><td>4</td><td class="acct"><a href="https://x.com/givros" target="_blank">@givros</a></td><td>AI assets→playable prototype</td><td class="num">2,681</td><td><span class="actb act-on">🟢 6/8</span></td><td class="num">122</td><td class="num">8</td><td class="num">14</td><td class="num">516,089</td><td class="num"><span class="flag">5.4% 爆款離群</span></td><td><span class="pri pa">A-</span></td><td>小帳定位準，爆款體質可學</td></tr>
+      <tr><td>5</td><td class="acct"><a href="https://x.com/edwinarbus" target="_blank">@edwinarbus</a></td><td>AI builder 社群節點 / Cursor</td><td class="num">30,000</td><td><span class="actb act-mid">🟡 5/10</span></td><td class="num">269</td><td class="num">18</td><td class="num">6</td><td class="num">69,617</td><td class="num">0.98%</td><td><span class="pri pb">A</span></td><td>builder 社群擴散 / 轉推策略</td></tr>
+      <tr><td>6</td><td class="acct"><a href="https://x.com/Scenario_gg" target="_blank">@Scenario_gg</a></td><td>AI game asset / B2B pipeline</td><td class="num">19,000</td><td><span class="actb act-on">🟢 6/4</span></td><td class="num">31</td><td class="num">3</td><td class="num">7</td><td class="num">9,862</td><td class="num">0.22%</td><td><span class="pri pb">B+</span></td><td>B2B 美術資產 / 工作室語氣</td></tr>
+      <tr><td>7</td><td class="acct"><a href="https://x.com/levelsio" target="_blank">@levelsio</a></td><td>Indie hacker / Vibe game jam</td><td class="num">891,000</td><td><span class="actb act-on">🟢 6/4</span></td><td class="num">191*</td><td class="num">34*</td><td class="num">16*</td><td class="num">63,459*</td><td class="num">0.03%*</td><td><span class="pri pb">A</span></td><td>把 vibe coding 包成社群活動</td></tr>
+      <tr><td>8</td><td class="acct"><a href="https://x.com/agentgameforge" target="_blank">@agentgameforge</a></td><td>Prompt→sprites→gameplay</td><td class="num">722</td><td><span class="actb act-mid">🟡 5/20</span></td><td class="num">10</td><td class="num">2</td><td class="num">2</td><td class="num">1,185</td><td class="num">1.94%</td><td><span class="pri pb">B+</span></td><td>方向高度相似，看早期成長內容</td></tr>
+      <tr><td>9</td><td class="acct"><a href="https://x.com/couchplay_vince" target="_blank">@couchplay_vince</a></td><td>AI coworker→playable demo</td><td class="num">507</td><td><span class="actb act-mid">🟡 5/26</span></td><td class="num">20,260</td><td class="num">572</td><td class="num">2,194</td><td class="num">2,704,547</td><td class="num"><span class="flag">爆款離群</span></td><td><span class="pri pb">B+</span></td><td>507 追蹤衝 270 萬觀看＝內容＞追蹤</td></tr>
+      <tr><td>10</td><td class="acct"><a href="https://x.com/Ludo_AI" target="_blank">@Ludo_AI</a></td><td>AI game ideation / GDD</td><td class="num">961</td><td><span class="actb act-on">🟢 6/5</span></td><td class="num">3</td><td class="num">1</td><td class="num">0</td><td class="num">63</td><td class="num">0.42%</td><td><span class="pri pc">B</span></td><td>低互動，僅參考內容結構</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div style="font-size:12px;color:var(--ink-dim);margin-top:8px">* ＝ 樣本含回覆貼、或可抓貼文數少（2–3 則），偏低估，僅供參考。脈絡大帳：@karpathy 288 萬、@amasad 46 萬（未抓互動）。</div>
+
+  <h2><span>圖表</span></h2>
+  <div class="grid2">
+    <div class="chartbox"><h3>近期平均觀看數（對數軸）</h3><canvas id="viewsChart" height="240"></canvas></div>
+    <div class="chartbox"><h3>追蹤數 vs 平均觀看（誰用內容打穿同溫層）</h3><canvas id="scatterChart" height="240"></canvas></div>
+  </div>
+
+  <h2><span>給 GameGen 的判斷</span></h2>
+  <div class="note">
+    <ul>
+      <li><b>不要只看追蹤數</b>：@couchplay_vince（507）、@givros（2,681）追蹤數小，卻靠單篇衝到數十萬～數百萬觀看 —— <b>內容模型 ＞ 帳號量級</b>。這正是 GameGen 起步該抄的路。</li>
+      <li><b>爆款共同點</b>：都是「Before 一句爛點子 → After 可玩 prototype」的 Builder Showoff / Demo 影片，不是純技術說明。</li>
+      <li><b>最該追的留言型帳號</b>：@Rosebud_AI、@inworld_ai 互動率穩定（1.4%／2.4%），看他們怎麼用 reply / vote 把觀眾捲進來。</li>
+      <li><b>GameGen 主打格式</b>：「留言一個角色/設定，明天做成可玩小遊戲」——把高觀看的 Demo 影片 + 留言互動結合，對齊你的 Share / Play-to-Create KPI。</li>
+    </ul>
+  </div>
+</main>
+<footer>GameGen X 競品追蹤表 · 2026/06/08 · 數據為瀏覽器當日實抓快照 · 穩定趨勢需連續追蹤 7–30 天</footer>
+
+<script>
+const labels=['chongdashu','Rosebud_AI','inworld_ai','givros','edwinarbus','Scenario_gg','levelsio','agentgameforge','couchplay_vince','Ludo_AI'];
+const views=[727,8315,65064,516089,69617,9862,63459,1185,2704547,63];
+const followers=[12732,8541,10000,2681,30000,19000,891000,722,507,961];
+new Chart(document.getElementById('viewsChart'),{type:'bar',data:{labels:labels,datasets:[{label:'avg 觀看',data:views,backgroundColor:'#1c64ff',borderColor:'#16161a',borderWidth:2}]},options:{plugins:{legend:{display:false}},scales:{y:{type:'logarithmic',title:{display:true,text:'avg 觀看 (log)'}},x:{ticks:{maxRotation:60,minRotation:60,font:{size:9}}}}}});
+new Chart(document.getElementById('scatterChart'),{type:'scatter',data:{datasets:[{label:'帳號',data:labels.map((l,i)=>({x:followers[i],y:views[i],lab:l})),backgroundColor:'#ff2e3f',borderColor:'#16161a',borderWidth:1,pointRadius:6}]},options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.lab+' ('+c.raw.x+' 追蹤 / '+c.raw.y+' 觀看)'}}},scales:{x:{type:'logarithmic',title:{display:true,text:'追蹤數 (log)'}},y:{type:'logarithmic',title:{display:true,text:'avg 觀看 (log)'}}}}});
+</script>
+</body>
+</html>
