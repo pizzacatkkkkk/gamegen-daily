@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GameGen 遊戲時事日報 — 2026/06/09</title>
+<title>GameGen 遊戲時事日報 — 2026/06/08</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -126,6 +126,24 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
   .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -161,7 +179,7 @@
     <div class="nav-in">
       <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
       <div class="nav-links">
-        <a href="#ai">AI 遊戲</a><a href="#ig">iGaming</a><a href="#rl">新遊戲</a><a href="#tr">趨勢題材</a><a href="#ac">建議動作</a>
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a><a href="GameGen_X競品追蹤表_2026-06-08.html" target="_blank" style="background:var(--violet);color:#fff">📊 競品表</a><a href="GameGen_直播主追蹤表_2026-06-09.html" target="_blank" style="background:var(--red);color:#fff">📺 直播主表</a>
       </div>
       <div class="nav-date">06 · 09 · TUE</div>
     </div>
@@ -171,159 +189,402 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 06 / 09 · 收錄 6 則 · 來源 9 站</span>
+        <span class="dateflag">2026 / 06 / 09 · 即時榜 + 暴衝 + 早期訊號 + 高討論 + 迷因 + 機制 + Threads + 趨勢 + CJ + 建議 · 10 箱固定 schema</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
-      <div class="zh-title">遊戲時事日報</div>
-      <div class="tagline">今天的梗，<b>今天就能玩</b> — 每日遊戲時事與題材雷達</div>
+      <div class="zh-title">遊戲時事日報 · 即時熱榜版</div>
+      <div class="tagline">熱度看<b>變化率</b>，不看排名 — 今天什麼正在爆</div>
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>世界盃倒數 2 天（6/11 開踢），全球注意力衝頂 —— 做應援小遊戲的最後窗口就是今明兩天。</b>分析機構 H2 預估本屆全球投注流水上看 <span class="hl">$600 億</span>、光美國端就 $29 億（去年同期兩倍），代表「足球 × 遊戲 × 隨身可玩」的搜尋與內容需求正集中爆發。</p>
-        <p>同一天最值得看的不是大賽本身，是 <b>Roblox 把「6-7 迷因」幾天內變成官方可戴道具</b>（6/6 上架 Sk67r 帽）—— 這是「今天的梗、幾天內變成能玩 / 能戴的東西」最新鮮的現實證據，正好是 GameGen 的論點。我們的籌碼不是更大更深，而是<b>更快 + 人人能改</b>。</p>
-        <div class="pull">▸ 可立即落地：今天就把「世界盃反應罰球」demo 收尾（泛化卡通前鋒 / 守門員，避開真實球員與 FIFA 標誌），趕在 6/11 開踢前發出去蹭流量。</div>
+        <p><b>今天最強訊號＝資本與平台同時押注「AI 生成 + UGC」。</b>直接對手 <span class="hl">Astrocade 宣布募得 $56M</span>（Sea 領 A、Sequoia 領 B），8 個月做到 500 萬 MAU、月 1.4 億次遊玩、75,000 款創作者遊戲，還砸 $1,000 萬創作者激勵。同期 <b>Roblox 把「能自己規劃／建置／測試」的 agentic AI co-pilot 推給 1,400 萬創作者</b>。AI 把「做遊戲」變消費級活動，正是 GameGen 的主場與賽道。</p>
+        <p>產業彈藥同步到位：<b>Naavik《State of UGC Games 2026》</b>——Roblox/Fortnite/Overwolf 三大生態 2025 創作者分潤約 <b>$2.2B（+47% YoY）</b>、Roblox 前 1,000 名創作者年均 <b>$1.3M（+70%）</b>、過半成長來自 Top 10 以外；<b>GTA VI（瞄準 2026/11）</b>已與 Fortnite/Roblox 頭部創作者接觸談 UGC。本週又逢 <b>State of Play + Summer Game Fest</b> 新作齊發（Marvel's Wolverine、RE Code Veronica 重製…）。意義：別只追常駐大榜，盯<b>「資本/平台/賽事正在帶動、且能 1 天做出泛化版」</b>的訊號——那才是 Trend Response Time 的戰場。</p>
+        <div class="pull">▸ 可立即落地：抄剛冒頭的「一句話 loop」做泛化版（接字 / 猜圖 / 放置賣 / 速度點擊）＋ 今天上「Group 7 分組認領」社交小遊戲（迷因正燒、零 IP 風險）。</div>
+        <div class="pull" style="background:#fff6e0;border-color:#caa53a">⚠️ <b>本期 provenance（CC 本機重生・結構驗證版）</b>：高討論／迷因／加分（新作）箱＝CC 6/9 WebSearch 真資料；<b>即時熱榜・早期訊號・機制靈感・繁中 Threads ＝沿用 6/8 沙箱深掃、6/9 尚未重抓</b>（這些需 08:00 沙箱「hi」瀏覽器，CC 本機抓不到，故不偽造當日即時數字）。真・全箱即時版以排程沙箱跑為準。</div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- AI -->
-    <section id="ai">
-      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>AI 生成遊戲</span></h2><span class="en">AI Game Tools</span></div>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>對標</span></span>Astrocade $56M 的賽道＝GameGen 主場：社交、快做、可 remix 的小遊戲</h3>
-        <div class="sum">Sea 領 A、Sequoia 領 B 共 $56M（NVIDIA、Google AI Futures、LG 等跟投）；公開 8 個月 2,000 萬活躍用戶、80 國 7.5 萬款，外加 $10M 創作者激勵計畫。核心機制：describe-and-play + 社交發現 + remix + 輕量變現。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>對手把賽道定義講白了 —— 那條「社交快做小遊戲 + remix」就是 GameGen 主場。差異點不在工具誰強，而在 <b>Trend Response Time + Create/Share Rate</b>。它砸 $10M 養創作者，值得逐週追它「玩家→創作者」轉換與分享機制怎麼設計，當我們漏斗的對照組。</div>
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線</span></div>
+          <ol>
+            <li><span class="nm">Counter-Strike 2</span><span class="vn">650K</span></li>
+            <li><span class="nm">Dota 2</span><span class="vn">346K</span></li>
+            <li class="hot"><span class="nm">TBH 塔斯克巴英雄</span><span class="vn">327K</span></li>
+            <li><span class="nm">Path of Exile 2</span><span class="vn">208K</span></li>
+            <li><span class="nm">FiveM</span><span class="vn">139K</span></li>
+            <li><span class="nm">Bongo Cat</span><span class="vn">135K</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">同時在線</span></div>
+          <ol>
+            <li><span class="nm">Brookhaven RP</span><span class="vn">474K</span></li>
+            <li><span class="nm">Adopt Me!</span><span class="vn">336K</span></li>
+            <li class="hot"><span class="nm">+1 Speed Keyboard Escape</span><span class="vn">237K</span></li>
+            <li><span class="nm">Blox Fruits</span><span class="vn">231K</span></li>
+            <li><span class="nm">RIVALS</span><span class="vn">211K</span></li>
+            <li class="hot"><span class="nm">99 Nights in the Forest</span><span class="vn">187K</span></li>
+          </ol>
+          <div class="bf">RTrack · 06/08 08:35 · <a href="https://rtrack.live/insights/Live/Concurrent" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-twch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近7天平均</span></div>
+          <ol>
+            <li><span class="nm">Just Chatting</span><span class="vn">302K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">114K</span></li>
+            <li class="hot"><span class="nm">Counter-Strike</span><span class="vn">107K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">77K</span></li>
+            <li class="hot"><span class="nm">Special Events</span><span class="vn">66K</span></li>
+            <li><span class="nm">Path of Exile 2</span><span class="vn">60K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Twitch 7 天最猛漲幅：Splatoon 3 +571% / FFXIV +328% / CS +69.6% / Fortnite +33.6%</h3>
+        <div class="sum">以「近 7 天平均觀看變化率」排序：Splatoon 3 一週漲近 6 倍、FFXIV 漲逾 3 倍、Counter-Strike +69.6%、Escape from Tarkov +23.8%、Fortnite +33.6%。這些不是榜首常駐，是「正在被網紅 / 新內容帶起來」的款。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這就是日報該盯的東西 —— <b>變化率 > 絕對排名</b>。常駐榜首（Just Chatting / LoL）對 trend-to-game 沒用；暴衝款代表「有事件正在發生」。Splatoon 3 的塗鴉對戰熱，可抽成<b>泛化「塗色佔地」機制</b>（不碰角色 IP）當題材，測 Create→Share。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>IP 中</span></span></div></div>
+          </div>
+          <div class="src">TWITCHTRACKER · <a href="https://twitchtracker.com/games" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>黑馬</span></span>新面孔衝榜：Steam「TBH」直上在線第 3、Roblox「+1 Speed Keyboard Escape」衝 23.7 萬</h3>
+        <div class="sum">Steam 同時在線第 3 名是相對新的「TBH 塔斯克巴英雄」（32.7 萬）；Roblox 即時 CCU 第 3 是「+1 Speed Keyboard Escape」（23.7 萬）—— 一款「鍵盤速度逃脫」的輕量休閒款，名字直接寫出玩法 loop。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「+1 Speed Keyboard Escape」是最好抄的<b>反應 / 打字速度 loop</b> —— 規則一句話講完、回合短、好比分、易拍。正好是 GameGen 一句話生成小遊戲的甜蜜區。建議追 TBH 是什麼（可能有可蹭事件），但<b>目前無法完全證實其爆紅原因</b>。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>IP 低</span></span></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">FORTUNE · <a href="https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/" target="_blank">原文 ↗</a></div>
+          <div class="src">STEAM / RTRACK · <a href="https://rtrack.live/insights/Live/Concurrent" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>對標</span></span>Rosebud 站「完整 3D 生態」另一條路，提醒我們不要被帶偏</h3>
-        <div class="sum">Rosebud 主打把 prompt 直接變成可玩的 2D / 3D / voxel 瀏覽器遊戲，附可分享連結 + 內建變現與創作者社群，定位「完整世界、長線」。市場正分成「淺而快的社交小遊戲」與「深而完整的世界」兩條路。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Rosebud 把「做更深」這條路占住了 —— 那不是我們的仗。GameGen 該<b>明確站「淺、快、梗、可分享」</b>並做到極致，別在內部討論時被「要不要做得更完整」帶走資源。我們贏的是 Trend Response Time，不是世界規模。</div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>類型</span></span>Roblox 恐怖生存延燒：99 Nights in the Forest 仍站 18.7 萬 CCU</h3>
+        <div class="sum">2026 恐怖類最大黑馬持續高檔（即時 18.7 萬同時在線，榜上前段）；搭配 Steal a Brainrot、Fish It! 等放置 / 點擊 loop 款，顯示「短回合、可拍、易上手」仍是 UGC 平台的主流熱度結構。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>熱榜結構透露<b>該優先做的模板</b>：恐怖生存挑戰、放置點擊、速度反應 —— 全是「梗 + 可拍 + 可改」型，不是大世界。GameGen 的 5 個 MVP 模板優先序可直接對著熱榜抓，別做沒人玩的深玩法。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">ROSEBUD LAB · <a href="https://lab.rosebud.ai/blog/rosebud-ai-vs-competitors-the-only-fully-integrated-ai-game-creation-platform" target="_blank">原文 ↗</a></div>
+          <div class="src">RTRACK · <a href="https://rtrack.live/insights/Live/Concurrent" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
-    <!-- iGaming -->
-    <section id="ig">
-      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>iGaming / 博弈</span></h2><span class="en">iGaming</span></div>
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>市場</span></span>H2 估世界盃全球流水 $600 億、美國端 $29 億（去年兩倍）</h3>
-        <div class="sum">研究機構 H2 預估本屆世界盃帶動全球投注流水上看 $600 億；美國一地預估 $29 億、是 2025 同期足球量的兩倍多。超過 60% 投注已是賽中 live 下注；38 州已開放合法運動投注。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條只取<b>「大賽帶動市場、operator 口袋變深、急要主題內容」</b>的角度 —— 是 CJ 那條 2B 線的順風，不是我們直接賣的東西。對外發文一律<b>避開賭場語言</b>（投注 / payout / big win）。對我們有用的是「live 下注 60%」＝觀眾要的是即時、輕量、跟著賽況變的互動，正好對應我們的即時小遊戲。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>賭場語言</span></span></div></div>
-          </div>
-          <div class="src">COVERS · <a href="https://www.covers.com/industry/h2-projects-60-billion-global-sports-betting-handle-for-2026-world-cup-june-8-2026" target="_blank">原文 ↗</a></div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX 剛冒頭</span><span class="metric">Up-and-Coming</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Finish The Word! 接字</span><span class="vn">9.6K</span></li>
+            <li><span class="nm">Battle Pet 養寵對戰</span><span class="vn">9.4K</span></li>
+            <li><span class="nm">My Gaming Cafe 經營</span><span class="vn">8.4K</span></li>
+            <li><span class="nm">Lucky Block 開箱</span><span class="vn">4.2K</span></li>
+            <li class="hot"><span class="nm">Guess My Logo 猜圖</span><span class="vn">2.3K</span></li>
+            <li><span class="nm">Land or Die! 反應</span><span class="vn">3.7K</span></li>
+          </ol>
+          <div class="bf">Roblox 官方榜 · 06/08 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
         </div>
-      </article>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>市場</span></span>operator 全面備戰：Caesars 辦觀賽派對、FIRST 推一站式世界盃方案</h3>
-        <div class="sum">Caesars 在拉斯維加斯、鳳凰城、大西洋城等市場辦 USMNT 觀賽派對；供應商 FIRST 推出 UltraCup 一站式世界盃交易方案，大小 operator 都在趕行銷與產品上線。整個 B2B 供應鏈都在卡這檔期。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>供應商搶著做「世界盃即時內容包」＝市場已驗證「大賽事件需要快速主題內容」的需求真的存在。對 GameGen，這是<b>產品論點的外部背書</b>：把「事件 → 當天可玩」做成標準能力，就是這個需求的 C 側版本。可當素材給 CJ 談 B2B Campaign 角度（漏斗上游，不背 closed deal）。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>賭場語言</span></span></div></div>
-          </div>
-          <div class="src">SBC NEWS · <a href="https://sbcnews.co.uk/sportsbook/2026/06/03/first-ultra-cup-sportsbook-world-cup/" target="_blank">原文 ↗</a></div>
+        <div class="board b-steam">
+          <div class="bh"><span>ROBLOX 正在衝</span><span class="metric">Top Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">+1 Speed Keyboard Escape 打字</span><span class="vn">215K</span></li>
+            <li><span class="nm">Sell Lemons 放置賣</span><span class="vn">92K</span></li>
+            <li><span class="nm">Build A Ring Farm 放置</span><span class="vn">71K</span></li>
+            <li><span class="nm">Universal Tower Defense X</span><span class="vn">62K</span></li>
+            <li><span class="nm">Mini War</span><span class="vn">37K</span></li>
+            <li><span class="nm">Tower Defense Simulator</span><span class="vn">26K</span></li>
+          </ol>
+          <div class="bf">Roblox 官方榜 · 06/08 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
         </div>
-      </article>
-    </section>
 
-    <!-- New Release -->
-    <section id="rl">
-      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>新遊戲 / 熱門</span></h2><span class="en">New Release</span></div>
+      </div>
 
-      <article class="story rl reveal">
-        <h3><span class="tag rl"><span>趨勢</span></span>最強現實證據：Roblox 把「6-7 迷因」幾天內變成官方可戴道具</h3>
-        <div class="sum">官方帳號 6/6 上架 Sk67r 帽 + Bling 67 項鍊（創作者 Alpkurt2），直接把 2025 在 TikTok / Reels 爆紅的「6-7 迷因」變成人人能戴的 UGC 道具。同期 Grow a Garden、Steal a Brainrot、99 Nights in the Forest 靠單支影片衝上數百萬同時在線，開發者刻意做「可被拍成迷因」的瞬間。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是 GameGen 論點的<b>最新鮮活證據</b> —— 病毒不靠玩法深度，靠「梗 + 可拍 + 可改」，而且速度就是一切。連 Roblox 都得花幾天才把梗變道具；我們主打的是<b>當天</b>把梗變成能玩的小遊戲。Create Rate / Share Rate / Play-to-Remix 就該對著這個設計。</div>
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>剛爆的款全是「一句話 loop」：接字 / 猜圖 / 放置賣 / 速度點擊</h3>
+        <div class="sum">Roblox Up-and-Coming 與 Top Trending 的新面孔，玩法清一色是規則一句話講完的超簡單 loop：Finish The Word!（接字）、Guess My Logo（猜圖）、Sell Lemons（放置賣）、+1 Speed Keyboard Escape（打字速度）、Build A Ring Farm（放置農場）。這些是新聞與一般搜尋都還沒報的早期黑馬，只在官方榜的「剛冒頭」分類看得到。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這直接給出 <b>MVP 模板優先序</b> —— 接字 / 猜圖 / 放置賣 / 速度點擊，全都剛被市場驗證在爆、且最好做泛化版。比起追 Brookhaven 那種已滿的大常駐，<b>「剛冒頭的一句話 loop」才是 Trend Response Time 的甜蜜區</b>：今天就能 clone 一個泛化版測 Create→Share。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ROBLOX CHARTS · <a href="https://www.roblox.com/charts" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>深度</span></span>Naavik《The State of UGC Games 2026》—— UGC 圈最被引用的旗艦深度文</h3>
+        <div class="sum">（CC 6/9 WebSearch 更新）數據彈藥：Roblox / Fortnite / Overwolf 三大生態 2025 創作者分潤約 <b>$2.2B（+47% YoY）</b>；Roblox 前 1,000 名創作者年均 <b>$1.3M（+70%，前年 $735k）</b>、且過半消費成長來自 Top 10 以外；Roblox DAU/Bookings YoY +52%/+55%、占全球遊戲營收 3.4%；Overwolf/CurseForge mod 下載 +38%（330 億次）。<b>GTA VI（瞄準 2026/11）</b>已接觸 Fortnite/Roblox 頭部創作者談 UGC＝最大潛在威脅。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>對外講 Trend-to-Game / AI 生成的<b>最佳論據彈藥</b>，數字可直接引。重點：<b>過半成長在 Top 10 以外</b>＝長尾與「快速試錯」正是 GameGen 的甜蜜區；GTA VI 來搶 UGC＝這條賽道被巨頭認證、時間窗緊。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
           <div class="src">NAAVIK · <a href="https://naavik.co/deep-dives/the-state-of-ugc-games-2026/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story rl reveal">
-        <h3><span class="tag rl"><span>話題</span></span>Sony State of Play 大爆發 + NBA The Run 今日（6/9）上市</h3>
-        <div class="sum">本月初 State of Play 開出 Marvel's Wolverine、God of War Laufey，並與 Xbox Games Showcase 一起確認 Persona 6；全球遊戲聲量仍在高檔。今天 6/9 NBA The Run 上市，把籃球玩法與生涯敘事綁在一起。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>大廠 reveal 牆給的是<b>現成蹭點</b>：趁全網討論大作，發「只能看大廠發表 vs 你今天就能自己做一款」的對打內容最順。NBA The Run 上市則順手吃一波「籃球熱」——可做泛化角色的「反應投籃」小遊戲。一律避免直接挪用大作 IP 與真實球員。</div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>對標</span></span>Astrocade 募 $56M、Roblox 推 agentic AI co-pilot —— AI 遊戲創作淘金潮正式開打</h3>
+        <div class="sum">（CC 6/9 WebSearch）<b>Astrocade $56M</b>（Sea 領 Series A、Sequoia 領 Series B，5/5 宣布）：8 個月 500 萬 MAU、月 1.4 億次遊玩、75,000 款創作者遊戲、80 國，$1,000 萬創作者激勵；定位「describe-and-play + remix + 輕量變現」＝AI 迷你遊戲平台。<b>Roblox</b> 給 1,400 萬創作者「能自己規劃/建置/測試」的 agentic AI co-pilot（從補 code 升級到全流程自動化）。<b>Rosebud</b> 主打 prompt→可玩瀏覽器遊戲 + 可分享連結。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>對手把「describe-and-play + remix + 分享連結」做成標配——GameGen 別比模型規模，<b>守「更快、更社交、更梗、繁中在地」的差異化</b>。Astrocade 的 $10M 創作者激勵＝這類平台靠「creator 留存」決勝，呼應我們的 Play-to-Create / D7 Creator Retention KPI。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk hi"><span>大作 IP</span></span></div></div>
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">SCREEN RANT · <a href="https://screenrant.com/june-2026-video-games-releases-schedule-lineup/" target="_blank">原文 ↗</a></div>
+          <div class="src">FORTUNE / TECHBUZZ · <a href="https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>誠實標註</b>：此段為「近期高引用 / 高流通」產業文章，<b>非</b>「HN 幾分 / Reddit 幾讚」的即時 engagement 量測——本次 HN API 逾時、Reddit JSON 被擋，精確互動數字待換抓法補上。
+      </div>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>TikTok「Group 7」變身份象徵：搶著認領「自己屬於第幾組」</h3>
+        <div class="sum">由創作者 Sophia James 的 7 連發 lookalike 影片引爆，用戶搶著宣告自己進「Group 7」這個虛擬專屬俱樂部，「屬於哪一組」成了 TikTok 身份象徵，正快速擴散。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>本日 trend-to-game 首選</b> —— 天生就是「測你屬於哪一組 / 搶位認領」社交小遊戲：結果可截圖炫耀、可揪朋友比、零 IP 風險。最符合「今天的梗今天就能玩」，建議今天就做泛化版上線測 Share Rate。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NAPOLEONCAT · <a href="https://napoleoncat.com/blog/trending-memes/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>「Saxophone Gets Louder」洗版：簡單、戲劇化、人人有共鳴</h3>
+        <div class="sum">「薩克斯風越來越大聲」迷因席捲全社群，靠「簡單 + 戲劇張力 + 人人能共鳴」的格式擴散，是當前最易被二創的聲音梗之一。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>可轉成<b>「撐住別失誤 / timing 升級」反應小遊戲</b> —— 隨音量越來越大、難度遞增，失敗瞬間最好拍。製作門檻低、可即時蹭，適合當 Group 7 之外的第二發測試。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NAPOLEONCAT · <a href="https://napoleoncat.com/blog/trending-memes/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因遊戲</span></span>《Bow-wow Battle 汪汪大戰》：對麥克風學狗叫的 1v1，靠實況主反應爆紅</h3>
+        <div class="sum">個人開發者 M.Katsu，$3 搶先體驗。中央拔河條靠音量＋叫聲頻率＋咬字清晰度推進；8 關「犬道」故事 + 螃蟹生存 + 全語音操作。Twitch / YouTube 實況主反應帶起社群聲量。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>黃金可抄案例 —— 爆點不是畫面，是<b>「麥克風當武器」的輸入創意</b>。可泛化成「對麥克風喊聲音對戰」模板（任何梗 / 自訂主題），<b>VTuber / 實況主直播開麥即玩</b>，失控叫聲超好剪，Share Rate 內建在玩法裡。風險：用泛化角色，學名人聲音要避肖像。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / DEXERTO · <a href="https://store.steampowered.com/app/4575390/Bowwow_Battle/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因遊戲</span></span>梗→遊戲教科書：Senate Run（4 晚做成）／ Brush Jjaemu（刷貓）</h3>
+        <div class="sum">Senate Run：菲律賓參議院追逐 CCTV 爆紅 → 開發者 4 個晚上用 Phaser 做成跑酷網頁遊戲。Brush Jjaemu：韓國爆紅刷貓網頁遊戲，刷太快貓會吃你。都是「梗在當天、遊戲在幾天內」。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>證明 trend-to-game 的<b>速度路線真的成立</b> —— 個人開發者幾天就把梗變可玩。GameGen 的賣點就是把這個「幾晚」壓到「幾分鐘、人人可做」。這兩款是對外講速度優勢的最佳對照組。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PHASER / DEXERTO · <a href="https://phaser.io/news/2026/05/senate-run-phaser-game" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>UNITYROOM 一句話 loop</span><span class="metric">原創簡單機制</span></div>
+          <ol>
+            <li class="hot"><span class="nm">わーわーど 打字 roguelike</span><span class="vn">接字</span></li>
+            <li><span class="nm">放置ファクトリー 放置工廠</span><span class="vn">放置</span></li>
+            <li><span class="nm">心霊写真仕分けバイト 靈異照片分類</span><span class="vn">分類</span></li>
+            <li><span class="nm">押しつぶブラックホール 壓扁黑洞</span><span class="vn">吞噬</span></li>
+            <li><span class="nm">食欲VSシスター</span><span class="vn">反應</span></li>
+          </ol>
+          <div class="bf">unityroom · 今週ピックアップ · <a href="https://unityroom.com/" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>unityroom＝原創簡單機制金礦；itch.io 迷因標籤＝IP 二創地雷</h3>
+        <div class="sum">unityroom（日本 Unity 網頁遊戲 + 1週間ゲームジャム）冒出的全是原創、低 IP 風險的單一機制小遊戲，正好對應 GameGen「一句話 loop」模板。反觀 itch.io 的 meme 標籤實測多是 IP 二創（FNAF / Simpsons.exe / 寶可夢同人），風險高、參考價值低。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>分工分清楚</b> —— unityroom 抓「可抄成泛化模板的機制」（接字 / 放置 / 分類 / 吞噬）；itch.io 別抓 meme 標籤，改看 html5 popular 找原創網頁遊戲。<b>機制本身不受版權保護</b>，照抄 loop、換泛化皮即可，避開二創 IP。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">UNITYROOM / ITCH.IO · <a href="https://unityroom.com/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>爆紅</span></span>「@meta.ai 人生／世界模擬遊戲」洗版 Threads：一句話開局、AI 在留言裡跑回合</h3>
+        <div class="sum">使用者在貼文 tag @meta.ai 下 prompt（例：「玩三國模擬，我出生江南，每回合給事件＋5 選項、記錄資產，從出生玩到老死」），Meta AI 直接在留言一回合一回合跑（事件 → 5 選項 → 更新年齡/資產）。代表貼文（@mr.wang4401）近萬讚、瘋傳，是繁中當下真・高流量遊戲話題。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這把整套論點驗證了 —— <b>一句話 → AI 生成 → 社群留言原生可玩、零安裝</b>。Meta AI 已幫你把市場做出來。GameGen 機會＝做「比純文字更好的版本」：可分享連結、結局/數值卡（可截圖炫耀）、可 remix 換題材、排行榜。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>對手免費</span></span></div></div>
+          </div>
+          <div class="src">THREADS @mr.wang4401 · <a href="https://www.threads.com/@mr.wang4401/post/DZCl2wYlCUO" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>題材</span></span>變體題材遍地開花：三國 / 武俠江湖 / 無限恐怖 / 寶可夢式捕捉 RPG</h3>
+        <div class="sum">同格式快速長出各種世界觀：三國（江南出生）、武俠「AI 江湖模擬器」、Blade RPG（加 Hitbox 物理判定）、「無限恐怖模擬／無限試煉空間」、Codex+GPT 半天做出的「戰國妖怪捕捉 RPG」。玩家還互相分享「設定串 / prompt 模板」給人套用。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>題材熱度排序給你 MVP 抓題：<b>歷史三國 / 武俠江湖最吃（繁中本命）</b>，恐怖、捕捉 RPG 次之。玩家自發分享 prompt 模板＝你的 <b>Play-to-Create / Remix KPI 的現成需求證據</b>。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">THREADS 搜尋（Top） · <a href="https://www.threads.com/search?q=meta.ai%20%E6%A8%A1%E6%93%AC%E9%81%8A%E6%88%B2" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>風險</b>：對手是「免費內建的 @meta.ai」。差異化只能靠視覺化 / remix / 跨平台分享 / 留存機制，不是比 AI 本身強。題材避真實肖像，用泛化角色。
+      </div>
+    </section>
+
     <!-- Trend -->
     <section id="tr">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
-        <thead><tr><th>題材</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>世界盃倒數 2 天（6/11）</td><td><span class="tmpl">反應罰球 / 點球 Boss</span></td><td>分數挑戰 + 國家隊應援</td><td class="rk-hi">高 · 真人肖像</td><td>今明收尾上架，泛化卡通前鋒 / 守門員</td></tr>
-          <tr><td>Roblox 6-7 迷因 → 道具</td><td><span class="tmpl">迷因模板 / 一句話生成</span></td><td>可拍成 TikTok 的瞬間</td><td class="rk-low">低</td><td>做「梗 → 當天可玩」示範，比 Roblox 還快</td></tr>
-          <tr><td>State of Play 大作熱</td><td><span class="tmpl">猜題 / 反應搶答</span></td><td>跟著討論即時玩</td><td class="rk-mid">中 · 避免 IP</td><td>用泛化角色，打「人人做遊戲」對打角度</td></tr>
-          <tr><td>NBA The Run 上市（籃球熱）</td><td><span class="tmpl">反應投籃 / 連續罰球</span></td><td>連線比分數</td><td class="rk-low">低</td><td>泛化球員，吃籃球流量備胎題材</td></tr>
+          <tr><td>AI 社群模擬遊戲（@meta.ai 啟發）</td><td><span class="tmpl">一句話開局 AI 人生模擬</span></td><td>結局/數值卡可截圖、可 remix</td><td class="rk-mid">中 · 對手免費</td><td>主打三國/武俠，加分享連結+排行差異化</td></tr>
+          <tr><td>麥克風語音對戰（Bow-wow 啟發）</td><td><span class="tmpl">喊聲音 1v1 對戰</span></td><td>失控叫聲超好剪</td><td class="rk-low">低</td><td>VTuber/實況友善，泛化主題</td></tr>
+          <tr><td>unityroom 原創機制</td><td><span class="tmpl">接字/放置/分類/吞噬</span></td><td>機制新奇可拍</td><td class="rk-low">低</td><td>抄機制換泛化皮，不碰二創 IP</td></tr>
+          <tr><td>Up-and-Coming 一句話 loop</td><td><span class="tmpl">接字 / 猜圖 / 放置賣</span></td><td>比分數 + 結果可拍</td><td class="rk-low">低</td><td>剛冒頭就抄，做泛化版搶早期</td></tr>
+          <tr><td>Group 7 迷因</td><td><span class="tmpl">分組認領 / 性格測驗</span></td><td>結果截圖 + 揪朋友比</td><td class="rk-low">低</td><td>本日首選，今天就上泛化版</td></tr>
+          <tr><td>+1 Speed 衝榜（23.7萬）</td><td><span class="tmpl">反應 / 打字速度 loop</span></td><td>比分數 + 失誤可拍</td><td class="rk-low">低</td><td>抄熱門 loop 做泛化版</td></tr>
+          <tr><td>99 Nights 恐怖熱（18.7萬）</td><td><span class="tmpl">恐怖生存挑戰</span></td><td>嚇點 / 倒數可拍</td><td class="rk-low">低</td><td>蹭恐怖類熱度，短回合</td></tr>
+          <tr><td>Splatoon 3 +571%</td><td><span class="tmpl">塗色佔地對戰</span></td><td>團隊對抗 + 戰績</td><td class="rk-mid">中 · IP</td><td>用泛化塗色機制，不碰角色</td></tr>
+          <tr><td>Saxophone Louder 迷因</td><td><span class="tmpl">Timing 升級反應</span></td><td>失敗瞬間最好拍</td><td class="rk-low">低</td><td>快做，當第二發測試</td></tr>
         </tbody>
       </table>
       </div>
     </section>
 
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點數字</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>AI 把整間工作室的活壓成一人做</td><td>AI 遊戲開發市場 $6.1B → $18.75B（CAGR 16.8%）</td><td>"The studio model isn't dying — it's being unbundled."</td><td><a href="https://www.intelmarketresearch.com/ai-game-development-market-47105" target="_blank">↗</a></td></tr>
+          <tr><td>錢流向創作者經濟，不是大作</td><td>Roblox 創作者 2025 分潤 $1.5B（+70% YoY）；UGC 占非中國消費 4.5%</td><td>"Creators earned $1.5B on one platform. Too late isn't a risk — it's the question."</td><td><a href="https://naavik.co/deep-dives/the-state-of-ugc-games-2026/" target="_blank">↗</a></td></tr>
+          <tr><td>大賽＝一年最大主題內容需求高峰</td><td>世界盃 2026 帶動 $50B 市場、58% 球迷打算玩足球主題遊戲</td><td>"The World Cup is a content-velocity test, not a marketing window."</td><td><a href="https://news.worldcasinodirectory.com/2026-world-cup-could-boost-sports-betting-revenues-123059" target="_blank">↗</a></td></tr>
+          <tr><td>AI 在 iGaming 從優勢變基本門檻</td><td>業界估效率 +40%、63% operator 用 AI CRM</td><td>"AI stopped being a differentiator. The edge is who applies it fastest."</td><td><a href="https://affpapa.com/igaming-in-the-era-of-ai-where-the-industry-is-heading/" target="_blank">↗</a></td></tr>
+          <tr><td>留存靠基礎建設與速度，不靠加碼</td><td>2026 B2B 留存由 infrastructure 決定，贏家＝降摩擦最快</td><td>"Retention is won by infrastructure and speed. Speed is the new moat."</td><td><a href="https://ncfacanada.org/b2b-igaming-software-in-2026-what-operators-actually-need-from-a-platform-partner/" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 完整中英貼文草稿（鉤子＋3 段內文＋CTA＋hashtag）見檔案 <b>CJ_LinkedIn_貼文草稿_2026-06-08.md</b>。建議貼文 A（世界盃）貼著 6/11 開踢前發、B（速度護城河）當 follow-up。對外用字已過濾賭場語言。
+      </div>
+      </div>
+    </section>
+
     <!-- Actions -->
     <section id="ac">
-      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭世界盃倒數：「48 小時後開踢，你今天就能做一款應援小遊戲」＋ demo gif</li><li>蹭 Roblox 6-7 帽：「梗一出，Roblox 花幾天變道具 —— 我們今天就把它變成能玩的」</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>世界盃「反應罰球」收尾上架（泛化角色，趕 6/11 前）</li><li>「6-7 迷因」一句話生成小遊戲，示範速度優勢</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的競品</h4><ul><li>Astrocade：$10M 創作者激勵、玩家轉創作者數據</li><li>Roblox UGC：迷因 → 道具 / 病毒款的擴散與分享機制</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>真實球員 / 球隊與 FIFA 官方標誌 → 用泛化角色</li><li>大作 IP（Wolverine / God of War / NBA）直接挪用</li><li>對外文案的賭場語言（投注 / payout / big win）</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>數據貼文：「熱度要看變化率不看排名」＋ Splatoon 3 +571% 等暴衝榜</li><li>蹭 Group 7：「測你屬於哪一組」分組小遊戲 ＋ demo gif</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>AI 三國/武俠人生模擬（抄 @meta.ai 熱潮，加分享連結+結局卡+排行）</li><li>麥克風喊聲音對戰小遊戲（抄 Bow-wow，VTuber/實況直播友善）</li><li>抄 Up-and-Coming 一句話 loop：接字 / 猜圖 / 放置賣（搶早期）</li><li>Group 7「分組認領」社交小遊戲（今天上、風險最低）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Bow-wow Battle —— 語音輸入玩法 + 實況主擴散機制</li><li>Steam「TBH」衝第 3 —— 查它是什麼、為何爆（待證實）</li><li>Splatoon 3 +571% / FFXIV +328% —— 找暴衝背後的事件</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Splatoon / Blox Fruits 等大作・IP 角色直接挪用 → 用泛化機制</li><li>他人 UGC 素材直接複製</li><li>對外文案的賭場語言（下注 / payout / big win）</li></ul></div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>分數說明</b>　相關性＝對 GameGen 相關度 · 分享＝社群擴散潛力 · 可玩＝能否轉小遊戲（皆 0–5，為排序提示非數據）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 2026/06/09 · 來源為公開媒體當日 / 近日報導 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+    <div class="legend"><b>方法</b>　即時數字＝瀏覽器直讀 Steam 官方 API / RTrack / TwitchTracker · 熱度排序看「7 天變化率」而非絕對排名 · 分數 0–5 為排序提示非數據</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 2026/06/09 · 10 箱固定 schema · ⚠️ CC 本機重生（結構驗證版）：高討論／迷因／加分箱為 6/9 WebSearch 真資料，即時熱榜／早期／機制／Threads 沿用 6/8 沙箱深掃待重抓 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
