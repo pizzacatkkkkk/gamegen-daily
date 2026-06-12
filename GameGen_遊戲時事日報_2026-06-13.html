@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 · 2026-06-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .toplist{max-width:760px;margin:22px 0 0;display:grid;gap:14px}
+  .topbox{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 22px;box-shadow:6px 6px 0 rgba(0,0,0,.85);color:var(--ink)}
+  .topbox .th{display:flex;align-items:center;gap:10px;margin-bottom:13px}
+  .topbox .th .ttl{font-family:"Anton",sans-serif;font-size:19px;letter-spacing:.02em;color:var(--ink)}
+  .topbox .th .pill{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#fff;background:var(--ink);padding:3px 10px;transform:skewX(-8deg)}
+  .topbox .th .pill>span{display:inline-block;transform:skewX(8deg)}
+  .pick{border-left:7px solid var(--lime);background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:13px 16px;margin-bottom:11px}
+  .pick:last-child{margin-bottom:0}
+  .pick.gold{border-left-color:var(--yellow)}
+  .pick .pk-h{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);margin-bottom:6px}
+  .pick .pk-h .num{font-family:"Anton",sans-serif;color:var(--red);margin-right:8px}
+  .pick .pk-why{font-size:13px;color:var(--ink-soft);margin-bottom:7px}
+  .pick .pk-why b{color:var(--ink)}
+  .pick .pk-hook{font-size:13px;color:var(--ink);background:var(--yellow-s);border:1.5px solid var(--ink);border-radius:5px;padding:7px 11px}
+  .pick .pk-hook .lbl{font-family:"Oswald",sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#1f9c30}
+  .pick .pk-do{font-size:12.5px;color:var(--ink);margin-top:8px;padding-left:18px;position:relative;line-height:1.5}
+  .pick .pk-do::before{content:"▸ 今天可以怎麼用：";position:absolute;left:0;top:0;color:var(--red);font-weight:800;font-size:0}
+  .pick .pk-do .dl{font-family:"Oswald",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--red);margin-right:6px}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .qbox{background:var(--paper2);border:2px solid var(--ink);border-radius:4px;padding:14px 18px;font-size:13.5px;color:var(--ink-soft);box-shadow:4px 4px 0 rgba(0,0,0,.85)}
+  .qbox .ql{font-family:"Oswald",sans-serif;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);display:block;margin-bottom:8px}
+  .qbox ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .qbox li{padding-left:16px;position:relative;line-height:1.5}
+  .qbox li::before{content:"·";position:absolute;left:4px;color:var(--ink);font-weight:900}
+  .qbox li b{color:var(--ink)}
+  .qbox .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:1.5px solid var(--blue)}
+  .qbox .stale{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.04em;color:var(--ink-dim);margin-top:10px;border-top:1.5px dashed var(--line);padding-top:8px}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .vn{color:#1f9c30} .board li.down .vn{color:var(--red)}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:720px;margin:0 auto 12px;line-height:1.9;text-align:left}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .legend a{color:var(--yellow);text-decoration:none;border-bottom:1px solid var(--yellow)}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#ammo">今日彈藥</a><a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#log">Evidence Log</a>
+      </div>
+      <div class="nav-date">06 · 13 · SAT</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar · 趨勢判斷版</span>
+        <span class="dateflag">2026 / 06 / 13 · 即時數字暫缺（本機 heat-radar 今日未跑，事實層沿用 06/12 官方快照）· 彈藥層 WebSearch 補敘事 · 已過 Evidence Gate</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 趨勢判斷版（即時數字暫缺）</div>
+      <div class="tagline">今天沒有即時榜，但<b>大平台的方向</b>講得很清楚 — text-to-game 不再是新創專利</div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>今天的話題王：The Sandbox 上線「文字生成遊戲」引擎 The Sandbox Studio（6/9，已開原文驗證）。</b>打字描述你要的遊戲，引擎直接<span class="hl">在瀏覽器生成可玩、可連線多人遊戲，免下載免安裝</span>，未來接 Telegram / Steam 發佈。CEO Robby Yung 一句話劃線：「<b>AI 工具生成的是程式碼，The Sandbox Studio 生成的是遊戲——玩家看得出差別。</b>」</p>
+        <p><b>為什麼對 GameGen 重要：</b>這條線連起來看——4 月 Roblox 把 agentic AI 發給 1,400 萬創作者、5 月 Astrocade 拿 $56M、現在連 The Sandbox 都喊「生成遊戲不是生成程式碼」。<b>「文字→可玩」這個品類已經被大平台正式佔住</b>，光靠「AI 降門檻」不再是差異化。GameGen 守得住的差異點，是 <span class="hl">速度（今天的梗今天能玩）、社交分享格式、C 側網紅/迷因社群、繁中市場原生</span>——不是再做一個更強的引擎。</p>
+        <p><b>同向訊號：</b>Roblox 6/8 上線的 DevEx 改版把 18+ 美國驗證玩家的創作者分潤拉高 42%（來源為非官方彙整站，數字未經官方頁證實）；TikTok Effect House 開了「Meme Game」挑戰檔期（6/3–24）——平台端正在把「玩梗」直接做成「玩遊戲」的產品面。</p>
+        <div class="pull">▸ 可立即落地：CJ 線首選 <b>The Sandbox「生成遊戲 ≠ 生成程式碼」</b>（競品＋產品 thesis，CEO 原話現成可引），備選 Roblox DevEx 創作者經濟往高 ARPU 傾斜；小編線發 <b>「連 TikTok 都在把玩梗做成玩遊戲」</b>平台觀察＋你今天能做的 playable-meme demo。⚠️ 今日無 🆕（48h 內無查得實的新事件）；本機 radar 今天沒跑，請查 <b>_heat_radar.log</b>。</div>
+      </div>
+
+      <!-- 📰 今日彈藥（Layer A 彈藥層 = 報告主體） -->
+      <div class="toplist" id="ammo">
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">🎯 CJ · LinkedIn 線</span></div>
+
+          <div class="pick gold">
+            <div class="pk-h"><span class="num">1</span>The Sandbox 上線文字生成遊戲引擎：「生成的是遊戲，不是程式碼」　<span style="font-size:11.5px;font-weight:800;color:#e08700">🔄 6/9（已開原文驗證·4 天前，非今日新）</span></div>
+            <div class="pk-why"><b>事實：</b>The Sandbox Studio 於 <b>6/9</b> 上線，打字描述 → 瀏覽器內生成可玩連線多人遊戲、免安裝，未來接 Telegram / Steam；官方稱 400+ 工作室、上千款遊戲參與訓練其模板；CEO Robby Yung：「AI tools generate code. The Sandbox Studio generates games.」<a href="https://cryptobriefing.com/sandbox-ai-game-engine-studio-launch/" target="_blank">Crypto Briefing ↗</a>　<b>角度（本題專屬）：</b>「文字→可玩」已是大平台標配，差異化不再是引擎強弱，而是<b>從哪個入口進、誰先把今天的趨勢變成可玩</b>——GameGen 的入口是 C 側社交 + 繁中 trend，不是元宇宙地產。　<b>去賭場化 🟡</b>（來源為加密媒體、含 SAND token；發文只引「生成遊戲 vs 程式碼」這條產品論述，<u>不要</u>提 token / 代幣）　<b>angle：競品</b></div>
+            <div class="pk-hook"><span class="lbl">鉤子</span>　"Another platform just shipped text-to-playable-game. Even they drew the line: 'AI generates code — we generate games.' The engine isn't the moat anymore. The entry point is: who turns today's trend into something playable first?"<br><span style="font-size:12px;color:var(--ink-soft)">中譯：又一個平台推出「打字就能玩的遊戲」。連他們都劃了線：AI 生成程式碼，我們生成遊戲。引擎已經不是護城河了，入口才是——誰先把今天的趨勢變成能玩的東西。</span></div>
+            <div class="pk-do"><span class="dl">今天可以怎麼用</span>CJ LinkedIn 發一則「text-to-game 已是紅海，下一個戰場是入口與速度」的 founder thesis 短文，引 Robby Yung 原話當對照，收在 GameGen 的 C 側 / trend-native 差異化。</div>
+          </div>
+
+          <div class="pick">
+            <div class="pk-h"><span class="num">2</span>Roblox DevEx 改版：18+ 美國驗證玩家分潤 +42%　<span style="font-size:11.5px;font-weight:800;color:#e08700">🔄 6/8 上線（數字未經官方證實）</span></div>
+            <div class="pk-why"><b>事實：</b>據 RBLX News（<b>非官方彙整站</b>）6/2 報導，Roblox 強化版 DevEx 於 <b>6/8</b> 上線，對「美國 18+ 已驗證玩家」消費給創作者 <b>+42%</b> 分潤、條件須全用 R15 avatar；同步推 pre-game「play button ads」<a href="https://rblx.news/daily/roblox-news-06-02-2026-1129" target="_blank">RBLX News ↗</a>　⚠️ 42% 數字僅此一非官方來源，未在 Roblox 官方頁查得，引用須標「未完全證實」　<b>角度（本題專屬）：</b>平台把錢往「高 ARPU 成人＋高擬真」傾斜——這是 UGC 創作者經濟成熟期的訊號，也提醒 GameGen 的早期變現別只想「人多」，要想「誰付得起 + 在哪個分潤結構下」。　<b>去賭場化 ✅</b>　<b>angle：變現</b></div>
+            <div class="pk-hook"><span class="lbl">鉤子</span>　"Platforms are quietly re-pricing the creator economy — paying more for verified adult, high-fidelity content. For new creator tools, the lesson isn't 'get more users,' it's 'whose spend are you actually built around?'"<br><span style="font-size:12px;color:var(--ink-soft)">中譯：平台正悄悄重新定價創作者經濟——為「已驗證成人、高擬真內容」付更多。對新創作工具，重點不是衝人數，是你到底圍著誰的消費在做。</span></div>
+            <div class="pk-do"><span class="dl">今天可以怎麼用</span>CJ 線備稿（非首選）：一則「creator economy 正在分層」觀察，引 Roblox DevEx 改版當例（標來源為非官方、數字待證），收斂到「早期創作者工具該想清楚變現對象」。或留作下次 economy 主題輪替時用。</div>
+          </div>
+        </div>
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">📣 小編 · X 線</span></div>
+
+          <div class="pick">
+            <div class="pk-h"><span class="num">1</span>連 TikTok 都在把「玩梗」做成「玩遊戲」：Effect House 開 Meme Game 挑戰檔期　<span style="font-size:11.5px;font-weight:800;color:#e08700">🔄 6/3–24 檔期進行中（具體迷因未完全證實）</span></div>
+            <div class="pk-why"><b>事實：</b>TikTok Effect House 有「Game Effect Challenge」，並有 Meme Game 子挑戰檔期 <b>6/3–6/24</b>（WebSearch 摘要層，未開到 effecthouse 原頁逐字驗）<a href="https://effecthouse.tiktok.com/latest/game-effect-challenge" target="_blank">TikTok Effect House ↗</a>　⚠️ 報導點到的具體迷因（67 / tung-tung-tung 等）多為 2025 舊梗，<b>不得當「今天的梗」</b>　<b>角度（本題專屬）：</b>最大的發現流平台自己在把「玩梗」產品化成「可玩格式」——對 GameGen 既是驗證（社交＋可玩是對的方向）也是提醒（要比平台原生工具更快、更 trend-native）。　<b>去賭場化 ✅</b>　<b>angle：競品/平台</b></div>
+            <div class="pk-hook"><span class="lbl">勾子</span>　"Even TikTok is turning memes into playable games now. The question isn't whether playable memes work — it's who ships today's meme as a game before the trend cools. Drop a meme, we'll tell you what game it becomes."<br><span style="font-size:12px;color:var(--ink-soft)">中譯：連 TikTok 都在把迷因變成可玩遊戲了。問題不是「玩梗遊戲行不行」，是誰能趕在趨勢退燒前，把今天的梗做成遊戲。丟一個梗，我們告訴你它會變成什麼遊戲。</span></div>
+            <div class="pk-do"><span class="dl">今天可以怎麼用</span>@PlayGameGen 發一則「平台都在做 playable meme，差別是速度」的觀察貼，結尾掛 create-loop 互動（請追蹤者丟梗）；可附一個今天就能做的 playable-meme demo gif（泛化角色、零 IP 風險）當證明。</div>
+          </div>
+        </div>
+
+        <div style="font-size:12px;color:var(--ink-soft);background:var(--paper2);border:2px dashed var(--ink);border-radius:6px;padding:9px 14px">🔒 去重雙閘已跑（used_topics.json）：題材去重 ✓（Sandbox / DevEx / TikTok-meme-challenge 三題昨日未用）· 結論去重 ✓（避開 06/12 已用的「今天的梗今天玩」「速度=護城河」conclusion_key，本期 angle＝競品 / 變現 / 平台）· <b>今日彈藥 3 題（誠實少，未湊數）</b>：本機 radar 今日未跑、48h 內無查得實的新事件，全期無 🆕，最強為 The Sandbox（CEO 原話現成、品類級訊號）。</div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線</span></div>
+          <ol>
+            <li><span class="nm">Counter-Strike 2</span><span class="vn">538,158</span></li>
+            <li class="hot"><span class="nm">Path of Exile 2</span><span class="vn">161,739</span></li>
+            <li><span class="nm">PUBG: Battlegrounds</span><span class="vn">112,727</span></li>
+            <li><span class="nm">Rust</span><span class="vn">81,422</span></li>
+            <li class="hot"><span class="nm">Rainbow Six Siege</span><span class="vn">78,700</span></li>
+            <li><span class="nm">Apex Legends</span><span class="vn">61,088</span></li>
+          </ol>
+          <div class="bf">Steam 官方 GetNumberOfCurrentPlayers · <b>06/12 10:02 TPE 快照</b>（本機 heat-radar 今日未跑，非今日 live）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">同時在線</span></div>
+          <ol>
+            <li><span class="nm">Brookhaven RP</span><span class="vn">665K</span></li>
+            <li><span class="nm">Grow a Garden</span><span class="vn">~400K</span></li>
+            <li class="hot"><span class="nm">Steal a Brainrot</span><span class="vn">~350K</span></li>
+            <li><span class="nm">Blox Fruits</span><span class="vn">~230K</span></li>
+            <li class="hot"><span class="nm">99 Nights in the Forest</span><span class="vn">~180K</span></li>
+            <li><span class="nm">Dress to Impress</span><span class="vn">78K</span></li>
+          </ol>
+          <div class="bf">Roblox 官方榜 · <b>沿用 06/12 快照</b>（今日未重抓·估計值）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-twch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">平均同時觀看</span></div>
+          <ol>
+            <li><span class="nm">Just Chatting</span><span class="vn">299K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">122K</span></li>
+            <li class="hot"><span class="nm">Counter-Strike</span><span class="vn">103K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">73K</span></li>
+            <li class="hot"><span class="nm">VALORANT</span><span class="vn">64K</span></li>
+            <li class="hot"><span class="nm">Path of Exile 2</span><span class="vn">衝榜</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · <b>沿用 06/12 快照</b>（今日未重抓）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+      <div class="qbox reveal">
+        <span class="ql">Steam 真·日比變化率（06/12 官方 API，≥15% 旗標）· 今日未重抓，無新數字</span>
+        <ul>
+          <li><b>Rainbow Six Siege ＋14.0%</b>（78,700 ↑ vs 69,011）— 06/12 唯一上行旗標標的</li>
+          <li>其餘前段全回落：CS2 −51.8%、PUBG −75.2%、Rust −42.9%、PoE2 −35.4%（多為週期/活動退潮，非趨勢訊號）</li>
+          <li>排名跳動 / 新進榜：<b>baseline 未就緒，無 rank_jumps / new_entrants 資料</b>（本機 velocity 累積庫今日未更新）</li>
+        </ul>
+        <div class="stale">無新變化 — 沿用 06/12（heat_latest.json steam_velocity）。今日本機 radar 未跑，暫無 06/13 日比。</div>
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="qbox reveal">
+        <span class="ql">itch.io / Steam 新品 · 小體量早期款（06/12 radar 清單，今日未重抓）</span>
+        <ul class="src">
+          <li>Reactor Panic — 個人首作、Godot 純程式無美術素材街機（HN 串） <a href="https://forcesensitivesaiyan.itch.io/reactor-panic" target="_blank">itch.io ↗</a></li>
+          <li>Starseeker: Astroneer Expeditions — 今日進 early access（RPS 06/12） <a href="https://www.rockpapershotgun.com/starseeker-astroneer-expeditions-blasts-off-into-early-access-today" target="_blank">RPS ↗</a></li>
+        </ul>
+        <div class="stale">無新抓 — 沿用 06/12。itch.io HTML5 / meme / viral tag 今日未重掃。</div>
+      </div>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+      <div class="qbox reveal">
+        <span class="ql">HN / Reddit / 產業文 · 事實清單（06/12 radar，官方 API 直抓的分數/排序免驗閘）</span>
+        <ul class="src">
+          <li>HN 183 分／174 留言：「AI 核戰模擬」遊戲 <a href="https://www.kennethpayne.uk/p/shall-we-play-a-game" target="_blank">來源 ↗</a></li>
+          <li>HN 157 分：遊戲主機上的網頁瀏覽器 <a href="https://vale.rocks/posts/game-console-browsers" target="_blank">來源 ↗</a></li>
+          <li>Reddit r/gaming 當日 top：Xbox CEO 稱硬體零件漲價 500%+ <a href="https://www.reddit.com/r/gaming/comments/1u2vjsw/" target="_blank">來源 ↗</a></li>
+          <li>Reddit r/gaming：任天堂對 Palworld 的訴訟「正在瓦解」 <a href="https://www.reddit.com/r/gaming/comments/1u3ccsj/" target="_blank">來源 ↗</a></li>
+          <li>Reddit r/gaming：微軟 Xbox CSO Matthew Ball 稱遊戲內廣告可助「保持低價」 <a href="https://www.reddit.com/r/gaming/comments/1u39mhl/" target="_blank">來源 ↗</a></li>
+          <li>產業文：Pokemon Go 掃描資料疑用於軍用無人機訓練（Game Developer 6/11） <a href="https://www.gamedeveloper.com/business/report-pokemon-go-area-scans-sold-to-military-drone-technology-company" target="_blank">來源 ↗</a></li>
+        </ul>
+        <div class="stale">沿用 06/12 radar 清單（HN/Reddit 分數為當時官方 API 直抓）。今日未重抓，無 06/13 新串。</div>
+      </div>
+    </section>
+
+    <!-- 迷因 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+      <div class="qbox reveal">
+        <span class="ql">當日迷因 / 迷因遊戲清單（14 天新鮮度 guard 生效）</span>
+        <ul class="src">
+          <li><b>平台動態（見彈藥 X-1）：</b>TikTok Effect House「Meme Game」挑戰檔期 6/3–24 進行中 <a href="https://effecthouse.tiktok.com/latest/game-effect-challenge" target="_blank">來源 ↗</a></li>
+          <li>♨️ 延燒中（非新梗）：67 / tung-tung-tung-sahur / googoogaga 等為 2025 舊梗，<b>不得當「今天的梗」</b></li>
+        </ul>
+        <div class="stale">無新抓 — Know Your Meme「Popular right now」/ itch.io 迷因實例今日未重掃。⛔ 未用 napoleoncat 類常青 SEO 整理頁。</div>
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="qbox reveal">
+        <span class="ql">unityroom 今週ピックアップ / 1週間ゲームジャム 得獎</span>
+        <ul>
+          <li>無變化，沿用 06/12（今日未重抓 unityroom）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="qbox reveal">
+        <span class="ql">繁中 Threads 圈當日熱話 + 題材變體</span>
+        <ul>
+          <li>無變化，沿用 06/12（今日未重抓 Threads）。</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend" id="log"><b>🔒 彈藥 Evidence Log（驗證閘 07:10 TPE 跑過）</b><br>
+      ① <b>The Sandbox Studio</b>：Crypto Briefing 親開原文 — 驗「6/9 上線」「text→瀏覽器內可玩連線多人遊戲、免安裝」「CEO Robby Yung 原話：AI tools generate code, The Sandbox Studio generates games」「400+ 工作室參與」✓　pub_date <b>2026-06-09</b> → 機械判定 🔄（4 天前，<u>非</u> 🆕）　<a href="https://cryptobriefing.com/sandbox-ai-game-engine-studio-launch/" target="_blank">URL ↗</a><br>
+      ② <b>Roblox DevEx +42%</b>：RBLX News 親開原文 — 驗「+42% for verified US 18+」「6/8 上線」「須全用 R15」✓　⚠️ <b>來源為非官方彙整站（rblx.news），42% 未在 Roblox 官方頁查得</b> → 標「數字未能完全證實」，pub 6/2、program 6/8 → 🔄、<u>非</u> 🆕　<a href="https://rblx.news/daily/roblox-news-06-02-2026-1129" target="_blank">URL ↗</a><br>
+      ③ <b>TikTok Meme Game 挑戰</b>：僅 WebSearch 摘要層、未開到 effecthouse 原頁逐字驗 → 結構事實（有 Game Effect Challenge、Meme Game 子檔期 6/3–24）標「未能完全證實」；具體迷因（67 / tung-tung）為舊梗，已剔除不當新梗　<a href="https://effecthouse.tiktok.com/latest/game-effect-challenge" target="_blank">URL ↗</a><br>
+      ④ <b>Layer B 事實層</b>：Steam 在線/暴衝為 heat_latest.json <b>06/12</b> 官方 API 真數字（豁免本閘），但<b>本機 heat-radar 今日未跑 → 全標「沿用 06/12 / 估計」，未冒充 06/13 live</b>；Roblox/Twitch/itch/unityroom/Threads 今日未重抓。<br>
+      <span style="opacity:.85">自檢：彈藥 3 題均過入場券＋驗證閘 · Layer B 七箱標題全在（多標「沿用 06/12」）· Layer B 零意見句 · 全文 0 賭場語言 · The Sandbox 來源為加密媒體已標 🟡（發文去 token 化）· 全文時刻取自系統時間/來源頁。</span>
+    </div>
+    <div class="colophon">GameGen Daily · Trend-to-Game Radar｜趨勢判斷版（即時數字暫缺）｜本機 heat-radar 今日未觸發，請查 _heat_radar.log｜結論先行 · 不編造數字 · 不挪用真人/大作 IP</div>
+  </footer>
+
+  <script>
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
