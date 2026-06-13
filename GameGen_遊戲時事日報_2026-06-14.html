@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/06/14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 📰 今日彈藥 頭版 */
+  .toplist{max-width:760px;margin:22px 0 0;display:grid;gap:14px}
+  .topbox{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 22px;box-shadow:6px 6px 0 rgba(0,0,0,.85);color:var(--ink)}
+  .topbox .th{display:flex;align-items:center;gap:10px;margin-bottom:13px}
+  .topbox .th .ttl{font-family:"Anton",sans-serif;font-size:19px;letter-spacing:.02em;color:var(--ink)}
+  .topbox .th .pill{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#fff;background:var(--ink);padding:3px 10px;transform:skewX(-8deg)}
+  .topbox .th .pill>span{display:inline-block;transform:skewX(8deg)}
+  .pick{border-left:7px solid var(--lime);background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:13px 16px;margin-bottom:11px}
+  .pick:last-child{margin-bottom:0}
+  .pick.gold{border-left-color:var(--yellow)} .pick.cj{border-left-color:var(--yellow)} .pick.ed{border-left-color:var(--lime)} .pick.demo{border-left-color:var(--violet)}
+  .pick .pk-h{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);margin-bottom:6px}
+  .pick .pk-h .num{font-family:"Anton",sans-serif;color:var(--red);margin-right:8px}
+  .pick .pk-why{font-size:13px;color:var(--ink-soft);margin-bottom:7px}
+  .pick .pk-why b{color:var(--ink)}
+  .pick .pk-hook{font-size:13px;color:var(--ink);background:var(--yellow-s);border:1.5px solid var(--ink);border-radius:5px;padding:7px 11px}
+  .pick .pk-hook .lbl{font-family:"Oswald",sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#1f9c30}
+  .fresh{display:inline-block;font-family:"Oswald",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+    border:1.5px solid var(--ink);border-radius:4px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+  .fresh.new{background:var(--red);color:#fff} .fresh.upd{background:var(--yellow);color:var(--ink)} .fresh.cont{background:#e6e2d6;color:var(--ink)}
+  .deca{display:inline-block;font-family:"Oswald",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.04em;color:var(--ink);margin-left:4px}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .board .na{padding:18px 14px;font-size:12px;color:var(--ink-soft);line-height:1.6;flex:1}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{max-width:880px;margin:46px auto 0;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;
+    padding:20px 24px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft);line-height:1.7}
+  .evlog h3{font-family:"Anton",sans-serif;font-size:18px;color:var(--ink);margin-bottom:12px}
+  .evlog .row{border-top:1.5px dashed var(--line);padding:8px 0}
+  .evlog .row:first-of-type{border-top:none}
+  .evlog b{color:var(--ink)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .warn{color:#b78a00;font-weight:800}
+  .evlog a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#ammo">今日彈藥</a><a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a><a href="#log">Evidence Log</a>
+      </div>
+      <div class="nav-date">06 · 14 · SUN</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 06 / 14 · Steam 即時數字＝本機 heat-radar 真抓（07:30 TPE）· 彈藥層 WebSearch 補敘事 · 已過 Evidence Gate · 來源 16 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 即時熱榜版</div>
+      <div class="tagline">當「一句話生成可玩遊戲」成真 — <b>戰場移到入口、發現流、社群</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>AI 寫遊戲，這週正式從 demo 變成運動。</b>Anthropic 於 <span class="hl">6/9 釋出 Claude Fable 5</span>（Mythos 級模型）—— 一句 prompt 直接生成可在瀏覽器玩的 3D 遊戲；今晨 Hacker News 首頁同時出現多款「AI 一發寫出的遊戲」：<b>Shepherd's Dog（最危險 AI 模型寫的牧羊犬遊戲，138 分）、putt.day 每日一局迷你高爾夫（251 分）、Pirates 海戰（302 分）、Ask HN: Show your AI coded games [June 2026]</b>。</p>
+        <p>對 GameGen 的意義很直接：<b>當「生成一個可玩遊戲」的門檻被前沿模型壓到接近零，價值就不再在「能不能生成」，而在</b><span class="hl">誰掌握發現流、創作者社群、與進入的入口</span>。這正是 GameGen 的位置 —— C 側社交 + 繁中 trend + 分享格式，不是比模型大小。Fable 5 不是威脅，是把整個品類的需求做出來的順風。</p>
+        <div class="pull">▸ 可立即落地：① 小編 X 蹭「最危險 AI 模型寫了一個牧羊犬遊戲」話題；② Demo 抄 putt.day「每日一局、隔天換題」格式做 GameGen daily trend-game；③ CJ LinkedIn 兩篇：Fable 5（生成商品化 → 戰場是分發）＋ Dying Light 2 變 UGC 平台（遊戲終局是平台化）。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="toplist" id="ammo">
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">🎯 CJ · LinkedIn 線 Top 2</span></div>
+
+          <div class="pick cj gold">
+            <div class="pk-h"><span class="num">1</span>Anthropic Fable 5：一句 prompt = 一個可玩遊戲，前沿實驗室把「文字→遊戲」做成日常<span class="fresh upd">🔄 進展更新</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（6/9）：</b>Anthropic 釋出 Claude Fable 5（首個 generally available 的 Mythos 級模型），主打 long-horizon coding，能把一句創意描述直接生成「含 3D 渲染、可在瀏覽器玩」的完整遊戲；一名開發者用它一發（single shot）做出醞釀多年的遊戲構想 Shepherd's Dog（「a single 2,319 line index.html with zero dependencies」），登上 HN 首頁。<a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Anthropic 官方 ↗</a>　<b>角度（AIGC，本題專屬）：</b>當生成被前沿模型商品化，差異化不再是「能不能做出遊戲」，而是<b>誰先把今天的趨勢變成大家想玩、想分享的東西</b>——生成是起跑線，發現流與創作者社群才是終點線。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："When a single prompt can ship a playable game, the moat isn't generation anymore — it's distribution, discovery, and the creators who carry it."　中：「當一句話就能生出一個能玩的遊戲，護城河早就不是『生成』了——是分發、發現流，和帶著它跑的創作者。」</div>
+          </div>
+
+          <div class="pick cj">
+            <div class="pk-h"><span class="num">2</span>連單機 AAA 殭屍遊戲都在變 UGC 平台：Dying Light 2「The Breach」靠玩家共創續命<span class="fresh upd">🔄 進展更新</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（6/10）：</b>Techland 為《Dying Light 2: Stay Human》上線免費更新 Patch 1.28 +「The Breach」UGC 計畫，與 mod.io 合作把遊戲轉成「社群驅動平台」；三支柱＝Curated by Techland（每章官方審核出貨）／Powered by fans（精選創作者與開發者直接協作）／Always something new（主題世界滾動更新）。<a href="https://www.pcgamer.com/games/action/dying-light-2-is-a-platform-now-as-the-breach-update-opens-up-techlands-zombie-survival-game-even-more-to-ugc-content/" target="_blank">PC Gamer ↗</a>　<b>角度（economy/UGC，本題專屬）：</b>UGC 不再是大平台（Roblox/Fortnite）的專利——連賣斷型 AAA 都把自己改造成「玩家共創平台」來續命。<b>遊戲的終局是平台化；策展＋創作者共創＋滾動更新＝留存引擎</b>。GameGen 從第一天就生在這個結構裡。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："A single-player zombie game just turned itself into a creator platform. The lesson isn't 'add UGC' — it's that platformization is the endgame, and the studios that get there fastest win retention."　中：「一款單機殭屍遊戲把自己變成了創作者平台。重點不是『加個 UGC』，而是平台化就是終局——誰先到，誰贏留存。」</div>
+          </div>
+        </div>
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">📣 小編 · X 線 Top 3</span></div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">1</span>「最危險的 AI 模型」被拿來做了一個⋯⋯牧羊犬遊戲<span class="fresh new">🆕 今日 HN 首頁</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實：</b>HN 首頁熱文「Shepherd's Dog: A Game by the Most Dangerous AI Model」（138 分，今日），一名開發者用 Claude Fable 5 一發生成醞釀多年的牧羊犬放牧遊戲，2,319 行 index.html、零依賴、瀏覽器可玩。<a href="https://news.ycombinator.com/item?id=48513728" target="_blank">Hacker News ↗</a>　<b>create-loop 勾子：</b>「你會叫『太危險而不敢公開』的 AI 幫你做什麼遊戲？」→ 引導留言下 prompt、用 GameGen 一鍵生成。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："They said the model was too dangerous to release. So someone used it to make… a dog-herding game. What would YOU make it build?"　中：「他們說這模型危險到不該公開。結果有人拿它做了個牧羊犬遊戲。換你，你會叫它做什麼？」</div>
+          </div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">2</span>putt.day：一天一個球洞，整個遊戲就這樣 —— 每日可玩格式正在贏<span class="fresh new">🆕 今日 HN 首頁</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實：</b>HN 首頁「Show HN: Putt.day a daily mini golf game」（251 分，今日）——每天一個迷你高爾夫關卡、玩完明天換新，極簡 daily loop，跟 Wordle 同一套「每日一局＋成績可炫耀」黏著公式。<a href="https://putt.day/" target="_blank">putt.day ↗</a>　<b>create-loop 勾子：</b>對標 GameGen「今天的梗，今天就變成一天一局的小遊戲」，成績卡可截圖分享揪人比。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："One golf hole. Every day. That's the whole game — and people keep coming back. Daily beats deep."　中：「一個球洞，每天一局，這就是全部——大家卻天天回來。每日制，贏過深度。」</div>
+          </div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">3</span>有人做了一個遊戲，名字叫《沒有人會買你的遊戲》<span class="fresh new">🆕 今日 HN</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實：</b>HN 上「No-One Is Going to Buy Your Videogame」（itch.io 作品，24 分），開發者把「做遊戲沒人買」這個業界痛點直接做成一款自嘲互動小品。<a href="https://illomens.itch.io/no-one-is-going-to-buy-your-game" target="_blank">itch.io ↗</a>　<b>create-loop 勾子：</b>「痛點即素材」——把任何吐槽 / 梗變成 30 秒可玩自嘲品，是 trend-to-game 最低門檻的入口。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："Someone made a game called 'No-One Is Going to Buy Your Videogame.' The most relatable thing in game dev is now… playable."　中：「有人做了個遊戲叫《沒人會買你的遊戲》。遊戲圈最有共鳴的痛，現在變成可以玩的了。」</div>
+          </div>
+        </div>
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">🕹️ Demo 線 Top 1</span></div>
+          <div class="pick demo">
+            <div class="pk-h"><span class="num">1</span>GameGen Daily：每日梗 → 30 秒一局可玩，隔天換題<span class="fresh new">🆕 今日訊號</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實依據：</b>putt.day（HN 251 分）證明「每日一局＋成績可炫耀」的 Wordle 式黏著在遊戲上一樣成立；繁中圈 @meta.ai 人生模擬（延燒中）證明「一句話開局＋可分享結果」在中文社群有需求。<b>把兩者合起來＝GameGen 的甜蜜區</b>：抓今天最強的梗，做成一天一局、隔天自動換題的極簡單局遊戲，玩完吐一張成績卡（可截圖、可揪人）。　<b>角度：</b>用「每日制」把 Trend Response Time、Share Rate、Repeat Creation 三個 KPI 一次串起來。</div>
+            <div class="pk-hook"><span class="lbl">今天可以怎麼用</span>　選 1 個今日彈藥題（建議「最危險 AI 寫遊戲」），用最簡 loop（反應/猜題/點擊）做泛化版，掛分享連結 + 成績卡，明天換題 —— 內部測 Create→Share 漏斗。</div>
+          </div>
+          <div style="font-size:12px;color:var(--ink-soft);background:var(--paper2);border:2px dashed var(--ink);border-radius:6px;padding:9px 14px;margin-top:11px">🔒 去重雙閘已跑（used_topics.json）：題材去重 ✓（Fable 5 / Dying Light Breach / Shepherd's Dog / putt.day 昨日未用）· 結論去重 ✓（避開近 7 天已燒的「速度=護城河」「泛化角色避 IP」「短回合可拍 loop」「可玩 proof>宣稱」conclusion_key，本期 angle＝生成商品化→分發 / 平台化終局）· Evidence Gate 全過（見頁尾 Log）。</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 真數字</span></div>
+          <ol>
+            <li><span class="nm">Counter-Strike 2</span><span class="vn">1.30M</span></li>
+            <li class="hot"><span class="nm">PUBG: Battlegrounds</span><span class="vn">495K</span></li>
+            <li><span class="nm">Path of Exile 2</span><span class="vn">267K</span></li>
+            <li class="hot"><span class="nm">Apex Legends</span><span class="vn">169K</span></li>
+            <li><span class="nm">Rust</span><span class="vn">151K</span></li>
+            <li><span class="nm">Destiny 2</span><span class="vn">115K</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · heat-radar 真抓 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">同時在線</span></div>
+          <div class="na">⚠️ 今日為沙箱排程、無瀏覽器深掃，Roblox 即時 CCU 數字暫缺（需本機 "hi" 瀏覽器抓 roblox.com/charts + RTrack）。<b>目前無法完全證實當日數字</b>。近期結構延續：Brookhaven / Adopt Me 常駐，黑馬集中在「一句話 loop」（接字 / 猜圖 / 放置 / 速度點擊）。</div>
+          <div class="bf">RTrack / Roblox Charts · 今日未深掃 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-twch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近7天平均</span></div>
+          <div class="na">⚠️ 今日為沙箱排程、無瀏覽器深掃，Twitch 即時觀看數暫缺（需本機 "hi" 瀏覽器抓 twitchtracker.com/games）。<b>目前無法完全證實當日數字</b>。Steam 真數字見左欄；暴衝訊號以 Steam velocity 真比為準（見 #02）。</div>
+          <div class="bf">TwitchTracker · 今日未深掃 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Steam 週末暴衝（真·日比）：PUBG +405% / Apex +195% / Stardew +132% / War Thunder +105%</h3>
+        <div class="sum">以本機 heat-radar 的 Steam 官方 CCU「今日 vs 昨日」真比排序：PUBG +404.6%（9.8 萬→49.5 萬）、Apex +194.5%、Wallpaper Engine +126.1%、Stardew Valley +132.4%、War Thunder +105.3%、GTA V +70.1%、CS2 +69.2%、Warframe +50.8%。<b>誠實標註：這是「平日→週末」的典型回升</b>（今天是週日清晨），多為週末上線潮，不一定有新聞事件驅動。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>週末暴衝對 trend-to-game 的用法不是「追這些大作」，而是<b>抓「週末是玩遊戲的高峰窗口」這個節奏</b>——daily / 社交小遊戲最好卡在週五晚到週日上架測 Share。真正該追的新訊號在 #03、#04（AI 寫遊戲那條），不是週末回升的常駐大作。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>IP 中</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API（heat-radar） · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>黑馬</span></span>今日無黑馬新進榜：Steam movers 基準已就緒，rank_jumps / new_entrants 皆空</h3>
+        <div class="sum">本機 radar 的 steam_movers 顯示 baseline_ready = true，但今日<b>無排名跳動、無新進榜</b>（rank_jumps 與 new_entrants 皆空）。Steam 新發行榜（New &amp; Trending）冒出 Crown Chained、BrightGlade Tales、Tollway Tycoon、Super Dark Deception Ch.2 等小體量新款，但尚無暴量訊號。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>大盤無黑馬＝今天的「正在爆」訊號不在 Steam 排行，而在<b>AI 寫遊戲的早期生態（HN 首頁）</b>——putt.day / Shepherd's Dog 這類「一發做出、瀏覽器可玩」的小款才是今天真正在動的東西。日報重心因此放在 #03 早期訊號與 #04 高討論。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM movers（heat-radar） · <a href="https://store.steampowered.com/charts/topselling" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>HN 首頁 · 小遊戲</span><span class="metric">AI / 每日 / 網頁</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Pirates 海戰（仿 Sid Meier）</span><span class="vn">302</span></li>
+            <li class="hot"><span class="nm">putt.day 每日迷你高爾夫</span><span class="vn">251</span></li>
+            <li class="hot"><span class="nm">Shepherd's Dog（AI 寫的）</span><span class="vn">138</span></li>
+            <li><span class="nm">No-One Buy Your Videogame</span><span class="vn">24</span></li>
+            <li><span class="nm">Ask HN: Show your AI games</span><span class="vn">12</span></li>
+            <li><span class="nm">Squishy &amp; Friends（AI 寫）</span><span class="vn">4</span></li>
+          </ol>
+          <div class="bf">HN Algolia 官方 API · <a href="https://news.ycombinator.com/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>itch.io 剛冒頭</span><span class="metric">html5 / 新作</span></div>
+          <ol>
+            <li><span class="nm">COBB CAN MOVE 移動解謎</span><span class="vn">新</span></li>
+            <li><span class="nm">Milki Delivery 配送 Demo</span><span class="vn">新</span></li>
+            <li><span class="nm">The Freak Circus</span><span class="vn">新</span></li>
+            <li><span class="nm">Fugue Shot（Pre-Demo）</span><span class="vn">新</span></li>
+            <li><span class="nm">Carnivore!</span><span class="vn">新</span></li>
+            <li><span class="nm">Dermimi's!</span><span class="vn">新</span></li>
+          </ol>
+          <div class="bf">itch.io 新作 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今天的早期黑馬清一色「AI 一發寫出 + 每日可玩」：putt.day / Shepherd's Dog 是 loop 範本</h3>
+        <div class="sum">HN 首頁三款小遊戲指向同一個方向：① putt.day＝「每日一局＋成績可炫耀」的 Wordle 式黏著；② Shepherd's Dog / Squishy &amp; Friends＝AI 一發生成、零依賴、瀏覽器可玩；③ Pirates＝把經典機制（仿 Sid Meier's Pirates）做成輕量網頁版。itch.io 端則是大量手作小品（移動解謎、配送、馬戲團）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這直接給出今天的 <b>MVP 模板優先序</b>：「每日一局」格式（putt.day）＋「一句話生成可玩」（Fable 5 系）。GameGen 該做的不是再做一個生成器，而是把這兩條合起來——<b>每天用 AI 生一個今天的梗小遊戲，掛成績卡與分享連結</b>，把 Trend Response Time 與 Repeat Creation 一起測。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HACKER NEWS / ITCH.IO · <a href="https://putt.day/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>對標</span></span>Anthropic 釋出 Claude Fable 5 / Mythos 5：一句 prompt 生成可玩 3D 瀏覽器遊戲</h3>
+        <div class="sum">6/9 釋出，Fable 5 為首個 generally available 的 Mythos 級模型，主打 long-horizon coding（複雜多步軟體工程），把「幾個字描述的遊戲構想」直接建成含 3D 渲染、瀏覽器可玩的成品。同步釋出 Mythos 5（推理）。圍繞它的「AI freakout」與 jailbreak 爭議也在科技媒體延燒。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是今天對 GameGen 最重要的競品 / 順風訊號：<b>「文字→可玩遊戲」的能力被前沿實驗室再往上推一級</b>。GameGen 不該比模型，要比「把生成包成一個有發現流、有社群、有分享格式的產品」——生成商品化後，戰場在分發與入口。CJ LinkedIn 彈藥 1 即此題。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ANTHROPIC / IBM · <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>對標</span></span>大廠對標：Dying Light 2「The Breach」把賣斷 AAA 改造成 UGC 共創平台（mod.io）</h3>
+        <div class="sum">6/10 上線的免費更新把《Dying Light 2》轉成社群驅動平台：官方策展的 featured maps ＋ 精選 mods，與 mod.io 合作，三支柱＝官方策展 / 玩家共創 / 滾動主題更新。代表 UGC 平台化不再只是 Roblox、Fortnite UEFN 的玩法，連單機 AAA 都在走。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>UGC 平台化是整個產業的終局，GameGen 生在這個結構裡有先天優勢。對外（CJ）可講「遊戲的終局是平台化，誰最快到、誰贏留存」（彈藥 CJ 2）。對內提醒：<b>策展＋創作者共創＋滾動更新</b>這三支柱，正好對應 GameGen 的 Create / Remix / Repeat Creation 漏斗。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/games/action/dying-light-2-is-a-platform-now-as-the-breach-update-opens-up-techlands-zombie-survival-game-even-more-to-ugc-content/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>討論</span></span>產業辯論延燒：「生成式 AI 在毒化這口井？」vs.「AI-generated pitch 最糟」</h3>
+        <div class="sum">Game Developer 的 Patch Notes 直接把「is generative AI poisoning the well?」當主題；RPS 一篇集合 Bloober、Jagex、11 bit 等開發者談「沒有比 AI 生成的 pitch 更糟的東西」、原型募資的痛點。產業對 AI 生成內容呈現「能力大躍進」與「信任反彈」並存。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條是 GameGen 對外溝通要小心也要善用的張力：<b>市場一邊驚嘆 Fable 5 的生成力、一邊對「AI 生成 pitch / 內容」反感</b>。GameGen 的定位答案不是「我們生成更多」，而是「我們讓玩家＝創作者，做出他們想分享的東西」——把 AI 退到背景、把人和梗放前面。<b>⚠️ RPS 該文今日未能開原文逐字驗，引用時標「目前無法完全證實」。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>待證實</span></span></div></div>
+          </div>
+          <div class="src">GAME DEVELOPER / RPS · <a href="https://www.gamedeveloper.com/business/playstack-sold-xbox-announces-business-reset-and-is-generative-ai-poisoning-the-well-patch-notes-55" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>社群</span></span>Reddit 高討論：Palworld 訴訟任天堂幾乎沒賺到 / Xbox 新 CEO 催快出 Fallout、ES / Gears E-Day 傳 $4 億預算</h3>
+        <div class="sum">r/Games、r/gaming 當日高位串：Palworld 訴訟接近落幕、Nintendo 報導幾乎沒拿到賠償；Xbox 新領導催 Bethesda 加快 Fallout / Elder Scrolls；Gears of War: E-Day 傳 $400M 預算（也登 Google 美區 Trends）；Spyro 新作「忠實粉絲喊出來的」。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>大作敘事（AAA 燒錢、IP 訴訟、續作壓力）跟 GameGen 是反差素材——<b>當 Gears 一款要燒 $4 億、Bethesda 8 年憋不出一款</b>，GameGen 的對照故事是「今天的梗、今天就能玩、人人能做」。可當 X 反差貼文角度，但避免直接點名 IP 嘲諷。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT r/Games · <a href="https://www.reddit.com/r/Games/comments/1u4pk5e/palworld_lawsuit_nears_end_with_nintendo/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>本週社群梗就是「AI 寫遊戲」本身：最危險的模型被拿去做牧羊犬遊戲</h3>
+        <div class="sum">今天最具傳播力的「梗」不是某個短影音 meme，而是 AI 寫遊戲這件事本身被玩成梗：「太危險而不敢公開的模型」→ 有人拿它做牧羊犬遊戲（Shepherd's Dog）、做 Squishy &amp; Friends，HN 首頁「Ask HN: Show your AI coded games」變成大型曬作品串。高喚醒（驚奇＋好笑＋反差）兼具。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>本日小編 X 首選</b>（彈藥 X-1）。這個梗天生對 GameGen 有利——它把「AI 一句話做遊戲」normalize 成大眾話題。蹭法：用 GameGen 接「你會叫危險 AI 做什麼遊戲」的留言互動，把話題流量導進 create-loop。零 IP 風險（不挪用任何角色）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HACKER NEWS · <a href="https://koenvangilst.nl/lab/claude-fable-shepherds-dog" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因遊戲</span></span>《No-One Is Going to Buy Your Videogame》：把開發者痛點直接做成自嘲可玩品</h3>
+        <div class="sum">itch.io 作品登上 HN（24 分），開發者把「做了遊戲沒人買」的圈內痛點做成一款自嘲互動小品——梗即玩法、痛點即素材。同類還有 Reddit r/gaming 高位的「I just wanted numbers to go up」（吐槽放置 / 數字成長的共鳴梗）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是「梗→遊戲」最低門檻的教科書：<b>任何一句共鳴吐槽都能變成 30 秒可玩品</b>。GameGen 可做泛化模板「把你的吐槽變成一個小遊戲」，社群素材無限、零 IP。配「數字往上爬」可做放置 / incremental 的自嘲版。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO / REDDIT · <a href="https://illomens.itch.io/no-one-is-going-to-buy-your-game" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ai reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>新鮮度 guard</b>：今日為沙箱排程、未深掃 Know Your Meme「Popular right now」與 TikTok Creative Center（需本機 "hi" 瀏覽器）。短影音類「今天的新梗」<b>目前無法完全證實</b>，故本箱以 HN 可驗的「AI 寫遊戲」話題梗為主，未拿舊 meme（chill guy / Bombardiro 等）湊數。繁中梗見 #07。
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>今日可借用機制</span><span class="metric">HN / itch.io 真款</span></div>
+          <ol>
+            <li class="hot"><span class="nm">putt.day — 每日一關</span><span class="vn">daily loop</span></li>
+            <li><span class="nm">Pirates — 仿 Sid Meier 海戰</span><span class="vn">輕策略</span></li>
+            <li><span class="nm">COBB CAN MOVE</span><span class="vn">移動解謎</span></li>
+            <li><span class="nm">Milki Delivery</span><span class="vn">配送/路徑</span></li>
+            <li><span class="nm">數字往上爬（idle 梗）</span><span class="vn">放置</span></li>
+          </ol>
+          <div class="bf">HN / itch.io · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>機制金礦今天在 HN / itch.io：「每日一關」是可直接抄的黏著結構；IP 二創地雷照舊</h3>
+        <div class="sum">今日為沙箱排程、未深掃 unityroom（需本機）。改從 HN / itch.io 取機制靈感：putt.day 的「每日一關＋成績」是現成可抄的黏著結構；Pirates 把經典戰棋濃縮成輕網頁版；COBB CAN MOVE（移動解謎）、Milki Delivery（路徑配送）都是單一機制小品。<b>地雷提醒</b>：itch.io 仍有 IP 二創（如 Danganronpa-inspired「Death Loop」），參考機制可、別照搬角色 / 世界觀。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>機制本身不受版權保護</b>——抄 loop、換泛化皮即可。今天最值得內化的不是某個玩法，是 putt.day 的「<b>每日制黏著</b>」結構：把任何一句話 loop（接字 / 猜題 / 點擊）包成「一天一局、成績可炫耀、隔天換題」，就同時拿到 Repeat Creation 與 Share。unityroom 待本機補抓後回填。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HN / ITCH.IO · <a href="https://putt.day/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>延燒</span></span>@meta.ai 人生/世界模擬遊戲 持續延燒：一句話開局、AI 留言裡跑回合<span class="fresh cont">♨️ 延燒中（非新梗）</span></h3>
+        <div class="sum">繁中圈在貼文 tag @meta.ai 下 prompt（三國 / 武俠 / 無限恐怖 / 捕捉 RPG），AI 在留言一回合一回合跑（事件→選項→更新數值）的玩法持續流通；玩家互相分享「設定串 / prompt 模板」。<b>今日為沙箱排程、未深掃 Threads（需本機 "hi" 瀏覽器），此為近期延燒題材、非今日新爆，當日聲量目前無法完全證實。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>論點仍成立：<b>一句話 → AI 生成 → 社群留言原生可玩、零安裝</b>，Meta AI 已把繁中市場做出來。GameGen 的差異化機會＝做「比純文字更好的版本」：可分享連結、結局 / 數值卡（可截圖）、可 remix 換題材、排行榜。題材抓三國 / 武俠（繁中本命）優先。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>對手免費</span></span></div></div>
+          </div>
+          <div class="src">THREADS（近期延燒） · <a href="https://www.threads.com/search?q=meta.ai%20%E6%A8%A1%E6%93%AC%E9%81%8A%E6%88%B2" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>今日無瀏覽器深掃</b>：本箱當日繁中新熱話需本機 "hi" 瀏覽器抓 Threads，沙箱排程未跑，<b>目前無法完全證實當日新題</b>。已標延燒題材、未當新梗。本機深掃恢復後回填。
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>每日梗一局（putt.day 啟發）</td><td><span class="tmpl">daily 極簡單局 + 成績卡</span></td><td>成績可截圖、揪人比、隔天換題</td><td class="rk-low">低</td><td>本日 Demo 首選，串 Repeat Creation</td></tr>
+          <tr><td>最危險 AI 寫遊戲（Shepherd's Dog）</td><td><span class="tmpl">AI 生成搞笑/反差小遊戲</span></td><td>生成過程＋成品都可拍</td><td class="rk-low">低</td><td>蹭 HN 話題，導留言 create-loop</td></tr>
+          <tr><td>痛點即玩法（No-One Buy 啟發）</td><td><span class="tmpl">把吐槽變 30 秒小遊戲</span></td><td>共鳴自嘲、極易轉發</td><td class="rk-low">低</td><td>社群素材無限，零 IP</td></tr>
+          <tr><td>UGC 共創（Dying Light Breach）</td><td><span class="tmpl">主題地圖/關卡共創</span></td><td>玩家作品可 remix、可炫耀</td><td class="rk-low">低</td><td>對標創作者經濟，餵 Remix KPI</td></tr>
+          <tr><td>AI 人生模擬（@meta.ai 延燒）</td><td><span class="tmpl">一句話開局 AI 人生模擬</span></td><td>結局/數值卡截圖、可 remix</td><td class="rk-mid">中 · 對手免費</td><td>主打三國/武俠，加連結+排行差異化</td></tr>
+          <tr><td>數字往上爬（idle 梗）</td><td><span class="tmpl">放置 / incremental 自嘲版</span></td><td>比數字、嘲諷共鳴</td><td class="rk-low">低</td><td>低成本第二發測試</td></tr>
+          <tr><td>輕策略海戰（Pirates 啟發）</td><td><span class="tmpl">簡化海戰 tactics</span></td><td>對戰戰績可比</td><td class="rk-low">低</td><td>抄機制換泛化皮，不碰 IP</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>★ 生成商品化 → 戰場是分發（AIGC）</td><td>Anthropic 6/9 Fable 5：一句 prompt 生成可玩 3D 瀏覽器遊戲；開發者一發做出 2,319 行零依賴遊戲</td><td>"When a prompt ships a game, the moat is distribution, not generation."</td><td><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">↗</a></td></tr>
+          <tr><td>★ 平台化是終局（economy/UGC）</td><td>Dying Light 2「The Breach」(6/10)：賣斷 AAA 靠 mod.io 變 UGC 平台，三支柱＝策展/共創/滾動更新</td><td>"A single-player game became a creator platform. Platformization is the endgame."</td><td><a href="https://www.pcgamer.com/games/action/dying-light-2-is-a-platform-now-as-the-breach-update-opens-up-techlands-zombie-survival-game-even-more-to-ugc-content/" target="_blank">↗</a></td></tr>
+          <tr><td>能力躍進 vs 信任反彈（AIGC）</td><td>Game Developer 問「生成式 AI 在毒化這口井？」；開發者談「AI-generated pitch 最糟」（RPS，未完全證實）</td><td>"The fix for AI backlash isn't more AI — it's putting people and play in front."</td><td><a href="https://www.gamedeveloper.com/business/playstack-sold-xbox-announces-business-reset-and-is-generative-ai-poisoning-the-well-patch-notes-55" target="_blank">↗</a></td></tr>
+          <tr><td>每日制是黏著新公式（UGC/留存）</td><td>putt.day 每日一局迷你高爾夫登 HN 首頁（251 分），Wordle 式「每日＋成績可炫耀」黏著被再驗證</td><td>"Daily beats deep. The retention unlock is a fresh micro-game every day."</td><td><a href="https://putt.day/" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 今日 CJ LinkedIn 兩篇首選（彈藥頭版 🎯 CJ Top 2）：A＝Fable 5「生成商品化 → 戰場是分發」（AIGC 母題）；B＝Dying Light 2「平台化是終局」（economy/UGC 母題）。兩篇主題不同、皆已過去賭場語言濾鏡、皆附 EN+中鉤子。需附品牌卡 prompt（house-style 4:5）時，定稿後再產。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭「最危險 AI 模型寫了個牧羊犬遊戲」（彈藥 X-1）＋ 留言互動「你會叫它做什麼遊戲」</li><li>「putt.day 每天一局，整個遊戲就這樣」＝每日制黏著（彈藥 X-2）</li><li>「有人做了個《沒人會買你的遊戲》」自嘲共鳴梗（彈藥 X-3）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li><b>本日首選：</b>每日梗 daily 小遊戲（抄 putt.day 格式，掛成績卡+分享連結，隔天換題）</li><li>「把你的吐槽變成小遊戲」泛化模板（抄 No-One Buy，零 IP）</li><li>AI 三國/武俠人生模擬（@meta.ai 延燒，加分享連結+結局卡+排行）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Claude Fable 5 生態 —— AI 一發寫遊戲的後續作品與討論熱度</li><li>Dying Light 2「The Breach」UGC 成效 —— AAA 平台化案例</li><li>本機 heat-radar / 瀏覽器深掃恢復後回填 Roblox / Twitch / Threads / unityroom</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>RPS「AI pitch」一文今日未驗 → 引用標「目前無法完全證實」</li><li>大作 IP（Gears / Bethesda / Palworld）嘲諷 → 用反差敘事、不點名挪用</li><li>對外文案賭場語言（下注 / payout / big win）＋ 真人肖像</li></ul></div>
+      </div>
+    </section>
+
+    <!-- Evidence Log -->
+    <div class="evlog reveal" id="log">
+      <h3>🔒 彈藥 Evidence Gate（驗證閘 · 2026-06-14 TPE 早晨跑過）</h3>
+      <div class="row"><b>① Anthropic Claude Fable 5 / Mythos 5</b>　<a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">anthropic.com</a>　原文日期 <b>2026-06-09</b>　驗了哪句：「Mythos 級、一句 prompt 生成可玩 3D 瀏覽器遊戲、6/9 generally available」（官方頁 + IBM / cryptobriefing 佐證）　<span class="ok">✓ verified</span>　新鮮度＝🔄（5 天，非 48h，未標 🆕）</div>
+      <div class="row"><b>② Shepherd's Dog（Fable 5 一發生成遊戲）</b>　<a href="https://news.ycombinator.com/item?id=48513728" target="_blank">HN id=48513728</a> / <a href="https://koenvangilst.nl/lab/claude-fable-shepherds-dog" target="_blank">koenvangilst.nl</a>　HN 首頁 138 分（HN Algolia 官方 API · 數字層免閘）　驗了哪句：「開發者用 Fable 5 一發做出 2,319 行零依賴牧羊犬遊戲」（WebSearch 佐證原文）　<span class="ok">✓ verified</span>　新鮮度＝🆕（今日 HN 首頁討論）</div>
+      <div class="row"><b>③ putt.day 每日迷你高爾夫</b>　<a href="https://putt.day/" target="_blank">putt.day</a>（HN 首頁 251 分）　HN Algolia 官方 API · 數字層免閘　驗了哪句：「每日一局迷你高爾夫、Show HN 今日上首頁」　<span class="ok">✓ verified</span>　新鮮度＝🆕</div>
+      <div class="row"><b>④ Dying Light 2「The Breach」UGC 平台</b>　<a href="https://www.pcgamer.com/games/action/dying-light-2-is-a-platform-now-as-the-breach-update-opens-up-techlands-zombie-survival-game-even-more-to-ugc-content/" target="_blank">PC Gamer</a>（+ eneba / insider-gaming 佐證）　原文日期 <b>2026-06-10</b>　驗了哪句：「Patch 1.28 免費、mod.io 合作、三支柱（策展/共創/滾動更新）轉成社群平台」　<span class="ok">✓ verified</span>　新鮮度＝🔄（4 天）</div>
+      <div class="row"><b>⑤ No-One Is Going to Buy Your Videogame</b>　<a href="https://illomens.itch.io/no-one-is-going-to-buy-your-game" target="_blank">itch.io</a>（HN 24 分）　HN Algolia 官方 API · 數字層免閘　驗了哪句：「itch 作品、登 HN、自嘲開發者痛點」　<span class="ok">✓ verified</span>　新鮮度＝🆕</div>
+      <div class="row"><b>⑥ RPS「AI-generated pitch 最糟」</b>　rockpapershotgun.com（radar RSS）　原文日期 <b>未驗</b>（web_fetch provenance 限制 + WebSearch 未撈到原文）　<span class="warn">⚠️ partial</span>　處理：僅當背景張力引用、文中標「目前無法完全證實」、未進頭版彈藥</div>
+      <div class="row" style="margin-top:6px;opacity:.85">自檢：10 個 section 全在（即時熱榜 / 暴衝 / 早期 / 高討論 / 迷因 / 機制 / 繁中 / 趨勢題材 / CJ / 建議動作；Roblox/Twitch/Threads/unityroom 因沙箱無瀏覽器深掃，保留標題＋誠實佔位）· 彈藥頭版三段齊（CJ×2 / X×3 / Demo×1）· 全文 0 賭場語言 · Steam 即時數字＝官方 API 真抓（免閘）· 去重雙閘已跑（題材＋結論 conclusion_key）。</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　Steam 即時數字＝本機 heat-radar 直讀 Steam 官方 API（GetNumberOfCurrentPlayers）· 暴衝＝真·日比變化率 · 彈藥層敘事經 Evidence Gate（開原文 / 抽日期 / 主張比對 / 機械判新鮮度）· 分數為排序提示非數據</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 即時熱榜版 · 2026/06/14 · Steam 為當日即時擷取，Roblox/Twitch/Threads/unityroom 今日無瀏覽器深掃（已標佔位）· 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
