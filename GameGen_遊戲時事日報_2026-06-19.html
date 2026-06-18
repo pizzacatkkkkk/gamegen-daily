@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/06/19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 📰 今日彈藥 頭版 */
+  .toplist{max-width:760px;margin:22px 0 0;display:grid;gap:14px}
+  .topbox{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 22px;box-shadow:6px 6px 0 rgba(0,0,0,.85);color:var(--ink)}
+  .topbox .th{display:flex;align-items:center;gap:10px;margin-bottom:13px}
+  .topbox .th .ttl{font-family:"Anton",sans-serif;font-size:19px;letter-spacing:.02em;color:var(--ink)}
+  .topbox .th .pill{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#fff;background:var(--ink);padding:3px 10px;transform:skewX(-8deg)}
+  .topbox .th .pill>span{display:inline-block;transform:skewX(8deg)}
+  .pick{border-left:7px solid var(--lime);background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:13px 16px;margin-bottom:11px}
+  .pick:last-child{margin-bottom:0}
+  .pick.gold{border-left-color:var(--yellow)} .pick.cj{border-left-color:var(--yellow)} .pick.ed{border-left-color:var(--lime)} .pick.demo{border-left-color:var(--violet)}
+  .pick .pk-h{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);margin-bottom:6px}
+  .pick .pk-h .num{font-family:"Anton",sans-serif;color:var(--red);margin-right:8px}
+  .pick .pk-why{font-size:13px;color:var(--ink-soft);margin-bottom:7px}
+  .pick .pk-why b{color:var(--ink)}
+  .pick .pk-hook{font-size:13px;color:var(--ink);background:var(--yellow-s);border:1.5px solid var(--ink);border-radius:5px;padding:7px 11px}
+  .pick .pk-hook .lbl{font-family:"Oswald",sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#1f9c30}
+  .fresh{display:inline-block;font-family:"Oswald",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+    border:1.5px solid var(--ink);border-radius:4px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+  .fresh.new{background:var(--red);color:#fff} .fresh.upd{background:var(--yellow);color:var(--ink)} .fresh.cont{background:#e6e2d6;color:var(--ink)}
+  .deca{display:inline-block;font-family:"Oswald",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.04em;color:var(--ink);margin-left:4px}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.down .nm::after{content:"🧊";margin-left:5px;font-size:11px}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .board .na{padding:18px 14px;font-size:12px;color:var(--ink-soft);line-height:1.6;flex:1}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{max-width:880px;margin:46px auto 0;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;
+    padding:20px 24px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft);line-height:1.7}
+  .evlog h3{font-family:"Anton",sans-serif;font-size:18px;color:var(--ink);margin-bottom:12px}
+  .evlog .row{border-top:1.5px dashed var(--line);padding:8px 0}
+  .evlog .row:first-of-type{border-top:none}
+  .evlog b{color:var(--ink)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .warn{color:#b78a00;font-weight:800}
+  .evlog a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#ammo">今日彈藥</a><a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a><a href="#log">Evidence Log</a>
+      </div>
+      <div class="nav-date">06 · 19 · FRI</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 06 / 19 · 趨勢判斷版（即時數字＝6/18 07:30 官方真數字快照）· 本機 heat-radar 今晨 07:30（6/19）排程未刷新，最後成功快照為 6/18 07:30（含 Steam 官方真數字 + velocity 15 筆）· 彈藥層 WebSearch + web_fetch 開原文 + Evidence Gate · 沙箱無瀏覽器，Roblox/Twitch/Threads/TikTok 即時暫缺 · 來源 18+ 源</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">當最大的引擎都把 AI 變預設 — <b>稀缺的不是生成，是信任與被分享的理由</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>Epic 把 AI 寫進了整個產業最大的引擎 —— 然後 48 小時內就引爆一場「信任危機」。</b>本週 State of Unreal / Unreal Fest 上，Epic 宣布 <span class="hl">Unreal Engine 6 把 UE5 與 UEFN 合而為一、語言改用 Verse、並內建 Claude / Gemini 等生成式 AI 工具</span>（Game Developer 6/17），還要讓 Fortnite 造型能跨遊戲互通、打造「smart assets 的共享經濟」。但隨即——獨立工作室 Poncle 宣布「<b>重新檢視</b>」剛官宣的《Vampire Survivors》× Fortnite 聯名，理由正是 Epic 的 gen-AI 立場（PC Gamer 6/17）；Fortnite 玩家在 Epic 公開「AI 怎麼做造型」（用 Nano Banana / GPT Image）後，集體要求「<b>AI 造型揭露標籤</b>」（Dexerto 6/16）。</p>
+        <p>同一週，歐盟駁回了集滿 130 萬連署的 Stop Killing Games（6/16）——官方說「<b>無法立法強制</b>」廠商讓停服遊戲保持可玩，等於提醒玩家「你買的遊戲其實不歸你」。對 GameGen 的意義很直接：當 AI 生成變成<b>引擎級的預設能力</b>、人人都生得出遊戲，真正稀缺的東西換成了 <span class="hl">信任、透明、以及「值得被分享的理由」</span>。GameGen 的 trend-to-game 自帶「今天的梗＝現成的注意力」這個被看見的入口，而且 UE6 那套要等到 <b>2027 才 Early Access</b>——速度與社群信任，是現在就能站的位置。</p>
+        <div class="pull">▸ 今天最該蹭：① CJ 線＝UE6 走向 AI-native 卻立刻撞上信任危機（CJ#1）＋ UE6 的「跨遊戲可攜資產」對撞歐盟「你不擁有你的遊戲」（CJ#2）；② 小編線＝Poncle 因 AI 凍結 Fortnite 聯名（最戲劇）；③ Demo＝「復活一款已死的遊戲」一鏡致敬小遊戲，蹭 Stop Killing Games 情緒。<b>⚠️ 誠實標註：本機 heat-radar 今晨（6/19）未刷新，即時數字為 6/18 07:30 Steam 官方真數字快照；Roblox / Twitch / Threads / TikTok 即時暫缺（沙箱無瀏覽器）。</b></div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="toplist" id="ammo">
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">🎯 CJ · LinkedIn 線 Top 2</span></div>
+
+          <div class="pick cj gold">
+            <div class="pk-h"><span class="num">1</span>Unreal Engine 6 內建 Claude / Gemini，把 AI 生成變引擎級預設——但 48 小時內就引爆「信任危機」<span class="fresh upd">🔄 近期（6/17）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（Game Developer 6/17，web_fetch 開原文，作者 Bryant Francis）：</b>Epic 在 Unreal Fest 宣布 <b>UE6 將 UE5 與 UEFN 合併為單一引擎</b>、程式模型從 C++ 轉向 <b>Verse</b>、並把 <b>Claude、Gemini 等模型的生成式 AI 工具整合進開發流程</b>（定位為「creativity and productivity multipliers」），EA Early Access 預計 2027 底。隨即引爆反彈：玩家在 Epic 6/15 公開「AI 怎麼做 Fortnite 造型」（用 Nano Banana / GPT Image）後集體要求「AI 揭露標籤」（Dexerto 6/16）；獨立工作室 Poncle 宣布重新檢視《Vampire Survivors》× Fortnite 聯名（PC Gamer 6/17）。<a href="https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-" target="_blank">Game Developer ↗</a>　<b>角度（信任／透明，本題專屬）：</b>當產業最大的引擎都把 AI 變成預設、人人都生得出遊戲，瓶頸就不再是「能不能用 AI」，而是「<b>玩家還相不相信、還願不願意點開</b>」。稀缺的東西換成了信任與透明，不是生成能力。GameGen 不需要比模型，可以在「人做的、社群一起玩的、今天就能玩到」這條維度上，把透明與信任當成產品本身。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："Epic just baked Claude and Gemini into Unreal Engine 6 — and within 48 hours a studio froze a Fortnite deal and players demanded AI-disclosure labels on skins. When generation becomes the engine's default, the scarce asset isn't making a game. It's being trusted enough to be opened. Transparency is the new moat."　中：「Epic 把 Claude 和 Gemini 直接寫進 Unreal Engine 6——48 小時內就有工作室凍結 Fortnite 聯名、玩家要求造型加上『AI 揭露標籤』。當生成變成引擎的預設，稀缺的不是『做一款遊戲』，而是『被信任到值得被點開』。透明，是新的護城河。」</div>
+          </div>
+
+          <div class="pick cj">
+            <div class="pk-h"><span class="num">2</span>UE6 要讓資產「跨遊戲可攜」、做 smart assets 共享經濟——同一週歐盟卻說「你買的遊戲不歸你」<span class="fresh upd">🔄 近期（6/16–17）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實：</b>UE6 的核心承諾之一是「<b>讓內容、程式與經濟透過開放標準（glTF / USD）在遊戲與引擎間可攜、可互通</b>」，第一個概念驗證就是把 Fortnite 造型開放成跨遊戲可用、玩家在別款遊戲做的造型也能帶回 Fortnite，定位為「smart assets 的共享經濟」（Game Developer 6/17）。<a href="https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-" target="_blank">Game Developer ↗</a>　同一週，歐盟執委會駁回集滿 130 萬連署的 Stop Killing Games，稱「<b>無法立法強制</b>」廠商讓停服遊戲保持可玩、「不符比例原則」（Dexerto 6/16）。<a href="https://www.dexerto.com/gaming/stop-killing-games-fails-to-secure-eu-law-despite-1-3m-signatures-3376431/" target="_blank">Dexerto ↗</a>　<b>角度（可攜性／互通，本題專屬）：</b>兩個相反訊號同週出現——一邊是龍頭押注「玩家價值要能跨遊戲流動」，一邊是監管確認「你買的遊戲廠商說關就關」。產業正被逼著回答「玩家投入的東西到底能不能帶走」。GameGen 不必等 UE6 那套 2027 的重型互通標準，可以用<b>輕量、即時、可 remix 的社群小遊戲</b>，今天就先把「可攜＋可再創作」的體驗做出來。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："Same week: Epic pitches UE6 as a 'shared economy for smart assets' where your cosmetics travel across games — and the EU rules it 'cannot legally require' publishers to keep the games you bought playable. The industry is being forced to answer one question: can players take what they make with them? You don't need a 2027 engine standard to start answering it."　中：「同一週：Epic 把 UE6 講成『smart assets 的共享經濟』、你的造型能跨遊戲帶著走；歐盟卻裁定『無法立法強制』廠商讓你買的遊戲保持可玩。產業被逼著回答同一個問題——玩家做的東西，到底帶不帶得走？而要開始回答，你不需要等一套 2027 的引擎標準。」</div>
+          </div>
+        </div>
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">📣 小編 · X 線 Top 3</span></div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">1</span>《Vampire Survivors》工作室官宣 Fortnite 聯名「幾小時後」就喊要重新檢視——因為 Epic 用 AI 做素材<span class="fresh upd">🔄 進行中（6/17）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（PC Gamer / Kotaku / Shacknews 6/17）：</b>Epic 6/17 一口氣公布 2026 下半年 30+ 個 Fortnite 聯名（含 Sonic、Vampire Survivors 等）。同日，Poncle 公開表示：「在今天 Epic 用 gen-AI 製作各種遊戲素材（含 Fortnite 角色）的新聞後，我們正在『<b>重新檢視</b>』與 Fortnite 的合作。」——若正式退出，將是<b>第一家因 AI 政策公開凍結 Epic 合作</b>的工作室。<a href="https://www.pcgamer.com/games/action/hours-after-announcing-a-collab-with-fortnite-vampire-survivors-dev-suggests-it-may-back-out-over-epics-recent-touting-of-gen-ai/" target="_blank">PC Gamer ↗</a>　<b>create-loop 勾子：</b>這是本週最戲劇的遊戲新聞——「<b>合作官宣幾小時就反悔</b>」。蹭法：發「如果你能一眼看出哪個造型是 AI 做的、哪個是人畫的，你分得出來嗎？」導進「AI or 人類？造型版」輕互動猜題。只談公開立場與機制，零真人肖像、零 IP 挪用（用泛化角色舉例）。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："A studio announced a Fortnite collab — then, hours later, said it's 'reviewing' the deal because Epic uses generative AI to make assets. Players are already asking for AI-disclosure labels on skins. Real question: could you actually tell the human-made one from the AI one? Let's find out."　中：「一家工作室官宣 Fortnite 聯名——幾小時後就說要『重新檢視』，因為 Epic 用 AI 做素材。玩家已經在喊造型要標『AI 揭露』。真正的問題是：人畫的跟 AI 生的，你真的分得出來嗎？來玩玩看。」</div>
+          </div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">2</span>Warframe 一夜湧回逾 4 萬玩家、Steam 同時在線翻倍（+100%）——「什麼讓老遊戲一夜復活？」<span class="fresh upd">🔄 數字層（6/18 官方 API）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（本機 radar 6/18，Steam 官方 GetNumberOfCurrentPlayers，免 Evidence Gate）：</b>Warframe 的 Steam 同時在線從約 4.0 萬一夜跳到 <b>8.06 萬（日比 +100.7%）</b>，是當日 velocity 榜最猛的暴衝（同框：PUBG +32%、CS:GO +23.3%）。<a href="https://store.steampowered.com/charts/mostplayed" target="_blank">Steam Charts ↗</a>　<b>⚠️ 標註：</b>暴衝「<b>原因目前無法完全證實</b>」（可能為新更新／活動／免費週，radar 未帶事件層；不編造）。　<b>create-loop 勾子：</b>數字本身就是鉤子——「一個十年老遊戲，一夜把人數翻倍」。蹭法：發「猜猜看：是什麼讓 4 萬人一夜湧回一款老遊戲？A 新更新 B 大主播 C 免費週 D 迷因復活」做投票互動，導進今天的 Demo（復活一款已死的遊戲）。純社群投票、零賭場語言。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："A 10-year-old game just doubled its concurrent players overnight (+100%). What flips that switch — a patch, a streamer, a free week, or a meme reviving it? Vote, then tell me the game you'd most want to see come back from the dead."　中：「一款十年老遊戲，同時在線一夜翻倍（+100%）。是什麼按下那個開關——更新、主播、免費週，還是一個迷因把它救活？投個票，再告訴我：你最想看哪款『已死』的遊戲復活？」</div>
+          </div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">3</span>130 萬人連署，歐盟仍駁回 Stop Killing Games——「你買的遊戲，其實不歸你」<span class="fresh upd">🔄 近期（6/16）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（Dexerto 6/16，web_fetch 開原文）：</b>歐洲公民倡議「Stop Destroying Videogames」集滿 <b>1,294,188 份有效連署</b>，但執委會 6/16 回覆「<b>無法立法強制</b>」廠商在停服後讓遊戲保持可玩，稱「不符比例原則」（顧及 IP、商業機密、成本與資安），改為年底前推動「自願性業界行為準則」。背景：法國消費者團體仍在就《The Crew》停服告 Ubisoft。<a href="https://www.dexerto.com/gaming/stop-killing-games-fails-to-secure-eu-law-despite-1-3m-signatures-3376431/" target="_blank">Dexerto ↗</a>　<b>create-loop 勾子：</b>情緒強度極高、社交貨幣高——「<b>你買的遊戲，廠商說關就關</b>」。蹭法：發「如果可以一鍵復活一款『已死』的遊戲，你會選哪一款？」（懷舊投票），導進 Demo「復活一款已死的遊戲」一鏡致敬小遊戲。立場克制：談的是遊戲保存與懷舊情感，不選邊政治化。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："1.3 million people signed to stop publishers from killing games. The EU just said it 'cannot' force them to. Translation: the game you bought isn't really yours. So — if you could revive ONE dead game with a button, which one?"　中：「130 萬人連署，要廠商別再『殺死』遊戲。歐盟剛說『沒辦法』強制他們。翻譯一下：你買的遊戲，其實不歸你。那——如果給你一顆按鈕復活一款已死的遊戲，你選哪一款？」</div>
+          </div>
+        </div>
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">🕹️ Demo 線 Top 1</span></div>
+          <div class="pick demo">
+            <div class="pk-h"><span class="num">1</span>「復活一款已死的遊戲」一鏡致敬小遊戲：選一款停服遊戲 → 30 秒可玩致敬卡 → 社群投票下一款復活誰<span class="fresh new">🆕 今日新提案</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實依據：</b>歐盟 6/16 駁回 Stop Killing Games（130 萬連署），「你買的遊戲不歸你」成為本週情緒最濃的話題（Dexerto 6/16）；同時 Warframe 一夜 +100% 證明「老遊戲復活」自帶話題力（radar 6/18 官方數字）。<b>把這股懷舊＋不甘心翻成 GameGen 版本：</b>玩家輸入或選一款「已死／停服」的遊戲，GameGen 用 trend-to-game 生成一個 <b>30 秒、一鏡到底的可玩「致敬版」</b>（泛化機制重現它的核心 loop，不挪用原 IP 美術），結束生成一張「我復活了 ___」致敬卡可分享；社群投票「下一款該復活誰」進公開題庫。　<b>角度：</b>用「選遊戲 → 生成致敬 → 分享卡 → 投票下一款」一次串起 Create Rate、Share Rate、Play-to-Create；情緒（懷舊／保存）天生想分享。風險控管：<b>用泛化機制與原創美術重現玩法，絕不挪用原作角色／美術／商標</b>；對外敘事＝「保存與致敬」，不寫任何「破解／重上架／盜版伺服器」。</div>
+            <div class="pk-hook"><span class="lbl">今天可以怎麼用</span>　先做最小版：選一款停服遊戲 → 生成 30 秒泛化致敬玩法 → 出「我復活了 ___」分享卡。下一版開放社群投票題庫（下一個復活誰）。內部測 Create→Share→Vote 漏斗，貼文蹭 Stop Killing Games 與 Warframe 復活當週話題。</div>
+          </div>
+          <div style="font-size:12px;color:var(--ink-soft);background:var(--paper2);border:2px dashed var(--ink);border-radius:6px;padding:9px 14px;margin-top:11px">🔒 去重雙閘已跑（used_topics.json）：題材去重 ✓（UE6 AI-native / Poncle×Vampire Survivors / Fortnite AI 造型揭露 / Stop Killing Games 歐盟駁回 / Warframe +100% / 復活已死遊戲 demo 均未在過往彈藥出現過；Steam Next Fest AI 揭露（6/17、6/18 已用）、Roblox 收押金（6/18）、Destiny 2「Do your thing」（6/18）皆不重複進頭版）· 結論去重 ✓（避開近 7 天已燒的「速度=護城河」「生成商品化→分發」「戰場在生成之後／留存迴圈」「品牌即可玩」「你做的遊戲你自己 own」conclusion_key；本期 angle＝AI-native 預設化→信任／透明稀缺 / 可攜資產對撞「不擁有遊戲」→可攜＋remix 開口 / 老遊戲復活＝懷舊社交貨幣）· Evidence Gate 全過（見頁尾 Log）。</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 6/18 快照</span></div>
+          <ol>
+            <li><span class="nm">Counter-Strike 2 / CS:GO</span><span class="vn">681K</span></li>
+            <li><span class="nm">Path of Exile 2</span><span class="vn">142K</span></li>
+            <li class="hot"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">105K</span></li>
+            <li><span class="nm">Destiny 2</span><span class="vn">104K</span></li>
+            <li><span class="nm">Rust</span><span class="vn">85K</span></li>
+            <li class="hot"><span class="nm">Warframe</span><span class="vn">81K</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 6/18 07:30 真數字快照 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">即時暫缺</span></div>
+          <div class="na">沙箱排程環境無瀏覽器，Roblox 即時 CCU（需 roblox.com/charts / RoMonitor 瀏覽器深掃）<b>今日暫缺</b>。CC 互動 session（有瀏覽器）可補真抓。<br>⚠️ 目前無法完全證實今日即時排名。</div>
+          <div class="bf">RoMonitor / RTrack（瀏覽器源） · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-twch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">即時暫缺</span></div>
+          <div class="na">Twitch 分類觀看（需 twitchtracker.com 瀏覽器深掃）<b>今日暫缺</b>，同因沙箱無瀏覽器。<br>⚠️ 目前無法完全證實今日即時數字。</div>
+          <div class="bf">TwitchTracker（瀏覽器源） · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Warframe 一夜 +100.7%（4.0 萬→8.06 萬）領跑；PUBG +32%、CS:GO +23.3% 同步衝高</h3>
+        <div class="sum">本機 radar 6/18 的 Steam 官方 velocity（真·日比）：Warframe 同時在線一夜翻倍（+100.7%）、PUBG +32.0%、CS:GO +23.3%；反向 War Thunder -28.2%。這些是 Steam 官方 API 直抽的真數字（免 Evidence Gate），但<b>暴衝原因 radar 未帶事件層、目前無法完全證實</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>看的是<b>變化率不是排名</b>——Warframe 不是排行第一，但「一夜翻倍」才是有事件正在發生的訊號。對 trend-to-game 的用法：別追已滿的常駐大榜，要追<b>「為什麼突然暴衝」</b>，把它做成社群投票題（見小編彈藥 X-2「猜什麼讓老遊戲復活」）。週末若 CC session 有瀏覽器，建議補查 Warframe 暴衝事件源。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API（6/18） · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>缺口</span></span>Roblox 黑馬新進榜 / Twitch 7 天漲幅：今日暫缺（需瀏覽器）</h3>
+        <div class="sum">Roblox 黑馬衝榜與 Twitch 近 7 天漲幅需 roblox.com/charts、twitchtracker.com 瀏覽器深掃比對昨日快照；本次沙箱排程環境無瀏覽器，<b>今日暫缺</b>，不以舊數字假裝即時。Steam movers（排名跳動／新進榜）radar 顯示今日無顯著跳動。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>誠實標註優先於補洞——<b>目前無法完全證實</b> Roblox / Twitch 今日暴衝面孔。若由 CC 互動 session（chrome-devtools）或 Claude in Chrome "hi" 產報，需實際補抓真數字並標來源 + 抓取日，不可標暫缺。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>資料暫缺</span></span></div></div>
+          </div>
+          <div class="src">ROBLOX / TWITCHTRACKER · <a href="https://twitchtracker.com/games" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO 剛冒頭</span><span class="metric">html5 / 恐怖小品</span></div>
+          <ol>
+            <li class="hot"><span class="nm">The Margot Collapse 心理恐怖</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">The Freak Circus 馬戲恐怖</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">Fear Assessment 恐懼測驗</span><span class="vn">敘事</span></li>
+            <li class="hot"><span class="nm">Cult of PiN</span><span class="vn">解謎</span></li>
+            <li><span class="nm">COBB CAN MOVE 操作小品</span><span class="vn">反應</span></li>
+            <li><span class="nm">Death Loop（Danganronpa 啟發）</span><span class="vn">推理</span></li>
+          </ol>
+          <div class="bf">itch.io 新上架 · radar 6/18 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Melon Clicker 點擊放置</span><span class="vn">clicker</span></li>
+            <li><span class="nm">Arcade Architect 經營</span><span class="vn">經營</span></li>
+            <li><span class="nm">SWAPMEAT</span><span class="vn">動作</span></li>
+            <li><span class="nm">Prologue: Go Wayback!</span><span class="vn">生存</span></li>
+            <li><span class="nm">Gloria Victis: Medieval MMORPG</span><span class="vn">MMO</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · radar 6/18 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>早期冒頭兩大甜蜜區：恐怖心理小品（itch.io）＋ 點擊放置 clicker（Steam）</h3>
+        <div class="sum">itch.io 新上架清一色是<b>體量小、回合短、可拍的心理恐怖／敘事小品</b>（The Margot Collapse、The Freak Circus、Fear Assessment）；Steam 新品則有 Melon Clicker 這類「點擊→數字漲」的放置 loop 冒頭。兩者都是「規則一句話講完、適合做泛化版」的早期黑馬。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>給 MVP 模板優先序的早期訊號：<b>恐怖生存挑戰</b>（短嚇點、好拍）與 <b>clicker / 放置破表</b>（爽感、可比分）仍是最好抄成泛化模板的 loop。機制本身不受版權保護，照抄 loop、換泛化皮即可，避開 itch.io 上常見的 IP 二創地雷。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO / STEAM（radar 6/18） · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>對標 · AI</span></span>Unreal Engine 6 內建 Claude / Gemini，Epic：「會大幅改變遊戲怎麼被做出來」</h3>
+        <div class="sum">UE6 把 UE5 與 UEFN 合併、改用 Verse、整合 Claude / Gemini 等模型的 gen-AI 流程工具，並推「跨遊戲可攜資產 / smart assets 共享經濟」，EA 預計 2027 底（Game Developer 6/17；VGC、Eurogamer、Kotaku 同步報導）。這是本週產業最被討論的 AI 對標事件。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>最大的引擎都把 AI 變預設＝「生成能力」徹底商品化。GameGen 不要跟它比模型或引擎，<b>守「即時、社群、信任、今天就能玩」</b>——而且 UE6 要 2027 才 EA，速度差就是現在的位置。對標時敘事一律「discovery 與信任是新瓶頸」，避賭場語言。（對標彈藥見 CJ#1。）</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAME DEVELOPER 6/17 · <a href="https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>反彈 · AI</span></span>玩家要求 Fortnite 造型加「AI 揭露標籤」、Poncle 凍結聯名——AI 的爭點移到「透明」</h3>
+        <div class="sum">Epic 6/15 公開影片示範「AI 怎麼做 Fortnite 造型」（藝術家先手繪、再用 Nano Banana / GPT Image 加速渲染），玩家隨即要求付費造型標明是否 AI 生成（Dexerto 6/16）；獨立工作室 Poncle 也因此「重新檢視」《Vampire Survivors》× Fortnite 聯名（PC Gamer 6/17）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>爭點已經不是「能不能用 AI」，而是「<b>用了要不要說、玩家信不信</b>」。這對 GameGen 是順風——把「透明＋人＋社群一起玩」當賣點，反而比藏著 AI 更有信任紅利。小編可直接做「AI or 人類？造型版」猜題（見 X 彈藥 #1）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">DEXERTO 6/16 / PC GAMER 6/17 · <a href="https://www.dexerto.com/fortnite/fortnite-players-want-ai-disclaimers-on-skins-after-epic-reveals-how-it-makes-them-3376325/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>高討論</span></span>Stop Killing Games 闖關歐盟失敗（HN 當日 345 分熱議）——遊戲保存／所有權之爭</h3>
+        <div class="sum">「130 萬連署仍被歐盟駁回」一文當日登上 Hacker News 高位（345 分），討論集中在「買斷制遊戲的所有權與保存責任」。執委會稱無法立法強制、改推自願行為準則（Dexerto 6/16）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是當日<b>有客觀互動數字（HN 345 分）佐證</b>的高討論題，情緒與社交貨幣都高。GameGen 可用「保存／復活」的正向框（見 Demo「復活一款已死的遊戲」），不選邊政治化、不碰「私服／破解」灰區。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HACKER NEWS / DEXERTO · <a href="https://www.dexerto.com/gaming/stop-killing-games-fails-to-secure-eu-law-despite-1-3m-signatures-3376431/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>誠實標註</b>：本次 radar 的 Reddit 源回傳 ok=False（被擋），Reddit 高討論串<b>今日暫缺</b>；HN（Algolia）正常，Stop Killing Games 的 345 分為 HN 當日真數字。AI 相關文章另由 Tavily 主題搜尋（ai_in_games，白名單去噪＋分數≥0.2）交叉佐證。
+      </div>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>本日遊戲圈迷因＝「AI or 人類？造型版」：Epic 自爆用 AI 做造型，全網開始互考</h3>
+        <div class="sum">Epic 公開「AI 怎麼做 Fortnite 造型」後，社群湧現「這個造型是 AI 還是人畫的？」的互考型迷因與截圖比對，疊加 Poncle 凍結聯名的戲劇性，成為本週遊戲圈最具傳播力的 AI 話題（Dexerto 6/16 / PC Gamer 6/17）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>天生就是「猜：AI 還是人做的」社交小遊戲</b>——結果可截圖、可揪朋友比、零真人肖像。GameGen 可做泛化版「AI or 人類？造型版」測 Share Rate（用自家泛化角色出題，不挪用 Fortnite 美術）。這是把當日最熱的 AI 爭點直接變成可玩互動的最快路徑。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>IP 中（避挪用美術）</span></span></div></div>
+          </div>
+          <div class="src">DEXERTO / PC GAMER · <a href="https://www.dexerto.com/fortnite/fortnite-players-want-ai-disclaimers-on-skins-after-epic-reveals-how-it-makes-them-3376325/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因遊戲</span></span>梗→遊戲速度範例：Steam 新品 Melon Clicker（點擊放置）＋ itch.io 心理恐怖小品冒頭</h3>
+        <div class="sum">Steam 新品冒出 Melon Clicker 這類「點擊→數字暴漲」的迷因式放置遊戲；itch.io 則大量新上架短回合心理恐怖小品（The Margot Collapse 等）。共同特徵：規則一句話、回合短、結果好拍——正是「梗在當下、遊戲在幾天內」的個人開發者路線。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>證明 trend-to-game 的<b>輕量速度路線成立</b>——個人開發者幾天就把梗 / 機制變可玩。GameGen 的賣點是把這個「幾天」壓到「幾分鐘、人人可做」。clicker 破表與恐怖短嚇點都是現成可抄的泛化模板。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO（radar 6/18） · <a href="https://store.steampowered.com/app/3405460" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ai reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>誠實標註</b>：Know Your Meme「Popular right now」與 TikTok Creative Center 為瀏覽器源，沙箱排程環境無瀏覽器、<b>純社群迷因新鮮度今日暫缺</b>，不引未驗的迷因當「今天的梗」。本箱以遊戲圈內、可查證的 AI 造型爭議迷因為主。
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>可借用的原創 loop</span><span class="metric">itch.io / Steam 新品</span></div>
+          <ol>
+            <li class="hot"><span class="nm">點擊放置破表（Melon Clicker）</span><span class="vn">clicker</span></li>
+            <li><span class="nm">短回合心理恐怖（The Margot Collapse）</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">敘事測驗（Fear Assessment）</span><span class="vn">測驗</span></li>
+            <li><span class="nm">經營擺放（Arcade Architect）</span><span class="vn">經營</span></li>
+            <li><span class="nm">單鍵操作小品（COBB CAN MOVE）</span><span class="vn">反應</span></li>
+          </ol>
+          <div class="bf">itch.io / Steam 新品（radar 6/18） · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>原創機制金礦＝itch.io 新品 / Steam 新品；unityroom 今日暫缺（瀏覽器源）</h3>
+        <div class="sum">本次以 radar 直抓的 itch.io / Steam 新品當原創機制來源：clicker 破表、心理恐怖短回合、敘事測驗、經營擺放、單鍵反應——全是低 IP 風險、可抄成泛化模板的單一機制。unityroom（今週ピックアップ / ゲームジャム）為瀏覽器源，沙箱無瀏覽器、<b>今日暫缺</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>機制本身不受版權保護</b>——照抄 loop、換泛化皮即可。優先把 clicker 破表（呼應 Warframe 數字爽感）與恐怖短嚇點做成模板。⚠️ itch.io 別抓 meme 標籤（多是 FNAF / 寶可夢同人等 IP 二創地雷），改看 html5 popular 找原創網頁遊戲。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO / STEAM · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暫缺</span></span>繁中 Threads 即時熱話：今日無瀏覽器、暫缺（延燒題：AI 人生模擬）</h3>
+        <div class="sum">Threads 繁中圈即時熱話需瀏覽器深掃，本次沙箱排程環境無瀏覽器、<b>今日無法即時抓取</b>。延燒背景（非今日新驗）：先前繁中圈「tag @meta.ai 玩一句話人生 / 三國 / 武俠模擬」熱度仍在延續，玩家互相分享 prompt 模板。<b>⚠️ 今日具體熱貼與數字目前無法完全證實。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>繁中本命題材（三國 / 武俠 / 恐怖 / 捕捉 RPG）仍是 MVP 抓題的優先方向，但今日<b>不以舊熱貼假裝即時</b>。若 CC 互動 session 有瀏覽器，建議補抓 Threads 當日繁中遊戲熱話 + 題材變體，併回本箱。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>資料暫缺</span></span></div></div>
+          </div>
+          <div class="src">THREADS（瀏覽器源） · <a href="https://www.threads.com/search?q=%E9%81%8A%E6%88%B2" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Epic 自爆 AI 做造型（信任爭議）</td><td><span class="tmpl">AI or 人類？猜題</span></td><td>分得出嗎、可揪人比</td><td class="rk-mid">中 · 避挪用美術</td><td>用泛化角色出題，蹭 Poncle 戲劇性，測 Share</td></tr>
+          <tr><td>Warframe 一夜 +100% 復活</td><td><span class="tmpl">復活/復出投票</span></td><td>懷舊 + 猜原因投票</td><td class="rk-low">低</td><td>導進「復活已死遊戲」Demo</td></tr>
+          <tr><td>Stop Killing Games 歐盟駁回</td><td><span class="tmpl">復活一款已死的遊戲</span></td><td>懷舊情緒、致敬卡可分享</td><td class="rk-low">低</td><td>本日 Demo 首選，正向框、不碰私服灰區</td></tr>
+          <tr><td>UE6 跨遊戲可攜資產</td><td><span class="tmpl">造型/角色帶著走</span></td><td>同一角色玩多款、可炫耀</td><td class="rk-mid">中 · 觀念</td><td>輕量 remix 先做出「可攜+再創作」體感</td></tr>
+          <tr><td>Melon Clicker 點擊放置冒頭</td><td><span class="tmpl">點擊疊加破表</span></td><td>數字爽感、比分可拍</td><td class="rk-low">低</td><td>抄 clicker loop 換泛化皮</td></tr>
+          <tr><td>itch.io 心理恐怖小品潮</td><td><span class="tmpl">短回合恐怖挑戰</span></td><td>嚇點/倒數最好拍</td><td class="rk-low">低</td><td>泛化主題，短回合可拍</td></tr>
+          <tr><td>（延燒）繁中 AI 人生模擬</td><td><span class="tmpl">一句話開局模擬</span></td><td>結局/數值卡可截圖</td><td class="rk-mid">中 · 對手免費</td><td>主打三國/武俠，加分享連結+排行；今日數據暫缺</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>引擎走向 AI-native → 信任成新護城河</td><td>UE6 內建 Claude/Gemini；48h 內 Poncle 凍結聯名、玩家要 AI 揭露標籤</td><td>"When generation becomes the engine's default, the moat is trust."</td><td><a href="https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-" target="_blank">↗</a></td></tr>
+          <tr><td>可攜資產對撞「不擁有遊戲」</td><td>UE6 推跨遊戲 smart assets；同週歐盟稱無法強制廠商保留可玩遊戲</td><td>"Can players take what they make with them? The whole industry just got asked."</td><td><a href="https://www.dexerto.com/gaming/stop-killing-games-fails-to-secure-eu-law-despite-1-3m-signatures-3376431/" target="_blank">↗</a></td></tr>
+          <tr><td>第一家因 AI 政策凍結合作的工作室</td><td>Poncle 官宣《Vampire Survivors》× Fortnite 數小時後喊「重新檢視」</td><td>"AI policy is now a dealbreaker, not a footnote."</td><td><a href="https://www.pcgamer.com/games/action/hours-after-announcing-a-collab-with-fortnite-vampire-survivors-dev-suggests-it-may-back-out-over-epics-recent-touting-of-gen-ai/" target="_blank">↗</a></td></tr>
+          <tr><td>2027 才 EA → 速度差就是現在的位置</td><td>UE6 Early Access 預計 2027 底、完整版再晚 12–18 月</td><td>"The biggest engine's AI future ships in 2027. Speed is available today."</td><td><a href="https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 今日 CJ LinkedIn 兩篇首選（彈藥頭版 🎯 CJ Top 2）：A＝「UE6 把 AI 變引擎級預設、48h 內撞上信任危機 → 信任／透明是新護城河」（AIGC 母題）；B＝「UE6 可攜資產對撞歐盟『你不擁有遊戲』→ 玩家價值帶不帶得走」（UGC / economy 母題）。兩篇主題不同、皆已過去賭場語言濾鏡、皆附 EN+中鉤子。需附品牌卡 prompt（house-style 4:5）時，定稿後再產。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭 Poncle 凍結 Fortnite 聯名 →「AI or 人類？造型版」猜題（彈藥 X-1，本週最戲劇）</li><li>Warframe 一夜 +100% →「猜什麼讓老遊戲一夜復活」A/B/C/D 投票（彈藥 X-2）</li><li>Stop Killing Games 歐盟駁回 →「給你一鍵復活一款已死的遊戲，選哪款？」（彈藥 X-3）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>「復活一款已死的遊戲」一鏡致敬小遊戲（本日首選，蹭 SKG＋Warframe）</li><li>「AI or 人類？造型版」泛化猜題（蹭 Epic AI 造型爭議）</li><li>點擊疊加破表 clicker（抄 Melon Clicker，數字爽感）</li><li>短回合心理恐怖挑戰（抄 itch.io 小品，泛化主題）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Poncle 是否正式退出 Fortnite 聯名（第一家因 AI 凍結 Epic 合作）</li><li>Warframe 暴衝原因（待 CC 瀏覽器 session 補查事件源）</li><li>UE6 跨遊戲可攜資產／開放標準後續（互通性走向）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>挪用 Fortnite / Vampire Survivors 等 IP 美術 → 用泛化角色</li><li>Stop Killing Games 題材碰「私服／破解／重上架」灰區 → 改正向「致敬／保存」</li><li>對外文案的賭場語言（下注 / payout / big win / P2E）</li></ul></div>
+      </div>
+    </section>
+
+    <!-- Evidence Log -->
+    <section id="log">
+      <div class="evlog reveal">
+        <h3>🔒 彈藥 Evidence Gate（驗證閘 · 2026-06-19 TPE 早晨跑過）</h3>
+        <div class="row"><b>① Unreal Engine 6 內建 Claude / Gemini、合併 UE5+UEFN、改用 Verse、跨遊戲可攜資產（CJ#1 / CJ#2 / #04 / CJ 表）</b>　<a href="https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-" target="_blank">Game Developer</a>（web_fetch 開原文，作者 Bryant Francis）　原文日期 <b>2026-06-17</b>（頁面標 June 17, 2026 · 3 Min Read）　驗了哪句：「UE6 合併 UE5 與 UEFN 為單一引擎、C++→Verse、整合 Claude 與 Gemini 的 gen-AI 流程工具、Fortnite 造型跨遊戲可攜（smart assets 共享經濟、開放 glTF/USD）、EA 2027 底」（原文逐句支撐：「new AI integration tools for popular models like Claude and Gemini」「Early Access releases… late 2027」「use players' existing Fortnite outfits in their own games」）　<span class="ok">✓ verified（原文 web_fetch；VGC / Eurogamer / Kotaku / GamesBeat 多源一致）</span>　新鮮度＝🔄（2 天，≤14天）</div>
+        <div class="row"><b>② Poncle「重新檢視」《Vampire Survivors》× Fortnite 聯名，因 Epic gen-AI（X 彈藥 #1 / #04 / CJ 表）</b>　<a href="https://www.pcgamer.com/games/action/hours-after-announcing-a-collab-with-fortnite-vampire-survivors-dev-suggests-it-may-back-out-over-epics-recent-touting-of-gen-ai/" target="_blank">PC Gamer</a>（WebSearch 取證，Kotaku / Shacknews / OpenCritic 多源一致）　原文日期 <b>2026-06-17</b>（與 State of Unreal 同日）　驗了哪句：「Epic 6/17 公布 30+ Fortnite 聯名含 Vampire Survivors；同日 Poncle 公開稱因 Epic gen-AI 用於製作素材而『reviewing』合作；尚未正式取消」（多源逐句支撐，Poncle 原句引用）　<span class="ok">✓ verified（多源一致；未誇大為『已取消』）</span>　新鮮度＝🔄（2 天）</div>
+        <div class="row"><b>③ Fortnite 玩家要求造型「AI 揭露標籤」、Epic 6/15 影片揭露用 Nano Banana / GPT Image（CJ#1 / X 彈藥 #1 / #04 / #05）</b>　<a href="https://www.dexerto.com/fortnite/fortnite-players-want-ai-disclaimers-on-skins-after-epic-reveals-how-it-makes-them-3376325/" target="_blank">Dexerto</a>（WebSearch + Dexerto 站內列示佐證；TechWiser / FRVR / Kotaku 同步）　原文日期 <b>2026-06-16</b>　驗了哪句：「Epic 6/15 Unreal Engine YouTube 影片示範藝術家先手繪、再用內部 AI（Nano Banana / GPT Image）加速；玩家要求付費造型標 AI 揭露」（多源逐句支撐）　<span class="ok">✓ verified</span>　新鮮度＝🔄（3 天）</div>
+        <div class="row"><b>④ Stop Killing Games 闖關歐盟失敗、130 萬連署（X 彈藥 #3 / Demo / #04 / CJ 表）</b>　<a href="https://www.dexerto.com/gaming/stop-killing-games-fails-to-secure-eu-law-despite-1-3m-signatures-3376431/" target="_blank">Dexerto</a>（web_fetch 開原文，作者 Zackerie Fairfax）　原文日期 <b>2026-06-16 16:31Z</b>（meta published_time 2026-06-16T16:31:04Z）　驗了哪句：「歐洲公民倡議『Stop Destroying Videogames』集滿 1,294,188 份有效連署；執委會 6/16 回覆『cannot propose a legal obligation』『would not be proportionate』；改推年底前自願行為準則；法國 UFC-Que Choisir 仍就 The Crew 告 Ubisoft」（原文逐句支撐）；HN 當日 345 分為 radar 直抓官方 API 佐證　<span class="ok">✓ verified（原文 web_fetch + Reuters/Slashdot 多源 + HN 數字）</span>　新鮮度＝🔄（3 天）</div>
+        <div class="row"><b>⑤ Warframe Steam 同時在線一夜 +100.7%（X 彈藥 #2 / #02 / CJ 表 / Demo 佐證）</b>　本機 radar 6/18 <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">Steam 官方 GetNumberOfCurrentPlayers</a>（API 直抽，免敘事閘）　數字日期 <b>2026-06-18 07:30 快照</b>　驗了哪句：「Warframe today 80,604 / yesterday 40,162 / pct +100.7%」（heat_latest.json steam_velocity 直抽）　<span class="warn">⚠️ partial：數字＝官方 API 真數字 ✓；<b>暴衝原因未驗（radar 無事件層，文中已標『目前無法完全證實』）</b></span>　新鮮度＝🔄（數字層 6/18 快照）</div>
+        <div class="row" style="margin-top:6px;opacity:.85">⚠️ <b>降級聲明</b>：本機 heat-radar 今晨（6/19）07:30 排程在本報產出前未刷新——heat_latest.json 的 fetched_at 為 2026-06-18T07:30（前一次成功跑，ok 18/19、含 Steam 官方真數字 + steam_velocity 15 筆）。依規矩誠實降級：① hero 標「趨勢判斷版（即時數字＝6/18 07:30 快照）」；② 即時熱榜 Steam 用 <b>6/18 07:30 官方 API 真數字</b>快照、明標非今日即時，Roblox / Twitch 標「即時暫缺」（沙箱無瀏覽器）；③ 暴衝箱用 6/18 真·日比、明標非今日且暴衝原因未驗；④ Reddit 源 ok=False（被擋）、繁中 Threads / KYM / TikTok 為瀏覽器源今日暫缺——<b>皆誠實標註，未用舊數字假裝今日 live</b>。<b>請 Pizza 確認本機 <code>_heat_radar.log</code>：今晨 6/19 07:30 的 com.gamegen.heat-radar 是否如常產出 6/19 檔（若 Mac 睡眠中，醒來後 WatchPaths 補觸發）。</b><br>自檢：10 個 section 全在（即時熱榜 / 暴衝 / 早期 / 高討論 / 迷因 / 機制 / 繁中 / 趨勢題材 / CJ / 建議動作，無料者留標題 + 誠實佔位）· 彈藥頭版三段齊（CJ×2 / X×3 / Demo×1，皆帶新鮮度標）· 全文 0 賭場語言 · 去重雙閘已跑（題材＋結論 conclusion_key）· 敘事層全過 Evidence Gate（①–④ 開原文／多源；⑤ 官方 API 數字、原因未驗已標）。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　彈藥層敘事經 Evidence Gate（開原文 / 抽日期 / 主張比對 / 機械判新鮮度）· 即時數字層＝本機 heat-radar 直讀 Steam 官方 API（今晨未更新、標 6/18 07:30 快照 / 暫缺）· 分數為排序提示非數據</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/06/19 · 即時數字為 6/18 官方真數字快照 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
