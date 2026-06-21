@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/06/22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 📰 今日彈藥 頭版 */
+  .toplist{max-width:760px;margin:22px 0 0;display:grid;gap:14px}
+  .topbox{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 22px;box-shadow:6px 6px 0 rgba(0,0,0,.85);color:var(--ink)}
+  .topbox .th{display:flex;align-items:center;gap:10px;margin-bottom:13px}
+  .topbox .th .ttl{font-family:"Anton",sans-serif;font-size:19px;letter-spacing:.02em;color:var(--ink)}
+  .topbox .th .pill{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#fff;background:var(--ink);padding:3px 10px;transform:skewX(-8deg)}
+  .topbox .th .pill>span{display:inline-block;transform:skewX(8deg)}
+  .pick{border-left:7px solid var(--lime);background:var(--card);border:2px solid var(--ink);border-radius:6px;padding:13px 16px;margin-bottom:11px}
+  .pick:last-child{margin-bottom:0}
+  .pick.gold{border-left-color:var(--yellow)} .pick.cj{border-left-color:var(--yellow)} .pick.ed{border-left-color:var(--lime)} .pick.demo{border-left-color:var(--violet)}
+  .pick .pk-h{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);margin-bottom:6px}
+  .pick .pk-h .num{font-family:"Anton",sans-serif;color:var(--red);margin-right:8px}
+  .pick .pk-why{font-size:13px;color:var(--ink-soft);margin-bottom:7px}
+  .pick .pk-why b{color:var(--ink)}
+  .pick .pk-hook{font-size:13px;color:var(--ink);background:var(--yellow-s);border:1.5px solid var(--ink);border-radius:5px;padding:7px 11px}
+  .pick .pk-hook .lbl{font-family:"Oswald",sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#1f9c30}
+  .fresh{display:inline-block;font-family:"Oswald",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+    border:1.5px solid var(--ink);border-radius:4px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+  .fresh.new{background:var(--red);color:#fff} .fresh.upd{background:var(--yellow);color:var(--ink)} .fresh.cont{background:#e6e2d6;color:var(--ink)}
+  .deca{display:inline-block;font-family:"Oswald",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.04em;color:var(--ink);margin-left:4px}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.down .nm::after{content:"🧊";margin-left:5px;font-size:11px}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .board .na{padding:18px 14px;font-size:12px;color:var(--ink-soft);line-height:1.6;flex:1}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{max-width:880px;margin:46px auto 0;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;
+    padding:20px 24px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft);line-height:1.7}
+  .evlog h3{font-family:"Anton",sans-serif;font-size:18px;color:var(--ink);margin-bottom:12px}
+  .evlog .row{border-top:1.5px dashed var(--line);padding:8px 0}
+  .evlog .row:first-of-type{border-top:none}
+  .evlog b{color:var(--ink)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .warn{color:#b78a00;font-weight:800}
+  .evlog a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#ammo">今日彈藥</a><a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a><a href="#log">Evidence Log</a>
+      </div>
+      <div class="nav-date">06 · 22 · MON</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 06 / 22 · 敘事層今日已驗（WebSearch + web_fetch 可用，World Cup 線今日二次開原文）· 即時數字＝本機 heat-radar 6/21 07:30 官方真數字快照（今晨 6/22 07:30 排程於產報時尚未刷新）· Roblox / Twitch / Threads / TikTok 即時為瀏覽器源、沙箱無瀏覽器暫缺 · 來源 19 源 + 今日 WebSearch/web_fetch 補敘事</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">全球最大的「梗」正在現場直播，官方遊戲卻又爛又慢 — <b>Trend Response Time 就是護城河</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>地球上現在最大的「即時趨勢」是世界盃，而沒有任何一款官方遊戲能讓你「邊看邊玩」。</b>2026 世界盃 6/11 開踢、48 隊、橫跨美加墨，正在統治全球話題；但官方授權遊戲《FIFA World Cup: Launch Edition》（Netflix 發行、a16z 投資的 Delphi 開發）被 Aftermath 直接罵成「<span class="hl">a putrid, lazy thing… absolute dogshit</span>」，畫面像 2000 年代、手機當搖桿、AI 守門員看著球飛進網（Aftermath 6/18 親測）。EA Sports FC 與 eFootball 因為都沒拿到授權，只能塞個山寨「The World's Game」模式。<b>全世界最大的文化時刻就在眼前，產品卻落後它好幾年。</b></p>
+        <p>對 GameGen 這是教科書級的訊號：<b>當文化在「今天」達到高峰，能玩的東西就必須在「今天」存在。</b>大廠用幾年、上億預算，做出來的世界盃遊戲還是垃圾——因為他們的週期對不上趨勢的週期。GameGen 的整個存在理由＝把 Trend Response Time 壓到「今天的梗，今天就能玩」。同框另一條線：產業正在為 AI <b>「花得起卻證不出」</b>——GamesIndustry.biz 評論直指 AI 成本升、卻「缺乏對開發有重大效益的證據」；Take-Two 前 AI 主管 Dr. Luke Dicken 警告 generative-AI 的炒作正在「<b>毒化這口井</b>」、可能連帶燒掉所有 AI 的信任。GameGen 不押「AI 取代開發者」這個還沒兌現的賭注，押的是把工具交到玩不來引擎的人手上、用 Create / Share / 留存量測得到的需求側。</p>
+        <div class="pull">▸ 今天最該蹭：① 小編線＝<b>世界盃官方遊戲翻車</b>＝「官方做不出能玩的世界盃？10 秒做你自己的」（最好玩、最即時）；② CJ 線＝世界盃證明 <b>Trend Response Time 是護城河</b>（CJ#1）＋ AI「花得起卻證不出」、價值在需求側不在取代開發者（CJ#2）；③ Demo＝世界盃自製荒謬國家隊球賽生成器。<b>⚠️ 誠實標註：即時 Steam 數字為本機 heat-radar 6/21 07:30 官方真數字快照（今晨 6/22 07:30 排程於產報時 07:06 尚未刷新）；World Cup 敘事彈藥今日已用 web_fetch 開原文驗證（Aftermath 6/18、ESPN 6/21）；Roblox / Twitch / Threads / TikTok 即時為瀏覽器源、沙箱無瀏覽器今日暫缺。</b></div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="toplist" id="ammo">
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">🎯 CJ · LinkedIn 線 Top 2</span></div>
+
+          <div class="pick cj gold">
+            <div class="pk-h"><span class="num">1</span>地球最大的即時趨勢（世界盃）正在直播，官方遊戲卻又爛又慢——Trend Response Time 才是真護城河<span class="fresh upd">🔄 進展更新（賽事 6/11 開踢、官方遊戲評測 6/18）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（今日已 web_fetch 開原文驗證）：</b>2026 世界盃 6/11–7/19、48 隊、橫跨美加墨，正統治全球話題（ESPN 6/21 live）；但唯一的官方授權遊戲《FIFA World Cup: Launch Edition》（Netflix 發行、a16z 旗下 Delphi 開發）被 Aftermath 評為「a putrid, lazy thing… absolute dogshit」、畫面停在 2000 年代（Aftermath 6/18）；EA Sports FC / eFootball 因無授權只能塞山寨模式。<a href="https://aftermath.site/fifa-world-cup-launch-edition-netflix-review-impressions/" target="_blank">Aftermath ↗</a>　<b>角度（速度＝護城河，本題專屬）：</b>大廠用「幾年＋上億預算」的週期，永遠對不上「今天就高峰」的趨勢週期——所以世界盃這種全球最大時刻，官方產品反而最慢、最爛。GameGen 的論點不是「我們做得比 AAA 精緻」，而是「<b>我們在文化還熱的當天就能上桌</b>」。Trend Response Time 是別人結構上抄不走的優勢。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："The biggest live trend on Earth right now is the World Cup — and there's no good way to play along. The official game (Netflix/FIFA) shipped as 'a putrid, lazy thing.' Billion-dollar studios run on multi-year cycles; culture peaks today. The moat isn't fidelity — it's Trend Response Time. Be playable the day the moment is hot."　中：「地球上現在最大的即時趨勢是世界盃——卻沒有任何官方遊戲能讓你邊看邊玩，官方那款被罵成『又懶又爛』。上億預算的工作室跑的是好幾年的週期，但文化在今天就達到高峰。護城河不是畫質，是 Trend Response Time：在時刻最熱的那天就能玩。」</div>
+          </div>
+
+          <div class="pick cj">
+            <div class="pk-h"><span class="num">2</span>產業在 AI 上「花得起卻證不出」——成本升、效益無據，老將警告炒作正「毒化這口井」；GameGen 押需求側不押取代<span class="fresh upd">🔄 近期（GamesIndustry / Take-Two 報導，6/21 radar story 源）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（GamesIndustry.biz 評論 + Take-Two 前 AI 主管報導，6/21 radar story 源、今日 WebSearch 佐證）：</b>GamesIndustry.biz 一篇評論直指「AI 成本攀升、卻幾乎沒有證據顯示對遊戲開發有重大效益」；Take-Two 前 AI 主管 Dr. Luke Dicken 公開說 generative-AI 的炒作正在「<b>poisoning the well</b>」、若泡沫破裂可能連傳統 AI 都被一起拋棄。<a href="https://www.eurogamer.net/take-two-former-ai-head-generative-ai-is-poisoning-the-well" target="_blank">Eurogamer ↗</a>　<b>角度（ROI／需求側，本題專屬）：</b>大廠把 AI 押在「省成本／取代開發者」這側——帳面 ROI 還沒被證明、玩家又反彈。GameGen 押的是相反方向：把 AI 當「<b>讓更多人能做、能玩、能分享的吞吐工具</b>」，效益是可量測的 Create Rate / Share Rate / 留存，而不是賭一個還沒兌現的「AI 取代工作室」故事。不押泡沫，押分發層。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："Incumbents are paying more for AI with little proof it helps make games — and a veteran AI lead warns the hype is 'poisoning the well.' The expensive bet is AI-as-replacement, unproven. The measurable bet is AI-as-throughput: more people making, playing, sharing. Don't bet the bubble; bet the distribution layer."　中：「大廠在 AI 上花得越來越多，卻幾乎證明不了它對做遊戲有幫助——連資深 AI 主管都警告炒作正在『毒化這口井』。貴的賭注是『AI 取代開發者』，還沒兌現。能量測的賭注是『AI 當吞吐』：讓更多人做、玩、分享。別賭泡沫，賭分發層。」</div>
+          </div>
+        </div>
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">📣 小編 · X 線 Top 3</span></div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">1</span>官方世界盃遊戲被全網罵爛——做「官方做不出能玩的世界盃？10 秒做你自己的」自製荒謬國家隊球賽<span class="fresh upd">🔄 近期（Aftermath 評測 6/18，賽事 ♨️ 直播中）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（今日 web_fetch 開原文）：</b>世界盃正全球直播，唯一官方授權遊戲（Netflix/FIFA）被 Aftermath 評為「absolute dogshit」、手機當搖桿、像 2000 年代的遊戲（6/18）；EA/eFootball 只有山寨模式。<a href="https://aftermath.site/fifa-world-cup-launch-edition-netflix-review-impressions/" target="_blank">Aftermath ↗</a>　<b>create-loop 勾子：</b>把「官方做不出能玩的世界盃」變成最強的反差梗：上傳你的國旗／吉祥物／自家隊徽 → 10 秒生成一場荒謬街機國家隊對戰 → 出戰績卡 → 揪鄰國互打。蹭法：發「官方花幾年做的世界盃遊戲被罵爛？我們花 10 秒做一個你自己的——選你的國家，開踢」。<b>用泛化/原創角色與隊徽，不挪用 FIFA / 真實隊徽 / 球員肖像</b>，純街機惡搞、零下注語言。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："The official World Cup game just got called 'absolute dogshit.' Studios can't make a playable World Cup? Make your own in 10 seconds — upload your flag, pick your squad, kick off an absurd arcade match, share the scoreline. Which country are you repping?"　中：「官方世界盃遊戲被罵『爛到爆』。大廠做不出能玩的世界盃？那就 10 秒做你自己的——上傳國旗、選你的隊、開一場荒謬街機賽、曬比分。你挺哪一國？」</div>
+          </div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">2</span>世界盃第二週爆冷連連、黑馬寫歷史（Curaçao 等）——做「預測爆冷」連勝小遊戲<span class="fresh new">🆕 今天新（ESPN 6/21 live）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（ESPN 6/21 live blog，今日 WebSearch）：</b>世界盃進入第二週，爆冷與黑馬故事持續發酵（ESPN 6/21 報導 Curaçao 寫下歷史等橋段；另有蘇格蘭球迷、騎超遠來看球的德國車手等病毒時刻）。<a href="https://www.espn.com/soccer/story/_/id/49132616/world-cup-2026-today-blog-21-06-2026-live-updates-news-fixtures-schedule-results-curacao-make-history-germany-ivory-coast" target="_blank">ESPN ↗</a>　<b>create-loop 勾子：</b>把「爆冷」的高喚醒情緒做成每日小遊戲：每天出一題「誰會爆冷」「這支黑馬走多遠」，玩家選邊、看全站分布、曬連勝；可投稿明日題。<b>純預測娛樂、不接任何下注/賠率，避賭場語言（不寫 odds / bet / payout）</b>。蹭世界盃當天賽程，天生每日 loop。</div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："Underdogs are rewriting World Cup history this week. Think you can call the next upset? One pick a day, see how the world voted, build your streak. No odds, no bets — just bragging rights. Who's your dark horse?"　中：「這週黑馬一直改寫世界盃歷史。猜得到下一場爆冷嗎？每天選一題、看全世界怎麼投、累積你的連勝。沒有賠率、沒有下注——只有嘴砲資本。你的黑馬是誰？」</div>
+          </div>
+
+          <div class="pick ed">
+            <div class="pk-h"><span class="num">3</span>itch.io 本週迷因小遊戲熱門（Kill the Ice Age Baby / Three Nights Lobotomized 等）——策展「本週最荒謬」＋一鍵 remix 你的版本<span class="fresh cont">♨️ 延燒（itch 本週熱門，非今天新梗）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實（heat-radar 6/21 itch.io 直抓 popular/meme 標籤）：</b>itch.io 本週迷因區熱門包含「Kill the Ice Age Baby Adventure: The Game」「Three Nights Lobotomized」「Jest Messters」等荒謬小品（radar 直抓現行熱門清單）。<a href="https://itch.io/games/tag-meme" target="_blank">itch.io ↗</a>　<b>create-loop 勾子：</b>不挪用這些遊戲本身（IP/二創地雷），而是借「荒謬迷因小遊戲」這個格式：策展「本週最荒謬迷因小遊戲」一句話導讀，再開「用一個你自己的梗，一鍵 remix 出你的荒謬版本」入口。蹭法：發「本週 itch 最荒謬的迷因小遊戲，你敢玩哪一個？玩完換你做一個」。<b>誠實標『本週熱門』非『今天的新梗』，用原創/泛化美術。</b></div>
+            <div class="pk-hook"><span class="lbl">Hook</span>　EN："This week's most unhinged itch.io meme games, ranked. Played them? Now make your own — turn one of your own jokes into a 10-second absurd mini-game. What's your dumbest idea?"　中：「本週 itch 最離譜的迷因小遊戲排行。玩過了？換你做——把你自己的一個梗，10 秒變成一款荒謬小遊戲。你最蠢的點子是什麼？」</div>
+          </div>
+        </div>
+
+        <div class="topbox">
+          <div class="th"><span class="pill"><span>📰 今日彈藥</span></span><span class="ttl">🕹️ Demo 線 Top 1</span></div>
+          <div class="pick demo">
+            <div class="pk-h"><span class="num">1</span>「世界盃自製荒謬國家隊球賽」生成器：上傳國旗/吉祥物→10 秒街機賽→戰績卡揪鄰國互打<span class="fresh upd">🔄 今日提案（蹭直播中世界盃＋官方遊戲翻車）</span><span class="deca">去賭場化 ✅</span></div>
+            <div class="pk-why"><b>事實依據：</b>世界盃是當下地球最大的即時趨勢（6/11 開踢、ESPN 6/21 live），而官方授權遊戲被罵爛（Aftermath 6/18）——「全民想邊看邊玩、卻沒得玩」是最大的需求缺口。<b>做成 GameGen 首選 Demo：</b>選/上傳你的國家（國旗、吉祥物、自家隊徽）→ 10 秒生成一場荒謬街機國家隊對戰（誇張慢動作、亂入梗）→ 出「戰績卡」可分享 → 揪鄰國/朋友互打、進每日排行。　<b>角度：</b>一次串起 Trend Response Time（蹭直播中的世界盃）、Create Rate（10 秒生成）、Share Rate（戰績卡）、Organic Referral（揪人互打）。風險控管：<b>用泛化/原創角色與隊徽，絕不挪用 FIFA / 真實隊徽 / 球員肖像</b>；對外純「街機惡搞」，零下注/賠率/payout 語言。</div>
+            <div class="pk-hook"><span class="lbl">今天可以怎麼用</span>　先做最小版：選國家→10 秒荒謬街機賽→戰績卡。配 X 彈藥 #1 同步發「官方做不出能玩的世界盃？10 秒做你自己的」。下一版加「預測爆冷」每日題（接 X 彈藥 #2），把賽事熱度導成每日 loop。內部測 Trend Response Time / Create / Share / Referral。</div>
+          </div>
+          <div style="font-size:12px;color:var(--ink-soft);background:var(--paper2);border:2px dashed var(--ink);border-radius:6px;padding:9px 14px;margin-top:11px">🔒 去重雙閘已跑（used_topics.json）：題材去重 ✓（世界盃官方遊戲翻車→自製球賽 / 世界盃爆冷預測 / itch 迷因策展 remix / Trend Response Time 護城河 / AI「花得起卻證不出」需求側 均未在過往彈藥出現過；6/21 已用的「generative-AI 放在哪內戰」「創作者經濟軌道已定價」「GTA6 鱷魚vs短吻鱷」「VS 砍 Fortnite 聯動」「Sony 刪PC加AI」「每日 spot-it」皆不重複進頭版）· 結論去重 ✓（避開近 7 天已燒：AI 該放在哪=玩具vs代工／創作者經濟軌道已定價·縫隙在 UEFN 下層／裁員頂層收縮vs底層民主化／社交場先行=網路效應／生成商品化→分發／戰場在生成之後／品牌即可玩／你own你的遊戲／AI-native→信任稀缺／可攜資產→remix／老遊戲復活=懷舊。本期 CJ#1 把「速度=護城河」收斂為新聞錨定的具體新證據「世界盃官方遊戲又爛又慢＝Trend Response Time」，為進展更新非泛重述）· ✅ Evidence Gate 本日正常：WebSearch + web_fetch 可用，World Cup 線（Aftermath 6/18、ESPN 6/21）今日已開原文驗證；Steam 數字層為 6/21 官方 API 快照、免本閘。</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 6/21 快照</span></div>
+          <ol>
+            <li><span class="nm">Counter-Strike 2 / CS:GO</span><span class="vn">786K</span></li>
+            <li><span class="nm">Path of Exile 2</span><span class="vn">162K</span></li>
+            <li class="hot"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">124K</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">106K</span></li>
+            <li><span class="nm">Destiny 2</span><span class="vn">105K</span></li>
+            <li><span class="nm">GTA V Legacy</span><span class="vn">56K</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 6/21 07:30 真數字快照 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">即時暫缺</span></div>
+          <div class="na">沙箱排程環境無瀏覽器，Roblox 即時 CCU（需 roblox.com/charts / RoMonitor 瀏覽器深掃）<b>今日暫缺</b>。CC 互動 session（有瀏覽器）可補真抓。<br>⚠️ 目前無法完全證實今日即時排名。</div>
+          <div class="bf">RoMonitor / RTrack（瀏覽器源） · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-twch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">即時暫缺</span></div>
+          <div class="na">Twitch 分類觀看（需 twitchtracker.com 瀏覽器深掃）<b>今日暫缺</b>，同因沙箱無瀏覽器。世界盃週特別值得 CC 補抓足球/IRL 觀看暴衝。<br>⚠️ 目前無法完全證實今日即時數字。</div>
+          <div class="bf">TwitchTracker（瀏覽器源） · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>誠實標註</b>：Steam 在線為 <b>6/21 07:30 官方 GetNumberOfCurrentPlayers 真數字</b>快照（今晨 6/22 07:30 排程於產報時 07:06 尚未刷新），明標非今日即時。CS:GO 78.6 萬穩居首、PoE2 16.2 萬居次、PUBG 12.4 萬（+8.8% 日比回溫）。今日無單款 ≥15% 暴衝（最大正向＝BG3 +14.7%、Stardew +12.6%，見暴衝箱）。Roblox / Twitch 即時為瀏覽器源，沙箱無瀏覽器、今日暫缺。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>今日無 ≥15% 暴衝：最大正向＝Baldur's Gate 3 +14.7%、Stardew Valley +12.6%、CS:GO +10.1%、CoD MWII +9.3%、PUBG +8.8%（皆溫和回溫）</h3>
+        <div class="sum">本機 radar 6/21 的 Steam 官方 velocity（真·日比）：<b>今日沒有任何單款突破 ≥15% 暴衝門檻</b>，最猛的是 Baldur's Gate 3 +14.7%（貼著門檻、週末長青回溫）、Stardew Valley +12.6%、CS:GO +10.1%、Call of Duty: MWII +9.3%、PUBG +8.8%、Apex +6.5%、R6 +5.1%。下跌側：Rust −5.3%、Wallpaper Engine −2.2%。Steam movers（排名跳動 / 新進榜）radar 6/21 顯示 baseline_ready，<b>rank_jumps / new_entrants 皆空</b>——今日無黑馬新面孔衝榜。皆 Steam 官方 API 直抽真數字（免 Evidence Gate）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日大盤是「<b>沒有事件</b>」的一天——沒有上週 PoE2 那種一夜 +154% 的回流訊號，只有週末長青遊戲（BG3 / Stardew）的溫和回溫。對 trend-to-game 的讀法：當 Steam 沒有暴衝事件時，真正的「即時趨勢」反而在站外（今天＝世界盃直播），所以今天的題材重心應該擺在<b>賽事熱度</b>而非遊戲榜暴衝。週末若 CC session 有瀏覽器，可補查 Roblox 黑馬與 Twitch 7 天漲幅。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API（6/21） · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>缺口</span></span>Roblox 黑馬新進榜 / Twitch 7 天漲幅：今日暫缺（需瀏覽器）</h3>
+        <div class="sum">Roblox 黑馬衝榜與 Twitch 近 7 天漲幅需 roblox.com/charts、twitchtracker.com 瀏覽器深掃比對昨日快照；本次沙箱排程環境無瀏覽器，<b>今日暫缺</b>，不以舊數字假裝即時。Steam movers radar 6/21 無顯著跳動／黑馬（baseline_ready，rank_jumps / new_entrants 皆空）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>誠實標註優先於補洞——<b>目前無法完全證實</b> Roblox / Twitch 今日暴衝面孔。若由 CC 互動 session（chrome-devtools）或 Claude in Chrome "hi" 產報，需實際補抓真數字並標來源 + 抓取日，不可標暫缺。世界盃週特別建議追 Twitch 的足球/IRL 觀看暴衝。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>資料暫缺</span></span></div></div>
+          </div>
+          <div class="src">ROBLOX / TWITCHTRACKER · <a href="https://twitchtracker.com/games" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO 剛冒頭</span><span class="metric">html5 popular</span></div>
+          <ol>
+            <li class="hot"><span class="nm">The Freak Circus 馬戲恐怖</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">Twilight Observer 觀察解謎</span><span class="vn">解謎</span></li>
+            <li><span class="nm">Death Loop（Danganronpa 啟發）</span><span class="vn">推理</span></li>
+            <li class="hot"><span class="nm">COBB CAN MOVE 單鍵操作</span><span class="vn">反應</span></li>
+            <li><span class="nm">Gaia Maker 造星球放置</span><span class="vn">放置</span></li>
+          </ol>
+          <div class="bf">itch.io html5 popular · radar 6/21 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">They See Me Rollin'</span><span class="vn">新品</span></li>
+            <li><span class="nm">Definitely Not a Cult</span><span class="vn">新品</span></li>
+            <li><span class="nm">Mob Marathon 群眾跑酷</span><span class="vn">新品</span></li>
+            <li class="hot"><span class="nm">Cluck And Tag 抓雞鬼抓人</span><span class="vn">新品</span></li>
+            <li><span class="nm">Moment Hunter / Reality Stability Office</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · radar 6/21 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>本日早期甜蜜區：短回合心理恐怖 + 單鍵反應 + 放置造物（itch.io）；Steam 新品走「怪標題 + 鬼抓人 + 荒謬概念」</h3>
+        <div class="sum">itch.io html5 popular 仍由短回合心理恐怖（The Freak Circus、Death Loop）、單鍵反應（COBB CAN MOVE）領頭，並冒出造物放置（Gaia Maker）；Steam 新品則一片「怪標題、好懂、社交」——鬼抓人型 Cluck And Tag、群眾跑酷 Mob Marathon、概念惡搞 Definitely Not a Cult / Reality Stability Office。共通：<b>規則一句話講完、回合短、好拍 / 好分享</b>，是泛化模板的好原料。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這幾類（恐怖短嚇點 / 單鍵反應 / 鬼抓人多人 / 荒謬概念）都是<b>低門檻、可拍、可一句話講完</b>的單一機制——抄 loop、換泛化皮即可，避開 itch.io 的 IP 二創地雷（別碰 meme 標籤的二創）。把「鬼抓人」這類社交多人 loop 與世界盃題結合（例：國家隊鬼抓人），就是能蹭即時熱度又安全的題庫。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO / STEAM 新品（radar 6/21） · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>趨勢 · 即時</span></span>世界盃統治全球話題，官方授權遊戲卻是「a putrid, lazy thing」——最大時刻、最慢最爛的產品</h3>
+        <div class="sum">2026 世界盃 6/11 開踢、48 隊、橫跨美加墨，正全球直播（ESPN 6/21 live）。唯一官方授權遊戲《FIFA World Cup: Launch Edition》（Netflix 發行、a16z 旗下 Delphi 開發）被 Aftermath 親測痛批「a putrid, lazy thing… absolute dogshit」——畫面像 2000 年代、手機當搖桿、AI 守門員看球飛進網（6/18）。EA Sports FC / eFootball 因都沒拿到 FIFA 授權，只能塞山寨「The World's Game」模式。<b>✅ 今日已 web_fetch 開原文驗證（Aftermath 6/18）。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是 GameGen 賽道最純的一次證明——<b>產品週期對不上趨勢週期</b>。全世界最大的文化時刻就在眼前，上億預算的官方產品反而最慢、最爛。GameGen 的論點不是「做得比 AAA 精緻」，是「在文化還熱的當天就能上桌」。Trend Response Time 是別人結構上抄不走的優勢。（彈藥見 CJ#1 / X#1 / Demo。）</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">AFTERMATH 6/18 / ESPN 6/21（今日 web_fetch） · <a href="https://aftermath.site/fifa-world-cup-launch-edition-netflix-review-impressions/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>對標 · AI</span></span>AI「花得起卻證不出」：GamesIndustry.biz 直指成本升、效益無據；Take-Two 前 AI 主管警告炒作「毒化這口井」</h3>
+        <div class="sum">在大廠押注 generative-AI 的同時，GamesIndustry.biz 一篇評論直指「AI 成本攀升、卻幾乎沒有證據顯示對遊戲開發有重大效益」（radar 6/21 story_gamesindustry）。Take-Two 前 AI 主管 Dr. Luke Dicken 公開稱 AI 炒作正「poisoning the well」、若泡沫破裂恐連傳統 AI 一起被拋棄（Eurogamer，今日 WebSearch 佐證）。《Palworld》開發商 Pocketpair 也維持「玩家不想要它」立場。<b>⚠️ GamesIndustry 評論為 radar 6/21 story 抓取、未今日二次開原文（partial）；Take-Two 引述今日 WebSearch 佐證。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>大廠把 AI 押在「省成本 / 取代開發者」這側，效益還沒被證明、玩家還反彈。GameGen 的差異化正好相反——把 AI 用在「<b>讓更多人能做、能玩、能分享</b>」的需求側，效益是可量測的 Create / Share / 留存，而不是賭一個還沒兌現的開發省錢故事。（彈藥見 CJ#2。）</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESINDUSTRY.BIZ / EUROGAMER（radar 6/21 + WebSearch） · <a href="https://www.eurogamer.net/take-two-former-ai-head-generative-ai-is-poisoning-the-well" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>產業 · 哀悼</span></span>Ubisoft 共同創辦人 Claude Guillemot 墜機罹難——產業同悲（事件題、不遊戲化）</h3>
+        <div class="sum">Reddit r/gaming 當日最高討論：Ubisoft 共同創辦人 Claude Guillemot 於墜機事故中過世，遊戲產業一片哀悼（radar 6/21 reddit top-of-day）。<b>⚠️ 此為人物逝世的敏感事件，radar 6/21 標題層收錄、未今日二次開原文；列此僅為產業脈絡，不作任何題材化／梗化。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>這是哀悼題、不是蹭題。</b>嚴禁做成任何遊戲 / 梗 / 對外文案。列在高討論箱僅為提醒小編：本週社群情緒中有一條沉重的產業悼念線，發任何輕鬆向世界盃 / 迷因內容時注意分寸與時機，避免與哀悼貼文撞期顯得失禮。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk hi"><span>敏感 · 勿蹭</span></span></div></div>
+          </div>
+          <div class="src">REDDIT r/gaming（radar 6/21） · <a href="https://www.reddit.com/r/gaming/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>誠實標註</b>：本箱世界盃線（Aftermath 6/18、ESPN 6/21）<b>今日已用 web_fetch / WebSearch 開原文驗證</b>；AI「花得起卻證不出」的 GamesIndustry 評論為 6/21 radar story 抓取、未今日二次開原文（partial），Take-Two「poisoning the well」引述以今日 WebSearch 佐證。Ubisoft 創辦人逝世為 radar 6/21 reddit 標題層、敏感事件僅列脈絡。其餘大廠對標（Sony 刪PC加AI、UE6 genAI）6/21 已用、本期不重複進頭版。
+      </div>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>社群迷因</span></span>世界盃病毒時刻：黑馬寫歷史、蘇格蘭球迷、騎超遠來看球的德國車手——高喚醒、好二創</h3>
+        <div class="sum">世界盃第二週的病毒時刻持續產出：黑馬球隊寫歷史（Curaçao 等）、蘇格蘭球迷迷因、騎超遠路程來看球的德國車手等（ESPN 6/21 live + 賽事討論）。這類「全球同步、情緒高喚醒、人人有國家可挺」正是最大的社群迷因燃料。<b>✅ 賽事狀態今日 WebSearch 驗證；個別病毒橋段以賽事報導為準。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>把世界盃的高喚醒情緒做成 GameGen 題：① 「預測爆冷」每日小遊戲（X 彈藥 #2）；② 自製荒謬國家隊球賽（Demo）。<b>用泛化/原創美術、不挪用真實隊徽 / 球員肖像 / FIFA 標誌，不接任何下注/賠率。</b>世界盃是當下唯一能讓全球用戶「人人有立場、天天有新梗」的即時題。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 避真隊徽</span></span></div></div>
+          </div>
+          <div class="src">ESPN 6/21（今日 WebSearch） · <a href="https://www.espn.com/soccer/story/_/id/49132616/world-cup-2026-today-blog-21-06-2026-live-updates-news-fixtures-schedule-results-curacao-make-history-germany-ivory-coast" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因遊戲</span></span>itch.io 本週迷因小遊戲熱門：Kill the Ice Age Baby / Three Nights Lobotomized / Jest Messters——荒謬格式，可借不可抄</h3>
+        <div class="sum">itch.io 迷因區本週熱門包含「Kill the Ice Age Baby Adventure: The Game」「Three Nights Lobotomized」「Jest Messters」等荒謬小品（heat-radar 6/21 itch.io tag-meme 直抓現行熱門）。這類「一個荒謬前提 + 10 秒就懂」的迷因小遊戲是穩定的格式燃料。<b>誠實標：為『本週熱門』非『今天的新梗』。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>借「荒謬迷因小遊戲」這個<b>格式</b>，不挪用這些具體遊戲（多 IP / 二創地雷）。做法＝策展「本週最荒謬」一句話導讀 + 「用你自己的梗一鍵 remix」入口（X 彈藥 #3）。把別人做好的迷因熱度，導成 GameGen 的 Create / Remix loop。用原創/泛化美術。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 避二創</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO tag-meme（radar 6/21 直抓） · <a href="https://itch.io/games/tag-meme" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ai reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>誠實標註</b>：Know Your Meme「Popular right now」與 TikTok Creative Center 為瀏覽器源，沙箱排程環境無瀏覽器、<b>純社群迷因新鮮度今日暫缺</b>，不以常青整理頁假裝「今天的梗」。本箱以「今日 WebSearch 驗證的世界盃病毒時刻」＋「radar 6/21 itch.io 直抓的迷因小遊戲熱門（標本週、非新梗）」為主，新鮮度誠實標註。
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>可借用的原創 loop</span><span class="metric">itch.io / 趨勢</span></div>
+          <ol>
+            <li class="hot"><span class="nm">自製荒謬對戰（選/上傳→10秒街機賽→戰績卡）</span><span class="vn">vs</span></li>
+            <li class="hot"><span class="nm">每日預測（選邊→看全站分布→連勝）</span><span class="vn">daily</span></li>
+            <li><span class="nm">鬼抓人多人（Cluck And Tag）</span><span class="vn">社交</span></li>
+            <li><span class="nm">單鍵反應操作（COBB CAN MOVE）</span><span class="vn">反應</span></li>
+            <li><span class="nm">短回合心理恐怖（The Freak Circus）</span><span class="vn">恐怖</span></li>
+          </ol>
+          <div class="bf">itch.io / 趨勢（radar 6/21） · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>本日機制金礦＝「自製荒謬對戰」＋「每日預測」（蹭世界盃直播）；unityroom 今日暫缺（瀏覽器源）</h3>
+        <div class="sum">本次以 radar 直抓的 itch.io 黑馬 + 當下世界盃熱度當原創機制來源：<b>自製荒謬對戰</b>（選/上傳→10 秒街機賽→戰績卡，蹭世界盃自製國家隊）、<b>每日預測</b>（選邊→看全站分布→連勝，蹭爆冷）、鬼抓人多人（Cluck And Tag）、單鍵反應、短回合恐怖——全是低 IP 風險、可抄成泛化模板的單一機制。unityroom（今週ピックアップ / ゲームジャム）為瀏覽器源、沙箱無瀏覽器，<b>今日暫缺</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>機制本身不受版權保護</b>——照抄 loop、換泛化皮即可。優先把「自製荒謬對戰」與「每日預測」做成模板：前者直擊 Create Rate / Share Rate / Referral，後者直擊 Repeat Creation / D7。兩者今天都能掛上世界盃直播，把站外即時熱度導進站內 loop。⚠️ itch.io 別抓 meme 標籤二創，改看 html5 popular 找原創網頁機制。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO / 趨勢（radar 6/21） · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暫缺</span></span>繁中 Threads 即時熱話：今日無瀏覽器、暫缺（延燒題：世界盃話題 / AI 一句話人生模擬）</h3>
+        <div class="sum">Threads 繁中圈即時熱話需瀏覽器深掃，本次沙箱排程環境無瀏覽器、<b>今日無法即時抓取</b>。延燒背景（非今日新驗）：世界盃在繁中圈同步發酵（看球、迷因、半夜賽事討論），繁中「tag AI 玩一句話人生 / 三國 / 武俠 / 恐怖模擬」熱度仍延續。<b>⚠️ 今日具體熱貼與數字目前無法完全證實。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>繁中本命題材（三國 / 武俠 / 恐怖 / 捕捉 RPG）仍是 MVP 抓題優先方向，且可與本日「自製荒謬對戰 / 每日預測」結合（例：繁中版「世界盃自製國家隊」「武俠真假鑑定每日題」）。今日<b>不以舊熱貼假裝即時</b>。若 CC 互動 session 有瀏覽器，建議補抓 Threads 當日繁中遊戲 + 世界盃熱話 + 題材變體，併回本箱。<b>繁中世界盃題注意避賭盤語言。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>資料暫缺</span></span></div></div>
+          </div>
+          <div class="src">THREADS（瀏覽器源） · <a href="https://www.threads.com/search?q=%E4%B8%96%E7%95%8C%E7%9B%83" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>世界盃官方遊戲翻車（直播中）</td><td><span class="tmpl">自製荒謬國家隊球賽</span></td><td>戰績卡、揪鄰國互打</td><td class="rk-low">低 · 避真隊徽/肖像</td><td>本日 Demo 首選＋X#1，蹭直播中世界盃，零下注語言</td></tr>
+          <tr><td>世界盃爆冷 / 黑馬寫歷史</td><td><span class="tmpl">每日預測（選邊連勝）</span></td><td>全站分布、連勝、可投稿</td><td class="rk-low">低 · 不接賠率</td><td>X#2，每日 loop 養 Repeat Creation/D7，純預測娛樂</td></tr>
+          <tr><td>itch 本週迷因小遊戲熱門</td><td><span class="tmpl">迷因 remix 策展</span></td><td>本週榜、一鍵做你的版本</td><td class="rk-mid">中 · 借格式不抄遊戲</td><td>X#3，導他人迷因熱度進 GameGen Create/Remix</td></tr>
+          <tr><td>AI「花得起卻證不出」</td><td><span class="tmpl">CJ 敘事（非遊戲化）</span></td><td>—（B2B 思想領導）</td><td class="rk-mid">中 · 立場</td><td>CJ#2，走「需求側可量測 vs 取代側未證」框</td></tr>
+          <tr><td>鬼抓人多人潮（Cluck And Tag）</td><td><span class="tmpl">社交鬼抓人</span></td><td>多人同樂、最好直播</td><td class="rk-low">低</td><td>可結合世界盃做「國家隊鬼抓人」泛化主題</td></tr>
+          <tr><td>短回合心理恐怖小品潮（itch.io）</td><td><span class="tmpl">短回合恐怖挑戰</span></td><td>嚇點/倒數最好拍</td><td class="rk-low">低</td><td>泛化主題，短回合可拍</td></tr>
+          <tr><td>（延燒）繁中 AI 人生模擬 / 武俠</td><td><span class="tmpl">一句話開局模擬</span></td><td>結局/數值卡可截圖</td><td class="rk-mid">中 · 對手免費</td><td>主打三國/武俠＋每日題化；今日繁中數據暫缺</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>Trend Response Time＝真護城河</td><td>世界盃直播中、官方授權遊戲被罵「putrid…dogshit」（Aftermath 6/18）；大廠週期對不上趨勢週期</td><td>"The moat isn't fidelity — it's Trend Response Time. Be playable the day the moment is hot."</td><td><a href="https://aftermath.site/fifa-world-cup-launch-edition-netflix-review-impressions/" target="_blank">↗</a></td></tr>
+          <tr><td>AI「花得起卻證不出」、押需求側</td><td>GamesIndustry：AI 成本升、效益無據；Take-Two 前 AI 主管 Dicken：炒作「poisoning the well」</td><td>"Don't bet the bubble (AI-as-replacement, unproven). Bet AI-as-throughput: more people making and playing — measurable."</td><td><a href="https://www.eurogamer.net/take-two-former-ai-head-generative-ai-is-poisoning-the-well" target="_blank">↗</a></td></tr>
+          <tr><td>最大時刻、最慢產品＝給創作者的縫隙</td><td>世界盃全球最大文化時刻，官方/EA/eFootball 皆只給山寨或爛品；玩家「想邊看邊玩卻沒得玩」</td><td>"The biggest moment on Earth has no good way to play along. That gap is the creator opportunity."</td><td><a href="https://aftermath.site/fifa-world-cup-launch-edition-netflix-review-impressions/" target="_blank">↗</a></td></tr>
+          <tr><td>大盤無事件＝即時趨勢在站外</td><td>Steam 官方 velocity 6/21：今日無 ≥15% 暴衝（BG3 +14.7% 最大），熱度集中在世界盃直播</td><td>"When the charts are quiet, the real live trend is off-platform. Meet the culture where it's hot today."</td><td><a href="https://store.steampowered.com/charts/mostplayed" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 今日 CJ LinkedIn 兩篇首選（彈藥頭版 🎯 CJ Top 2）：A＝「全球最大即時趨勢（世界盃）直播中、官方遊戲又爛又慢 → Trend Response Time 才是護城河」（速度母題，新聞錨定）；B＝「AI『花得起卻證不出』、老將警告炒作毒化這口井 → GameGen 押可量測的需求側不押取代」（AIGC 母題）。兩篇主題不同、皆已過去賭場語言濾鏡、皆附 EN+中鉤子。<b>✅ World Cup 線今日已開原文驗證（Aftermath 6/18 / ESPN 6/21）；AI 線 GamesIndustry 評論為 6/21 radar、Take-Two 引述今日 WebSearch 佐證，發文前建議用 CC session 對 GamesIndustry 原文與 Dicken 完整引述各核一次。</b>需附品牌卡 prompt（house-style 4:5）時，定稿後再產。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>世界盃官方遊戲翻車 →「官方做不出能玩的世界盃？10 秒做你自己的」（彈藥 X-1，最好玩＋最即時）</li><li>世界盃爆冷/黑馬 →「預測爆冷：選邊、看全站、曬連勝」（彈藥 X-2，純預測零賠率）</li><li>itch 本週迷因小遊戲 →「最荒謬排行＋換你 remix 一個」（彈藥 X-3）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>「世界盃自製荒謬國家隊球賽」選國家→10 秒街機賽→戰績卡（本日首選）</li><li>「每日預測爆冷」選邊→全站分布→連勝（接 X-2，每日 loop）</li><li>「國家隊鬼抓人」泛化多人（蹭 Cluck And Tag loop + 世界盃）</li><li>迷因 remix（一句梗→荒謬小遊戲，借格式不抄遊戲）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>世界盃賽程／爆冷／病毒時刻（每日有新梗，餵每日題）</li><li>AI「效益無據」後續：更多大廠是否承認 ROI 不如預期</li><li>Twitch 世界盃週足球/IRL 觀看暴衝（待 CC 瀏覽器補抓）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>世界盃題用真實隊徽 / 球員肖像 / FIFA 標誌 → 用泛化、原創美術</li><li>「預測爆冷」碰到賠率 / odds / bet / payout → 純預測娛樂、零下注語言</li><li>Ubisoft 創辦人逝世 → 嚴禁題材化/梗化，發輕鬆內容注意與哀悼貼文撞期</li><li>把 6/21 radar 數字當今日即時 → Steam 已明標 6/21 快照</li></ul></div>
+      </div>
+    </section>
+
+    <!-- Evidence Log -->
+    <section id="log">
+      <div class="evlog reveal">
+        <h3>🔒 彈藥 Evidence Gate（驗證閘 · 2026-06-22）</h3>
+        <div class="row" style="opacity:.9"><b>✅ 本日驗證環境聲明：</b>本次排程跑在 Cowork 沙箱，<b>WebSearch + web_fetch 今日皆可用</b>——頭版世界盃線已執行 Evidence Gate 第①步「今日開原文」（web_fetch Aftermath 全文、WebSearch ESPN/Wikipedia 賽事狀態）。<b>即時數字層</b>讀本機 heat-radar 6/21 07:30 快照（Steam 官方 API 直抽、免本閘）；<b>瀏覽器源</b>（Roblox / Twitch / Threads / TikTok / KYM / unityroom）沙箱無瀏覽器、今日暫缺、誠實標註。</div>
+        <div class="row"><b>① 世界盃官方遊戲翻車（CJ#1 / X#1 / Demo / #04 / CJ 表 / 趨勢表）</b>　<a href="https://aftermath.site/fifa-world-cup-launch-edition-netflix-review-impressions/" target="_blank">Aftermath</a>　原文日期 <b>2026-06-18</b>（web_fetch meta article:published_time 直讀）　驗了哪句：「官方授權遊戲《FIFA World Cup: Launch Edition》由 Netflix 發行、a16z 旗下 Delphi 開發、被評 putrid/dogshit；EA Sports FC 與 eFootball 無 FIFA 授權只有山寨模式」（全文逐句支撐）　<span class="ok">✓ verified（今日 web_fetch 開原文）</span>　新鮮度＝🔄 近期（評測 6/18，距今 4 天 ≤14 天；賽事本身 ♨️ 直播中）</div>
+        <div class="row"><b>② 2026 世界盃賽事狀態 / 第二週爆冷（CJ#1 / X#2 / #05 / 趨勢表）</b>　<a href="https://www.espn.com/soccer/story/_/id/49132616/world-cup-2026-today-blog-21-06-2026-live-updates-news-fixtures-schedule-results-curacao-make-history-germany-ivory-coast" target="_blank">ESPN live</a> / <a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup" target="_blank">Wikipedia</a>　原文日期 <b>2026-06-21（ESPN live blog）</b>（今日 WebSearch）　驗了哪句：「世界盃 6/11 開踢、48 隊、美加墨主辦、6/21 仍在進行、第二週有黑馬/爆冷（Curaçao 等）」（WebSearch 結果支撐；個別病毒橋段以賽事報導為準）　<span class="ok">✓ verified（賽事狀態）</span> / <span class="warn">⚠️ partial（個別病毒橋段未逐一開原文）</span>　新鮮度＝🆕 今天（ESPN 6/21 ≤48h）</div>
+        <div class="row"><b>③ AI 成本升效益無據 / Take-Two「poisoning the well」（CJ#2 / #04 / CJ 表）</b>　<a href="https://www.eurogamer.net/take-two-former-ai-head-generative-ai-is-poisoning-the-well" target="_blank">Eurogamer</a> / GamesIndustry.biz　原文日期 <b>日期未逐一驗（GamesIndustry 評論為 6/21 radar story；Take-Two 報導 WebSearch 佐證）</b>　驗了哪句：「GamesIndustry 評論主張 AI 成本升、缺乏重大效益證據；Take-Two 前 AI 主管 Dr. Luke Dicken 稱 AI 炒作 poisoning the well」（GamesIndustry 為 radar 標題層、Dicken 引述 WebSearch 確認）　<span class="warn">⚠️ partial：Dicken 引述 WebSearch 佐證、GamesIndustry 原文未今日二次開；發文前 CC 補核</span>　新鮮度＝🔄 近期</div>
+        <div class="row"><b>④ Ubisoft 共同創辦人 Claude Guillemot 逝世（#04 哀悼題、不遊戲化）</b>　<a href="https://www.reddit.com/r/gaming/" target="_blank">Reddit r/gaming</a>（radar 6/21 top-of-day）　原文日期 <b>日期未驗（radar 標題層）</b>　驗了哪句：「Reddit 當日高討論：Ubisoft 共同創辦人於墜機過世」（radar 標題支撐）　<span class="warn">⚠️ partial：敏感事件、僅列產業脈絡、嚴禁題材化、未今日二次開原文</span>　新鮮度＝🔄 近期</div>
+        <div class="row"><b>⑤ Steam 即時 / velocity（即時熱榜 / 暴衝箱）</b>　<a href="https://store.steampowered.com/charts/mostplayed" target="_blank">Steam 官方 API</a>　數字日期 <b>2026-06-21 07:30 快照</b>　驗了哪句：「CS:GO 786,408；PoE2 162,113；PUBG 123,891（+8.8%）；Rust 106,222；Destiny2 104,927；最大正向 velocity＝BG3 +14.7%、Stardew +12.6%，今日無 ≥15% 暴衝、movers 空」（heat_latest.json steam_live / steam_velocity / steam_movers 直抽）　<span class="ok">✓ verified（官方 GetNumberOfCurrentPlayers，免敘事閘）</span>　新鮮度＝6/21 快照（明標非今日即時）</div>
+        <div class="row" style="margin-top:6px;opacity:.85">⚠️ <b>降級聲明（部分）</b>：本機 heat-radar 今晨（6/22）07:30 排程在本報產出時（TPE 07:06）<b>尚未刷新</b>——heat_latest.json 的 fetched_at 為 2026-06-21T07:30（前一次成功跑，ok 19/19、含 Steam 官方真數字 + steam_velocity 15 筆）。因此即時 Steam 數字標 6/21 07:30 快照、明標非今日即時。<b>但敘事層今日 WebSearch + web_fetch 皆可用</b>，頭版世界盃彈藥已今日開原文驗證（Aftermath 6/18 全文、ESPN 6/21 賽事狀態），非全面降級。瀏覽器源（Roblox / Twitch / Threads / KYM / TikTok / unityroom）沙箱無瀏覽器今日暫缺。<b>請 Pizza 確認本機 <code>_heat_radar.log</code>：今晨 6/22 07:30 的 com.gamegen.heat-radar 是否如常產出 6/22 檔（若 Mac 睡眠中，醒來後 WatchPaths 補觸發；本報產報時間 07:06 早於 07:30 排程亦為可能原因）。</b><br>自檢：10 個 section 全在（即時熱榜 / 暴衝 / 早期 / 高討論 / 迷因 / 機制 / 繁中 / 趨勢題材 / CJ / 建議動作，無料者留標題 + 誠實佔位）· 彈藥頭版三段齊（CJ×2 / X×3 / Demo×1，皆帶新鮮度標，含 1 條 🆕＝世界盃爆冷 ESPN 6/21）· 全文 0 賭場語言（世界盃題已標避賠率/下注）· 去重雙閘已跑（題材＋結論 conclusion_key，避開近 7 天已燒）· World Cup 線今日開原文 ✓ · 數字層 Steam 官方 API ✓。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　彈藥層敘事經 Evidence Gate（開原文 / 抽日期 / 主張比對 / 機械判新鮮度，World Cup 線今日已開原文）· 即時數字層＝本機 heat-radar 直讀 Steam 官方 API（今晨未更新、標 6/21 07:30 快照 / 瀏覽器源暫缺）· 分數為排序提示非數據</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/06/22 · 即時數字為 6/21 官方真數字快照 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
