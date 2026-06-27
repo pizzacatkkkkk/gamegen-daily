@@ -329,21 +329,35 @@
           <div class="bf">Steam 官方 API · 06/27 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
-        <div class="board b-dim">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
-          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Roblox 即時 CCU（roblox.com/charts / RTrack 需瀏覽器渲染）。<b>目前無法完全證實</b>。CC 互動 session（chrome-devtools）有瀏覽器時可補真數字。</div>
-          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">同時在線 · 06/27 即抓</span></div>
+          <ol>
+            <li><span class="nm">Brookhaven RP</span><span class="vn">624.6K</span></li>
+            <li><span class="nm">Grow a Garden 2</span><span class="vn">555.6K</span></li>
+            <li><span class="nm">Adopt Me!</span><span class="vn">371.4K</span></li>
+            <li><span class="nm">Speed Keyboard Escape</span><span class="vn">368.9K</span></li>
+            <li><span class="nm">RIVALS</span><span class="vn">357.9K</span></li>
+            <li><span class="nm">Animal Hospital (Anomaly)</span><span class="vn">337.7K</span></li>
+          </ol>
+          <div class="bf">Roblox Charts · 瀏覽器 06/27 真抓（CC 互動 session 補）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
         </div>
 
-        <div class="board b-dim">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
-          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
-          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        <div class="board b-twch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">7天平均觀看 · 6月</span></div>
+          <ol>
+            <li><span class="nm">Counter-Strike</span><span class="vn">109K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">88.0K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">66.1K</span></li>
+            <li><span class="nm">Meccha Chameleon</span><span class="vn">60.9K</span></li>
+            <li><span class="nm">VALORANT</span><span class="vn">56.4K</span></li>
+            <li><span class="nm">Minecraft</span><span class="vn">51.1K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 7天平均觀看（已濾 Just Chatting/IRL 非遊戲類）· 瀏覽器 06/27 真抓 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-06-27T07:30），Steam 為 <b>06-27 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。本日熱榜全綠：CS2 765K（+8.9%）、PoE2 119K、PUBG 111K（+14.5%）、Rust 102K、Destiny2 82K、Apex 56K，多為週末回流。<b>真正的當日新事件不在這張老遊戲榜上</b>——而是 <b>《Meccha Chameleon》16 天破 1,000 萬套、尖峰 340,535 同上線、衝進當日 Steam 前 5 多人同玩</b>（見頭版＋暴衝箱）。Roblox CCU / Twitch 觀看因本次無瀏覽器標「暫缺」。
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-06-27T07:30），Steam 為 <b>06-27 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。本日熱榜全綠：CS2 765K（+8.9%）、PoE2 119K、PUBG 111K（+14.5%）、Rust 102K、Destiny2 82K、Apex 56K，多為週末回流。<b>真正的當日新事件不在這張老遊戲榜上</b>——而是 <b>《Meccha Chameleon》16 天破 1,000 萬套、尖峰 340,535 同上線、衝進當日 Steam 前 5 多人同玩</b>（見頭版＋暴衝箱）。Roblox CCU 與 Twitch 觀看已由 <b>CC 互動 session 瀏覽器 06/27 補上真數字</b>：Roblox 以 <b>Brookhaven 624.6K</b> 居首、Grow a Garden 2 緊追 555.6K；Twitch 7 天均 <b>Meccha Chameleon 60.9K</b> 衝上第 5（呼應頭版那款 16 天千萬套的黑馬）。
       </div>
     </section>
 
@@ -618,7 +632,7 @@
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 摘要層 · Steam＝官方 API 06-27 即時真數字（radar 07:30）· Roblox/Twitch/Threads/unityroom/KYM 因沙箱排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 摘要層 · Steam＝官方 API 06-27 即時真數字（radar 07:30）· Roblox/Twitch 由 CC 互動 session 06/27 瀏覽器補真數字（Roblox Charts 即時 CCU／TwitchTracker 7天均）· Threads/unityroom/KYM 仍無瀏覽器、標暫缺不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
     <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/06/27 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
