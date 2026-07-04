@@ -97,6 +97,11 @@
       .hs-btn{font-family:"Oswald",sans-serif;font-weight:700;font-size:12px;letter-spacing:.05em;text-transform:uppercase;
         background:var(--yellow);border:2px solid var(--ink);box-shadow:3px 3px 0 rgba(0,0,0,.85);padding:8px 14px;cursor:pointer}
       .hs-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 rgba(0,0,0,.85)}
+      .hs-pager{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;align-items:center}
+      .hs-pg{font-family:"Oswald",sans-serif;font-weight:700;font-size:12px;min-width:30px;padding:5px 7px;
+        background:var(--paper2);border:2px solid var(--ink);cursor:pointer;color:var(--ink)}
+      .hs-pg.on{background:var(--yellow);box-shadow:2px 2px 0 rgba(0,0,0,.85)}
+      .hs-pg:hover{background:var(--yellow)}
     </style>
     <div class="card" style="margin-bottom:22px;border-color:var(--orange)">
       <div class="top" style="border-bottom-color:var(--orange)">
@@ -107,11 +112,12 @@
       <div class="desc" style="padding-bottom:16px">
         社群發文系統每 4 小時全網找料的完整熱點池（時事梗＋產業文章＋即時榜單）。日報是每天早上的精選分析，這裡是隨時最新的原料。
         <div id="hs-topics" style="margin-top:12px"></div>
-        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
-          <button id="hs-more" class="hs-btn" style="display:none">展開全部熱點</button>
+        <div id="hs-tpager" class="hs-pager"></div>
+        <div style="margin-top:16px">
           <button id="hs-charts" class="hs-btn" style="display:none;background:var(--blue-s)">看即時榜單</button>
         </div>
-        <div id="hs-chartlist" style="display:none;margin-top:12px"></div>
+        <div id="hs-chartbox" style="display:none;margin-top:12px"></div>
+        <div id="hs-cpager" class="hs-pager" style="display:none"></div>
       </div>
     </div>
     <script>
