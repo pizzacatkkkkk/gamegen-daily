@@ -85,6 +85,81 @@
   <main>
     <div class="meta">共 <b>31</b> 期 · 最後更新 <b>2026 / 07 / 04</b> · 新到舊排序</div>
 
+    <!-- ═══ HOTSPOT RADAR START · 🔥 熱點雷達區塊（資料檔 hotspots_latest.json 由社群 OS 每 4 小時自動同步；每日更新目錄時整段保留勿刪） ═══ -->
+    <style>
+      .hs-row{padding:7px 0;border-bottom:1px dashed rgba(0,0,0,.14)}
+      .hs-row:last-child{border-bottom:none}
+      .hs-row b{font-weight:700;color:var(--ink);font-size:13.5px;line-height:1.45}
+      .hs-row a:hover b{color:var(--orange)}
+      .hs-en{font-size:11.5px;color:var(--ink-dim);margin-top:1px;line-height:1.4}
+      .hs-src{display:inline-block;font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+        background:var(--paper);border:1px solid var(--ink);padding:0 6px;margin-left:7px;color:var(--ink-soft);white-space:nowrap}
+      .hs-btn{font-family:"Oswald",sans-serif;font-weight:700;font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+        background:var(--yellow);border:2px solid var(--ink);box-shadow:3px 3px 0 rgba(0,0,0,.85);padding:8px 14px;cursor:pointer}
+      .hs-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 rgba(0,0,0,.85)}
+    </style>
+    <div class="card" style="margin-bottom:22px;border-color:var(--orange)">
+      <div class="top" style="border-bottom-color:var(--orange)">
+        <span class="datebadge" style="background:var(--orange)"><span>🔥 熱點雷達 · 每 4 小時更新</span></span>
+        <div class="big disp" style="font-size:24px">今日熱點池</div>
+        <div class="wk" id="hs-meta">載入中…</div>
+      </div>
+      <div class="desc" style="padding-bottom:16px">
+        社群發文系統每 4 小時全網找料的完整熱點池（時事梗＋產業文章＋即時榜單）。日報是每天早上的精選分析，這裡是隨時最新的原料。
+        <div id="hs-topics" style="margin-top:12px"></div>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <button id="hs-more" class="hs-btn" style="display:none">展開全部熱點</button>
+          <button id="hs-charts" class="hs-btn" style="display:none;background:var(--blue-s)">看即時榜單</button>
+        </div>
+        <div id="hs-chartlist" style="display:none;margin-top:12px"></div>
+      </div>
+    </div>
+    <script>
+    (function(){
+      var LBL={"heat:steam_most_played":"Steam 最多人玩","heat:steam_live":"Steam 即時暴衝","heat:steam_new_top":"Steam 新作榜",
+        "heat:itch_io":"itch.io 熱門","heat:github_trending":"GitHub 趨勢","heat:reddit":"Reddit","heat:hackernews":"Hacker News",
+        "exa":"全網時事搜","rss:automaton":"AUTOMATON","heat:tavily_news":"新聞搜尋","heat:google_trends_general":"Google Trends"};
+      var MEDIA={naavik:"Naavik","80lv":"80 Level",gamesindustry:"GamesIndustry",gamedeveloper:"Game Developer",
+        rps:"Rock Paper Shotgun",pcgamer:"PC Gamer",gamespot:"GameSpot",eurogamer:"Eurogamer",vgc:"VGC"};
+      function lbl(s){ if(!s) return "其他"; if(LBL[s]) return LBL[s];
+        if(s.indexOf("daily:")===0) return "日報精選";
+        if(s.indexOf("heat:story_")===0){var k=s.slice(11);return MEDIA[k]||k;}
+        return s.replace(/^heat:/,""); }
+      var CHART=/^heat:(steam_|itch_io|github_trending)/;
+      function row(it){
+        var div=document.createElement("div");div.className="hs-row";
+        var a=document.createElement("a");a.target="_blank";a.rel="noopener";if(it.url)a.href=it.url;
+        var b=document.createElement("b");b.textContent=it.title_zh||it.title;a.appendChild(b);div.appendChild(a);
+        var s=document.createElement("span");s.className="hs-src";
+        s.textContent=lbl(it.source)+(it.published?" · "+it.published:"");div.appendChild(s);
+        if(it.title_zh&&it.title_zh!==it.title){var e=document.createElement("div");e.className="hs-en";e.textContent=it.title;div.appendChild(e);}
+        return div;
+      }
+      var meta=document.getElementById("hs-meta");
+      fetch("hotspots_latest.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+        var items=(d.items||[]).filter(function(it){return it.title;});
+        var topics=items.filter(function(it){return !CHART.test(it.source||"");});
+        var charts=items.filter(function(it){return CHART.test(it.source||"");});
+        meta.textContent=(d.fetched_at||"")+" 抓取 · 時事/文章 "+topics.length+" 條 · 榜單 "+charts.length+" 條";
+        var box=document.getElementById("hs-topics"),SHOW=30;
+        topics.slice(0,SHOW).forEach(function(it){box.appendChild(row(it));});
+        if(topics.length>SHOW){
+          var more=document.getElementById("hs-more");more.style.display="inline-block";
+          more.textContent="展開全部熱點（還有 "+(topics.length-SHOW)+" 條）";
+          more.onclick=function(){topics.slice(SHOW).forEach(function(it){box.appendChild(row(it));});more.style.display="none";};
+        }
+        if(charts.length){
+          var cb=document.getElementById("hs-charts");cb.style.display="inline-block";
+          cb.textContent="看即時榜單（"+charts.length+" 條）";
+          cb.onclick=function(){var cl=document.getElementById("hs-chartlist");
+            if(!cl.childNodes.length)charts.forEach(function(it){cl.appendChild(row(it));});
+            var open=cl.style.display!=="none";cl.style.display=open?"none":"block";};
+        }
+      }).catch(function(){meta.textContent="雷達資料尚未同步（每 4 小時自動更新，稍後再看）";});
+    })();
+    </script>
+    <!-- ═══ HOTSPOT RADAR END ═══ -->
+
     <div class="card" style="margin-bottom:22px;border-color:var(--violet)">
       <div class="top" style="border-bottom-color:var(--violet)">
         <span class="datebadge" style="background:var(--violet)"><span>📊 固定分頁 · 工具</span></span>
