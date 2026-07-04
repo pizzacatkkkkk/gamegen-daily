@@ -141,25 +141,39 @@
         if(it.title_zh&&it.title_zh!==it.title){var e=document.createElement("div");e.className="hs-en";e.textContent=it.title;div.appendChild(e);}
         return div;
       }
+      var PER=10;
+      function makePager(items,boxId,pagerId){
+        var box=document.getElementById(boxId),pager=document.getElementById(pagerId),page=0;
+        function render(){
+          box.innerHTML="";
+          items.slice(page*PER,(page+1)*PER).forEach(function(it){box.appendChild(row(it));});
+          pager.innerHTML="";
+          var n=Math.ceil(items.length/PER);
+          if(n<=1)return;
+          for(var i=0;i<n;i++){(function(i){
+            var b=document.createElement("button");b.className="hs-pg"+(i===page?" on":"");
+            b.textContent=i+1;b.onclick=function(){page=i;render();};pager.appendChild(b);
+          })(i);}
+        }
+        render();
+      }
       var meta=document.getElementById("hs-meta");
       fetch("hotspots_latest.json?t="+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
         var items=(d.items||[]).filter(function(it){return it.title;});
         var topics=items.filter(function(it){return !CHART.test(it.source||"");});
         var charts=items.filter(function(it){return CHART.test(it.source||"");});
         meta.textContent=(d.fetched_at||"")+" 抓取 · 時事/文章 "+topics.length+" 條 · 榜單 "+charts.length+" 條";
-        var box=document.getElementById("hs-topics"),SHOW=30;
-        topics.slice(0,SHOW).forEach(function(it){box.appendChild(row(it));});
-        if(topics.length>SHOW){
-          var more=document.getElementById("hs-more");more.style.display="inline-block";
-          more.textContent="展開全部熱點（還有 "+(topics.length-SHOW)+" 條）";
-          more.onclick=function(){topics.slice(SHOW).forEach(function(it){box.appendChild(row(it));});more.style.display="none";};
-        }
+        makePager(topics,"hs-topics","hs-tpager");
         if(charts.length){
           var cb=document.getElementById("hs-charts");cb.style.display="inline-block";
           cb.textContent="看即時榜單（"+charts.length+" 條）";
-          cb.onclick=function(){var cl=document.getElementById("hs-chartlist");
-            if(!cl.childNodes.length)charts.forEach(function(it){cl.appendChild(row(it));});
-            var open=cl.style.display!=="none";cl.style.display=open?"none":"block";};
+          var inited=false;
+          cb.onclick=function(){
+            var cbox=document.getElementById("hs-chartbox"),cpg=document.getElementById("hs-cpager");
+            if(!inited){makePager(charts,"hs-chartbox","hs-cpager");inited=true;}
+            var open=cbox.style.display!=="none";
+            cbox.style.display=open?"none":"block";cpg.style.display=open?"none":"flex";
+          };
         }
       }).catch(function(){meta.textContent="雷達資料尚未同步（每 4 小時自動更新，稍後再看）";});
     })();
