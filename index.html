@@ -613,6 +613,84 @@
 
     </div>
 
+    <!-- ═══ ARCHIVE COLLAPSE START(每日更新目錄時整段保留勿刪) ═══ -->
+    <style>
+      .ac-line{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+      .ac-date{font-family:"Oswald",sans-serif;font-weight:700;font-size:14.5px;color:var(--ink);white-space:nowrap}
+      .ac-open{margin-left:auto;font-family:"Oswald",sans-serif;font-weight:700;font-size:12px;letter-spacing:.04em;
+        text-transform:uppercase;color:var(--blue);white-space:nowrap}
+      .ac-open:hover{color:var(--orange)}
+    </style>
+    <div id="ac-box" style="display:none;margin-top:22px"></div>
+    <script>
+    (function(){
+      var KEEP=6,PER=10;
+      var grid=document.querySelector("main .grid");
+      var box=document.getElementById("ac-box");
+      if(!grid||!box)return;
+      var cards=grid.querySelectorAll(".card");
+      var items=[];
+      for(var i=KEEP;i<cards.length;i++){
+        try{
+          var c=cards[i];
+          var bigEl=c.querySelector(".big");
+          var wkEl=c.querySelector(".wk");
+          var descEl=c.querySelector(".desc");
+          var openEl=c.querySelector(".btns a.open")||c.querySelector(".btns a");
+          var date=bigEl?bigEl.textContent.replace(/\s+/g," ").trim():"";
+          var href=openEl?openEl.getAttribute("href"):"";
+          if(!date||!href)continue;
+          var wk=wkEl?wkEl.textContent.replace(/\s+/g," ").trim():"";
+          var desc=descEl?descEl.textContent.replace(/\s+/g," ").trim():"";
+          if(desc.length>90)desc=desc.slice(0,90)+"…";
+          c.style.display="none";
+          items.push({date:date,wk:wk,desc:desc,href:href});
+        }catch(e){}
+      }
+      if(items.length<=0)return;
+      function row(it){
+        var d=document.createElement("div");d.className="hs-row";
+        var line=document.createElement("div");line.className="ac-line";
+        var b=document.createElement("b");b.className="ac-date";b.textContent=it.date;line.appendChild(b);
+        if(it.wk){var s=document.createElement("span");s.className="hs-src";s.textContent=it.wk;line.appendChild(s);}
+        var a=document.createElement("a");a.className="ac-open";a.target="_blank";a.rel="noopener";
+        a.href=it.href;a.textContent="開啟 ↗";line.appendChild(a);
+        d.appendChild(line);
+        if(it.desc){var e=document.createElement("div");e.className="hs-en";e.textContent=it.desc;d.appendChild(e);}
+        return d;
+      }
+      var card=document.createElement("div");card.className="card";card.style.borderColor="var(--blue)";
+      var top=document.createElement("div");top.className="top";top.style.borderBottomColor="var(--blue)";
+      var badge=document.createElement("span");badge.className="datebadge";badge.style.background="var(--blue)";
+      var bs=document.createElement("span");bs.textContent="📚 過往檔案 · 共 "+items.length+" 期";
+      badge.appendChild(bs);top.appendChild(badge);
+      var title=document.createElement("div");title.className="big disp";title.style.fontSize="24px";
+      title.textContent="歷史日報一覽";top.appendChild(title);
+      var wkline=document.createElement("div");wkline.className="wk";
+      wkline.textContent="新到舊排序 · 點開啟看當天日報";top.appendChild(wkline);
+      var desc=document.createElement("div");desc.className="desc";desc.style.paddingBottom="16px";
+      var list=document.createElement("div");
+      var pager=document.createElement("div");pager.className="hs-pager";
+      desc.appendChild(list);desc.appendChild(pager);
+      card.appendChild(top);card.appendChild(desc);
+      box.appendChild(card);box.style.display="block";
+      var page=0;
+      function render(){
+        while(list.firstChild)list.removeChild(list.firstChild);
+        items.slice(page*PER,(page+1)*PER).forEach(function(it){list.appendChild(row(it));});
+        while(pager.firstChild)pager.removeChild(pager.firstChild);
+        var n=Math.ceil(items.length/PER);
+        if(n<=1)return;
+        for(var i=0;i<n;i++){(function(i){
+          var b=document.createElement("button");b.className="hs-pg"+(i===page?" on":"");
+          b.textContent=i+1;b.onclick=function(){page=i;render();};pager.appendChild(b);
+        })(i);}
+      }
+      render();
+    })();
+    </script>
+    <!-- ═══ ARCHIVE COLLAPSE END ═══ -->
+
     <div class="tip">
       <span class="h">◆ 怎麼用 / 怎麼分享</span>
       <b>開啟</b>＝在瀏覽器看當天日報。<b>下載</b>＝把那份 HTML 存下來傳給別人（對方雙擊就開、不用安裝）。<br>
