@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/07/06</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">07 · 06 · MON</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 07 / 06 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）· 來源 19 站 + WebSearch 補充</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>今天兩條訊號，一頭一尾都在替 GameGen 的假設背書。</b>Meta 被抓到悄悄上架新 app <span class="hl">Pocket</span>——收購「vibe-coded」遊戲平台 Gizmo 團隊後做出來的正式產品，讓人打字生成小遊戲、還內建「跟著熱門主題推薦」的滑動信息流，講的正是 GameGen 每天在做的事。同一週，<span class="hl">兩個日本開發者、兩個月做出來的躲貓貓遊戲 Meccha Chameleon 衝上 15,000,000 份銷量（不到 30 天）</span>，零 PR、零官方 YouTube，Niko Partners 分析師稱它是「今年賣最快也賣最多」的遊戲。</p>
+        <p>兩條訊號指向同一個結論：<b>「prompt → 可玩遊戲」的需求已經大到連 Meta 都要做；而「小、快、好玩」比預算規模更決定誰能爆紅</b>。GameGen 的差異化不是比模型或信息流規模，是比「跟不跟得上今天的熱點、多快能做出來」。</p>
+        <div class="pull">▸ 今天就能蹭：Meccha Chameleon 的「偽裝躲貓貓」機制正好對上我們 6/25 已經做過的變色龍躲貓貓視覺素材——這波熱潮等於幫我們兩週前的判斷做了驗證，可以直接接回加碼，別重新從零想題材。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>Meta 悄悄上架 Pocket——AI 生游戲信息流正式產品化，市場驗證來了</div>
+            <div class="ln"><b>新聞事實：</b>Meta 被reverse engineer Alessandro Paluzzi發現在 App Store / Google Play 上架新 app「Pocket」（約 6/29 上架、7/2 被抓到），主打「vibe-coded 遊戲信息流」——用文字 prompt 生成稱作「gizmo」的可玩小遊戲，並提供可滑動、跟著熱門主題推薦的 feed。這是 Meta 收購 vibe-coding 遊戲平台 Gizmo 團隊（收購前 635,000 次安裝、98% 好評）後的成果（TechCrunch，原文 2026-07-02；多源交叉驗證）。</div>
+            <div class="ln"><b>GameGen 角度：</b>Meta 用真金白銀驗證了「prompt → 可玩遊戲 + 跟著熱點推薦」這個市場是真的——但 Pocket 是通用信息流，跟的是「使用者偏好」，不是「今天正在發生的具體事件 / 梗」。GameGen 的空位在<b>速度與貼題</b>：把今天的 Discord 熱梗、實況主事件、VTuber 迷因在幾小時內變成可玩連結，這是巨頭的通用 feed 做不到的顆粒度。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Meta just shipped a prompt-to-game feed. That's proof the market is real. What it can't do is turn *today's* Discord meme or streamer moment into a playable link in hours — that's the gap we're built for."<br><span style="color:var(--ink-dim)">中譯：Meta 剛上架了一個「一句話生遊戲」的信息流。這證明了這個市場是真的。但它做不到的是把「今天」的 Discord 迷因或實況主事件在幾小時內變成可玩連結——這正是我們的位置。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://techcrunch.com/2026/07/02/meta-quietly-launches-vibe-coded-gaming-app-pocket/" target="_blank">TechCrunch ↗</a>　pub 2026-07-02　verified ✓</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>兩人、兩個月、15,000,000 份：Meccha Chameleon 證明速度贏過預算</div>
+            <div class="ln"><b>新聞事實：</b>躲貓貓遊戲 Meccha Chameleon 上線不到 30 天賣出 <b>1,500 萬份</b>，開發團隊只有兩位日本開發者（Lemorion_1224、Haganeiro），開發時間僅兩個月，且沒有任何官方 PR 或 YouTube 頻道。Niko Partners 分析師 Daniel Ahmad 稱其為「今年賣最快、也賣最多」的遊戲（Eurogamer / TheSixthAxis / GamesRadar+ / PC Gamer，原文 2026-07-05，多源交叉一致）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這是本季度最乾淨的「小而快打贏大而慢」案例——兩人兩個月、零行銷預算，贏過大部分 AAA 的年度計畫。這正是 GameGen 對 B2B / operator 的核心論點：<b>不用比預算規模，比誰能在熱點還熱的時候把遊戲做出來給人玩</b>。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Two developers. Two months. 15 million copies. No PR budget. The fastest-selling game of the year didn't win on scale — it won on speed and a mechanic anyone gets in five seconds. That's the whole GameGen thesis."<br><span style="color:var(--ink-dim)">中譯：兩位開發者、兩個月、1,500 萬份，零行銷預算。今年賣最快的遊戲靠的不是規模，是速度和一個五秒就懂的機制。這就是 GameGen 的核心論點。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.eurogamer.net/meccha-chameleon-15-million-sales" target="_blank">Eurogamer ↗</a>　pub 2026-07-05　verified ✓</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>躲貓貓變色龍衝 1,500 萬份——我們兩週前就先做了這隻<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Meccha Chameleon 靠「偽裝躲貓貓」機制不到 30 天衝 1,500 萬份（Eurogamer 7/5）。我們 6/25 已經做過變色龍躲貓貓主題視覺，這波是現成的接回題材。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A hide-and-seek chameleon game just hit 15M sales in under a month. We had the same idea two weeks ago. Guess it's time to finish what we started. 👀"　<span style="color:var(--ink-dim)">中譯：一款躲貓貓變色龍遊戲不到一個月衝 1,500 萬份。我們兩週前就有一樣的想法。看來該把它做完了。👀</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>偽裝成背景躲過搜索者的計時小遊戲，結束出「偽裝分」分享卡，揪人比賽誰躲得最久。</div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/meccha-chameleon-15-million-sales" target="_blank">Eurogamer ↗</a>　摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>連 Meta 都下海做「一句話生遊戲」了<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Meta 悄悄上架 Pocket，用 prompt 生成可玩小遊戲並提供熱門主題信息流（TechCrunch 7/2）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Meta just launched an app where AI turns your prompt into a playable game. We've been doing that with today's memes since day one. Welcome to the party, I guess. 😌"　<span style="color:var(--ink-dim)">中譯：Meta 剛上架了一個用 AI 把你的一句話變成可玩遊戲的 app。我們從第一天就在用今天的梗做這件事了。看來派對要開始了。😌</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輕鬆自信語氣、不打對台，順勢邀請大家「來試試看跟今天的熱點綁在一起的版本」。</div>
+            <div class="meta">來源 <a href="https://techcrunch.com/2026/07/02/meta-quietly-launches-vibe-coded-gaming-app-pocket/" target="_blank">TechCrunch ↗</a>　摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>暑假特賣把老玩家全叫回來了：R6 Siege 同時在線 ▲27%<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam Summer Sale 2026（6/25–7/9）進行中，多款老遊戲同時在線人數回升：R6 Siege +27%、Destiny 2 +19.2%、CoD: MWII +15.9%、BG3 +14.5%（heat-radar 官方 API，07/06 即時）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Steam Summer Sale brought your backlog back to life. What's the one old game you're dusting off this week? Make a 60-second tribute game about it. 👇"　<span style="color:var(--ink-dim)">中譯：Steam 夏特把你的遊戲庫存全叫醒了。這週你要挖出哪一款塵封老遊戲？幫它做一款 60 秒的致敬小遊戲吧。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「你的 backlog 罪惡感」清單互動貼，邀請留言最想重玩的老遊戲，順勢導向「幫你的老遊戲做一款迷你版」。</div>
+            <div class="meta">來源 heat_latest.json（Steam 官方 API）　radar 07:06 即時　摘要層</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>偽裝躲貓貓小遊戲——銜接 6/25 變色龍視覺、蹭 Meccha Chameleon 這波<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>玩家操控一隻泛化小動物，偽裝融入背景色躲過搜索者的視線，計時制、被抓到就結束，出「偽裝分」分享卡揪人比賽。核心機制跟 Meccha Chameleon 相同（偽裝 + 躲貓貓），但用完全泛化的角色設計，不挪用其美術或商標。</div>
+            <div class="ln"><b>為何是今天首選：</b>我們 6/25 已經做過變色龍躲貓貓視覺素材，今天的新聞等於幫這個判斷背書——是現成資產 + 現成話題的組合，開發距離最短。</div>
+            <div class="meta">綁 <a href="https://www.eurogamer.net/meccha-chameleon-15-million-sales" target="_blank">Eurogamer ↗</a>　模板：偽裝 / 找找看</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 07/06 即時</span></div>
+          <ol>
+            <li class="down"><span class="nm">Counter-Strike: GO</span><span class="vn">721K ▼2%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">114K ▼5.1%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">103K ▼8.9%</span></li>
+            <li class="hot up"><span class="nm">Destiny 2</span><span class="vn">88K ▲19.2%</span></li>
+            <li class="hot up"><span class="nm">Rainbow Six Siege</span><span class="vn">63K ▲27%</span></li>
+            <li class="up"><span class="nm">Baldur's Gate 3</span><span class="vn">60K ▲14.5%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 07/06 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Roblox 即時 CCU（roblox.com/charts / RTrack 需瀏覽器渲染）。<b>目前無法完全證實</b>。CC 互動 session（chrome-devtools）有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-07-06T07:30），Steam 為 <b>07-06 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。Roblox CCU / Twitch 觀看因本次為沙箱排程、<b>無瀏覽器</b>仍標「暫缺」——CC 互動 session 有瀏覽器時可補真數字。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>暑假特賣帶動老遊戲回流：R6 Siege +27%、Destiny 2 +19.2%、CoD MWII +15.9% 三款過 ≥15% 旗標</h3>
+        <div class="sum">Steam Summer Sale 2026（6/25–7/9）進行中，今日真·日比有三款過 ≥15% 暴衝旗標：<b>Rainbow Six Siege 63,146 人（+27%）</b>、<b>Destiny 2 87,579 人（+19.2%）</b>、<b>Call of Duty: Modern Warfare II 44,497 人（+15.9%）</b>——都是特價期間老遊戲玩家回流。逼近門檻的還有 <b>Baldur's Gate 3 59,562 人（+14.5%）</b>、<b>Stardew Valley 51,371 人（+13.4%）</b>、<b>Apex Legends 56,253 人（+7.8%）</b>；主榜龍頭 CS:GO（720,960，−2%）、Rust（113,944，−5.1%）、PUBG（103,231，−8.9%）小幅回落。<b>steam_movers 排名跳動 / 新進榜今日皆空。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這種暴衝是<b>「特價 → 老遊戲回流」</b>的季節性現象，不是新梗在爆——對 trend-to-game 的題材價值有限（沒有可蹭的新事件本身），但「玩家回鍋玩老遊戲」這個現象本身可以包成題材：邀玩家分享「這禮拜挖出哪款塵封遊戲」，順勢導向做一款迷你致敬版。真正的題材彈藥仍在頭版（Meta Pocket / Meccha Chameleon）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 07/06 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次沙箱排程無瀏覽器、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比為 07-06 官方 API 即時（radar 07:30）。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">101 Dogs Hidden in New York（找找看）</span><span class="vn">新品</span></li>
+            <li><span class="nm">Bounce Ball Clicker</span><span class="vn">新品</span></li>
+            <li><span class="nm">Nin Ninja RESCUE MISSION</span><span class="vn">新品</span></li>
+            <li><span class="nm">FishPond</span><span class="vn">新品</span></li>
+            <li class="hot"><span class="nm">MECCHA CHAMELEON</span><span class="vn">熱賣榜</span></li>
+            <li><span class="nm">Wizard Gold / Master Fall</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品／熱賣榜 · 07/06 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO HTML5 新爆</span><span class="metric">小體量早期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Death Loop（Danganronpa 風推理）</span><span class="vn">推理</span></li>
+            <li><span class="nm">COBB CAN MOVE（單鍵動作）</span><span class="vn">單鍵</span></li>
+            <li><span class="nm">How to Date an Entity（荒謬約會）</span><span class="vn">荒謬</span></li>
+            <li><span class="nm">Sinner Maker（角色捏製）</span><span class="vn">捏製</span></li>
+            <li><span class="nm">Sort the Court!（決策經營）</span><span class="vn">經營</span></li>
+            <li><span class="nm">The Freak Circus（氛圍探索）</span><span class="vn">氛圍</span></li>
+          </ol>
+          <div class="bf">itch.io html5 · 07/06 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日早期 loop 共相：找找看 / 偽裝，正好被 Meccha Chameleon 的主流爆紅印證</h3>
+        <div class="sum">把 Steam 新品 + itch.io html5 兩榜的早期款歸納：<b>找找看 / 偵探型（101 Dogs Hidden in New York、Death Loop 推理）、單鍵速度（COBB CAN MOVE）、決策經營（Sort the Court!）、荒謬社交模擬（How to Date an Entity、Sinner Maker）</b>。最值得注意的是「找找看」——不只 itch/Steam 新品榜有小體量款，同一週 Meccha Chameleon 的「偽裝躲貓貓」正是這個 loop 的放大版，賣到 1,500 萬份。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「找找看 / 偽裝躲藏」今天同時拿到<b>小體量驗證（itch/Steam 新品）</b>和<b>主流規模驗證（Meccha Chameleon 15M）</b>，是今天優先度最高的模板方向；規則一句話講完、IP 風險最低（純泛化角色即可）。Death Loop 標「Danganronpa-inspired」，做泛化皮避開角色美術；社交模擬類（How to Date an Entity）風格荒謬但操作複雜度較高，優先度較後。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO · 07/06 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Meta 悄悄上架 Pocket：AI「vibe-coded」遊戲信息流，收購 Gizmo 團隊後的正式產品</h3>
+        <div class="sum">Reverse engineer Alessandro Paluzzi 7/2 在 App Store / Google Play 抓到 Meta 新 app「Pocket」上架（推估約 6/29 上線）。App 自稱是「一個用來製作與分享 gizmo 的創作平台」，核心是用文字 prompt 生成稱作「gizmo」的可玩小遊戲，並提供可滑動、跟著熱門主題推薦的信息流。技術來自 Meta 收購 vibe-coding 遊戲平台 Gizmo 的團隊（收購前累積 635,000 次安裝、98% 好評）。Meta 尚未正式對外宣布，仍在初期實驗階段（TechCrunch，原文 2026-07-02；Digital Trends / Gulf News / Roic News / Best-AI.org 多源一致）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是今天最大的「遊戲 × AI」訊號，也是 GameGen 賽道被巨頭正式驗證的證據——但 Pocket 是<b>通用信息流</b>（跟使用者偏好走），不是<b>事件驅動</b>（跟今天正在發生的事走）。GameGen 的空位在「今天的具體梗 / 事件」這個顆粒度，巨頭的通用 feed 打不到。已收頭版 CJ Top 1，是本日最強 LinkedIn 彈藥。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">TECHCRUNCH · 7/2 · <a href="https://techcrunch.com/2026/07/02/meta-quietly-launches-vibe-coded-gaming-app-pocket/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>對標</span></span>Meccha Chameleon：兩人兩個月做出今年賣最快也賣最多的遊戲</h3>
+        <div class="sum">躲貓貓遊戲 Meccha Chameleon 不到 30 天賣出 1,500 萬份，開發僅兩位日本開發者（Lemorion_1224、Haganeiro）、耗時兩個月，沒有官方 PR 或 YouTube 頻道。Niko Partners 分析師 Daniel Ahmad 稱其為「今年賣最快、也賣最多」的遊戲；開發者已預告「與一位知名日本明星的合作」（Eurogamer / TheSixthAxis / GamesRadar+ / PC Gamer，原文 2026-07-05）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是本季最乾淨的「小而快打贏大而慢」案例，也是今天最值得直接抄機制的對象——偽裝 / 找找看 loop 規則一句話講完，IP 風險最低。已收頭版 CJ Top 2 + Demo 首選。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">EUROGAMER · 7/5 · <a href="https://www.eurogamer.net/meccha-chameleon-15-million-sales" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        🛰️ <b>背景訊號（非今日新聞、不進頭版）</b>：開源引擎 Godot 6/30 正式禁止 AI 生成程式碼貢獻（維護者稱「無法信任重度使用 AI 的人真的理解自己的程式碼」），與 Meta 這週高調做 AI 生遊戲產品形成有趣對比——「AI 做遊戲」在消費端被巨頭加碼，在開發者社群卻被開源專案抵制。此題本報 6 月已用過，不重複列為 🆕，僅供脈絡參考。來源 <a href="https://www.gamedeveloper.com/business/godot-to-ban-almost-all-ai-coding-contributions" target="_blank">GameDeveloper ↗</a>。
+      </div>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>Meccha Chameleon 本身就是迷因引擎：偽裝失敗的爆笑瞬間正在社群瘋傳</h3>
+        <div class="sum">Meccha Chameleon 的核心玩法（偽裝融入背景躲避搜索者）天生自帶「梗片段」體質——偽裝失敗被抓到的荒謬瞬間、找不到明明很明顯的變色龍等畫面，正是這款遊戲不靠官方行銷也能衝 1,500 萬份的原因。這是「機制本身即迷因」的活教材：不需要額外哏，遊戲玩法自己會生成可分享的爆笑片段。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這正是 GameGen 該學的公式——<b>設計「失敗瞬間本身很好笑」的機制</b>，比事後加迷因梗更持久。偽裝躲貓貓、找找看類模板天生適合做這件事，今天的 Demo 首選已經照這個邏輯設計。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">EUROGAMER / GAMESRADAR+ · <a href="https://www.eurogamer.net/meccha-chameleon-15-million-sales" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>新鮮度警示</span></span>純網路迷因（KYM / Threads）今日暫缺，搜尋結果多為回收舊梗或不宜採用</h3>
+        <div class="sum">本次排程無瀏覽器，KYM「Popular right now」需瀏覽器抓取；WebSearch 查到的候選（如某 Kikuo 歌曲動畫梗，first-seen 約 2026 年 6 月中）已超過 14 天，依紀律標「延燒中」不列為今日新梗；另一則候選涉及對動漫校園角色的不當內容衍生，判斷不符品牌安全，主動排除、不收錄。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>⚠️ 目前無法完全證實</b>當日新生純網路迷因的新鮮度。今天的迷因彈藥改由「有日期、有數字」的 Meccha Chameleon 現象擔綱（見上）。CC 互動 session 有瀏覽器時，再補 KYM / Threads 當日新梗 + first-seen 驗證。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>未證實</span></span></div></div>
+          </div>
+          <div class="src">（KYM / Threads 需瀏覽器 · 本次暫缺）</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（itch / Steam 新品 + Meccha Chameleon 對照）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">偽裝躲貓貓 — Meccha Chameleon 主流驗證</span><span class="vn">★ 偽裝</span></li>
+            <li><span class="nm">101 Dogs Hidden in New York — 找找看計時</span><span class="vn">找找看</span></li>
+            <li><span class="nm">COBB CAN MOVE — 單鍵速度動作</span><span class="vn">單鍵</span></li>
+            <li><span class="nm">Sort the Court! — 決策經營</span><span class="vn">經營</span></li>
+            <li><span class="nm">Death Loop — 推理選擇（Danganronpa 風，需泛化皮）</span><span class="vn">推理</span></li>
+          </ol>
+          <div class="bf">itch.io html5 / Steam 新品 + Eurogamer · 07/06 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>「偽裝 / 找找看」今天同時拿到小體量與主流雙重驗證，本日首抄公式</h3>
+        <div class="sum">今天機制靈感庫的頭號公式是<b>偽裝躲貓貓</b>——itch/Steam 新品的小體量款（找找看類）與 Meccha Chameleon 的主流爆紅（1,500 萬份）互相印證同一個 loop。其次可抄的泛化模板：單鍵速度動作（COBB CAN MOVE）、決策經營（Sort the Court!）。<b>unityroom 今週ピックアップ需瀏覽器，本次排程暫缺、無法完全證實</b>；查得下一屆 Unity 1週間ゲームジャム 為 7/26–8/2，主題尚未公布。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>機制本身不受版權保護，照抄 loop、換泛化皮即可。</b>優先順序：偽裝 / 找找看（今天雙重驗證，最高優先）→ 單鍵速度 / 決策經營（IP 風險最低）→ 推理類（Death Loop 標「Danganronpa-inspired」，避角色美術慣例）。下次有瀏覽器時補 unityroom 得獎機制。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO / STEAM / EUROGAMER · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話大部分暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話快照（Threads 需登入 / JS 渲染），<b>目前無法完全證實</b>今日新梗，骨架保留、不以舊資料或估計補位。WebSearch 查到的繁中熱詞（如「sldpk」「高麗菜煮蛋那桌」）多來自常青型整理文，非當日快照，依紀律不採用為「今天的梗」。可確認的實錘：<b>Steam 夏季特賣 2026/6/25–7/9</b> 在繁中圈也有討論度（Threads 搜尋命中）。可追的長線母題：Meccha Chameleon 的「偽裝躲貓貓」全球爆紅，值得下次有瀏覽器時驗證是否已長出繁中圈變體（如「找變色龍」挑戰）。CC 互動 session（chrome-devtools）或本機環境有瀏覽器時，請補三國 / 武俠 / 恐怖 / 捕捉 RPG 等題材變體。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Meccha Chameleon 偽裝躲貓貓爆紅（15M/&lt;30天）</td><td><span class="tmpl">偽裝 / 找找看小遊戲</span></td><td>偽裝失敗爆笑瞬間分享卡</td><td class="rk-low">低 · 純泛化角色</td><td>★ 本日 Demo 首選，銜接 6/25 已做的變色龍視覺資產</td></tr>
+          <tr><td>Meta 上架 Pocket（AI 生遊戲信息流）</td><td><span class="tmpl">競品定位素材，非玩法模板</span></td><td>「連 Meta 都驗證了這個方向」話題性</td><td class="rk-low">低</td><td>CJ / 小編話題素材，強調「跟今天的事件」而非通用 feed 的差異化</td></tr>
+          <tr><td>Steam 夏特帶動老遊戲回流（R6/Destiny2/CoD MWII）</td><td><span class="tmpl">「重返老遊戲」致敬 clicker</span></td><td>「挖出你的 backlog」共鳴</td><td class="rk-low">低</td><td>暑假輕量話題，可做簡單 demo 搭配</td></tr>
+          <tr><td>101 Dogs Hidden in New York 等找找看早期款</td><td><span class="tmpl">計時找物挑戰</span></td><td>「找到全部」計時分享卡</td><td class="rk-low">低</td><td>與 Meccha Chameleon 互相印證，優先開發序位僅次於偽裝款</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>巨頭資本驗證「prompt→遊戲」市場，但顆粒度打不到「今天的事件」</td><td>Meta 悄悄上架 Pocket，收購 Gizmo 團隊後做出 AI 生遊戲信息流（約 6/29 上線，7/2 曝光）</td><td>"Meta just shipped a prompt-to-game feed. Proof the market's real. What it can't do is turn today's meme into a playable link in hours."</td><td><a href="https://techcrunch.com/2026/07/02/meta-quietly-launches-vibe-coded-gaming-app-pocket/" target="_blank">↗</a></td></tr>
+          <tr><td>速度與簡單機制打贏預算規模</td><td>Meccha Chameleon：兩人、兩個月、15M 份、零 PR，Niko Partners 稱「今年賣最快也賣最多」</td><td>"Two developers, two months, 15 million copies, zero PR budget. Speed and a five-second mechanic beat every AAA release calendar this year."</td><td><a href="https://www.eurogamer.net/meccha-chameleon-15-million-sales" target="_blank">↗</a></td></tr>
+          <tr><td>老遊戲需要季節性推力才能回流，內容週期速度才是關鍵</td><td>Steam Summer Sale 帶動 R6 Siege（+27%）、Destiny 2（+19.2%）、CoD MWII（+15.9%）同時在線回升</td><td>"Even blockbuster live-service titles need a seasonal sale to bring players back. Content cadence beats IP size."</td><td>heat_latest.json（Steam 官方 API）</td></tr>
+          <tr><td>AI 在遊戲產業的路線分歧：消費端加碼、開發端抵制</td><td>Meta 高調做 AI 生遊戲產品的同一週，Godot 開源引擎正式禁止 AI 程式碼貢獻（背景，非本日新聞）</td><td>"The industry is split: AI is being embraced on the consumption side and resisted on the production side. GameGen sits on the side players actually want — making, not coding."</td><td><a href="https://www.gamedeveloper.com/business/godot-to-ban-almost-all-ai-coding-contributions" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Meta Pocket 市場驗證、Meccha Chameleon 速度優勢）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆以多源 WebSearch 交叉驗證原文日期（見文末 Evidence Log；本次 web_fetch 因 provenance 限制未能直開原文，改以 4 家以上獨立媒體交叉比對主張）。對外用字已過濾賭場語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭 Meccha Chameleon：「躲貓貓變色龍衝 1,500 萬份，我們兩週前就先做了」callback 貼 + 6/25 舊視覺</li><li>Meta 上架 Pocket：輕鬆自信語氣「連 Meta 都下海了」，不打對台</li><li>Steam 夏特老遊戲回鍋：「這禮拜你挖出哪款塵封老遊戲」互動貼</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 偽裝躲貓貓小遊戲——銜接 6/25 變色龍視覺，蹭 Meccha Chameleon 這波（本日首選）</li><li>找找看計時模板（抄 101 Dogs Hidden in New York）</li><li>「backlog 罪惡感」致敬 clicker（蹭 Steam 夏特老遊戲回流）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Meta Pocket 後續：是否正式公開發布、是否綁定「跟熱點事件」而非純使用者偏好</li><li>Meccha Chameleon 預告的「與知名日本明星合作」是否落地、是否有 IP 聯動風險</li><li>Steam 夏特結束（7/9 後）CCU 回落速度，驗證是否純為季節性</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>偽裝躲貓貓 demo 勿直接挪用 Meccha Chameleon 美術／角色設計，用完全泛化動物</li><li>不參戰「GameGen vs Meta」敘事，站互補 / 差異化角度（速度、貼題、非通用 feed）</li><li>對外文案持續過濾賭場語言（下注 / payout / big win / guaranteed）</li><li>繁中熱詞候選未經當日驗證，不寫成「今天的梗」</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Meta 上架 Pocket</td><td><a href="https://techcrunch.com/2026/07/02/meta-quietly-launches-vibe-coded-gaming-app-pocket/" target="_blank">TechCrunch</a>（web_fetch 遭 provenance 限制擋下，改以 WebSearch 多源交叉：Digital Trends / Gulf News / Roic News / Best-AI.org / NewsBytesApp）　原文日期 2026-07-02（推估上線約 6/29）　驗：Pocket app 上架 App Store / Google Play、用 prompt 生成「gizmo」可玩小遊戲、可滑動熱門主題信息流、收購 Gizmo 團隊（635K 安裝 / 98% 好評）、Meta 尚未正式官宣<span class="ok">✓</span>　🔄 進展更新（非 ≤48h）</td></tr>
+        <tr><td>Meccha Chameleon 1,500 萬份</td><td><a href="https://www.eurogamer.net/meccha-chameleon-15-million-sales" target="_blank">Eurogamer</a>（WebSearch 多源交叉：TheSixthAxis / GamesRadar+ / PC Gamer / VGChartz）　原文日期 2026-07-05　驗：15M 份 &lt;30 天、開發者 Lemorion_1224 + Haganeiro 兩人兩個月、零 PR、Niko Partners 分析師 Daniel Ahmad「今年賣最快也賣最多」引言、預告與日本明星合作<span class="ok">✓</span>　🆕（≤48h）</td></tr>
+        <tr><td>Godot 禁止 AI 程式碼貢獻</td><td><a href="https://www.gamedeveloper.com/business/godot-to-ban-almost-all-ai-coding-contributions" target="_blank">GameDeveloper</a> / The Register / PC Gamer（radar 故事源 + WebSearch）　原文日期約 2026-06-30～07-01　驗：正式化 AI 程式碼 / AI agent PR / AI 生成文字溝通三項禁令<span class="ok">✓</span>　♨️ 延燒（本報 6 月已用過，dedup 判定 ♻️，僅列背景，不進頭版 / 不算 🆕）</td></tr>
+        <tr><td>Steam Summer Sale 2026 時段</td><td>GameSpot「Best Steam Summer Sale 2026 Deals」/ SteamDB Sales / GameSpot「$2.50 Steam Sale」報導　驗：特賣時段 2026-06-25～07-09，Watch Dogs 2 等大幅折扣帶動玩家回流<span class="pp">summary</span>　摘要層，作為暴衝訊號的季節性背景解讀（非單一遊戲聲明）</td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-07-06T07:30 官方 GetNumberOfCurrentPlayers（API 直抓，免敘事閘）　R6 Siege +27%（63,146）/ Destiny 2 +19.2%（87,579）/ CoD MWII +15.9%（44,497）/ BG3 +14.5%（59,562）/ Stardew +13.4%（51,371）為真·日比<span class="ok">✓</span></td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 因 web_fetch provenance 限制改採 4 家以上獨立媒體交叉驗證、小編 / Demo 摘要層 · Steam＝官方 API 07-06 即時真數字（radar 07:30）· Roblox/Twitch/Threads/unityroom/KYM 因沙箱排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/07/06 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
