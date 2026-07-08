@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/07/08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">07 · 08 · WED</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 07 / 08 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）· 來源 18/19 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>Xbox 啟動「史上最大重整」：3,200 個職位將在 FY2027 前砍掉、1,600 人本週即刻走人，Ninja Theory / Undead Labs / Compulsion / Double Fine 四間工作室被切割出 Xbox 版圖。</b>新任 CEO Asha Sharma 公開自剖：「有些地方工作要經過 14 層管理才能推進，平台團隊比這個世代開局時大 40%，玩家基數和遊戲時數卻在下滑」——她宣布要把管理層砍到最多 5 層、理想是 3 層，圍繞 maker / player-coach / DRI 重建扁平組織，供應商支出砍半（Game Developer，7/6）。緊接著 7/7，<span class="hl">IO Interactive 宣布因 Xbox 撤資，拿回《Project Fantasy》的完整 IP 與所有權</span>，代價是關閉 Istanbul 工作室、40 人離職（Windows Central，7/7）。</p>
+        <p>訊號很清楚：<b>連最大的平台持有者都在公開承認「規模＋官僚拖慢決策」</b>，並把解方寫成「更少管理層、更小的當責單位、更快的決策」——這正是 GameGen 的 Trend-to-Game 引擎一直在賭的敘事：速度與扁平勝過規模。同時，被平台資金綁住的工作室（IO Interactive）用行動證明「自己擁有 IP、自己掌節奏」比被平台養著更值錢。</p>
+        <div class="pull">▸ 今天就能蹭：不做「裁員梗」（真的有數千人失業，消費風險高、不做），改做「Own Your Game」——輸入你的遊戲 / 專案名，生一張泛化的「這是我的 IP，我自己說了算」創作者徽章卡，呼應 IO Interactive 今天的新聞角度：擁有權比被大廠養著更酷。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-mid">🔄 進展更新</span>Xbox CEO 公開自剖：「14 層管理、平台團隊大 40%」——史上最大重整砍到只剩 3 層</div>
+            <div class="ln"><b>新聞事實：</b>Xbox 7/6 宣布「史上最大重整」：<b>3,200 個職位</b>將在 FY2027 前消失，<b>1,600 人本週即刻裁撤</b>；Ninja Theory、Undead Labs 被賣給新東家延續開發，Compulsion Games、Double Fine 拿回 IP 完全獨立。CEO Asha Sharma 公開信原話：「今天在公司某些部分，工作要經過多達 14 層管理才能推進。我們的平台團隊比這個世代開局時大 40%，玩家基數和遊戲時數卻在下滑」；宣布管理層砍到「最多 5 層、理想是 3 層」，圍繞 maker（做事的人）／player-coach（帶隊又下場做事的人）／DRI（直接負責決策的人）重建組織，供應商支出砍 50%（Game Developer，Chris Kerr，pub 2026-07-06）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這不是一般裁員新聞，是<b>全球最大遊戲平台持有者公開承認「規模＋官僚拖慢一切」</b>，並把解方寫成「更少層級、更小的當責單位、更快決策」。這正是 GameGen Trend-to-Game 引擎一直在賭的命題：對抗大遊戲的，不是更大的資本，是更快的決策鏈。今天 Xbox 用一封公開信替我們證明了這個論點。<b>備註：</b>同一封公開信 7/7 已用過「Access, not Ownership」角度（不再重複發），今天這條聚焦另一段原話——管理層級與組織扁平化，屬同事件不同素材，發文前請 CJ 確認未與前一則重疊。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Xbox just admitted it in writing: work passed through 14 layers of management while player time declined. Their fix? Cut to 3 layers, build around makers who ship. That's not a layoffs story — it's a speed story. And speed is the whole game now."<br><span style="color:var(--ink-dim)">中譯：Xbox 白紙黑字承認了：工作要過 14 層管理，玩家時數卻在下滑。他們的解法？砍到 3 層，圍繞真正做事的人重建組織。這不是一則裁員新聞——是一則速度新聞。而速度，現在就是整場遊戲的關鍵。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/xbox-cutting-3-200-jobs-and-parting-ways-with-double-fine-compulsion-ninja-theory-and-undead-labs" target="_blank">Game Developer ↗</a>　pub 2026-07-06　verified ✓</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>IO Interactive 拿回《Project Fantasy》全部 IP——代價是關掉一間工作室</div>
+            <div class="ln"><b>新聞事實：</b>IO Interactive（《Hitman》《007: First Light》開發商）7/7 在 X 官宣：因與 Xbox 的「external finance partnership」結束，<b>「IOI has regained full ownership of the project and our IP... We will continue to develop and fund it independently」</b>。代價：關閉 <b>Istanbul 工作室、40 人離職</b>，聲明稱是為了「找到工作室長期發展的新平衡」（Windows Central，pub 2026-07-07T15:41 UTC）。</div>
+            <div class="ln"><b>GameGen 角度：</b>被平台資金綁住的風險，今天在一間老牌工作室身上具體發生了——資金說撤就撤，遊戲的命運不在自己手上。IOI 選擇的路是「痛，但拿回 IP 自己走」。這正好呼應 GameGen 給 C 側創作者的核心承諾：你的遊戲、你的 IP、你的節奏，不必等平台審批、不必被資金牽著走。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A studio just lost its platform funding overnight — and chose to keep the IP and go it alone rather than stay dependent. That's the trade every creator eventually faces: someone else's money and someone else's rules, or your own game on your own terms."<br><span style="color:var(--ink-dim)">中譯：一間工作室一夜之間失去平台資金——他們選擇拿回 IP 自己走，而不是繼續依賴。這是每個創作者遲早要面對的取捨：別人的錢、別人的規則，還是自己的遊戲、自己的節奏。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.windowscentral.com/gaming/io-interactive-regains-full-ownership-of-project-fantasy-from-xbox-but-closes-one-of-its-studios" target="_blank">Windows Central ↗</a>　pub 2026-07-07　verified ✓</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「這是我的 IP，我自己說了算」——IO Interactive 用行動示範創作者擁有權<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>IO Interactive 7/7 拿回《Project Fantasy》完整 IP 與所有權，代價是關掉 Istanbul 工作室（Windows Central，7/7）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A AAA studio just proved it: owning your IP beats being funded by someone who can pull out overnight. What would YOU make if it was 100% yours? 👇"　<span style="color:var(--ink-dim)">中譯：一間 AAA 工作室剛證明了：擁有自己的 IP，勝過被一個隨時能撤資的金主養著。如果一款遊戲百分之百是你的，你會做什麼？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入你的專案 / 梗名 → 生一張「Own Your Game」創作者徽章卡（泛化設計，不影射真實公司），揪人曬出自己的創作宣言。</div>
+            <div class="meta">來源 <a href="https://www.windowscentral.com/gaming/io-interactive-regains-full-ownership-of-project-fantasy-from-xbox-but-closes-one-of-its-studios" target="_blank">Windows Central ↗</a>　摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam 今日新上架《MindPrompt: Party Games with AI》——AI 派對遊戲品類又多一個新玩家<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>《MindPrompt: Party Games with AI》今日（07/08 radar 07:30）出現在 Steam 熱賣新品榜，自我定位為「AI 生成的派對遊戲」。規模、玩家數、實際玩法細節目前未經第三方查證，僅為 Steam 商店自身列表資料。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Another 'AI party game' just landed on Steam today. The category keeps proving itself. We just don't make you install anything to play — one link, today's meme, done. 👇"　<span style="color:var(--ink-dim)">中譯：又一款「AI 派對遊戲」今天上架 Steam。這個品類一直在被驗證。差別是我們不用你安裝任何東西——一個連結、今天的梗，就這樣。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>不直接點名對手，用「零安裝、瀏覽器即玩」的對比敘事，強調速度與免摩擦優勢。</div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/app/4397070" target="_blank">Steam 商店頁 ↗</a>　摘要層（僅列表資料，細節未查證）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-mid">🔄 進展更新</span>Xbox 重整震盪還在擴散：id Software砍半、Obsidian 少四分之一、Bernie Sanders 都出來罵了<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit / HN 今日（7/8）熱議：id Software 團隊傳出被裁掉近半、Obsidian 據報流失約四分之一員工、前 Halo/Bungie 開發者公開批評遊戲高層、參議員 Bernie Sanders 公開評論 Xbox 裁員（PC Gamer / Reddit r/gaming 今日 top-of-day）。⚠️ 涉及真實員工失業，若要蹭此話題，只做「產業結構反思」角度，<b>不做人物化玩笑、不消費受影響的個人</b>。</div>
+            <div class="ln"><b>建議做法：</b>用中性的產業觀察角度發文（例如「大廠都在往更少管理層走」），不引用個別員工或用裁員做梗圖素材。</div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1uphtqo/game_execs_remain_stupid_detached_money_grubbing/" target="_blank">Reddit ↗</a>　摘要層 · ⚠️ 高敏感度，需謹慎處理</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「Own Your Game」創作者 IP 徽章產生器（蹭 IO Interactive 拿回 IP 的新聞角度）<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入你的專案名 / 遊戲梗 → 生一張泛化風格的「這是我的 IP」創作者徽章卡（證書感設計，非任何真實品牌美術）→ 附一句可自訂的「創作宣言」→ 一鍵分享。把「平台撤資、工作室拿回 IP」這個今天最具話題性的產業事件，轉成人人都能參與的「宣告擁有權」互動。</div>
+            <div class="ln"><b>為何是今天首選：</b>綁今天最新鮮（<48h）的 IO Interactive 新聞，敘事乾淨、零 IP 風險（純泛化證書設計）、不涉及真實失業員工、天生適合 create→share loop。備選：如果想要更輕量的機制型 demo，可参考 HN 上今日出現的免註冊多人拼圖 <i>Patterns with Friends</i>（開發者自述零門檻多人連結），驗證「掃碼即玩、零安裝」模式。</div>
+            <div class="meta">綁 <a href="https://www.windowscentral.com/gaming/io-interactive-regains-full-ownership-of-project-fantasy-from-xbox-but-closes-one-of-its-studios" target="_blank">Windows Central ↗</a>　模板：徽章 / 證書生成器</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 07/08 即時</span></div>
+          <ol>
+            <li class="down"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">604K ▼7.3%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">106K ▼10.6%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">96K ▼2.6%</span></li>
+            <li class="down"><span class="nm">Destiny 2</span><span class="vn">73K ▼3.4%</span></li>
+            <li class="down"><span class="nm">Path of Exile 2</span><span class="vn">68K ▼7.4%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">59K ▼3.4%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 07/08 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Roblox 即時 CCU（roblox.com/charts / RTrack 需瀏覽器渲染）。<b>目前無法完全證實</b>。CC 互動 session（chrome-devtools）有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-07-08T07:30），Steam 為 <b>07-08 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。今日 Top 榜單全面回落（-2.6%～-10.6%），無單一遊戲大幅逆勢上漲。Roblox CCU / Twitch 觀看因本次為沙箱排程、<b>無瀏覽器</b>仍標「暫缺」——CC 互動 session 有瀏覽器時可補真數字。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>今日無正向暴衝：Steam 熱門榜全線回落，CoD MWII -15.5% 是最大跌幅</h3>
+        <div class="sum">今日（07/08 radar）Steam 即時榜 15 款追蹤遊戲<b>全部呈負成長</b>，無任何一款觸及 ≥15% 正向暴衝旗標。跌幅最大的是 <b>Call of Duty: Modern Warfare II（32,239 人，▼15.5%）</b>，其次 Rust（▼10.6%）、Path of Exile 2（▼7.4%）、CS:GO（▼7.3%）。<b>steam_movers 今日新進榜黑馬、排名跳動皆為空</b>——不是「有新梗在爆」的一天，是大盤回落的一天。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天的熱度訊號不在 Steam 榜單，在<b>頭版的 Xbox 重整敘事線</b>（組織結構、IP 所有權）。不要硬把今天的回落數字包裝成「有東西在爆」——誠實標「今日無顯著暴衝」，題材彈藥拉頭版。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 07/08 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次沙箱排程無瀏覽器、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比為 07-08 官方 API 即時（radar 07:30）。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">MindPrompt: Party Games with AI</span><span class="vn">新品·AI派對</span></li>
+            <li><span class="nm">NTE: Neverness to Everness</span><span class="vn">新品</span></li>
+            <li><span class="nm">Demon Protocol</span><span class="vn">新品</span></li>
+            <li><span class="nm">Deadly Warrior</span><span class="vn">新品</span></li>
+            <li><span class="nm">Stinky Cat</span><span class="vn">新品</span></li>
+            <li><span class="nm">Poolar Bear</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 07/08 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO / HN 早期冒頭</span><span class="metric">小體量早期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Patterns with Friends（免註冊多人拼圖）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">Death Loop（Danganronpa 風推理）</span><span class="vn">html5·popular</span></li>
+            <li><span class="nm">Twilight Observer</span><span class="vn">html5·popular</span></li>
+            <li><span class="nm">Flag Click（國旗速答）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">WordFuzz（每日文字遊戲）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">The Freak Circus</span><span class="vn">html5·popular</span></li>
+          </ol>
+          <div class="bf">itch.io html5 / Hacker News · 07/08 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>早期 loop 共相：零門檻多人配對、每日一題文字遊戲、單鍵速答、找碴推理</h3>
+        <div class="sum">把 Steam 新品 + itch.io html5 + HN Show HN 三源歸納，今天的早期款集中四類：<b>零門檻多人配對（Patterns with Friends，開發者自述「免登入即玩」）、每日一題文字遊戲（WordFuzz）、單鍵速答（Flag Click 國旗速答）、找碴 / 推理敘事（Death Loop，Danganronpa 風）</b>。共通點：規則一句話講完、不需要帳號、單局在 60 秒內能有結果。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>「零門檻多人」是今天最值得抄的公式</b>——這正是 GameGen 「web-first playable link」主軸的活教材：一個連結、不用註冊、直接進場。Death Loop 標「Danganronpa-inspired」，做泛化皮時避開角色美術與慣例用語。unityroom 今週得獎機制今日無瀏覽器可取，<b>目前無法完全證實</b>。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO / HN · 07/08 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>重整</span></span>Xbox「史上最大重整」全貌：3,200 職位、四工作室出走、管理層砍到 3 層</h3>
+        <div class="sum">Xbox 7/6 公開信宣布「最重大的一次重整」：<b>3,200 個職位</b>將於 FY2027 前消失，<b>1,600 人本週即刻裁撤</b>；Ninja Theory、Undead Labs 被賣給新東家延續開發，Compulsion Games、Double Fine 拿回 IP 獨立；Arkane Lyon 進入諮詢程序、去留未定。CEO Asha Sharma 公開承認「工作要過 14 層管理」「平台團隊比這世代開局大 40%」「一般年份每投資 1 美元虧 64 美分」，宣布管理層砍到最多 5、理想 3 層，供應商支出砍半（Game Developer，pub 2026-07-06）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是本週最大的「產業結構」新聞，且是<b>官方公開自白</b>（不是外部猜測）：規模與官僚拖慢決策。已收頭版 CJ Top 1，是本日最強 LinkedIn 彈藥；<b>不要把裁員本身做成社群梗</b>，涉及真實數千人失業。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中·敏感</span></span></div></div>
+          </div>
+          <div class="src">GAME DEVELOPER · 7/6 · <a href="https://www.gamedeveloper.com/business/xbox-cutting-3-200-jobs-and-parting-ways-with-double-fine-compulsion-ninja-theory-and-undead-labs" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>重整</span></span>IO Interactive 拿回《Project Fantasy》全部 IP——關掉 Istanbul 工作室當代價</h3>
+        <div class="sum">IO Interactive 7/7 官宣：與 Xbox 的外部資金合作結束後，<b>「已重新取得專案與 IP 的完整所有權」</b>，將獨立開發並自行出資；代價是<b>關閉 Istanbul 工作室、40 人離職</b>（Windows Central，pub 2026-07-07T15:41 UTC）。這是 Xbox 重整風暴下第一個「工作室選擇拿回自主權」的具體案例。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>平台資金依賴的風險今天有了具體案例——資金說撤就撤。IOI 選擇「痛，但拿回 IP」，正好呼應 GameGen 給創作者的核心承諾：你的遊戲、你的 IP、你的節奏。已收頭版 CJ Top 2 + X 線 Top 1 + Demo 線首選。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">WINDOWS CENTRAL · 7/7 · <a href="https://www.windowscentral.com/gaming/io-interactive-regains-full-ownership-of-project-fantasy-from-xbox-but-closes-one-of-its-studios" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>AI 派對遊戲 / 開發工具同日冒頭：MindPrompt 上架 Steam、AutoSprite、OpenGenie</h3>
+        <div class="sum">今日（radar 07:30）觀察到三個「遊戲 × AI」早期訊號：Steam 新品榜出現 <b>MindPrompt: Party Games with AI</b>（自我定位「AI 生成派對遊戲」）；Hacker News 出現 <b>AutoSprite</b>（AI 生成遊戲美術 spritesheet 工具）與 <b>OpenGenie</b>（開源遊戲開發 agent），兩者皆為個位數 points 的早期貼文，規模與成效皆未經第三方查證。背景另有 Sony 領導層公開表態「AI 工具是支撐我們策略的重要基礎技術」（GamesIndustry.biz 故事源）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「AI + 遊戲」賽道持續有新玩家在測試不同切點（派對遊戲 / 美術工具 / 開發 agent），但多數仍卡在「要下載安裝」或「開發者工具」層，還沒做到 GameGen 的「熱點即時反應 + 免安裝分享」組合。<b>⚠️ 此段為摘要層，AutoSprite / OpenGenie 規模與 MindPrompt 玩法細節未逐一 web_fetch 查證</b>，僅列來源自身資訊。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / HACKER NEWS · 07/08 · <a href="https://store.steampowered.com/app/4397070" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        🛰️ <b>背景（非今日新聞）</b>：Sony 「Don't Kill the Disc」反對 PlayStation 取消實體光碟的請願已破 <b>17 萬簽名</b>（Eurogamer / VGC，約 7/6–7），為消費者對平台決策反彈的另一條線，與今日 GameGen 主線關聯度較低，僅供背景參考。
+      </div>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>itch.io 迷因潮：Freddy Fazbear 約會模擬器、Bongo Cat 變體、找碴/惡搞小品續燒</h3>
+        <div class="sum">今日 itch.io meme / viral tag 榜上：<b>Freddy Fazbear's Dating Simulator!</b>（FNAF 角色約會模擬惡搞）、<b>Bongo (and other instruments) Cat</b>（Bongo Cat 迷因變體，本尊已是 Steam 常青熱門，排名 #63）、<b>ClickBait</b>（點擊誘餌自嘲小品）、<b>Asgore Runs Over Dess</b>（遊戲角色惡搞碰撞梗）。共通點：拿既有角色 / 迷因做荒謬混搭，規則簡單、易剪輯。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這類「角色迷因混搭」示範了 GameGen 的甜蜜區，但<b>Freddy Fazbear、Asgore 等直接使用他人角色 IP</b>，泛化時務必換成原創角色設計，只抄「荒謬混搭 + 一句話規則」的公式，不挪用美術與角色名稱。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中·角色IP</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO · 07/08 · <a href="https://itch.io/games/tag-meme" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>新鮮度警示</span></span>Know Your Meme / Threads 即時榜今日暫缺，不採用回收舊梗</h3>
+        <div class="sum">本次排程無瀏覽器，Know Your Meme「Popular right now」與 Threads 繁中圈熱話今日無法即時抓取。依紀律不採用 SEO 彙整頁回收的舊梗充當「今天的梗」。今日迷因彈藥改由有日期、有來源的 itch.io 迷因潮擔綱。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>⚠️ 目前無法完全證實</b>當日新生純網路迷因的新鮮度。CC 互動 session 有瀏覽器時，補 KYM / Threads 當日新梗 + first-seen 驗證。可追母題：Xbox 重整風暴很可能在遊戲圈迷因圈長出「管理層梗圖」變體，下次抓取時留意。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>未證實</span></span></div></div>
+          </div>
+          <div class="src">（KYM / Threads 需瀏覽器 · 本次暫缺）</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（itch / RPS / HN）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">SOMBRAS: negative frames — 拍照找異物</span><span class="vn">★ 找碴</span></li>
+            <li><span class="nm">Patterns with Friends — 零門檻多人拼圖</span><span class="vn">配對</span></li>
+            <li><span class="nm">Flag Click — 國旗單鍵速答</span><span class="vn">單鍵</span></li>
+            <li><span class="nm">WordFuzz — 每日一題文字遊戲</span><span class="vn">每日挑戰</span></li>
+            <li><span class="nm">BOMB DEFUSER — 拆彈計時反應</span><span class="vn">計時</span></li>
+          </ol>
+          <div class="bf">RPS / itch.io / Hacker News · 07/08 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>「拍照找碴」＋「零門檻多人」是今日首抄公式；IP 地雷在角色向迷因</h3>
+        <div class="sum">今日機制靈感首選是 RPS 介紹的 <b>SOMBRAS: negative frames</b>——「在一座詭異的日本小鎮拍照、找出畫面中的異物」，規則一句話講完、天生適合截圖分享比對。其次是 <b>Patterns with Friends</b> 示範的零門檻多人配對（免登入即玩）、<b>Flag Click / WordFuzz</b> 的每日速答型單機挑戰。unityroom 今週得獎機制今日無瀏覽器可取，<b>目前無法完全證實</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「拍照找異物」是<b>今天最值得抄的新機制</b>——把「找不同」玩法包裝成有氛圍的敘事外殼，天生自帶「你找到了嗎」的分享驅動力，且完全可以泛化不涉及任何既有 IP。IP 地雷提醒：itch 迷因區的 Freddy Fazbear / Asgore 等角色向迷因遊戲，泛化時務必換原創角色。80.lv 今日另有 Bluey 官方授權美術教學文章，屬官方持有 IP，不可挪用其角色設計。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ROCK PAPER SHOTGUN · <a href="https://www.rockpapershotgun.com/get-spirited-away-to-a-weird-scary-version-of-a-japanese-town-and-take-pictures-of-the-oddities-you-find-in-sombras-negative-frames" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話（Threads 需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。CC 互動 session（chrome-devtools）或本機環境有瀏覽器時，請補抓三國 / 武俠 / 恐怖 / 捕捉 RPG 等題材變體與當日代表貼文。可追的長線母題：今天 Xbox 重整、IO Interactive 拿回 IP 是全球級遊戲產業話題，繁中圈可能有「台廠 / 台灣工作室會不會也遇到同樣狀況」的討論變體，下次有瀏覽器時驗證是否已落到 Threads 繁中熱話。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>IO Interactive 拿回 IP</td><td><span class="tmpl">Own Your Game 徽章生成器</span></td><td>創作者擁有權宣言</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，純泛化證書設計</td></tr>
+          <tr><td>Xbox「14 層管理」自白</td><td><span class="tmpl">抽象化組織精簡拼圖</span></td><td>「你能砍到 3 層嗎」腦筋急轉彎</td><td class="rk-mid">中 · 敏感</td><td>優先做 CJ 觀點文，避免人物化梗；若做 demo 全抽象化不指名</td></tr>
+          <tr><td>MindPrompt AI 派對遊戲上架</td><td><span class="tmpl">零安裝 AI 派對 demo</span></td><td>「不用安裝，一個連結」對比</td><td class="rk-low">低</td><td>不直接點名對手，比「零摩擦」優勢</td></tr>
+          <tr><td>Patterns with Friends 免註冊多人</td><td><span class="tmpl">零門檻多人配對</span></td><td>掃碼即玩、免帳號</td><td class="rk-low">低</td><td>Demo 候補，驗證即時多人配對模板</td></tr>
+          <tr><td>SOMBRAS 拍照找碴</td><td><span class="tmpl">找異物 30 秒版</span></td><td>「你找到了嗎」截圖比對</td><td class="rk-low">低</td><td>完全泛化場景，無 IP 風險，值得優先原型</td></tr>
+          <tr><td>itch 角色迷因潮</td><td><span class="tmpl">荒謬混搭原創角色版</span></td><td>惡搞混搭好剪</td><td class="rk-mid">中 · 角色IP</td><td>抄公式換原創角色，不挪用 Freddy / Asgore 等既有角色</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>大廠公開自白「規模拖慢決策」</td><td>Xbox CEO：「14 層管理」「平台團隊大 40%」，砍到最多 3 層、圍繞 maker/player-coach/DRI 重建（7/6）</td><td>"Xbox admitted it in writing: 14 layers of management while player time declined. The fix is fewer layers, faster decisions. Speed is the whole game now."</td><td><a href="https://www.gamedeveloper.com/business/xbox-cutting-3-200-jobs-and-parting-ways-with-double-fine-compulsion-ninja-theory-and-undead-labs" target="_blank">↗</a></td></tr>
+          <tr><td>平台資金依賴的風險具體化</td><td>IO Interactive 因 Xbox 撤資，拿回《Project Fantasy》全部 IP，代價是關閉 Istanbul 工作室 40 人（7/7）</td><td>"A studio just lost platform funding overnight and chose to keep the IP. That's the trade every creator eventually faces."</td><td><a href="https://www.windowscentral.com/gaming/io-interactive-regains-full-ownership-of-project-fantasy-from-xbox-but-closes-one-of-its-studios" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Xbox 組織自白、IO Interactive IP 自主）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 驗原文日期（2026-07-06 / 2026-07-07）+ 主張比對（見文末 Evidence Log）。對外用字已過濾賭場語言，且不涉及消費真實被裁員工個人。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>IO Interactive 拿回 IP：「這是我的 IP，我自己說了算」——Own Your Game 徽章分享</li><li>MindPrompt AI 派對遊戲上架：「不用安裝，一個連結」零摩擦對比</li><li>Xbox 組織重整（中性角度）：「大廠都在往更少管理層走」產業觀察，不涉個別員工</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「Own Your Game」創作者 IP 徽章 / 證書生成器（蹭 IO Interactive）—— 本日首選</li><li>SOMBRAS 風格「拍照找異物」30 秒版（完全泛化場景，IP 風險最低）</li><li>零門檻多人配對 demo（抄 Patterns with Friends 的免註冊即玩模式）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👀</span></div><h4>可追蹤的訊號</h4><ul><li>Xbox 重整後續：Arkane Lyon 諮詢程序結果、是否有更多工作室拿回 IP 獨立</li><li>MindPrompt / AutoSprite / OpenGenie 這批「AI+遊戲」早期工具後續成長速度</li><li>Sony「Don't Kill the Disc」請願（已破 17 萬簽名）走向，觀察消費者對平台決策反彈的力度</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Xbox 裁員本身不做梗圖 / demo 素材——真實數千人失業，消費風險高</li><li>itch 迷因區 Freddy Fazbear / Asgore 等既有角色直接挪用 → 換原創角色</li><li>對外文案的賭場語言（下注 / payout / big win / guaranteed）</li><li>MindPrompt 等對手不做貶低性比較，只比「零摩擦 / 速度」優勢</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Xbox「史上最大重整」3,200 職位</td><td><a href="https://www.gamedeveloper.com/business/xbox-cutting-3-200-jobs-and-parting-ways-with-double-fine-compulsion-ninja-theory-and-undead-labs" target="_blank">Game Developer</a>（web_fetch）　原文日期 2026-07-06（作者 Chris Kerr，文中標註 July 6, 2026）　驗：3,200 職位 FY2027 前消失、1,600 人即刻裁撤、四工作室處置、「14 層管理」「平台團隊大 40%」「64 cents 虧損」「管理層砍到最多 5、理想 3」原句、供應商支出砍 50%<span class="ok">✓</span>　🔄 進展中（首發 7/6，效應持續擴散至今；⚠️ 同事件 7/7 已用「Access, not Ownership」角度發過 CJ 頭版，今日為不同段落素材，非重複但屬同一新聞事件，發文前提醒 CJ 留意頻率）</td></tr>
+        <tr><td>IO Interactive 拿回 Project Fantasy IP</td><td><a href="https://www.windowscentral.com/gaming/io-interactive-regains-full-ownership-of-project-fantasy-from-xbox-but-closes-one-of-its-studios" target="_blank">Windows Central</a>（web_fetch）　原文日期 2026-07-07T15:41:59Z（meta published_time）　驗：「regained full ownership of the project and our IP」原句（引 IOI 官方 X 貼文）、Istanbul 工作室關閉、40 人離職<span class="ok">✓</span>　🆕 今天新（&lt;48h）</td></tr>
+        <tr><td>MindPrompt: Party Games with AI</td><td><a href="https://store.steampowered.com/app/4397070" target="_blank">Steam 商店頁</a>（heat_latest.json steam_new_top，07/08 07:30 抓取）　原文日期：今日新上架，無法取得確切上架時間　驗：僅列表標題 + 分類「熱賣」，玩法 / 規模細節<b>未經第三方查證</b><span class="pp">summary</span>　🆕（僅限「今日出現在榜單」此一事實）</td></tr>
+        <tr><td>AutoSprite / OpenGenie</td><td><a href="https://www.autosprite.io" target="_blank">AutoSprite</a> / <a href="https://github.com/legojazz/OpenGenie" target="_blank">OpenGenie</a>（Hacker News，07/08 抓取）　原文日期：HN 貼文本身即為今日抓取內容，點數皆為個位數（1 point）　驗：僅工具自我描述，規模與實際效能<b>未經第三方查證</b><span class="pp">summary</span>　🆕（僅限「今日出現在 HN」此一事實）</td></tr>
+        <tr><td>Patterns with Friends</td><td><a href="https://patternswithfriends.com" target="_blank">Patterns with Friends</a>（Hacker News Show HN，07/08 抓取）　原文日期：HN 貼文本身　驗：「免登入多人拼圖」為開發者自述，<b>未經第三方查證</b><span class="pp">summary</span>　🆕（僅限「今日出現在 HN」此一事實）</td></tr>
+        <tr><td>Sony PlayStation 光碟請願破 17 萬</td><td><a href="https://www.eurogamer.net/petition-against-sony-killing-playstation-physical-media" target="_blank">Eurogamer</a> / <a href="https://www.videogameschronicle.com/news/sony-goes-quiet-as-dont-kill-the-disc-petition-reaches-165000-signatures/" target="_blank">VGC</a>（radar 故事源，07/08 抓取）　約 2026-07-06–07　驗：兩源簽名數略有落差（17 萬 vs 16.5 萬，屬持續增加中的即時計數），多源方向一致<span class="pp">summary</span>（摘要層，未逐句 fetch）</td></tr>
+        <tr><td>SOMBRAS: negative frames 拍照找碴</td><td><a href="https://www.rockpapershotgun.com/get-spirited-away-to-a-weird-scary-version-of-a-japanese-town-and-take-pictures-of-the-oddities-you-find-in-sombras-negative-frames" target="_blank">Rock Paper Shotgun</a>（radar 故事源，07/08 抓取）　約 2026-07-07–08　驗：機制描述取自 RPS 標題與摘要，<b>未逐句全文 fetch</b><span class="pp">summary</span></td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-07-08T07:30 官方 GetNumberOfCurrentPlayers（API 直抓，免敘事閘）　CS:GO -7.3%（604K）/ Rust -10.6%（106K）/ CoD MWII -15.5%（32K）為真·日比，今日無 ≥15% 正向暴衝<span class="ok">✓</span></td></tr>
+        <tr><td>tavily_news 今日連線失敗</td><td>本機 heat-radar log：「連不到 · Tavily 回空（查無近 3 日結果或 API 錯誤）」，今日「AI in games」金礦源缺失，AI 動向段改以 Steam 新品 + HN Show HN 補位<span class="pp">disclosed</span></td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 摘要層 · Steam＝官方 API 07-08 即時真數字（radar 07:30）· Roblox/Twitch/Threads/unityroom/KYM/tavily_news 因沙箱排程無瀏覽器或連線失敗標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/07/08 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
