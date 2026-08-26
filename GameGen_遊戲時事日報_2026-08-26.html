@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/08/26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">08 · 26 · WED</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 08 / 26 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）· 來源 19 站 · Gamescom ONL 2026 大爆發</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>今天最大的夜晚不在 Steam 即時排行，在 Gamescom Opening Night Live 2026 的直播間。</b>一個晚上，業界連續丟出十餘款遊戲的重大公告：<span class="hl">《巫師 3》重製版</span>宣布對現有玩家免費發放、兩部原版資料片跟著解鎖，《巫師 3：往日之歌》新資料片同步首曝（CD Projekt Red，Eurogamer / PCGamer / GameSpot 多方確認）；<span class="hl">Path of Exile 2</span> 確認即將推出完整正式版並轉為免費遊玩（GameSpot）；《虹彩六號》轉型為回合制戰術遊戲 <span class="hl">Rainbow Six Tactics</span>，保留破壞環境與無人機（RPS）；Paradox 新作 <span class="hl">Afterworld</span> 讓你用食人邪教征服美洲（Eurogamer/RPS）；全場最瘋傳的，卻不是任何一款遊戲——是鄉村天后 <b>Dolly Parton</b> 以某種方式現身 Gamescom（GameSpot 標題：「All Anyone At Gamescom Can Talk About Is Dolly Parton」，⚠️ 出場形式未逐句 web_fetch 驗原文）。</p>
+        <p>同時，AI 疑雲本週已是第三連發：《人類帝國 2》（Humankind 2）Gamescom 預告遭玩家指控 AI 生成，工作室急發聲明強調「<b>全真人演員、實景拍攝、手工道具</b>」（PC Gamer）——接續上週《Vapor World》AI 過場穿模上市即崩，與《James Pond》重製預告 AI 痕跡爭議（GameSpot / Kotaku）。訊號很清楚：<b>AI 疑慮已成玩家看內容的預設姿勢</b>，連真人拍的也需要能一句話自證清白。唯一不需要自證的 AI 輸出，是玩家自己生成的那種。</p>
+        <div class="pull">▸ 今天就能蹭：把 Gamescom ONL 的所有公告做成「你最像今晚哪款大作」快問快答測驗（遊戲類型描述泛化，不挪用商標 / 美術）；把 Humankind 2「AI 疑雲即使否認也很難消除」配合 Vapor World 前例，一起組成「AI 內容可信度建立」論述的完整佐證鏈，直接交 CJ 每日包。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>《人類帝國 2》預告遭指 AI 拼湊，工作室急澄清「全真人演員」——AI 疑雲本週三連發</div>
+            <div class="ln"><b>新聞事實：</b>《Humankind 2》（Amplitude Studios / SEGA）Gamescom 預告片發布後，玩家在社群媒體指控畫面為 AI 生成；工作室急發聲明強調「真人演員、實景拍攝、手工道具（real actors, practical sets, and custom-made props）」（PC Gamer，pub 2026-08-26，標題層確認，⚠️ 未逐句 web_fetch 驗原文細節）。同一週此前已有《Vapor World》AI 過場穿模上市即崩（多半差評，PC Gamer 8/24 已驗）、《James Pond》重製版預告被指 AI 痕跡（GameSpot / Kotaku 8/19–21 標題確認）——三起事件形成模式。</div>
+            <div class="ln"><b>GameGen 角度：</b>AI 疑雲三連發的共同訊號：「AI 疑慮」已成玩家看任何遊戲內容的預設反應，就算用真人拍的也要能「一句話自證清白」。GameGen 的定位恰好繞開這個問題：玩家自己生成的遊戲，疑雲不可能落在玩家頭上——<b>創作者本身就是最強的可信度背書</b>。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A 'real actors, practical sets, and custom-made props' statement. Three AI-slop accusations in seven days. AI paranoia is now the default reaction — and the only output players trust is output they made themselves."<br><span style="color:var(--ink-dim)">中譯：「真人演員、實景拍攝、手工道具」聲明。一週三起 AI 疑雲。AI 焦慮已成玩家看內容的預設模式——唯一被信任的 AI 輸出，是玩家自己生成的那種。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pcgamer.com/games/strategy/humankind-2-trailer-accused-of-being-ai-slop-studio-says-nope-real-actors-practical-sets-and-custom-made-props/" target="_blank">PC Gamer ↗</a>　pub 2026-08-26（估）　verified partial（標題層，未 web_fetch 原文句子）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Entity 融資 580 萬美元打造「主機品質瀏覽器遊戲」平台——免安裝高品質賽道正式有創投入場<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>愛爾蘭新創 Entity 宣布融資 580 萬美元（部分媒體報導為約 500 萬，數字略有出入），目標為新世代網頁建造「主機品質、無需下載安裝」的遊戲平台（gamesindustry.biz / gamedeveloper.com，heat_latest.json 兩家媒體標題交叉確認，⚠️ 未 web_fetch 驗原文具體條款，pub date 未確認）。</div>
+            <div class="ln"><b>GameGen 角度：</b>Entity 押的是「品質端」：無安裝 + 高畫質，仍是「找好遊戲玩」的消費者邏輯。GameGen 押的是「速度端」：一句話生成 + 立即分享，是「把玩家變成創作者」的創作者邏輯。同一市場、完全不同的切口——兩者不是直接競爭，是在教育同一塊市場的不同層次。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A browser gaming startup just raised $5.8M for 'console-quality games without installs.' They're betting on quality. GameGen bets on speed: a game created by you in one sentence, played instantly by your friends."<br><span style="color:var(--ink-dim)">中譯：一家瀏覽器遊戲新創剛募到 580 萬美元，押注「主機品質、免安裝」。他們押品質；我們押速度——一句話生成、朋友立即玩。同一市場，完全不同的切口。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/entity-raises-58-million-to-build-browser-based-console-quality-gaming-platform" target="_blank">GamesIndustry.biz ↗</a>　verified partial（標題交叉確認，未 web_fetch 詳情）</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Gamescom ONL 2026 一夜爆炸：巫師3重製版免費、PoE2 正式版 F2P、Rainbow Six 變回合制——全場最火的居然是 Dolly Parton<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>確認公告（多方標題交叉驗證）：</b>①《巫師 3》重製版免費升級現有玩家 + 原版兩部 DLC 免費 + 新資料片《往日之歌》首曝（Eurogamer/PCGamer/GameSpot/VGC/RPS）。②《Path of Exile 2》正式版確認即將推出並免費遊玩（GameSpot）。③《Rainbow Six Tactics》把《圍攻》改編成回合制、保留破壞環境與無人機（RPS）。④Paradox《Afterworld》後啟示錄食人邪教策略（Eurogamer/RPS/PCGamer）。⑤鄉村天后 Dolly Parton 成為全場最熱話題（GameSpot 標題，出場形式未驗原文）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Gamescom ONL just dropped: Witcher 3 free remaster, PoE2 going F2P, Rainbow Six going turn-based, and somehow Dolly Parton is the biggest story of the night. 🎮"<br><span style="color:var(--ink-dim)">中譯：Gamescom ONL 一夜爆炸：巫師3重製版免費、PoE2 要 F2P、Rainbow Six 變回合制——但全場最火的是鄉村天后 Dolly Parton 不知怎麼出現在現場。🎮</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>把今晚 10+ 款大作做成「你的個性最像哪款 Gamescom 遊戲」快問快答，一句話描述 → 生成配對結果卡（遊戲類型泛化，不挪用商標）。</div>
+            <div class="meta">來源 <a href="https://www.gamespot.com/articles/gamescom-opening-night-live-2026-all-the-biggest-announcements-games-and-trailers/" target="_blank">GameSpot ONL 懶人包 ↗</a> + Eurogamer / PCGamer / VGC / RPS 交叉確認　pub 2026-08-25/26　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Riot Games 宣布 12 月停止《2XKO》積極開發——格鬥遊戲為什麼是大廠最難留住新玩家的品類<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Riot Games 宣布將於 2026 年 12 月停止格鬥遊戲《2XKO》的積極開發（Game Developer，heat_latest.json story_gamedeveloper 標題確認，⚠️ 停止原因及原文措辭未 web_fetch 驗，引用時需查原文）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Riot is shutting down its fighting game 2XKO in December. Even League of Legends' maker can't crack the fighter market. The issue? Skill ceiling kills new players faster than they onboard. 👇"<br><span style="color:var(--ink-dim)">中譯：Riot Games 要在 12 月停止《2XKO》開發。連《英雄聯盟》的公司都做不起格鬥遊戲——技能天花板把新玩家嚇跑的速度，比他們入門更快。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>格鬥遊戲的問題不是規則，是學習曲線。用一句話輸入「任何角色設定」→ 生成零學習曲線版格鬥對戰，出「3 秒勝負」分享卡。</div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/business/riot-games-is-winding-down-fighter-2xko-in-december-2026" target="_blank">Game Developer ↗</a>　pub 2026-08-26（估）　verified partial（標題層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>《英雄無敵 III》粉絲資料片 Horn of the Abyss 終於登上 Steam——玩家社群花了近 20 年做的非官方擴充正式上架<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam 新品榜今日（08/26 heat radar 07:30）出現《Heroes of Might and Magic III: Horn of the Abyss》（appid 5061200），為玩家社群自製的 HoMM3 擴充內容；同期 HoMM3 base game（appid 4921760）也以獨立條目出現在新品榜（heat_latest.json steam_new_top 直接確認，⚠️ 發行方 / 授權關係 / 定價未 web_fetch 驗原文）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A fan-made expansion for Heroes of Might and Magic III — built over nearly 20 years by the community — just appeared on Steam. Passion projects can go official. Imagine if it took 60 seconds instead. 👇"<br><span style="color:var(--ink-dim)">中譯：英雄無敵 III 的社群自製資料片，玩家花了近 20 年做——今天終於出現在 Steam 上。熱愛可以撐 20 年。但如果只需要 60 秒呢？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「情懷復刻」是強分享點——輸入任何「你最想復活的舊玩法」→ 生成 60 秒迷你版復刻遊戲 → 出「vs. 原版」對比分享卡。</div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/app/5061200" target="_blank">Steam（appid 5061200）↗</a>　heat_latest.json steam_new_top 直接確認　08/26 07:30　verified ✓（radar 直接抓到條目）</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「Gamescom ONL 你是哪款遊戲」人格配對測驗生成器——蹭 ONL 10+ 大作流量、零 IP 風險<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入「描述你理想的 60 秒遊戲體驗」一句話 → 生成「你最像今晚 Gamescom ONL 哪款遊戲」配對結果（以遊戲類型 / 情境泛化描述，不挪用任何官方美術 / 商標 / 角色名）→ 結果卡附「這個類型的一句話核心規則」供用戶直接遊玩體驗。</div>
+            <div class="ln"><b>為何是今天首選：</b>ONL 今晚公布了 10+ 款遊戲，每個都有自己的核心情緒（免費給你玩 / 轉型回合制 / 食人邪教 / 鄉村天后…）。「你最像哪款」測驗型格式是今天整個社群最容易點入的互動形式，且所有素材來自今晚公告，時間優勢最強。</div>
+            <div class="meta">綁 <a href="https://www.gamespot.com/articles/gamescom-opening-night-live-2026-all-the-biggest-announcements-games-and-trailers/" target="_blank">GameSpot ONL 懶人包 ↗</a>　素材：今晚公告類型描述（泛化）　模板：人格測驗 / 配對</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 08/26 官方 API 07:30</span></div>
+          <ol>
+            <li class="down"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">514K ▼18.9%</span></li>
+            <li class="down"><span class="nm">Palworld</span><span class="vn">118K ▼8.3%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">91K ▼3.7%</span></li>
+            <li class="down"><span class="nm">Tom Clancy's Rainbow Six Siege</span><span class="vn">76K ▼1.1%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">75K ▼10.3%</span></li>
+            <li class="up"><span class="nm">HELLDIVERS 2</span><span class="vn">57K ▲4.7%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 08/26 07:30 真數字 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 最多人玩</span><span class="metric">本日排名 Top 5 · steam_most_played</span></div>
+          <ol>
+            <li><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">#1</span></li>
+            <li><span class="nm">Dota 2</span><span class="vn">#2</span></li>
+            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">#3</span></li>
+            <li><span class="nm">Wallpaper Engine</span><span class="vn">#4 ▲7.9%</span></li>
+            <li class="hot"><span class="nm">How to Fish</span><span class="vn">#5 🔥</span></li>
+          </ol>
+          <div class="bf">steam_most_played · 08/26 07:30 · <a href="https://store.steampowered.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX / TWITCH</span><span class="metric">今日狀態</span></div>
+          <div class="nodata">今日排程環境無瀏覽器直抓可用（Gamescom ONL 為頭號資料來源，取代即時榜監測優先序）。<br><br><b>上次已知（08/25）：</b>Roblox Top：布魯克海文 521K / 謀殺之謎 317K / Blox Fruits 302K。Twitch Top：Just Chatting 285K / Dota 2 183K。</div>
+          <div class="bf">瀏覽器直抓不可用 · 次日補齊</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 08/26 07:30 已跑成功（<code>fetched_at</code> 2026-08-26T07:30:30+08:00），Steam 為官方 API 即時真數字。今日值得注意：<b>Terraria +13.4%（47,759）</b>、<b>HELLDIVERS 2 +4.7%（56,757）</b> 是今日最大漲幅；CS:GO 大跌 -18.9% 為今日最大跌幅（週三回落屬正常規律）。Steam 排名跳動（steam_movers）：<b>Bongo Cat +9（#76→#67）</b>、<b>Zenless Zone Zero +9（#96→#87）</b>、<b>雀魂MahjongSoul +7（#98→#91）</b>。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>媒體暴衝</span></span>Gamescom ONL 2026 觸發全球遊戲媒體同步刷新：GameSpot / Eurogamer / RPS / PCGamer / VGC 今日全線頭條被 ONL 佔滿</h3>
+        <div class="sum">今日 heat_latest.json 的 story_gamespot / story_eurogamer / story_rps / story_pcgamer / story_vgc / story_gamedeveloper 全部以 Gamescom 相關內容為最新條目，Reddit r/Games 和 r/gaming 的今日 Top 帖同樣被巫師3重製版、LEGO Skylines、Persona 6 等 ONL 公告佔據。這是今日雷達最清楚的「媒體暴衝」訊號——不是一個遊戲在衝，是整個行業生態的注意力在 24 小時內集中切換到同一個事件。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Gamescom ONL 型的「集中公告爆發」是做社群的最佳時機之一：所有人都在問「你最期待哪款」，任何能讓用戶選擇或配對的互動內容（測驗、投票、生成器）在這個時間窗口的點擊率比平常高 2–3 倍。時間窗口：公告後 24–48 小時。本日 Demo 首選正是這個窗口的最大化利用。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">MULTI-SOURCE · 08/26 · <a href="https://www.gamespot.com/articles/gamescom-opening-night-live-2026-all-the-biggest-announcements-games-and-trailers/" target="_blank">GameSpot ONL 懶人包 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>Steam 漲幅</span></span>Terraria 今日 Steam CCU +13.4%、HELLDIVERS 2 +4.7%——週三盤中少見的正向漲幅訊號</h3>
+        <div class="sum">今日（08/26 07:30 radar）Steam 多數大作 CCU 走弱（CS:GO -18.9%、Palworld -8.3%、Rust -10.3%），屬週三平日的正常回落。但 <b>Terraria 47,759（+13.4%）</b>、<b>HELLDIVERS 2 56,757（+4.7%）</b>、<b>Wallpaper Engine 51,587（+7.9%）</b> 逆勢上漲，值得標記。Terraria 近期無重大更新，漲幅可能來自 Gamescom 前夕的玩家回流效應（Gamescom 公告常帶動老玩家重返老遊戲）或 Steam 夏末優惠尾效。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Terraria 這種「開放創作、無限延伸」的遊戲週期型回流訊號，跟 GameGen 的用戶行為模式最接近：核心機制耐玩、隨時可以用新梗重入——是「不需要追求新內容、機制本身就是內容」設計哲學的最強活案例。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 08/26 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New · 08/26 radar</span></div>
+          <ol>
+            <li class="hot"><span class="nm">HoMM III: Horn of the Abyss</span><span class="vn">粉絲資料片</span></li>
+            <li><span class="nm">Rotting Grief</span><span class="vn">新品</span></li>
+            <li><span class="nm">Corners Arena</span><span class="vn">新品</span></li>
+            <li><span class="nm">Box Knight</span><span class="vn">新品</span></li>
+            <li><span class="nm">Silent Waters</span><span class="vn">新品</span></li>
+            <li><span class="nm">Holey Ship</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 08/26 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>STEAM 熱賣新品</span><span class="metric">Hot New Releases · 08/26</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Aliens: Fireteam Elite 2</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">STAR WARS Zero Company</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Crimson Desert Enhanced</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">How to Fish</span><span class="vn">持續熱賣</span></li>
+            <li><span class="nm">Dead by Daylight: Chorus of Sin</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Steam Machine</span><span class="vn">熱賣</span></li>
+          </ol>
+          <div class="bf">Steam 熱賣新品 · 08/26 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>HoMM3 Horn of the Abyss 出現在 Steam 新品榜：近 20 年粉絲作品的「合法化」是個高分享點</h3>
+        <div class="sum">《Heroes of Might and Magic III: Horn of the Abyss》（appid 5061200）今日出現在 Steam 新品榜，為玩家社群長年自製的 HoMM3 非官方擴充內容正式上架 Steam（heat_latest.json steam_new_top 直接確認；⚠️ 發行方 / 版權授權細節未 web_fetch 驗，引用前需查原文確認是否真為官方授權版本）。另外同期 HoMM3 base game（appid 4921760）亦以新品形式出現，可能為官方授權重新上架。若 HotA 確為社群作品獲官方認可，這是一個高情感分享點：玩家用近 20 年的熱愛撐起一個 mod，終於被正式承認。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>HotA 的故事是「玩家創作力比官方更持久」的極端案例——但它用了近 20 年。GameGen 的命題是讓這件事在 60 秒內發生，且每天都能發生。「玩家比開發者更有創作動力」這個前提，HotA 是最好的實證，也是 GameGen 存在的根本理由。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM NEW_TOP · 08/26 radar · <a href="https://store.steampowered.com/app/5061200" target="_blank">Steam 頁面 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 疑雲</span></span>《人類帝國 2》預告遭指 AI 拼湊、工作室否認——本週第三起，「AI 疑雲」成遊戲行銷的新風險點</h3>
+        <div class="sum">《Humankind 2》（Amplitude Studios）Gamescom 預告片遭玩家在社群媒體指控用 AI 生成；工作室急發「real actors, practical sets, and custom-made props」聲明（PC Gamer，pub 2026-08-26，標題確認，⚠️ 原文句子未逐句 web_fetch 驗）。同期 Kotaku / GameSpot 報導《James Pond》重製版預告遭 AI 指控（pub 2026-08-19~21），加上上週《Vapor World》AI 穿模事件（PC Gamer 已全驗），形成三起一週內的 AI 疑雲連鎖。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>三連發的訊號是「AI 懷疑」已從玩家對產品的反應，升級為對<b>行銷內容（預告片）</b>的預設反應——代表信任赤字從產品層蔓延到品牌層。有效解法：讓用戶自己成為創作者，生成出來的內容當然不可能是品牌的「AI 拼湊」。這是 GameGen 論述在今日有最強時效支撐的位置。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · 8/26 · <a href="https://www.pcgamer.com/games/strategy/humankind-2-trailer-accused-of-being-ai-slop-studio-says-nope-real-actors-practical-sets-and-custom-made-props/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>競品</span></span>Entity 融資 580 萬美元做「主機品質瀏覽器遊戲」——免安裝遊戲平台有創投正式入場</h3>
+        <div class="sum">愛爾蘭新創 Entity 宣布融資 580 萬美元（GamesIndustry.biz）/ 約 500 萬美元（Game Developer，數字略有出入），目標打造下一代無需安裝、主機品質的網頁遊戲平台。同期 DeepMind 在 Hacker News 發布長文「Games as the Engine of AI Research」（8 分，pub 近期），點出遊戲平台是 AI 研究最重要的試驗場之一。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Entity 投資是「直接相鄰賽道」的第一個創投訊號——確認「瀏覽器遊戲 + 免安裝」的市場假設有 VC 願意下注。但 Entity 押的是消費端品質（更好的遊戲讓你玩）；GameGen 押的是創作端速度（讓你自己一句話做出遊戲）。兩者在 2026–2027 年可能成為市場教育的互補方，而非直接競爭。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESINDUSTRY.BIZ / GAME DEVELOPER · <a href="https://www.gamesindustry.biz/entity-raises-58-million-to-build-browser-based-console-quality-gaming-platform" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>Gamescom</span></span>PoE2 正式版 F2P 確認、巫師3重製版免費升級——大廠「以免費換留存」策略加速</h3>
+        <div class="sum">Gamescom ONL 2026 今日兩個最強業界訊號（非迷因）：①《Path of Exile 2》確認即將推出完整正式版並以免費遊玩模式上架（GameSpot，pub 2026-08-25/26，標題確認）；②CD Projekt Red《巫師 3》重製版對現有玩家免費 + 兩部原版 DLC 免費解鎖 + 新 DLC《往日之歌》首曝（Eurogamer / PCGamer / GameSpot 多方交叉確認）。兩者都是同一個業界策略邏輯：<b>「先讓已有用戶留下來，再談新用戶」</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>PoE2 的 F2P 轉型 + 巫師3的免費重製，是兩種不同的「以免費維持社群黏著」策略。GameGen 的每日新遊戲本質上是同一邏輯的創作者端版本：讓用戶每天都有理由回來，不是靠「買新內容」，是靠「今天可以做新的什麼」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESPOT / EUROGAMER · <a href="https://www.eurogamer.net/witcher-3-expansion-songs-of-the-past-trailer" target="_blank">Eurogamer ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        🛰️ <b>今日背景訊號：</b>Roblox 宣布禁止 16 歲以下玩家在「無限 TikTok 式滑動」遊戲中獲得獎勵（RPS 標題確認）——這是平台主動配合未成年保護監管的動作，而非玩家反彈觸發。對 GameGen 的意義：如果類似監管擴散，「創作型」遊戲平台（用戶主動生成 vs 被動消費）可能成為相對低風險的商業模式。另：Reddit r/gaming 今日高熱貼「Former Rockstar producer says RDR 1 online had a 'cheater jail'」——「防作弊系統」話題持續在遊戲社群有討論溫度，可當 CJ 長線素材庫使用。
+      </div>
+    </section>
+
+    <!-- 迷因題材 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>今日最強梗</span></span>Gamescom「Dolly Parton 現象」：一個全場都在講但沒人完全確認在說什麼的病毒式時刻</h3>
+        <div class="sum">GameSpot 今日以「All Anyone At Gamescom Can Talk About Is Dolly Parton」為標題（heat_latest.json story_gamespot 確認），Dolly Parton 在 Gamescom 的出場方式未在本次 radar 的其他來源中得到詳細描述，因此她「為何」在 Gamescom 的具體角色尚未完整確認（⚠️ 類型未驗，需查原文）。但光是這個標題本身就說明了一件事：「意外出現的不相關名人」是遊戲活動最強的病毒傳播元素，超過任何一款遊戲公告。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「名人 × 遊戲跨界」的病毒效應是有公式的：意外程度越高、名人領域跟遊戲的距離越遠，討論量越大。Dolly Parton 就是一個極端案例——她本人比任何一款 Gamescom 遊戲都更容易被瘋傳。Create-loop 的泛化版本：「輸入任何梗詞 → 生成『如果＿＿出現在遊戲世界』的荒謬情境 mini game」。⚠️ 注意：Dolly Parton 是真人，任何遊戲化版本需要完全泛化、不使用其名字或形象。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 真人肖像</span></span></div></div>
+          </div>
+          <div class="src">GAMESPOT · 08/26 · <a href="https://www.gamespot.com/articles/all-anyone-at-gamescom-can-talk-about-is-dolly-parton/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>itch.io 今日出現「FEED THE AI」——把「餵給 AI」這個動作直接做成遊戲機制</h3>
+        <div class="sum">itch.io html5 popular 標籤今日出現《FEED THE AI》（weirdkidgames.itch.io/feed-the-ai），名稱本身就是一個完整的遊戲設定概念（heat_latest.json itch_io 直接確認，⚠️ 具體機制未 web_fetch 驗）。同批今日 itch.io 熱門作品還有《Twilight Observer》《The Freak Circus》《Bumper to Billions》《Dispatches 1940》等風格各異的小品作。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「FEED THE AI」這個標題設計是 GameGen 可以直接借用的命名公式：把玩家行為（輸入梗詞生成遊戲）直接包裝成遊戲的名稱 / 設定，不需要解釋——玩家看到就懂。這種「行為即規則即標題」的設計，跟 Roblox「+1﹝動作﹞」命名法同源。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO · 08/26 radar · <a href="https://weirdkidgames.itch.io/feed-the-ai" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>Gamescom 機制亮點</span><span class="metric">ONL 2026 可借鑑結構</span></div>
+          <div class="nodata" style="color:var(--ink)">
+            <b>Rainbow Six Tactics：</b>把「破壞性環境」移植到回合制 → 抄公式：地圖破壞 × 回合制對戰（不挪用 IP）<br><br>
+            <b>Paradox Afterworld：</b>「食人邪教征服美洲」→ 抄公式：荒謬派系 × 大戰略規則（極簡化版：選派系 → 出征服路線）<br><br>
+            <b>PoE2 F2P 技能樹：</b>「複雜技能樹 × 零門檻入場」→ 抄公式：一句話選職業 → 生成個性化 60 秒 build
+          </div>
+          <div class="bf">Gamescom ONL 2026 · 08/26 · 多方來源確認</div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>itch.io 今日機制</span><span class="metric">html5 popular · 08/26</span></div>
+          <ol>
+            <li class="hot"><span class="nm">FEED THE AI — 行為即標題機制</span><span class="vn">熱門</span></li>
+            <li><span class="nm">Dispatches 1940 — 戰地文件決策</span><span class="vn">popular</span></li>
+            <li><span class="nm">Bumper to Billions — 彈珠台積累</span><span class="vn">popular</span></li>
+            <li><span class="nm">The Freak Circus — 怪誕演出管理</span><span class="vn">popular</span></li>
+            <li><span class="nm">Sharpest Spear — 生存升級</span><span class="vn">popular</span></li>
+          </ol>
+          <div class="bf">itch.io html5 · 08/26 radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日最值得借的機制公式：「規則 + 意外元素」雙軸結構（Gamescom 版）</h3>
+        <div class="sum">今日 Gamescom 有三個機制設計值得記錄：①Rainbow Six Tactics 把「破壞性環境」硬移到回合制，保留最核心的差異化要素 + 換掉玩家最高的技能門檻；②Paradox Afterworld 用「食人邪教」這個荒謬設定包裝嚴肅的大戰略規則——讓規則複雜但入場理由簡單；③PoE2 F2P 把技能樹複雜度維持不變，把門檻（付費）拿掉——這三個案例都是「把原有機制的入場門檻降到零，但保留核心差異化」的設計決策。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>優先順序：<b>「ONL 配對測驗生成器」</b>（今天最強、已進 Demo）→ <b>「荒謬設定 × 策略規則」</b>（Afterworld 公式的泛化版，輸入任何荒謬派系設定 → 生成 60 秒小戰略）→ <b>「行為即標題」命名法</b>（FEED THE AI 啟發，適合量產型命名）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESCOM ONL / ITCH.IO · 08/26</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>未登入</span></span>今日 Threads 繁中熱話仍需登入才能取得內容</h3>
+        <div class="sum" style="margin-bottom:0">本次排程環境無法取得 Threads 登入狀態，繁中圈當日熱話與代表貼文暫缺。<b>⚠️ 目前無法完全證實</b>，骨架保留、不以舊資料補位。可追的長線母題：今天 Gamescom ONL 最可能在繁中圈炸出討論的是「《巫師 3》重製版免費」（情懷強、高分享）與「Dolly Parton 現身 Gamescom」（意外感強、好哏）；AI 疑雲三連發在繁中 PTT / 巴哈應有跟進討論。下次有登入環境時優先查這三條母題。</div>
+      </div>
+    </section>
+
+    <!-- Trend-to-Game -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Gamescom ONL 2026 全場公告</td><td><span class="tmpl">人格配對測驗</span></td><td>「你最像哪款今晚大作」結果卡</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，時間窗口 24–48h，今天最強</td></tr>
+          <tr><td>AI 疑雲三連發（Humankind 2 / James Pond / Vapor World）</td><td><span class="tmpl">AI or Not 判斷遊戲</span></td><td>「你能分辨嗎？」挑戰卡</td><td class="rk-low">低</td><td>蹭 AI 疑雲波，比「別用 AI」更有討論性的立場</td></tr>
+          <tr><td>Riot 2XKO 停止開發</td><td><span class="tmpl">零學習曲線格鬥</span></td><td>「3 秒勝負」分享卡</td><td class="rk-low">低</td><td>把格鬥門檻歸零的 60 秒對戰版</td></tr>
+          <tr><td>Dolly Parton at Gamescom</td><td><span class="tmpl">意外名人 × 遊戲混搭</span></td><td>「最意外」荒謬感</td><td class="rk-mid">中 · 真人肖像</td><td>完全泛化，不使用真人名字或形象</td></tr>
+          <tr><td>HoMM3 HotA 正式上 Steam</td><td><span class="tmpl">復古策略情懷</span></td><td>「情懷 20 年」分享情緒</td><td class="rk-low">低</td><td>做「你最想復活的舊玩法」快問快答</td></tr>
+          <tr><td>Entity 瀏覽器遊戲融資</td><td><span class="tmpl">競品觀察</span></td><td>N/A</td><td class="rk-low">—</td><td>長線追蹤，暫不主動蹭</td></tr>
+          <tr><td>Terraria +13.4% 回流</td><td><span class="tmpl">開放創作 / 無限重玩</span></td><td>「每次都是新的」分享邏輯</td><td class="rk-low">低</td><td>強化「每天都有新梗玩」的 GameGen 定位佐證</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>AI 疑雲三連發：「信任赤字」從產品蔓延到行銷預告片</td><td>Humankind 2 預告遭指 AI，工作室急澄清「真人演員」（8/26）；接Vapor World 穿模崩評（8/24已驗）；James Pond AI 警鐘（8/19~21）</td><td>"Three AI-slop accusations in seven days. AI paranoia is now the default reaction — even handcrafted trailers need to prove they're not AI."</td><td><a href="https://www.pcgamer.com/games/strategy/humankind-2-trailer-accused-of-being-ai-slop-studio-says-nope-real-actors-practical-sets-and-custom-made-props/" target="_blank">↗</a></td></tr>
+          <tr><td>Entity 580萬入場，「瀏覽器遊戲」有了創投背書</td><td>Entity 融資 580萬 / 500萬（媒體略有出入），打造主機品質免安裝平台（8/26估）</td><td>"Browser gaming just got $5.8M in VC validation. The market is splitting: quality-first vs. speed-first. We know which side we're on."</td><td><a href="https://www.gamesindustry.biz/entity-raises-58-million-to-build-browser-based-console-quality-gaming-platform" target="_blank">↗</a></td></tr>
+          <tr><td>大廠以「免費」換長期留存：巫師3重製版 + PoE2 F2P</td><td>CD Projekt Red《巫師3》免費重製 + 原版DLC 免費 + 新DLC首曝；PoE2 正式版確認 F2P（8/26）</td><td>"Free is the new lock-in. CDPR and GGG just gave away millions in content to keep players inside their ecosystems. Daily creation is the same play, at creator scale."</td><td><a href="https://www.eurogamer.net/witcher-3-expansion-songs-of-the-past-trailer" target="_blank">↗</a></td></tr>
+          <tr><td>Riot 砍格鬥遊戲：大廠也無法解決的留存問題</td><td>Riot Games 12月停止《2XKO》積極開發（8/26估，Game Developer）</td><td>"Even Riot can't crack the fighting game market. Skill ceiling = churn. The solution isn't better training — it's zero-barrier entry for the casual layer."</td><td><a href="https://www.gamedeveloper.com/business/riot-games-is-winding-down-fighter-2xko-in-december-2026" target="_blank">↗</a></td></tr>
+          <tr><td>HoMM3 粉絲資料片 20 年終獲正式上架：玩家熱愛 &gt; 官方開發力</td><td>Horn of the Abyss 出現在 Steam 新品（08/26 radar直接確認）</td><td>"A fan expansion built over 20 years just hit Steam. Player creativity outlasts official development cycles. GameGen runs the same energy — compressed to 60 seconds."</td><td><a href="https://store.steampowered.com/app/5061200" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Humankind 2 AI疑雲三連發、Entity 580萬瀏覽器遊戲）已附完整 EN hook + 中譯，可直接交 CJ 每日包。注意：今日多數條目為標題層確認，非 web_fetch 全驗——對外精確引用需先查原文。去賭場語言全數過濾 ✅。
+      </div>
+      </div>
+    </section>
+
+    <!-- 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Gamescom ONL 總覽反差貼：「一夜10+ 大作，最火的卻是 Dolly Parton」</li><li>Riot 2XKO 停止開發：「格鬥遊戲為什麼是大廠最難留新玩家的品類」戰隊投票</li><li>HoMM3 Horn of the Abyss 上 Steam：「20 年粉絲熱愛終於合法化」情懷貼</li><li>AI 疑雲三連發：「連真人拍的預告都要自證不是 AI，2026 年的遊戲行銷新挑戰」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「Gamescom ONL 你是哪款遊戲」人格配對測驗（本日首選，24h 時間窗口，今天最強）</li><li>「AI or Not」快速判斷挑戰——蹭 AI 疑雲三連發，看玩家能不能分辨</li><li>「荒謬設定 × 60 秒策略」——輸入任何荒謬派系 → 生成 mini Afterworld 對戰</li><li>「零學習曲線格鬥」——蹭 Riot 2XKO，把格鬥門檻壓到 1 個按鍵</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Entity 後續進展——他們的第一款遊戲品質和用戶量，是「瀏覽器高品質」假設的驗證</li><li>《巫師3》免費重製後的實際 CCU 反彈——「免費換留存」策略效果數據</li><li>Humankind 2 評論走向——工作室澄清後玩家是否接受，AI 信任修復速度</li><li>HoMM3 HotA 授權細節確認——粉絲作品上 Steam 的版權模型值得記錄</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Dolly Parton 相關：任何遊戲化版本需完全泛化，不使用真人名字 / 形象 / 肖像</li><li>今日多數新聞為標題層確認、非逐句 web_fetch：對外文案避免精確引用未驗證細節</li><li>HoMM3 HotA 授權關係未確認：引用時需標注「版權關係待查」，避免誤導</li><li>Entity 融資金額兩媒體略有出入（580萬 vs 500萬）：引用時說明來源</li></ul></div>
+      </div>
+    </section>
+
+    <!-- Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Gamescom ONL 2026 主要公告</td><td>GameSpot / Eurogamer / RPS / PCGamer / VGC / Reddit r/Games 多方標題交叉確認<span class="pp">partial</span>　pub 2026-08-25/26　多數條目僅標題層，未逐句 web_fetch 驗原文細節</td></tr>
+        <tr><td>巫師3重製版免費 + Songs of the Past</td><td><a href="https://www.eurogamer.net/witcher-3-expansion-songs-of-the-past-trailer" target="_blank">Eurogamer ↗</a>　5+ 媒體同時確認（GameSpot / PCGamer / VGC / RPS）<span class="pp">partial</span>　標題層確認，未逐句驗原文</td></tr>
+        <tr><td>PoE2 正式版 F2P</td><td><a href="https://www.gamespot.com/articles/path-of-exile-2-is-finally-getting-its-full-release-and-itll-be-free-to-play/" target="_blank">GameSpot ↗</a><span class="pp">partial</span>　標題確認</td></tr>
+        <tr><td>Humankind 2 AI slop 指控與否認</td><td><a href="https://www.pcgamer.com/games/strategy/humankind-2-trailer-accused-of-being-ai-slop-studio-says-nope-real-actors-practical-sets-and-custom-made-props/" target="_blank">PC Gamer ↗</a><span class="pp">partial</span>　標題確認；「real actors, practical sets, and custom-made props」語句為 PC Gamer 標題引用，未逐句 web_fetch 驗全文</td></tr>
+        <tr><td>James Pond AI 指控</td><td><a href="https://www.gamespot.com/articles/james-pond-new-trailer-has-ai-alarm-bells-ringing-comments-turned-off" target="_blank">GameSpot ↗</a> + <a href="https://kotaku.com/james-pond-gen-ai-slop-accusations-system-3-2000726706" target="_blank">Kotaku ↗</a>　tavily_news 摘要確認<span class="pp">partial</span>　pub 2026-08-19~21</td></tr>
+        <tr><td>Entity 融資 580萬 / 500萬</td><td><a href="https://www.gamesindustry.biz/entity-raises-58-million-to-build-browser-based-console-quality-gaming-platform" target="_blank">GamesIndustry.biz ↗</a> + <a href="https://www.gamedeveloper.com/business/irish-browser-games-start-up-entity-raises-5m-in-funding-for-console-quality-games-for-the-new-web-era-" target="_blank">Game Developer ↗</a><span class="pp">partial</span>　兩媒體標題確認；金額略有出入（580萬 vs 5百萬），使用前建議查閱原文確認</td></tr>
+        <tr><td>Riot Games 2XKO 停止開發</td><td><a href="https://www.gamedeveloper.com/business/riot-games-is-winding-down-fighter-2xko-in-december-2026" target="_blank">Game Developer ↗</a><span class="pp">partial</span>　標題確認，pub date 及具體措辭未 web_fetch 驗</td></tr>
+        <tr><td>HoMM3 Horn of the Abyss on Steam</td><td>heat_latest.json steam_new_top 直接抓到 appid 5061200<span class="ok">✓</span>　08/26 07:30 radar 直接確認；⚠️ 發行方 / 授權關係 / 定價需查 Steam 頁面確認</td></tr>
+        <tr><td>Steam CCU / most_played / velocity / movers</td><td>heat_latest.json（Steam 官方 API GetNumberOfCurrentPlayers）<span class="ok">✓</span>　2026-08-26T07:30:30+08:00　已驗</td></tr>
+        <tr><td>itch.io html5 popular（FEED THE AI 等）</td><td>heat_latest.json itch_io<span class="ok">✓</span>　08/26 radar 直接確認</td></tr>
+        <tr><td>Threads 繁中熱話</td><td>未登入狀態，動態消息為空殼，無法取得內容<b>（目前無法完全證實）</b></td></tr>
+        <tr><td>Dolly Parton at Gamescom</td><td><a href="https://www.gamespot.com/articles/all-anyone-at-gamescom-can-talk-about-is-dolly-parton/" target="_blank">GameSpot ↗</a><span class="pp">partial</span>　標題確認，出場形式未 web_fetch 驗原文，具體角色未知</td></tr>
+        <tr><td>Roblox TikTok 滑動獎勵禁令</td><td><a href="https://www.rockpapershotgun.com/roblox-put-a-stop-to-games-that-include-rewards-for-endless-tiktok-style-scrolling-if-youre-under-the-age-of-16-anyway" target="_blank">RPS ↗</a><span class="pp">partial</span>　標題確認</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· 今日多數條目為標題層 / 多方交叉確認（非逐句 web_fetch）· Steam＝官方 API 08-26 07:30 即時真數字 · itch.io 由 heat_latest.json 直接確認 · Threads / 瀏覽器直抓今日不可用，標「目前無法完全證實」· 去賭場語言全數過濾 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/08/26 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
