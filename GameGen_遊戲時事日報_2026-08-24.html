@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/08/24（補刊）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">08 · 24 · MON　·　⚠ 補刊</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar · 補刊回溯版</span>
+        <span class="dateflag">2026 / 08 / 24 · ⚠ 補刊（當日排程環境故障未出刊，08/26 事後回溯補發）· 方法：WebSearch / WebFetch 逐條查證，本次無即時瀏覽器 / CDP 存取，不含 08/24 當日 Steam／Roblox／Twitch 官方即時數字</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 補刊版（08/24）</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY（補刊）</div>
+        <p><b>08/24 這天，遊戲圈最大的兩個訊號都跟「失控」有關，方向卻完全相反。</b>一邊是《Grand Theft Auto 6》的地下流出：自稱 <span class="hl">CyberLeek</span> 的洩漏者當天又放出兩段新片——遊戲史上首度曝光的「Wasted」死亡畫面、以及夜間駕機空拍 Vice City 全景；Take-Two 稍早已在 8/20 對 Microsoft、Discord 提出傳票追查身份（Kotaku、Video Games Chronicle、TweakTown，2026-08-20）。另一邊是硬核 FPS 封測 <span class="hl">Wardogs</span> 同一天（8/24）由 PC Gamer 確認收官：三天測試吸引近 <b>50 萬玩家</b>、尖峰同時在線破 <b>10 萬</b>，超越 Squad／Hell Let Loose／Arma 在 PC 上的紀錄，退款率僅 <b>4%</b>（一般搶先體驗常態 8–12%）。</p>
+        <p>同一天，PC Gamer《Steam Week in Review》（8/24 發布）也點名兩個對比案例：10 萬願望清單的《Vapor World: Over The Mind》因開場過場動畫用 AI 生成、主角模型忽胖忽瘦被玩家抓包，評價一路跌到 36% 好評，導演 Young Kim 公開承認「這是我倉促的判斷」並緊急 hotfix 拔掉 AI 過場、換回人手做的舊版；《Mortal Shell II》則因「Slayer Seal」簡單模式道具會永久關閉整個存檔的成就，被玩家在 Steam 論壇砲轟規則不透明。另一頭，Northeast Times 於 8/24 引述 Google Cloud 調查：跨美、韓、北歐 615 位開發者中，<b>90% 已把 AI 排進日常工作流程</b>，但 <b>63% 仍擔心資料歸屬</b>——AI 已經不是「要不要用」的問題，是「怎麼用不出包」的問題。</p>
+        <div class="pull">▸ 今天就能蹭：《How to Fish》《Wardogs》這種「規則一句話講完＋上線就爆」的公式繼續可抄；《Vapor World》《Mortal Shell II》則是現成的「AI／規則透明度」反面教材——對外文案的重點不是「別用 AI」，是「沒人把關一致性、規則講不清楚，才是真正貴的風險」。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Google Cloud 8/24 調查：90% 遊戲開發者已把 AI 排進日常流程，但 63% 仍不確定資料歸誰</div>
+            <div class="ln"><b>新聞事實：</b>Northeast Times（8/24）引述 Google Cloud 針對美國、南韓、挪威、芬蘭、瑞典共 615 位開發者的調查：<b>97%</b> 認為生成式 AI 正在重塑產業、<b>90%</b> 已將 AI 排入日常工作流程、<b>95%</b> 認為 AI 減少了重複性工作；最常見用途是玩法測試與數值平衡（47%）、在地化翻譯（45%）、程式碼生成（44%）。同時 <b>63%</b> 開發者擔心資料歸屬、32% 不確定 AI 產出內容的所有權（Northeast Times，pub 2026-08-24，已 WebFetch 讀取原文）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這組數字證明「AI 融入遊戲產製」已是產業日常，但開發者自己都承認「怎麼用」比「用不用」更焦慮——這正是 GameGen 可以切入的位置：把 AI 產出的一致性與所有權問題講清楚，而不是迴避它。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "90% of game developers already use AI daily. 63% still don't know who owns what it makes. That gap is where the real conversation starts."<br><span style="color:var(--ink-dim)">中譯：九成遊戲開發者已經天天在用 AI，但六成三的人不知道 AI 產出的東西歸誰所有。真正該聊的話題，就從這個落差開始。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://northeasttimes.com/2026/08/24/ai-is-rewriting-how-video-games-get-made-and-fast/" target="_blank">Northeast Times ↗</a>　pub 2026-08-24　verified ✓（WebFetch 已讀取原文）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 近期（≤14天）</span>10 萬願望清單的獨立遊戲，因 AI 過場動畫「模型忽胖忽瘦」被抓包，評價腰斬</div>
+            <div class="ln"><b>新聞事實：</b>韓國團隊 Alive Inc 的 Soulslike《Vapor World: Over The Mind》靠 demo 累積 10 萬願望清單，上市後因開場過場動畫使用 AI 生成、主角模型不一致被玩家在「最有幫助評論」直接點名，好評率一度僅 25–36%；導演 Young Kim 公開承認「這是我倉促的判斷」，並在批評聲浪後以 hotfix 移除全部 AI 過場、換回團隊原本手工製作的版本（TrueAchievements、GamesRadar+、Dualshockers，2026-08-22；PC Gamer《Steam Week in Review》於 2026-08-24 將此案列為本週指標事件）。</div>
+            <div class="ln"><b>GameGen 角度：</b>直接支撐「AI 生成內容需要一致性把關」的立場——傷害發生在最貴的位置（上市首週），但修復速度夠快（幾天內回滾）反而保住了部分信任，是可以拿來對 operator／studio 講的正反兩面案例。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "100,000 wishlists. Launch week. One inconsistent AI cutscene later: review score cut in half. The studio's fix? Rip out the AI, ship the human version instead."<br><span style="color:var(--ink-dim)">中譯：十萬份願望清單，上市首週，一段前後不一致的 AI 過場動畫，評分直接腰斬。工作室的解法？把 AI 拔掉，換回人做的版本。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesradar.com/games/action/after-25-percent-positive-steam-reviews-soulslike-dev-realizes-people-hate-ai-slop-and-admits-if-it-looks-like-the-effort-is-not-there-that-is-a-fair-reading-of-what-is-on-screen/" target="_blank">GamesRadar+ ↗</a>　pub 2026-08-22　verified partial（多篇 WebSearch 摘要交叉比對；PC Gamer 原文遭工具擋下未逐字驗證）</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA6 洩漏者「CyberLeek」8/24 再放兩段新片：首見「Wasted」死亡畫面＋夜間特技機空拍 Vice City<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>自稱 CyberLeek 的人士／團體連日流出《Grand Theft Auto 6》未上市畫面，8/24 這天的片段包含：主角 Jason 偷車後撞爆，觸發遊戲史上第一次曝光的「Wasted」死亡畫面；以及駕駛特技飛機在夜間空拍 Vice City，帶出機場、遊艇碼頭與多個先前未曝光電台（TechWiser 逐日整理的流出時間表，已 WebFetch 讀取原文）。Take-Two 已於 8/20 對 Microsoft、Discord 提出 DMCA 傳票，要求交出「CyberLeek」帳號身份資訊，兩公司須於 9/4 前回覆（Kotaku、Video Games Chronicle、TweakTown，2026-08-20）。</div>
+            <div class="ln"><b>迷因延燒：</b>這波流出也帶起「We got GTA 6 leaks before GTA 6」句式——Netflix 官方帳號發文「距離 GTA6 特別公開影片還有幾天？」被網友回嗆「兄弟，我們整週都在看『特別公開』了」（Push Square 報導，2026 年 8 月，確切發布日未逐字驗證）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A leaker has been dropping real GTA 6 gameplay almost daily for over a week — today's clip showed the game's first-ever 'Wasted' death screen. Take-Two just subpoenaed Microsoft and Discord to find out who it is."<br><span style="color:var(--ink-dim)">中譯：一名洩漏者已經連續一週多，每天流出真的 GTA6 遊戲畫面——今天流出的片段第一次曝光了遊戲的「Wasted」死亡畫面。Take-Two 剛對 Microsoft 和 Discord 發出傳票，要揪出這個人是誰。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://techwiser.com/gta-6-cyberleek-leaks-timeline/" target="_blank">TechWiser ↗</a>（逐日時間表，已驗）＋ <a href="https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633" target="_blank">Kotaku ↗</a>（傳票，8/20）　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>硬核 FPS 封測 Wardogs 今天（8/24）收官：近 50 萬玩家、尖峰破 10 萬同時在線，退款率僅 4%<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>PC Gamer 於 2026-08-24 發布報導確認，開發商 Bulkhead 的軍事模擬 FPS《Wardogs》封閉測試（8/21–8/24）吸引近 <b>50 萬名玩家</b>，週日尖峰同時在線超過 <b>10 萬人</b>——超越 Squad、Hell Let Loose、Arma 系列在 PC 上曾有過的紀錄；退款率僅 <b>4%</b>，遠低於一般搶先體驗 8–12% 的常態（PC Gamer／Yahoo News 鏡像，已 WebFetch 確認發布時間 2026-08-24）。同一週還撞上 Call of Duty 封測與《Battlefield 6》大改版，是軍事射擊品類罕見的擁擠檔期。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "500,000 players showed up for a beta of a game that isn't even out yet — and only 4% asked for a refund. That's a growth signal you can measure before you sell a single copy."<br><span style="color:var(--ink-dim)">中譯：一款還沒正式上市的封測，吸引了 50 萬玩家，退款率只有 4%。這才是能量測的成長訊號——在賣出第一份正式版之前，熱度已經先被證明了。</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>抄的不是軍武美術，是「規則一句話講完＋免費封測衝討論度再賣正式版」的操作手法。</div>
+            <div class="meta">來源 <a href="https://www.pcgamer.com/games/fps/nearly-500k-players-showed-up-for-the-wardogs-beta-the-reaction-from-the-fps-community-has-been-insane/" target="_blank">PC Gamer ↗</a>　pub 2026-08-24　verified ✓（WebFetch 讀取 Yahoo News 鏡像確認發布時間戳）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>《Mortal Shell II》「簡單模式」道具會永久鎖死成就，玩家在 Steam 論壇開戰<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>《Mortal Shell II》內建的「Slayer Seal」道具可降低戰鬥難度，但一旦裝備，該存檔的所有成就會被<b>永久</b>關閉（卸下也不會恢復），系統要求玩家兩次確認「我知道我會失去成就」才能裝備；Steam 社群討論串與 Push Square 報導顯示，玩家對「用官方提供的道具卻被當作作弊」的規則爭議很大，已有社群 mod 讓玩家能一邊用 Slayer Seal 一邊繼續解成就。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A studio built an official easy-mode item into its game — then permanently disabled every achievement the moment you touch it. Players say it feels like a trap, not a choice."<br><span style="color:var(--ink-dim)">中譯：一家工作室在遊戲裡放了官方的簡單模式道具——結果你一用，存檔的所有成就就永久關閉。玩家的火氣點是：這感覺像陷阱，不是選擇。</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>把「規則爭議」變遊戲：一句話設定「作弊 vs 正規玩家」對立情境 → 生成雙陣營迷你對抗賽 → 出「你選哪邊」戰隊卡。</div>
+            <div class="meta">來源 <a href="https://www.pushsquare.com/news/2026/08/hyped-ps5-soulslike-mortal-shell-2-has-an-easy-difficulty-mode-but-theres-a-catch" target="_blank">Push Square ↗</a>　2026年8月（確切發布日未逐字驗證）＋ <a href="https://steamcommunity.com/app/2584270/discussions/0/582805931178554619/" target="_blank">Steam 社群討論串 ↗</a>　verified partial</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>瑞典雙人團隊《How to Fish》證明「簡單物理動作 + 多人搞砸」公式仍是最強成長引擎<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>1–4 人共同划船、甩竿釣魚的物理型 co-op 小品，規則單純到一句話講完——大家一起釣魚，結果因為彼此干擾而釣到崩潰。</div>
+            <div class="ln"><b>為何值得抄：</b>瑞典獨立工作室 Dazed Games 開發的《How to Fish》8/20 上市，兩天內賣破 <b>100 萬套</b>（換算約每天 50 萬套），首週尖峰同時在線 <b>34.1 萬人</b>，Steam 評價「壓倒性好評」；促銷折扣檔期排到 8/27（Inven Global、GamesRadar+、dotesports、Shane the Gamer 多家交叉驗證，發布集中在 8/20–8/22，截至 8/24 熱度仍在延燒）。這個「簡單物理動作＋多人意外」的殼子，是本週最值得泛化複製的公式，且零 IP 風險。</div>
+            <div class="meta">來源 <a href="https://dotesports.com/indies/news/how-to-fish-game-sales-friendslop-steam-indie-coop" target="_blank">Dot Esports ↗</a>　verified ✓（多家媒體交叉驗證）　模板：簡單動作 / 多人意外</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">08/24 資料不足</span></div>
+          <div class="nodata">⚠️ <b>資料不足</b>：本篇為事後回溯補刊，researcher 僅能使用 WebSearch／WebFetch，無即時瀏覽器或 CDP 存取，無法取得 2026-08-24 當日 Steam 官方同時在線真數字。不以估計或其他日期數字冒充，誠實留空。</div>
+          <div class="bf">Steam 官方 API · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a>（本次未抓取）</div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX 熱玩</span><span class="metric">08/24 資料不足</span></div>
+          <div class="nodata">⚠️ <b>資料不足</b>：同上，無瀏覽器可直抓 Roblox Top Playing Now，本次不提供 08/24 榜單數字。</div>
+          <div class="bf">roblox.com/charts · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a>（本次未抓取）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">08/24 資料不足</span></div>
+          <div class="nodata">⚠️ <b>資料不足</b>：同上，無法取得 TwitchTracker 08/24 當日 7 天均觀看／週增幅真數字。</div>
+          <div class="bf">TwitchTracker · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a>（本次未抓取）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 本篇為 08/24 事後補刊，不含即時榜單真數字，誠實標記「資料不足」而非估計填補。唯一可交叉驗證的具體數字：《How to Fish》首週尖峰同時在線 <b>34.1 萬人</b>、《Wardogs》封測尖峰同時在線破 <b>10 萬</b>（皆見頭版彈藥與下方 02 暴衝訊號，來源見 Evidence Log）。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Wardogs 封測今天收官：近 50 萬玩家、尖峰破 10 萬同時在線，退款率僅 4%</h3>
+        <div class="sum">開發商 Bulkhead 的軍事模擬 FPS《Wardogs》封閉測試 8/21–8/24 三天，吸引近 <b>50 萬名玩家</b>參與，週日尖峰同時在線超過 <b>10 萬人</b>——超越 Squad、Hell Let Loose、Arma 系列在 PC 上曾有過的同時在線紀錄；退款率僅 <b>4%</b>，遠低於一般搶先體驗 8–12% 的常態。此事同一週撞上 Call of Duty 封測與《Battlefield 6》大改版，屬軍事射擊品類罕見的擁擠檔期（PC Gamer，pub 2026-08-24，已 WebFetch 確認發布時間）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是「上市前的封測熱度先於購買門檻出現」的典型訊號——玩家先用免費時間投票，等於幫工作室免費做了市場驗證。GameGen 可以借鏡的是這個操作節奏（封測→衝討論度→再賣正式版），而不是軍武視覺本身。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · 8/24 · <a href="https://www.pcgamer.com/games/fps/nearly-500k-players-showed-up-for-the-wardogs-beta-the-reaction-from-the-fps-community-has-been-insane/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>《How to Fish》兩天賣破 100 萬套，首週尖峰 34.1 萬同時在線（有實測數據）</h3>
+        <div class="sum">瑞典獨立工作室 Dazed Games 開發的物理型 co-op 釣魚遊戲《How to Fish》8/20 上市，8/22 累計賣破 <b>100 萬套</b>（平均每天約 50 萬套），首週尖峰同時在線 <b>34.1 萬人</b>，Steam 評價「壓倒性好評」，促銷折扣檔期排到 8/27（Inven Global、GamesRadar+、dotesports、Shane the Gamer 多家媒體交叉驗證的實測銷售與同時在線數字，發布集中 8/20–8/22，熱度延續至 8/24）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>證明「規則單純＋多人意外」公式在 2026 年仍然是最強成長引擎之一——不需要大預算美術，靠「大家一起搞砸」的社交摩擦力就能自然擴散。是本週最值得直接泛化複製（換主題、留規則）的殼子。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">DOT ESPORTS / GAMESRADAR+ · 8/20–8/22 · <a href="https://dotesports.com/indies/news/how-to-fish-game-sales-friendslop-steam-indie-coop" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">08/24 資料不足</span></div>
+          <div class="nodata">⚠️ <b>資料不足</b>：無瀏覽器直抓 Steam 新品 / New &amp; Trending 榜，本次不提供 08/24 名單。</div>
+          <div class="bf"><a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a>（本次未抓取）</div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO / HN 早期冒頭</span><span class="metric">08/24 資料不足</span></div>
+          <div class="nodata">⚠️ <b>資料不足</b>：Hacker News 2026-08-24 前端頁面因工具限流（HTTP 429）無法讀取，itch.io 無瀏覽器可直抓，本次不提供早期冒頭名單。</div>
+          <div class="bf"><a href="https://itch.io/games/html5" target="_blank">原始 ↗</a>（本次未抓取）</div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>早期訊號</span></span>Gamescom 2026 Opening Night Live 明天（8/25）登場，今天是倒數預告日</h3>
+        <div class="sum">Game Informer 於 2026-08-24 發布《How To Watch Gamescom Opening Night Live 2026》，確認由 Geoff Keighley 主持的 Opening Night Live 將於 8/25 晚間 8:00（CEST）開播、含 30 分鐘前導節目，兩小時內播出各大新作預告，YouTube／Twitch 同步直播。Gamescom 2026 本身也刷新規模紀錄，超過 1,600 家參展商（Deadline，日期未逐字驗證，列摘要層）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是明天最大的產業關注焦點——AI 遊戲創作 / 生成類新品通常會挑這類大型展會發布，值得列入明天（8/25）續追清單，目前尚未有 8/24 當天可驗證的具體新品名單，故不預先猜測內容。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAME INFORMER · 8/24 · <a href="https://gameinformer.com/2026/08/24/how-to-watch-gamescom-opening-night-live-2026" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Google Cloud 調查：90% 遊戲開發者已把 AI 排進日常流程，63% 仍憂心資料歸屬</h3>
+        <div class="sum">Northeast Times（2026-08-24）引述 Google Cloud 針對美、韓、挪威、芬蘭、瑞典 615 位開發者的調查：97% 認為生成式 AI 正在重塑產業、90% 已將 AI 排入日常工作流程、95% 認為 AI 減少了重複性工作；最常見用途是玩法測試 / 數值平衡（47%）、在地化翻譯（45%）、程式碼生成（44%）。同時 63% 擔心資料歸屬、35% 憂心玩家隱私、32% 不確定 AI 產出內容所有權。文中另引述市場預測：全球 AI 遊戲市場規模將從 2024 年 32.8 億美元成長至 2033 年 510 億美元。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這組數字證明「AI 融入遊戲產製」已是產業日常，但「怎麼用」比「用不用」更讓開發者焦慮——這正是 GameGen 對外論述可以切入的位置：把一致性與歸屬問題講清楚。已收頭版 CJ Top 1。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NORTHEAST TIMES · 8/24 · <a href="https://northeasttimes.com/2026/08/24/ai-is-rewriting-how-video-games-get-made-and-fast/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>10 萬願望清單獨立遊戲，因 AI 過場動畫不一致上線即崩、評價腰斬</h3>
+        <div class="sum">韓國團隊 Alive Inc 的《Vapor World: Over The Mind》靠 demo 累積 10 萬願望清單，上市後因開場過場動畫用 AI 生成、主角模型不一致被玩家點名，好評率一度僅 25–36%；導演 Young Kim 公開承認「這是我倉促的判斷」，並在批評聲浪後以 hotfix 移除全部 AI 過場、換回團隊手工製作版本（TrueAchievements、GamesRadar+、Dualshockers，2026-08-22；PC Gamer《Steam Week in Review》8/24 列為本週指標事件）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>直接支撐「AI 生成內容需要一致性把關」的立場，且傷害發生在最貴的位置（上市首週）；修復速度快（幾天內回滾）也顯示危機處理得當可以止血。已收頭版 CJ Top 2。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESRADAR+ · 8/22 · <a href="https://www.gamesradar.com/games/action/after-25-percent-positive-steam-reviews-soulslike-dev-realizes-people-hate-ai-slop-and-admits-if-it-looks-like-the-effort-is-not-there-that-is-a-fair-reading-of-what-is-on-screen/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>爭議</span></span>《Mortal Shell II》簡單模式道具永久鎖死成就，玩家怒喊「這是陷阱不是選擇」</h3>
+        <div class="sum">《Mortal Shell II》的「Slayer Seal」道具可降低戰鬥難度，但裝備後該存檔所有成就永久關閉、卸下也不恢復；系統要求二次確認才能裝備，但玩家仍認為「用官方道具卻被當作弊」規則不透明，已有社群 mod 讓玩家邊用邊解成就（Steam 社群討論串；Push Square，2026 年 8 月）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>跟 Vapor World 案例放在一起看，今天最大的共同教訓是「規則 / 產出的一致性和透明度，決定玩家會不會替你辯護」——不管是 AI 內容還是遊戲設計規則都一樣。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 社群 / PUSH SQUARE · <a href="https://www.pushsquare.com/news/2026/08/hyped-ps5-soulslike-mortal-shell-2-has-an-easy-difficulty-mode-but-theres-a-catch" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        🛰️ <b>背景訊號（GTA6 洩漏事件延伸）</b>：Take-Two 已於 8/20 對 Microsoft、Discord 提出 DMCA 傳票追查「CyberLeek」身份，兩公司須於 9/4 前回覆（Kotaku、Video Games Chronicle、TweakTown）；8/24 當天洩漏者又放出「Wasted」死亡畫面與夜間空拍片段（TechWiser）。這條線本質是版權 / 資安事件，不是 GameGen 可蹭的正面素材，僅列為產業觀察背景。
+      </div>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>GTA6 洩漏潮帶起「We got GTA 6 leaks before GTA 6」句式，Netflix 官方帳號自己也被玩</h3>
+        <div class="sum">隨著 CyberLeek 連日流出《GTA 6》畫面，網路上重新炒熱「We got [X] before GTA 6」這個經典等待梗——「我們在 GTA6 正式上市前，先拿到了 GTA6 的洩漏畫面」。Netflix 官方帳號發文「距離 GTA6 特別公開影片還有幾天？」（該公開影片 8/27 於 Netflix 獨家播出 6 小時後轉上 YouTube），被網友回嗆「兄弟，我們整週都在看『特別公開』了」，成為本週最多轉發的遊戲類迷因回覆之一（Push Square 報導，2026 年 8 月，具體發布日未逐字驗證；Know Your Meme 已建立對應事件條目，該條目 8/21 建立）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是「等待型迷因句式」被真實事件重新引爆的案例——泛化公式（「我們在 X 之前就得到了 X」）本身零版權風險、高共鳴，適合套用在任何「還沒正式上市但已經被搶先看到」的情境，但引用時必須避開直接轉載或引用受版權保護的洩漏截圖 / 影片本身。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 版權洩漏素材</span></span></div></div>
+          </div>
+          <div class="src">PUSH SQUARE / KNOW YOUR MEME · <a href="https://knowyourmeme.com/memes/events/august-2026-gta-6-leaks-2026-grand-theft-auto-vi-leak" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ai reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>迷因遊戲（把梗直接做成小遊戲）資料不足</b>：本次無瀏覽器可直抓 itch.io meme 標籤 / Know Your Meme 首頁「今日新梗」榜單，無法確認 08/24 當天是否有對應的新迷因遊戲上架。不以舊資料或臆測補位。
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>UNITYROOM 今週ピックアップ</span><span class="metric">08/24 資料不足</span></div>
+          <div class="nodata">⚠️ <b>資料不足</b>：無瀏覽器可直抓 unityroom.com 當週榜單，本次不提供日本原創 loop 名單。</div>
+          <div class="bf"><a href="https://unityroom.com/" target="_blank">原始 ↗</a>（本次未抓取）</div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX 機制潮</span><span class="metric">08/24 資料不足</span></div>
+          <div class="nodata">⚠️ <b>資料不足</b>：無瀏覽器可直抓 Roblox Top Trending / Up-and-Coming，本次不提供機制命名潮數據。</div>
+          <div class="bf"><a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a>（本次未抓取）</div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>機制洞察</span></span>《How to Fish》驗證的公式：「單一物理動作＋多人各懷鬼胎」＝今天首選可抄機制</h3>
+        <div class="sum">《How to Fish》的核心機制只有一個：划船、甩竿釣魚，規則一句話講完；真正的樂趣來自 1–4 人各自操作時互相干擾造成的意外（撞船、搶魚、翻船），這種「簡單規則 + 多人不對齊造成的混亂」正是本週被多家媒體點名的「爆款公式」（Inven Global、GamesRadar+、dotesports）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>機制本身不受版權保護，抄 loop、換泛化主題即可——把「釣魚」換成任何日常協作任務（搬家、煮飯、划龍舟），保留「單一簡單操作＋多人意外」的結構，就是零 IP 風險、已被市場驗證的可複製公式。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">DOT ESPORTS / GAMESRADAR+ · <a href="https://dotesports.com/indies/news/how-to-fish-game-sales-friendslop-steam-indie-coop" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>未確認</span></span>本次無登入 / 瀏覽器存取，Threads 繁中熱話「目前無法完全證實」</h3>
+        <div class="sum" style="margin-bottom:0">本篇為事後回溯補刊，researcher 僅有 WebSearch／WebFetch 工具，無登入態瀏覽器可查 Threads「為你推薦 / 追蹤中」動態、也無法查證巴哈姆特 / PTT 繁中圈當日熱話與代表貼文。<b>⚠️ 目前無法完全證實</b>，骨架保留、不以舊資料或臆測補位。可追的長線母題：今天最大話題是 GTA6 洩漏事件延燒與 Wardogs 封測爆量，預期繁中討論會集中在巴哈姆特 GNN / PTT Steam 板；《How to Fish》這類混亂 co-op 題材也適合觀察繁中圈是否已有「朋友一起玩到崩潰」的分享型貼文。下次有登入權限的瀏覽環境時，優先查證這兩條母題是否已落到 Threads 繁中熱話。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>How to Fish 混亂 co-op（兩天 100 萬套）</td><td><span class="tmpl">簡單動作 / 多人意外</span></td><td>「誰搞砸最多次」排行卡</td><td class="rk-low">低</td><td>★ 本日首選，換掉釣魚主題保留規則結構</td></tr>
+          <tr><td>Wardogs 封測操作節奏（近 50 萬玩家）</td><td><span class="tmpl">免費封測衝討論度</span></td><td>「還沒上市已經 X 萬人玩過」倒數感</td><td class="rk-mid">中 · 軍武美術</td><td>抄封測操作手法，不挪用軍武視覺</td></tr>
+          <tr><td>Mortal Shell II 成就爭議</td><td><span class="tmpl">作弊 vs 正規雙陣營對抗</span></td><td>「你選哪邊」戰隊卡</td><td class="rk-low">低</td><td>把規則爭議本身轉譯成對抗玩法</td></tr>
+          <tr><td>Vapor World AI 一致性教訓</td><td><span class="tmpl">內容 QA 一致性檢查清單</span></td><td>「AI vs 人工」對比話題</td><td class="rk-low">低</td><td>不是遊戲玩法模板，是對外內容策略素材</td></tr>
+          <tr><td>GTA6 洩漏潮「等待型迷因」句式</td><td><span class="tmpl">泛化等待 / 倒數迷因句式</span></td><td>「我們在 X 之前就得到了 X」反差幽默</td><td class="rk-mid">中 · 版權洩漏素材</td><td>套用句式，不轉載受版權保護的洩漏截圖</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>AI 已是遊戲產製日常，但歸屬問題沒人講清楚</td><td>Google Cloud 調查：90% 開發者已用 AI，63% 仍憂心資料歸屬（8/24）</td><td>"90% of game developers already use AI daily. 63% still don't know who owns what it makes."</td><td><a href="https://northeasttimes.com/2026/08/24/ai-is-rewriting-how-video-games-get-made-and-fast/" target="_blank">↗</a></td></tr>
+          <tr><td>AI 產出不一致的代價，比不賣好更快更貴</td><td>10 萬願望清單的 Vapor World，因 AI 過場動畫不一致，評價腰斬到 36%（8/22）</td><td>"100,000 wishlists. Launch week. One inconsistent AI cutscene later: review score cut in half."</td><td><a href="https://www.gamesradar.com/games/action/after-25-percent-positive-steam-reviews-soulslike-dev-realizes-people-hate-ai-slop-and-admits-if-it-looks-like-the-effort-is-not-there-that-is-a-fair-reading-of-what-is-on-screen/" target="_blank">↗</a></td></tr>
+          <tr><td>封測熱度正變成可測量的成長資產</td><td>Wardogs 封測近 50 萬玩家、尖峰破 10 萬、退款僅 4%（8/24）</td><td>"500,000 players showed up for a beta that isn't even out yet — and only 4% asked for a refund."</td><td><a href="https://www.pcgamer.com/games/fps/nearly-500k-players-showed-up-for-the-wardogs-beta-the-reaction-from-the-fps-community-has-been-insane/" target="_blank">↗</a></td></tr>
+          <tr><td>規則透明度本身就是信任資產（或負債）</td><td>Mortal Shell II 官方簡單模式道具永久鎖死成就，玩家怒喊「這是陷阱」</td><td>"An official easy-mode option locked achievements for good. If a rule feels like a trap, players will say so loudly."</td><td><a href="https://www.pushsquare.com/news/2026/08/hyped-ps5-soulslike-mortal-shell-2-has-an-easy-difficulty-mode-but-theres-a-catch" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Google Cloud AI 調查、Vapor World AI 一致性代價）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。Northeast Times 條已 WebFetch 全文驗證；Vapor World 條為多媒體交叉比對之 WebSearch 摘要，PC Gamer 原文遭工具擋下未逐字驗證，對外引用建議先再核一次原文。對外用字已過去賭場化濾鏡與禁提品牌檢查。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>GTA6 洩漏潮帶起的「我們在 X 之前就得到了 X」迷因句式（不轉載洩漏截圖本身）</li><li>Wardogs 近 50 萬玩家封測、退款只有 4% 的數據反差貼</li><li>How to Fish「賣最好的不是大作，是一起釣魚釣到崩潰」的反差貼</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 抄 How to Fish「單一物理動作 + 多人意外」殼子（換主題、非釣魚）</li><li>「作弊 vs 正規玩家」雙陣營對抗 mini game（蹭 Mortal Shell II 成就爭議）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Wardogs 9/10 搶先體驗上市後的留存與付費轉換</li><li>Take-Two 對 Microsoft／Discord 的傳票進度（9/4 前須回覆）</li><li>Vapor World 移除 AI 過場後評價是否回升</li><li>Gamescom Opening Night Live（8/25）是否有 AI 遊戲創作平台相關公告</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>不轉載 / 引用 GTA6 洩漏截圖或影片本身——那是被駭 / 未授權流出的素材，版權與法律風險都在，只蹭「迷因現象」不蹭素材</li><li>提到 GTA6 洩漏事件時避免消費或嘲諷正在進行的法律調查對象</li><li>Vapor World / Mortal Shell II 案例對外引用聚焦建設性角度，避免落井下石語氣</li><li>本篇多數細節數字來自 WebSearch 摘要交叉比對而非直接讀取原文，正式對外發布前建議再核一次原文</li><li>對外文案持續執行去賭場化與真人 / IP 風險濾鏡＋禁提品牌檢查</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>GTA6 洩漏「Wasted」死亡畫面 + 夜間空拍（8/24）</td><td><a href="https://techwiser.com/gta-6-cyberleek-leaks-timeline/" target="_blank">TechWiser</a>（WebFetch 讀取原文）　逐日時間表列 8/24 兩則具體流出內容<span class="ok">✓</span>　其他媒體（TechRadar／GameSpot／Beebom）對同事件亦有報導，惟本次工具未能逐字對照確認同日期，列 partial　🆕 今天新</td></tr>
+        <tr><td>Take-Two 對 Microsoft / Discord 提出傳票</td><td><a href="https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633" target="_blank">Kotaku</a> / <a href="https://www.videogameschronicle.com/news/take-two-files-subpoenas-to-microsoft-and-discord-in-hunt-for-gta-6-leaker/" target="_blank">VGC</a> / <a href="https://www.tweaktown.com/news/113195/take-two-begins-the-hunt-for-gta-6-leaker-cyberleek-subpoenas-microsoft-and-discord/index.html" target="_blank">TweakTown</a>　WebSearch 交叉比對　傳票 2026-08-20 提出，9/4 前須回覆<span class="ok">✓</span>　🔄 近期</td></tr>
+        <tr><td>Wardogs 封測近 50 萬玩家 / 尖峰破 10 萬</td><td><a href="https://www.pcgamer.com/games/fps/nearly-500k-players-showed-up-for-the-wardogs-beta-the-reaction-from-the-fps-community-has-been-insane/" target="_blank">PC Gamer</a>（經 Yahoo News 鏡像 WebFetch 確認發布時間 2026-08-24）　驗：近 50 萬玩家、尖峰 10 萬+、退款率 4%、封測 8/21–8/24<span class="ok">✓</span>　🆕 今天新</td></tr>
+        <tr><td>Vapor World AI 過場動畫背骨、評價腰斬</td><td><a href="https://www.gamesradar.com/games/action/after-25-percent-positive-steam-reviews-soulslike-dev-realizes-people-hate-ai-slop-and-admits-if-it-looks-like-the-effort-is-not-there-that-is-a-fair-reading-of-what-is-on-screen/" target="_blank">GamesRadar+</a>　WebSearch 摘要，交叉比對 TrueAchievements／Dualshockers<span class="pp">partial</span>　PC Gamer 原文遭工具擋下（membership wall）未逐字驗證　🔄 近期（8/22）</td></tr>
+        <tr><td>Mortal Shell II 成就永久鎖死爭議</td><td>Steam 社群討論串（<a href="https://steamcommunity.com/app/2584270/discussions/0/582805931178554619/" target="_blank">連結</a>）＋ <a href="https://www.pushsquare.com/news/2026/08/hyped-ps5-soulslike-mortal-shell-2-has-an-easy-difficulty-mode-but-theres-a-catch" target="_blank">Push Square</a><span class="pp">partial</span>　僅玩家討論串 + 摘要層報導，確切發布日未逐字驗證</td></tr>
+        <tr><td>Google Cloud AI 遊戲開發者調查</td><td><a href="https://northeasttimes.com/2026/08/24/ai-is-rewriting-how-video-games-get-made-and-fast/" target="_blank">Northeast Times</a>（WebFetch 讀取原文）　驗：615 位開發者、90%／63%／97% 等全數字皆逐條核對<span class="ok">✓</span>　🆕 今天新</td></tr>
+        <tr><td>How to Fish 兩天賣破 100 萬套 / 首週尖峰 34.1 萬</td><td><a href="https://dotesports.com/indies/news/how-to-fish-game-sales-friendslop-steam-indie-coop" target="_blank">Dot Esports</a>　WebSearch 交叉比對 GamesRadar+／Inven Global／Shane the Gamer<span class="ok">✓</span>　多家媒體數字一致　🔄 近期（8/20–8/22，熱度延續至 8/24）</td></tr>
+        <tr><td>GTA6 洩漏迷因（「We got X before GTA6」、Netflix 反嗆）</td><td><a href="https://www.pushsquare.com/news/2026/08/gta-6-leaks-prompt-fans-to-bring-out-the-memes-as-netflix-puts-a-brave-face-on-things" target="_blank">Push Square</a>（原文遭工具擋下，僅 WebSearch 摘要）＋ <a href="https://knowyourmeme.com/memes/events/august-2026-gta-6-leaks-2026-grand-theft-auto-vi-leak" target="_blank">Know Your Meme</a>（WebFetch 確認頁面建立於 2026-08-21）<span class="pp">partial</span></td></tr>
+        <tr><td>Gamescom Opening Night Live 2026 倒數預告</td><td><a href="https://gameinformer.com/2026/08/24/how-to-watch-gamescom-opening-night-live-2026" target="_blank">Game Informer</a>　WebSearch 摘要，URL 日期戳 2026-08-24<span class="pp">partial</span>　🆕 今天新</td></tr>
+        <tr><td>Steam / Roblox / Twitch 即時榜單（08/24）</td><td>—　本次無瀏覽器 / CDP 存取，<b>資料不足</b>，未抓取</td></tr>
+        <tr><td>itch.io / unityroom / Hacker News 08/24 早期冒頭</td><td>—　itch.io／unityroom 無瀏覽器可抓；Hacker News <a href="https://news.ycombinator.com/front?day=2026-08-24" target="_blank">前端頁面</a> 因工具限流（HTTP 429）未能讀取，<b>資料不足</b></td></tr>
+        <tr><td>Threads 繁中熱話 / 巴哈姆特 / PTT</td><td>—　無登入態瀏覽器存取，<b>目前無法完全證實</b></td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　本篇為 08/24 補刊：因當日排程環境故障未出刊，08/26 由 researcher agent 事後以 WebSearch／WebFetch 逐條回溯查證產出 · 不含即時瀏覽器 / CDP 抓取的 Steam／Roblox／Twitch／itch.io／unityroom 現場數據，相關版位一律標記「資料不足」，不以估計或臆測補位 · WebFetch 已讀取原文者標「✓」、僅 WebSearch 摘要或交叉比對者標「partial」、完全查無資料者標「未確認 / 資料不足」· 新鮮度標記相對於 2026/08/24：≤48h 🆕 / ≤14 天 🔄</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 補刊版 · 2026/08/24（08/26 補發）· 對外發布前一律過去賭場化 + 真人 / IP 風險濾鏡與禁提品牌檢查</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/08/22（補刊）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .badge-row .backfill{display:inline-flex;align-items:center;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:#fff;border:2px solid var(--ink);padding:4px 12px;box-shadow:3px 3px 0 var(--ink)}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">08 · 22 · SAT · 補刊</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="backfill">⚠ 補刊 · 原排程 8/22 未出刊，2026/08/26 事後補發</span>
+        <span class="dateflag">2026 / 08 / 22（週六）· 彈藥工廠模式 · 本期為回顧性補刊，即時 API／瀏覽器直抓數字無法回溯，逐條標示查證方式</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版（補刊）</div>
+      <div class="tagline">回補 8/22 當天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY（補刊）</div>
+        <p><b>8/22 當天最大的行業震撼，不在新遊戲榜單，在一場沒人想看到的洩漏事件。</b>Take-Two Interactive 於 8/20 向紐約南區聯邦法院提交兩份 DMCA 傳票申請，要求 Microsoft 與 Discord 交出化名「CyberLeek」帳號的裝置 ID、登入 IP、電話號碼、關聯 Xbox／OneDrive 內容，追查 GTA 6 玩法影片洩漏源頭，兩家公司回應期限訂在 9/4（Kotaku，8/21；Tom's Hardware，8/20-21）。同一天，南韓五人團隊 Alive Inc 的《Vapor World: Over The Mind》正面回應了自己捅的婁子——爭議爆發僅 3 天後，8/22 直接發更新拔掉全部 AI 生成過場動畫，並公開承諾後續全部手工製作（aroged.com、ixbt.games，均 8/22）。</p>
+        <p>與此同時，AI 造遊戲的產能競賽仍在加速：AI 遊戲平台 Elseland 於 8/22 一次性發布 20 款「AI 全流程」新遊戲，橫跨消消樂、益智解謎、休閒社交等類型（PR Newswire，8/22）；Google DeepMind 也在 8/21 發布回顧文章，確認已入股 EVE Online 開發商 Fenris Creations（原 CCP Games），要用這款遊戲 20 年的玩家經濟資料做「長期規劃／記憶／持續學習」基礎研究，官方明確定調為「純研究、非近期產品功能」（cryptonomist.ch，8/21）。同一個週末，《The International 2026》Dota 2 世界賽在上海進行到季後賽階段（8/20–23），Team Spirit 最終在總決賽（8/23）3:2 擊敗 PVISION 完成隊史第三冠，總決賽單場 Twitch 觀看峰值衝上 179 萬（escharts.com，8/24 賽後統計）。</p>
+        <div class="pull">▸ 今天可蹭的角度是「速度」：Vapor World 從被抓包到拔內容、道歉只花了 3 天，是「AI 出包但修得快」的正面教材，可以直接接上 GameGen 一直在講的「一致性把關」論述；GTA 6 洩漏案則提醒——任何平台生態（Discord／Microsoft 帳號）一旦被鎖定追查，資料治理鏈條比想像中更長更細，適合當 B2B 對話裡「別把資料治理當成紙上作業」的案例。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版（補刊）</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 8/22 當天</span>一個 AI 遊戲平台一次上架 20 款全流程 AI 遊戲——量產不再是概念，是產品線</div>
+            <div class="ln"><b>新聞事實：</b>AI 遊戲平台 Elseland 於 8/22 發布新聞稿，一次推出 20 款橫跨消消樂（如「糖果王國」）、3D 數獨、滑塊拼圖、休閒社交（如「水豚撲克酒廊」）等類型的新遊戲，AI 貫穿美術、3D 建模、玩法邏輯、關卡設計與敘事全流程；官方稱這標誌公司從「創辦人單打」進化到「團隊化 AI 量產」，並預告下一步要做連結多款遊戲與角色的更大 AI 3D 世界（PR Newswire，經 Manila Times／Laotian Times／wireuk.org 等多站轉載，pub 2026-08-22；⚠️ 新聞稿未提供下載量或玩家規模等第三方可查數字）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這是「AI 遊戲量產」賽道裡目前最直白的公開案例——別人在講願景，Elseland 直接一次交出 20 款成品。GameGen 的差異化不在「能不能量產」，而在「量產的動作是不是玩家自己按下去的」：Elseland 仍是平台內部團隊在生產，GameGen 要做的是把「一句話」的按鈕直接交給玩家本人。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "One platform just shipped 20 AI-made games in a single drop. The real question isn't whether AI can make games anymore — it's who gets to press the button when it happens: a studio team, or the player."<br><span style="color:var(--ink-dim)">中譯：一個平台一次上架了 20 款 AI 製作的遊戲。真正的問題不再是「AI 能不能做遊戲」，而是「按下這個按鈕的人是誰」——是工作室團隊，還是玩家自己。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.manilatimes.net/2026/08/22/tmt-newswire/pr-newswire/elseland-unveils-20-games-created-with-ai-advancing-ai-game-development-at-scale/2410238" target="_blank">Manila Times（PR Newswire）↗</a>　pub 2026-08-22　verified ✓（web_fetch 已讀原文；數字層為新聞稿自述，無第三方數據）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 8/22 當天</span>Google DeepMind 真金白銀入股 EVE Online 開發商，把遊戲當成嚴肅 AI 研究實驗室</div>
+            <div class="ln"><b>新聞事實：</b>Google DeepMind 在 EVE Online 開發商 Fenris Creations（原 CCP Games，剛完成一筆 1.2 億美元管理層收購獨立出來）取得少數股權，雙方將在 EVE Online 的離線版本部署 AI 模型，研究「長期規劃、記憶保留與持續學習」，利用該遊戲逾 20 年、橫跨 7000＋星系的玩家經濟資料；官方明確表示這是「基礎科學研究，非近期產品功能交付」（cryptonomist.ch，pub 2026-08-21；web_fetch 已驗原文）。</div>
+            <div class="ln"><b>GameGen 角度：</b>大型 AI 實驗室願意「入股」一款遊戲只為了拿它的長期玩家行為資料做研究，等於間接證實「遊戲內生成的行為／經濟資料」本身就有嚴肅研究價值。這替 GameGen「玩家的創作與遊玩行為本身就是資產」的論述提供了一個巨頭級的旁證案例，可以直接引用在對外簡報裡當「這件事不是我們自己講講而已」的佐證。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "DeepMind didn't just study a game — it bought a stake in one to study 20 years of player behavior data. Games are quietly becoming AI's most serious research lab."<br><span style="color:var(--ink-dim)">中譯：DeepMind 不只是研究一款遊戲，它直接入股買下研究 20 年玩家行為資料的權利。遊戲正悄悄變成 AI 最認真的研究實驗室。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://en.cryptonomist.ch/2026/08/21/fenris-creations-google-deepmind/" target="_blank">Cryptonomist ↗</a>　pub 2026-08-21　verified ✓（web_fetch 已讀原文）</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 8/22 當天</span>一個 Discord 化名，換來聯邦法院傳票——GTA 6 洩漏案追查到 OneDrive 內容<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Take-Two 於 8/20 向紐約南區法院提交傳票，要求 Microsoft／Discord 交出化名「CyberLeek」及關聯帳號「CINEMATICROCKSTAR」「Surfer24k™」等的裝置 ID、登入 IP、電話號碼、Xbox 帳號連結與 OneDrive 上的 GTA 相關內容，回應期限 9/4，調查範圍回溯至 6/1（Kotaku，pub 2026-08-21，已驗原文）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A single Discord alias is now the subject of a federal subpoena covering device IDs, IP logs, and OneDrive contents. Data governance just stopped being paperwork — it's crisis response now."<br><span style="color:var(--ink-dim)">中譯：一個 Discord 化名現在成了聯邦傳票的對象，涵蓋裝置 ID、IP 紀錄、雲端內容。資料治理不再是紙上作業，是危機處理的一部分。</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>把「洩漏懸疑劇」抽成泛化玩法：一句話設定任何「公司內鬼／誰洩漏了」情境 → 生成限時推理迷你遊戲 → 出「你猜對內鬼了嗎」分享卡（不影射真實遊戲或角色）。</div>
+            <div class="meta">來源 <a href="https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633" target="_blank">Kotaku ↗</a>　pub 2026-08-21　verified ✓（web_fetch 已驗原文）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 8/22 當天</span>被抓包用 AI 過場動畫「穿模」3 天後，開發商直接動手拔掉道歉<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>韓國五人團隊 Alive Inc 的《Vapor World: Over The Mind》8/19 上市即因 AI 生成過場動畫角色模型不一致被玩家點名，8/22 開發商發布更新直接移除全部 AI 過場動畫，同時修正啟動、存檔問題並提升角色移動速度，承諾後續劇集過場全部手工製作（aroged.com，pub 2026-08-22）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Called out for AI slop on day one. Cutscenes removed by day three. That's not a scandal anymore — that's a case study in how fast 'caught' should turn into 'fixed'."<br><span style="color:var(--ink-dim)">中譯：上市第一天被抓包用 AI 糊弄，第三天就把過場動畫拔光。這已經不是醜聞，是「被抓包到修好」該有多快的活教材。</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>把「危機公關速度」變遊戲：玩家扮演客服，在限時內修復流失的信任值 → 結束出「你搶救回多少信任」結算卡。</div>
+            <div class="meta">來源 <a href="https://www.aroged.com/2026/08/22/the-creators-of-vapor-world-over-the-mind-quickly-responded-to-criticism-and-made-changes/" target="_blank">Aroged ↗</a>　pub 2026-08-22　verified ✓（web_fetch 已驗原文；ixbt.games 同日報導交叉佐證，未逐句 web_fetch）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-hot">🔥 賽事進行中</span>Dota 2《The International 2026》打進上海季後賽，隊史唯一三冠戰隊誕生前夕<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>《The International 2026》主賽事 8/20–23 於上海舉行，8/22 正值季後賽階段；賽事最終在 8/23 由 Team Spirit 以 3:2 擊敗 PVISION 奪冠，成為隊史首支三度奪得 TI 冠軍（2021、2023、2026）的隊伍，總決賽單場 Twitch 觀看峰值達 179 萬 2174 人，是 TI 系列史上第三高紀錄（Esports Charts，pub 2026-08-24，已驗原文）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "One team just became the only three-time champion in Dota's biggest tournament — and 1.79M people watched the final live. Legacy streaks are a growth mechanic too."<br><span style="color:var(--ink-dim)">中譯：一支戰隊剛成為 Dota 最大賽事史上唯一的三冠王——179 萬人同步觀看總決賽。「衛冕連勝」本身就是一種成長機制。</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>抄「衛冕戰」懸念結構：一句話設定任何「能不能三連霸」情境 → 生成淘汰賽泛化框架 → 出「你能衛冕嗎」戰績卡（不使用真實戰隊視覺／商標）。</div>
+            <div class="meta">來源 <a href="https://escharts.com/news/team-spirit-makes-history-international-2026" target="_blank">Esports Charts ↗</a>　pub 2026-08-24（回顧 8/23 賽果）　verified ✓（web_fetch 已驗原文）</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 構想（非既有玩法複刻）</span>「誰洩漏的？」限時抓內鬼推理生成器<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入任何一句「某個秘密被洩漏了」的情境 → 生成一個限時盤問／比對線索的抓內鬼迷你遊戲 → 結束出「你抓對內鬼了嗎」分享卡（純邏輯推理分數，不寫任何真實公司／遊戲／角色名）。</div>
+            <div class="ln"><b>為何是今天首選：</b>這是本方基於 GTA 6 洩漏案（Take-Two 傳票追查「CyberLeek」化名）延伸出的<b>原創demo構想</b>，非既有市場玩法的複刻或抄襲對象——目的是把「洩漏懸疑」這個今天最大的公眾話題，轉譯成零 IP 風險、規則一句話講完的推理小遊戲殼子，適合搭配 GTA 6 案的社群話題操作。</div>
+            <div class="meta">靈感來源 <a href="https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633" target="_blank">Kotaku GTA 6 洩漏案 ↗</a>　構想層級：本方原創延伸，非市場既有玩法驗證數據</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">08/22 官方 API 數字</span></div>
+          <div class="nodata">⚠️ <b>資料不足，未確認。</b>本期為回顧性補刊（8/26 製作），無法回溯 8/22 當下的 Steam 官方即時同時在線數字，不以現在的即時榜單冒充當天數據，也不推測估算。</div>
+          <div class="bf">說明：即時 CCU 需當下抓取，事後無官方回溯管道</div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX 熱玩</span><span class="metric">08/22 榜單</span></div>
+          <div class="nodata">⚠️ <b>資料不足，未確認。</b>同理，Roblox Top Playing Now 需瀏覽器當下直抓，本次無法回溯 8/22 當天榜單快照，不以近期榜單充當舊資料。</div>
+          <div class="bf">說明：需即時截圖，事後無法補測</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">08/20–23 賽事期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">The International 2026 決賽（Team Spirit vs PVISION）</span><span class="vn">179.2萬 峰值</span></li>
+          </ol>
+          <div class="bf">Esports Charts（8/24 賽後統計，涵蓋 8/23 決賽）· <a href="https://escharts.com/news/team-spirit-makes-history-international-2026" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 本期為 2026-08-22 排程故障後、於 2026-08-26 事後補發之報告。Steam／Roblox 即時榜單性質上必須「當下」抓取才有意義，本方誠實標記為「資料不足，未確認」，不以其他日期數字冒充、不推測估算。Twitch 部分改以 8/20–23 期間唯一可查證的具體公開數字（TI2026 決賽觀看峰值）呈現，並註明其實際發布日期（8/24）。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Dota 2《The International 2026》上海季後賽收官：史上唯一三冠王誕生，總決賽 179 萬人同步觀看</h3>
+        <div class="sum">《The International 2026》主賽事 8/20–23 於上海舉行，8/22 為季後賽關鍵階段；賽事最終在 8/23 由 Team Spirit 以 3:2 擊敗 PVISION 奪冠，成為 Dota 2 史上首支三度奪得 TI 冠軍的隊伍（2021、2023、2026），總決賽單場 Twitch 觀看峰值達 1,792,174 人，是 TI 系列史上第三高紀錄，本屆總觀看時數達 6435 萬小時（Esports Charts，pub 2026-08-24，已驗原文）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天的暴衝訊號本質是「大型既有 IP 賽事的懸念高潮」帶動觀看爆發——這類熱度不適合直接複刻（IP／賽事美術風險高），但「連勝／衛冕」這個敘事結構本身泛用性極高，可以抽成任何主題的淘汰賽框架，讓玩家自己創造「能不能連霸」的懸念。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ESPORTS CHARTS · 8/24（回顧 8/23 賽果）· <a href="https://escharts.com/news/team-spirit-makes-history-international-2026" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>軍武模擬 FPS「WARDOGS」封測週末（8/21–23）開跑，正好蓋住補刊當天</h3>
+        <div class="sum">Bulkhead 開發的軍武模擬 FPS《WARDOGS》封測時間為 8/21（週五）至 8/23（週日），8/22 當天正處於封測進行中（PCGamesN，pub 2026-08-18，公告內容已驗）；封測結束後的統計顯示三天內吸引近 50 萬名玩家、單日同時在線峰值破 10 萬，遊戲已累積逾 100 萬 Steam 願望清單，將於 9/10 推出搶先體驗版（PC Gamer，pub 2026-08-24，賽後彙整）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>封測期間玩家熱議的是它「每個動作都能換錢」的持久經濟系統（重生要買裝備、救援／載人／擊殺都能賺錢）——這種一句話講得完的透明規則，是玩家願意在測試周末自發湧入的關鍵，機制本身可泛化抽取、不挪用軍武美術。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 軍武美術</span></span></div></div>
+          </div>
+          <div class="src">PCGAMESN / PC GAMER · 8/18 公告，8/24 賽後彙整 · <a href="https://www.pcgamesn.com/wardogs/new-closed-playtest" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>ELSELAND 8/22 新品</span><span class="metric">新平台批次上架</span></div>
+          <ol>
+            <li class="hot"><span class="nm">糖果王國（消消樂）</span><span class="vn">新品</span></li>
+            <li><span class="nm">水豚撲克酒廊（社交休閒）</span><span class="vn">新品</span></li>
+            <li><span class="nm">3D 數獨</span><span class="vn">新品</span></li>
+            <li><span class="nm">滑塊拼圖</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">PR Newswire · pub 2026-08-22 · <a href="https://www.manilatimes.net/2026/08/22/tmt-newswire/pr-newswire/elseland-unveils-20-games-created-with-ai-advancing-ai-game-development-at-scale/2410238" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>其餘早期訊號</span><span class="metric">Steam 新品 / itch / HN</span></div>
+          <div class="nodata">⚠️ <b>資料不足，未確認。</b>本次未能查得 8/22 當天具備真實可查來源的 Steam 新品榜、itch.io 或 Hacker News 早期冒頭項目，不以其他日期資料填補，如實標記空缺。</div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>AI 遊戲平台從「單一創辦人實驗」進化到「批次量產」，Elseland 是目前最直白的公開案例</h3>
+        <div class="sum">Elseland 在 8/22 一次性發布 20 款橫跨消消樂、益智解謎、街機、超休閒與敘事類的 AI 全流程遊戲，官方明確定調這是公司「從創辦人單打獨鬥進化為團隊化 AI 量產」的里程碑，下一步計畫推出連結角色、小遊戲與可探索場景的更大型 AI 3D 世界（PR Newswire，pub 2026-08-22，已驗原文；⚠️ 新聞稿未附下載量或玩家規模等第三方數據）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是「AI 造遊戲」賽道從概念驗證進入量產階段的具體訊號，值得列入長線競品觀察名單——但它仍是平台團隊在後台按按鈕量產，跟 GameGen「玩家自己一句話生成」的定位不同層次，可以在對外論述中明確區隔這個差異，而不是把它當成需要正面對抗的競品。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PR NEWSWIRE · 8/22 · <a href="https://www.manilatimes.net/2026/08/22/tmt-newswire/pr-newswire/elseland-unveils-20-games-created-with-ai-advancing-ai-game-development-at-scale/2410238" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>產業動態</span></span>Take-Two 對 GTA 6 洩漏案下重手：傳票追到 OneDrive 內容</h3>
+        <div class="sum">Take-Two 於 8/20 向紐約南區聯邦法院提交兩份 DMCA 傳票申請，要求 Microsoft 與 Discord 交出化名「CyberLeek」及關聯帳號「CINEMATICROCKSTAR」「Surfer24k™」等的裝置 ID（MachineGuid／MSA）、登入 IP、電話號碼、Xbox 帳號連結與 OneDrive 上的 GTA 相關內容，回應期限 9/4，調查範圍回溯至 6/1（Kotaku，pub 2026-08-21，已驗原文）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這件事本身不是 AI 話題，但示範了「資料治理」在遊戲產業已經是能被法院直接動用的武器——對 GameGen 而言是一個提醒：任何用戶生成內容平台，一旦捲入版權或洩漏爭議，帳號資料的可追溯性會被放大檢視，值得在產品治理上超前部署。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">KOTAKU · 8/21 · <a href="https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>被抓包 AI 過場「穿模」，Vapor World 只花 3 天就拔內容道歉</h3>
+        <div class="sum">《Vapor World: Over The Mind》8/19 上市即因 AI 生成過場動畫角色模型不一致遭玩家點名，8/22 開發商 Alive Inc 發布更新移除全部 AI 過場動畫，同時修正啟動、存檔問題並提升角色移動速度，承諾未來過場全部手工製作（aroged.com，pub 2026-08-22，已驗原文；ixbt.games 同日報導交叉佐證）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>直接支撐「AI 生成內容需要一致性把關」的立場，但這次更值得記錄的是修復速度——3 天內從被抓包到拔內容道歉，是少見的「快速止血」正面案例，可以搭配上一版本已提過的「AI 一致性風險」論述一起使用，強調「出包不可怕，慢才可怕」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">AROGED.COM · 8/22 · <a href="https://www.aroged.com/2026/08/22/the-creators-of-vapor-world-over-the-mind-quickly-responded-to-criticism-and-made-changes/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Google DeepMind 入股 EVE Online 開發商，20 年玩家經濟資料變基礎研究材料</h3>
+        <div class="sum">Google DeepMind 在 EVE Online 開發商 Fenris Creations（原 CCP Games，剛完成 1.2 億美元管理層收購獨立出來）取得少數股權，將在其離線版本部署 AI 模型研究「長期規劃、記憶保留與持續學習」，利用該遊戲逾 20 年、橫跨 7000＋星系的玩家經濟資料；官方明確定調這是「基礎科學研究，非近期產品功能」（cryptonomist.ch，pub 2026-08-21，已驗原文）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>大型 AI 實驗室願意「入股」一款遊戲只為研究其長期玩家行為資料，等於間接證實「遊戲內生成的行為／經濟資料」本身具有嚴肅研究價值——可作為 GameGen「玩家創作與遊玩行為即資產」論述的巨頭級旁證。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">CRYPTONOMIST · 8/21 · <a href="https://en.cryptonomist.ch/2026/08/21/fenris-creations-google-deepmind/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <div class="story ai reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ai"><span>未確認</span></span>8/22 當天的迷因熱榜快照，本次無法回溯</h3>
+        <div class="sum" style="margin-bottom:0">Know Your Meme、itch.io meme 標籤等頁面性質上只顯示「當下」熱門條目，本次為 2026-08-26 事後補刊，無法回溯 8/22 當天的迷因快照，也無法透過網頁封存服務取得該時間點頁面（本次工具環境無法存取 web.archive.org）。<b>該段資料不足，標記未確認，不以近期迷因或估計內容補位。</b>唯一可確認且時間點吻合的相關話題，是 GTA 6 洩漏案中「CyberLeek」這個化名本身已成為玩家社群討論焦點（見 04 段 Kotaku 報導），但本次未能查得獨立、可溯源的迷因二創案例（如迷因圖、KYM 條目）佐證其已達「迷因」規模，故不在此段當成迷因收錄，僅在 04 段以新聞事實呈現。</div>
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+
+      <div class="story rl reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag rl"><span>未確認</span></span>8/22 當天的獨立小遊戲機制靈感，本次資料不足</h3>
+        <div class="sum" style="margin-bottom:0">unityroom、itch.io 新品榜等機制靈感來源同樣需要「當下」瀏覽器直抓才能取得具體遊玩數與排行，本次補刊未能查得 8/22 當天有可靠來源佐證的具體機制案例。<b>本段資料不足，標記未確認，不以近期資料填補。</b>唯一可延伸的機制題材來自 02 段已驗證的 WARDOGS「每個動作都能換錢」持久經濟系統（封測 8/21–23，涵蓋 8/22），可作為泛化生存／資源交換模板的靈感來源，詳見 08 段 Trend-to-Game 題材表。</div>
+      </div>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>未確認</span></span>Threads 繁中熱話本次無法取得，登入門檻＋回溯限制雙重卡關</h3>
+        <div class="sum" style="margin-bottom:0">Threads「為你推薦／追蹤中」動態消息在未登入狀態下為空殼，且本次是回顧 8/22 當天的補刊作業，即使有登入權限也無法回溯已消失的舊動態消息。<b>⚠️ 本段資料不足，標記未確認，骨架保留，不以估計內容補位。</b>可追的長線母題：GTA 6 洩漏案（Take-Two 追查 CyberLeek）與《The International 2026》三連霸，都是預期繁中玩家圈（PTT、巴哈）在該週討論度較高的話題，下次有登入權限的即時環境時可優先查證。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>GTA 6 洩漏案／CyberLeek 化名追查</td><td><span class="tmpl">抓內鬼推理生成器</span></td><td>「你猜對內鬼了嗎」推理卡</td><td class="rk-low">低</td><td>抽象化為通用洩密情境，不影射真實遊戲／角色</td></tr>
+          <tr><td>Vapor World 3 天內拔除 AI 過場並道歉</td><td><span class="tmpl">危機公關限時修復信任值</span></td><td>「你搶救回多少信任」結算卡</td><td class="rk-low">低</td><td>聚焦「修得快」的正面敘事，避免落井下石語氣</td></tr>
+          <tr><td>TI2026 Team Spirit 隊史三連霸</td><td><span class="tmpl">衛冕戰淘汰賽泛化框架</span></td><td>「你能衛冕嗎」戰績卡</td><td class="rk-low">低</td><td>抄懸念結構，不使用真實戰隊視覺／商標</td></tr>
+          <tr><td>WARDOGS 封測「動作換錢」經濟系統</td><td><span class="tmpl">泛化生存／資源交換</span></td><td>「賺到多少／花去哪」結算卡</td><td class="rk-mid">中 · 軍武美術</td><td>只抄「動作換錢」規則，不挪用軍武視覺</td></tr>
+          <tr><td>Elseland 單次量產 20 款 AI 遊戲</td><td><span class="tmpl">競品觀察（非玩法模板）</span></td><td>—（偏 B2B 洞察）</td><td class="rk-low">低</td><td>列入長線競品觀察，用來區隔「平台量產」vs「玩家一句話生成」的定位差異</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>AI 遊戲量產從概念驗證進入批次上架階段</td><td>Elseland 一次上架 20 款全 AI 流程遊戲，團隊化量產（8/22）</td><td>"One platform just shipped 20 AI-made games in a single drop. The question is who presses the button — a studio team, or the player."</td><td><a href="https://www.manilatimes.net/2026/08/22/tmt-newswire/pr-newswire/elseland-unveils-20-games-created-with-ai-advancing-ai-game-development-at-scale/2410238" target="_blank">↗</a></td></tr>
+          <tr><td>遊戲玩家行為資料正被大型 AI 實驗室認真對待</td><td>Google DeepMind 入股 EVE Online 開發商 Fenris Creations，研究 20 年玩家經濟資料（8/21）</td><td>"DeepMind bought a stake in a game just to study 20 years of player behavior data. Games are becoming AI's most serious research lab."</td><td><a href="https://en.cryptonomist.ch/2026/08/21/fenris-creations-google-deepmind/" target="_blank">↗</a></td></tr>
+          <tr><td>AI 出包的代價不在犯錯，在修復速度</td><td>Vapor World 被抓包 AI 過場穿模，3 天內拔內容道歉（8/22）</td><td>"Caught using AI slop on day one. Cutscenes removed by day three. Speed of the fix matters more than the mistake itself."</td><td><a href="https://www.aroged.com/2026/08/22/the-creators-of-vapor-world-over-the-mind-quickly-responded-to-criticism-and-made-changes/" target="_blank">↗</a></td></tr>
+          <tr><td>資料治理已是能被法院直接動用的武器</td><td>Take-Two 對 Microsoft／Discord 提交傳票，追查 GTA 6 洩漏化名 CyberLeek（8/20-21）</td><td>"A single Discord alias is now the subject of a federal subpoena. Data governance stopped being paperwork — it's crisis response now."</td><td><a href="https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Elseland AI 量產、DeepMind × EVE Online）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。全部四條均已 web_fetch 逐句驗證原文與發布日期，對外用字已過去賭場化濾鏡與禁提品牌檢查。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>GTA 6 洩漏案：「一個化名換來聯邦傳票」懸疑劇角度貼文</li><li>Vapor World：「被抓包到修好只花 3 天」危機公關速度案例</li><li>TI2026：「史上唯一三冠王誕生」179 萬人同步觀看的懸念高潮</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「誰洩漏的？」限時抓內鬼推理生成器（本方原創構想，靈感自 GTA 6 案）</li><li>「危機公關限時修復信任值」小遊戲（呼應 Vapor World 案）</li><li>「衛冕戰」淘汰賽泛化框架（呼應 TI2026 三連霸敘事）</li><li>WARDOGS「動作換錢」規則抽成泛化生存資源交換小遊戲</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>GTA 6 洩漏案傳票回應期限 9/4，後續是否揭露洩漏者身分</li><li>Vapor World 換回人工過場後評價是否回升，AI 信任修復速度的活案例</li><li>Elseland 預告的「更大型 AI 3D 世界」何時公布、規模多大</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>「抓內鬼」demo 構想不可影射真實公司／遊戲／化名，全部泛化處理</li><li>Vapor World 事件對外引用時避免落井下石語氣，聚焦「修復速度」正面角度</li><li>WARDOGS 題材只抄「動作換錢」規則，不挪用軍武美術與商標</li><li>01／03／05／06／07 段標記「資料不足」的部分，對外文案不可杜撰具體數字或榜單名次頂替</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證，補刊版）</h4>
+      <table>
+        <tr><td>Take-Two 對 GTA 6 洩漏案提交傳票</td><td><a href="https://kotaku.com/take-two-subpoenas-microsoft-and-discord-records-related-to-spread-of-gta-6-leaks-2000726633" target="_blank">Kotaku</a>（web_fetch）　原文日期 2026-08-21（傳票提交日 8/20）　驗：DMCA 傳票、化名 CyberLeek 及關聯帳號、9/4 回應期限、資料範圍回溯至 6/1<span class="ok">✓</span>　🆕 當週新聞</td></tr>
+        <tr><td>Vapor World 拔除 AI 過場並道歉</td><td><a href="https://www.aroged.com/2026/08/22/the-creators-of-vapor-world-over-the-mind-quickly-responded-to-criticism-and-made-changes/" target="_blank">Aroged.com</a>（web_fetch）　原文日期 2026-08-22　驗：移除全部 AI 過場動畫、修正啟動／存檔問題、提升移動速度、承諾後續手工製作<span class="ok">✓</span>　🆕 8/22 當天；ixbt.games 同日報導交叉佐證（未逐句 web_fetch）</td></tr>
+        <tr><td>Elseland 一次上架 20 款 AI 遊戲</td><td><a href="https://www.manilatimes.net/2026/08/22/tmt-newswire/pr-newswire/elseland-unveils-20-games-created-with-ai-advancing-ai-game-development-at-scale/2410238" target="_blank">Manila Times（PR Newswire）</a>（web_fetch）　原文日期 2026-08-22　驗：20 款遊戲類型、AI 全流程說明、平台團隊化量產定位、未來 3D 世界計畫<span class="pp">partial</span>　新聞稿性質，無第三方下載量／玩家規模數據　🆕 8/22 當天</td></tr>
+        <tr><td>Google DeepMind × Fenris Creations（EVE Online）</td><td><a href="https://en.cryptonomist.ch/2026/08/21/fenris-creations-google-deepmind/" target="_blank">Cryptonomist</a>（web_fetch）　原文日期 2026-08-21　驗：少數股權入股、1.2 億美元管理層收購背景、研究長期規劃／記憶／持續學習、20 年遊戲經濟資料、官方定調為基礎研究<span class="ok">✓</span>　🆕 8/21，緊鄰補刊日</td></tr>
+        <tr><td>The International 2026 決賽戰果與觀看峰值</td><td><a href="https://escharts.com/news/team-spirit-makes-history-international-2026" target="_blank">Esports Charts</a>（web_fetch）　原文日期 2026-08-24　驗：Team Spirit 3:2 擊敗 PVISION、隊史三冠、決賽峰值 1,792,174 觀看、賽事總觀看時數 6435 萬小時<span class="ok">✓</span>　賽事本身涵蓋 8/20–23（含 8/22），統計文章發布於賽後</td></tr>
+        <tr><td>WARDOGS 封測（8/21–23）公告與賽後彙整</td><td><a href="https://www.pcgamesn.com/wardogs/new-closed-playtest" target="_blank">PCGamesN</a>（web_fetch，原文日期 2026-08-18，封測公告）＋PC Gamer（賽後彙整，原文日期 2026-08-24，未於本次逐句 web_fetch，沿用既有已驗數字：近 50 萬玩家、單日峰值破 10 萬）<span class="pp">partial</span>　封測時段本身涵蓋 8/22，公告與彙整文章分別在事前／事後發布</td></tr>
+        <tr><td>Steam 官方即時同時在線（08/22）</td><td>—</td><td colspan="1"><b>資料不足，未確認。</b>回顧性補刊無法回溯官方即時 API 歷史數字，未查詢、未估算。</td></tr>
+        <tr><td>Roblox 即時榜單（08/22）</td><td>—</td><td><b>資料不足，未確認。</b>需瀏覽器當下直抓，本次無法回溯，未查詢、未估算。</td></tr>
+        <tr><td>Know Your Meme／itch.io 迷因熱榜（08/22）</td><td>—　嘗試存取 web.archive.org 失敗（本次工具環境不可用）</td><td><b>資料不足，未確認。</b>不以近期迷因資料填補。</td></tr>
+        <tr><td>機制靈感（unityroom／itch.io 新品，08/22）</td><td>—</td><td><b>資料不足，未確認。</b>不以近期資料填補。</td></tr>
+        <tr><td>Threads 繁中熱話（08/22）</td><td>threads.com　登入門檻＋回溯限制雙重卡關</td><td><b>資料不足，未確認。</b>骨架保留，不以估計內容補位。</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　本期為 2026-08-22 原排程故障後、於 2026-08-26 事後補發的補刊報告 · 頭版彈藥與高討論文章逐條 web_fetch 驗原文日期＋主張比對（見 Evidence Log）· 即時榜單類（Steam CCU／Roblox／KYM／機制靈感／Threads）因性質需「當下」抓取，本次無法回溯，一律標記「資料不足，未確認」，不以其他日期資料填補、不推測估算 · 新鮮度由日期機械判定（原文發布日對齊 8/20–8/24 窗口）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 補刊：原 2026/08/22 未出刊，2026/08/26 事後補發 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
