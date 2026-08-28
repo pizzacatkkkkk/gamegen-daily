@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/08/29</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">08 · 29 · SAT</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 08 / 29 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）· 來源 19 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>GTA 6 確認 30fps，無效能模式——「這就是十億美元的代價」。</b>Eurogamer、VGC、Gamespot 確認：GTA 6 在 PS5 / Xbox Series X 上固定 30fps，Rockstar 目前對 60fps 效能模式「尚未確定」。Digital Foundry 分析稱其「可能是目前見過最令人印象深刻的即時渲染展示」，也是 30fps 鎖定的主要原因。這一消息在 Reddit r/Gaming / r/Games 引發多則今日 top-of-day 討論，正反兩派撕裂——但無論如何，<span class="hl">「視覺技術天花板」與「效能底線之爭」</span>都是今天最熱的框架。</p>
+        <p>同時炸鍋的是 <b>Nvidia DLSS 5 AI 濾鏡洩漏事件</b>：玩家從 NBA 2K27 的檔案中挖出 DLSS 5 的 AI 美化濾鏡，並插入各種遊戲，Reddit r/Games 最熱帖標題就是「This is horrifying」。這兩件事放在一起——GTA 6 守住每個渲染像素的藝術一致性、DLSS 5 讓 AI 瘋狂改寫遊戲畫面——形成今天最值得論述的對話：<b>誰來決定玩家看到什麼？</b></p>
+        <p>此外：Naavik 揭露 <b>Meshy 獲 $400M 融資</b>，專注 3D AI 資產生成，是 2026 年迄今最大的 AI 遊戲工具投資。<b>Crimson Desert</b> 則在發售後透過補丁徹底改寫角色 Kliff 的劇情——「遊戲還沒收就先修故事」的案例本身已成迷因。</p>
+        <div class="pull">▸ 今天最大的品牌機會：DLSS 5 讓 AI「偷偷」改造每款遊戲，GTA 6 讓頂級工作室不惜代價守住視覺一致性。GameGen 的定位剛好在中間——<b>大方說清楚是 AI 做的、讓玩家自己決定要什麼</b>。不是藏、不是拒絕，而是讓玩家主控。今天這兩條新聞就是最好的對話切入點。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Meshy $400M 募資——3D AI 資產生成，2026 最大 AI 遊戲工具投資訊號</div>
+            <div class="ln"><b>新聞事實：</b>Naavik 報導（heat radar 08/29 收錄）：Meshy 完成 4 億美元融資，專注於用 AI 生成乾淨拓樸的 3D 遊戲資產。這是 2026 年迄今 AI 遊戲工具領域最大的單輪融資，側面說明「AI 生成 3D 資產」的商業市場已從實驗期進入資本期。（Naavik，摘要層，pub 近期）</div>
+            <div class="ln"><b>GameGen 角度：</b>Meshy 押注的是工具端——讓工作室更快生成資產。GameGen 押注的是體驗端——讓玩家直接生成可玩的東西。兩者不衝突，但定位完全不同：<b>一個是 B2B 工具，一個是 B2C 體驗</b>。$400M 代表資本已相信「AI 生成遊戲內容」的市場是真的，這是今天最值得在 LinkedIn 點出的產業訊號。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "$400M just went into AI-generated 3D game assets. Capital is betting the pipeline is real. But there's a difference between AI tools for studios and AI experiences for players. We're building the second thing."<br><span style="color:var(--ink-dim)">中譯：4 億美元剛投進 AI 生成 3D 遊戲資產。資本在押注這個管線是真實的。但工作室用的 AI 工具跟玩家用的 AI 體驗之間有本質差異。我們在做的是第二件事。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://naavik.co/ai-gaming/inside-meshys-400m-raise-for-3d-assets/" target="_blank">Naavik ↗</a>　pub 近期　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GenAI 獵巫戰升溫：遊戲開發者談「假指控」與視覺鑑別力的重要性</div>
+            <div class="ln"><b>新聞事實：</b>Rock Paper Shotgun（2026-08-28）深度報導：多位遊戲開發者分享被玩家誤指「使用 AI」的經歷，甚至有開發者為避免社群積怨而主動修改美術風格（即便指控是錯的）。一位開發者留言：「Hopefully a meteor will strike the earth soon」——這句話本身就成了標題。（RPS，radar 收錄，pub 2026-08-28）</div>
+            <div class="ln"><b>GameGen 角度：</b>當「看起來像 AI」本身就能引爆社群風暴，<b>透明度不再是可選項，而是基礎設施</b>。GameGen 從第一天就選擇大方說清楚——這不是道德聲明，是策略選擇：降低被誤解的成本、提高社群信任的效率。Gamescom 這週連續多天的 AI 爭議正在驗證這個判斷。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Game devs are now modifying their art to avoid AI accusations — even when the accusations are wrong. When 'looking like AI' is enough to start a storm, transparency isn't a moral stance. It's infrastructure."<br><span style="color:var(--ink-dim)">中譯：遊戲開發者現在為了躲避 AI 指控而修改美術——即便指控根本是錯的。當「看起來像 AI」就足以引爆風暴，透明度就不再是道德立場，而是基礎設施。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.rockpapershotgun.com/hopefully-a-meteor-will-strike-the-earth-soon-game-devs-talk-genai-witchhunts-and-the-importance-of-honing-your-visual-literacy" target="_blank">Rock Paper Shotgun ↗</a>　pub 2026-08-28　verified partial</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 確認 30fps，無效能模式——「十億美元買到的是這個」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Eurogamer、VGC、Gamespot 確認（2026-08-29）：GTA 6 在 PS5 / Xbox Series X 上固定 30fps，Rockstar 目前對 60fps 效能模式「不確定」。Gamespot 標題：「Tech Experts Call Grand Theft Auto 6 The Most Visually Advanced Game To Date, Which Explains Why It's Stuck At 30FPS」。Digital Foundry 稱此為「目前見過最令人印象深刻的即時渲染展示」（多源，radar 故事源）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6: 30fps. No performance mode at launch. The most visually advanced game ever made, according to Digital Foundry. Rockstar spent a billion dollars optimizing every pixel. Sometimes the ceiling and the floor are the same thing. 👑"<br><span style="color:var(--ink-dim)">中譯：GTA 6：30fps。上市無效能模式。根據 Digital Foundry，這是有史以來視覺技術最先進的遊戲。Rockstar 花了十億美元把每個像素都優化到極致。有時候天花板和地板是同一樣東西。👑</span></div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/gta-6-frame-rate-ps5-xbox-series-x-s" target="_blank">Eurogamer ↗</a> · <a href="https://www.videogameschronicle.com/news/gta-6-is-confirmed-to-be-30-frames-per-second-at-launch-no-performance-mode-at-launch/" target="_blank">VGC ↗</a>　pub 2026-08-29　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Nvidia DLSS 5 AI 濾鏡洩漏：玩家將其插入每款遊戲，「令人恐懼」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>玩家從 NBA 2K27 的預發行檔案中挖出 Nvidia DLSS 5 的「AI 美化濾鏡」（yassification filter），並將其插入多款現有遊戲，截圖在 Reddit r/Games 今日 top-of-day 大量流傳，最熱帖標題：「'This is horrifying' Nvidia's controversial DLSS 5 AI filter leaks and players are inserting it into every game」（VGC、RPS、Gamespot，多源，摘要層）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Nvidia's DLSS 5 AI filter just leaked. Players are inserting it into every game. The reaction: 'This is horrifying.' Not because it looks bad — because nobody asked the AI to change things. There's a difference between AI that helps you and AI that decides for you. 🤖"<br><span style="color:var(--ink-dim)">中譯：Nvidia DLSS 5 AI 濾鏡洩漏了。玩家把它插進每款遊戲。反應：「令人恐懼。」不是因為難看——而是沒有人叫 AI 去改變東西。AI 幫你跟 AI 替你決定，是兩件完全不同的事。🤖</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1w0ylhp/this_is_horrifying_nvidias_controversial_dlss_5/" target="_blank">Reddit r/Games ↗</a> · <a href="https://www.videogameschronicle.com/news/this-is-horrifying-nvidias-controversial-dlss-5-ai-filter-leaks-and-layers-are-inserting-it-into-every-game/" target="_blank">VGC ↗</a>　摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Crimson Desert 上市後補丁「重寫自己的故事」——角色 Kliff 大翻轉<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/gaming 今日 top-of-day：《Crimson Desert》在上市後透過補丁徹底改寫了角色 Kliff 的故事，引發媒體以「literally patched its story」為標題報導（Reddit r/gaming top-of-day，摘要層，pub 2026-08-29）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Crimson Desert just patched its own story. The character Kliff has been completely transformed post-launch. This is either the bravest post-launch move ever — or a sign that games are now permanently in beta. Either way, the narrative wasn't final until players showed up. 📖"<br><span style="color:var(--ink-dim)">中譯：Crimson Desert 剛補丁了自己的故事。角色 Kliff 在上市後被徹底改寫。這要麼是有史以來最勇敢的上市後決定——要麼是遊戲已經永久進入 Beta 狀態的信號。無論如何，在玩家出現之前，敘事從來不是定案。📖</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1w0mu1f/crimson_desert_literally_patched_its_story_in_a/" target="_blank">Reddit r/gaming ↗</a>　摘要層</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>itch.io 今日最 meta：《Game About Botting in an MMORPG》——玩一個關於在遊戲裡作弊的遊戲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法靈感：</b>玩家扮演 MMO 中的掛機腳本（bot），在遊戲世界裡重複執行任務、刷怪、累積資源——但遊戲本身在反諷這件事，讓「重複」本身成為玩法的評論。（itch.io html5 popular，by yaxworks，heat radar 08/29 收錄）</div>
+            <div class="ln"><b>為何是今天首選：</b>在玩家爭論「AI 決定畫面」（DLSS 5）、「開發者替玩家決定故事」（Crimson Desert）的同一天，一款讓玩家扮演「自動化腳本」的遊戲出現在熱榜——這個時機本身就是最好的 meta 對話素材。GameGen 的切角：<b>玩家是主控的人，不是被自動化的那個</b>。</div>
+            <div class="meta">itch 靈感 <a href="https://yaxworks.itch.io/game-about-botting-in-an-mmorpg" target="_blank">Game About Botting in an MMORPG ↗</a>　模板：meta / 反諷互動</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 08/29 即時</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike 2</span><span class="vn">691K +9.0%</span></li>
+            <li class="up"><span class="nm">Palworld</span><span class="vn">119K +7.8%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">109K +12.0%</span></li>
+            <li><span class="nm">Rust</span><span class="vn">88K +3.7%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">73K -1.1%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 08/29 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Roblox 即時 CCU（roblox.com/charts / RTrack 需瀏覽器渲染）。<b>目前無法完全證實</b>。CC 互動 session 有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-08-29T07:30:31+08:00），Steam 為 <b>08-29 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。今日整體 Steam 在線人數上升，<b>CS:GO +9.0%（691,671 人）全榜最強</b>，PUBG +12.0%（109,180 人）緊追但未超過 ≥15% 暴衝旗標，GTA V Legacy +13.4%（51,431 人）受 GTA 6 消息推升。Roblox CCU / Twitch 觀看因無瀏覽器仍標「暫缺」。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>今日無項目超過 ≥15% 旗標；GTA V Legacy +13.4% 最接近；排名大跳：PoE2 +8 位、RDR2 +5 位、Elden Ring +5 位</h3>
+        <div class="sum">今日真·日比：<b>GTA V Legacy（51,431，+13.4%）</b>受 GTA 6 30fps 消息帶動，最接近旗標但未達；<b>PUBG（109,180，+12.0%）</b>；<b>CS:GO（691,671，+9.0%）</b>；<b>Apex Legends（64,711，+7.9%）</b>。今日無項目突破 ≥15% 旗標。Steam 排名大跳：<b>Path of Exile 2</b> 從第 99 位跳至第 91 位（+8，疑與 PoE2 「First Event League」活動相關，PCGamer 今日報導）；<b>Red Dead Redemption 2</b> 從第 43 跳至第 38 位（+5，GTA6 30fps 爭議帶動舊作回溯）；<b>Elden Ring</b> 從第 50 跳至第 45 位（+5，ELDEN RING Tarnished Pack 本週上市）。<b>新進榜：</b>STAR WARS Zero Company（第 60）、Shadowverse: Worlds Beyond（第 80）、Escape the Backrooms（第 96）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>GTA V Legacy +13.4% 是今天最值得記錄的訊號——<b>這不是巧合，而是 GTA 6 每一條新聞都在給舊代 GTA 引流</b>。RDR2 排名同步上升（+5）印證了「Rockstar 整個 IP 系列都在受惠」這個假設。PoE2 的 +8 位對應了今天 PCGamer 報導的 Event League 活動，是有明確事件驅動的排名跳動，不同於 GTA V Legacy 的「溢出效應」。Elden Ring Tarnished Pack 新入榜也值得追蹤後續——若 Pack 內容能持續帶動新玩家，可能引發後續排名持續上升。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 08/29 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次沙箱排程無瀏覽器、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比為 08-29 官方 API 即時（radar 07:30）。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending / 熱賣</span></div>
+          <ol>
+            <li class="hot"><span class="nm">STAR WARS Zero Company™</span><span class="vn">熱賣#1</span></li>
+            <li class="hot"><span class="nm">Bodycam</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">How to Fish</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">ELDEN RING Tarnished Pack</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Bomb Farm</span><span class="vn">新品</span></li>
+            <li><span class="nm">Where the Heart is: Season 2</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品／熱賣榜 · 08/29 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO HTML5 新爆</span><span class="metric">小體量早期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">CLOWN HOLE</span><span class="vn">html5</span></li>
+            <li><span class="nm">Game About Botting（MMORPG）</span><span class="vn">meta 諷刺</span></li>
+            <li><span class="nm">COBB CAN MOVE</span><span class="vn">動作</span></li>
+            <li><span class="nm">Twilight Observer</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">Death Loop（Danganronpa 風）</span><span class="vn">推理</span></li>
+            <li><span class="nm">FEED THE AI（仍在榜）</span><span class="vn">持續</span></li>
+          </ol>
+          <div class="bf">itch.io html5 · 08/29 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>早期訊號焦點：Bodycam 強勢進 Steam 熱賣榜；STAR WARS Zero Company 連續兩日熱賣冠軍；FEED THE AI 持續在 itch.io 榜上</h3>
+        <div class="sum">Steam 熱賣榜：<b>STAR WARS Zero Company</b>（Bit Reactor 開發）繼續蟬聯冠軍，配合今日 Reddit 多則「dev says it would love to make more Star Wars games」的好評報導持續發酵。<b>Bodycam</b>（「找到感攝影機」第一人稱射擊）新進熱賣榜，配合 Gamescom 週媒體曝光拉升。itch.io 方面，<b>《FEED THE AI》</b>在 Gamescom AI slop 爭議連續多日之後仍在 html5 popular 榜，展現出「meta 諷刺遊戲」的持久力；同時新上榜的<b>《Game About Botting in an MMORPG》</b>繼續在 meta 遊戲類別積累關注。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Bodycam 的「找到感相機」視角是近兩年最有病毒傳播力的視覺風格之一，加上 Steam 熱賣表現說明市場接受度。GameGen 不建議直接做「找到感相機」題材 demo（高度競爭），但這個「讓玩家感覺自己就在現場」的設計原則可以作為生成體驗的參考框架——讓玩家生成的東西感覺「就是自己的」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · Star Wars IP</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO · <a href="https://store.steampowered.com/explore/new/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>爭議</span></span>GTA 6 確認 30fps，Rockstar 對效能模式「不確定」——「這是最先進的即時渲染，所以才卡在 30fps」</h3>
+        <div class="sum">Eurogamer、VGC、Gamespot 今日確認（多源，radar 故事源）：GTA 6 在 PS5 / Xbox Series X 以 30fps 運行，並未確認是否會有 60fps 效能模式。Digital Foundry 的分析影片將其稱為「目前見過最令人印象深刻的即時渲染展示」——Gamespot 以此為副標解釋 30fps 的原因。Eurogamer 指出 Rockstar「對 60fps 效能模式不確定」。Reddit r/gaming、r/Games 今日多則帖子圍繞這一消息熱烈討論，正反兩派都有大量回應。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>30fps 論戰本身對 GameGen 幾乎沒有直接影響，但它帶出了一個更大的框架對話：<b>「技術極致 vs 體驗流暢」的取捨線在哪裡？</b>Rockstar 選擇技術極致；GameGen 走的是「5 分鐘能玩、分享秒發」的流暢體驗路徑——這是今天可以借力的論述，無須碰 GTA IP 本身。不得挪用 GTA6 角色美術、城市地標或商標。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk hi"><span>高 · GTA IP</span></span></div></div>
+          </div>
+          <div class="src">EUROGAMER / VGC / GAMESPOT · 8/29 · <a href="https://www.eurogamer.net/gta-6-frame-rate-ps5-xbox-series-x-s" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Nvidia DLSS 5 AI 濾鏡洩漏：「令人恐懼」的 AI 畫面美化浪潮，玩家社群撕裂</h3>
+        <div class="sum">玩家從 NBA 2K27 的預發行檔案中發現 Nvidia DLSS 5 包含一個「AI 美化濾鏡」（網路稱 yassification filter），並開始將其插入各種現有遊戲製作截圖在 Reddit 廣泛流傳。Reddit r/Games 最熱帖：「'This is horrifying' Nvidia's controversial DLSS 5 AI filter leaks and players are inserting it into every game」（Reddit、VGC、RPS、Gamespot，多源，radar 故事源，pub 2026-08-29）。Gamescom 週的 AI slop 爭議再添一把火。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「AI 不問自就改了你的畫面」vs「玩家主動選擇讓 AI 生成內容」——這是今天 DLSS 5 事件最值得提煉的對比。DLSS 5 令人恐懼的不是技術本身，而是<b>「沒有人問你的意見就改了」</b>。GameGen 的核心命題剛好相反：每一次生成都是玩家主動發起的。這是今天比 GTA 6 更直接的品牌對話素材，且無 IP 風險。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT / VGC / RPS · 8/29 · <a href="https://www.reddit.com/r/Games/comments/1w0ylhp/this_is_horrifying_nvidias_controversial_dlss_5/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>產業</span></span>Steam 開發者求助 Valve：PEGI 12 遊戲被錯誤標記為色情——「20 年遊戲生涯中最羞辱的經歷」</h3>
+        <div class="sum">Reddit r/gaming 今日 top-of-day：一位遊戲開發者因其 PEGI 12 評級的遊戲被 Steam 誤標為色情遊戲，公開發帖求助 Valve，形容這是「20 年遊戲製作生涯中最羞辱和超現實的經歷」（Reddit r/gaming top-of-day，pub 2026-08-29）。Valve 的自動審核系統引發的誤判問題再次受到廣泛關注。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條新聞的根本問題是「自動化系統取代了人工判斷」——而且沒有上訴的快速通道。這跟 AI slop 的討論形成另一個面向：<b>自動化系統的誤判成本由誰承擔？</b>對 GameGen 而言這是間接的品牌訊號，可以拿來討論「透明度」的必要性，但不宜拿這位開發者的困境做行銷材料，應以同理心為主調。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT r/gaming · 8/29 · <a href="https://www.reddit.com/r/gaming/comments/1w0yskp/this_has_been_the_most_humiliating_and_surreal/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>里程碑</span></span>Manor Lords 突破 400 萬銷量並發布重大更新；Where Winds Meet 達 1 億玩家</h3>
+        <div class="sum">Reddit r/gaming 今日：《Manor Lords》（一人開發的中世紀城鎮建設）突破 400 萬銷量並同步發布重大更新（pub 2026-08-29，摘要層）。此外，80.lv 報導中國 MMORPG《Where Winds Meet（燕雲十六聲）》玩家突破 1 億人（pub 近期，摘要層）。兩者都是今天值得記錄的里程碑，背後邏輯截然不同：一個是單人製作的爆款、一個是中國市場的規模奇蹟。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Manor Lords 的案例持續印證一個命題：<b>「高度個人化的設計感 + 社群飢渴 = 爆款」</b>。Slavic Magic（一人工作室）做到了 400 萬份。Where Winds Meet 1 億玩家則說明中國市場的體量，以及即使西方沒有覆蓋的遊戲在亞洲可以有多大規模。兩者都是今天值得在 CJ 備選庫的長線素材。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT · 80.LV · 摘要層 · <a href="https://www.reddit.com/r/gaming/comments/1w0apg1/manor_lords_surpasses_4_million_copies_sold_as/" target="_blank">Manor Lords ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>《Game About Botting in an MMORPG》：玩一個關於「在遊戲裡自動化」的遊戲，在 AI 議題最熱的週末上熱榜</h3>
+        <div class="sum">itch.io html5 popular 今日（heat radar 08/29 收錄）包含 yaxworks 的《Game About Botting in an MMORPG》。在玩家正在熱議「AI 替你決定畫面」（DLSS 5）、「開發者替你決定故事」（Crimson Desert）的同一天，一款讓玩家扮演「自動化腳本（bot）」的遊戲出現在熱榜——這個時機巧合本身就是一條社群素材。itch.io 的迷因標籤今日繼續跑《Jest Messters》、《Three Nights Lobotomized》等熟面孔；《FEED THE AI》持續在 html5 popular 榜，顯示這個 AI 諷刺梗的持久力超過兩天。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>《Game About Botting in an MMORPG》的梗是「我把自己變成 bot，然後看自己做了什麼」——這是一種自我外化的反諷。配合今天的 DLSS 5「AI 不問你就改了你的畫面」，這套玩家主控 vs 自動化剝奪的對話框架就更完整了。GameGen demo 的方向：讓玩家意識到「自己才是決策者」——不管是在遊戲裡還是在 AI 生成的流程裡。<b>不挪用《Game About Botting》的具體 UI 或素材，僅作為概念靈感。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO · 08/29 · <a href="https://yaxworks.itch.io/game-about-botting-in-an-mmorpg" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 純網路迷因（Know Your Meme「Popular right now」/ Threads 繁中圈）本次排程無瀏覽器，WebSearch 回來的多為 SEO 彙整頁，<b>目前無法完全證實</b>是今天首見的梗，不採用為「今天的梗」。今天的迷因彈藥以 itch.io 事件為主，輔以 DLSS 5「令人恐懼」梗（Reddit top-of-day）及 Crimson Desert「補丁自己故事」梗。
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">HN / itch 原創 loop</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Game About Botting — 扮演自動化腳本，看自己做了什麼</span><span class="vn">★ meta</span></li>
+            <li><span class="nm">CLOWN HOLE — 極簡操控，視覺混亂為核心樂趣</span><span class="vn">反應</span></li>
+            <li><span class="nm">FEED THE AI — 仍在榜，持久力驗證</span><span class="vn">玩家主控</span></li>
+            <li><span class="nm">isitdoneyet.gg（HN）— 遊戲完成度社群追蹤</span><span class="vn">meta 工具</span></li>
+            <li><span class="nm">Warlock 魔法系統 — 玩家選擇改變遊戲本身的規則</span><span class="vn">規則扭曲</span></li>
+          </ol>
+          <div class="bf">itch.io html5 / Hacker News · 08/29 · <a href="https://news.ycombinator.com/" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日最值得記錄的機制原則：「讓玩家扮演系統本身，然後看系統對自己做了什麼」</h3>
+        <div class="sum">今日 itch.io 的《Game About Botting in an MMORPG》、以及 GDC 報導中的 Warlock 魔法系統（「玩家選擇可以改變遊戲規則本身」，摘要層），都指向同一個機制原則：<b>讓玩家感受到自己對系統的控制，然後系統以意想不到的方式回應。</b>這比傳統的「玩家 vs 敵人」設計更有反思性——玩家不只是在打敵人，而是在「理解一個更大的系統」。HN 的 isitdoneyet.gg 是這個方向的元工具版本：讓玩家對「遊戲完成度」本身有主控感。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>GameGen 的生成流程本身就是「玩家對系統的控制」的展示——按下生成鍵，看系統回應什麼。今天的這兩個 itch.io 案例提醒我們：<b>生成的過程本身就可以是遊戲機制</b>，不是只有生成出來的結果才算。「你決定要什麼，AI 生成，你評判結果」這個三步 loop 就是今天最值得提煉的機制公式。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO / GDC · <a href="https://yaxworks.itch.io/game-about-botting-in-an-mmorpg" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話（需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。可追的長線母題：今天 <b>GTA 6 30fps 爭議</b>是全球級話題，繁中遊戲圈（Dcard、PTT BG 板、FB 動態）很可能有「主機世代的幀率之爭」和「AI 美化濾鏡嚇到」的討論；Crimson Desert 故事補丁也可能引發「這樣是不是不誠實？」的討論——下次有瀏覽器時驗證並補入。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Nvidia DLSS 5 AI 濾鏡洩漏——「AI 替你決定畫面」</td><td><span class="tmpl">品牌定位對話貼</span></td><td>「AI 幫你 vs AI 替你決定，是兩件事」</td><td class="rk-low">低</td><td>★ 今日最佳 X 素材，無 IP 風險，直接命中 GameGen 品牌核心：玩家主控</td></tr>
+          <tr><td>Meshy $400M 3D AI 資產融資</td><td><span class="tmpl">產業訊號論述貼</span></td><td>「B2B 工具 vs B2C 體驗」</td><td class="rk-low">低</td><td>★ 今日 CJ LinkedIn 首選，產業資本訊號，無 IP 風險</td></tr>
+          <tr><td>GenAI 獵巫戰——開發者談假指控與視覺鑑別力</td><td><span class="tmpl">透明度論述貼</span></td><td>「透明度是基礎設施，不是道德聲明」</td><td class="rk-low">低</td><td>★ 今日 CJ LinkedIn 第二選，Gamescom 週 AI slop 浪潮的精準切角</td></tr>
+          <tr><td>GTA 6 30fps 論戰</td><td><span class="tmpl">規格對比框架貼</span></td><td>「技術極致 vs 流暢體驗：不同的設計哲學」</td><td class="rk-hi">高 · GTA IP</td><td>僅用「技術 vs 體驗」框架借力，不碰角色美術 / 城市地標</td></tr>
+          <tr><td>Crimson Desert 上市後補丁重寫故事</td><td><span class="tmpl">「敘事是活的」觀察貼</span></td><td>「遊戲上市不是故事定案的那一刻」</td><td class="rk-low">低</td><td>有趣的敘事設計觀察，不蹭 Pearl Abyss IP 具體素材</td></tr>
+          <tr><td>Manor Lords 400 萬、一人工作室</td><td><span class="tmpl">獨立製作靈感貼</span></td><td>「個人化設計感才是護城河」</td><td class="rk-low">低</td><td>長線素材，不宜今日主推（已是舊梗），適合週末備用</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>$400M 押注 AI 生成 3D 資產——B2B 工具 vs B2C 體驗的分野</td><td>Meshy 完成 $400M 融資，專注 AI 生成乾淨拓樸 3D 遊戲資產，是 2026 AI 遊戲工具領域最大單輪融資（Naavik，摘要層）</td><td>"$400M just went into AI-generated 3D game assets. Capital is betting the pipeline is real. But there's a difference between AI tools for studios and AI experiences for players. We're building the second thing."</td><td><a href="https://naavik.co/ai-gaming/inside-meshys-400m-raise-for-3d-assets/" target="_blank">↗</a></td></tr>
+          <tr><td>GenAI 獵巫戰：透明度是基礎設施，不是道德聲明</td><td>RPS 深度報導（2026-08-28）：多位開發者因「看起來像 AI」被錯誤指控，部分人甚至修改美術以避免爭議（RPS，摘要層，pub 2026-08-28）</td><td>"Game devs are now modifying their art to avoid AI accusations — even when wrong. When 'looking like AI' is enough to start a storm, transparency isn't a moral stance. It's infrastructure."</td><td><a href="https://www.rockpapershotgun.com/hopefully-a-meteor-will-strike-the-earth-soon-game-devs-talk-genai-witchhunts-and-the-importance-of-honing-your-visual-literacy" target="_blank">↗</a></td></tr>
+          <tr><td>Nvidia DLSS 5：「AI 替你決定畫面」vs 玩家主控的辯證</td><td>DLSS 5 AI 美化濾鏡從 NBA 2K27 洩漏，玩家插入各遊戲，Reddit 反應「This is horrifying」（多源，摘要層，pub 2026-08-29）</td><td>"Nvidia's AI just rewrote how every game looks — without asking players. 'This is horrifying,' said Reddit. There's a version of AI in games where you choose. We call that the right version."</td><td><a href="https://www.reddit.com/r/Games/comments/1w0ylhp/this_is_horrifying_nvidias_controversial_dlss_5/" target="_blank">↗</a></td></tr>
+          <tr><td>一人工作室 400 萬份：Manor Lords 的個人化設計護城河</td><td>Slavic Magic 單人開發的《Manor Lords》突破 400 萬銷量並發布重大更新（Reddit，摘要層，pub 2026-08-29）</td><td>"One developer. 4 million copies. Manor Lords just hit 4M sales. The moat wasn't the budget. It was the specificity of the vision. That's the only thing scale can't copy."</td><td><a href="https://www.reddit.com/r/gaming/comments/1w0apg1/manor_lords_surpasses_4_million_copies_sold_as/" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Meshy $400M、GenAI 獵巫戰透明度）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。Naavik 資料為摘要層，RPS 文章 pub 2026-08-28 已在 radar 收錄。對外用字已過濾賭場語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Nvidia DLSS 5 AI 濾鏡：「AI 幫你 vs AI 替你決定」——無 IP 風險，直接命中 GameGen 定位</li><li>GTA 6 30fps：「技術極致 vs 流暢體驗」框架，不碰 GTA IP 具體美術</li><li>Crimson Desert 故事補丁：「遊戲上市不是故事定案的那一刻」</li><li>Steam dev 被誤標為色情：同理心為主調，不做行銷材料</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 《Game About Botting in MMORPG》靈感：「你決定要什麼 → AI 生成 → 你評判結果」三步 loop（全泛化，零版權）</li><li>「AI 幫你 vs AI 替你決定」互動比較（抽象框架，接 DLSS 5 話題流量）</li><li>玩家主控測驗：「你按下生成鍵，看 AI 給你什麼，然後你決定留不留」</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>🔭</span></div><h4>可追蹤的訊號</h4><ul><li>GTA V Legacy +13.4% 的 GTA 6 溢出效應是否持續到下週</li><li>Nvidia DLSS 5 AI 濾鏡洩漏後官方 Nvidia 的回應與正式發布時程</li><li>PoE2 Event League 是否帶動排名持續上升（+8 位，今日新訊號）</li><li>Manor Lords 更新後的每日在線人數是否爬升（可作長線追蹤標的）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>GTA 6 / Rockstar 角色美術、城市地標、商標 → 一律用泛化框架</li><li>Nvidia DLSS 5 具體截圖 → 只談「AI 替你決定」的概念，不轉發洩漏素材</li><li>Crimson Desert 具體角色美術（Kliff）→ 泛化「故事補丁」概念即可</li><li>Steam dev 困境 → 同理心論述，不做商業蹭法</li><li>Star Wars Zero Company / Elden Ring IP → 僅作案例參考</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Meshy $400M 3D AI 資產融資</td><td><a href="https://naavik.co/ai-gaming/inside-meshys-400m-raise-for-3d-assets/" target="_blank">Naavik</a>（radar 故事源，heat_latest.json story_naavik 收錄）　日期近期　驗：摘要層，數字本身可信但未逐句 web_fetch<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>GenAI 獵巫戰（RPS 深度）</td><td><a href="https://www.rockpapershotgun.com/hopefully-a-meteor-will-strike-the-earth-soon-game-devs-talk-genai-witchhunts-and-the-importance-of-honing-your-visual-literacy" target="_blank">Rock Paper Shotgun</a>（radar 故事源，tavily_news 收錄，pub 2026-08-28）　已在 heat_latest 收錄<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>GTA 6 30fps 確認</td><td><a href="https://www.eurogamer.net/gta-6-frame-rate-ps5-xbox-series-x-s" target="_blank">Eurogamer</a> · <a href="https://www.videogameschronicle.com/news/gta-6-is-confirmed-to-be-30-frames-per-second-at-launch-no-performance-mode-at-launch/" target="_blank">VGC</a> · <a href="https://www.gamespot.com/articles/tech-experts-call-grand-theft-auto-6-the-most-visually-advanced-game-to-date-which-explains-why-its-stuck-at-30fps/" target="_blank">Gamespot</a>（多源，radar 故事源，pub 2026-08-29）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Nvidia DLSS 5 AI 濾鏡洩漏</td><td><a href="https://www.reddit.com/r/Games/comments/1w0ylhp/this_is_horrifying_nvidias_controversial_dlss_5/" target="_blank">Reddit r/Games top-of-day</a> · <a href="https://www.videogameschronicle.com/news/this-is-horrifying-nvidias-controversial-dlss-5-ai-filter-leaks-and-layers-are-inserting-it-into-every-game/" target="_blank">VGC</a> · RPS（多源，摘要層）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Crimson Desert 故事補丁</td><td><a href="https://www.reddit.com/r/gaming/comments/1w0mu1f/crimson_desert_literally_patched_its_story_in_a/" target="_blank">Reddit r/gaming top-of-day</a>（heat_latest 收錄，pub 2026-08-29）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Steam dev 被誤標為色情</td><td><a href="https://www.reddit.com/r/gaming/comments/1w0yskp/this_has_been_the_most_humiliating_and_surreal/" target="_blank">Reddit r/gaming top-of-day</a>（heat_latest 收錄，pub 2026-08-29）<span class="ok">✓</span>　🆕</td></tr>
+        <tr><td>Manor Lords 400 萬銷量</td><td><a href="https://www.reddit.com/r/gaming/comments/1w0apg1/manor_lords_surpasses_4_million_copies_sold_as/" target="_blank">Reddit r/gaming top-of-day</a>（heat_latest 收錄，pub 2026-08-29）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Steam 數字層（CS:GO +9% / PUBG +12% / GTA V Legacy +13.4%）</td><td>heat_latest.json 2026-08-29T07:30:31+08:00 官方 GetNumberOfCurrentPlayers（API 直抓）　CS:GO 691,671（prev 634,802，+9.0%）；PUBG 109,180（prev 97,458，+12.0%）；GTA V Legacy 51,431（prev 45,349，+13.4%）<span class="ok">✓</span></td></tr>
+        <tr><td>Game About Botting in an MMORPG（itch.io）</td><td>heat_latest.json itch_io items：yaxworks.itch.io/game-about-botting-in-an-mmorpg，tag html5·popular（08/29 07:30 直抓平台列表）<span class="ok">✓</span></td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 摘要層（Naavik / RPS radar 收錄）· Steam＝官方 API 08-29 即時真數字（radar 07:30）· Roblox/Twitch/Threads/unityroom/KYM 因沙箱排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/08/29 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
