@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/08/30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">08 · 30 · SUN</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 08 / 30 · 彈藥工廠模式 · 熱度雷達 08/29 07:30 · 熱點回流 08/30 07:00 · 來源 19 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>Gamescom 閉幕週期：AI 假陽性問題正在傷害無辜工作室。</b>PC Gamer 報導《Humankind 2》預告片使用真人演員、實體布景、自製道具，仍遭玩家大量指控為「AI slop」——被迫出面澄清。同一週，Kotaku 列出「Gamescom Opening Night Live 可以忽略的 GenAI slop 遊戲」，id Software 前共同創辦人和《Talos Principle 3》寫手分別站在 AI 辯論的兩極——假陽性問題讓整個業界都感到焦慮。</p>
+        <p>另一條大線：<b>GTA 6 的光環效應正在改寫整個業界發布哲學。</b>Fable 開發商樂於延期到 2027 以避開「混亂檔期」；Cloud Imperium CEO Chris Roberts 明言「我不想衝進 GTA 6 的注意力絞肉機」，Squadron 42 延期到 2027。同日 Sensor Tower 確認：Netflix GTA 6 延伸預告上線期間，美國手機 Netflix 觀看量上升 <span class="hl">35%</span>，Twitch 同時宕機。一款還沒上市的遊戲，正在強迫整個業界重排日曆。</p>
+        <p>亮點方面：<b>EA Iron Man WIP 影片洩露</b>，展示「blistering speed and freedom」，失蹤已久的超級英雄大作終現蹤。<b>CD Projekt Red</b> 確認 Witcher 4 已在所有目標平台順跑，明確表示汲取 Cyberpunk 教訓。<b>Pokémon</b> 登上 Disney+，同週舊金山街道改名「烈空坐路」。</p>
+        <div class="pull">▸ 今天最大的品牌機會：AI 假陽性問題讓業界談「透明度」的急迫性再升一級。昨天 GameGen 的定位是「大方說清楚是 AI 做的」，今天的 Humankind 2 案例說明了為什麼——<b>不說清楚的代價不只是被誤解，而是被集體攻擊</b>。今天這條線比昨天更有力道，可直接接昨天的 RPS 獵巫戰論述繼續發酵。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>Humankind 2 被冤：AI 假陽性——「真人演員、實體布景、自製道具」仍被指控為 AI slop</div>
+            <div class="ln"><b>新聞事實：</b>PC Gamer（pub 2026-08-25）報導：Amplitude Studios《Humankind 2》在 Gamescom Opening Night Live 的預告片遭玩家大量指控為「AI slop」。工作室緊急回應：影片使用「real actors, practical sets, and custom-made props」——指控是假陽性。這是 Gamescom 週多起 AI 爭議中，少數被証實為完全誤判的案例。（tavily_news 收錄，pub 2026-08-25，摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>假陽性問題正在傷害無辜——「看起來像 AI」已成觸發攻擊的充分條件，不需要事實。GameGen 的 AI 標籤策略不只是誠實，更是一種防護機制：<b>讓真正的 AI 作品可辨識，讓假指控沒有立足點</b>。這個論述今天比昨天更有彈藥，應接昨天的 RPS 透明度論述繼續推。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Humankind 2's trailer used real actors, real sets, real props. Players called it AI slop anyway. The false positive problem is real: 'looking like AI' now triggers attacks without evidence. The answer isn't hiding — it's a clear AI label that makes real AI work recognizable."<br><span style="color:var(--ink-dim)">中譯：《Humankind 2》預告片用了真人演員、實體布景、自製道具。玩家還是說是 AI。假陽性問題很真實：「看起來像 AI」現在可以在沒有證據的情況下引發攻擊。解法不是藏——是一個讓真實 AI 作品可辨識的清晰標籤。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pcgamer.com/games/strategy/humankind-2-trailer-accused-of-being-ai-slop-studio-says-nope-real-actors-practical-sets-and-custom-made-props" target="_blank">PC Gamer ↗</a>　pub 2026-08-25　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 光環效應：Fable + Squadron 42 雙雙延期到 2027——一款遊戲改寫整個業界發布哲學</div>
+            <div class="ln"><b>新聞事實：</b>Gamespot（2026-08-29）：Fable 開發商樂於延期到 2027 以避開「混亂檔期」。GamesIndustry.biz：Cloud Imperium CEO Chris Roberts 明言延期 Squadron 42——「There is no way I want to launch into the attention buzz saw of GTA 6」。Sensor Tower：GTA 6 Netflix 延伸預告期間美國手機 Netflix 觀看量 +35%，Twitch 宕機。GamesIndustry.biz Opinion：「GTA 6 will have a halo effect for the entire industry」。（多源，radar 故事源，pub 2026-08-29，摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>GTA 6 還沒上市，就已讓競品主動讓路。「注意力稀缺」是真實的市場基礎設施——時機的選擇比花錢更重要。對 GameGen 的啟示：在對的對話窗口出現，比砸行銷更有效率。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6 hasn't shipped yet — and it's already rewriting the entire industry calendar. Fable delayed. Squadron 42 delayed. Netflix viewership up 35% during the preview. Twitch went down. One game is not just a game anymore. It's a market event. Timing is infrastructure."<br><span style="color:var(--ink-dim)">中譯：GTA 6 還沒上市——就已在重寫整個業界日曆。Fable 延期。Squadron 42 延期。Netflix 觀看量 +35%。Twitch 宕機。一款遊戲已經不再只是一款遊戲，而是一個市場事件。時機就是基礎設施。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/gta-6-will-have-a-halo-effect-for-the-entire-industry-opinion" target="_blank">GamesIndustry.biz ↗</a> · <a href="https://www.gamesindustry.biz/cloud-imperium-delays-squadron-42-to-2027-there-is-no-way-i-want-to-launch-into-the-attention-buzz-saw-of-gta-6" target="_blank">CIG延期 ↗</a>　pub 2026-08-29　verified partial</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>EA Iron Man WIP 影片洩露——超高速超級英雄遊戲終現蹤，EA Motive 首度公開<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Eurogamer、RPS、Reddit r/gaming 今日（pub 2026-08-29，摘要層）：EA Motive 開發的 Iron Man 遊戲 WIP 影片洩露，展示超快速度和自由度（blistering speed and freedom），可見開發中的戰鬥、角色和客製化。Eurogamer、RPS 均有跟進報導。這是長期「失蹤」的超級英雄大作首度重新出現。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Iron Man just leaked from EA Motive — WIP footage showing blistering speed and freedom. The most MIA superhero game finally reappears. Design direction: make you feel superhero speed, not just see it. That's the gap every superhero game tries to close. 🦾"<br><span style="color:var(--ink-dim)">中譯：Iron Man 剛從 EA Motive 洩露——WIP 影片展示炫目速度感和自由度。失蹤已久的超級英雄大作終現蹤。設計方向：讓你感受超英速度，不只是看到它。這是每款超英遊戲都在試圖填補的缺口。🦾</span></div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/ea-motive-iron-man-gameplay-footage-leak" target="_blank">Eurogamer ↗</a> · <a href="https://www.rockpapershotgun.com/leaked-footage-of-eas-long-silent-iron-man-game-comes-blasting-onto-the-helicarrier-showing-off-combat-characters-and-customisation" target="_blank">RPS ↗</a>　pub 2026-08-29　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Witcher 4 全平台確認運行 + Witcher 3 Remastered PC 規格揭曉——CD Projekt Red「汲取 Cyberpunk 教訓」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Game Developer（2026-08-29，摘要層）：CD Projekt Red 確認 Witcher 4 已在所有目標平台順跑，明確說明這是從 Cyberpunk 2077 慘痛教訓中學來的。同日 Reddit（pub 2026-08-29）：Witcher 3: Wild Hunt Remastered 最低與建議 PC 配置正式公開。兩件事同日出現，釋出強力「品質保證」訊號。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "CD Projekt Red: Witcher 4 is already running on all target platforms. After Cyberpunk 2077 — this matters. The lesson learned: ship quality, not promises. Witcher 3 Remastered specs also dropped. The franchise is rebuilding on a stronger foundation. 🐺"<br><span style="color:var(--ink-dim)">中譯：CD Projekt Red：巫師 4 已在所有目標平台順跑。在 Cyberpunk 2077 之後——這句話很重要。學到的教訓：交付品質，不是承諾。巫師 3 重製版 PC 規格也公開了。這個系列正在更穩固的基礎上重建。🐺</span></div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/production/cd-projekt-red-has-the-witcher-4-running-on-all-target-platforms-after-cyberpunk-2077-lesson" target="_blank">Game Developer ↗</a>　pub 2026-08-29　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Pokémon 登上 Disney+——同週舊金山街道改名「烈空坐路」，遊戲 IP 跨媒體的巔峰時刻<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>VGC（pub 2026-08-29，摘要層）：Pokémon IP 正式登上 Disney+，《The Misadventures of Sirfetch'd & Pichu》上線。同週，舊金山最繁忙街道之一改名「烈空坐路（Rayquaza Road）」，迎接 Pokémon Worlds 2026 & PokémonXP 開幕。IP 在流媒體、現實城市、競技賽事三點同步落地。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Pokémon just landed on Disney+. The same week, San Francisco renamed a street 'Rayquaza Road' for Pokémon Worlds. Games that live outside of games win. That's the real IP moat: a world dense enough to exist everywhere. 🐉"<br><span style="color:var(--ink-dim)">中譯：Pokémon 剛登上 Disney+。同一週，舊金山把一條街改名「烈空坐路」迎接寶可夢世界賽。在遊戲外也能存在的遊戲才能贏。這才是真正的 IP 護城河：世界觀密度高到可以存在於任何地方。🐉</span></div>
+            <div class="meta">來源 <a href="https://www.videogameschronicle.com/news/pokemon-is-coming-to-disney-as-the-misadventures-of-sirfetchd-pichu-debuts-on-disney/" target="_blank">VGC ↗</a> · <a href="https://www.videogameschronicle.com/news/one-of-san-franciscos-busiest-streets-has-become-rayquaza-road-as-pokemon-worlds-2026-pokemonxp-begins/" target="_blank">街道改名 ↗</a>　pub 2026-08-29　verified partial</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>《Hillthorn》——山區神秘卡牌解謎，RPS 稱試玩版「excellent」，今日最值得試的早期 Demo<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法靈感：</b>Rock Paper Shotgun（pub 2026-08-29，摘要層）報導：《Hillthorn》是以詭異卡牌解開山區謎團的解謎遊戲，RPS 特別推薦其試玩版「has an excellent demo」。敘事調性黑暗、機制聚焦卡牌推理與環境線索收集。</div>
+            <div class="ln"><b>為何是今日首選：</b>在 GTA 6 的超高規格視覺震撼週，《Hillthorn》的卡牌謎題設計提醒了業界：<b>創意玩法護城河不需要 AAA 預算</b>。GameGen 的切角：「你的故事，AI 幫你解謎」——可作為輕量解謎互動體驗的概念藍圖。</div>
+            <div class="meta">來源 <a href="https://www.rockpapershotgun.com/solve-a-mountain-mystery-via-the-medium-of-creepy-cards-in-hillthorn-which-has-an-excellent-demo" target="_blank">Rock Paper Shotgun ↗</a>　RPS 推薦試玩版</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">08/29 07:30 雷達數字</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike 2</span><span class="vn">691K +9.0%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">109K +12.0%</span></li>
+            <li class="up"><span class="nm">Palworld</span><span class="vn">119K +7.8%</span></li>
+            <li class="up"><span class="nm">GTA V Legacy</span><span class="vn">51K +13.4%</span></li>
+            <li class="up"><span class="nm">Apex Legends</span><span class="vn">64K +7.9%</span></li>
+          </ol>
+          <div class="bf">⚠️ 熱度雷達本次時間戳 08/29 07:30（非今日即時）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Roblox 即時 CCU（需瀏覽器渲染）。<b>目前無法完全證實</b>。CC 互動 session 有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。<br><br>注：GTA 6 預告本週確認曾讓 Twitch <b>大規模宕機</b>（Eurogamer pub 2026-08-29），這是今天 Twitch 觀看的最大背景。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）· <a href="https://www.eurogamer.net/twitch-down-outage-grand-theft-auto-6" target="_blank">GTA6 宕機報導 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 熱度雷達本次時間戳為 <b>2026-08-29T07:30:31+08:00</b>（今日 08:30 雷達尚未更新或更新延遲）；熱點回流 08/30 07:00:23 已正常跑。Steam 數字為昨日值，<b>GTA V Legacy +13.4%（51,431 人）</b>受 GTA 6 新聞持續帶動，應視為周末趨勢的延伸而非今日即時數字。新進榜（今日可見）：STAR WARS Zero Company（#60）、Shadowverse: Worlds Beyond（#80）、Escape the Backrooms（#96）。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>訊號</span></span>GTA V Legacy +13.4% 持續受 GTA 6 消息帶動；STAR WARS Zero Company 新進 Steam Top 100（#60）；PoE2 排名 +8</h3>
+        <div class="sum">Steam 昨日（08/29 07:30 雷達）：<b>GTA V Legacy（51,431，+13.4%）</b>是 GTA 6 Netflix 延伸預告帶動的最直接訊號；<b>PUBG（109,180，+12.0%）</b>最強百分比漲幅；<b>CS:GO（691,671，+9.0%）</b>絕對在線第一。排名跳躍：<b>Path of Exile 2</b> +8 位（#99→#91，事件驅動：PoE2 首個 Event League）；<b>RDR2</b> +5（#43→#38，GTA 6 溢出效應）；<b>Elden Ring</b> +5（#50→#45，Tarnished Pack 新上線）。新進榜：STAR WARS Zero Company（#60），Shadowverse: Worlds Beyond（#80），Escape the Backrooms（#96）。今日無項目超過 ≥15% 旗標。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>STAR WARS Zero Company 新進 Top 100 的速度值得關注——這是戰術 RPG 類型在 Gamescom 週拿到的最大話題報導之一，Eurogamer 評論「understands that Star Wars games should feel less like the movies and more like the toys」。<b>「像玩具，不是電影」</b>這個設計哲學對 GameGen 的生成體驗設計有直接參考價值：玩家要的是主控感，不是觀影感。GTA V Legacy 的持續溢出效應也說明：只要 GTA 6 的話題持續，整個 Rockstar IP 都會繼續受惠。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 08/29 即時（雷達 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending / 熱賣</span></div>
+          <ol>
+            <li class="hot"><span class="nm">STAR WARS Zero Company™</span><span class="vn">熱賣#1</span></li>
+            <li class="hot"><span class="nm">Bodycam</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">How to Fish</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">ELDEN RING Tarnished Pack</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Bomb Farm</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品／熱賣榜 · 08/29 熱度雷達 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO 早期</span><span class="metric">html5·meme·viral</span></div>
+          <ol>
+            <li class="hot"><span class="nm">CLOWN HOLE</span><span class="vn">html5 熱</span></li>
+            <li><span class="nm">FEED THE AI（持續在榜）</span><span class="vn">諷刺AI</span></li>
+            <li><span class="nm">Twilight Observer</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">The Freak Circus</span><span class="vn">怪誕</span></li>
+            <li><span class="nm">Death Loop（Danganronpa風）</span><span class="vn">推理</span></li>
+          </ol>
+          <div class="bf">itch.io · 08/29 熱度雷達 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>STAR WARS Zero Company 進 Steam Top 100；Bodycam 蟬聯熱賣；《FEED THE AI》持續在 itch 榜說明反諷力持久</h3>
+        <div class="sum">STAR WARS Zero Company 新進 Top 100（#60）且位列熱賣榜首，Eurogamer 評論稱其「understands Star Wars games should feel less like the movies and more like the toys」。戰術 RPG 類型在 Gamescom 週吃到最強曝光——同類型的 Turn-Based Tactics 正在迎來一個黃金期（GameSpot 今日有「回合制戰術粉絲突然爽翻了」的評論文章）。Bodycam 持續在熱賣榜，「如實攝影機視角」的沉浸設計驗證了市場接受度。itch.io 的《FEED THE AI》連日在 popular 榜，展示 AI 諷刺梗的持久力超過兩天。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「像玩具，不是電影」和「像身在現場，不是觀看」——這是今天最值得提煉的兩個設計原則。戰術 RPG 的復興說明<b>有深度的玩法不怕被串流媒體稀釋</b>；Bodycam 的視角設計說明「臨場感」仍然是沒有特效預算的最強差異化因子。GameGen 的生成體驗應讓玩家感覺「這是我的東西」，而不是「這是 AI 給我的」——主控感才是核心。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · Star Wars IP</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO · <a href="https://store.steampowered.com/explore/new/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>產業</span></span>GTA 6 光環效應：Fable + Squadron 42 雙雙延期到 2027，整個業界在重排發布日曆</h3>
+        <div class="sum">Gamespot（2026-08-29）：Fable 開發商表示他們對延到 2027 感到「高興」，明確是為了避開「混亂檔期」（大家都知道那就是 GTA 6）。GamesIndustry.biz：Cloud Imperium CEO Chris Roberts 明言「There is no way I want to launch into the attention buzz saw of GTA 6」，Squadron 42 正式延期到 2027。同日，GamesIndustry.biz Opinion 文章直言：「GTA 6 will have a halo effect for the entire industry」。Sensor Tower 確認 Netflix GTA 6 延伸預告期間美國手機 Netflix 觀看量 +35%，Twitch 因 GTA 6 串流宕機（Eurogamer，pub 2026-08-29）。（多源，radar 故事源，摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>兩個大型製作組主動讓路，這在遊戲業史上是罕見的公開聲明。這背後的邏輯是<b>「注意力稀缺」作為硬約束</b>——不是因為 GTA 6 比你好，而是因為 GTA 6 佔據了所有可用的媒體版面和玩家心智頻寬。GameGen 的借力框架：不是和 GTA 6 競爭注意力，而是在 GTA 6 引發的話題流中找到精準的切口——比如「AI 在 GTA 6 宣布無微交易無生成式 AI 的同一週，到底是什麼地位？」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · GTA IP</span></span></div></div>
+          </div>
+          <div class="src">GAMESPOT / GII / EUROGAMER · 8/29 · <a href="https://www.gamesindustry.biz/gta-6-will-have-a-halo-effect-for-the-entire-industry-opinion" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Gamescom AI slop 假陽性：Humankind 2 被冤枉，Kotaku 列出「可忽略的 GenAI slop 遊戲」，業界 AI 辯論進入新高峰</h3>
+        <div class="sum">Gamescom 週 AI 爭議持續延燒：Kotaku（pub 2026-08-26，tavily 收錄）列出「Opening Night Live 上因 GenAI slop 可以忽略的遊戲」清單；PC Gamer（pub 2026-08-25）報導《Humankind 2》預告被誤認為 AI——工作室澄清「真人演員、實體布景、自製道具」，是本週最典型的假陽性案例。PC Gamer（pub 2026-08-28）：id Software 前共同創辦人 Jay Willits 稱他們當年一定會用 gen AI，「John Carmack would be like making Skynet」。PC Gamer（pub 2026-08-26）：《Talos Principle 3》寫手直言 AI 是「plagiarism machine that makes people lose their jobs」。（多源，tavily_news 收錄，摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天的 AI 辯論已從「用不用 AI」演化到「<b>假陽性帶來的信任崩潰</b>」。Humankind 2 的案例是最好的說明：工作室不是因為用了 AI 而受傷，而是因為「沒有清楚說自己沒用 AI」——或者說，整個業界缺少一個清晰的 AI 使用/不使用的信號系統。GameGen 的品牌定位剛好填補這個空缺：大方說清楚是 AI 做的，讓真正的 AI 作品有一個清晰的識別標籤，讓假指控沒有立足點。這是今天最強的 CJ LinkedIn 論述線。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER / KOTAKU / tavily_news · <a href="https://www.pcgamer.com/games/strategy/humankind-2-trailer-accused-of-being-ai-slop-studio-says-nope-real-actors-practical-sets-and-custom-made-props" target="_blank">Humankind 2 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>大作</span></span>EA Iron Man WIP 影片洩露——超高速超級英雄遊戲終現蹤；CD Projekt Red Witcher 4 全平台確認</h3>
+        <div class="sum">Eurogamer / RPS / Reddit r/gaming（pub 2026-08-29，摘要層）：EA Motive 的 Iron Man 遊戲 WIP 影片洩露，展示「blistering speed and freedom」，可見開發中的戰鬥、角色和客製化，Eurogamer 標題「MIA superhero game finally reappears」。同日，Game Developer（pub 2026-08-29）：CD Projekt Red 確認 Witcher 4 已在所有目標平台順跑，明確表示汲取 Cyberpunk 2077 教訓；Reddit 同時報導 Witcher 3 Remastered PC 配置正式公開。兩條新聞都是今天值得追的大作訊號。（多源，摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Iron Man 洩露影片展示的「超速 + 自由度」設計方向，是在試圖解決過去超英遊戲最核心的缺陷：「不夠像英雄」。Witcher 4 的「全平台已跑」聲明，是在 Cyberpunk 2077 的品質危機後，CD Projekt Red 試圖重建玩家信任的策略聲明。兩者都說明：<b>大型工作室正在把「品質保證」作為優先行銷訊息</b>，這跟業界 AI slop 爭議中的「透明度」需求是同一條線。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">EUROGAMER / GAME DEVELOPER · 8/29 · <a href="https://www.eurogamer.net/ea-motive-iron-man-gameplay-footage-leak" target="_blank">Iron Man ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>IP 里程碑</span></span>Pokémon 登上 Disney+；Worlds 2026 讓舊金山改名「烈空坐路」——遊戲 IP 跨媒體的巔峰時刻</h3>
+        <div class="sum">VGC（pub 2026-08-29，摘要層）：Pokémon 正式登上 Disney+，《The Misadventures of Sirfetch'd & Pichu》上線。同週，舊金山最繁忙街道之一改名「烈空坐路（Rayquaza Road）」，迎接 Pokémon Worlds 2026 及 PokémonXP 活動開幕。這是 Pokémon 同時在流媒體、現實城市地理、電競賽事三個層面的協同落地，展現了頂級 IP 的世界觀密度。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Pokémon 的「到處都能存在」是 IP 護城河的最佳教案。讓城市改一條街的名字、讓流媒體出一部動畫、讓電競辦一場世界賽——這三件事同週發生，說明頂級 IP 不是靠一款遊戲撐起來的，而是靠<b>世界觀的密度</b>。對 GameGen 的借力框架：討論「IP 跨媒體」而非直接提 Pokémon，把話題引向「玩家生成的世界觀也可以是護城河」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">VGC · 8/29 · <a href="https://www.videogameschronicle.com/news/pokemon-is-coming-to-disney-as-the-misadventures-of-sirfetchd-pichu-debuts-on-disney/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>GameSpot：GTA 6 的長期等待讓人意識到自己的死亡——今日最強文化迷因</h3>
+        <div class="sum">GameSpot（pub 2026-08-29，摘要層）發表評論文章：「GTA 6's Long Wait Has People Realizing Their Own Mortality」——這個標題本身已成迷因，因為它精準說中了「等了十幾年的玩家現在快變老人了」的真實感受。同日 PC Gamer 有「Bland or badass? The internet is split on GTA 6's Jason」的對話 meme；Reddit r/gaming 今日 top-of-day 包含「Fall 2026 Lineup」社群討論串，玩家集體整理秋季新作陣容，STAR WARS Zero Company、ELDEN RING Tarnished Pack、Witcher 3 Remastered 都在其中。（多源，radar 故事源，摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「等 GTA 6 等到意識到自己的死亡」是一個極度真實的共感梗——任何玩過 GTA 系列的人都能理解這個等待的重量。這種「遊戲時間跨度」的文化感受，和 GameGen「AI 快速生成可玩內容」的定位形成有趣的對照：<b>等待的代價是真實的，即時生成的價值也因此更清晰</b>。不過今天不宜直接接這條梗發 X，因為背後帶有對 Rockstar 等待時間的情緒，不想被誤讀為蹭 GTA 6 IP。可作為內部討論素材。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 情緒敏感</span></span></div></div>
+          </div>
+          <div class="src">GAMESPOT · 8/29 · <a href="https://www.gamespot.com/articles/gta-6s-long-wait-has-people-realizing-their-own-mortality/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Know Your Meme「Popular right now」/ Threads 繁中圈本次排程無瀏覽器，<b>目前無法完全證實</b>是今天首見的梗。今天迷因彈藥以「GTA 6 等到死」（GameSpot 評論）、「Jason 是普通還是超帥」（PC Gamer）、Fall 2026 Lineup 社群討論串為主。itch.io 迷因標籤仍以熟面孔為主（Jest Messters、Three Nights Lobotomized 等）。
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">HN / itch / GDC</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Hillthorn — 卡牌 × 環境線索 × 山區謎題</span><span class="vn">★ 今日首選</span></li>
+            <li><span class="nm">Warlock 魔法系統 — 玩家選擇改變遊戲規則本身</span><span class="vn">規則扭曲</span></li>
+            <li><span class="nm">Iron Man 超速設計 — 「感受速度」vs「看到速度」</span><span class="vn">臨場感</span></li>
+            <li><span class="nm">isitdoneyet.gg（HN）— 遊戲完成度社群追蹤</span><span class="vn">meta 工具</span></li>
+            <li><span class="nm">Star Wars 「像玩具，不像電影」設計哲學</span><span class="vn">主控感</span></li>
+          </ol>
+          <div class="bf">itch.io / HN / GDC / 媒體報導 · 08/29 熱度雷達</div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日最值得記錄的設計原則：「讓玩家感受，不只是觀看」——Iron Man + Bodycam + Star Wars 三角印證</h3>
+        <div class="sum">今日三條設計訊號共同指向同一個原則：<b>（1）Iron Man 洩露影片</b>——「blistering speed and freedom」說明目標是讓玩家感受超英速度，不只是看到特效；<b>（2）Bodycam 持續熱賣</b>——「找到感攝影機視角」的沉浸設計持續在市場驗證；<b>（3）Star Wars Zero Company</b> 評語「feels like toys, not movies」——玩具感 = 主控感，電影感 = 觀賞感。三角印證的結論：<b>「臨場感 × 主控感 × 即時回饋」</b>是今天 Steam 市場最有效的體驗設計公式。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「讓玩家感受，不只是觀看」直接命中 GameGen 的生成體驗設計原則。玩家按下生成鍵的那一刻，不只是在等待 AI 輸出，而是在<b>主動參與決策鏈</b>的每一個節點。這個原則可以作為今天的 demo 設計簡報切入點：讓生成的過程本身有臨場感，讓結果有主控感，讓分享有即時回饋。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">多源 · <a href="https://www.eurogamer.net/ea-motive-iron-man-gameplay-footage-leak" target="_blank">Iron Man ↗</a> · <a href="https://www.eurogamer.net/star-wars-zero-company-impressions-toys-movies" target="_blank">Star Wars ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話（需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。可追的長線母題：今天 <b>GTA 6 Fable/Squadron 42 延期爭議</b>和<b> Humankind 2 AI 假陽性事件</b>，繁中遊戲圈（Dcard、PTT BG 板、FB 動態）很可能有「業界都在躲 GTA 6」和「看起來像 AI 就被打」的相關討論——下次有瀏覽器時驗證並補入。</div>
+      </div>
+    </section>
+
+    <!-- Trend-to-Game -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>AI 假陽性問題——Humankind 2 被冤枉</td><td><span class="tmpl">透明度論述貼</span></td><td>「AI 標籤不是道德問題，是防護機制」</td><td class="rk-low">低</td><td>★ 今日最佳 CJ LinkedIn 素材，直接接昨天 RPS 獵巫戰，論述力升一級</td></tr>
+          <tr><td>GTA 6 光環效應——業界發布策略重整</td><td><span class="tmpl">產業洞察貼</span></td><td>「時機是基礎設施，不是行銷費用」</td><td class="rk-low">低</td><td>★ 今日 CJ LinkedIn 第二選，泛化框架不碰 GTA IP 具體美術</td></tr>
+          <tr><td>EA Iron Man WIP 洩露</td><td><span class="tmpl">「感受速度」設計洞察貼</span></td><td>「超英遊戲的核心缺陷：你看到了速度，但沒感覺到」</td><td class="rk-low">低（泛化框架）</td><td>可做 X 貼，以設計哲學切入，不轉發洩漏素材</td></tr>
+          <tr><td>CD Projekt Red Witcher 4 品質保證</td><td><span class="tmpl">「信任修復」論述貼</span></td><td>「從 Cyberpunk 教訓：透明溝通才是修復信任的基礎設施」</td><td class="rk-low">低</td><td>長線素材，與 AI 透明度論述呼應，適合 CJ 備選</td></tr>
+          <tr><td>Pokémon × Disney+——IP 跨媒體</td><td><span class="tmpl">IP 護城河觀察貼</span></td><td>「世界觀密度才是真正的護城河」</td><td class="rk-low">低（泛化框架）</td><td>可做 X，避免直接提 Pokémon 具體IP素材，走概念框架</td></tr>
+          <tr><td>id Software gen AI——Carmack + Skynet</td><td><span class="tmpl">辯論觀察貼</span></td><td>「工具沒有價值觀，人才有——誰是作者才是核心問題」</td><td class="rk-low">低</td><td>X 素材，配合昨天 DLSS 5 論述繼續深化 AI 主控感品牌論述</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>AI 假陽性——Humankind 2 被冤枉的代價，以及 GameGen 的防護機制策略</td><td>PC Gamer（pub 2026-08-25）：《Humankind 2》預告使用真人演員、實體布景、自製道具，仍遭玩家集體指控為 AI slop。工作室被迫澄清。Gamescom 週第一個被証實為「完全假陽性」的案例。（tavily_news 收錄，摘要層）</td><td>"Humankind 2's trailer used real actors, real sets, real props. Players called it AI slop anyway. The false positive problem is real. The answer isn't hiding — it's a clear AI label that makes real AI work recognizable."</td><td><a href="https://www.pcgamer.com/games/strategy/humankind-2-trailer-accused-of-being-ai-slop-studio-says-nope-real-actors-practical-sets-and-custom-made-props" target="_blank">↗</a></td></tr>
+          <tr><td>GTA 6 光環效應——注意力稀缺是真實市場基礎設施，時機的選擇比行銷費用更重要</td><td>Fable 延期（Gamespot，pub 2026-08-29）；Squadron 42 延期（GamesIndustry，pub 2026-08-29）；Sensor Tower：Netflix 觀看 +35%；Twitch 宕機（Eurogamer）。GamesIndustry.biz Opinion：GTA 6 將對整個業界帶來光環效應。（多源，radar 故事源，摘要層）</td><td>"GTA 6 hasn't shipped yet and it's already rewriting the entire industry calendar. Fable delayed. Squadron 42 delayed. Netflix viewership up 35%. Timing is infrastructure — and it's not a marketing budget problem."</td><td><a href="https://www.gamesindustry.biz/gta-6-will-have-a-halo-effect-for-the-entire-industry-opinion" target="_blank">↗</a></td></tr>
+          <tr><td>id Software 前共同創辦人 gen AI 語錄——「工具沒有價值觀，人才有」</td><td>PC Gamer（pub 2026-08-28）：Jay Willits 稱 Carmack 做的 gen AI 會「像打造天網」；同週《Talos Principle 3》寫手稱 AI 是「plagiarism machine」。兩極語錄，業界辯論光譜。（tavily_news，摘要層）</td><td>"id Software co-founder: 'Carmack would be like making Skynet.' Talos Principle writers: 'AI is just plagiarism.' Both sides use moral language. The real debate isn't about AI — it's about who gets to be the author. Tools don't have values. People do."</td><td><a href="https://www.pcgamer.com/gaming-industry/game-development/id-softwares-former-co-owner-says-they-absolutely-wouldve-used-gen-ai-back-in-the-day-john-carmack-would-be-like-making-skynet-or-something" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Humankind 2 假陽性、GTA 6 光環效應）已附完整 EN hook + 中譯，可直接交 CJ 每日包。Humankind 2 pub 2026-08-25 為摘要層，GTA 6 多源 pub 2026-08-29 摘要層。對外用字已過濾賭場語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>AI 假陽性 / Humankind 2 被冤：「AI 標籤是防護機制，不只是誠實」（接昨天 RPS 論述）</li><li>EA Iron Man 洩露：「感受速度」設計哲學——不轉發洩漏素材，走泛化框架</li><li>id Software / Carmack / Skynet 語錄：「工具沒有價值觀，人才有」</li><li>Pokémon × Disney 跨媒體：「世界觀密度才是護城河」——泛化框架，不碰 Pokémon 具體美術</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 《Hillthorn》靈感：「玩家輸入線索 → AI 生成謎題結構 → 玩家解謎」三步 loop（全泛化，零版權）</li><li>「感受速度 vs 看到速度」互動比較——Iron Man 設計哲學的玩法化</li><li>「你按下生成鍵 → AI 生成世界觀碎片 → 你決定哪個留下」主控感 demo</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>🔭</span></div><h4>可追蹤的訊號</h4><ul><li>Humankind 2 AI 假陽性事件的後續：工作室是否有進一步聲明？玩家反應是否轉向？</li><li>EA Iron Man 官方是否回應洩露影片？（關鍵：是否會提早公開）</li><li>Fable / Squadron 42 延期後，2027 Q1 的大作競爭窗口是否出現</li><li>PoE2 Event League 是否帶動排名持續上升（昨日 +8 位）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Nvidia DLSS 5 洩漏具體截圖 → 不轉發（IP 來源不明的洩漏素材）</li><li>EA Iron Man 具體洩漏影片片段 → 不轉發，只討論設計哲學</li><li>GTA 6 / Rockstar 具體美術、城市地標、商標 → 一律用泛化框架</li><li>Pokémon 具體角色美術 → 走 IP 跨媒體概念框架，不用 Pokémon 具體素材</li><li>Kotaku AI slop 清單中任何遊戲的具體批評 → 避免站隊，用假陽性問題的系統性觀察代替</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Humankind 2 AI 假陽性</td><td><a href="https://www.pcgamer.com/games/strategy/humankind-2-trailer-accused-of-being-ai-slop-studio-says-nope-real-actors-practical-sets-and-custom-made-props" target="_blank">PC Gamer</a>（tavily_news 收錄，pub 2026-08-25）　摘要層，工作室澄清聲明可信<span class="pp">partial</span>　🔄</td></tr>
+        <tr><td>GTA 6 光環效應 / Fable 延期</td><td><a href="https://www.gamespot.com/articles/fable-dev-happy-about-delay-to-2027-to-avoid-chaotic-window-and-we-all-know-that-means-gta-6/" target="_blank">Gamespot</a>（radar 故事源，pub 2026-08-29）　摘要層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Squadron 42 延期</td><td><a href="https://www.gamesindustry.biz/cloud-imperium-delays-squadron-42-to-2027-there-is-no-way-i-want-to-launch-into-the-attention-buzz-saw-of-gta-6" target="_blank">GamesIndustry.biz</a>（radar 故事源，pub 2026-08-29）　摘要層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>EA Iron Man WIP 洩露</td><td><a href="https://www.eurogamer.net/ea-motive-iron-man-gameplay-footage-leak" target="_blank">Eurogamer</a> · <a href="https://www.rockpapershotgun.com/leaked-footage-of-eas-long-silent-iron-man-game-comes-blasting-onto-the-helicarrier-showing-off-combat-characters-and-customisation" target="_blank">RPS</a>（多源，radar 故事源，pub 2026-08-29）　摘要層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>CD Projekt Red Witcher 4 全平台</td><td><a href="https://www.gamedeveloper.com/production/cd-projekt-red-has-the-witcher-4-running-on-all-target-platforms-after-cyberpunk-2077-lesson" target="_blank">Game Developer</a>（radar 故事源，pub 2026-08-29）　摘要層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Pokémon Disney+ + 烈空坐路</td><td><a href="https://www.videogameschronicle.com/news/pokemon-is-coming-to-disney-as-the-misadventures-of-sirfetchd-pichu-debuts-on-disney/" target="_blank">VGC</a> · <a href="https://www.videogameschronicle.com/news/one-of-san-franciscos-busiest-streets-has-become-rayquaza-road-as-pokemon-worlds-2026-pokemonxp-begins/" target="_blank">VGC 街道改名</a>（radar 故事源，pub 2026-08-29）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>id Software gen AI / Carmack Skynet</td><td><a href="https://www.pcgamer.com/gaming-industry/game-development/id-softwares-former-co-owner-says-they-absolutely-wouldve-used-gen-ai-back-in-the-day-john-carmack-would-be-like-making-skynet-or-something" target="_blank">PC Gamer</a>（tavily_news 收錄，pub 2026-08-28）　摘要層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Kotaku GenAI slop 清單 / Talos Principle 3 寫手</td><td><a href="https://kotaku.com/opening-night-live-2026-genai-slop-games-geoff-keighley-2000728477" target="_blank">Kotaku</a>（tavily_news，pub 2026-08-26）　<a href="https://www.pcgamer.com/games/puzzle/ai-is-just-a-plagiarism-machine-that-makes-people-lose-their-jobs-in-the-eyes-of-the-talos-principle-3s-writers" target="_blank">PC Gamer Talos P3</a>（tavily_news，pub 2026-08-26）<span class="pp">partial</span>　🔄</td></tr>
+        <tr><td>Steam 數字層（熱度雷達 08/29 07:30）</td><td>heat_latest.json fetched_at 2026-08-29T07:30:31+08:00　CS:GO 691,671 / PUBG 109,180 / Palworld 119,362 / GTA V Legacy 51,431（+13.4%）　官方 GetNumberOfCurrentPlayers（API 直抓）<span class="ok">✓</span>　昨日數字</td></tr>
+        <tr><td>GTA 6 Netflix +35% 觀看 / Twitch 宕機</td><td><a href="https://www.gamesindustry.biz/sensor-tower-netflix-us-mobile-viewership-increased-35-during-gta-6-extended-preview" target="_blank">GamesIndustry Sensor Tower</a> · <a href="https://www.eurogamer.net/twitch-down-outage-grand-theft-auto-6" target="_blank">Eurogamer Twitch 宕機</a>（多源，radar 故事源，pub 2026-08-29）<span class="pp">partial</span>　🆕</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 摘要層（PC Gamer / GamesIndustry.biz radar 收錄）· Steam＝官方 API 08-29 07:30 即時數字（熱度雷達昨日）· Roblox/Twitch/Threads/KYM 因沙箱排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度：≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/08/30 · 對外發布前一律過賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
