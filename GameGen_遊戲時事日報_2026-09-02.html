@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/09/02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">09 · 02 · WED</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 09 / 02 · 彈藥工廠模式 · 熱度雷達 09/02 07:30 · 熱點回流 09/02 07:00 · 來源 19 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>Star Wars Zero Company 暢銷，但 Bit Reactor 80% 員工在上市前遭強制休假——今日業界最大諷刺。</b>《STAR WARS Zero Company™》高居 Steam 最多遊玩榜 #41，仍在熱賣榜中，然而開發商 Bit Reactor 在上市前數週強制休假約 80% 員工。Reddit r/gaming 和 r/Games 今日雙線 top-of-day；GamesIndustry.biz、Game Developer、VGC 多家媒體確認。<b>做出熱門遊戲的人，看不到成果——IP 授權模式的結構性脆弱赤裸呈現。</b></p>
+        <p>第二條大線：<b>GTA 6 正式稱霸 Netflix</b>——Rockstar 與 Netflix 合作的 30 分鐘擴展預覽 4 天達 3,110 萬觀看，成為 Netflix 當週第一。Rockstar 同時官方推出 Nopixel V——GTA Online 的官方邀請制 RP 伺服器，以「下一個 RP 社群進化」自我定位（PCGamer、Eurogamer、Reddit r/Games 今日 top-of-day）。<b>一款遊戲正在跨越娛樂業邊界。</b></p>
+        <p>AI 動向：<b>DLSS 5 明日（9/3）上線，爭議先行</b>——Polygon 報導 AI 美化濾鏡造成幀率衰減 50%；VGC 披露洩漏影像中角色被「AI 整形」的視覺問題。Dwarf Fortress 創作者 Tarn Adams 同日直言業界「in shambles」，CEO 們因 AI 和裁員狂熱「慢慢失去理智」（Reddit 今日 top-of-day）。</p>
+        <div class="pull">▸ 今天最大的品牌機會：Bit Reactor 事件讓「誰在遊戲成功中受益」成為今日最熱的業界道德問題——<b>GameGen「增強創作者，不替代創作者」的 AI 定位，在這個輿論氣候中是最清晰的差異化定位</b>。而 GTA 6 Netflix 3,110 萬觀看提醒：社群分發的規模不亞於任何傳統媒體。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 1 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 1</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>星戰零連隊悖論：Steam 暢銷第 41 位，開發商 80% 員工在上市前遭強制休假</div>
+            <div class="ln"><b>新聞事實：</b>Bit Reactor（《STAR WARS Zero Company™》開發商）在遊戲上市前數週強制讓約 80% 員工休假（furlough）。VGC（pub 2026-09-02）：「Around 80% of Star Wars Zero Company studio Bit Reactor was reportedly furloughed weeks before its release」；GamesIndustry.biz（今日雷達）：「Bit Reactor furloughed 'many of its workers' in the weeks before Star Wars Zero Company's launch」；Game Developer（今日雷達）：同步確認。遊戲同時在 Steam 最多遊玩榜 #41、熱賣榜持守。Reddit r/gaming 和 r/Games 今日均為 top-of-day。（多源，摘要層，未經第三方稽核）</div>
+            <div class="ln"><b>GameGen 角度：</b>Bit Reactor 的情況是 IP 授權模式下的結構性悖論——遊戲成功，開發商人員被裁。這是「遊戲業的破碎契約」最直白的呈現。GameGen 在這個框架裡的位置很清楚：<b>我們的工具讓更小的團隊能做出有競爭力的作品，同時不需要靠燃燒人力來維持。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Star Wars Zero Company is a Steam bestseller — #41 most played, still charting. Meanwhile, Bit Reactor furloughed ~80% of its dev team weeks before launch. The people who shipped the hit won't see its success. This is the industry's broken contract. The question isn't 'is the game good?' It's 'who actually wins when it is?'"<br><span style="color:var(--ink-dim)">中譯：《星際大戰：零連隊》是 Steam 最多遊玩榜第 41 名，仍在熱賣榜。同時，開發商 Bit Reactor 在上市前數週強制讓約 80% 員工休假。做出這個熱門遊戲的人看不到成果。這是業界的破碎契約。問題不是「遊戲好不好玩」——而是「當遊戲成功時，誰才是真正的贏家？」</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/bit-reactor-furloughed-many-of-its-workers-in-the-weeks-before-star-wars-zero-companys-launch" target="_blank">GamesIndustry ↗</a> · <a href="https://www.videogameschronicle.com/news/around-80-of-star-wars-zero-company-studio-bit-reactor-was-reportedly-furloughed-weeks-before-its-release/" target="_blank">VGC ↗</a> · <a href="https://www.gamedeveloper.com/business/star-wars-zero-company-studio-furloughed-workers-ahead-of-launch" target="_blank">GameDev ↗</a>　pub 2026-09-02 雷達收錄　verified partial</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 2 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 2 &amp; 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 Netflix 預覽 4 天 3,110 萬觀看——登頂全球榜，遊戲正式成為娛樂業最強流量引擎<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Rockstar 與 Netflix 合作的 GTA 6 擴展預覽（約 30 分鐘）在 Netflix 平台 4 天達到 3,110 萬觀看次數，成為 Netflix 當週最高收視節目（Reddit r/gaming top-of-day、Gamespot、PCGamer 今日雷達收錄）。Rockstar 同時官方推出 Nopixel V，GTA Online 官方邀請制 RP 伺服器——「the next evolution of the RP community」（PCGamer 今日雷達）。（多源，摘要層，未經第三方稽核）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6's 30-minute Netflix preview hit 31.1 million views in 4 days — Netflix's #1 show that week. Not a game trailer. A Netflix hit. Games aren't competing with other games anymore. They're competing with every TV show, every movie, every TikTok. Build accordingly. 🎮"<br><span style="color:var(--ink-dim)">中譯：GTA 6 的 30 分鐘 Netflix 預覽 4 天累積 3,110 萬觀看，成為 Netflix 當週第一。這不是遊戲預告片——這是 Netflix 爆紅節目。遊戲不再只是跟遊戲競爭。它們在跟所有電視節目、電影、每一條 TikTok 競爭。用這個標準來思考你在做的事。🎮</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1w4lj5x/gta_6_extended_look_tops_netflix_charts_with_311/" target="_blank">Reddit ↗</a> · <a href="https://www.gamespot.com/articles/gta-6s-extended-look-trailer-seemingly-paid-off-for-netflix-with-massive-viewership/" target="_blank">Gamespot ↗</a>　pub 2026-09-02 雷達收錄　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>矮人要塞創作者：遊戲業「一團糟」，AI 裁員狂熱讓 CEO 集體「慢慢失去理智」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>《Dwarf Fortress》創作者 Tarn Adams 在訪談中表示，遊戲業因 AI 和裁員狂熱「in shambles」，並稱「Everyone I know, their bosses are slowly getting psychosis」。Reddit r/gaming 今日 top-of-day，2026-09-02 07:30 熱度雷達收錄。（Reddit 標題層，摘要層）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "The creator of Dwarf Fortress says the game industry is 'in shambles.' CEOs 'slowly getting psychosis' over AI and layoffs. When the person who built one of gaming's most complex systems ever makes this diagnosis — it's worth listening. What does healthy AI adoption in games actually look like? 🎮"<br><span style="color:var(--ink-dim)">中譯：矮人要塞的創作者說遊戲業「一團糟」。CEO 們因 AI 和裁員「慢慢失去理智」。當創造出遊戲史上最複雜系統之一的人做出這個診斷——值得我們好好聽進去。遊戲業對 AI 的健康採用，應該是什麼樣子？🎮</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1w48vlj/dwarf_fortress_creator_says_the_industrys_in/" target="_blank">Reddit r/gaming ↗</a>　heat_latest.json top-of-day 2026-09-02 07:30　verified partial</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rainbow Six Siege Steam 在線 +20.7%——11 年老遊戲今日最大黑馬，live-ops 的最強證明<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>設計靈感：</b>Steam 熱度雷達（2026-09-02 07:30）：Rainbow Six Siege 即時在線 92,136，較前日 76,325 暴衝 +20.7%，為今日最大漲幅，進入 Steam 在線前 3。一款 2015 年上市的遊戲，靠持續的賽季更新和 live-ops 維持玩家熱情——這是玩家留存率設計的終極示範。</div>
+            <div class="ln"><b>為何是今日首選：</b>相較 Blood of Dawnwalker、GTA 6 等首日爆量標題，R6S 的長線留存故事說明了不同的遊戲設計語言——不是爆量，而是「每週都有理由回來」。這個框架直接對應 GameGen 的 AI 生成驅動內容更新能力：讓獨立遊戲也能擁有 AAA 等級的 live-ops 節奏。</div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/app/359550" target="_blank">Steam R6S ↗</a>　heat_latest.json steam_live 2026-09-02 07:30　verified ✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">09/02 07:30 雷達數字</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike 2</span><span class="vn">463K -17.1%</span></li>
+            <li class="down"><span class="nm">Palworld</span><span class="vn">97K -6.0%</span></li>
+            <li class="up"><span class="nm">Rainbow Six Siege ★</span><span class="vn">92K +20.7%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">88K -3.3%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">58K -14.4%</span></li>
+            <li><span class="nm">Apex Legends</span><span class="vn">57K -2.5%</span></li>
+            <li><span class="nm">HELLDIVERS 2</span><span class="vn">50K -1.7%</span></li>
+            <li class="up"><span class="nm">Terraria</span><span class="vn">41K +12.1%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 09/02 07:30 即時 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 最多遊玩 Top 10</span><span class="metric">09/02 排名</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike 2</span><span class="vn">#1</span></li>
+            <li><span class="nm">Dota 2</span><span class="vn">#2</span></li>
+            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">#3</span></li>
+            <li><span class="nm">Wallpaper Engine</span><span class="vn">#4</span></li>
+            <li><span class="nm">Apex Legends</span><span class="vn">#5</span></li>
+            <li class="hot"><span class="nm">How to Fish</span><span class="vn">#6</span></li>
+            <li><span class="nm">GTA V Legacy</span><span class="vn">#7</span></li>
+            <li><span class="nm">Palworld</span><span class="vn">#8</span></li>
+            <li><span class="nm">Slay the Spire 2</span><span class="vn">#9</span></li>
+            <li><span class="nm">Binding of Isaac: Rebirth</span><span class="vn">#10</span></li>
+          </ol>
+          <div class="bf">Steam 最多遊玩 · 09/02 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Twitch 即時觀看快照。<b>目前無法完全證實</b>，不以估計數字假裝 live。<br><br>今日背景：R6S 在線暴衝 +20.7%，可能帶動 Twitch 競技射擊頻道熱度；DLSS 5 明日上線（9/3）可能觸發實況討論；PlayStation State of Play 明日舉行，串流注意力預期集中。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 熱度雷達時間戳 <b>2026-09-02T07:30:28+08:00</b>（今日即時數字）· Steam 在線數據為 API 直抓即時值。今日最大亮點：<b>Rainbow Six Siege +20.7%（92,136）</b>——週三早晨難得的大漲；<b>Terraria +12.1%（41,094）</b>——可能與暑假尾聲效應或社群活動有關。整體多數遊戲下滑（CS:GO -17.1%，Rust -14.4%）符合週三早晨週期。How to Fish 仍守 Steam 最多遊玩 #6，是連續多週的驚人黑馬。Steam rank jumps 今日最大：<b>Bongo Cat +9（#68）、Wuthering Waves +8（#60）、Once Human +8（#78）</b>。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>訊號</span></span>Rainbow Six Siege +20.7% 今日最強在線漲幅；Terraria +12.1%；Bongo Cat 排名跳升 +9</h3>
+        <div class="sum">Steam 今日（09/02 07:30 雷達）最大暴衝訊號：① <b>Rainbow Six Siege +20.7%</b>（92,136 在線，由前日 76,325 上升）——在 CS:GO 和 Rust 大幅下滑的週三早晨，R6S 逆勢暴漲，是今日最大在線異常。可能原因：Ubisoft 新賽季活動、限時事件或社群活動，但資料無法完全確認原因。② <b>Terraria +12.1%</b>（41,094 在線）——老牌 2D 沙盒遊戲持續受到玩家關注，暑假尾聲效應可能是因素之一。③ <b>Wallpaper Engine +6.3%</b>（47,544 在線）。④ 排名跳升：Bongo Cat +9（從 #77→#68）、Wuthering Waves +8（#68→#60）、Once Human +8（#86→#78）、TBH: Task Bar Hero +5（#51→#46）、Yu-Gi-Oh! Master Duel +5（#52→#47）——中系手遊 / 混合型服務遊戲同步上升。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>R6S 的逆勢暴漲提醒：<b>遊戲的頭條效應不一定來自新作——一個賽季活動或社群事件就能撼動在線排名</b>。Bongo Cat 和 Yu-Gi-Oh! Master Duel 的同步上升說明今天社交型/收集型遊戲有某種共同的流量來源（可能是社群挑戰或 YouTube 影片帶流）。GameGen 的機會：這種短期暴衝窗口是社群貼文的黃金時段——在話題達到高峰前搭上。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 09/02 07:30 即時 · <a href="https://store.steampowered.com/app/359550" target="_blank">R6S ↗</a> · <a href="https://store.steampowered.com/app/105600" target="_blank">Terraria ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 熱賣榜</span><span class="metric">09/02 雷達</span></div>
+          <ol>
+            <li class="hot"><span class="nm">The Blood of Dawnwalker</span><span class="vn">熱賣 (持守)</span></li>
+            <li class="hot"><span class="nm">WARDOGS ★新入</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">How to Fish</span><span class="vn">熱賣</span></li>
+            <li class="hot"><span class="nm">STAR WARS Zero Company™</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Crimson Moon</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">007 First Light</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Bodycam</span><span class="vn">熱賣</span></li>
+          </ol>
+          <div class="bf">Steam 熱賣榜 · 09/02 熱度雷達 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO 早期</span><span class="metric">html5·meme·viral</span></div>
+          <ol>
+            <li class="hot"><span class="nm">COBB CAN MOVE</span><span class="vn">html5 #1 連守</span></li>
+            <li><span class="nm">Twilight Observer</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">CLOWN HOLE</span><span class="vn">html5 熱</span></li>
+            <li><span class="nm">The Freak Circus</span><span class="vn">怪誕</span></li>
+            <li><span class="nm">My Own Hero Party</span><span class="vn">英雄</span></li>
+            <li><span class="nm">Jest Messters</span><span class="vn">meme</span></li>
+            <li><span class="nm">Arthur's Nightmare</span><span class="vn">meme</span></li>
+          </ol>
+          <div class="bf">itch.io · 09/02 熱度雷達 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>Blood of Dawnwalker 持守熱賣；WARDOGS 新入榜；STAR WARS Zero Company 爭議中仍熱賣；007 First Light 亮相</h3>
+        <div class="sum">今日 Steam 熱賣榜：<b>The Blood of Dawnwalker</b> 首日上市入榜後持守，顯示首週末銷量健康。<b>WARDOGS</b> 今日新入熱賣榜——這是一款戰爭主題射擊遊戲，值得追蹤是否形成話題。<b>STAR WARS Zero Company™</b> 在 Bit Reactor 80% 員工休假爭議中仍然留在熱賣榜，說明玩家採購決策並不直接受開發商勞資新聞影響——有趣的市場現象。<b>007 First Light</b> 新入榜——James Bond IP 授權新作，是今日熱賣榜最新的 IP 衍生訊號。itch.io 方面 COBB CAN MOVE 繼續連守 html5 #1，趨勢穩固。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>STAR WARS Zero Company 在 Bit Reactor 爭議中持守熱賣榜，說明今天有兩個平行現象：<b>玩家在討論「誰受益？」的同時，仍然在購買這款遊戲</b>——輿論批評和消費行為之間存在落差。007 First Light 的入榜提示 2026 年 IP 授權熱度持續，Bond IP 在電影停滯期間轉向遊戲市場。GameGen 在 IP 話題中的切角：「IP 的下一站——當電影 IP 需要遊戲來維持存在感」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO · 09/02 · <a href="https://store.steampowered.com/explore/new/" target="_blank">熱賣榜 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>業界醜聞</span></span>Bit Reactor 80% 員工上市前強制休假：Star Wars Zero Company 的暢銷成為遊戲業剝削結構最諷刺的案例</h3>
+        <div class="sum">多家媒體（VGC、GamesIndustry.biz、Game Developer、Reddit r/gaming top-of-day，pub 2026-09-02）報導：Bit Reactor 在《STAR WARS Zero Company™》上市前數週，強制讓約 80% 員工休假。遊戲現在仍在 Steam 最多遊玩榜 #41 和熱賣榜。Christopher Judge（God of War Kratos 聲優）同日分享他放棄真人版 Kratos 角色的故事（Reddit top-of-day）——兩個故事都圍繞「做一件成功的作品，個人卻看不到成果」。GamesIndustry.biz 同日發表評論：<b>「GTA 6 will have a halo effect for the entire industry」</b>——業界巨大光環效應和結構性不平等同日現身，對比鮮明。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Bit Reactor 事件不是個案——它是 IP 授權開發模式的系統性風險：<b>授權方持有所有籌碼，開發商在成功前後都可以被替換</b>。對 GameGen 而言，這個新聞框架提供了一個罕見的道德論述空間：AI 工具能不能幫助更小、更有自主性的開發者做出有競爭力的作品，而不依賴大 IP 授權？這個問題的答案就是 GameGen 的核心主張。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">VGC / GAMESINDUSTRY / REDDIT · <a href="https://www.videogameschronicle.com/news/around-80-of-star-wars-zero-company-studio-bit-reactor-was-reportedly-furloughed-weeks-before-its-release/" target="_blank">VGC ↗</a> · <a href="https://www.gamesindustry.biz/bit-reactor-furloughed-many-of-its-workers-in-the-weeks-before-star-wars-zero-companys-launch" target="_blank">GamesIndustry ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>DLSS 5 明日上線：AI 美化濾鏡讓角色「被整形」、幀率砍半——Nvidia 的 AI 功能如何成為今週最大爭議</h3>
+        <div class="sum">Nvidia DLSS 5 預計 2026-09-03 隨 NBA 2K27 正式上線，相關爭議先行爆發：① <b>Polygon（pub 2026-09-01，tavily_news 收錄）</b>：DLSS 5 造成幀率約 50% 衰退（"ugly AI graphics and a 50% performance hit"），技術代價不小。② <b>VGC + Heise（今日雷達）</b>：Modders 在洩漏版 DLSS 5 中啟用 AI 臉孔改造功能，角色出現「yassification」效果（過度美化整形感），引發廣泛反彈。③ <b>The Verge（pub 2026-09-01，tavily_news）</b>：DLSS 5 官方要求 RTX 50 系顯卡，入門門檻極高。④ <b>Gamespot（pub 2026-09-02，今日雷達）</b>：Gamespot 實測稱 demo 效果「a different reality」——真實效果可能比洩漏更好，但玩家已形成先入為主的負面印象。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>DLSS 5 的爭議揭示了一個核心規則：<b>AI 功能一旦改變玩家「感覺自己控制的東西」，信任就會崩塌</b>——角色長相是玩家認同感最敏感的部分之一。「AI 整形」是不需要玩家同意的改動，這正是 DLSS 5 引爆社群的真正原因。GameGen 在這個輿論環境中的機會：明確說出「我們的 AI 幫玩家創造，而不是幫系統替換玩家認同的東西」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">POLYGON / VERGE / VGC · <a href="https://www.polygon.com/nvidia-dlss-5-performance-hit-ai-generated-graphics/" target="_blank">Polygon ↗</a> · <a href="https://www.theverge.com/tech/986378/nvidia-dlss-5-launch-nba-2k27" target="_blank">Verge ↗</a> · <a href="https://www.videogameschronicle.com/news/nvidias-controversial-dlss-5-officially-launches-this-week-via-nba-2k27/" target="_blank">VGC ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>業界格局</span></span>GTA 6 Netflix 3,110 萬觀看登頂 + Nopixel V 官方 RP 伺服器；Double Fine $100M Kickstarter；Ubisoft 封鎖 Linux</h3>
+        <div class="sum">今日多條業界大事：① <b>GTA 6 Netflix 3,110 萬觀看（Reddit r/gaming top-of-day；Gamespot、PCGamer 今日雷達）</b>：Rockstar 與 Netflix 合作的 30 分鐘擴展預覽成為 Netflix 當週第一——遊戲預告片正式成為 Netflix 節目級別的娛樂內容。Rockstar 同步推出 <b>Nopixel V</b>——官方邀請制 GTA Online RP 伺服器（PCGamer、Eurogamer 今日雷達），將 GTA RP 社群收編至官方生態。② <b>Double Fine Brutal Legend 2 Kickstarter（Reddit r/gaming 和 r/Games 今日 top-of-day；Eurogamer/RPS）</b>：Xbox 放棄後，Tim Schafer 開出 1 億美元集資門檻——這個不可能的數字是業界的諷刺宣言。③ <b>Ubisoft For Honor 封鎖 SteamOS/Linux（9 月 10 日起生效）</b>：HN 93 pts、129 留言——Ubisoft 以反作弊為由封鎖 Linux 玩家，引發開放平台倡議者強烈反彈。④ <b>Witcher 3 Remastered 存檔相容</b>（Reddit r/Games top-of-day）：舊存檔完全相容新版本——CD Projekt Red 的玩家友好姿態受好評。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日四條業界格局訊號各有不同張力：GTA 6 說明「IP × 媒體融合」的量能；Nopixel V 說明玩家生成內容的官方化趨勢；Double Fine 說明平台依賴的脆弱性；Ubisoft Linux 禁令說明「平台控制」的敏感性正在升高。<b>這四個方向都指向同一個底層問題：誰控制遊戲體驗？</b>這是 GameGen 在 AI 透明度論述上最強的切入框架。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT / EUROGAMER / HN · <a href="https://www.eurogamer.net/rockstar-games-official-gta-online-rp-server-closed-beta" target="_blank">Nopixel V ↗</a> · <a href="https://www.eurogamer.net/double-fine-finally-make-brutal-legend-2-new-kickstarter-almost-impossible-100m" target="_blank">Double Fine ↗</a> · <a href="https://www.gamingonlinux.com/2026/09/ubisofts-for-honor-will-block-steamos-linux-on-september-10/" target="_blank">Ubisoft Linux ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因題材 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>「如果困在離線碉堡，你的永恆遊戲是什麼？」——今日 Reddit 最強共鳴討論 × Dwarf Fortress「CEO 失心瘋」名言</h3>
+        <div class="sum">Reddit r/gaming 今日兩條 top-of-day 形成有趣的迷因雙線：① <b>「If you were stuck in an offline bunker, what would your Forever Game be?」</b>——玩家被要求選出一款「離線、無 DLC、永遠玩不膩」的遊戲，留言湧現：Stardew Valley、RimWorld、Dwarf Fortress、Tetris、Minecraft 等。這個討論觸碰了「什麼是真正耐玩設計」的深層問題。② <b>Dwarf Fortress 創作者的「CEO psychosis」名言</b>——「Everyone I know, their bosses are slowly getting psychosis」迅速在社群傳播，成為吐槽遊戲業管理層的新梗句。有趣的是：Dwarf Fortress 自身是「Forever Game」討論的常見提名，創作者的批判讓這個迷因多了一層反諷——<b>做出最耐玩遊戲的人，最清楚業界哪裡病了。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「Forever Game」討論揭示的是玩家內心深處的耐玩性定義：<b>不是「最多內容」，而是「最多自主性」</b>——Stardew Valley、RimWorld、Dwarf Fortress 的共同點都是玩家可以無限自我創造故事。這個洞察直接對應 GameGen AI 生成的核心主張：不是給玩家更多內容，而是讓玩家有更多主控空間。今天可用的 X 貼文框架：「你的永恆遊戲是什麼？最耐玩的設計不是關卡數量——是讓玩家有無限自己的故事可說。」</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT r/gaming · <a href="https://www.reddit.com/r/gaming/comments/1w40lrg/if_you_were_stuck_in_an_offline_bunker_what_would/" target="_blank">「Forever Game」↗</a> · <a href="https://www.reddit.com/r/gaming/comments/1w48vlj/dwarf_fortress_creator_says_the_industrys_in/" target="_blank">「CEO psychosis」↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Know Your Meme「Popular right now」/ Threads 繁中圈本次排程無瀏覽器，<b>目前無法完全證實</b>是今天首見的梗。今日迷因彈藥以「Forever Game 離線碉堡討論」（設計哲學梗）和「Dwarf Fortress CEO 失心瘋語錄」（業界吐槽梗）為主。itch.io 迷因標籤：Jest Messters、Arthur's Nightmare、DON'T DO IT、CaseOh's Basics 持續上榜。DLSS 5「AI 整形臉」圖可能在 Twitter/Reddit 形成迷因，明日追蹤。
+      </div>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">Steam / HN / Reddit / itch</span></div>
+          <ol>
+            <li class="hot"><span class="nm">「Forever Game」耐玩性設計——自主故事生成，無限可能</span><span class="vn">★ 今日首選</span></li>
+            <li class="up"><span class="nm">Rainbow Six Siege live-ops——持續賽季活動維持 11 年在線熱度</span><span class="vn">Steam 黑馬</span></li>
+            <li><span class="nm">GTA RP / Nopixel V——玩家在開發商基礎設施上創作自己的故事</span><span class="vn">官方 RP 化</span></li>
+            <li><span class="nm">How to Fish (#6 最多遊玩)——極簡概念的長線留存</span><span class="vn">Steam 奇跡</span></li>
+            <li><span class="nm">Ubisoft For Honor 反作弊 vs 開放平台——控制與開放的永恆張力</span><span class="vn">HN 93pts</span></li>
+          </ol>
+          <div class="bf">Steam / Reddit / HN · 09/02 熱度雷達</div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日最值得記錄的設計原則：「耐玩 = 自主性，不是內容量」（Forever Game 討論）× 「持續更新讓老遊戲勝過新遊戲」（R6S +20.7%）</h3>
+        <div class="sum">今日兩條設計訊號指向互補的設計哲學：<b>（1）「Forever Game」討論</b>——Reddit 玩家票選最能在離線碉堡玩一輩子的遊戲，高票選項幾乎清一色是「自主性極高的沙盒/生存/策略」。Stardew Valley、RimWorld、Dwarf Fortress 的共同點：玩家生成自己的目標和故事，不需要開發商提供新內容。<b>（2）Rainbow Six Siege +20.7%</b>——相反的路線：有計劃的外部更新和賽季活動維持長期熱度。兩種路線都成立，但 Forever Game 討論說明的是玩家對「內在動力」的渴望——遊戲本身給他們能量，不是開發商餵他們能量。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「內在動力 vs. 外在更新」這個設計二分法直接命中 GameGen AI 生成體驗的核心選擇：<b>AI 生成的最高目標，不是替玩家做更多，而是讓玩家能做得更多</b>——當玩家感覺「這是我的世界」而不是「這是 AI 給我的世界」，留存率才會像 Stardew Valley 一樣長達十年。今天的 CJ 技術論述可以圍繞「AI 作為耐玩性放大器，不是耐玩性替代品」展開。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT / STEAM · <a href="https://www.reddit.com/r/gaming/comments/1w40lrg/if_you_were_stuck_in_an_offline_bunker_what_would/" target="_blank">Forever Game ↗</a> · <a href="https://store.steampowered.com/app/359550" target="_blank">R6S ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話（需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。今日可追的長線母題：<b>Bit Reactor / Star Wars Zero Company 勞資悖論</b>（台灣遊戲業反思 IP 授權模式）、<b>PlayStation State of Play 明日 9/3</b>（繁中圈期待什麼公告？）、<b>DLSS 5 明日上線</b>（有 RTX 50 系的玩家值不值得升級？）、<b>Witcher 3 Remastered 台灣版</b>（存檔相容公告，是否值得買？）——下次有瀏覽器時驗證並補入。</div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Bit Reactor / Star Wars Zero Company 勞資悖論</td><td><span class="tmpl">「誰在遊戲成功中受益？」論述貼</span></td><td>「遊戲暢銷，開發商 80% 員工休假——這是業界最諷刺的成功故事。做遊戲的人，不應該是最後受益的人」</td><td class="rk-low">低（泛化框架，不引用員工個人）</td><td>★ 今日最佳 CJ LinkedIn 素材，道德論述力強，拉回「創作者工具」定位</td></tr>
+          <tr><td>GTA 6 Netflix 3,110 萬觀看</td><td><span class="tmpl">「遊戲 vs. 娛樂業」論述貼</span></td><td>「GTA 6 的預覽片打敗了 Netflix 所有節目——遊戲不再和遊戲競爭，它在和一切娛樂競爭。你準備好了嗎？」</td><td class="rk-low">低</td><td>★ 今日最佳 X 普通讀者素材，話題大，普遍共鳴強</td></tr>
+          <tr><td>「Forever Game 離線碉堡」Reddit 討論</td><td><span class="tmpl">互動問答貼</span></td><td>「如果你只能帶一款遊戲進離線碉堡，你選哪款？——最耐玩的設計不是關卡數，是讓玩家有無限自己的故事」</td><td class="rk-low">低</td><td>可做 X 互動貼，直接問受眾，帶討論回流</td></tr>
+          <tr><td>DLSS 5 明日上線爭議</td><td><span class="tmpl">「AI 信任邊界」論述貼</span></td><td>「Nvidia 的 AI 美化濾鏡讓玩家的角色被整形——沒人問玩家意見。AI 的邊界是使用者主控權，不是技術能力」</td><td class="rk-low">低（泛化框架，不截圖 AI 臉）</td><td>可做 X，接昨天 AI 透明度論述線，DLSS 5 上線日（今/明天）正是最佳時機</td></tr>
+          <tr><td>Double Fine Brutal Legend 2 $100M Kickstarter</td><td><span class="tmpl">「平台依賴崩解」論述貼</span></td><td>「Xbox 拋棄了 Tim Schafer。他向粉絲要 1 億美元。不可能的數字，真實的訊息：當平台撤退，創作者必須找到另一條路」</td><td class="rk-low">低</td><td>可做 X，當 Kickstarter 上線當天發效果最佳；可搭 Double Fine 情懷做互動</td></tr>
+          <tr><td>Ubisoft For Honor 封鎖 Linux（9/10）</td><td><span class="tmpl">「平台開放 vs 控制」論述貼</span></td><td>「Ubisoft 決定：Linux 玩家不歡迎。一個平台的存亡，竟然取決於反作弊系統的設計選擇——玩家有選擇嗎？」</td><td class="rk-mid">中（Ubisoft IP，避免過度批評）</td><td>走泛化「平台控制」框架，不點名批評，可做 X 觀察貼</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>Bit Reactor 悖論——「IP 授權模式的系統性脆弱」</td><td>《STAR WARS Zero Company™》在 Steam 最多遊玩榜 #41 的同時，開發商 Bit Reactor 在上市前數週強制讓約 80% 員工休假。VGC、GamesIndustry.biz、Game Developer 多家媒體今日確認。（多源，摘要層，pub 2026-09-02，未經第三方稽核）</td><td>"Star Wars Zero Company is a Steam bestseller. Bit Reactor furloughed ~80% of its dev team weeks before launch. The people who made the hit won't see its success. This is the industry's broken contract. Building a great game under someone else's IP means you inherit none of the upside. The tools that let smaller teams build their own IP aren't just nice to have — they're how you stay in the game."</td><td><a href="https://www.gamesindustry.biz/bit-reactor-furloughed-many-of-its-workers-in-the-weeks-before-star-wars-zero-companys-launch" target="_blank">GamesIndustry ↗</a> · <a href="https://www.videogameschronicle.com/news/around-80-of-star-wars-zero-company-studio-bit-reactor-was-reportedly-furloughed-weeks-before-its-release/" target="_blank">VGC ↗</a></td></tr>
+          <tr><td>DLSS 5 AI 美化爭議——「不需要同意的 AI 改動如何摧毀信任」</td><td>Nvidia DLSS 5 明日（9/3）上線。Polygon（pub 2026-09-01）：AI 美化讓角色「yassified」並造成幀率約 50% 衰減。VGC + Heise 報導洩漏影像引發廣泛反彈。（多源，摘要層）</td><td>"DLSS 5 drops tomorrow. Nvidia's AI beautification filter alters characters without player consent — and cuts frame rates by 50%. Players are furious. The lesson isn't 'AI graphics bad.' It's: when AI changes something players identify with, without asking, trust collapses. Consent and transparency aren't just ethics. They're product strategy."</td><td><a href="https://www.polygon.com/nvidia-dlss-5-performance-hit-ai-generated-graphics/" target="_blank">Polygon ↗</a> · <a href="https://www.videogameschronicle.com/news/nvidias-controversial-dlss-5-officially-launches-this-week-via-nba-2k27/" target="_blank">VGC ↗</a></td></tr>
+          <tr><td>GTA 6 Netflix 3,110 萬——遊戲的媒體融合時刻</td><td>Rockstar 與 Netflix 合作的 GTA 6 擴展預覽 4 天達 3,110 萬觀看，成為 Netflix 當週第一（Reddit r/gaming top-of-day、Gamespot、PCGamer 今日雷達收錄，pub 2026-09-02）。（多源，摘要層，未經第三方稽核）</td><td>"GTA 6's Netflix preview topped every streaming chart this week. 31.1 million views in 4 days. Games are no longer competing with each other. They're competing with every entertainment format. The studios that understand this — and build for it — will define the next decade of game marketing."</td><td><a href="https://www.gamespot.com/articles/gta-6s-extended-look-trailer-seemingly-paid-off-for-netflix-with-massive-viewership/" target="_blank">Gamespot ↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 1（Bit Reactor 悖論）已附完整 EN hook，可直接交 CJ 每日包。pub 2026-09-02 摘要層，多源交叉。DLSS 5 爭議：泛化框架，不引用 AI 改臉截圖。對外用字已過濾賭場語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Bit Reactor / Star Wars Zero Company 勞資悖論——「做出熱門遊戲的人，為什麼看不到成果？」（今日最強業界批評，道德論述力強）</li><li>GTA 6 Netflix 3,110 萬——「遊戲預告片打敗 Netflix 所有節目」（普通讀者也懂，今日最廣泛話題）</li><li>Dwarf Fortress CEO「失心瘋」名言——「遊戲業 CEO 慢慢失去理智」（業界吐槽梗，高共鳴）</li><li>「Forever Game」互動問答——「如果困在離線碉堡你選哪款？」（互動型，帶回覆）</li><li>DLSS 5 明日上線——「AI 整形無需同意——這是功能還是侵犯？」（AI 透明度論述，接昨天線）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「Forever Game」概念 demo：AI 生成玩家自己的永恆故事——「你說你在一個農場小鎮，AI 幫你建構整個世界」——Stardew Valley 精神的 AI 版本</li><li>R6S live-ops 啟示：設計一個「每週自動生成新挑戰/事件」的 GameGen 機制，給獨立遊戲 AAA 等級的賽季更新節奏</li><li>GTA RP / Nopixel V 啟示：讓玩家在 GameGen 生成的世界裡創作自己的 RP 角色和故事線</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>🔭</span></div><h4>可追蹤的訊號</h4><ul><li>★ <b>PlayStation State of Play 明日 9/3</b>——公告內容是否有 GameGen 可借用的題材；State of Play 後 Twitter 熱度爆發窗口（搶在公告後 30 分鐘內發貼）</li><li>DLSS 5 9/3 正式上線後——玩家真實反應是否比洩漏更差或更好；「AI 整形」是否形成社群大型討論</li><li>Bit Reactor 員工 LinkedIn 動態——是否有員工公開發聲，如果有，是今天最強的二次話題</li><li>Double Fine Kickstarter 首日集資進度——$100M 目標有沒有達到 1% 都是話題</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Bit Reactor 個別員工姓名/個人資訊 → 走結構性分析，不點名員工（隱私 + 法律風險）</li><li>DLSS 5 AI 改臉截圖 → 不轉發任何具體「yassification」影像（版權 + 可能被誤解為支持）</li><li>GTA 6 具體遊玩截圖 / 劇情素材 → 走泛化光環效應論述，不引用任何 GTA 6 素材</li><li>Double Fine Kickstarter $100M 是否可能達標的預測 → 不做預測，走「訊息本身的意義」</li><li>Ubisoft / For Honor 激烈批評 → 走泛化「平台控制」框架，避免直接對抗大廠</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Bit Reactor 80% 員工強制休假（VGC / GamesIndustry / GameDev / Reddit）</td><td><a href="https://www.videogameschronicle.com/news/around-80-of-star-wars-zero-company-studio-bit-reactor-was-reportedly-furloughed-weeks-before-its-release/" target="_blank">VGC</a> · <a href="https://www.gamesindustry.biz/bit-reactor-furloughed-many-of-its-workers-in-the-weeks-before-star-wars-zero-companys-launch" target="_blank">GamesIndustry</a> · <a href="https://www.gamedeveloper.com/business/star-wars-zero-company-studio-furloughed-workers-ahead-of-launch" target="_blank">GameDev</a>（今日雷達收錄，pub 2026-09-02，多源摘要層）　Reddit r/gaming + r/Games 今日 top-of-day<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>GTA 6 Netflix 3,110 萬觀看</td><td><a href="https://www.reddit.com/r/gaming/comments/1w4lj5x/gta_6_extended_look_tops_netflix_charts_with_311/" target="_blank">Reddit r/gaming</a> · <a href="https://www.gamespot.com/articles/gta-6s-extended-look-trailer-seemingly-paid-off-for-netflix-with-massive-viewership/" target="_blank">Gamespot</a> · <a href="https://www.pcgamer.com/games/grand-theft-auto/that-grand-theft-auto-6-exclusive-reveal-worked-out-pretty-well-for-netflix-it-was-the-platforms-biggest-show-last-week/" target="_blank">PCGamer</a>（今日雷達收錄）　多源交叉<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Dwarf Fortress creator「CEO psychosis」</td><td><a href="https://www.reddit.com/r/gaming/comments/1w48vlj/dwarf_fortress_creator_says_the_industrys_in/" target="_blank">Reddit r/gaming</a>（heat_latest.json top-of-day 2026-09-02 07:30 收錄）　Reddit 標題層，摘要層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>DLSS 5 幀率衰退 50%（Polygon）</td><td><a href="https://www.polygon.com/nvidia-dlss-5-performance-hit-ai-generated-graphics/" target="_blank">Polygon</a>（tavily_news，pub 2026-09-01，score 0.800）　Polygon 報導，摘要層<span class="pp">partial</span>　🔄</td></tr>
+        <tr><td>DLSS 5 9/3 上線（The Verge）</td><td><a href="https://www.theverge.com/tech/986378/nvidia-dlss-5-launch-nba-2k27" target="_blank">The Verge</a>（tavily_news，pub 2026-09-01，score 0.823）　The Verge 報導，摘要層<span class="pp">partial</span>　🔄</td></tr>
+        <tr><td>Double Fine Brutal Legend 2 $100M Kickstarter（Eurogamer / RPS / Reddit）</td><td><a href="https://www.eurogamer.net/double-fine-finally-make-brutal-legend-2-new-kickstarter-almost-impossible-100m" target="_blank">Eurogamer</a> · <a href="https://www.rockpapershotgun.com/double-fine-are-all-in-on-making-brutal-legend-2-if-youre-willing-to-give-them-100-million-in-their-game-jam-kickstarter-anyway" target="_blank">RPS</a>（今日雷達收錄）　Reddit r/gaming + r/Games 今日 top-of-day<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>「Forever Game 離線碉堡」Reddit 討論</td><td><a href="https://www.reddit.com/r/gaming/comments/1w40lrg/if_you_were_stuck_in_an_offline_bunker_what_would/" target="_blank">Reddit r/gaming</a>（heat_latest.json top-of-day 2026-09-02 07:30 收錄）　Reddit 標題層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Rainbow Six Siege +20.7% 在線（Steam 官方 API）</td><td>heat_latest.json fetched_at 2026-09-02T07:30:28+08:00　R6S: 92,136 vs prev 76,325（+20.7%）　官方 API 直抓<span class="ok">✓</span>　今日即時</td></tr>
+        <tr><td>Steam 在線整體數字</td><td>heat_latest.json fetched_at 2026-09-02T07:30:28+08:00　CS:GO 463,520 / Palworld 97,376 / PUBG 87,869 / Terraria 41,094（+12.1%）　官方 API 直抓<span class="ok">✓</span>　今日即時</td></tr>
+        <tr><td>Nopixel V 官方 GTA RP 伺服器</td><td><a href="https://www.eurogamer.net/rockstar-games-official-gta-online-rp-server-closed-beta" target="_blank">Eurogamer</a> · <a href="https://www.pcgamer.com/games/grand-theft-auto/the-future-of-gta-roleplaying-remains-in-gta-5-for-now-as-rockstar-touts-new-invite-only-nopixel-v-rp-server/" target="_blank">PCGamer</a>（今日雷達收錄）<span class="pp">partial</span>　🆕</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 1 多源交叉（GamesIndustry/VGC/GameDev 今日雷達）· Steam＝官方 API 09/02 07:30 即時數字 · Roblox/Twitch/Threads/KYM 因沙箱排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度：≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/09/02 · 對外發布前一律過賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
