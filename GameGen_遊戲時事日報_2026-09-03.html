@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -227,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 09 / 03 · 彈藥工廠模式 · 熱度雷達 09/02 07:30（昨日） · 熱點回流 09/03 07:00 · 來源 19 站</span>
+        <span class="dateflag">2026 / 09 / 03 · 彈藥工廠模式 · Steam 即時真數字（radar 07:31 已跑）· 來源 19 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -235,56 +237,73 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>DLSS 5 今日正式上線（NBA 2K27 首發搭載）——昨天說「明天來」的 AI 美化濾鏡已成真。</b>Polygon（pub 2026-09-01，tavily_news）確認幀率衰退約 50%；VGC 報導「yassification」（角色 AI 整容）爭議正式發酵；The Verge 確認僅支援 RTX 50 系顯卡。Nvidia 的 AI 功能在「昨日爭議」和「今日現實」之間，只差了一個上線日。<b>AI 信任問題從假設期進入實測期。</b></p>
-        <p>第二大線：<b>Sony 同意賠償近 800 萬美元了結數位遊戲所有權集體訴訟</b>——同時在訴訟文件中堅稱「理性消費者都知道他們不擁有數位遊戲」（Gamespot、Eurogamer、VGC 今日雷達收錄）。花錢了事，但拒絕承認過錯——消費者的數位資產到底「屬於誰」，業界最大玩家用法律語言給出了一個令人寒心的答案。</p>
-        <p>第三線：<b>13TB Steam 歷史資料洩漏</b>——研究者透過公開端點存取到大型存檔（Game Developer 今日報導），含 Half-Life、Portal 等開發素材，是遊戲史上最大的考古學事件之一。第四線：<b>Blood of Dawnwalker</b>（前 CDPR 創辦者 Rebel Wolves 新作）評論佳績，前同事紛紛祝賀（PCGamer 今日雷達）——小團隊自主 IP 的正向故事。第五線：<b>Don't Nod（奇異人生開發商）宣布「轉型計畫」</b>，業界解讀為裁員前奏（RPS、Eurogamer 今日雷達）。</p>
-        <div class="pull">▸ 今天最大的品牌機會：Sony 說「理性消費者知道他們不擁有數位遊戲」，DLSS 5 在不問用戶意見下改變角色外觀——這兩條線都在問同一個問題：<b>誰主控你的遊戲體驗？GameGen 的答案是創作者和玩家，不是平台。</b></div>
+        <p><b>今天不是單一爆點，是三條並行訊號疊在一起。</b>Rockstar 在 GTA6 訪談中被直接問「有沒有用生成式 AI」，回答「No」，同時證實單機主線無微交易（Push Square，原文 8/28，6 天前，🔄 近期而非今天新）；經營 13 年的獨立資料庫 <b>SteamDB 昨天（9/2）正式併入 Nexus Mods</b>，PC 遊戲社群工具版圖再整併；黑暗奇幻大作《The Blood of Dawnwalker》<b>今天（9/3）正式在 Steam / PS5 / Xbox 同步上市</b>。同一天，Roblox 即時榜前十有<b>兩款「偷竊」機制遊戲</b>（Steal An Egg #1、Steal a Brainrot #9），證明搶奪 / 偷取這種 60 秒 loop 仍是最強社交黏著模式之一。</p>
+        <p>對 GameGen 的訊號：大廠正在公開用「不碰生成式 AI」當品質保證在打——這條界線正好是 GameGen 該講清楚的邊界，我們服務的是<b>創作者主動選 AI 當工具</b>，不是發行商偷偷把 AI 塞進玩家看不到的地方。同時 Roblox 雙榜證實「偷竊」loop 已在百萬同時在線規模驗證過，機制本身不受版權保護，比蹭 AAA 新聞更值得直接抄。</p>
+        <div class="pull">▸ 今天就能蹭：抄 Roblox「偷竊」雙榜的 loop，做一款 60 秒「偷回你的哏圖」搶奪 demo（今日首選）；同時整理一條 CJ 貼文，講清楚「創作者選 AI」和「發行商塞 AI」的邊界差異。</div>
       </div>
 
       <!-- 📰 今日彈藥 頭版 -->
       <div class="ammo">
         <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
 
-        <!-- CJ LinkedIn Top 1 -->
+        <!-- CJ LinkedIn Top 2 -->
         <div class="ammo-grp l-cj reveal">
-          <div class="gt">🎯 CJ · LinkedIn 線　TOP 1</div>
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Sony 賠 800 萬美元了結數位遊戲訴訟，卻同時堅稱「理性消費者知道他們不擁有數位遊戲」</div>
-            <div class="ln"><b>新聞事實：</b>Sony Interactive Entertainment 同意在集體訴訟中賠償近 800 萬美元（$7.9M），了結消費者對數位遊戲定價的集體訴訟。與此同時，PlayStation 在訴訟文件中主張：「reasonable consumers already know they don't actually own their digital games」。來源：Gamespot（今日雷達）、Eurogamer（今日雷達）、VGC（今日雷達）。（多源，摘要層，未經第三方稽核）</div>
-            <div class="ln"><b>GameGen 角度：</b>這是業界「數位所有權」討論的最新爆點。消費者付了全價，平台說「你不擁有它」——這是 2026 年最清楚的平台依賴悖論。GameGen 的定位：<b>我們幫創作者擁有自己的作品和受眾，不依賴平台的「授權」說法。</b></div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Sony just agreed to pay $7.9 million to settle a lawsuit over digital game prices. And in their legal filing, they argued: 'reasonable consumers already know they don't actually own their digital games.' They're paying to make it go away — but refusing to admit they were wrong. You pay full price. They can pull it any time. And apparently, you should've known. This is the state of digital ownership in 2026. Build accordingly."<br><span style="color:var(--ink-dim)">中譯：Sony 剛同意賠 790 萬美元了結數位遊戲定價集體訴訟。同時在法律文件中主張：「理性消費者早就知道他們不擁有數位遊戲」。他們付錢了事，卻拒絕承認過錯。你付了全價。他們可以隨時下架。而你「應該早就知道」。這就是 2026 年數位所有權的現狀。請據此規劃。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamespot.com/articles/sony-to-pay-out-nearly-8-million-in-class-action-settlement-over-game-prices/" target="_blank">Gamespot ↗</a> · <a href="https://www.eurogamer.net/playstation-reasonable-consumers-know-dont-own-digital-games" target="_blank">Eurogamer ↗</a> · <a href="https://www.videogameschronicle.com/news/sony-says-reasonable-consumers-know-they-dont-own-the-digital-games-they-buy/" target="_blank">VGC ↗</a>　pub 2026-09-02/03 雷達收錄　verified partial</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>Rockstar 親口證實 GTA6 不用生成式 AI——但那是發行商的選擇，不是玩家的</div>
+            <div class="ln"><b>新聞事實：</b>Rockstar North 共同工作室負責人 Rob Nelson 接受 Kinda Funny 訪談，被「point blank」問及 GTA6 是否使用生成式 AI，回答「No」；同時確認單機主線（11/19 上市）「no monetisation」、無微交易，GTA Online 是否延續內購則未表態（Push Square，原文發布 2026-08-28）。</div>
+            <div class="ln"><b>GameGen 角度：</b>大廠正用「不碰生成式 AI」當品質保證在打——這條界線值得 GameGen 講清楚：我們不是要說服玩家「AI 比人類手做更好」，而是把選擇權交給創作者本人。發行商在遊戲裡「藏 AI」和創作者自己「選 AI 當工具、大方攤開」，是完全不同的兩件事，GameGen 站在後者。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Rockstar just told press their new game has zero generative AI — as a selling point. Fair. But that's a publisher's choice made FOR players. GameGen flips it: the AI is a tool creators pick up themselves, in the open."<br><span style="color:var(--ink-dim)">中譯：Rockstar 剛跟媒體說他們的新遊戲零生成式 AI——當賣點。可以理解。但那是發行商替玩家做的選擇。GameGen 反過來：AI 是創作者自己選擇拿起來用的工具，而且大方攤在陽光下。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pushsquare.com/news/2026/08/gta-6-contains-no-microtransactions-or-generative-ai-rockstar-says" target="_blank">Push Square ↗</a>　pub 2026-08-28　verified ✓</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>經營 13 年的獨立資料庫 SteamDB，今天正式併入 Nexus Mods</div>
+            <div class="ln"><b>新聞事實：</b>SteamDB（2013 年由 xPaw、Marlamin 共同創立，追蹤 Steam 同時在線、價格歷史、build 更新等數據）於 2026/9/2 正式宣布加入 Nexus Mods（母公司 Chosen）；官方聲明維持獨立品牌、網址與社群，現有免費功能不會收費。創辦人 xPaw 公開表示長期獨力維運已出現 burnout（Nexus Mods 官方公告，原文發布 2026-09-02）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這是今天最乾淨的一條產業訊號：社群自建的資料 / 工具層，一旦證明長期價值，終究會被有資源的平台收編。GameGen 現在做的 Trend-to-Game 雷達，本質上也是「把即時資料變成可用工具」——這條路徑的終點，SteamDB 剛示範了一次。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "SteamDB ran independent for 13 years on one person's spare time — today it got folded into a bigger platform. Data infrastructure for gaming communities is valuable enough to get acquired. GameGen is building that same layer, just pointed at trends instead of prices."<br><span style="color:var(--ink-dim)">中譯：SteamDB 靠一個人業餘維運了 13 年——今天被併入更大的平台。遊戲社群的資料基礎設施，值錢到會被收購。GameGen 在做同一層的東西，只是瞄準的是趨勢，不是價格。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.nexusmods.com/news/15597" target="_blank">Nexus Mods ↗</a>　pub 2026-09-02　verified ✓</div>
           </div>
         </div>
 
-        <!-- 小編 X 線 -->
+        <!-- 小編 X Top 3 -->
         <div class="ammo-grp l-ed reveal">
-          <div class="gt">📣 小編 · X 線　TOP 2 &amp; 3</div>
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>DLSS 5 今日正式上線——AI 美化爭議從「預期中」變成「眼見為實」<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Nvidia DLSS 5 今日（2026-09-03）隨 NBA 2K27 正式上線。The Verge（pub 2026-09-01，tavily_news）：「DLSS 5 arrives September 3rd and requires serious GPU horsepower」，僅支援 RTX 50 系顯卡。Polygon（pub 2026-09-01）：AI 美化造成幀率衰退約 50%。VGC 今日雷達：洩漏影像引發「yassification」（角色 AI 整容）廣泛反彈。Gamespot（tavily_news）：官方 demo 效果「a different reality」，但玩家先入為主負面印象已形成。（多源，摘要層）</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "DLSS 5 is live. The AI filter that sparked 'yassification' controversy is now officially in your game — NBA 2K27, September 3rd. Requires RTX 50 series. Cuts frame rates by 50%. Changes how characters look without asking. This isn't just a graphics debate. It's: does AI have the right to alter things you identify with? Who decides what your game looks like — you, or the GPU manufacturer?"<br><span style="color:var(--ink-dim)">中譯：DLSS 5 正式上線了。這個引發「AI 整容」爭議的濾鏡，今天正式進入你的遊戲——NBA 2K27，9 月 3 日。需要 RTX 50 系。幀率降 50%。在不問你意見的情況下改變角色外觀。這不只是圖形畫質爭論。問題是：AI 有沒有資格改變你認同的東西？誰決定你的遊戲長什麼樣子——你，還是 GPU 製造商？</span></div>
-            <div class="meta">來源 <a href="https://www.theverge.com/tech/986378/nvidia-dlss-5-launch-nba-2k27" target="_blank">The Verge ↗</a> · <a href="https://www.polygon.com/nvidia-dlss-5-performance-hit-ai-generated-graphics/" target="_blank">Polygon ↗</a> · <a href="https://www.videogameschronicle.com/news/nvidias-controversial-dlss-5-officially-launches-this-week-via-nba-2k27/" target="_blank">VGC ↗</a>　pub 2026-09-01–03 雷達收錄　verified partial</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Roblox 即時榜前十，兩款「偷竊」機制包辦第 1 名和第 9 名<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>第三方即時追蹤站 rblxdb.com（9/2 更新）顯示，《Steal An Egg & Collect Rare Pets》以 <b>107.8 萬人同時在線</b>奪冠（94% 喜歡度、12 億次造訪），《Steal a Brainrot》以 13.5 萬人在線排第 9（73.2 億次造訪）。兩款玩法都是「闖進別人地盤偷東西、被偷了會收到通知」。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Two of Roblox's hottest games right now share one loop: sneak in, steal something, get caught, steal it back. That's the whole mechanic — and it's already proven at a million concurrent players. 👇"　<span style="color:var(--ink-dim)">中譯：Roblox 現在最紅的兩款遊戲共用同一個 loop：摸進去、偷東西、被抓包、再偷回來。這就是整套機制——而且已經在破百萬同時在線的規模驗證過。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入你想「偷」的哏圖 / 角色 → 生一款 60 秒潛入 / 躲追 loop → 結束出「戰利品清單」分享卡，揪朋友來搶回去。</div>
+            <div class="meta">來源 <a href="https://rblxdb.com/best-roblox-games" target="_blank">rblxdb.com ↗</a>　摘要層（第三方數據庫，非 Roblox 官方，refreshed 2026-09-02）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>13TB Steam 資料洩漏：Half-Life 2、Portal 開發素材出現——遊戲考古學史上最大事件<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Game Developer 今日報導：約 13TB 的 Steam 歷史資料透過用戶存取「公開可訪問端點」（publicly accessible endpoint）外流，包含遊戲開發素材（含 Half-Life 2: Episode 3、Portal 2 早期版本等）。（Game Developer 今日雷達收錄，摘要層，未經第三方稽核）</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "13 terabytes of Steam data just leaked. Half-Life 2: Episode 3 dev footage. Early Portal 2 builds. Games that never shipped. This is gaming archaeology at its biggest. Every cancelled game, every scrapped mechanic — now in the open. What are you most curious about? 🎮"<br><span style="color:var(--ink-dim)">中譯：13TB 的 Steam 資料剛剛洩漏。Half-Life 2：第三章開發影像。Portal 2 早期版本。從未上市的遊戲。這是遊戲考古學史上最大的一次。每一款取消的遊戲、每一個廢棄的機制——現在公開了。你最好奇哪個？🎮</span></div>
-            <div class="meta">來源 <a href="https://www.gamedeveloper.com/pc/report-13tb-of-steam-data-leaked-after-users-access-publicly-accessible-endpoint-" target="_blank">Game Developer ↗</a>　heat_latest.json story_gamedeveloper 今日收錄　verified partial</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>暗黑奇幻大作《The Blood of Dawnwalker》今天正式上市<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>前《巫師 3》總監 Konrad Tomaszkiewicz 的新作，Rebel Wolves 開發、Bandai Namco 發行，今天（9/3）同步登陸 PS5 / Windows / Xbox Series X|S，已列入 Steam 新品榜。PC Gamer 攻略標題本身就很好玩，例如「如何喝 Vrakhir 的血」。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A new dark-fantasy RPG just dropped today, guides included on how to drink blood correctly. If a AAA game can make 'drink the blood' a headline, a 60-second vampire mini-game writes itself. 👇"　<span style="color:var(--ink-dim)">中譯：一款新的黑暗奇幻 RPG 今天剛上市，連攻略都在教你怎麼正確喝血。AAA 遊戲都能把「喝血」寫成標題了，一款 60 秒吸血鬼小遊戲根本現成題材。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入你的「獵物」→ 生一款泛化吸血鬼追逐 / 喝血按鍵挑戰 → 出「渴血值」分享卡（不挪用該作角色美術 / 世界觀）。</div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/news/app/3751260/view/542262753053639069" target="_blank">Steam 官方新聞 ↗</a>　摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>《瑪利歐賽車 8 死亡動員令》免費更新，Switch 2 上加開 8 人分割畫面<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>任天堂 9/2 釋出 v4.0.0 免費更新，Switch 2 主機上首度支援 5–8 人同螢幕分割競速（一般 Switch 仍上限 4 人），同時畫質與讀取速度提升（Nintendo 官方 What's New 頁面確認）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Nintendo just gave an 8-year-old game 8-player split-screen, for free, because the new console can finally handle it. Chaos content writes itself. 👇"　<span style="color:var(--ink-dim)">中譯：任天堂剛免費給一款 8 年老遊戲加了 8 人分割畫面，因為新主機終於扛得住。混亂內容自己就會發生。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>蹭「多人同框有多亂」短影片哏，非直接遊戲題材，適合當日短影片素材。</div>
+            <div class="meta">來源 <a href="https://www.nintendo.com/us/whatsnew/free-update-now-available-for-mario-kart-8-deluxe/" target="_blank">Nintendo 官方 ↗</a>　摘要層</div>
           </div>
         </div>
 
-        <!-- Demo 線 -->
+        <!-- Demo 線 1 -->
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Blood of Dawnwalker 佳評如潮：前 CDPR 開發者的小團隊自主 IP，是今日最溫暖的業界故事<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>設計靈感：</b>PCGamer 今日報導（story_pcgamer）：Rebel Wolves（由前 CD Projekt Red 開發者創立）的《The Blood of Dawnwalker》獲得佳評——「Good reviews are a 'great relief,' says Blood of Dawnwalker director」，前 CDPR 同事紛紛祝賀。遊戲同日仍在 Steam 熱賣榜（heat_latest.json steam_new_top 收錄）。</div>
-            <div class="ln"><b>為何是今日首選：</b>在 Bit Reactor（昨日）和 Don't Nod（今日）都傳出裁員/困境的背景下，Rebel Wolves 的故事提供了一個罕見的正向敘事：<b>前大廠開發者自組小團隊、做自主 IP、獲好評</b>——這是「創作者自主」論述的最好案例。直接對應 GameGen 的工具定位。</div>
-            <div class="meta">來源 <a href="https://www.pcgamer.com/games/rpg/good-reviews-are-a-great-relief-says-blood-of-dawnwalker-director-as-former-cd-projekt-coworkers-line-up-to-offer-congratulations/" target="_blank">PCGamer ↗</a> · <a href="https://store.steampowered.com/app/3751260" target="_blank">Steam ↗</a>　heat_latest.json 今日收錄　verified partial</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「偷回你的哏圖」60 秒搶奪 demo（蹭 Roblox 當紅雙榜的偷竊 loop）<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入今天最紅的梗圖 / 角色 → 生一款 60 秒「潛入—偷取—被抓—逃跑」迷你遊戲 → 結束出「戰利品清單 / 被偷通知」分享卡，可以 @ 朋友來搶回去，天然形成 remix / 挑戰循環。</div>
+            <div class="ln"><b>為何是今天首選：</b>Roblox 即時榜證明這個機制已在百萬同時在線規模驗證過（Steal An Egg #1、Steal a Brainrot #9），機制本身不受版權保護，GameGen 可以直接抄 loop、換上今天的梗當皮膚，IP 風險最低。</div>
+            <div class="meta">綁 <a href="https://rblxdb.com/best-roblox-games" target="_blank">rblxdb.com ↗</a>　模板：潛入偷取 / 60 秒抓寶</div>
           </div>
         </div>
       </div>
@@ -292,221 +311,56 @@
   </header>
 
   <main>
-    <!-- 01 即時熱榜 -->
+    <!-- 即時熱榜 -->
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
       <div class="boards reveal">
 
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">09/02 07:30 雷達（昨日）</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 09/03 即時</span></div>
           <ol>
-            <li class="hot"><span class="nm">Counter-Strike 2</span><span class="vn">463K -17.1%</span></li>
-            <li class="down"><span class="nm">Palworld</span><span class="vn">97K -6.0%</span></li>
-            <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">92K +20.7%</span></li>
-            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">88K -3.3%</span></li>
-            <li class="down"><span class="nm">Rust</span><span class="vn">58K -14.4%</span></li>
-            <li><span class="nm">Apex Legends</span><span class="vn">57K -2.5%</span></li>
-            <li><span class="nm">HELLDIVERS 2</span><span class="vn">50K -1.7%</span></li>
-            <li class="up"><span class="nm">Terraria</span><span class="vn">41K +12.1%</span></li>
+            <li class="hot up"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">536K ▲15.7%</span></li>
+            <li class="down"><span class="nm">Palworld</span><span class="vn">93K ▼4%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">90K ▲2%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">88K ▼4.2%</span></li>
+            <li class="up"><span class="nm">Apex Legends</span><span class="vn">58K ▲2.1%</span></li>
+            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">52K ▲6.9%</span></li>
           </ol>
-          <div class="bf">⚠️ 今日 heat_latest 顯示 09/02 07:30 時間戳，疑前日資料 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 09/03 即時真數字（radar 07:31）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
-        <div class="board b-steam">
-          <div class="bh"><span>STEAM 最多遊玩 Top 10</span><span class="metric">09/02 排名</span></div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX 同時在線</span><span class="metric">第三方追蹤 · 09/02 更新</span></div>
           <ol>
-            <li class="hot"><span class="nm">Counter-Strike 2</span><span class="vn">#1</span></li>
-            <li><span class="nm">Dota 2</span><span class="vn">#2</span></li>
-            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">#3</span></li>
-            <li><span class="nm">Wallpaper Engine</span><span class="vn">#4</span></li>
-            <li><span class="nm">Apex Legends</span><span class="vn">#5</span></li>
-            <li class="hot"><span class="nm">How to Fish</span><span class="vn">#6 持守</span></li>
-            <li><span class="nm">GTA V Legacy</span><span class="vn">#7</span></li>
-            <li><span class="nm">Palworld</span><span class="vn">#8</span></li>
-            <li><span class="nm">Slay the Spire 2</span><span class="vn">#9</span></li>
-            <li class="up"><span class="nm">NBA 2K26 / CoD MW4 Beta ★</span><span class="vn">#10 區待查</span></li>
+            <li class="hot"><span class="nm">Steal An Egg &amp; Collect Rare Pets</span><span class="vn">108萬</span></li>
+            <li><span class="nm">Brookhaven 🏡RP</span><span class="vn">40萬</span></li>
+            <li><span class="nm">Murder Mystery 2</span><span class="vn">27萬</span></li>
+            <li><span class="nm">Blox Fruits</span><span class="vn">27萬</span></li>
+            <li><span class="nm">[🥚] Adopt Me!</span><span class="vn">21萬</span></li>
           </ol>
-          <div class="bf">Steam 最多遊玩 · 09/02 雷達 · DLSS 5 今日上線，NBA 2K27 可能入榜</div>
+          <div class="bf">rblxdb.com（第三方，非官方，每幾小時刷新）· <a href="https://rblxdb.com/best-roblox-games" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-dim">
           <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
-          <div class="nodata">⚠️ 排程環境無瀏覽器，Twitch 即時觀看快照無法抓取。<b>目前無法完全證實。</b><br><br>今日關注：DLSS 5 正式上線可能帶動 NBA 2K27 直播；PlayStation State of Play 今日若有公告，Twitter 熱度可能在 30 分鐘內爆發；Don't Nod 轉型計畫後，Life is Strange 社群情緒值得追蹤。</div>
-          <div class="bf">TwitchTracker（需瀏覽器）</div>
+          <div class="nodata">⚠️ 已實際 web_fetch twitchtracker.com/games，但抓回的內容標示「2025 年 11 月」快照，與今日脫節、非即時。為避免用舊數據冒充當日趨勢，本欄<b>目前無法完全證實</b>，不採用。</div>
+          <div class="bf">TwitchTracker（抓到舊快照，未採用）</div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ 今日 heat_latest.json 顯示 fetched_at <b>2026-09-02T07:30:28+08:00</b>（前日資料），hotspots_latest.json 顯示 <b>2026-09-03 07:00</b>（今日）。今日 Steam 數字以昨日快照呈現，並加注時間戳。今日最值得觀察的新變數：<b>DLSS 5 + NBA 2K27 今日正式上線</b>，可能在今日 Steam 榜單產生新動向。How to Fish 持守 #6 仍是連續多週的驚人黑馬訊號。
+        ✅ 本機 heat-radar 07:31 已跑成功（<code>fetched_at</code> 2026-09-03T07:31，19/19 源全通），Steam 為<b>官方 API 即時真數字</b>（GetNumberOfCurrentPlayers）。Roblox 用第三方即時追蹤站驗證後採用（非官方數字，已標註）。Twitch 因抓到的是過期快照、已誠實排除，不以估計數字補位。
       </div>
     </section>
 
-    <!-- 02 暴衝訊號 -->
+    <!-- 暴衝訊號 -->
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>訊號</span></span>DLSS 5 今日上線→ NBA 2K27 可能暴衝入榜；Steam rank jumps：Bongo Cat +9、Wuthering Waves +8、Once Human +8</h3>
-        <div class="sum">今日最大暴衝預警：<b>DLSS 5 正式上線（2026-09-03），NBA 2K27 為首發搭載遊戲</b>——根據過往 AI 爭議引發的媒體熱度，今日 NBA 2K27 在 Steam 的在線人數和購買量可能有明顯波動（正負皆有可能）。昨日（09/02）雷達 Steam rank jumps 已記錄：<b>Bongo Cat +9（#68）、Wuthering Waves +8（#60）、Once Human +8（#78）</b>，中系服務型遊戲持續上升趨勢。今日若有新 PlayStation State of Play 公告，可能觸發相關遊戲在 Steam 的即時排名變動。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>DLSS 5 的上線日是今年 AI in games 最大的「實驗時刻」——<b>玩家的真實評價是否比預期更差或更好，將決定 AI 圖形功能在業界的下一步走向。</b>這個結果對 GameGen 的 AI 產品論述有直接影響：如果玩家反應更差，「透明 AI」的定位更重要；如果更好，說明「炒作差距」可被縮小。今天是觀察日，不是論斷日。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 09/02 雷達 · <a href="https://store.steampowered.com/app/3405690" target="_blank">NBA 2K26 ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 03 早期訊號 -->
-    <section id="early">
-      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <div class="boards reveal">
-
-        <div class="board b-steam">
-          <div class="bh"><span>STEAM 熱賣榜</span><span class="metric">09/02 雷達</span></div>
-          <ol>
-            <li class="hot"><span class="nm">The Blood of Dawnwalker ★</span><span class="vn">持守 + 佳評</span></li>
-            <li><span class="nm">WARDOGS</span><span class="vn">熱賣</span></li>
-            <li><span class="nm">How to Fish</span><span class="vn">熱賣 持守</span></li>
-            <li class="hot"><span class="nm">STAR WARS Zero Company™</span><span class="vn">熱賣 + 爭議</span></li>
-            <li><span class="nm">007 First Light</span><span class="vn">熱賣</span></li>
-            <li><span class="nm">Crimson Moon</span><span class="vn">熱賣</span></li>
-            <li><span class="nm">Bodycam</span><span class="vn">熱賣</span></li>
-          </ol>
-          <div class="bf">Steam 熱賣榜 · 09/02 熱度雷達 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
-        </div>
-
-        <div class="board b-rblx">
-          <div class="bh"><span>ITCH.IO 早期</span><span class="metric">html5·meme·viral</span></div>
-          <ol>
-            <li class="hot"><span class="nm">COBB CAN MOVE</span><span class="vn">html5 持守</span></li>
-            <li><span class="nm">Twilight Observer</span><span class="vn">恐怖</span></li>
-            <li><span class="nm">CLOWN HOLE</span><span class="vn">html5</span></li>
-            <li><span class="nm">The Freak Circus</span><span class="vn">怪誕</span></li>
-            <li><span class="nm">Jest Messters</span><span class="vn">meme</span></li>
-            <li><span class="nm">StreamRush</span><span class="vn">viral</span></li>
-            <li><span class="nm">Arthur's Nightmare</span><span class="vn">meme</span></li>
-          </ol>
-          <div class="bf">itch.io · 09/02 熱度雷達 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
-        </div>
-
-      </div>
-
-      <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>Blood of Dawnwalker 佳評持守熱賣；Star Wars Zero Company 爭議中仍在榜；007 First Light IP 授權新訊號</h3>
-        <div class="sum">今日 Steam 熱賣榜三條觀察：① <b>The Blood of Dawnwalker</b> 首週評論佳，持守熱賣榜（PCGamer 今日雷達），說明前 CDPR 開發者的自主 IP 策略初步成功。② <b>STAR WARS Zero Company™</b> 在 Bit Reactor 80% 裁員爭議中仍留榜——玩家採購決策與開發商勞資新聞脫鉤現象持續。③ <b>007 First Light</b> 新入榜——James Bond IP 從電影轉向遊戲，是 2026 年 IP 跨媒體授權熱度的最新案例。itch.io 方面，COBB CAN MOVE 繼續連守 html5 熱榜前列，迷因類 Jest Messters 持守。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Blood of Dawnwalker 的佳評故事和 Bit Reactor 的裁員悖論形成鮮明對比：<b>同樣是從大廠環境出走，選擇不同——一個做自主 IP，一個做授權 IP——結果大不同</b>。007 First Light 的入榜提示：IP 授權仍是 2026 年玩家購買行為的重要驅動力，但 Blood of Dawnwalker 的成功說明自主 IP 也有機會在沒有 IP 光環的情況下勝出。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM / PCGamer · <a href="https://store.steampowered.com/explore/new/" target="_blank">熱賣榜 ↗</a> · <a href="https://www.pcgamer.com/games/rpg/good-reviews-are-a-great-relief-says-blood-of-dawnwalker-director-as-former-cd-projekt-coworkers-line-up-to-offer-congratulations/" target="_blank">PCGamer ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 04 高討論文章 -->
-    <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>消費者權益</span></span>Sony 賠 800 萬美元、卻堅持「理性消費者知道自己不擁有數位遊戲」——2026 最大的企業法律雙標</h3>
-        <div class="sum">Sony Interactive Entertainment 在美國集體訴訟中同意賠償近 $7.9M（近 800 萬美元），了結消費者對 PlayStation Store 數位遊戲定價的集體訴訟。與此同時，PlayStation 在訴訟文件中主張「reasonable consumers already know they don't actually own their digital games」。三家媒體（Gamespot、Eurogamer、VGC）今日雷達收錄。（多源，摘要層，未經第三方稽核）此聲明使 Sony 成為業界首家以法律文件形式明確否認「數位遊戲所有權」的主要玩家。Eurogamer 標題：「PlayStation argues 'reasonable consumers' already know they don't actually own their digital games」。VGC 標題：「Sony says 'reasonable consumers' know they don't own the digital games they buy」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「理性消費者」的論述是一把雙刃劍：<b>Sony 在法律上可能站得住腳，但公關上製造了業界最完美的反諷素材</b>。今天「付了全價，卻不擁有」的討論，和昨天 Bit Reactor 的「做了遊戲，卻看不到成果」形成業界剝削論述的完整兩面——一面是消費者，一面是開發者。GameGen 的切角：平台的「授權」模式讓所有人都更脆弱。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAMESPOT / EUROGAMER / VGC · <a href="https://www.gamespot.com/articles/sony-to-pay-out-nearly-8-million-in-class-action-settlement-over-game-prices/" target="_blank">Gamespot ↗</a> · <a href="https://www.eurogamer.net/playstation-reasonable-consumers-know-dont-own-digital-games" target="_blank">Eurogamer ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI 動向</span></span>DLSS 5 正式落地：「yassification」爭議從洩漏期進入實測期——AI 圖形的信任戰今日開打</h3>
-        <div class="sum">Nvidia DLSS 5 今日（2026-09-03）隨 NBA 2K27 正式上線。主要事實：① <b>The Verge（pub 2026-09-01，tavily_news）</b>：DLSS 5 需要 RTX 50 系顯卡，入門門檻極高。② <b>Polygon（pub 2026-09-01，tavily_news score 0.800）</b>：幀率衰退約 50%，「Ugly AI graphics and a 50% performance hit」。③ <b>VGC 今日雷達</b>：洩漏版 DLSS 5 的「yassification」（AI 角色過度美化）引發廣泛反彈。④ <b>Gamespot（tavily_news）</b>：官方 demo 效果「a different reality」，稱實際表現可能優於洩漏版——但玩家的先入為主負面印象已然形成。今日是「理論爭議」和「真實數據」的分水嶺。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>DLSS 5 的核心衝突不是技術問題，而是<b>「誰控制玩家的感官體驗？」</b>——AI 美化角色外觀是在不問用戶意見的情況下改變用戶認同的東西，這是信任崩塌的根本原因，不是畫質好壞的問題。GameGen 的 AI 定位應在這波討論中明確：我們的 AI 是工具，玩家和創作者決定輸出；我們不替平台決定「你的角色長什麼樣」。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">POLYGON / VERGE / VGC · <a href="https://www.polygon.com/nvidia-dlss-5-performance-hit-ai-generated-graphics/" target="_blank">Polygon ↗</a> · <a href="https://www.theverge.com/tech/986378/nvidia-dlss-5-launch-nba-2k27" target="_blank">Verge ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story rl reveal">
-        <h3><span class="tag rl"><span>業界格局</span></span>13TB Steam 洩漏 + Don't Nod「轉型計畫」裁員 + Savvy Games CEO 離職 + Capcom/Konami 本月公佈</h3>
-        <div class="sum">四條業界格局訊號：① <b>13TB Steam 歷史資料洩漏</b>（Game Developer 今日雷達）：含 Half-Life 2: Episode 3、Portal 2 早期開發素材，是近年最大遊戲資料外流事件，HN 社群對歷史素材高度感興趣。② <b>Don't Nod「轉型計畫」</b>（RPS、Eurogamer 今日雷達）：《奇異人生》和《Aphelion》開發商宣布「transformation initiative」，業界普遍解讀為裁員前奏——繼昨日 Bit Reactor 後，今日業界又一個裁員訊號。③ <b>Savvy Games Group CEO Brian Ward 卸任</b>（GamesIndustry.biz、Eurogamer 今日雷達）：沙烏地阿拉伯遊戲投資帝國最高層異動，任內監督數十億行動遊戲收購。④ <b>Capcom + Konami 本月均宣布展示活動</b>（VGC 今日雷達）：9 月遊戲公告潮開始，可能有重要 IP 動向。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Don't Nod 的裁員訊號和昨日 Bit Reactor 並列，說明<b>「改編授權 IP 的工作室」正在進入系統性清算期</b>——Life is Strange 是授權作品，Bit Reactor 是 Star Wars 授權。Savvy Games CEO 離職則提示：砸錢收購行動遊戲的沙烏地模式可能正在重新評估。Capcom/Konami 的 9 月公告，是本月唯一的正向行業訊號視窗。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAMEDEVELOPER / RPS / EUROGAMER · <a href="https://www.gamedeveloper.com/pc/report-13tb-of-steam-data-leaked-after-users-access-publicly-accessible-endpoint-" target="_blank">Steam Leak ↗</a> · <a href="https://www.rockpapershotgun.com/life-is-strange-developer-dont-nod-look-primed-for-layoffs-as-the-studio-announces-a-transformation-intitiative" target="_blank">Don't Nod ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 05 迷因題材 -->
-    <section id="meme">
-      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因</span></span>DLSS 5「AI 整容臉」今日成真——從「洩漏截圖」到「正式功能」，梗的進化完成；itch.io 持守熱門</h3>
-        <div class="sum">昨日的「DLSS 5 AI 整容」洩漏截圖今日已從迷因素材升格為「正式功能現實」——DLSS 5 隨 NBA 2K27 正式上線，玩家現在可以親身驗證「yassification」是真是假。這個迷因的獨特之處：<b>它不需要開發者製造，因為真實的 AI 功能就是梗本身。</b>社群的「before/after 比較」截圖預計今日開始爆發，Twitter/Reddit 上的 DLSS 5 改臉合集可能是今日最高分享量的遊戲圖像素材。itch.io 迷因類：Jest Messters、Arthur's Nightmare、DON'T DO IT 持守；StreamRush 和 STREAMFLIPPY'S CUSTOM NIGHT 在 viral 標籤持續上榜（heat_latest.json itch_io 收錄）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「DLSS 5 AI 整容」梗是 2026 年「AI 改變遊戲外觀」議題的最佳教材——<b>不需要用 AI 生成假截圖，真實功能就夠諷刺了</b>。這個話題在 GameGen 社群討論中的切入角：「當 AI 改變外觀，誰有權決定？」——用這個問題把討論拉回「創作者工具 vs. 平台工具」的框架。注意：不轉發任何具體「整容臉」圖，走泛化框架。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中（不轉整容臉圖）</span></span></div></div>
-          </div>
-          <div class="src">VGC / ITCH.IO · <a href="https://www.videogameschronicle.com/news/nvidias-controversial-dlss-5-officially-launches-this-week-via-nba-2k27/" target="_blank">VGC DLSS ↗</a> · <a href="https://itch.io/games/tag-meme" target="_blank">itch.io meme ↗</a></div>
-        </div>
-      </article>
-
-      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ Know Your Meme「Popular right now」及 Threads 繁中圈本次排程無瀏覽器，<b>目前無法完全證實</b>。今日迷因彈藥以「DLSS 5 yassification 正式上線」（AI 整容梗從假說到真實）和「Sony『理性消費者知道不擁有數位遊戲』法庭語錄」（消費者諷刺梗）為主。後者預計在台灣遊戲社群有高分享力——「付了全價，不擁有」是普遍共鳴點。
-      </div>
-    </section>
-
-    <!-- 06 機制靈感庫 -->
-    <section id="lab">
-      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <div class="boards reveal">
-        <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">Steam / HN / Reddit / itch</span></div>
-          <ol>
-            <li class="hot"><span class="nm">Paradox Afterworld RPG hook——用 RPG 鈎子吸引大戰略新手</span><span class="vn">★ 今日首選</span></li>
-            <li class="up"><span class="nm">WoW 住宅設計系統——玩家創作即內容，無需開發者持續餵料</span><span class="vn">PCGamer 今日</span></li>
-            <li><span class="nm">Blood of Dawnwalker「小團隊聚焦型 RPG」——比大作更精準的體驗設計</span><span class="vn">今日佳評</span></li>
-            <li><span class="nm">Sony 數位所有權困境→「遊戲存在於何處？」哲學設計探索</span><span class="vn">今日熱議</span></li>
-            <li><span class="nm">DLSS 5 同意機制缺失→「允許 AI 修改」選項設計啟示</span><span class="vn">AI 設計反例</span></li>
-          </ol>
-          <div class="bf">PCGamer / EUROGAMER / STEAM · 09/03 今日熱度</div>
-        </div>
-      </div>
-
-      <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>Paradox Afterworld：用 RPG 鈎子降低大戰略門檻——「我終於搞懂大戰略了」的設計哲學</h3>
-        <div class="sum">Eurogamer 今日報導（story_eurogamer）：Paradox Interactive 的新作《Afterworld》讓記者感嘆「這是我第一款真正理解的大戰略遊戲」（"feels like the first grand strategy game I can properly wrap my head around"）——設計師刻意加入 RPG 鈎子吸引大戰略新手，降低長久以來令人卻步的入門門檻。同日 PCGamer 報導 WoW 住宅設計師分享五大技巧：玩家自主設計住宅的 UGC（用戶生成內容）模式，成為《魔獸世界》新的留存引擎。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「RPG 鈎子讓大戰略變可親」是設計語言跨類型融合的最新案例——<b>不改變核心機制，只改變玩家進入的第一道門</b>。WoW 住宅則說明：讓玩家成為內容創作者，比開發者持續供給更能維持留存率。這兩個設計洞察都直接對應 GameGen AI 生成的最佳實踐：降低創作門檻（Paradox 的「讓新手也能玩大戰略」），讓玩家創作成為內容本身（WoW 的住宅設計師）。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>單一遊戲沒有病毒級暴衝，但「偷竊機制」類型在 Roblox 雙榜制霸</h3>
+        <div class="sum">Steam 真·日比今日最大是 <b>CS:GO +15.7%（53.6 萬人）</b>，但這是超大體量老遊戲的正常日內波動，非新事件帶動；<b>steam_movers 排名跳動</b>顯示 Hunt: Showdown 1896 排名由第 84 進到第 79（+5 名），今日無新進榜黑馬。真正值得記的暴衝訊號在 Roblox：即時榜第 1 名（Steal An Egg，108 萬在線）與第 9 名（Steal a Brainrot）<b>都是「偷竊」機制</b>，代表這個 loop 不是單一遊戲的偶然爆紅，是被反覆驗證的類型級黏著模式。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>比起追單一遊戲的漲跌幅，今天更該記住的是<b>「偷竊」這個機制類型本身在 Roblox 長期霸榜</b>——這代表 GameGen 抄這個 loop 做 demo，風險比蹭任何單一熱門遊戲都低（機制不受版權保護），而且已經有百萬級同時在線的市場驗證。已收頭版 Demo Top 1。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
@@ -514,64 +368,238 @@
             <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">EUROGAMER / PCGAMER · <a href="https://www.eurogamer.net/paradox-afterworld-hands-on-preview-grand-strategy" target="_blank">Afterworld ↗</a> · <a href="https://www.pcgamer.com/games/world-of-warcraft/5-top-tips-from-world-of-warcraft-housing-creators-for-making-amazing-masterworks/" target="_blank">WoW Housing ↗</a></div>
+          <div class="src">STEAM 官方 API + RBLXDB.COM · 09/03 · <a href="https://rblxdb.com/best-roblox-games" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅需要可靠即時快照，本次抓到的是過期資料（標示 2025/11），<b>目前無法完全證實</b>，不以舊數據冒充趨勢。Steam 真·日比為 09-03 官方 API 即時（radar 07:31）。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">The Blood of Dawnwalker</span><span class="vn">新品 · 今日上市</span></li>
+            <li><span class="nm">Eldara</span><span class="vn">新品</span></li>
+            <li><span class="nm">Lost Sanity: Cthulhu</span><span class="vn">新品</span></li>
+            <li><span class="nm">Blast Beam Bang</span><span class="vn">新品</span></li>
+            <li><span class="nm">Monoka</span><span class="vn">新品</span></li>
+            <li><span class="nm">Lancers Cup</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 09/03 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO HTML5 熱門</span><span class="metric">小體量早期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Insomnia（Jeff the Killer 同人恐怖）</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">The Grand Book Archive: Tidy Up</span><span class="vn">整理放置</span></li>
+            <li><span class="nm">Death Loop（Danganronpa 風推理）</span><span class="vn">推理</span></li>
+            <li><span class="nm">Twilight Observer</span><span class="vn">氛圍探索</span></li>
+            <li><span class="nm">Your Other Half</span><span class="vn">敘事demo</span></li>
+            <li><span class="nm">The Freak Circus</span><span class="vn">氛圍</span></li>
+          </ol>
+          <div class="bf">itch.io html5 · 09/03 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>早期 loop 共相：恐怖同人氛圍、整理放置、推理選擇——但同人角色要換皮</h3>
+        <div class="sum">Steam 新品 + itch.io html5 兩榜歸納，早期款集中三類：<b>恐怖同人氛圍</b>（Insomnia 直接使用網路傳說角色 Jeff the Killer）、<b>整理 / 放置</b>（The Grand Book Archive: Tidy Up）、<b>推理選擇敘事</b>（Death Loop，標「Danganronpa-inspired」）。共通點：規則簡單、氛圍感強、易於截圖分享。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>整理 / 放置類 IP 風險最低，最適合直接做泛化模板</b>；恐怖同人款（Insomnia）雖然人氣高，但直接使用 Jeff the Killer 這類網路傳說角色屬中等風險，GameGen 做同類題材時要換成原創泛化角色，不能照搬。推理款同理，抄 loop、換皮，不挪用角色美術與識別度高的橋段。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO · 09/03 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
-    <!-- 07 繁中 Threads 熱話 -->
-    <section id="zh">
-      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ 排程環境無瀏覽器，Threads 繁中圈需登入/JS 渲染，<b>目前無法完全證實</b>，不以舊資料補位。今日可追的長線母題：<b>Sony「理性消費者知道不擁有數位遊戲」</b>（台灣玩家反應：「這句話說出來真的很大膽」）、<b>DLSS 5 今日正式上線</b>（有 RTX 50 系的台灣玩家第一手評測值得追蹤）、<b>Blood of Dawnwalker 佳評</b>（前 CDPR 小團隊的感人故事，繁中社群通常對這類敘事有高共鳴）、<b>Don't Nod 裁員</b>（Life is Strange 台灣粉絲社群反應）——下次有瀏覽器時驗證補入。</div>
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>產業</span></span>SteamDB 併入 Nexus Mods：獨立社群工具走向平台收編</h3>
+        <div class="sum">經營 13 年的獨立 Steam 資料庫 SteamDB，2026/9/2 正式宣布加入 Nexus Mods（母公司 Chosen）。官方聲明維持獨立品牌、網址與社群，現有免費功能不會收費；創辦人 xPaw 公開表示長期獨力維運已出現 burnout。此消息同日登上 GamesIndustry.biz、Game Developer、Rock Paper Shotgun 頭條，並登頂 Reddit r/gaming、r/Games 當日熱門（Nexus Mods 官方公告，原文 2026-09-02）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>社群自建的資料 / 工具層，證明長期價值後被平台收編，是遊戲產業的常見終局。GameGen 現在做的 Trend-to-Game 雷達本質上也是「即時資料 + 創作工具」——這條路徑值得參照。已收頭版 CJ Top 2。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NEXUS MODS · 9/2 · <a href="https://www.nexusmods.com/news/15597" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Rockstar 親口證實 GTA6 不用生成式 AI、單機無微交易</h3>
+        <div class="sum">Rockstar North 共同工作室負責人 Rob Nelson 接受 Kinda Funny 訪談，被直接問及 GTA6 是否使用生成式 AI，回答「No」；同時確認單機主線（11/19 上市）無微交易，GTA Online 未表態（Push Square，原文 2026-08-28，6 天前）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>大廠用「不碰生成式 AI」當品質保證在打，這是今天最值得 GameGen 拿來畫邊界的素材——我們不比「AI 好不好」，比「創作權在誰手上」。已收頭版 CJ Top 1。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PUSH SQUARE · 8/28 · <a href="https://www.pushsquare.com/news/2026/08/gta-6-contains-no-microtransactions-or-generative-ai-rockstar-says" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>對標</span></span>Roblox「偷竊」機制雙榜制霸——UGC 平台最耐用的黏著公式之一</h3>
+        <div class="sum">即時榜第 1 名 Steal An Egg &amp; Collect Rare Pets（108 萬在線、94% 喜歡度）與第 9 名 Steal a Brainrot，都是「潛入偷取 → 被偷通知 → 搶回來」的機制。兩款分屬不同工作室，證明這不是單一爆款，是被反覆驗證的類型（rblxdb.com，9/2 更新）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>UGC 平台驗證過的機制是 GameGen 最好抄的題材——不受版權保護、規則一句話講完、天然帶「被偷 / 搶回」的分享與 remix 誘因。已收頭版 Demo Top 1、小編 Top 1。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">RBLXDB.COM · 9/2 · <a href="https://rblxdb.com/best-roblox-games" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        🛰️ <b>競品 / 賽道背景（非今日新聞）</b>：Social AI Arcade 賽道已被資本驗證——Astrocade 5/5 募 $56M（Sea / Sequoia 領投、20M 互動用戶、80 國、$10M 創作者基金，&gt;14 天 ♨️ 延燒，非今日新料）；Rosebud AI 今日查無新公告。差異化看<b>分發速度與透明姿態</b>，不是比模型規模。來源 <a href="https://www.sci-tech-today.com/news/astrocade-raises-56m/" target="_blank">sci-tech-today ↗</a>。
       </div>
     </section>
 
-    <!-- 08 Trend-to-Game -->
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>itch.io meme／viral 標籤今日快照：荒謬單一動作 + 網路角色同人混搭</h3>
+        <div class="sum">今日 itch.io meme／viral 標籤即時快照（非全新上架，是今天的關注度排名）：meme 標籤有 <b>Freddy Fazbear's Dating Simulator</b>（FNAF 同人約會模擬）、<b>Asgore Runs Over Dess</b>（Undertale 角色惡搞撞人）、Jest Messters、Three Nights Lobotomized；viral 標籤有 <b>StreamRush</b>、Bomb Defuser、Ring Fight、Five Night's At Icy's 系列、Suck That Duck。共通公式：一句話講完的荒謬單一動作，疊加網路知名角色的同人混搭。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這類「荒謬動作 + 同人混搭」正是 GameGen 的甜蜜區，但<b>⚠️ IP 風險提醒</b>：多款直接使用 FNAF（Freddy Fazbear）、Undertale（Asgore）等有明確版權方的角色做同人惡搞，屬灰色地帶。GameGen 做同類題材時務必換成原創 / 泛化角色與造型，只抄「荒謬單一動作」的機制殼，不挪用受版權保護的角色識別度。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · IP</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO · 09/03 · <a href="https://itch.io/games/tag-meme" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>新鮮度警示</span></span>純網路迷因（KYM / Threads）今日暫缺，不採用回收舊梗</h3>
+        <div class="sum">本次排程環境的內建瀏覽器對外連線被拒（knowyourmeme.com、Threads 皆無法載入），純網路迷因（KYM「Popular right now」）無法即時抓取。<b>依紀律不採用 WebSearch 回收的舊梗充當「今天的梗」</b>，今天的迷因彈藥改由「有日期、有數字」的 itch.io 快照擔綱。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>⚠️ <b>目前無法完全證實</b>當日新生純網路迷因的新鮮度。下次有瀏覽器的環境（CC 互動 session）時再補 KYM / Threads 當日新梗 + first-seen 驗證。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>未證實</span></span></div></div>
+          </div>
+          <div class="src">（KYM / Threads 需瀏覽器 · 本次暫缺）</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（Roblox / itch）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">潛入偷取 / 被抓通知 — Roblox 雙榜驗證</span><span class="vn">★ 偷竊</span></li>
+            <li><span class="nm">整理 / 放置收納 — The Grand Book Archive</span><span class="vn">整理</span></li>
+            <li><span class="nm">荒謬單一動作 — itch meme/viral 快照</span><span class="vn">單鍵</span></li>
+            <li><span class="nm">推理選擇敘事 — Death Loop（換皮版）</span><span class="vn">推理</span></li>
+          </ol>
+          <div class="bf">Roblox / itch.io · 09/03 · <a href="https://rblxdb.com/best-roblox-games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>unityroom 本週查無新公告；itch.io 今天開跑「直播友善」遊戲祭值得追</h3>
+        <div class="sum">unityroom「Unity 1 週間ゲームジャム」最近一輪主題「しろ」已於 7/26–8/2 舉行、評選 8/9 截止，<b>本週查無新一輪公告</b>，佔位保留。另一個值得追的是 itch.io 今天（9/3）開跑的 <b>Craftpix Indie Jam #1-2026</b>（9/3–9/14），官方定位是「做給 streamer / YouTuber / TikToker 玩、看了會有反應」的遊戲祭——與 GameGen 的分享導向完全同頻，值得追蹤最終作品當機制參考庫。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>機制本身不受版權保護，照抄 loop、換泛化皮即可。今日首選公式：<b>Roblox 驗證過的「偷竊」loop</b>（風險最低、規模最大）→ 整理放置 / 荒謬單一動作（IP 風險低）→ 推理選擇（換皮，避開角色美術）。Craftpix Indie Jam 9/14 截止後回頭掃一輪得獎作品，可能是下一批可借用機制的來源。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO · <a href="https://itch.io/jam/craftpix-indie-jam-1-2026" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器可用，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次排程環境的內建瀏覽器對外連線被拒（knowyourmeme.com、twitchtracker.com 等站皆導航失敗），Threads 繁中圈當日熱話同樣無法即時抓取，<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計數字補位。CC 互動 session（chrome-devtools）或本機環境有瀏覽器時，請補抓三國 / 武俠 / 恐怖 / 捕捉 RPG 等題材變體與當日代表貼文。可追的長線母題：今天 Roblox「偷竊」機制雙榜制霸，繁中圈是否也有「偷」主題的哏圖 / 討論變體，下次有瀏覽器時可驗證。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>Sony「理性消費者」數位所有權聲明</td><td><span class="tmpl">「誰擁有你的數位遊戲？」論述貼</span></td><td>「Sony 說：付了全價，但你從來不擁有它。這是 2026 年最誠實也最令人不安的企業聲明。如果平台消失，你的遊戲庫也消失。設計要讓玩家感覺這是他們的——不是授權給他們的。」</td><td class="rk-low">低（泛化框架，不引用訴訟細節）</td><td>★ 今日最佳 CJ LinkedIn 素材，道德論述強，普通讀者也有共鳴</td></tr>
-          <tr><td>DLSS 5 正式上線，同意機制缺失</td><td><span class="tmpl">「AI 信任邊界」論述貼</span></td><td>「DLSS 5 今天正式上線了。它會在你不知情下改變你角色的長相。問題不是 AI 好不好——而是誰有權決定改什麼？AI 工具的信任基礎是用戶主控權，不是技術能力。」</td><td class="rk-low">低（泛化，不轉整容臉圖）</td><td>★ 今日最佳 X AI 透明度素材，接上週 DLSS 爭議線，今日是最佳發文時機</td></tr>
-          <tr><td>Blood of Dawnwalker 小團隊自主 IP 勝出</td><td><span class="tmpl">「創作者自主 IP」正向故事貼</span></td><td>「前 CD Projekt Red 開發者離開大廠，做了自己的 IP，今天評論爆棚。這不是運氣——這是當你不需要授權商點頭，你能做什麼。」</td><td class="rk-low">低</td><td>可做 X 正向故事，在 Bit Reactor/Don't Nod 負面新聞中提供情緒平衡</td></tr>
-          <tr><td>Don't Nod「轉型計畫」裁員訊號</td><td><span class="tmpl">「授權 IP 工作室困境」觀察貼</span></td><td>「Life is Strange 開發商宣布『轉型計畫』。Bit Reactor 昨天，Don't Nod 今天。做別人 IP 的工作室正在進入系統性壓力期——創作者需要自己的籌碼。」</td><td class="rk-low">低（泛化框架，不點名員工）</td><td>可做 X 觀察貼，搭昨日 Bit Reactor 形成系列論述</td></tr>
-          <tr><td>Tame Impala Coachella 2027（Google Trends）</td><td><span class="tmpl">音樂節遊戲 / 節慶場景遊戲</span></td><td>「Coachella 2027 陣容洩漏——每次大型音樂節都是一個遊戲場景機會。虛擬音樂節、AI 生成音樂節體驗——下一個 Fortnite 音樂節在哪裡？」</td><td class="rk-low">低（泛化，不引用陣容細節）</td><td>可做 X 互動貼，問受眾「你最想在哪個遊戲裡看到音樂節場景？」</td></tr>
-          <tr><td>13TB Steam 資料考古</td><td><span class="tmpl">「失落的遊戲」情懷貼</span></td><td>「13TB Steam 開發素材洩漏。Half-Life 2: Episode 3 的開發影像就在裡面。有些遊戲從未上市——它們的設計語言依然值得研究。你最想看哪款遊戲的開發素材？」</td><td class="rk-mid">中（不鼓勵下載洩漏檔案）</td><td>走「設計考古學」角度，問受眾互動，避開「去哪裡下載」方向</td></tr>
+          <tr><td>Roblox「偷竊」機制雙榜制霸（Steal An Egg #1／Steal a Brainrot #9）</td><td><span class="tmpl">潛入偷取 60 秒 loop</span></td><td>「戰利品清單」被偷通知＋搶回連結</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，機制不受版權保護，直接抄</td></tr>
+          <tr><td>Rockstar 證實 GTA6 不用生成式 AI（8/28，🔄近期）</td><td><span class="tmpl">「創作者選 AI」對比話題貼</span></td><td>立場表態 / 站隊討論</td><td class="rk-mid">中 · 措辭</td><td>聚焦「創作權歸誰」而非貶低傳統開發，CJ 線優先</td></tr>
+          <tr><td>《The Blood of Dawnwalker》今日上市</td><td><span class="tmpl">泛化吸血鬼喝血按鍵挑戰</span></td><td>「渴血值」分享卡，蹭上市日</td><td class="rk-mid">中 · IP</td><td>泛化黑暗奇幻皮，不挪用該作角色美術／世界觀</td></tr>
+          <tr><td>瑪利歐賽車 8 免費更新加 8 人分割畫面（9/2）</td><td><span class="tmpl">多人混亂競速小遊戲</span></td><td>「8 人同框有多亂」短影片素材</td><td class="rk-low">低</td><td>不挪用任天堂角色，純「多人同屏混亂」概念</td></tr>
+          <tr><td>itch.io meme/viral 快照（荒謬單一動作）</td><td><span class="tmpl">荒謬動作 + 泛化角色</span></td><td>好剪、易複製</td><td class="rk-mid">中 · IP</td><td>抄機制殼，換掉 FNAF / Undertale 等有版權角色</td></tr>
         </tbody>
       </table>
       </div>
     </section>
 
-    <!-- 09 CJ LinkedIn 題材 -->
+    <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>Sony 數位所有權悖論——「付了全價，擁有的是授權」</td><td>Sony 同意賠 $7.9M 了結集體訴訟，同時主張「reasonable consumers already know they don't actually own their digital games」。Gamespot、Eurogamer、VGC 今日雷達收錄。（多源，摘要層，pub 2026-09-02/03，未經第三方稽核）</td><td>"Sony just settled a lawsuit about digital game prices for $7.9 million. Their legal defense? 'Reasonable consumers already know they don't own digital games.' Pay full price. Own nothing. And apparently you should've known. This is the central tension of the platform economy — and it's not going away. The studios and tools that give creators and players actual ownership of their work will define what comes next."</td><td><a href="https://www.gamespot.com/articles/sony-to-pay-out-nearly-8-million-in-class-action-settlement-over-game-prices/" target="_blank">Gamespot ↗</a> · <a href="https://www.eurogamer.net/playstation-reasonable-consumers-know-dont-own-digital-games" target="_blank">Eurogamer ↗</a></td></tr>
-          <tr><td>Blood of Dawnwalker——前大廠開發者的自主 IP 成功方程式</td><td>Rebel Wolves（由前 CD Projekt Red 開發者創立）的《Blood of Dawnwalker》今日獲佳評，PCGamer 報導導演稱「great relief」，前 CDPR 同事紛紛祝賀。遊戲同時仍在 Steam 熱賣榜。（PCGamer 今日雷達，摘要層）</td><td>"Former CD Projekt Red devs founded Rebel Wolves. Made their own IP. Got great reviews. Their old coworkers are publicly congratulating them. This is what the path looks like when you own your work: you take on more risk, but you also take on all the upside. Not everyone can do it — but the tools that lower the barrier to 'making your own thing' are the most valuable thing in the industry right now."</td><td><a href="https://www.pcgamer.com/games/rpg/good-reviews-are-a-great-relief-says-blood-of-dawnwalker-director-as-former-cd-projekt-coworkers-line-up-to-offer-congratulations/" target="_blank">PCGamer ↗</a></td></tr>
-          <tr><td>DLSS 5 同意機制缺失——AI 產品的信任設計課</td><td>Nvidia DLSS 5 今日上線（NBA 2K27 首發）。在不問用戶意見的情況下改變角色外觀，引發「yassification」反彈（VGC 今日雷達）；Polygon 確認幀率衰退 50%（pub 2026-09-01）。（多源，摘要層）</td><td>"DLSS 5 launched today. It changes how characters look — without asking. Players are calling it 'yassification.' Frame rates drop 50%. The feature itself might be technically impressive. But the lesson for any AI product team: when you change something users identify with, without consent, trust collapses faster than your frame rate. Transparency and user control aren't ethics checkbox items. They're product survival."</td><td><a href="https://www.polygon.com/nvidia-dlss-5-performance-hit-ai-generated-graphics/" target="_blank">Polygon ↗</a> · <a href="https://www.videogameschronicle.com/news/nvidias-controversial-dlss-5-officially-launches-this-week-via-nba-2k27/" target="_blank">VGC ↗</a></td></tr>
+          <tr><td>大廠公開撇清生成式 AI，凸顯「創作者選 AI」與「發行商塞 AI」的邊界</td><td>Rockstar North 共同工作室負責人被直接問及 GTA6 是否用生成式 AI，回答「No」（Push Square，8/28）</td><td>"Rockstar said no to generative AI — as a publisher's choice for players. GameGen flips it: AI is a tool creators pick up themselves, in the open."</td><td><a href="https://www.pushsquare.com/news/2026/08/gta-6-contains-no-microtransactions-or-generative-ai-rockstar-says" target="_blank">↗</a></td></tr>
+          <tr><td>遊戲社群資料 / 工具層持續整併，凸顯基礎設施的戰略價值</td><td>經營 13 年的獨立資料庫 SteamDB 9/2 正式併入 Nexus Mods，維持獨立品牌與免費機制（Nexus Mods 官方）</td><td>"Community data infrastructure just got acquired — again. As platforms mature, the tooling layer becomes the strategic asset."</td><td><a href="https://www.nexusmods.com/news/15597" target="_blank">↗</a></td></tr>
+          <tr><td>UGC 平台的「抢奪型」loop 持續驗證黏著度，簡單機制仍是王道</td><td>Roblox 即時榜第 1（Steal An Egg，108 萬在線）與第 9（Steal a Brainrot）均為偷竊機制（rblxdb.com，9/2）</td><td>"The #1 and #9 games on Roblox right now share one mechanic: steal, get caught, steal back. Simple loops still win at scale."</td><td><a href="https://rblxdb.com/best-roblox-games" target="_blank">↗</a></td></tr>
+          <tr><td>賽道已被資本驗證，差距在分發速度（背景參照，非今日新聞）</td><td>Astrocade 5/5 募 $56M（Sea / Sequoia 領投、20M 用戶、80 國，&gt;14 天 ♨️）</td><td>"The social AI arcade thesis is already funded. The race is who distributes fastest."</td><td><a href="https://www.sci-tech-today.com/news/astrocade-raises-56m/" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 1（Sony 數位所有權）已附完整 EN hook，可直接交 CJ 每日包。pub 2026-09-02/03 多源交叉，摘要層。DLSS 5 整容：泛化框架，不引用 AI 改臉截圖。Blood of Dawnwalker：正向故事，與業界負面新聞形成情緒對比，適合今日使用。對外用字已過濾賭場語言。
+        📄 頭版 🎯 CJ Top 2（GTA6 不用生成式 AI、SteamDB 併入 Nexus Mods）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 驗原文日期與主張比對（見文末 Evidence Log）。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
 
-    <!-- 10 Actions -->
+    <!-- Actions -->
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Sony「理性消費者知道不擁有數位遊戲」語錄——今日最高分享力的業界批評素材，普通讀者也懂</li><li>DLSS 5 今日正式上線——「AI 改變你角色外觀，沒人問過你」（AI 透明度論述，今日是最佳時機）</li><li>Blood of Dawnwalker 小團隊勝出——「前 CDPR 開發者做了自己的 IP，佳評如潮」（正向故事，情緒平衡）</li><li>Don't Nod 轉型/裁員訊號——「奇異人生開發商陷入困境」（搭昨日 Bit Reactor，形成裁員系列論述）</li><li>13TB Steam 考古洩漏互動貼——「你最想看哪款遊戲的開發素材？」（互動型，帶回覆）</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ Paradox Afterworld 啟示：RPG 鈎子降低大戰略門檻——設計一個「AI 引導新玩家進入複雜系統」的 GameGen demo，用自然語言替代複雜 UI</li><li>WoW 住宅設計啟示：玩家住宅 UGC——GameGen AI 生成個人化遊戲空間 demo</li><li>「同意機制」demo：對比 DLSS 5 的無聲改變，展示 GameGen AI 如何讓玩家明確選擇和控制 AI 輸出</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>🔭</span></div><h4>可追蹤的訊號</h4><ul><li>★ <b>DLSS 5 玩家真實反應</b>——今日上線後，NBA 2K27 社群的第一手評測是否比洩漏版本更好或更差；這個結果對整個 AI 圖形技術的信任度有長遠影響</li><li><b>PlayStation State of Play</b>——若今日（9/3）如昨日預告舉行，公告後 30 分鐘是社群反應最熱的窗口</li><li><b>Don't Nod 員工 LinkedIn 動態</b>——「轉型計畫」宣布後，員工是否開始公開求職是裁員確認的最早訊號</li><li><b>Capcom / Konami 9 月展示</b>——確認日期，提前準備反應貼文素材</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>DLSS 5 具體「yassification」截圖 → 不轉發 AI 改臉影像（版權 + 可能被解讀為嘲笑受影響角色）</li><li>Sony 訴訟具體法律細節 → 走「數位所有權」泛化框架，不引用訴訟文件細節或預測法律後果</li><li>13TB 洩漏檔案的存取方式 → 不提供任何下載路徑或存取教學（版權/法律風險）</li><li>Don't Nod 個別員工點名 → 走結構性分析，不點名員工或確認未公開的裁員名單</li><li>Blood of Dawnwalker 詳細劇情 → 走「小團隊自主 IP 成功」框架，不劇透遊戲內容</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭 Roblox「偷竊」雙榜：「偷回你的哏圖」反差貼 + demo gif</li><li>瑪利歐賽車 8 人分割畫面：「8 人同框混亂實測」短影片哏</li><li>（措辭需謹慎）GTA6 無 AI 聲明的中性拋問句：「創作者用 AI vs 發行商用 AI，你在意的是哪個？」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「偷回你的哏圖」60 秒搶奪 demo（本日首選，蹭 Roblox 雙榜）</li><li>泛化吸血鬼喝血按鍵挑戰（蹭 Blood of Dawnwalker 上市日，不挪用該作美術）</li><li>8 人混亂多人小遊戲雛形（蹭瑪利歐賽車話題）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>GTA6「零 AI」聲明後續輿論：玩家是否真的買單這個賣點</li><li>SteamDB 併購後，Nexus Mods 是否延伸更多社群工具收購</li><li>Roblox「偷竊」機制是否持續稱霸，或被新 loop 取代</li></ul></div>
       </div>
     </section>
 
@@ -579,24 +607,21 @@
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>Sony $7.9M 數位遊戲訴訟和解（Gamespot / Eurogamer / VGC）</td><td><a href="https://www.gamespot.com/articles/sony-to-pay-out-nearly-8-million-in-class-action-settlement-over-game-prices/" target="_blank">Gamespot</a> · <a href="https://www.eurogamer.net/playstation-reasonable-consumers-know-dont-own-digital-games" target="_blank">Eurogamer</a> · <a href="https://www.videogameschronicle.com/news/sony-says-reasonable-consumers-know-they-dont-own-the-digital-games-they-buy/" target="_blank">VGC</a>（今日雷達收錄，多源摘要層）<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>DLSS 5 今日上線 / RTX 50 系需求（The Verge）</td><td><a href="https://www.theverge.com/tech/986378/nvidia-dlss-5-launch-nba-2k27" target="_blank">The Verge</a>（tavily_news，pub 2026-09-01，score 0.823）摘要層<span class="pp">partial</span>　🔄→🆕（今日落地）</td></tr>
-        <tr><td>DLSS 5 幀率衰退 50%（Polygon）</td><td><a href="https://www.polygon.com/nvidia-dlss-5-performance-hit-ai-generated-graphics/" target="_blank">Polygon</a>（tavily_news，pub 2026-09-01，score 0.800）摘要層<span class="pp">partial</span>　🔄</td></tr>
-        <tr><td>DLSS 5 yassification 爭議（VGC）</td><td><a href="https://www.videogameschronicle.com/news/nvidias-controversial-dlss-5-officially-launches-this-week-via-nba-2k27/" target="_blank">VGC</a>（今日雷達收錄）摘要層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Blood of Dawnwalker 佳評（PCGamer）</td><td><a href="https://www.pcgamer.com/games/rpg/good-reviews-are-a-great-relief-says-blood-of-dawnwalker-director-as-former-cd-projekt-coworkers-line-up-to-offer-congratulations/" target="_blank">PCGamer</a>（今日雷達收錄）摘要層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>13TB Steam 資料洩漏（Game Developer）</td><td><a href="https://www.gamedeveloper.com/pc/report-13tb-of-steam-data-leaked-after-users-access-publicly-accessible-endpoint-" target="_blank">Game Developer</a>（今日雷達收錄）摘要層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Don't Nod「轉型計畫」（RPS / Eurogamer）</td><td><a href="https://www.rockpapershotgun.com/life-is-strange-developer-dont-nod-look-primed-for-layoffs-as-the-studio-announces-a-transformation-intitiative" target="_blank">RPS</a> · <a href="https://www.eurogamer.net/dont-nod-layoffs-restructuring-aphelion" target="_blank">Eurogamer</a>（今日雷達收錄）摘要層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Savvy Games Group CEO 卸任（GamesIndustry / Eurogamer）</td><td><a href="https://www.gamesindustry.biz/brian-ward-steps-down-as-savvy-games-group-ceo" target="_blank">GamesIndustry</a> · <a href="https://www.eurogamer.net/savvy-games-group-ceo-brian-ward-steps-down" target="_blank">Eurogamer</a>（今日雷達收錄）摘要層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Paradox Afterworld RPG hook（Eurogamer）</td><td><a href="https://www.eurogamer.net/paradox-afterworld-hands-on-preview-grand-strategy" target="_blank">Eurogamer</a>（今日雷達收錄）摘要層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Steam 在線數字（今日雷達）</td><td>heat_latest.json fetched_at 2026-09-02T07:30:28+08:00（前日資料）注意：今日 07:30 雷達未更新，以最近一次快照呈現<span class="ok">✓（前日快照）</span></td></tr>
+        <tr><td>GTA6 不用生成式 AI / 無微交易</td><td><a href="https://www.pushsquare.com/news/2026/08/gta-6-contains-no-microtransactions-or-generative-ai-rockstar-says" target="_blank">Push Square</a>（web_fetch）　原文日期 2026-08-28（meta article:published_time）　驗：Rob Nelson 被問及 AI 直接回答「No」、單機主線「no monetisation」、GTA Online 未表態<span class="ok">✓</span>　🔄 進展更新（6 天前，非 🆕）</td></tr>
+        <tr><td>SteamDB 併入 Nexus Mods</td><td><a href="https://www.nexusmods.com/news/15597" target="_blank">Nexus Mods 官方</a>（web_fetch）　原文日期 2026-09-02（meta twitter:data1）　驗：SteamDB 加入 Nexus Mods、維持獨立品牌 / 免費、xPaw 提及 burnout<span class="ok">✓</span>　🆕 今天新（≤48h）</td></tr>
+        <tr><td>Roblox Steal An Egg #1 / Steal a Brainrot #9</td><td><a href="https://rblxdb.com/best-roblox-games" target="_blank">rblxdb.com</a>（web_fetch）　refreshed 2026-09-02　驗：Steal An Egg 1,078,437 同時在線、94% 喜歡、1.2B 造訪；Steal a Brainrot 第 9（135,712）<span class="pp">summary</span>（第三方非官方數據）　🆕</td></tr>
+        <tr><td>The Blood of Dawnwalker 今日上市</td><td>Steam 官方新聞頁 + PC Gamer / Vice / Wikipedia 多源（WebSearch，未逐句 web_fetch）　標題確認 2026-09-03 同步上市 PS5 / Windows / Xbox<span class="pp">summary</span>　🆕</td></tr>
+        <tr><td>瑪利歐賽車 8 死亡動員令 8 人分割畫面更新</td><td>Nintendo 官方 What's New（WebSearch，未逐句 web_fetch）　pub 2026-09-02（mynintendonews.com 同步報導）　驗：v4.0.0 免費更新、Switch2 支援 5–8 人分割畫面<span class="pp">summary</span>　🆕</td></tr>
+        <tr><td>Twitch 排行（未採用）</td><td><a href="https://twitchtracker.com/games" target="_blank">TwitchTracker</a>（web_fetch 成功，但內容標示「2025 年 11 月」快照）　⚠️ 與今日脫節，判定不可用，已在即時熱榜 / 暴衝箱誠實排除，未計入任何數字</td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-09-03T07:31 官方 GetNumberOfCurrentPlayers（API 直抓，免敘事閘）　CS:GO +15.7%（536K）、Hunt: Showdown 1896 排名 84→79（+5）為真數字<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 1 多源交叉（Gamespot/Eurogamer/VGC 今日雷達）· Steam＝官方 API 09/02 07:30 快照（今日雷達疑前日資料，加注時間戳）· Twitch/Threads/KYM 因排程環境無瀏覽器標暫缺，不以估計假裝 live · 新鮮度：≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/09/03 · 對外發布前一律過賭場語言 + 真人 / IP 風險濾鏡</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 摘要層 · Steam＝官方 API 09-03 即時真數字（radar 07:31）· Roblox 用第三方即時追蹤站驗證後採用（已標註非官方）· Twitch 抓到過期快照已誠實排除 · Threads / KYM / unityroom 本輪因沙箱瀏覽器連線被拒標暫缺 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/09/03 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
