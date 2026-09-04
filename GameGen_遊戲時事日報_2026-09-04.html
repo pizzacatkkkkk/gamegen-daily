@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -235,9 +237,9 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>今天是三條訊號疊加的一天，每條都有直接可用的遊戲機制切角。</b>①<b>Rust 月度清零日效應</b>：9/4 週四是 9 月第一個週四，Rust 慣例在此日重置所有伺服器，今日 Steam 同時在線從昨天 47,301 暴衝至 102,443（<span class="hl">+116.6%</span>），是今日 Steam 最大速度信號，月度清零帶動的玩家回流現象本身就是絕佳的社群鉤子。②<b>Xbox Cloud Gaming 月限 15 小時</b>：微軟 9/3 宣布 Game Pass Ultimate 雲端遊玩每月限 15 小時、超出付費（The Verge / IGN / Xbox 官方），已引發大量討論，「時間是資產」機制天然成型。③<b>Sony 遊戲所有權聲明</b> HN 今日第一（168 點 / 236 則留言），對數位所有權的玩家焦慮引發廣泛共鳴。</p>
-        <p>AI 動向同樣密集：LLM 協助開發者讀懂 1993 年 Amiga 68000 組合語言完成移植（HN 今日第二，162 點）、Naavik 刊出《AI 如何解鎖新遊戲機制》、中國在遊戲 AI 押下重注；同時 《巫師 4》開發商 CD Projekt 確認「仍以人為主」開發，《太空戰士 2》開發商確認不用生成式 AI，兩邊都在拿「不用 AI」當信任符號打。Steam 本週單週首次突破 700 款新遊戲，74% 評論數低於 10——分享性強的遊戲此刻優勢最明顯。</p>
-        <div class="pull">▸ 今天就能蹭：以「Rust 月度清零」為鉤，做一款「歸零重來 / 你帶走什麼上新服？」60 秒選擇遊戲（首選）；同時整理 CJ 貼文，角度：Steam 700 款新遊戲但你只記得 1%——可分享才是護城河。</div>
+        <p><b>9/3 這天，官方平台在「取用」上加裝碼表，古老機制卻讓一款老遊戲一夜暴衝。</b>Xbox 官方 9/3 宣布<span class="hl">雲端遊玩 11 月起改按月限時</span>——Game Pass Ultimate 每月僅 15 小時、Premium 10 小時、Essential 5 小時，超過要額外購買時數（官方預估影響約 4% 訂閱戶）；同一天正是 Rust 每月強制重置日（每月第一個週四），<span class="hl">Rust 同時在線 24 小時內從 47,301 衝到 102,443（+116.6%）</span>，全服歸零重回 tier-1 反而是最大的回訪引擎（Steam 官方 API 即時真數字）。</p>
+        <p>方向對照很清楚：<b>平台想用「限制取用」留住營收</b>，但真正一次把玩家拉回來的是<b>「有時限的重開機事件」</b>——不是無限制的自由，是一個明確倒數的重來機會。對 GameGen 的訊號：與其比誰更「隨時可玩」，不如做<b>會過期的活動</b>（每日熱點、排行榜清零、限時 remix 窗口），這才是真正驅動 Repeat Creation 與分享的機制。</p>
+        <div class="pull">▸ 今天就能蹭：把「Rust 重置搶跑」做成 60 秒泛化生存搶收集 demo（免安裝、瀏覽器即玩，倒數計時 + 排行榜）＋ 一條 CJ 貼文「Xbox 用碼表留住雲端遊玩的營收；真正讓玩家一夜衝回來的，是一個會過期的重來機會——這就是我們每天在做的事」。</div>
       </div>
 
       <!-- 📰 今日彈藥 頭版 -->
@@ -249,19 +251,19 @@
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam 單週首次突破 700 款新遊戲上架——74% 評論數低於 10 條</div>
-            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 報導（2026-09-04），本週 Steam 上架遊戲數史上首次單週突破 700 款，但其中 74% 評論數低於 10 條，顯示能見度危機已是業界共識。</div>
-            <div class="ln"><b>GameGen 角度：</b>能見度危機對「分享型短遊戲」反而是利好訊號——傳統型遊戲被埋，但一款 60 秒 demo 天然帶分享 CTA、用梗帶流量，存活機率完全不同。這是跟 B2B operator / 工作室創辦人說「為什麼要做可分享小遊戲」最有力的一條今日數據。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "700 games launched on Steam this week. First time ever. 74% got fewer than 10 reviews. Discoverability is the game now. The studios that win aren't making the biggest games — they're making the most shareable ones."<br><span style="color:var(--ink-dim)">中譯：本週 Steam 上架 700 款遊戲，史上首次。74% 評論數不到 10 條。能見度才是現在真正的競技場。贏家不是做最大遊戲的工作室——而是做最容易分享的那個。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/over-700-games-launched-on-steam-in-one-week-for-the-first-time-though-74-had-fewer-than-10-reviews" target="_blank">GamesIndustry.biz ↗</a>　pub 2026-09-04　verified ✓</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>雲端遊玩開始按小時計費——平台在「取用」上加碼表，正是輕量嵌入式工具的機會窗</div>
+            <div class="ln"><b>新聞事實：</b>Xbox 官方 9/3 宣布（news.xbox.com，經 Pure Xbox 引用官方聲明驗證）：11 月起 Game Pass Ultimate 雲端遊玩每月上限 15 小時、Premium 10 小時、Essential 5 小時，超過需另購買時數；官方預期影響約 4% 訂閱戶，並將同步開放非訂戶付費試用雲端遊玩。</div>
+            <div class="ln"><b>GameGen 角度：</b>大平台開始把「隨時能玩」變成計費項目——這是「取用」正在變貴的訊號。GameGen 的 web-first playable link 沒有安裝、沒有訂閱、沒有小時上限，剛好接住被計費擠出來的輕度遊玩需求；對 operator / 品牌來說，嵌入式小遊戲也是比綁死單一平台雲端服務更低風險的觸及管道。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Xbox just put a meter on cloud gaming — 15 hours a month, then you pay more. Every platform adding friction to access is a reason lightweight, embeddable play matters more, not less."<br><span style="color:var(--ink-dim)">中譯：Xbox 剛幫雲端遊玩裝上碼表——每月 15 小時，超過要多付錢。每一個平台在取用上加裝碼表，都讓「輕量、可嵌入」的遊玩方式更重要，而不是更不重要。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.purexbox.com/news/2026/09/xbox-is-officially-putting-time-limits-on-cloud-gaming-for-game-pass-members" target="_blank">Pure Xbox（引官方 news.xbox.com）↗</a>　pub 2026-09-03　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>遊戲工作室 Playco 引入 GPT-6 Astra，原型設計人工修正比例降 50%</div>
-            <div class="ln"><b>新聞事實：</b>OpenAI 官方頁面（HN 收錄，4 點），Playco 工作室將 GPT-6 Astra 引入遊戲原型設計流程，手動修正比例下降約 50%（partial：HN 摘要層，未獨立逐字 web_fetch 驗原文）。</div>
-            <div class="ln"><b>GameGen 角度：</b>遊戲工作室已在用 AI 加速原型週期。GameGen 做的是把這個加速度直接交給創作者——不需要工程師配合，一句 prompt 出遊戲。Playco 的案例是 B2B 工作室採用 AI 工具的早期指標，CJ 的 operator 受眾最在乎的就是「開發周期能不能縮短」。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "A game studio just cut manual iteration work by 50% using AI for prototyping. The question isn't whether AI belongs in game development anymore. It's whether your team has access to it."<br><span style="color:var(--ink-dim)">中譯：一間遊戲工作室用 AI 輔助原型設計，砍掉 50% 手動修正工作量。現在的問題不再是「AI 該不該進入遊戲開發」，而是「你的團隊有沒有用到它」。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="http://openai.com/index/playco-game-prototyping-with-astra" target="_blank">OpenAI 官方 ↗</a>　pub 近期（HN 收錄）　<span style="color:var(--gold)">⚠️ partial：摘要層，建議 CW 發前補 web_fetch 驗原文</span></div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>OpenAI 親自下場證明：AI 能把一個原型變三個能玩的版本，人工修正砍半——但那是專業 IDE，不是消費端</div>
+            <div class="ln"><b>新聞事實：</b>OpenAI 9/3 發布案例（經 StartupHub.ai 引用 OpenAI 官方部落格驗證）：遊戲工作室 Playco 用其 AI IDE「Playbot」搭配 GPT-6 Astra，從一個未上色的 grey-box 基礎一次生成三款主題化原型、多數第一次就能玩，人工修正比前代模型減少 50%（⚠️ OpenAI／Playco 未公開具體衡量方式與樣本數，50% 這個數字目前無法完全比較）。</div>
+            <div class="ln"><b>GameGen 角度：</b>全球最大 AI 實驗室親自下場證明「AI 加速遊戲原型」這條路線是真的——只是他們做的是給專業開發者用的 IDE 工具（還是要 grey-box、還是要工程師修一半）。GameGen 做的是同一件事的消費端版本：不需要 grey-box、不需要工程師，一句話直接生一個能玩能分享的成品，速度是以「分鐘」而不是「原型迭代輪次」計算。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "OpenAI just proved AI can turn one prototype into three playable ones — for professional dev teams, with an IDE, and half the fixes still by hand. We skip the IDE and the fixes: one prompt, one playable game, in minutes."<br><span style="color:var(--ink-dim)">中譯：OpenAI 剛證明 AI 能把一個原型變成三個能玩的版本——但那是給專業開發團隊用的 IDE，而且還有一半修正要靠人工。我們跳過 IDE 跟修正：一句話，一款能玩的遊戲，幾分鐘搞定。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/today-in-ai-playco-playbot-cuts-fixes-50" target="_blank">StartupHub.ai（引 OpenAI News）↗</a>　pub 2026-09-03　verified ✓</div>
           </div>
         </div>
 
@@ -270,27 +272,27 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Xbox 宣布 Game Pass Ultimate 雲端遊戲每月限 15 小時，超出另計費<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>微軟 9/3 官方宣布，Game Pass Ultimate 訂戶的 Xbox Cloud Gaming（xCloud）每月限額從無限制改為 <b>15 小時</b>，超出後需額外付費。The Verge（989166）/ IGN / Xbox 官方新聞（news.xbox.com）/ VGC / PCGamer 多源確認。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Xbox just put a 15-hour monthly limit on cloud gaming. Time is now the resource you manage. Somewhere a game designer is already building a mechanic around that. 👇"　<span style="color:var(--ink-dim)">中譯：Xbox 剛給雲端遊戲設了每月 15 小時的上限。時間現在是你要管理的資源了。某個遊戲設計師已經在以這個為基礎做機制了。👇</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>「你剩幾小時？」倒數計時 + 資源分配小遊戲——輸入你今天最重要的三件事，生出「你的時間怎麼分配」倒數挑戰。</div>
-            <div class="meta">來源 <a href="https://www.theverge.com/news/989166/microsoft-xbox-cloud-gaming-hourly-limits-changes" target="_blank">The Verge ↗</a> · <a href="https://news.xbox.com/en-us/2026/09/03/xbox-cloud-gaming-changes/" target="_blank">Xbox 官方 ↗</a>　pub 2026-09-03　verified ✓（多源）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>就連《巫師4》都不敢讓 AI 做完整遊戲——但我們的遊戲本來就不用做「完整」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>CD Projekt Red 9/3 在 H1 2026 財報電話會議上表示，《巫師4》開發「仍然主要靠人力」，不打算依賴 AI 製作完整遊戲，高管稱 AI 是「工具而非取代」（GameSpot / PC Gamer，9/3）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Even the studio making The Witcher 4 says it won't let AI make a full game. Good thing our games were never meant to take 4 years — they're meant to take a prompt. 👇"　<span style="color:var(--ink-dim)">中譯：就連做《巫師4》的工作室都說不會讓 AI 做完整遊戲。還好我們的遊戲從來不是要花 4 年做的——是要花一句話做的。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>用「AAA 不敢，我們敢」反差開場，接一句話生一款遊戲的實拍 demo 短影片。</div>
+            <div class="meta">來源 <a href="https://www.gamespot.com/articles/the-witcher-4-will-be-made-predominantly-using-people-and-not-ai/" target="_blank">GameSpot ↗</a>　pub 2026-09-03　摘要層</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rust 月度清零日：9 月第一週四帶動同時在線暴衝 +116.6%<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Steam 官方 API（07:30 radar），Rust 今日同時在線 102,443 人，昨日 47,301 人，日比 <b>+116.6%</b>。Rust 慣例在每月第一個週四重置全部伺服器（monthly wipe），今天（9/4 週四）符合條件——伺服器歸零引發存量玩家集體回流，是 Rust 社群最強的週期性「事件」。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Rust just hit 100K concurrent — because today is wipe day. Every month, a reset makes 100,000 people log back in. The mechanic of wiping progress is, paradoxically, what keeps the game alive. 👇"　<span style="color:var(--ink-dim)">中譯：Rust 剛突破 10 萬同時在線——因為今天是清零日。每個月，一次重置讓 10 萬人同時重新登入。把進度清空這個機制，弔詭地讓遊戲持續存活。👇</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>「如果你的人生今天歸零，你帶走什麼上新局？」互動選擇 demo → 生「你的生存優先級清單」分享卡。</div>
-            <div class="meta">來源 Steam 官方 API　radar 2026-09-04T07:30　verified ✓（官方數字）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rust 重置日一夜 +116.6%——全服歸零反而是最大回訪引擎<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>9/3（每月第一個週四）是 Rust 官方強制重置日，全服地圖與藍圖歸零、所有人重回 tier-1；Steam 官方數據顯示同時在線由 47,301 衝上 102,443（+116.6%，heat-radar 官方 API 直抓）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Rust wipes everyone back to zero once a month — and that's exactly when everyone shows up. Turns out 'starting over together' is one of gaming's strongest hooks. 👇"　<span style="color:var(--ink-dim)">中譯：Rust 每個月讓所有人歸零一次——而那正是所有人蜂擁而至的時刻。原來「一起從頭開始」才是遊戲界最強的鉤子之一。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>做「60 秒重置搶跑」demo：倒數計時 + 資源搶收集 + 排行榜，抄「歸零回訪」機制、題材完全泛化。</div>
+            <div class="meta">來源 Steam 官方 API（heat_latest.json 07:30）+ <a href="https://www.gameserverkings.com/knowledge-base/rust/wipe-day-guide/" target="_blank">GameServerKings 重置排程 ↗</a>　摘要層</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Sony 就數位遊戲所有權發表大膽聲明，HN 今日最高討論（168 點 / 236 則）<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>HN 今日第一（168 點 / 236 則留言，aginggamer.net 報導），Sony 對數位遊戲所有權的聲明引發廣泛討論——玩家焦慮「買的遊戲不是真的屬於自己」。疊加昨日（9/3） Reddit r/gaming 同類話題多篇入榜。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Sony says players don't own their digital games. HN's top post today, 236 comments deep. Meanwhile, when you make a game with GameGen, you download it. It's yours."　<span style="color:var(--ink-dim)">中譯：Sony 說玩家不擁有自己的數位遊戲。今天 HN 第一名，236 則留言在吵。話說回來，用 GameGen 做的遊戲你自己下載，是你的。</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>自然帶出「用 GameGen 做的遊戲你 own，不是租的」定位，無需強推。</div>
-            <div class="meta">來源 <a href="https://aginggamer.net/game-industry/sony-makes-bold-claim-about-game-ownership/" target="_blank">aginggamer.net（HN #1）↗</a>　今日 168pt　<span style="color:var(--gold)">⚠️ summary 層（未逐字 web_fetch 驗 Sony 原聲明，建議 CW 補驗）</span></div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展 / 近期</span>《矮人要塞》作者：老闆的 AI 焦慮正在傳染給整個產業<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Dwarf Fortress 創作者 Tarn Adams 談到（Kotaku 9/1 報導，原話出自 Gamescom）業界因 AI 與裁員陷入混亂，形容「身邊每個人的老闆都在漸漸恐慌」，許多開發任務被直接壓給 Claude / Copilot 等工具完成，源頭是管理層壓力而非開發者自願。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "The Dwarf Fortress creator says every boss he knows is spiraling over AI. Meanwhile we just let players use it to make something fun in under a minute — no spiral required. 👇"　<span style="color:var(--ink-dim)">中譯：《矮人要塞》作者說他認識的每個老闆都在為 AI 陷入恐慌。而我們只是讓玩家用 AI 在一分鐘內做出好玩的東西——不用恐慌。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「老闆逼你用 AI」職場吐槽向 clicker，泛化職場情境、不影射特定公司。</div>
+            <div class="meta">來源 <a href="https://kotaku.com/dwarf-fortress-tarn-adams-genai-ai-vibe-coding-claude-copilot-2000730266" target="_blank">Kotaku ↗</a>　pub 2026-09-01（語出 Gamescom）　摘要層</div>
           </div>
         </div>
 
@@ -298,10 +300,10 @@
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「歸零重來，你帶走什麼？」60 秒生存優先級選擇 demo（蹭 Rust 月度清零日）<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>畫面顯示「伺服器將在 10 秒後歸零」倒數 → 玩家在有限時間點選 5 樣想「帶走」的東西（技能 / 道具 / 夥伴）→ 結束生成「你的生存優先級」分享卡，自動對比社群平均選擇。</div>
-            <div class="ln"><b>為何是今天首選：</b>Rust 月度清零引發今日 Steam 最大單日暴衝（+116.6%），清零+重來的社群情緒最高，蹭熱度窗口是今天。機制本身（倒數 / 優先選擇）不受版權保護，可直接套今天的梗。</div>
-            <div class="meta">綁 Steam 官方 API 今日真數字　模板：倒數資源選擇 / 優先級分析</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「Wipe Day Rush」60 秒重置搶跑——抄 Rust 的「歸零回訪」機制、題材全泛化<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>60 秒倒數計時的資源搶收集 / 佔地小遊戲，靈感抄 Rust「全服歸零」機制，題材泛化成任何主題（太空站 / 校園 / 廚房皆可），結束出「搶跑值」排行榜分享卡（純分數，不寫 payout / 下注）。</div>
+            <div class="ln"><b>為何是今天首選：</b>綁今天最大的結構性洞察（重開機事件驅動回訪），而且是可重複使用的公式——每週 / 每日都能重跑一次新題材，完全不涉及 IP 風險。</div>
+            <div class="meta">綁 Steam 官方 API（heat_latest.json 07:30）　模板：倒數搶收集</div>
           </div>
         </div>
       </div>
@@ -317,37 +319,31 @@
         <div class="board b-steam">
           <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 09/04 即時</span></div>
           <ol>
-            <li class="hot down"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">519K ▼3.2%</span></li>
-            <li class="hot up"><span class="nm">Rust 🔥 月度清零日</span><span class="vn">102K ▲116.6%</span></li>
-            <li class="down"><span class="nm">Palworld</span><span class="vn">89K ▼5%</span></li>
-            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">87K ▼3%</span></li>
+            <li class="down"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">519K ▼3.2%</span></li>
+            <li class="hot up"><span class="nm">Rust</span><span class="vn">102K ▲116.6%</span></li>
+            <li class="down"><span class="nm">Palworld</span><span class="vn">89K ▼5.0%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">87K ▼3.0%</span></li>
             <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">83K ▼5.8%</span></li>
-            <li class="up"><span class="nm">War Thunder</span><span class="vn">33K ▲15%</span></li>
+            <li class="up"><span class="nm">War Thunder</span><span class="vn">33K ▲15.0%</span></li>
           </ol>
           <div class="bf">Steam 官方 API · 09/04 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
-        <div class="board b-steam">
-          <div class="bh"><span>STEAM 排名跳動</span><span class="metric">日比移動 / 新進榜</span></div>
-          <ol>
-            <li class="up"><span class="nm">Bloons TD 6</span><span class="vn">+7 名（#89→#82）</span></li>
-            <li class="up"><span class="nm">Call of Duty: MW II</span><span class="vn">+6 名（#48→#42）</span></li>
-            <li class="up"><span class="nm">Forza Horizon 6</span><span class="vn">+6 名（#49→#43）</span></li>
-            <li class="up"><span class="nm">Monster Hunter Wilds</span><span class="vn">+6 名（#97→#91）</span></li>
-            <li class="hot"><span class="nm">Bodycam</span><span class="vn">🆕 新進榜 #57</span></li>
-          </ol>
-          <div class="bf">Steam 官方 API · 09/04 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為 Cowork 排程、<b>無瀏覽器</b>可抓 Roblox 即時 CCU（roblox.com/charts / RTrack 需瀏覽器渲染，本次排程導航被拒）。<b>目前無法完全證實</b>。CC 互動 session 有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
         </div>
 
         <div class="board b-dim">
           <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
-          <div class="nodata">⚠️ 本次排程環境 Twitch 抓取到的快照為過期資料，非即時。為避免用舊數據冒充今日趨勢，本欄<b>目前無法完全證實</b>，不採用。</div>
-          <div class="bf">TwitchTracker（快照過期，未採用）</div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得（導航被拒）。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-04T07:30:34，19/19 源全通），Steam 為<b>官方 API 即時真數字</b>（GetNumberOfCurrentPlayers）。Rust 月度清零日（9 月第一個週四）是今日最重要數字，102K → 47K 逆增長 +116.6%，屬週期性事件，非突發異常。War Thunder +15% 為次級信號，今日無明確新事件觸發，推測日常波動。
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-04T07:30），Steam 為 <b>09-04 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。Roblox CCU / Twitch 觀看因本次為 Cowork 排程、<b>無瀏覽器</b>（頁面導航被拒）仍標「暫缺」——CC 互動 session 有瀏覽器時可補真數字。
       </div>
     </section>
 
@@ -356,34 +352,23 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>暴衝</span></span>Rust 單日 +116.6%（102K）：月度清零日是最強的週期性回流機制</h3>
-        <div class="sum">Steam 官方 API 今日數字：Rust 從昨日 47,301 人暴衝至 102,443 人（<b>+116.6%</b>），是今日所有遊戲中日比增幅最大的。原因清晰：9/4 週四為 <b>9 月第一個週四</b>，Rust 慣例在每月第一個週四執行全球強制伺服器重置（monthly wipe），所有建設、資源、進度歸零，引發大量休眠玩家集體回流。這不是意外暴衝，是<b>設計驅動的週期性社群事件</b>，每月複現。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「清零重來」是比「排行榜」更強的黏著機制——它不需要玩家「贏」，只需要玩家「再開始一次」。Rust 每月一次的 wipe 本質上是強制的新鮮感重置，讓每個人都回到平等起跑線。GameGen 的 Trend-to-Game 可以直接抄這個情緒框架：<b>今天最好做的 demo 就是「你的生活歸零重來，你帶走什麼？」60 秒選擇遊戲</b>（已收頭版 Demo Top 1）。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Rust 重置日 +116.6% 過旗標：不是新梗，是「排定的歸零」——但正是本日 demo 靈感源頭</h3>
+        <div class="sum">今日真·日比只有 <b>Rust 一款過 ≥15% 暴衝旗標：102,443 人（+116.6%）</b>，原因是 9/3（每月第一個週四）Rust 官方強制重置日，地圖與藍圖全服歸零、所有人重回 tier-1。<b>War Thunder 33K（+15.0%）</b>剛好貼著旗標線，其餘多為小幅回落（CS:GO −3.2%、Palworld −5.0%、PUBG −3.0%、R6 −5.8%）。<b>steam_movers 排名跳動</b>：Bloons TD6（89→82）、CoD: Modern Warfare II（48→42）、Forza Horizon 6（49→43）、Monster Hunter Wilds（97→91）皆 +6～7 名；<b>新進榜</b> Bodycam（第 57 名）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Rust 的暴衝<b>不是新梗在爆</b>，是遊戲設計裡最古老的機制之一：<b>排定的、會過期的歸零事件</b>。這對 trend-to-game 的題材價值不在「蹭話題」，而在「抄機制」——今天的 Demo 首選正是把這個機制泛化重製。steam_movers 的排名跳動較像常態版本更新帶動，題材價值中等；Bodycam 新進榜值得下週追蹤是不是有新一波寫實 FPS 潮。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">STEAM 官方 API · 09/04 · <a href="https://store.steampowered.com/app/252490" target="_blank">原文 ↗</a></div>
+          <div class="src">STEAM 官方 API · 09/04 即時（radar 07:30）· <a href="https://www.gameserverkings.com/knowledge-base/rust/wipe-day-guide/" target="_blank">重置排程原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>新進榜</span></span>Bodycam 新進 Steam 最多遊玩榜 #57——超寫實 FPS 黑馬持續升溫</h3>
-        <div class="sum">第一人稱超寫實拍攝風格遊戲 Bodycam（Steam appid 2406770）今日首次出現在最多遊玩榜（排名 #57），同時列入熱賣榜。遊戲以「模擬警察密錄器視角」為核心視覺賣點，早期在 YouTube / TikTok 的實況片段引發大量討論，今日排名突破正是社群曝光轉化的結果（Steam 官方數據，09/04）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Bodycam 的崛起再次驗證「極端視覺新鮮感 + 易截圖分享」的爆紅公式——密錄器視角是一句話就能理解的視覺差異。GameGen 適合借用「第一人稱視角 + 意外遭遇」的情境框架，配上今日熱點做角色皮膚（不挪用 Bodycam 美術）。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 · 09/04 · <a href="https://store.steampowered.com/app/2406770" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次排程無瀏覽器、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比為 09-04 官方 API 即時（radar 07:30）。
+      </div>
     </section>
 
     <!-- 早期訊號 -->
@@ -392,45 +377,45 @@
       <div class="boards reveal">
 
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending · 09/04</span></div>
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
           <ol>
             <li class="hot"><span class="nm">Ribbit Rogue</span><span class="vn">新品</span></li>
             <li><span class="nm">Broken Front</span><span class="vn">新品</span></li>
             <li><span class="nm">Reality Breach</span><span class="vn">新品</span></li>
-            <li><span class="nm">DuckShot Bros</span><span class="vn">新品</span></li>
-            <li><span class="nm">Good Knight's Adventures</span><span class="vn">新品</span></li>
+            <li><span class="nm">Pro Strategy Football 2027</span><span class="vn">新品</span></li>
+            <li class="hot"><span class="nm">DuckShot Bros</span><span class="vn">新品</span></li>
             <li><span class="nm">Rogue Runner</span><span class="vn">新品</span></li>
           </ol>
           <div class="bf">Steam 新品榜 · 09/04 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-rblx">
-          <div class="bh"><span>ITCH.IO VIRAL/MEME</span><span class="metric">今日快照</span></div>
+          <div class="bh"><span>ITCH.IO HTML5 新爆</span><span class="metric">小體量早期</span></div>
           <ol>
-            <li class="hot"><span class="nm">StreamRush</span><span class="vn">viral</span></li>
-            <li><span class="nm">STREAMFLIPPY'S CUSTOM NIGHT</span><span class="vn">viral</span></li>
-            <li><span class="nm">RarityRNG</span><span class="vn">viral</span></li>
-            <li><span class="nm">BOMB DEFUSER</span><span class="vn">viral</span></li>
-            <li><span class="nm">Ring Fight</span><span class="vn">viral</span></li>
-            <li><span class="nm">Insomnia（Jeff the Killer）</span><span class="vn">html5熱門</span></li>
+            <li class="hot"><span class="nm">Insomnia（Jeff the Killer 同人恐怖）</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">Twilight Observer</span><span class="vn">氛圍</span></li>
+            <li><span class="nm">Death Loop（Danganronpa 風推理）</span><span class="vn">推理</span></li>
+            <li><span class="nm">The Grand Book Archive: Tidy Up</span><span class="vn">整理</span></li>
+            <li><span class="nm">The Freak Circus 怪馬戲</span><span class="vn">氛圍</span></li>
+            <li><span class="nm">The Devil's Judgment</span><span class="vn">恐怖</span></li>
           </ol>
-          <div class="bf">itch.io viral · 09/04 heat-radar · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+          <div class="bf">itch.io html5 · 09/04 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
         </div>
 
       </div>
 
       <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>新品共相：Roguelite 動物擬人 + 射擊混搭仍是低成本首週爆點配方</h3>
-        <div class="sum">Steam 新品榜今日前排：Ribbit Rogue（青蛙 roguelite）、DuckShot Bros（鴨子射擊）、Good Knight's Adventures（輕冒險），共同特徵是<b>動物擬人皮膚 + 簡單核心 loop</b>。itch.io viral 榜由 StreamRush（直播主題）/ RarityRNG（抽稀有度）主導，與昨日類似——「抽 / 稀有度」loop 週期性重現。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>動物擬人 + roguelite 是目前 IP 風險最低、分享性最強的新品包裝。Ribbit Rogue 的青蛙皮膚可以拆成「青蛙跳關」loop 直接泛化抄，不挪用原作角色設計。RarityRNG 的「稀有度顯示」分享卡是現成可抄的社群機制。</div>
+        <h3><span class="tag rl"><span>洞察</span></span>itch 本週恐怖 / creepypasta 敘事潮明顯；Steam 新品仍是 roguelite 為主力</h3>
+        <div class="sum">itch.io html5 新爆榜今天有明顯的<b>恐怖 / creepypasta 敘事潮</b>：Insomnia（直接掛同人 creepypasta IP「Jeff the Killer」）、Twilight Observer、The Devil's Judgment、The Freak Circus，加上推理向的 Death Loop（標「Danganronpa-inspired」）；另有療癒向的整理模擬 The Grand Book Archive: Tidy Up。Steam 新品榜則以<b>roguelite（Ribbit Rogue、Rogue Runner）</b>與戰略模擬（Broken Front、Pro Strategy Football 2027）為主力，屬常規新品冒頭、非爆發性訊號。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>恐怖敘事類最好剪、最好分享（jump-scare 片段天生病毒），但 <b>Insomnia 直接沿用「Jeff the Killer」這個知名 creepypasta 角色與形象，IP／版權風險中等</b>——GameGen 若要蹭這波恐怖潮，必須用<b>原創怪談角色</b>、不可挪用該名稱與形象。療癒整理（Tidy Up）與 roguelite 規則簡單、IP 風險最低，可列入次要模板池。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中</span></span></div></div>
           </div>
-          <div class="src">STEAM / ITCH.IO · 09/04 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原文 ↗</a></div>
+          <div class="src">STEAM / ITCH.IO · 09/04 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
@@ -439,68 +424,53 @@
     <section id="talk">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>產業</span></span>Steam 單週 700 款上架、74% 評論個位數——能見度危機變成業界公開事實</h3>
-        <div class="sum">GamesIndustry.biz 今日（9/4）報導：本週 Steam 上架遊戲數史上首次突破 700 款，其中 74% 評論數低於 10 條，意即大多數遊戲幾乎沒有玩家看到。業界分析師同步在多平台引用此數據作為「Steam 已達飽和」的佐證。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>對傳統遊戲開發來說這是壞消息，對 GameGen 是機會訊號——「分享型短遊戲」的擴散路徑完全不依賴 Steam 發現頁；一個帶分享 CTA 的 60 秒 demo，流量來自社群，不是演算法。已收頭版 CJ Top 1。</div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>產業</span></span>Xbox 官方拍板：雲端遊玩 11 月起按月限時，Ultimate 每月僅 15 小時</h3>
+        <div class="sum">Xbox 官方 9/3 宣布（news.xbox.com，經 Pure Xbox 逐句引用官方聲明驗證）：Game Pass Ultimate 每月雲端遊玩上限 15 小時、Premium 10 小時、Essential 5 小時，11 月上路，超過需另外購買時數；官方稱這是因「雲端服務成本隨使用量與時長增加」，預期影響約 4% 訂閱戶，未來將同步開放非訂戶付費試用雲端遊玩。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是今天最大的產業訊號——大平台正把「隨時能玩」變成計費項目。已收頭版 CJ Top 1，是本日最強 LinkedIn 彈藥：平台加碼表，正是輕量、免安裝、可嵌入的 web-first 遊玩方式的機會窗。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">GamesIndustry.biz · 9/4 · <a href="https://www.gamesindustry.biz/over-700-games-launched-on-steam-in-one-week-for-the-first-time-though-74-had-fewer-than-10-reviews" target="_blank">原文 ↗</a></div>
+          <div class="src">XBOX WIRE / PURE XBOX · 9/3 · <a href="https://www.purexbox.com/news/2026/09/xbox-is-officially-putting-time-limits-on-cloud-gaming-for-game-pass-members" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI 動向</span></span>用 LLM 讀 68000 組合語言：把 1993 年 Amiga 遊戲移植到 Godot（HN 今日第二，162 點）</h3>
-        <div class="sum">HN 今日第二（162 點 / 56 則留言），開發者記錄了如何讓 LLM 逐行閱讀 1993 年 Amiga 遊戲的 68000 組合語言碼，協助理解並重寫邏輯、移植到 Godot 引擎（babyloniantwins.com，原文今日）。討論焦點：LLM 作為「程式語言翻譯機」協助讀懂人類已幾乎忘記的舊架構。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條是 CJ 可以拿來說「AI 讓遊戲開發的時間範圍延展了」的好素材——LLM 現在可以讀懂 30 年前的舊碼，讓遺留系統重獲新生。GameGen 的方向剛好相反：讓完全不懂程式的人，今天就做出一款遊戲。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">HN 162pt · 9/4 · <a href="https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>產業</span></span>Xbox Cloud Gaming 月限 15 小時：訂閱制的「時間稀缺」化</h3>
-        <div class="sum">微軟 9/3 官方宣布，Game Pass Ultimate 雲端遊戲從無限制改為每月 15 小時上限，超出另計費（Xbox 官方、The Verge、IGN、VGC、PCGamer 多源確認）。HN 以 33 點 / 11 則留言收錄，Reddit r/gaming 今日多篇討論進入熱榜（r/gaming 今日 top-of-day），成本轉移反應強烈。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「時間是資產」從隱喻變成微軟的真實政策，這個框架天然適合做「倒數計時決策」類遊戲。GameGen 可以做一個「你剩 15 小時，你玩什麼」的互動問答 → 生分享卡。已收頭版小編 Top 1。</div>
+        <h3><span class="tag ai"><span>AI 動向</span></span>本週 AAA 對 AI 集體踩煞車：《巫師4》、《戰鎚40K：太空戰士3》都說「不靠 AI 做完整遊戲」</h3>
+        <div class="sum">同一週三則 AAA 表態疊加：CD Projekt Red 9/3 財報電話會議上稱《巫師4》「仍主要靠人力」、不依賴 AI 做完整遊戲（GameSpot / PC Gamer）；<b>戰鎚40K：太空戰士3</b> 開發商同週確認遊戲中<b>沒有生成式 AI</b>（IGN，9/3）；Dwarf Fortress 創作者 Tarn Adams（Kotaku 9/1 報導，語出 Gamescom）談到業界因 AI 與裁員陷入混亂。另一頭 Nvidia DLSS 5（9/1 上市）因「AI 濾鏡」在畫質與效能上引發爭議（The Verge / Polygon，9/1）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>傳統 AAA 正集體與「AI 做遊戲」保持距離、強調「人做的」才有品質保證。<b>GameGen 不參戰這條「AI 能不能做出嚴肅大作」的戰線</b>——我們做的是完全不同量級的東西：不是取代 4 年開發的敘事大作，是把一個梗變成 60～90 秒能玩能分享的東西。已收頭版 CJ Top1（Xbox）與小編 X Top1（巫師4）、X Top3（Dwarf Fortress）。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">THE VERGE / XBOX · 9/3 · <a href="https://www.theverge.com/news/989166/microsoft-xbox-cloud-gaming-hourly-limits-changes" target="_blank">原文 ↗</a></div>
+          <div class="src">GAMESPOT / PC GAMER / KOTAKU / IGN · 9/1–9/3 · <a href="https://www.gamespot.com/articles/the-witcher-4-will-be-made-predominantly-using-people-and-not-ai/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI 動向</span></span>大廠「零 AI」潮：《巫師 4》仍以人為主 + 《太空戰士 2》確認無生成式 AI</h3>
-        <div class="sum">CD Projekt Red 接受媒體訪問確認《巫師 4》開發「仍以人為主」（GameSpot、PCGamer，9/3）；同日 Saber Interactive 確認《Warhammer 40,000: Space Marine 3》不使用生成式 AI（IGN）。兩條同日出現，「不用 AI」已成為 AAA 大廠向核心玩家的信任品牌行銷語言。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>大廠連續用「不用生成式 AI」當品質保證——這條邊界讓 GameGen 可以繼續清晰站在「創作者主動選工具」那一側，不用跟大廠搶「哪個做法更對」。上週 GTA6 相同聲明、本週又兩條，可以整理一篇 CJ LinkedIn 分析：「大廠為什麼要宣稱不用 AI」背後的品牌邏輯。</div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>對標</span></span>OpenAI／Playco「Playbot」：一次生三款主題化原型，人工修正砍半——AI 遊戲原型賽道被巨頭親自驗證</h3>
+        <div class="sum">OpenAI 9/3 發布案例（經 StartupHub.ai 引 OpenAI 官方部落格驗證）：遊戲工作室 Playco 用 AI IDE「Playbot」搭配 GPT-6 Astra，從一個未上色 grey-box 基礎一次生成三款主題化原型、多數第一次就能玩，人工修正比前代模型減少 50%。Playbot 直接接入 Unity / Godot，能讓模型編輯場景、跑遊戲、自我驗證修改。⚠️ OpenAI／Playco 未公開「manual fix」如何定義、樣本數與衡量方式，50% 這個數字目前無法完全比較。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>全球最大 AI 實驗室親自證明「AI 加速遊戲原型」這條路線是真的——但他們做的是給<b>專業開發者</b>用的 IDE 工具（仍需 grey-box、仍需工程師修一半）。GameGen 站在同一條技術曲線的<b>消費端</b>：不需要 grey-box、不需要工程師，一句話直接產出成品。已收頭版 CJ Top 2。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">GAMESPOT / IGN · 9/3 · <a href="https://www.gamespot.com/articles/the-witcher-4-will-be-made-predominantly-using-people-and-not-ai/" target="_blank">原文 ↗</a></div>
+          <div class="src">OPENAI NEWS / STARTUPHUB.AI · 9/3 · <a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/today-in-ai-playco-playbot-cuts-fixes-50" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        🛰️ <b>AI 週邊訊號（今日額外）</b>：ArtStation 宣布封鎖 AI 爬蟲抓取藝術家作品（80.lv 報導）；《矮人要塞》創作者 Tarn Adams 接受 Kotaku 訪問，直言「管理層因強推 AI 慢慢失去理智」（原文 kotaku.com，2026-09-01）；Naavik 刊出《AI 如何解鎖新遊戲機制》（naavik.co）+ 中國遊戲 AI 豪賭分析。這四條訊號一起讀：AI 的反抗聲音和接納聲音都在同一週升溫，市場仍在形成期，差異化敘事窗口還在。
+        🛰️ <b>背景參考（非今日新聞）</b>：Sony / Microsoft 9/3 同步請求駁回消費者對「關稅退款」的集體訴訟（GamesIndustry.biz，跟進 Nintendo 立場），屬供應鏈成本轉嫁的延續劇情，非今日新爆點。另 Naavik 專欄《How AI is Unlocking Novel Game Mechanics》談 AI 對遊戲玩法設計的長線觀點，<b>發布日期未驗</b>，列為背景思考、不進頭版。競品賽道背景：Astrocade / Rosebud AI 資金與用戶規模已被驗證（&gt;14 天 ♨️ 延燒，不重複計入今日彈藥），今天 OpenAI/Playco 是相鄰的「AI 遊戲生產工具」訊號。來源 <a href="https://www.gamesindustry.biz/sony-and-microsoft-request-dismissal-of-consumer-lawsuits-over-tariff-refunds" target="_blank">GamesIndustry.biz ↗</a>。
       </div>
     </section>
 
@@ -509,32 +479,17 @@
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因訊號</span></span>Reddit r/IndieGaming 元批評：「這個版已變成 AI 廢料工廠」</h3>
-        <div class="sum">Reddit r/IndieGaming 今日（9/4）top-of-day 出現一則 meta 批評帖：「在過去 6 個月這個版已變成 AI 廢料工廠（AI slop factory）」（reddit.com/r/IndieGaming/comments/1w5vl54）——批評大量 indie 開發者用 AI 批量生成視覺素材並把垃圾内容丟上 Steam。目前未見評論數，但進入今日熱榜是確認訊號。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條是今天最重要的<b>自我警示訊號</b>。玩家社群對「AI 廢料」的反感已達到公開批評主流社群版塊的程度。GameGen 的護城河不是「量」，是「分享性」和「有梗」——我們做的每一個 demo 都必須有真實的社群鉤子，不能是批量生成的視覺垃圾。</div>
+        <h3><span class="tag ai"><span>新鮮度警示</span></span>純網路迷因今日無可靠新料：搜尋結果多為回收舊梗，本次已主動排除</h3>
+        <div class="sum">本次排程無瀏覽器可抓 KYM「Popular right now」與 Threads 繁中熱話（皆需登入 / JS 渲染，導航被拒）。WebSearch 查「本週病毒迷因」時，主要結果來自 napoleoncat.com 等常青 SEO 整理頁，把「chill guy」（2024–25 舊梗）當成本週新梗回收——<b>依紀律判定為回收舊梗、不符 first-seen ≤14 天，本次不採用、不放頭版</b>。今天的迷因彈藥改由「有日期、有數字」的遊戲事件（itch 恐怖 / creepypasta 敘事潮，見早期訊號箱）擔綱。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>⚠️ 目前無法完全證實</b>當日新生純網路迷因的新鮮度。CC 互動 session 有瀏覽器時，再補 KYM「Popular right now」/ Threads 當日新梗 + first-seen 驗證。可追的長線母題：今天「雲端遊玩限時」「Rust 重置」在英文遊戲圈熱度高，繁中圈是否長出「訂閱制越來越貴」的吐槽變體，值得下次查證。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk hi"><span>警示</span></span></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>未證實</span></span></div></div>
           </div>
-          <div class="src">REDDIT r/IndieGaming · 9/4 · <a href="https://www.reddit.com/r/IndieGaming/comments/1w5vl54/meta_in_the_last_6_months_this_sub_has_turned/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因遊戲</span></span>itch.io viral 今日快照：直播主題 + 稀有度 RNG 主導，單一動作框持續強勢</h3>
-        <div class="sum">今日 itch.io viral 標籤快照：StreamRush（直播主題競速）、STREAMFLIPPY'S CUSTOM NIGHT（直播主 FNAF 同人）、RarityRNG（稀有度抽籤）、BOMB DEFUSER（炸彈排除單一動作）、Ring Fight（格鬥單鍵）。直播主題連續兩日出現，RarityRNG 的「稀有度顯示」則是分享性最強的迷因格式之一。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「稀有度抽籤 + 分享卡」是今天 itch.io viral 榜最值得直接抄的格式：玩家做完動作，顯示「你的 Rarity: SSR / 普通人 / 蔥油餅」然後分享。配合今天任何熱點換皮都成立（Rust 清零 / Xbox 15h 都可套）。⚠️ STREAMFLIPPY'S CUSTOM NIGHT 使用 FNAF 周邊角色 IP，同類題材換泛化角色。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · IP</span></span></div></div>
-          </div>
-          <div class="src">ITCH.IO · 09/04 · <a href="https://itch.io/games/tag-viral" target="_blank">原文 ↗</a></div>
+          <div class="src">（KYM / Threads 需瀏覽器 · 本次暫缺）</div>
         </div>
       </article>
     </section>
@@ -544,21 +499,22 @@
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
       <div class="boards reveal">
         <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（今日驗證）</span></div>
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（itch / Steam 新品 + Rust 事件）</span></div>
           <ol>
-            <li class="hot"><span class="nm">清零重來 / 帶走什麼 — Rust 月度清零</span><span class="vn">★ 首選</span></li>
-            <li><span class="nm">倒數計時資源分配 — Xbox 15h 上限</span><span class="vn">時間稀缺</span></li>
-            <li><span class="nm">稀有度抽籤分享卡 — RarityRNG 格式</span><span class="vn">分享強</span></li>
-            <li><span class="nm">動物擬人 roguelite — Ribbit Rogue 皮</span><span class="vn">IP 低風險</span></li>
+            <li class="hot"><span class="nm">Rust 式「排定歸零」— 限時重置搶跑</span><span class="vn">★ 重置</span></li>
+            <li><span class="nm">The Grand Book Archive: Tidy Up — 療癒整理</span><span class="vn">整理</span></li>
+            <li><span class="nm">Ribbit Rogue / Rogue Runner — roguelite 簡單肉鴿</span><span class="vn">肉鴿</span></li>
+            <li><span class="nm">Insomnia 系 — 恐怖敘事一鍵驚嚇（需泛化角色）</span><span class="vn">恐怖</span></li>
+            <li><span class="nm">Death Loop — 推理選擇敘事</span><span class="vn">推理</span></li>
           </ol>
-          <div class="bf">Steam / itch.io / Reddit · 09/04 · 多源</div>
+          <div class="bf">itch.io html5 / Steam 新品 / Steam 官方 API · 09/04 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
         </div>
       </div>
 
       <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>「強制清零」是最被低估的黏著設計——Rust 每月都在示範一次</h3>
-        <div class="sum">Rust 月度清零（monthly wipe）每個月把所有玩家進度歸零，理論上應該讓玩家放棄；實際上每次 wipe 都帶來一波回流高峰（今日 +116.6% 驗證）。關鍵機制：<b>清零讓所有人回到同一起跑線，消除「老玩家優勢」讓新玩家不再覺得追不上</b>，同時給老玩家「重新開始」的合理藉口。這個設計在傳統遊戲設計理論中是「反 retention」的——Rust 證明它其實是「反週期黏著」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天最可借用的設計哲學：<b>不要讓玩家積累到不可撼動，要讓每個時刻都是一個乾淨的開始</b>。GameGen 的 Trend-to-Game demo 本身就是這個邏輯的極端版——每個梗都是一款全新的遊戲，不需要歷史積累，任何人都是第一次玩。</div>
+        <h3><span class="tag rl"><span>洞察</span></span>今日首抄公式：「排定的、會過期的重置」；恐怖敘事最好剪但要徹底泛化角色</h3>
+        <div class="sum">本日機制靈感的頭號公式來自 Rust 的重置日：<b>把「限時倒數＋歸零重來」包成一個獨立小遊戲</b>，比任何話題梗都更耐用（每週都能重跑）。其次是可直接抄成泛化模板的早期款：療癒整理（Tidy Up）、roguelite 簡單肉鴿（Ribbit Rogue / Rogue Runner）、推理選擇（Death Loop）。恐怖敘事（Insomnia 系）好剪好分享，但需徹底原創角色。<b>unityroom 今週ピックアップ需瀏覽器，本次排程暫缺、無法完全證實。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>機制本身不受版權保護，照抄 loop、換泛化皮即可。</b>優先順序：限時重置事件（今天最強、直接對應 Repeat Creation KPI）→ 療癒整理 / roguelite / 單鍵動作（IP 風險最低）→ 推理敘事、恐怖敘事（务必用原創角色，避開 Danganronpa / Jeff the Killer 等既有 IP 慣例）。下次有瀏覽器時補 unityroom 得獎機制。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
@@ -566,7 +522,7 @@
             <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">STEAM API / Rust 設計分析 · 09/04</div>
+          <div class="src">ITCH.IO / STEAM / STEAM API · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
@@ -576,8 +532,8 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
 
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器可用，繁中 Threads 熱話暫缺</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ 本次排程環境的內建瀏覽器對外連線被拒，Threads 繁中圈當日熱話無法即時抓取，<b>目前無法完全證實</b>，不以舊資料補位。可追的長線母題：今日「Rust 清零重來」情緒框、Xbox 15h 限制討論，繁中圈是否有類似「遊戲就是要重新開始才好玩」的論述，CC 互動 session 有瀏覽器時補抓。</div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為 Cowork 排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話（Threads 需登入 / JS 渲染，本次導航被拒），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。CC 互動 session（或本機環境有瀏覽器時）請補抓三國 / 武俠 / 恐怖 / 捕捉 RPG 等題材變體與當日代表貼文。可追的長線母題：今天「<b>雲端遊玩限時計費</b>」是全球級話題，繁中圈很可能也有「訂閱制越訂越貴」的吐槽變體，下次有瀏覽器時驗證是否已落到 Threads 繁中熱話。</div>
       </div>
     </section>
 
@@ -588,11 +544,12 @@
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>Rust 月度清零日（+116.6%，Steam 今日最大）</td><td><span class="tmpl">清零重來 / 60 秒優先選擇</span></td><td>「你帶走什麼上新局？」分享卡</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，機制不受版權保護，今日窗口最強</td></tr>
-          <tr><td>Xbox Cloud Gaming 月限 15 小時（9/3 官宣）</td><td><span class="tmpl">倒數計時資源分配</span></td><td>「你的 15 小時用在哪？」互動問答分享卡</td><td class="rk-low">低</td><td>不評判微軟政策，只借用「時間限制」框架</td></tr>
-          <tr><td>Sony 數位遊戲所有權聲明（HN 今日 #1）</td><td><span class="tmpl">「擁有 vs 租用」對比互動</span></td><td>「你做的遊戲是你的」定位天然落點</td><td class="rk-low">低</td><td>不評判 Sony，只對比「創作者擁有自己做的」</td></tr>
-          <tr><td>Steam 700 款新遊戲 / 74% 無人見（9/4）</td><td><span class="tmpl">「找到我！」反向隱身遊戲</span></td><td>「你能不能在 700 款裡找到我的遊戲」挑戰</td><td class="rk-low">低</td><td>CJ 線優先，C 側做「反能見度」哏</td></tr>
-          <tr><td>itch.io RarityRNG 稀有度分享格式</td><td><span class="tmpl">稀有度抽籤 + 分享卡</span></td><td>「你的 Rarity」貼文天然分享</td><td class="rk-low">低</td><td>任何今日熱點題材都能套此格式，IP 風險最低</td></tr>
+          <tr><td>Rust 重置日 +116.6%（排定歸零）</td><td><span class="tmpl">60 秒倒數搶收集</span></td><td>「搶跑值」排行榜、歸零回訪感</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，題材全泛化，可每週重跑</td></tr>
+          <tr><td>Xbox 雲端遊玩限時計費</td><td><span class="tmpl">零安裝 / 無時數上限反差 clicker</span></td><td>「我們沒有小時上限」對比梗</td><td class="rk-low">低</td><td>主打免安裝、免訂閱、瀏覽器即玩</td></tr>
+          <tr><td>《巫師4》不敢讓 AI 做完整遊戲</td><td><span class="tmpl">一句話生成 demo 短影片</span></td><td>「AAA 不敢，我們敢」反差開場</td><td class="rk-low">低</td><td>對外用字中立，不貶低 CDPR 團隊</td></tr>
+          <tr><td>Dwarf Fortress 創作者談 AI 職場焦慮</td><td><span class="tmpl">「老闆逼你用 AI」吐槽 clicker</span></td><td>開發者 / 上班族共鳴</td><td class="rk-low">低</td><td>泛化職場情境，不影射特定公司</td></tr>
+          <tr><td>Playco/Astra 一次三皮原型</td><td><span class="tmpl">一鍵三皮 remix demo</span></td><td>「哪個皮最好玩」投票</td><td class="rk-low">低</td><td>呼應 AI 原型概念，做消費端輕量版</td></tr>
+          <tr><td>itch 恐怖 / creepypasta 敘事潮</td><td><span class="tmpl">泛化都市傳說驚悚小遊戲</span></td><td>jump-scare 片段最好剪</td><td class="rk-mid">中 · 需避開既有 creepypasta 角色</td><td>用原創怪談角色，勿挪用 Jeff the Killer 等既有 IP</td></tr>
         </tbody>
       </table>
       </div>
@@ -605,14 +562,13 @@
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>Steam 700 款 / 74% 零評論：分享型遊戲是唯一的能見度護城河</td><td>本週 Steam 史上首次單週突破 700 款上架，74% 評論數低於 10 條（GamesIndustry.biz，9/4）</td><td>"700 games launched on Steam this week. First time ever. 74% got fewer than 10 reviews. Discoverability is the new moat. The studios that win aren't making the biggest games — they're making the most shareable ones."</td><td><a href="https://www.gamesindustry.biz/over-700-games-launched-on-steam-in-one-week-for-the-first-time-though-74-had-fewer-than-10-reviews" target="_blank">↗</a></td></tr>
-          <tr><td>遊戲工作室用 AI 原型設計，手動修正降 50%</td><td>Playco 引入 GPT-6 Astra，原型設計人工介入率降約 50%（OpenAI 官方，HN 4pt，partial verified）</td><td>"A game studio just cut manual work in half using AI for prototyping. The question isn't whether AI belongs in game development. It's whether your team has access to it."</td><td><a href="http://openai.com/index/playco-game-prototyping-with-astra" target="_blank">↗</a></td></tr>
-          <tr><td>大廠「不用 AI」浪潮第 3 波：品牌信任語言固化中</td><td>《巫師 4》CD Projekt（9/3）、《Space Marine 3》Saber（9/3）皆在同日宣稱不使用生成式 AI——連同上週 GTA6，三週三條大廠相同聲明</td><td>"Three major studios in three weeks: 'We don't use generative AI' — as a brand promise. The lines are being drawn between publisher choices and creator choices. GameGen sits on the other side of that line: AI as a tool creators choose."</td><td><a href="https://www.ign.com/articles/confirmed-no-generative-ai-in-warhammer-40000-space-marine-3" target="_blank">↗</a></td></tr>
-          <tr><td>Naavik：AI 如何解鎖新遊戲機制（產業深度）</td><td>Naavik 今日刊出分析文：AI 不只是加速現有流程，而是在解鎖過去做不到的新遊戲機制（naavik.co，今日）</td><td>"AI isn't just speeding up game dev — it's unlocking mechanics that weren't technically possible before. That's the shift GameGen is riding."</td><td><a href="https://naavik.co/ai-gaming/how-ai-is-unlocking-novel-game-mechanics/" target="_blank">↗</a></td></tr>
+          <tr><td>平台加碼表，輕量嵌入式工具的機會窗</td><td>Xbox 官方 9/3 宣布雲端遊玩 11 月起按月限時（Ultimate 15h / Premium 10h / Essential 5h），影響約 4% 訂閱戶</td><td>"Xbox just put a meter on cloud gaming. Every platform adding friction to access is a reason lightweight, embeddable play matters more."</td><td><a href="https://www.purexbox.com/news/2026/09/xbox-is-officially-putting-time-limits-on-cloud-gaming-for-game-pass-members" target="_blank">↗</a></td></tr>
+          <tr><td>AI 遊戲原型賽道被巨頭親自驗證，消費端仍空著</td><td>OpenAI／Playco「Playbot」9/3：一次生三款主題化原型、人工修正砍半（惟衡量方式未公開）</td><td>"OpenAI proved AI can turn one prototype into three playable ones — for professional teams with an IDE. We skip the IDE: one prompt, one game, in minutes."</td><td><a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/today-in-ai-playco-playbot-cuts-fixes-50" target="_blank">↗</a></td></tr>
+          <tr><td>傳統 AAA 集體與「AI 做完整遊戲」保持距離</td><td>CDPR《巫師4》9/3：不依賴 AI 做完整遊戲；戰鎚40K太空戰士3 同週確認無生成式 AI</td><td>"AAA won't trust AI to make a full game. Good thing our games were never meant to take 4 years to make."</td><td><a href="https://www.gamespot.com/articles/the-witcher-4-will-be-made-predominantly-using-people-and-not-ai/" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（Steam 700 款 / Playco AI 原型）已附完整 EN hook + 中譯。⚠️ Playco 條目為 partial（HN 摘要層），建議 CW 發前補 web_fetch 驗 OpenAI 原文確認數字。對外用字已過濾賭場語言。
+        📄 頭版 🎯 CJ Top 2（Xbox 雲端計費 vs 輕量嵌入、OpenAI/Playco 專業端 vs GameGen 消費端）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 驗原文日期 2026-09-03 + 主張比對（見文末 Evidence Log）。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
@@ -621,10 +577,10 @@
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭 Rust 清零日：「如果你的人生今天歸零，你帶走什麼？」選擇貼 + demo gif</li><li>Xbox 15h 上限：「你的 15 小時留給哪款遊戲？」帶問題回覆串</li><li>（措辭需謹慎）Steam 700 款：「74% 沒人看見——分享性才是護城河」產業觀點貼</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「歸零重來，你帶走什麼？」60 秒優先選擇 demo（本日首選，蹭 Rust wipe 日）</li><li>「稀有度分析」抽籤分享卡（蹭 RarityRNG 格式，任意今日熱點換皮）</li><li>「你的 15 小時倒數」資源分配小遊戲（Xbox 15h 框架）</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>StarCraft BlizzCon 傳聞是否有進一步消息（PCGamer / GameSpot 今日「Something Is Brewing」報導）</li><li>Sony 遊戲所有權聲明後續玩家反應是否升溫</li><li>Craftpix Indie Jam（9/3–9/14）作品中是否出現值得借用的機制</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>🚫</span></div><h4>今日避開</h4><ul><li>⚠️ 任何看起來像「AI 廢料（AI slop）」的批量生成視覺內容——r/IndieGaming 今日元批評已成討論焦點</li><li>不評判 Xbox / Sony 政策本身，只借用機制框架</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭 Rust 重置日：「歸零重來」反差貼 + Wipe Day Rush demo gif</li><li>蹭雲端遊玩限時：「我們沒有小時上限」零安裝對比貼</li><li>蹭《巫師4》表態：「AAA 不敢，我們敢」一句話生一款遊戲短影片</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「Wipe Day Rush」60 秒重置搶跑（抄 Rust 歸零機制）—— 本日首選</li><li>「老闆逼你用 AI」職場吐槽 clicker（蹭 Dwarf Fortress 創作者發言）</li><li>一鍵三皮 remix demo（呼應 Playco/Astra 一次三原型概念）</li><li>泛化都市傳說驚悚小遊戲（抄 itch 恐怖潮 loop，原創角色）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Xbox 雲端遊玩限時：11 月正式定價 / 玩家流失反應</li><li>OpenAI GPT-6 Astra 後續：是否有消費端 / 玩家可用的版本釋出</li><li>itch 恐怖 / creepypasta 敘事潮是否延燒到下週，或只是單週雜訊</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Insomnia 系「Jeff the Killer」等既有 creepypasta 角色與形象直接挪用 → 用原創怪談角色</li><li>來路不明、無 first-seen 的回收舊梗（如「chill guy」），別寫成「今天的梗」</li><li>對外文案的賭場語言（下注 / payout / big win / guaranteed）</li><li>談 CDPR / Dwarf Fortress 時保持事實中立，不貶低對方團隊或影射特定公司</li></ul></div>
       </div>
     </section>
 
@@ -632,20 +588,22 @@
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>Steam 700 款 / 74% 評論低於 10</td><td><a href="https://www.gamesindustry.biz/over-700-games-launched-on-steam-in-one-week-for-the-first-time-though-74-had-fewer-than-10-reviews" target="_blank">GamesIndustry.biz</a>　pub 2026-09-04　heat_latest.json story_gamesindustry 欄收錄　主張：史上首次單週超 700 款、74% 評論數 &lt; 10<span class="ok">✓</span>（摘要層，主張與標題高度一致）　🆕</td></tr>
-        <tr><td>Playco + GPT-6 Astra，手動修正降 50%</td><td><a href="http://openai.com/index/playco-game-prototyping-with-astra" target="_blank">OpenAI 官方</a>（HN 4pt）　heat_latest.json hackernews 欄收錄　<span class="pp">⚠️ partial：僅摘要層，未逐字 web_fetch 驗原文，50% 數字待複核</span>　🆕</td></tr>
-        <tr><td>Xbox Cloud Gaming 月限 15 小時</td><td><a href="https://www.theverge.com/news/989166/microsoft-xbox-cloud-gaming-hourly-limits-changes" target="_blank">The Verge</a> + <a href="https://news.xbox.com/en-us/2026/09/03/xbox-cloud-gaming-changes/" target="_blank">Xbox 官方</a>　heat_latest.json hackernews（33pt）＋story_pcgamer＋story_vgc＋story_gamespot 四源同收　主張：月限 15h、超出付費<span class="ok">✓</span>（多源交叉）　pub 2026-09-03　🔄 進展更新（昨天，&lt;48h）</td></tr>
-        <tr><td>Sony 遊戲所有權聲明（HN #1）</td><td><a href="https://aginggamer.net/game-industry/sony-makes-bold-claim-about-game-ownership/" target="_blank">aginggamer.net</a>（HN 168pt / 236 則）　heat_latest.json hackernews 欄首條　<span class="pp">⚠️ summary 層：HN 標題可讀，Sony 原聲明原文未逐字 web_fetch，建議 CW 補驗</span>　今日🆕</td></tr>
-        <tr><td>LLM 讀 68000 組合語言移植 Amiga→Godot（HN #2）</td><td><a href="https://babyloniantwins.com/blog/porting-a-1993-amiga-game-to-godot/" target="_blank">babyloniantwins.com</a>（HN 162pt / 56 則）　heat_latest.json hackernews 欄第二　摘要層，主張與 HN 標題一致<span class="pp">summary</span>　今日🆕</td></tr>
-        <tr><td>Rust +116.6% 月度清零日</td><td>heat_latest.json steam_live + steam_velocity 欄　官方 GetNumberOfCurrentPlayers　102,443（今日）vs 47,301（昨日）= +116.6%<span class="ok">✓</span>（官方 API 真數字）　9 月第一個週四月度清零推論 = 歷史慣例，非今日查證來源，標記推論</td></tr>
-        <tr><td>r/IndieGaming 「AI slop factory」元批評</td><td><a href="https://www.reddit.com/r/IndieGaming/comments/1w5vl54/meta_in_the_last_6_months_this_sub_has_turned/" target="_blank">Reddit</a>　heat_latest.json reddit 欄收錄（order: top-of-day）<span class="ok">✓</span>（標題與 URL 一致）　今日🆕</td></tr>
+        <tr><td>Xbox 雲端遊玩限時計費</td><td><a href="https://www.purexbox.com/news/2026/09/xbox-is-officially-putting-time-limits-on-cloud-gaming-for-game-pass-members" target="_blank">Pure Xbox</a>（web_fetch，逐句引官方 news.xbox.com 聲明）　原文日期 2026-09-03（meta article:published_time）　驗：Ultimate 15h / Premium 10h / Essential 5h、11 月上路、影響約 4% 訂閱戶、可加購時數，原句「introducing this model because the cost of providing cloud gaming grows」<span class="ok">✓</span>　🆕 今天新（≤48h）</td></tr>
+        <tr><td>OpenAI／Playco「Playbot」cuts fixes 50%</td><td><a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/today-in-ai-playco-playbot-cuts-fixes-50" target="_blank">StartupHub.ai</a>（web_fetch，引 OpenAI News 官方部落格）　原文日期 2026-09-03（meta article:published_time）　驗：grey-box → 三款主題化原型、多數第一次可玩、人工修正較前代砍半、Playbot 接 Unity/Godot<span class="ok">✓</span>　🆕（註：文中明確指出 OpenAI／Playco 未公開衡量方式與樣本數，50% 數字目前無法完全比較，已在正文標註）</td></tr>
+        <tr><td>CD Projekt Red《巫師4》不靠 AI 做完整遊戲</td><td><a href="https://www.gamespot.com/articles/the-witcher-4-will-be-made-predominantly-using-people-and-not-ai/" target="_blank">GameSpot</a> / PC Gamer（WebSearch 多源一致）　原文日期 2026-09-03　驗：H1 2026 財報電話會議、「predominantly using people」「not planning to rely on AI making complete games」<span class="pp">summary</span>　🆕（摘要層，未逐句全 fetch）</td></tr>
+        <tr><td>Rust 重置日 CCU +116.6%</td><td>heat_latest.json 2026-09-04T07:30 官方 GetNumberOfCurrentPlayers（API 直抓，免敘事閘）　102,443 vs 47,301<span class="ok">✓</span>；重置排程機制引 <a href="https://www.gameserverkings.com/knowledge-base/rust/wipe-day-guide/" target="_blank">GameServerKings</a>（WebSearch）　驗：force wipe 固定在每月第一個週四<span class="pp">summary</span></td></tr>
+        <tr><td>Dwarf Fortress 創作者談 AI 職場焦慮</td><td><a href="https://kotaku.com/dwarf-fortress-tarn-adams-genai-ai-vibe-coding-claude-copilot-2000730266" target="_blank">Kotaku</a>（WebSearch，heat-radar tavily_news 列為 2026-09-01）　驗：「bosses are slowly getting psychosis」等原話出自 Gamescom、Kotaku 9/1 報導轉引<span class="pp">summary</span>　🔄 進展/近期（非今日事件，article pub 3 天前）</td></tr>
+        <tr><td>戰鎚40K：太空戰士3 無生成式 AI</td><td>IGN（heat-radar tavily_news，2026-09-03）　驗：官方確認遊戲不含生成式 AI<span class="pp">summary</span>　🆕（未逐句全 fetch，標題層級）</td></tr>
+        <tr><td>Nvidia DLSS 5「AI 濾鏡」爭議</td><td>The Verge / Polygon（heat-radar tavily_news，2026-09-01）　驗：DLSS 5 9/3 上市、效能爭議<span class="pp">summary</span>　🔄 進展/近期</td></tr>
+        <tr><td>Sony/Microsoft 請求駁回關稅退款訴訟（背景）</td><td><a href="https://www.gamesindustry.biz/sony-and-microsoft-request-dismissal-of-consumer-lawsuits-over-tariff-refunds" target="_blank">GamesIndustry.biz</a>（radar 故事源，2026-09-03）　驗：標題層級，列為背景、未進頭版<span class="pp">partial</span></td></tr>
+        <tr><td>迷因新鮮度排查（napoleoncat「chill guy」）</td><td>napoleoncat.com（WebSearch）　判定：常青 SEO 整理頁回收 2024–25 舊梗，<b>不採用</b>、不計入本日彈藥<span class="pp">partial</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全附 EN hook + 中譯、Playco 條 partial 已標注 · Steam＝官方 API 09-04 即時真數字（radar 07:30）· Twitch 抓到過期快照已誠實排除 · Threads / KYM 本輪因沙箱瀏覽器連線被拒標暫缺 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 摘要層 · Steam＝官方 API 09-04 即時真數字（radar 07:30）· Roblox/Twitch/Threads/unityroom/KYM 因本次排程無瀏覽器（導航被拒）標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
     <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/09/04 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
