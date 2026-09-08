@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/09/09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">09 · 09 · WED</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 09 / 09 · 彈藥工廠模式 · ⚠️ 熱度雷達：09-08 07:30 資料（昨日）· 來源 19 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>9/9 今天 Nintendo Direct 接力昨日薩爾達 40 週年 Direct 正式開場——台灣 Nintendo 圈的情感高峰延續。</b> 同時爆出 Smash Bros 新作與 Nintendogs 泄露消息，Nintendo 話題的連續波浪在這兩天達到頂點。</p>
+        <p><span class="hl">Steam 2026 年已創下 150 億美元（$15B）營收，最賺的新遊戲是 Forza Horizon 6</span>——GameSpot / Eurogamer 雙線確認（Valve 英國市場報告：£110 億）。這是平台經濟學的新基準線：PC 遊戲平台比以往任何時候都更健康。同時，<b>GTA 6 的「犯罪檔案系統（Criminal Profile）」細節曝光</b>——比 Red Dead 榮譽系統更進化，包含玩家「完全無所謂」模式的「破碎（shattered）狀態」，是今年最有設計啟發性的機制揭露之一。</p>
+        <p><b>Nexus Mods 宣布收購 SteamDB</b>——全球最大模組平台整合最大遊戲資料庫，社群工具生態的超級整合；<b>Fable 棄隨機生成、手工打造每個 NPC</b> 的消息引爆「手工 vs AI 生成」辯論，是 2026 年遊戲設計圈最有對話值的話題之一。</p>
+        <div class="pull">▸ 今天就能蹭：Nintendo Direct 結束後立刻追公告——新 Smash Bros 機制 / Nintendogs 情感勾子 → 做一個「你的角色起源故事 30 秒」demo，機制泛化，不用任何 Nintendo 視覺，零 IP 風險。或者用「Steam $15bn 平台機會」框架，說 GameGen 就是讓每個創作者都能在這個市場裡建立自己的遊戲位置。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam 2026 年上半年已產生 150 億美元營收，最賺新遊戲是 Forza Horizon 6——PC 平台經濟學的新基準線<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>GameSpot 報導（heat_latest.json story_gamespot）：Steam 2026 年上半年已創下 $15 Billion 美元營收，新遊戲是主要驅動力。Eurogamer 確認（story_eurogamer）：Valve 在英國市場進帳 £11 billion，2026 年新遊戲最高收入為 Forza Horizon 6。⚠️ 標題摘要層，未 fetch 完整報告細節。</div>
+            <div class="ln"><b>GameGen 角度：</b>Steam $15bn 是一個平台健康度的強力背書——B2B operator 的論述框架：最健康的遊戲平台正在擴張，而 AI 遊戲工具讓任何規模的開發者都能快速進入這個市場分到一杯羹。Forza Horizon 6 是今年最賺的新 IP 上線，說明「新遊戲 + 好執行」依然勝過老 IP 惰性。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Steam has generated $15 billion in revenue so far in 2026. New games are a big part of it — the top-earning new arrival is Forza Horizon 6. The PC gaming platform has never been healthier. For game developers and operators: the market isn't shrinking. The question is whether you have the tools to build for it fast enough. What's your time-to-market looking like?"<br><span style="color:var(--ink-dim)">中譯：Steam 2026 年上半年已創下 150 億美元營收，新遊戲是主力——最賺的新遊戲是 Forza Horizon 6。PC 遊戲平台比以往任何時候都更健康。對開發者和 operator：市場沒在縮，問題是你有沒有夠快的工具進場。你的上市週期是多長？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamespot.com/articles/steam-has-generated-15-billion-in-revenue-so-far-and-new-games-are-a-big-part-of-it/" target="_blank">GameSpot ↗</a> / <a href="https://www.eurogamer.net/forza-horizon-6-biggest-steam-new-release-11-billion-gbp" target="_blank">Eurogamer ↗</a>　pub 2026-09　標題摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Xbox 限制 Game Pass 雲端遊玩時數——舊用戶部分豁免，但訂閱制的邊界正在重新定義<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>Game Developer 報導（story_gamedeveloper）：Xbox 宣布為 Game Pass 訂閱者設定雲端遊玩時數上限。VGC 補充（story_vgc）：Xbox 告知現有 Game Pass 成員新的雲端遊玩上限對他們不適用，但僅限部分國家。⚠️ 標題摘要層。</div>
+            <div class="ln"><b>GameGen 角度：</b>Xbox 雲端遊玩上限是訂閱制業務模型的關鍵轉折點——補貼式雲端遊玩的時代正在終結。對 B2B operator：遊戲平台的「無限」承諾開始有邊界，使用者體驗的差異化將回到「遊戲本身的吸引力」。GameGen 的短遊戲 / 快速體驗格式在此場景下具備天然優勢——高頻率、低時間成本，正好繞過使用時數限制問題。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Xbox is capping Cloud Gaming hours for Game Pass subscribers. Existing members in some countries are exempt — for now. The era of unlimited subsidized cloud gaming is ending. For game operators: player attention is finite, and platforms are starting to price it accordingly. Short, high-engagement games that earn their session time are going to win this next cycle."<br><span style="color:var(--ink-dim)">中譯：Xbox 要限制 Game Pass 訂閱者的雲端遊玩時數了。現有用戶在部分國家暫時豁免。補貼式無限雲端遊玩的時代正在結束。對遊戲 operator：玩家的注意力是有限的，平台開始按此定價。短時間、高互動的遊戲，是下一個循環的贏家。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/cloud/xbox-to-cap-cloud-gaming-hours-for-game-pass-subscribers" target="_blank">Game Developer ↗</a> / <a href="https://www.videogameschronicle.com/news/xbox-tells-existing-game-pass-members-its-new-cloud-gaming-cap-doesnt-apply-to-them-but-only-in-certain-countries/" target="_blank">VGC ↗</a>　pub 2026-09　標題摘要層</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天</span>Nintendo Direct 今天（09/09）開場——新 Smash Bros 和 Nintendogs 泄露消息在場外先炸了<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>GameSpot（story_gamespot, 2026-09-06）：Nintendo 確認兩場 Direct——昨天的薩爾達 40 週年 Direct（已播）＋今天的 Nintendo Direct（09-09）。Eurogamer（story_eurogamer）：知名 Nintendo 泄露者爆料「新 Super Smash Bros 和 Nintendogs 遊戲即將到來」，這兩個 IP 對繁中 Nintendo 圈的情感動員力極強。⚠️ Direct 播出時間多媒體確認；泄露消息尚未 Nintendo 官方確認。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Nintendo Direct is today. A Nintendo leaker just dropped: new Super Smash Bros AND Nintendogs reportedly on the way. Whether it's confirmed or not — the conversation is already everywhere. What ONE announcement would make you lose your mind today? 👇"<br><span style="color:var(--ink-dim)">中譯：Nintendo Direct 今天開場。任天堂泄露者剛爆料：新《超級任天堂大亂鬥》和《任天狗》據說要來了。不管有沒有官方確認，討論已經全面引爆。今天哪個公告會讓你情緒爆棚？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>Direct 結束後立刻發「今天公告了 XX，我用 GameGen 做了一個 30 秒的同類型 demo」——搭任何公告的機制框架，機制完全原創，零 IP 風險，情緒鉤子最強。</div>
+            <div class="meta">來源 <a href="https://www.gamespot.com/articles/two-nintendo-directs-announced-for-next-week-including-a-zelda-presentation/" target="_blank">GameSpot ↗</a> / <a href="https://www.eurogamer.net/super-smash-bros-new-nintendogs-games-nintendo-leaker" target="_blank">Eurogamer 泄露 ↗</a>　pub 2026-09-06–09　多媒體確認 + 泄露消息</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6「犯罪檔案系統」曝光——比 Red Dead 榮譽系統更進化，還有「完全無所謂」的破碎狀態<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>PCGamer（story_pcgamer）：GTA 6 新揭露的 Criminal Profile 系統包含 'shattered' 狀態（給不在乎聲望的玩家，DGAF 模式）；PCGamer 指出這不是 Red Dead Redemption 榮譽系統的直接複製，而是有新的設計思路。⚠️ 標題摘要層，未全 fetch 系統細節。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6's Criminal Profile system has a 'shattered' state — for players who genuinely don't care about reputation. It's not just Red Dead's honor system. It's a morality mechanic that makes room for chaos as a valid playstyle. What's YOUR favorite reputation/morality system in gaming — and what would you change about it? 👇"<br><span style="color:var(--ink-dim)">中譯：GTA 6 的犯罪檔案系統有一個「破碎」狀態——給那些真的不在乎名聲的玩家。這不只是 Red Dead 的榮譽系統，而是把「混沌」當成合法遊戲風格的道德機制。你最喜歡哪款遊戲的聲望/道德系統？你會改哪一點？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「你的聲望風格是哪一種？」問答 → 接「用 GameGen 做一個帶聲望系統的 30 秒決策遊戲」，設計感強，社群互動高。</div>
+            <div class="meta">來源 <a href="https://www.pcgamer.com/games/grand-theft-auto/gta-6s-criminal-profile-system-sounds-pretty-interesting-isnt-a-direct-copy-of-red-deads-honor-system/" target="_blank">PCGamer ↗</a>　pub 2026-09　標題摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Nexus Mods 收購 SteamDB——全球最大模組平台 × 最大 Steam 資料庫，社群工具生態超級整合<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Game Developer（story_gamedeveloper）：Nexus Mods（全球最大遊戲模組平台）宣布收購 SteamDB（Steam 資料庫和分析網站）。⚠️ 標題摘要層，收購條款未全確認。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Nexus Mods is acquiring SteamDB. The world's biggest mod platform is buying the most comprehensive Steam analytics database. The gaming community's infrastructure is quietly consolidating — the tools that define what players play, track, and build are increasingly owned by the same hands. What community tools do you use most? 👇"<br><span style="color:var(--ink-dim)">中譯：Nexus Mods 要收購 SteamDB 了。全球最大模組平台正在買下最完整的 Steam 分析資料庫。遊戲社群的基礎設施正在悄悄整合——定義玩家玩什麼、追蹤什麼、打造什麼的工具，越來越集中在同一批手裡。你最常用哪些社群工具？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「社群工具整合 = 玩家洞察變得更集中」的框架，接「GameGen 讓你的 demo 一鍵在這個生態中被更多人看見」。</div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/business/nexus-mods-is-acquiring-database-and-analytics-site-steamdb" target="_blank">Game Developer ↗</a>　pub 2026-09　標題摘要層</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天</span>「今天 Nintendo Direct 公告機制——30 秒即興 demo」策略：Watch first, build fast，零 IP 風險<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>策略：</b>今天 Nintendo Direct 結束後，立刻鎖定最有話題的一個公告遊戲的核心機制（戰鬥/社交/建造/節奏），30 分鐘內用 GameGen 做出泛化版本——保留機制框架，完全原創視覺，不使用任何 Nintendo/任何 IP 的名稱和視覺。完成後立刻發：「刷到 [公告遊戲名] 了？我用 GameGen 在 30 分鐘內做了一個同類型 demo——你來玩看看。」</div>
+            <div class="ln"><b>備選 Demo（Direct 前）：</b>「GTA 6 道德決策器」——玩家在 30 秒內做出三個帶後果的選擇，最後出「你的犯罪風格分類」分享卡片。搭 Criminal Profile 新聞，機制完全原創，不用 GTA 任何視覺，零 IP 風險。</div>
+            <div class="meta">Nintendo Direct 今天（09-09）GameSpot 確認 + PCGamer Criminal Profile · 09-09 · 模板：即興機制 + 分類卡</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">⚠️ 昨日 09-08 07:30 資料</span></div>
+          <ol>
+            <li class="down"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">567K ▼4.2%</span></li>
+            <li class="up"><span class="nm">Palworld</span><span class="vn">107K ▲1.7%</span></li>
+            <li class="hot up"><span class="nm">Rainbow Six Siege</span><span class="vn">98K ▲13.3%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">93K ▲2.0%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">83K ▲4.0%</span></li>
+            <li class="down"><span class="nm">Path of Exile 2</span><span class="vn">80K ▼2.1%</span></li>
+          </ol>
+          <div class="bf">heat_latest.json ⚠️ 昨日 09-08 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為 launchd 排程、<b>無瀏覽器</b>可抓 Roblox 即時 CCU（需瀏覽器渲染）。<b>目前無法完全證實</b>。CC 互動 session 有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ TwitchTracker 即時快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>今日 heat_latest.json 資料為昨日 09-08 07:30（未更新至 09-09）</b>，Steam 數字均為昨日官方 API 資料，標注「昨日」。Steam Most Played 昨日重要變動（延用）：<b>Rainbow Six Siege +13.3%（87K→98K）</b>是昨日最大 CCU 單日漲幅；<b>Apex Legends +7.5%、Baldur's Gate 3 +6.9%、TF2 +6.2%</b> 同步回暖。Steam Most Played 排名昨日變動（延用）：<b>Sons of the Forest +7、Valheim +7、Space Marine 2 +6、ARC Raiders +5</b>。Roblox CCU / Twitch / Threads 因無瀏覽器標「暫缺」。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Steam $15bn 平台強訊號 + WARDOGS 仍在熱賣 + 昨日延伸：生存/戰術射擊雙線回溫</h3>
+        <div class="sum">今日核心暴衝訊號：(1) <b>Steam 2026 年上半年已創下 $15 billion 美元營收</b>（GameSpot）——這是平台層面最重要的健康度信號，新遊戲是主要驅動力，Forza Horizon 6 是最高收入新遊戲（Eurogamer 確認）。(2) 昨日 Steam 延伸訊號（heat_latest.json 09-08）：<b>Rainbow Six Siege 單日 CCU +13.3%（87K→98K）</b>、<b>Valheim +7 排名（rank 96→89）、Sons of the Forest +7（rank 88→81）、Space Marine 2 +6（rank 81→75）、ARC Raiders +5（rank 73→68）</b>——生存/戰術射擊雙線回溫趨勢延伸至今日。(3) <b>WARDOGS 在 Steam 熱賣榜仍有穩定位置</b>，WARDOGS Playtest 從昨日排名 6 延伸。⚠️ Steam 數字為昨日 09-08 07:30 資料；$15bn 數字為標題摘要層。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Steam $15bn 的意義：<b>遊戲市場在 2026 年沒有縮小，正在增長。</b> 對 operator：進入這個市場的工具門檻越來越低，但市場的盤子越來越大——AI 遊戲工具的時機正確。生存/戰術射擊雙線回溫模式說明：「技能深度 + 長期重玩性」的遊戲類型在九月初是可靠的創作者話題切入點。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GameSpot / Eurogamer · 09-09 · <a href="https://www.gamespot.com/articles/steam-has-generated-15-billion-in-revenue-so-far-and-new-games-are-a-big-part-of-it/" target="_blank">GameSpot $15bn ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬需瀏覽器，本次排程無瀏覽器、<b>目前無法完全證實</b>，不以估計補位。Steam 延用昨日 09-08 資料，steam_movers.new_entrants: []（昨日無新遊戲進入 Steam Most Played 前 100）。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 熱賣 / 新品</span><span class="metric">昨日 09-08 資料</span></div>
+          <ol>
+            <li class="hot"><span class="nm">The Blood of Dawnwalker</span><span class="vn">熱賣 · 3日百萬</span></li>
+            <li class="hot"><span class="nm">Onimusha: Way of the Sword</span><span class="vn">熱賣 · 首日百萬</span></li>
+            <li class="hot"><span class="nm">Halloween: The Game</span><span class="vn">熱賣 · 迷因暴走</span></li>
+            <li><span class="nm">WARDOGS</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Bodycam</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">PRAGMATA</span><span class="vn">熱賣新進</span></li>
+          </ol>
+          <div class="bf">heat_latest.json 昨日 09-08 Steam new_top · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>HN / 技術社群</span><span class="metric">遊戲 / AI（昨日）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Doom Dark Ages DLC — 3 到 4 個月做完</span><span class="vn">業界洞察</span></li>
+            <li class="hot"><span class="nm">Nexus Mods 收購 SteamDB</span><span class="vn">社群工具</span></li>
+            <li><span class="nm">Persona 4 Revival — 試玩印象</span><span class="vn">新 RPG</span></li>
+            <li><span class="nm">Civ VII Earthrise 付費擴充上路</span><span class="vn">策略</span></li>
+            <li><span class="nm">Riot MMO「前景光明」</span><span class="vn">MMO 動向</span></li>
+            <li><span class="nm">Slay the Spire 2 — Steam 第 9 名</span><span class="vn">卡牌 Roguelike</span></li>
+          </ol>
+          <div class="bf">story_gamedeveloper / story_pcgamer / story_rps · 09-08 · <a href="https://news.ycombinator.com" target="_blank">HN ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>Doom Dark Ages DLC「3-4 個月完成大部分」+ Civ VII Earthrise 擴充 + Persona 4 Revival——開發速度與情感 IP 雙訊號</h3>
+        <div class="sum">三條早期訊號：(1) Game Developer（story_gamedeveloper）：<b>《毀滅戰士：黑暗時代》大部分 DLC 在「3 到 4 個月」內完成</b>——id Software 開發效率的直接佐證，AI 工具加速開發的時代基準線。(2) Eurogamer（story_eurogamer）：<b>Civilization 7 上市兩年後推出第一個付費擴充包「地球崛起（Earthrise）」，同步推出免費核子時代更新</b>——說明「2 年長尾服務 + 付費擴充」模式依然有效。(3) RPS（story_rps）：<b>Persona 4 Revival 試玩體驗文：戰鬥和社交困境青少年讓人印象深刻</b>，系列導演和田賢史稱有「義務」製作此作。⚠️ 三條均為標題摘要層。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「Doom DLC 3-4 個月做完」是今天最有說服力的開發速度佐證——對 GameGen 的論述：<b>AI 工具讓優秀的創作者更快完成高質量產品，而不是取代他們。</b> Civ VII Earthrise 說明「長尾服務 + 付費擴充」的商業模式在策略遊戲中依然成立。Persona 4 Revival 的「青春期社交困境」情感設計依然是強力的差異化武器。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Game Developer / Eurogamer / RPS · 09-08 · <a href="https://www.gamedeveloper.com/business/the-majority-of-doom-the-dark-ages-dlc-got-made-in-three-or-four-months" target="_blank">Doom DLC ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · 業界 + 設計</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>平台業界</span></span>Steam $15bn × Forza Horizon 6 最賺；Nexus Mods 收購 SteamDB；Supercell 收購 Metacore——平台 + 工具 + 行動三條線同步整合</h3>
+        <div class="sum">三條平台/業界整合訊號：(1) GameSpot + Eurogamer（story_gamespot / story_eurogamer）：<b>Steam 2026 上半年 $15B 美元營收；Forza Horizon 6 是最賺新遊戲；Valve 英國市場 £11B</b>——三源互證，平台健康度最強佐證。(2) Game Developer（story_gamedeveloper）：<b>Nexus Mods 收購 SteamDB</b>——社群工具生態超級整合，模組 + 資料庫統一在同一個傘下。(3) 同一個 Game Developer：<b>Supercell 收購 Metacore 預計本月完成</b>——行動遊戲大廠繼續整合中型工作室，行動遊戲的集中化趨勢。⚠️ 三條均為標題摘要層。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>三條訊號合在一起：<b>大平台吸走更多收益（Steam $15B），工具層集中化（Nexus+SteamDB），行動遊戲大廠整合中型工作室（Supercell+Metacore）。</b> 對 GameGen / operator：在這個整合浪潮中，獨立創作者和小型工作室最需要「快速進場的 AI 工具」——門檻越高，能降門檻的工具越有價值。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GameSpot / Eurogamer / Game Developer · 09-08–09 · <a href="https://www.gamespot.com/articles/steam-has-generated-15-billion-in-revenue-so-far-and-new-games-are-a-big-part-of-it/" target="_blank">Steam $15bn ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>設計洞察</span></span>GTA 6 Criminal Profile 破碎狀態 + Fable 手工 NPC + Riot MMO「如探聖杯」——設計哲學三重奏</h3>
+        <div class="sum">三條設計哲學訊號：(1) PCGamer（story_pcgamer）：<b>GTA 6 Criminal Profile 系統曝光，包含「破碎（shattered）狀態」給不在乎名聲的玩家</b>，PCGamer 指出不是直接複製 Red Dead 榮譽系統，而是有新的設計邏輯。(2) Reddit r/gaming（top-of-day，heat_latest.json）：<b>Fable 棄用隨機生成器、手工打造每個 NPC</b>——引爆「手工 vs AI 生成」辯論，社群對「開發者刻意選擇手工而非效率優先」反應極強。(3) PCGamer（story_pcgamer）：<b>Riot MMO 聯創人把開發比喻為「探聖杯——很多勇敢的騎士會犧牲」</b>，但稱未來「極度光明」。⚠️ 三條均為標題摘要層。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>三條訊號合在一起的設計哲學：<b>「混沌作為合法玩法（GTA 6）」「手工即使低效也是美學選擇（Fable）」「極長週期的願景驅動開發（Riot MMO）」。</b> 對 GameGen 的論述：AI 工具不是強制選擇，而是讓創作者在「手工 vs AI 生成」之間做有意識的選擇——選擇的自主性才是真正的創作者賦能。Fable 手工 NPC 的話題，是「手工 vs 隨機生成 vs AI 生成」三方辯論的最好發酵點。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PCGamer / Reddit · 09-08 · <a href="https://www.pcgamer.com/games/grand-theft-auto/gta-6s-criminal-profile-system-sounds-pretty-interesting-isnt-a-direct-copy-of-red-deads-honor-system/" target="_blank">PCGamer GTA6 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>業界</span></span>Xbox Cloud Gaming 時數上限 + 現有會員豁免混亂；Riot MMO「聖杯探索」宣言；Doom DLC 3-4 個月做完</h3>
+        <div class="sum">三條業界動向：(1) Game Developer + VGC：<b>Xbox 宣布限制 Game Pass 雲端遊玩時數；VGC 補充：現有成員在部分國家不受影響</b>——政策落地方式造成混亂，社群反應強烈。(2) PCGamer：<b>Riot MMO 共同創辦人稱開發如「探聖杯」，但前景「極度光明」</b>——高期望值管理話術，MMO 開發圈持續關注。(3) Game Developer：<b>《毀滅戰士：黑暗時代》大部分 DLC 在 3–4 個月內完成</b>——id Software 開發效率示範。⚠️ 三條均為標題摘要層。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Xbox 雲端遊玩時數限制的信號：<b>平台補貼模式走向盡頭，玩家體驗差異化回到「遊戲本身」。</b> 短時間、高互動的遊戲格式（GameGen 的定位）在「遊玩時數有限」的環境下具備天然競爭優勢——每一分鐘都要值得。Doom DLC 3-4 個月案例：對 B2B 論述，AI 工具的目標是把「優秀創作者的開發週期」壓縮到此量級。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Game Developer / VGC / PCGamer · 09-08 · <a href="https://www.gamedeveloper.com/cloud/xbox-to-cap-cloud-gaming-hours-for-game-pass-subscribers" target="_blank">Game Developer ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ai reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        🛰️ <b>背景參考（非今日首版）</b>：Nvidia DLSS 5 幀率砍半（Eurogamer）；Space Marine 3 零 GenAI（80.lv / IGN）；新 StarCraft 遊戲「不會是 Destiny 類型」（Eurogamer / Jason Schreier）；Persona 1 & 2 重製版「遲早會做」（Eurogamer）——均為背景訊號，本次不進頭版彈藥。
+      </div>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>今日迷因</span></span>Fable「手工打造每個 NPC」引爆手工 vs AI 辯論 + Nintendo 泄露消息提前炸 + itch.io 病毒梗持續</h3>
+        <div class="sum">今日迷因素材三組：(1) Reddit r/gaming top-of-day（heat_latest.json）：<b>「Fable Handcrafted every NPC instead of using randomizer」——Fable 棄用隨機生成器、手工打造每個 NPC</b>，引爆玩家社群對「手工設計 vs 隨機/AI 生成」的廣泛辯論，梗感在於「他們選擇了更慢但更好的方式」。(2) Eurogamer：<b>任天堂泄露者爆料新 Smash Bros + Nintendogs——今天 Direct 前場外熱炸</b>，泄露消息在 Direct 開始前的傳播速度本身就是迷因素材。(3) itch.io viral 榜延用昨日：StreamRush、ClickBait（諷刺性遊戲名）、RarityRNG、BOMB DEFUSER——itch.io 迷因病毒遊戲圈繼續活躍。繁中 Threads 因無瀏覽器，<b>目前無法完全證實</b>，本次暫缺。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「Fable 手工 NPC」梗的核心：<b>開發者對效率的主動抗拒成為最強的玩家信任建立工具。</b> 這個辯論對 GameGen 有直接的論述機會——「AI 生成 vs 手工」的問題框架可以泛化成「速度 vs 精緻」，GameGen 的回答是：兩者不互斥，AI 工具是讓精緻成為可負擔的手段。今天 Nintendo 泄露的「場外先炸」現象：話題峰值往往在正式公告之前——對社群 timing 策略的啟示。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Reddit / Eurogamer / itch.io · 09-08–09 · (Threads 需瀏覽器 · 本次暫缺)</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（今日新聞 + Steam 趨勢）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Nintendo Direct 今天——即興機制跟進</span><span class="vn">★ 首選</span></li>
+            <li class="hot"><span class="nm">「GTA 6 道德決策器」——30 秒破碎狀態分類</span><span class="vn">設計感</span></li>
+            <li><span class="nm">「手工 vs AI 投票器」——搭 Fable 手工 NPC 話題</span><span class="vn">互動</span></li>
+            <li><span class="nm">「訂閱時數壓力計時」——搭 Xbox 雲端遊玩上限</span><span class="vn">諷刺</span></li>
+            <li><span class="nm">「Steam 市場分類器」——你的遊戲在 $15bn 哪個格子</span><span class="vn">互動工具</span></li>
+            <li><span class="nm">「3-4 個月 DLC 衝刺計時器」——搭 Doom DLC</span><span class="vn">開發文化</span></li>
+          </ol>
+          <div class="bf">新聞事件 / Steam movers · 09-09 · <a href="https://itch.io/games/html5" target="_blank">itch.io ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日首抄公式：即興跟 Nintendo Direct + GTA 6 道德決策器；次選：Fable 手工 vs AI 辯論帖</h3>
+        <div class="sum">本日機制靈感頭號公式：<b>「今天 Nintendo Direct 即興機制跟進」策略</b>——Watch first, build fast. Direct 結束後，鎖定最有話題的公告遊戲核心機制，30 分鐘用 GameGen 做泛化版 demo，機制框架原創，零 IP 風險，然後立刻發社群。第二選擇：<b>「GTA 6 道德決策器」</b>——玩家在 30 秒內做三個帶後果的道德選擇（幫助/忽視/破壞），最後出「你的犯罪風格分類卡」分享。搭 Criminal Profile 新聞，不用 GTA 任何視覺。第三選擇：<b>「手工 vs AI 辯論帖」</b>——問玩家「如果你做一款遊戲，你會選手工打造每個細節，還是用 AI 快速生成再精修？」，接「用 GameGen 兩種都能試」。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日機制優先順序：① 即興跟 Nintendo Direct（今天最大話題，即興性最強）→ ② GTA 6 道德決策器（設計感最強，分享卡天生病毒）→ ③ Fable 手工 vs AI 辯論帖（GameGen 定位論述最直接）→ ④ Xbox 訂閱時數諷刺遊戲（黑色幽默，有風險）→ ⑤ Steam $15bn 市場框架帖（B2B 論述，CJ LinkedIn 優先）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Nintendo Direct 今天 + PCGamer GTA6 + Reddit Fable · <a href="https://www.gamespot.com/articles/two-nintendo-directs-announced-for-next-week-including-a-zelda-presentation/" target="_blank">Direct 今天 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為 launchd 排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話，<b>目前無法完全證實</b>，骨架保留。今日可追的長線母題：<b>Nintendo Direct 今天（09-09）</b>——繁中 Nintendo 圈昨日薩爾達 Direct 後今天接力，是本週最高熱度時段；新 Smash Bros / Nintendogs 泄露消息在台灣 Nintendo 玩家圈應有強烈反應；Fable 手工 NPC vs AI 生成的辯論在台灣遊戲開發者圈值得追蹤；GTA 6 Criminal Profile 系統在台灣遊戲玩家圈有話題度（GTA 6 預期關注度高）。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Nintendo Direct 今天（09-09）公告</td><td><span class="tmpl">即興機制跟進——Direct 後 30 分鐘做泛化版 demo</span></td><td>「剛看完 Direct 做了個同類型 demo」天生病毒時機</td><td class="rk-low">低（機制泛化，不用任何 Nintendo 視覺或名稱）</td><td>★ 首選策略：Watch → Build → Post，Direct 結束後最快 30 分鐘發出，情緒鉤子最強；新 Smash Bros / Nintendogs 泄露消息可提前暖場「你最希望今天公告什麼？」</td></tr>
+          <tr><td>GTA 6 Criminal Profile「破碎狀態」</td><td><span class="tmpl">「30 秒道德決策器」帶分類分享卡</span></td><td>「你的犯罪風格是哪種」分類卡截圖天生病毒</td><td class="rk-low">低（泛化機制，不用 GTA 視覺）</td><td>玩家在 30 秒做三個帶後果的道德選擇，出「守序/混沌/破碎」分類卡可分享；互動帖：「你最喜歡哪款遊戲的道德/聲望系統？你會改哪一點？」</td></tr>
+          <tr><td>Fable 手工 NPC vs 隨機生成辯論</td><td><span class="tmpl">「手工 vs AI 創作者投票帖」</span></td><td>開發哲學辯論 = 創作者社群高互動</td><td class="rk-low">低</td><td>發問答帖：「如果你做一款遊戲，你會選手工打造每個細節，還是用 AI 快速生成再精修？說說你的理由」——接「GameGen 讓你兩種都能試，你來決定精製程度」</td></tr>
+          <tr><td>Steam $15bn 2026 + Forza Horizon 6 最賺</td><td><span class="tmpl">B2B 平台機會論述帖</span></td><td>大數字 + 市場機會 = B2B 說服力</td><td class="rk-low">低</td><td>CJ LinkedIn：「Steam 2026 上半年 $15B 美元。PC 遊戲市場比任何時候都更健康。新遊戲是主力。如果你有正確的工具——你的時機正好是現在。」</td></tr>
+          <tr><td>Xbox Cloud Gaming 時數上限爭議</td><td><span class="tmpl">「訂閱制邊界」短遊戲論述帖</span></td><td>爭議性話題 + GameGen 短遊戲格式的對比角度</td><td class="rk-low">低（不攻擊 Xbox，保持「提問」框架）</td><td>發帖：「Xbox 要限制雲端遊玩時數。如果你的遊戲時間是有限的，哪種遊戲格式讓你覺得最值得？長 RPG / 短 roguelike / 還是每局 5 分鐘的高互動遊戲？」</td></tr>
+          <tr><td>Civ VII Earthrise + 核子時代免費更新</td><td><span class="tmpl">「文明擴張決策器」策略互動 demo</span></td><td>策略決策分享截圖的可傳播性</td><td class="rk-low">低</td><td>做一個「你的文明政策選擇器」：在三個核子時代政策中選一個，出你的「文明擴張風格分類」——搭 Civ VII 更新話題，機制完全原創，不用 Civ 任何視覺</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>Steam $15bn 2026 上半年：PC 遊戲市場最健康的時刻，新遊戲是主力驅動</td><td>GameSpot：Steam 2026 年上半年已創 $15B 美元收入，新遊戲是大部分驅動力；Eurogamer：Valve 英國市場 £11B，最賺新遊戲為 Forza Horizon 6</td><td>"Steam has generated $15 billion in revenue so far in 2026. New games — not legacy titles — are driving most of it. The platform has never been healthier. For game developers and operators: the market isn't contracting. The opportunity is larger than it's ever been. The question is whether you have tools that let you move fast enough to capture it."</td><td><a href="https://www.gamespot.com/articles/steam-has-generated-15-billion-in-revenue-so-far-and-new-games-are-a-big-part-of-it/" target="_blank">↗</a></td></tr>
+          <tr><td>Xbox Cloud Gaming 時數上限：訂閱制邊界重設，短時高互動遊戲的時機</td><td>Game Developer：Xbox 宣布為 Game Pass 訂閱者設雲端遊玩時數上限；VGC：現有成員在部分國家不受影響（政策混亂加劇爭議）</td><td>"Xbox is capping Cloud Gaming hours for Game Pass subscribers. The era of unlimited subsidized game access is ending. This is actually a signal for game developers: player attention has a price again. Short, high-engagement games that earn every minute of session time are going to outperform endless-loop games in a capped-hour world. Design for intensity, not duration."</td><td><a href="https://www.gamedeveloper.com/cloud/xbox-to-cap-cloud-gaming-hours-for-game-pass-subscribers" target="_blank">↗</a></td></tr>
+          <tr><td>Nexus Mods 收購 SteamDB：社群工具整合是下一個護城河</td><td>Game Developer：Nexus Mods（全球最大遊戲模組平台）宣布收購 SteamDB（Steam 資料庫與分析網站）</td><td>"Nexus Mods is acquiring SteamDB. The world's largest mod platform is consolidating with the most comprehensive Steam analytics database. Gaming's community infrastructure is quietly centralizing. For platform operators: the data and tools that define player behavior and game visibility are increasingly owned by fewer players. Building proprietary player data pipelines is no longer optional."</td><td><a href="https://www.gamedeveloper.com/business/nexus-mods-is-acquiring-database-and-analytics-site-steamdb" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Steam $15bn 平台機會、Xbox Cloud Gaming cap 訂閱制邊界）已附完整 EN hook，可直接交 CW 的 CJ 每日包。第三條 Nexus Mods/SteamDB 為加分彈藥。三條均為標題摘要層（partial），建議 CJ 使用前補充原文細節。對外用字已過濾博彩相關語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>★ Nintendo Direct 今天！場外炸：「新 Smash Bros 和 Nintendogs 都要來了？你最希望今天公告什麼——一個公告讓你情緒爆棚的是哪個？」（Direct 結束後立刻接機制 demo）</li><li>「Fable 棄用隨機生成器，手工打造每個 NPC。你怎麼看——手工細節 vs AI 快速生成，哪個才是對玩家最有誠意的選擇？」</li><li>蹭 GTA 6 道德系統：「GTA 6 有一個『破碎』狀態——給完全不在乎名聲的玩家。你在遊戲裡是守序派、混沌派、還是破碎派？」</li><li>「Steam 2026 上半年已賺 150 億美元。新遊戲是主力。PC 遊戲市場從來沒有比現在更健康——如果你有正確的工具，現在是進場的時機。」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「即興跟進 Nintendo Direct」：Direct 結束後鎖定最熱公告的機制框架，30 分鐘內做泛化版 demo，機制完全原創，不用任何 Nintendo 視覺，發社群</li><li>「GTA 6 道德決策器」：30 秒做三個帶後果的道德選擇，出「守序/混沌/破碎」分類卡可分享，搭 Criminal Profile 新聞框架</li><li>「手工 vs AI 設計哲學互動」：讓玩家選擇他們的設計哲學，出個人化創作風格分類，接「GameGen 讓你兩種都能試」</li><li>「文明政策選擇器」：搭 Civ VII Earthrise 更新，三個核子時代政策選一，出你的文明擴張風格分類</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>★ Nintendo Direct 今天（09-09）——立刻追播，準備機制跟進策略</li><li>新 Smash Bros / Nintendogs 泄露消息是否在 Direct 確認</li><li>Steam $15bn 完整報告細節（補 GameSpot 原文，確認新遊戲份額）</li><li>Xbox Cloud Gaming cap 的社群反應（現有會員豁免有多少人覆蓋？）</li><li>Nexus Mods + SteamDB 收購條款（是否有資料共享、整合計畫）</li><li>Blood of Dawnwalker 本週銷量最終數字（3 天百萬後是否持續上升）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>★ 直接使用 Nintendo/Smash Bros/任天狗品牌視覺——即興 demo 只借機制框架，不在標題或視覺中使用任何 Nintendo IP 名稱</li><li>GTA 6 道德決策器：不使用 GTA 任何角色視覺，「破碎狀態」泛化為「完全混沌」，不直接引用 GTA 品牌</li><li>Xbox cloud cap 批評要保持「提問」框架，不攻擊 Xbox 品牌——「遊玩時數有邊界的時代，什麼遊戲更值得你的時間？」</li><li>Fable NPC 手工 vs AI 辯論：不要表達「AI 生成一定輸」的立場，GameGen 的角色是「選擇權在你」</li><li>對外文案的博彩語言（博彩/入注/jackpot）——今日所有素材都在去賭場化安全區</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Steam 資料時間</td><td>heat_latest.json fetched_at: <b>2026-09-08T07:30:27+08:00</b>（⚠️ <b>昨日資料</b>，今日 09-09 熱度雷達尚未更新）；ok_count: 19/19。本次標注「昨日」，不做今日即時資料聲稱。<span class="pp">partial</span></td></tr>
+        <tr><td>Steam $15bn 2026 收入</td><td>story_gamespot 標題：「Steam Has Generated $15 Billion In Revenue So Far In 2026, And New Games Are A Big Part Of It」<span class="pp">partial</span>（標題摘要層）　🆕 今天新</td></tr>
+        <tr><td>Forza Horizon 6 最賺新遊戲 + £11bn</td><td>story_eurogamer 標題：「Valve has reportedly made £11bn from Steam already in 2026, and biggest earning new arrival is Forza Horizon 6」<span class="pp">partial</span>（標題摘要層）　🆕 今天新</td></tr>
+        <tr><td>Nintendo Direct 今天（09-09）</td><td>story_gamespot（GameSpot, 2026-09-06）：「Two Nintendo Directs Announced For Next Week, Including A Zelda Presentation」——Zelda 40 週年 Direct（9/8 已播）+ Nintendo Direct（9/9 今天）<span class="pp">partial</span>（多媒體確認）　🆕 今天</td></tr>
+        <tr><td>新 Smash Bros + Nintendogs 泄露</td><td>story_eurogamer 標題：「New Super Smash Bros and Nintendogs games are on the way, according to prominent Nintendo leaker」<span class="pp">partial</span>（泄露消息，非官方確認）　🆕 今天新</td></tr>
+        <tr><td>GTA 6 Criminal Profile + shattered 狀態</td><td>story_pcgamer 標題：「GTA 6's Criminal Profile system sounds pretty interesting, includes a 'shattered' state for players who DGAF」<span class="pp">partial</span>（標題摘要層）　🆕 今天新</td></tr>
+        <tr><td>Xbox Cloud Gaming cap + 現有會員豁免</td><td>story_gamedeveloper 標題：「Xbox to cap Cloud Gaming hours for Game Pass subscribers」；story_vgc 標題：「Xbox tells existing Game Pass members its new cloud gaming cap doesn't apply to them, but only in certain countries」<span class="pp">partial</span>（標題摘要層）　🆕 今天新</td></tr>
+        <tr><td>Nexus Mods 收購 SteamDB</td><td>story_gamedeveloper 標題：「Nexus Mods is acquiring database and analytics site SteamDB」<span class="pp">partial</span>（標題摘要層）　🆕 今天新</td></tr>
+        <tr><td>Fable 手工 NPC vs 隨機生成</td><td>heat_latest.json reddit top-of-day：「Fable Handcrafted every NPC instead of using randomizer」<span class="ok">✓</span>（Reddit 帖標題確認）　🆕 今天新</td></tr>
+        <tr><td>Doom Dark Ages DLC 3-4 個月</td><td>story_gamedeveloper 標題：「The majority of Doom: The Dark Ages' DLC got made 'in three or four months'」<span class="pp">partial</span>（標題摘要層）　🆕 今天新</td></tr>
+        <tr><td>Civ VII Earthrise 付費擴充</td><td>story_eurogamer 標題：「Two years after its rocky launch, Civilization 7's first paid expansion Earthrise is on its way」<span class="pp">partial</span>（標題摘要層）　🔄 近期</td></tr>
+        <tr><td>Supercell 收購 Metacore</td><td>story_gamedeveloper 標題：「Supercell's acquisition of Metacore expected to close this month」<span class="pp">partial</span>（標題摘要層）　🔄 近期</td></tr>
+        <tr><td>Steam 排名昨日變動（延用）</td><td>heat_latest.json steam_movers.rank_jumps（昨日 09-08）：Sons of Forest +7, Valheim +7, Space Marine 2 +6, ARC Raiders +5；new_entrants: []　延用昨日 ✓</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 為標題摘要層（partial），使用前建議補充原文細節 · Steam = 昨日 09-08 07:30 資料（⚠️ 今日 09-09 熱度雷達未更新，延用昨日）· Roblox/Twitch/Threads 因排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/09/09 · 對外發布前一律過去博彩語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
