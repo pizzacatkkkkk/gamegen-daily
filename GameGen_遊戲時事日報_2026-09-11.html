@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/09/11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">09 · 11 · FRI</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 09 / 11 · 彈藥工廠模式 · ✅ 熱度雷達：09-11 07:30 今日資料 · 來源 19 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>9/11 今天最大故事：Kojima Productions 的 PHYSINT（小島秀夫新作諜報 RPG）在 PlayStation「意外取消」（unexpectedly received notice）合約後，Xbox 宣布接手發行。</b> Reddit r/gaming ＋ r/Games 五帖全 top-of-day、GamesIndustry.biz ＋ GameDeveloper ＋ GameSpot ＋ Eurogamer 八源互證。小島本人確認：PlayStation 主動取消，他才去找新發行商。這是 2026 年最戲劇性的平台忠誠度事件。</p>
+        <p><span class="hl">獨立 FPS 大爆發：WARDOGS 首日突破 100 萬套、Steam 峰值 30 萬同時在線人數，伺服器宕機——Reddit r/gaming top-of-day、PCGamer + GameSpot 雙源確認</span>。Steam 今日最大排名飛躍：<b>Valheim +62 名（rank 74→12）</b>，1.0 效應持續發威；PUBG 今日最大 CCU 漲幅 +17.6%（83,669→98,403）。</p>
+        <p>今日次要亮點（今日 09-11 07:30 資料）：<b>Marvel's Wolverine 評測出爐</b>（Eurogamer + VGC + Reddit 雙評測帖）、<b>Sony「你自己說過我們擁有數位遊戲」維基整理</b>（HN 347 點熱榜第一）、<b>Google 完成果蠅腦地圖後工程師讓它打 Doom ＋ Mario64 ＋ Beat Saber</b>（Reddit top-of-day 最病毒性科學梗）。</p>
+        <div class="pull">▸ 今天就能蹭：Physint 轉台 → 互動帖「如果你是小島，你下一個遊戲選 Xbox 還是 PS 還是 PC only？」；Wardogs 1M 首日 → 「什麼樣的遊戲設計讓玩家願意等伺服器排隊 3 小時？」；果蠅打 Doom → 「第一個讓非人類智能玩遊戲——下一個目標應該是什麼？」</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>PlayStation 取消 PHYSINT——Xbox 接手，小島秀夫「意外收到通知說不做了」：平台忠誠度在 2026 年的代價<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 確認：Xbox 宣布接手發行 Kojima Productions 的 PHYSINT，原因是 PlayStation「意外（unexpectedly）通知」取消專案。Hideo Kojima 本人在聲明中確認是 PlayStation 主動取消，他才去找新發行商。Reddit r/gaming 五帖 top-of-day 全是 Physint 相關。GameSpot 標題：「PlayStation Dropping Physint Has Fans Trying To Figure Out What Went Wrong」。<span class="ok">✓</span> 八源互證。</div>
+            <div class="ln"><b>GameGen 角度：</b>平台排他協議的脆弱性：全球最知名的遊戲創作者之一的獨家合作就這樣「意外取消」——平台排他不是保護，是綁架。對 B2B operator：<b>跨平台、不依賴單一發行商的開發工具</b>，在這個時代的價值比任何時候都更明確。GameGen 論述：你的遊戲應該跟著玩家走，不是跟著平台談判結果走。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "PlayStation just cancelled Hideo Kojima's PHYSINT — and Xbox immediately stepped in to publish it. Kojima confirmed: he 'unexpectedly received notice' from PlayStation. The most famous game creator in the world just had an exclusive deal evaporate overnight. For game developers and studios: platform exclusivity is a negotiation, not a partnership. The studios that own their pipeline, their distribution, and their player relationship are the ones who survive this kind of reversal."<br><span style="color:var(--ink-dim)">中譯：PlayStation 剛取消了小島秀夫的 PHYSINT——Xbox 立即接手發行。小島確認：他「意外收到 PlayStation 的通知說不做了」。全球最知名的遊戲創作者剛剛在一夜之間失去了一個獨家合作。對遊戲開發者和工作室：平台排他是一場談判，不是夥伴關係。能掌控自己管線、發行渠道和玩家關係的工作室，才是能扛過這種逆轉的工作室。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/xbox-to-publish-kojima-productions-physint-after-it-unexpectedly-received-notice-from-playstation-that-it-would-cancel-the-project" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.gamedeveloper.com/business/xbox-to-publish-kojima-productions-physint-after-playstation-ditches-project" target="_blank">GameDeveloper ↗</a>　pub 2026-09-11　八源互證 ✓</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Saber Interactive「我們從來沒有用 AI 取代過任何人」——與此同時 Wardogs 首日 100 萬套證明 AI 時代獨立大作仍能爆發<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實（雙線）：</b>GamesIndustry.biz 確認：Saber Interactive 首席創意官明確表示「We've never replaced anybody with AI」——在 EA NHL 27 AI 配音爭議後，業界第一個大型工作室公開劃清界線。同日：Reddit r/gaming top-of-day + PCGamer + GameSpot 三源確認，<b>WARDOGS 首日銷售突破 100 萬套、Steam 峰值 30 萬同時在線</b>，伺服器宕機但玩家仍在排隊。</div>
+            <div class="ln"><b>GameGen 角度：</b>Saber 的表態 + Wardogs 的成功組合，是今天最有力的雙線論述：<b>有溫度的工作室文化（不用 AI 取代人）+ 市場熱情（玩家為好遊戲等伺服器）共存</b>。對 operator：AI 工具的正確使用方式是讓工作室做更多，不是讓工作室裁更多人——這才是「AI 賦能工作室」的差異化論述。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Wardogs just hit 1 million copies sold on day one, with 300,000 peak concurrent players and servers that couldn't keep up. On the same day, Saber Interactive's CCO stated: 'We've never replaced anybody with AI.' Two data points that say the same thing: players will show up for a game that feels made by people who care. The studios that figure out how to use AI as amplification — not replacement — are the ones making the games worth waiting in a queue for."<br><span style="color:var(--ink-dim)">中譯：WARDOGS 首日突破 100 萬套，Steam 峰值 30 萬同時在線，伺服器跟不上。同一天，Saber Interactive 首席創意官說：「我們從來沒有用 AI 取代過任何人。」兩個數據說的是同一件事：玩家會為一個感覺是用心的人做出來的遊戲買單。能把 AI 用作放大器而非替代品的工作室，才是做出讓人值得等伺服器排隊的遊戲的工作室。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/saber-interactives-chief-creative-officer-says-weve-never-replaced-anybody-with-ai" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.pcgamer.com/games/fps/wardogs-servers-go-down-as-over-300-000-people-rush-to-play-on-launch-day/" target="_blank">PCGamer ↗</a>　pub 2026-09-11　三源確認 ✓</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天</span>Google 完成果蠅腦地圖後，工程師讓它打 Doom、Mario64 和 Beat Saber——互聯網公認年度最荒謬科學梗<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/gaming top-of-day 確認：「After Google mapped an adult male fruit fly's brain, software engineers made it play Doom, Mario64, and Beat Saber」。Google 完成了成年雄性果蠅的完整腦神經地圖後，工程師用神經網路模擬讓「果蠅腦」控制遊戲角色。⚠️ Reddit 標題層，技術實作細節未全 fetch，實驗可能為示意性模擬而非真實果蠅即時控制。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Google mapped an entire fruit fly's brain. Software engineers immediately made it play Doom, Mario64, and Beat Saber. That's it. That's the tweet. The first non-human intelligence to play video games isn't a supercomputer — it's a fruit fly. What game would you pick as humanity's first contact sport with a mapped brain? 👇"<br><span style="color:var(--ink-dim)">中譯：Google 完成了一隻果蠅的完整腦神經地圖。工程師立刻讓它打 Doom、Mario64 和 Beat Saber。就這樣。這就是整個推文。第一個打電玩的非人類智能不是超級電腦——是一隻果蠅。如果是你來選第一個跟「腦神經地圖」接觸的遊戲，你選什麼？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「如果腦神經可以玩遊戲，GameGen 幫你把任何概念做成可玩的格式——你的想法，從腦袋到遊戲，不需要懂程式」。</div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wcfks2/after_google_mapped_an_adult_male_fruit_flys/" target="_blank">Reddit r/gaming ↗</a>　pub 2026-09-11　⚠️ Reddit 標題層，技術細節 partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Sony「你說過我們擁有數位遊戲」——Consumer Rights Wiki 整理所有 PlayStation 說過「你的數位遊戲是你的」的紀錄，HN 第一名 347 點<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>HN 347 points, 115 comments（今日 HN 第一名）+ Reddit r/Games top-of-day 雙源確認：Consumer Rights Wiki 整理了 Sony 官網上所有聲稱玩家「擁有」其數位遊戲的文字引用（包含存檔連結），作為正在進行的訴訟佐證。這份 wiki 已成為法律與技術圈今日最大話題。<span class="ok">✓</span> 雙源確認。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Someone built a wiki documenting every time Sony's websites said you 'own' your digital games — with live links and archived snapshots. It has 347 upvotes on Hacker News and counting. When platform ownership promises and platform reality diverge, players document it. For creators: the games you make on platforms you don't control can disappear. The games your players can download and keep? Those are yours."<br><span style="color:var(--ink-dim)">中譯：有人建了一份維基，整理 Sony 官網每一次說過「你擁有你的數位遊戲」的文字，並附有存檔連結。這份文件在 HN 拿到 347 點。當平台的擁有承諾和平台現實出現落差，玩家就會開始記錄。對創作者：你在不屬於你的平台上發的遊戲，可能會消失。玩家可以下載並保留的遊戲——那才是真正屬於你的。</span></div>
+            <div class="meta">來源 <a href="https://consumerrights.wiki/w/Sony_PlayStation_digital_game_ownership_lawsuit" target="_blank">Consumer Rights Wiki ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1wcfh9x/" target="_blank">Reddit r/Games ↗</a>　pub 2026-09-11　雙源確認 ✓</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Wardogs 首日 100 萬套、30 萬峰值 CCU、伺服器宕機——2026 年最大獨立 FPS 發行事件<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/gaming top-of-day「Wardogs Surpasses 1 Million Copies Sold on Day One, Blows Past 300k Peak Concurrent Players on Steam」+ PCGamer「Wardogs servers go down as over 300,000 people rush to play on launch day」+ GameSpot「Wardogs' Massive Start On Steam Undercut By Brutal Server Queues」三源確認。⚠️ 「100 萬套」數字來自官方公告，獨立核查未能 fetch。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Wardogs: 1 million copies sold on day one. 300,000 peak concurrent players. Servers down for hours, players still in queue. You know what that feels like? People wanted this game so badly they sat in a line to play it. There are a thousand games on Steam. Only a few make you want to wait. What's the last game you waited in a queue for — and was it worth it? 👇"<br><span style="color:var(--ink-dim)">中譯：WARDOGS：首日 100 萬套，Steam 峰值 30 萬同時在線，伺服器宕機數小時，玩家還是在排隊。你知道那是什麼感覺嗎？人們太想玩這個遊戲了，寧願排隊等著。Steam 上有幾千個遊戲。只有少數幾個讓你願意等。你上一次為了遊戲排隊是什麼時候——值得嗎？👇</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wct9g1/" target="_blank">Reddit ↗</a> / <a href="https://www.pcgamer.com/games/fps/wardogs-servers-go-down-as-over-300-000-people-rush-to-play-on-launch-day/" target="_blank">PCGamer ↗</a>　pub 2026-09-11　三源確認 ✓</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天</span>「平台忠誠度模擬器」 vs 「果蠅腦神經控制遊戲」兩選一：前者社群熱度最強，後者創意最高<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>Demo 策略 A（熱度優先）：</b>「Physint 平台跳槽模擬器」——玩家扮演遊戲開發者，在 PlayStation / Xbox / PC only 三條路之間做決策，30 秒決定你的遊戲的命運（版稅、玩家數、控制權）。搭今日最大話題，機制完全原創，不用任何 Kojima / PlayStation / Xbox 視覺或 IP。</div>
+            <div class="ln"><b>Demo 策略 B（創意優先）：</b>「腦神經控制遊戲」——在 GameGen 做一個「用思維指令控制角色」的互動 demo（鍵盤模擬腦波選擇），搭果蠅腦地圖今日最大病毒梗，讓玩家體驗「如果腦袋可以直接玩遊戲」的概念感。零 IP 風險，科技感強。</div>
+            <div class="meta">Physint 8 source 確認 · Reddit 5 帖 top-of-day · 今日社群最大話題 · Demo 兩條路皆零 IP 風險</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">✅ 今日 09-11 07:30</span></div>
+          <ol>
+            <li class="up"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">573K ▲10.9%</span></li>
+            <li class="hot up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">98K ▲17.6%</span></li>
+            <li class="down"><span class="nm">Tom Clancy's Rainbow Six Siege</span><span class="vn">78K ▼1.7%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">72K ▲8.3%</span></li>
+            <li class="down"><span class="nm">Palworld</span><span class="vn">71K ▼5.7%</span></li>
+            <li class="down"><span class="nm">Path of Exile 2</span><span class="vn">60K ▼6.9%</span></li>
+          </ol>
+          <div class="bf">heat_latest.json ✅ 今日 09-11 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為 launchd 排程、<b>無瀏覽器</b>可抓 Roblox 即時 CCU（需瀏覽器渲染）。<b>目前無法完全證實</b>。CC 互動 session 有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ TwitchTracker 即時快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ <b>今日 heat_latest.json 為今日 09-11 07:30 資料</b>，Steam 數字均為今日官方 API。今日最大 CCU 漲幅：<b>PUBG +17.6%（83,669→98,403）</b>；CS:GO +10.9%（516K→573K）。今日 Steam Most Played 最大排名飛躍：<b>Valheim +62名（rank 74→12）</b> 是今日最驚人的排名跳升，1.0 正式版效應持續擴散；<b>Halloween: The Game +15名（rank 90→75）</b>、Hunt: Showdown +9名、Zenless Zone Zero +9名。新進 Most Played：<b>No Man's Sky（rank 78）</b>。注意：<b>Warframe 今日 -8.8%（49K→45K）</b>，昨日 +19.3% 暴衝後今日回落。Roblox CCU / Twitch / Threads 因無瀏覽器標「暫缺」。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Valheim +62 排名（rank 74→12）今日 Steam 最大跳升 + PUBG +17.6% CCU + Wardogs 伺服器宕機（首日 30 萬同時在線）</h3>
+        <div class="sum">今日三條暴衝訊號：(1) <b>Valheim 今日 Steam Most Played 排名 +62（74→12），是今日最大單日排名飛躍。</b> heat_latest.json steam_movers 直接數字確認：prev_rank=74, rank=12, jump=62。昨日 1.0 正式版脫 EA 後今日排名急速上升，排進 Most Played 前 15 名。⚠️ Valheim 1.0 為昨日新聞，今日為 排名效應。(2) <b>PUBG 今日 CCU +17.6%（83,669→98,403）</b>——今日 Steam live 最大 CCU 漲幅。具體原因未查證（可能有賽季活動）。(3) Reddit r/gaming top-of-day + PCGamer + GameSpot：<b>Wardogs 首日 30 萬峰值 CCU，伺服器宕機，玩家仍在等待</b>——這是 2026 年最大的獨立 FPS 首發事件，也是「好遊戲自然引爆」的最直接案例。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Valheim 的排名飛躍說明：<b>5 年 Early Access 後 1.0 正式版的「完成感」可以製造排名火箭</b>——這是「長線培養玩家忠誠度」的最好案例。Wardogs 伺服器宕機反而是最強的免費廣告：<b>「伺服器撐不住」=「太多人想玩」=「這遊戲你該去看看」</b>。Create-loop 提示：現在做「萬聖節主題 demo」提前卡位，Halloween: The Game 今日 +15 排名是節日遊戲提前暖場的信號。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">heat_latest.json steam_movers + PCGamer · 09-11 · <a href="https://store.steampowered.com/app/892970" target="_blank">Valheim ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬需瀏覽器，本次排程無瀏覽器、<b>目前無法完全證實</b>，不以估計補位。Physint 轉台新聞在 Reddit r/gaming + r/Games 各佔 top-of-day 前三位，是今日社群最大話題流量來源（非 Steam 數字，但社群暴衝訊號確認）。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 熱賣 / 新品</span><span class="metric">今日 09-11 資料</span></div>
+          <ol>
+            <li class="hot"><span class="nm">WARDOGS</span><span class="vn">熱賣 #1 · 首日 1M</span></li>
+            <li class="hot"><span class="nm">Halloween: The Game</span><span class="vn">熱賣 · +15名</span></li>
+            <li class="hot"><span class="nm">The Blood of Dawnwalker</span><span class="vn">熱賣 · 持續</span></li>
+            <li><span class="nm">Welcome to Elderfield</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Valheim</span><span class="vn">熱賣 · 1.0 效應</span></li>
+            <li><span class="nm">No Man's Sky</span><span class="vn">新進 Most Played</span></li>
+          </ol>
+          <div class="bf">heat_latest.json steam_new_top · 09-11 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>HN / 技術社群</span><span class="metric">遊戲 / AI（今日）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Sony 數位遊戲所有權訴訟 Wiki</span><span class="vn">347 pts · HN #1</span></li>
+            <li class="hot"><span class="nm">Rebuilding AI 遊戲 with Astra 6</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">Raiders at the Gate（塔防 web 遊戲）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">Fashionguessr（每日時尚猜謎遊戲）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">Terminal Tetris（Rust 終端機俄羅斯方塊）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">AI Alignment via Specification Gaming</span><span class="vn">90 pts</span></li>
+          </ol>
+          <div class="bf">heat_latest.json hackernews · 09-11 · <a href="https://news.ycombinator.com" target="_blank">HN ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>HN 今日：「用 Astra 6 重建 AI 遊戲」+ 塔防 web 遊戲 + 每日時尚猜謎——Show HN 遊戲類別活躍</h3>
+        <div class="sum">今日 HN Show HN 遊戲向項目三條：(1) <b>「Rebuilding an AI-made browser game with Astra 6」</b>（arcane-orb-workshop.pages.dev）——用 Google Astra 6 重建原先 AI 生成的瀏覽器遊戲，是「AI 迭代遊戲」的典型示範，技術社群感興趣。⚠️ 2 points，成熟度未 fetch。(2) <b>Show HN: Raiders at the Gate — tower defense web game</b>（games.chrisbeach.co.uk）——獨立開發者 web 塔防遊戲，2 points 3 comments，符合 C 側創作者入門案例。(3) <b>Show HN: Fashionguessr — A Daily Fashion Trivia Game</b>——每日時尚 wordle 變形，3 points。顯示「每日猜謎」格式仍有新入局者。今日 Steam 新品亮點：Thumper Chess（音樂 × 象棋）、The Last of RAM（標題玩梗）、Bugs. Billions of Bugs.。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「Rebuilding AI-made game with Astra 6」是本週最直接的「AI → 遊戲迭代」展示——第一代 AI 生成遊戲出來後，下一步是人工精修或更高級 AI 再迭代。GameGen Trend-to-Game 定位的論述鏈：今天的梗 → 明天的遊戲 → 後天的下一版。「每日猜謎格式」Fashionguessr 的出現說明：即使 Wordle 式遊戲已近飽和，特定垂類（時尚）切入仍有空間。對 C 側創作者：<b>你的垂類 × Wordle 格式</b>是今天成本最低、完成度最高的快速遊戲創意。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HN Show HN · 09-11 · <a href="https://arcane-orb-workshop.pages.dev/" target="_blank">Astra 6 遊戲 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · 業界 + 設計</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>平台權力</span></span>PlayStation 取消 PHYSINT + Rockstar 解僱員工 Glasgow 聽證會開始——「遊戲業勞資關係」今日雙主線</h3>
+        <div class="sum">兩條「平台 / 雇主 vs 創作者」訊號同日爆發：(1) 八源確認（Reddit × 5 + GamesIndustry + GameDeveloper + GameSpot）：<b>PlayStation 取消 PHYSINT，Xbox 接手——Hideo Kojima 表示「意外收到 PlayStation 通知」</b>，GameSpot 追問：「PlayStation Dropping Physint Has Fans Trying To Figure Out What Went Wrong」。(2) Reddit r/gaming top-of-day + GameDeveloper + Eurogamer 三源確認：<b>Rockstar 解僱員工集體在 Glasgow 上訴聽證會開始</b>，一名前員工在聽證前發表演說：「The modern workplace runs on fear… today we are fighting fear」。⚠️ 兩條均為標題摘要層，全文細節未 fetch。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Physint + Rockstar 聽證在同一天，是本週「遊戲業結構性問題」最濃縮的快照：<b>平台可以突然取消合約，大廠可以突然裁員，創作者保護機制幾乎不存在。</b> 對 C 側創作者的論述：<b>在沒有平台保護、沒有工會保護的環境下，唯一可以 hedge 的是「自己擁有你的工具、你的玩家、你的通路」</b>——這是 GameGen Trend-to-Game 工具鏈的存在理由。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GamesIndustry.biz / Reddit / Eurogamer · 09-11 · <a href="https://www.gamesindustry.biz/xbox-to-publish-kojima-productions-physint-after-it-unexpectedly-received-notice-from-playstation-that-it-would-cancel-the-project" target="_blank">GI.biz ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>消費者權利</span></span>GTA 6 Netflix 預覽 6 小時帶來 10 萬新訂閱 + Sony「我說你擁有」訴訟 Wiki——數位所有權今日兩面</h3>
+        <div class="sum">兩條數位所有權 / 平台訊號：(1) GamesIndustry.biz + GameSpot 雙源確認：<b>GTA 6 預告在 Netflix 上獨家播映 6 小時，帶來超過 10 萬次新用戶註冊</b>（GameSpot 標注為「分析師估計」⚠️）。Netflix 在雲端遊戲和遊戲 IP 內容上的押注開始有可量化回報。(2) HN #1（347 pts）+ Reddit r/Games top-of-day：<b>Consumer Rights Wiki 整理 Sony 網站上聲稱玩家「擁有」其數位遊戲的所有文字紀錄</b>，用作訴訟佐證——這份文件正在成為業界數位所有權辯論的核心材料。⚠️ 兩條均標題摘要層。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>GTA 6 × Netflix：<b>遊戲 IP 的內容化（trailer → 訂閱帶量）是 2026 年媒體融合最清晰的商業案例之一</b>——IP 本身即是最強的用戶獲取工具。Sony 所有權 Wiki：這份文件的傳播速度說明玩家對平台「承諾 vs 現實」落差的不信任已到達臨界點。對創作者：<b>數位遊戲的所有權邊界是目前業界最大的未解法律問題之一</b>，任何創作者都應該提前理解「平台 vs 玩家 vs 開發者」各自的權利。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GamesIndustry / HN · 09-11 · <a href="https://consumerrights.wiki/w/Sony_PlayStation_digital_game_ownership_lawsuit" target="_blank">Consumer Rights Wiki ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>今日迷因</span></span>果蠅腦打 Doom ＋「What in the vibe-coded s*** is this」RuneScape AI 山寨 ＋ itch.io 梗遊戲持續活躍</h3>
+        <div class="sum">今日迷因素材三組：(1) Reddit r/gaming top-of-day 確認：<b>Google 完成果蠅腦地圖後工程師讓它打 Doom、Mario64、Beat Saber</b>——這是今日互聯網最荒謬的科學 × 遊戲交叉點，梗感在於「首個打遊戲的非人類智能不是 GPT 而是果蠅」。⚠️ 技術實作細節（是真實神經控制還是模擬）Reddit 標題層未全確認。(2) Eurogamer 確認：<b>RuneScape 玩家發現 gen-AI 山寨版出現，直接說出「What in the vibe-coded s*** is this」</b>，最終吸引 Jagex 親自介入下架。「vibe-coded」成為今日遊戲圈最精準的 AI 山寨侮辱語。(3) itch.io 今日活躍梗遊戲：<b>Three Nights Lobotomized、Asgore Runs Over Dess - the game、Kill the Ice Age Baby Adventure</b>——itch.io meme 圈每週都在推陳出新的荒謬遊戲化梗。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>果蠅腦打 Doom 的梗核心：<b>「智能 × 遊戲」的邊界每次被打破都會成為最大迷因</b>——AI、腦機、果蠅，只要在遊戲上有突破就爆。RuneScape AI 山寨事件：<b>「vibe-coded」是 2026 年最精準的 AI 濫用形容詞</b>——對 C 側創作者的警示：AI 工具做出來的遊戲必須有原創靈魂，否則就是被玩家的迷因說的那種東西。GameGen create-loop 原則：Trend-to-Game 的「Game」部分必須有真正的機制原創性，不是「vibe-coded 山寨版」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Reddit top-of-day / Eurogamer / itch.io · 09-11 · (Threads 需瀏覽器 · 本次暫缺)</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（今日新聞 + Steam 趨勢）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">「平台跳槽決策器」——Physint 啟發</span><span class="vn">★ 機制首選</span></li>
+            <li class="hot"><span class="nm">「腦神經控制遊戲」——果蠅腦打 Doom 啟發</span><span class="vn">創意最高</span></li>
+            <li><span class="nm">Wardogs「30 秒戰場」——快節奏 FPS loop</span><span class="vn">動作機制</span></li>
+            <li><span class="nm">Dungeon Automata 式視覺編程塔防</span><span class="vn">RPS 今日推薦</span></li>
+            <li><span class="nm">「你的垂類 × Wordle」每日猜謎格式</span><span class="vn">Fashionguessr 啟發</span></li>
+            <li><span class="nm">「萬聖節主題恐怖 demo」——節日前哨佈局</span><span class="vn">Halloween 趨勢</span></li>
+          </ol>
+          <div class="bf">Physint / Reddit / HN / Steam movers · 09-11 · <a href="https://itch.io/games/html5" target="_blank">itch.io ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日首選機制公式：「平台跳槽決策器」（Physint 話題鉤子最強）；次選：「腦神經控制遊戲」（果蠅腦梗最病毒）</h3>
+        <div class="sum">本日機制靈感首選：<b>「平台跳槽決策器」</b>——玩家扮演遊戲開發者，在三個平台路線（排他協議 / 多平台 / 自主發行）之間做決策，看 30 秒後你的「遊戲命運」（玩家數、版稅率、控制權評分）。搭 Physint 今日最大話題，機制完全原創，零 IP 風險，商業論述最清晰。次選：<b>「腦神經控制遊戲」</b>——角色不用 WASD，用「腦波思維」（鍵盤模擬）控制移動，4 個方向代表 4 種思維狀態，讓玩家體驗「如果腦袋可以直接控制」的概念感。搭果蠅腦打 Doom 今日最大病毒梗，技術感最高。第三選：<b>Wardogs 啟發「30 秒戰場速跑」</b>——限時消滅所有敵人，每一個決策都有代價，快節奏高壓的 FPS 機制泛化。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日機制優先順序：① 平台跳槽決策器（話題鉤子最強，商業論述最直接）→ ② 腦神經控制（病毒梗最強，創意天花板）→ ③ Wardogs 30 秒戰場（FPS 愛好者社群）→ ④ 萬聖節主題 demo（節日佈局，10/31 前 7 週）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Physint 八源 + 果蠅腦 Reddit · <a href="https://www.reddit.com/r/gaming/comments/1wcfks2/" target="_blank">果蠅腦 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為 launchd 排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話，<b>目前無法完全證實</b>，骨架保留。今日可追的長線母題：(1) <b>Physint / PlayStation 取消</b>——台灣 PlayStation 核心圈應該對此有強烈反應，小島秀夫在台灣遊戲圈的聲望極高；(2) <b>Wardogs 首日 100 萬套</b>——台灣 FPS 社群（CS2 / Valorant 圈）對大型 FPS 首發事件關注度高；(3) <b>Marvel's Wolverine 評測</b>——台灣漫威圈 + PS5 玩家重疊度高，評測出爐後應有評論圈反應；(4) <b>果蠅腦打 Doom</b>——台灣科技梗圈（PTT Sci-tech / Dcard）對這種科學 × 遊戲交叉點極度喜愛，病毒潛力高。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Physint 平台跳槽（今日最大）</td><td><span class="tmpl">「遊戲開發者平台決策模擬器」</span></td><td>「你的決策讓遊戲活了還是死了」截圖病毒</td><td class="rk-low">低（機制完全泛化，不用 Kojima/PS/Xbox 任何 IP）</td><td>發帖：「PlayStation 剛取消了小島的遊戲。如果你是遊戲開發者，你選：排他協議 / 多平台 / 自主發行？30 秒決定你的遊戲命運——試試這個 demo」→ GameGen create-loop</td></tr>
+          <tr><td>果蠅腦 × 電玩（今日最病毒）</td><td><span class="tmpl">「腦神經控制角色」互動 demo</span></td><td>「我讓腦神經地圖打了 GameGen 遊戲」病毒截圖</td><td class="rk-low">低（概念展示，非真實神經介面）</td><td>做一個「腦波思維控制」demo（鍵盤模擬 4 種思維狀態）；互動帖：「第一個打遊戲的非人類智能是果蠅——你覺得下一個會是什麼？植入晶片的人？八爪魚？AI Agent？」</td></tr>
+          <tr><td>NFL Week 1 開幕（Google Trends 今日最熱）</td><td><span class="tmpl">「NFL 選秀預測 / 賽果猜謎」</span></td><td>NFL 開賽週美國社群流量最大，體育猜謎天生病毒</td><td class="rk-low">低（不用 NFL 任何 IP，機制泛化）</td><td>做一個「本週 NFL 賽果預測遊戲」——選哪隊贏、分差多少，限時提交，搭美國今日最大 Google Trends 話題；互動帖：「NFL 開賽了！今天你挺哪隊？（不用知道 NFL 規則也能猜）」</td></tr>
+          <tr><td>Wardogs 1M 首日 FPS 大爆發</td><td><span class="tmpl">「30 秒戰場速跑」FPS 泛化 demo</span></td><td>「我挑戰了 Wardogs 30 秒關卡」競速截圖</td><td class="rk-low">低（機制完全泛化，不用 Wardogs 任何視覺）</td><td>做一個限時 30 秒清關的動作 demo；互動帖：「Wardogs 首日 100 萬套，伺服器宕機，玩家還在排隊。你上一次為了遊戲願意等伺服器的時候是什麼遊戲？」</td></tr>
+          <tr><td>Sony「我說過你擁有遊戲」訴訟</td><td><span class="tmpl">「數位物品所有權模擬器」</span></td><td>「你以為你擁有這個遊戲嗎？」諷刺互動帖高轉率</td><td class="rk-mid">中（平台政治敏感，保持提問框架）</td><td>互動帖（謹慎框架）：「如果你的數位遊戲庫明天消失，你最心疼哪一款？」→ 接「GameGen 讓你的遊戲存在於你自己可以控制的地方」</td></tr>
+          <tr><td>Halloween: The Game +15 排名</td><td><span class="tmpl">「萬聖節主題恐怖 demo」</span></td><td>節日主題話題窗口提前 3-4 週開始</td><td class="rk-low">低</td><td>現在開始做萬聖節主題 demo（10/31 前 7 週），比節日高峰早 4 週卡位；互動帖：「Halloween: The Game 進了 Steam 熱榜。今年萬聖節你想玩什麼類型的恐怖遊戲？」</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>PlayStation 取消 PHYSINT——平台排他協議在 2026 年的最大考驗</td><td>GamesIndustry.biz + GameDeveloper + Reddit ×5 + GameSpot + Eurogamer 八源確認：Kojima Productions 的 PHYSINT 在 PlayStation「意外取消」後，由 Xbox 接手。Hideo Kojima 本人確認：收到「意外通知」。✓ 八源互證。</td><td>"PlayStation just cancelled PHYSINT — and Xbox stepped in within days. Hideo Kojima said he 'unexpectedly received notice.' If the most famous game director in the world can have an exclusive deal evaporate overnight, what does that say about platform exclusivity as a strategy for studios? The studios that survive long-term are the ones that don't bet their future on a single platform relationship. They build games and pipelines they own."</td><td><a href="https://www.gamesindustry.biz/xbox-to-publish-kojima-productions-physint-after-it-unexpectedly-received-notice-from-playstation-that-it-would-cancel-the-project" target="_blank">↗</a></td></tr>
+          <tr><td>Saber Interactive「從來沒用 AI 取代人」× Wardogs 1M 首日——AI 時代工作室文化與市場信任的雙重論述</td><td>GamesIndustry.biz：Saber CCO「We've never replaced anybody with AI」；Reddit + PCGamer + GameSpot：Wardogs 首日 100 萬套、30 萬同時在線、伺服器宕機。三源確認。</td><td>"On the same day Saber Interactive publicly stated they've never replaced anyone with AI, Wardogs hit 1 million copies sold on day one with 300,000 peak concurrent players and servers that couldn't keep up. Two signals, same conclusion: players will queue for a game that feels human. AI tools are most powerful when they make studios faster and smarter — not when they replace the people who care."</td><td><a href="https://www.gamesindustry.biz/saber-interactives-chief-creative-officer-says-weve-never-replaced-anybody-with-ai" target="_blank">↗</a></td></tr>
+          <tr><td>Newzoo：H1 2026 老牌 live-service 遊戲普遍持平或下滑——operator 策略重新校準時機</td><td>GamesIndustry.biz：「Newzoo: Most established live-service and evergreen titles were flat or down year over year in H1 2026」。⚠️ 標題摘要層，具體數字未 fetch。</td><td>"Newzoo just reported that most established live-service games were flat or down in H1 2026. The era of 'build one game and run it forever' is getting harder. For operators: the studios growing right now are the ones that can quickly adapt to what players want today — not just what they wanted in 2022. AI-assisted game creation isn't just about speed. It's about staying relevant when the trend moves faster than your production cycle."</td><td><a href="https://www.gamesindustry.biz/newzoo-most-established-live-service-and-evergreen-titles-were-flat-or-down-year-over-year-in-h1-2026" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Physint 平台取消、Saber AI 文化 × Wardogs 1M）已附完整 EN hook，可直接交 CW 的 CJ 每日包。第三條 Newzoo live-service 為加分框架（Operator 策略論述）。Physint 條八源互證 ✓；Saber/Wardogs 三源確認 ✓；Newzoo 為標題摘要層（partial）。使用前建議補充原文細節。對外用字已過濾博彩相關語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>★ 蹭 Physint 轉台：「PlayStation 剛取消了小島秀夫的 PHYSINT——Xbox 立刻接手。你支持這個決定嗎？如果你是小島，你接下來選哪個平台？」</li><li>★ 蹭果蠅腦打 Doom：「Google 完成果蠅腦地圖，工程師讓它打 Doom 和 Mario64。第一個打遊戲的非人類智能是一隻果蠅。下一個目標你覺得會是什麼？」</li><li>★ 蹭 Wardogs 1M：「WARDOGS 首日 100 萬套，伺服器宕機，玩家還在排隊。你上一次為了遊戲願意等的是什麼？」</li><li>Sony 數位所有權互動帖：「如果你的數位遊戲庫明天消失，你最心疼哪一款？」（謹慎框架，不直接評判 Sony）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「平台跳槽決策器」——30 秒決定你的遊戲走 PS 排他 / Xbox / 自主發行，看結果；搭 Physint 今日最大話題，零 IP 風險，商業論述最直接</li><li>「腦神經控制遊戲」——4 種「思維狀態」控制角色，搭果蠅腦打 Doom 今日最大病毒梗，創意天花板</li><li>「30 秒戰場速跑」——搭 Wardogs 話題，限時 FPS loop，鼓勵挑戰截圖分享</li><li>「萬聖節主題恐怖 demo」——10/31 前 7 週，現在做節日主題卡位</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>★ Physint 取消的具體原因——PlayStation 為何突然取消？官方聲明是否有補充（預算問題？戰略調整？）</li><li>★ Valheim +62 排名背後——是 1.0 自然效應還是有行銷活動驅動？Valheim 官方公告補充後更強</li><li>Wardogs 「100 萬套」數字——是官方公告或第三方統計？後續需找原始來源確認</li><li>Sony 數位所有權訴訟進展——Consumer Rights Wiki 的整理是否已進入法律程序</li><li>NFL 開幕週遊戲流量影響——體育大事件通常帶動遊戲平台整體流量波動</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>★ Physint 話題：不表達「PlayStation 錯了」或「Xbox 更好」的明確平台立場——保持「業界觀察 + 提問」框架</li><li>★ 果蠅腦 demo：不聲稱「我們真的可以用腦神經控制遊戲」——這是概念示意性 demo，不是真實 BCI 技術</li><li>Rockstar 聽證：不評論具體勞資法律問題——保持「遊戲業結構性觀察」框架，不對勞資糾紛表態</li><li>Sony 所有權話題：不直接說「Sony 在說謊」——保持「平台承諾 vs 現實落差」中性觀察，讀者自行判斷</li><li>對外文案的博彩語言（博彩/入注/jackpot 等）——今日所有素材均在去賭場化安全區，但發文前仍需過一遍</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Steam 資料時間</td><td>heat_latest.json fetched_at: <b>2026-09-11T07:30:29+08:00</b>（<b>✅ 今日資料</b>，今日 09-11 熱度雷達正常更新）；ok_count: 19/19。本次標注「今日」，可做 09-11 當日資料聲稱。<span class="ok">✓</span></td></tr>
+        <tr><td>Physint / PlayStation → Xbox</td><td>Reddit r/gaming top-of-day ×3 + Reddit r/Games top-of-day ×2 + GamesIndustry.biz + GameDeveloper + GameSpot + Eurogamer 九源（heat_latest.json reddit + story_gamesindustry + story_gamedeveloper + story_gamespot + story_eurogamer）<span class="ok">✓ 八源以上確認</span>　🆕 今天新</td></tr>
+        <tr><td>Wardogs 1M 首日 + 30 萬 CCU</td><td>Reddit r/gaming top-of-day「Wardogs Surpasses 1 Million Copies Sold on Day One, Blows Past 300k Peak Concurrent Players on Steam」+ story_pcgamer「servers go down as over 300,000 people rush to play」+ story_gamespot「Massive Start On Steam」<span class="ok">✓ 三源確認</span>　⚠️「100 萬套」來自官方公告，建議後補獨立核查　🆕 今天新</td></tr>
+        <tr><td>Saber Interactive「never replaced AI」</td><td>story_gamesindustry「Saber Interactive's chief creative officer says 'We've never replaced anybody with AI'」<span class="ok">✓ 單源確認</span>　🆕 今天新</td></tr>
+        <tr><td>果蠅腦 × 遊戲（Doom / Mario64 / Beat Saber）</td><td>heat_latest.json reddit top-of-day：「After Google mapped an adult male fruit fly's brain, software engineers made it play Doom, Mario64, and Beat Saber」URL: reddit.com/r/gaming/comments/1wcfks2/<span class="pp">partial</span>（Reddit 標題層，技術細節未 fetch）　🆕 今天新</td></tr>
+        <tr><td>Sony 數位所有權 Wiki</td><td>heat_latest.json hackernews：「List of references on Sony websites to players 'owning' their digital games」347 points, 115 comments（今日 HN #1）+ heat_latest.json reddit r/Games top-of-day：「Consumer rights wiki is compiling a list...」<span class="ok">✓ 雙源確認</span>　🆕 今天新</td></tr>
+        <tr><td>GTA 6 Netflix 10 萬訂閱</td><td>story_gamesindustry「GTA 6 Netflix preview drove more than 100,000 sign-ups during its six-hour exclusivity window」+ story_gamespot（⚠️ 標注為分析師估計）<span class="pp">partial</span>（分析師估計，非 Netflix 官方）　🆕 今天新</td></tr>
+        <tr><td>Rockstar Glasgow 聽證</td><td>heat_latest.json reddit top-of-day「'The modern workplace runs on fear': Fired dev calls out Rockstar」+ story_gamedeveloper「'Justice at last feels within reach': Fired Rockstar workers rally in Glasgow」+ story_eurogamer「Final hearing in Rockstar Games vs. fired GTA 6 developers tribunal begins」<span class="ok">✓ 三源確認</span>　🆕 今天新</td></tr>
+        <tr><td>Valheim +62 排名（74→12）</td><td>heat_latest.json steam_movers.rank_jumps: Valheim rank=12, prev_rank=74, jump=62<span class="ok">✓ 直接數字</span>　今日</td></tr>
+        <tr><td>PUBG +17.6% CCU</td><td>heat_latest.json steam_velocity: PUBG today=98403, yesterday=83669, pct=17.6<span class="ok">✓ 直接數字</span>　今日</td></tr>
+        <tr><td>Halloween: The Game +15 排名</td><td>heat_latest.json steam_movers.rank_jumps: Halloween: The Game rank=75, prev_rank=90, jump=15<span class="ok">✓ 直接數字</span>　今日</td></tr>
+        <tr><td>No Man's Sky 新進 Most Played</td><td>heat_latest.json steam_movers.new_entrants: No Man's Sky rank=78<span class="ok">✓ 直接數字</span>　今日</td></tr>
+        <tr><td>RuneScape AI 山寨 / Jagex 介入</td><td>story_eurogamer「'What in the vibe-coded s*** is this' - RuneScape players revolt as gen-AI copycat game appears and eventually attracts the eye of Jagex」<span class="ok">✓ 單源確認</span>　🆕 今天新</td></tr>
+        <tr><td>Newzoo H1 2026 live-service 持平或下滑</td><td>story_gamesindustry「Newzoo: Most established live-service and evergreen titles were flat or down year over year in H1 2026」<span class="pp">partial</span>（標題摘要層，具體數字未 fetch）　近日</td></tr>
+        <tr><td>Marvel's Wolverine 評測</td><td>heat_latest.json reddit r/gaming + r/Games 雙評測帖 top-of-day + story_eurogamer + story_vgc<span class="ok">✓ 四源確認</span>　🆕 今天新</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 八源 / 三源確認，可直接使用 · Steam = 今日 09-11 07:30 真實資料（✅ 非昨日延用）· Roblox/Twitch/Threads 因排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/09/11 · 對外發布前一律過去博彩語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
