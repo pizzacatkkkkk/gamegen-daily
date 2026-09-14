@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -235,9 +237,9 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>Valve 把吸血鬼 RPG《Nighthawks》列為 Adults Only 成人限制，從 Steam 搜尋結果移除並在多國停售——開發商公開說「這是非常壞的消息」。</b>這個故事今天同時佔據 Reddit r/gaming 和 r/Games 雙榜首位，是目前見到的最強訊號。遊戲還沒上市，分級一變，就從搜尋引擎蒸發。對所有正在做遊戲的人，這是最直接的平台風險警告。</p>
-        <p>第二條大故事：Rockstar 在英國工會訴訟庭審中承認，公司在被開除員工的工會 Discord 伺服器裡埋臥底超過 2.5 年——同一份法庭文件同時洩露 GTA 6 線上模式將採用「32 人格式」（Rock Paper Shotgun 報道）。Steam 今日最強正向訊號：<span class="hl">Terraria 週一無公告有機暴衝 +18.9%（35,488 人，昨日 29,855）</span>、<span class="hl">Team Fortress 2 週一異常上升 +13.0%（59,596 人，昨日 52,729）</span>——兩者均為週一反直覺的上漲，值得觀察有無外部觸發。</p>
-        <div class="pull">▸ 今天的 CJ LinkedIn 主線：Nighthawks 事件是今年最清晰的「平台守門人風險」展示——一款完成的遊戲因為一個分級決定從搜尋消失。GameGen 讓創作者把可玩連結直接分發出去，這才是創作者真正掌控的分發管道。</div>
+        <p><b>這幾天兩大遊戲平台巨頭，都被抓包「對社群說一套、做一套」。</b>9/11，Roblox 開發者大會上一名 YouTuber（Emathiio）衝上台、穿著「Kids Deserve Better」的 T 恤對著 CEO David Baszucki 抗議，被保全架走——他抗議的是 Roblox 對兒童安全問題「知道問題卻動作慢」，此事正值美國參議院對 Roblox 展開調查期間（PC Gamer / Dexerto，9/11–13）。同一週，Rockstar 在 GTA6 裁員仲裁庭的文件曝光：公司在員工工會的私人 Discord 裡安插「線人」長達兩年半，2025 年 10 月一口氣開除 34 名員工（Cheat Code Central / Rock Paper Shotgun，9/11）。</p>
+        <p>兩件事的共通點：<b>平台的「速度」和「創作者/用戶信任」正在對撞</b>——一個是成長優先於兒童安全，一個是效率優先於工會信任。對 GameGen 的訊號：當巨頭在「快」與「信任」之間選了快，<span class="hl">透明、輕量、把創作權還給社群</span>的定位反而更值錢——這正是 Trend-to-Game 想站的位置。順帶一提，Steam 今天是明顯的「週末退潮」：CS2、Rust、PUBG 全面比昨天跌 15–21%，但 <b>Terraria 逆勢 +18.9%</b>、<b>Borderlands 4 因新 DLC 角色衝進榜單前段（今天是限時免費周末最後一天）</b>。</p>
+        <div class="pull">▸ 今天就能蹭：拿 Borderlands 4 新角色「Loveless」的全網花癡熱潮，做一款「你的角色設計會多讓人上頭」的一句話角色生成器（免費玩、今天限免週末最後一天，順勢蹭）；同時準備一條 CJ 貼文，講「巨頭在信任上抄捷徑時，透明的小平台反而是機會」。</div>
       </div>
 
       <!-- 📰 今日彈藥 頭版 -->
@@ -249,19 +251,19 @@
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Valve 把吸血鬼 RPG《Nighthawks》列成人限制並多國下架——開發商：「這是非常壞的消息」</div>
-            <div class="ln"><b>新聞事實：</b>吸血鬼主題 RPG《Nighthawks》尚未正式上市，Valve 以 Adults Only 分級將其從 Steam 搜尋結果移除，並在多個國家停止販售。開發商公開表示「It's very bad news for us」。Reddit r/gaming + r/Games 今日雙榜第一，是今日最高熱度遊戲新聞（2026-09-14 confirmed）。</div>
-            <div class="ln"><b>GameGen 角度：</b>平台守門人風險：一個分級決定，你的完整遊戲就從搜尋引擎消失。GameGen 讓創作者直接分享可玩連結給受眾，繞過平台搜尋曝光的依賴——今天的最強現實示範。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Valve just classified a finished vampire RPG as Adults Only, removing it from search in multiple countries. The developer said: 'It's very bad news for us.' Platform gatekeeping is real — one classification change and your completed game disappears from discovery. Build where you control the distribution."<br><span style="color:var(--ink-dim)">中譯：Valve 把一款完成的吸血鬼 RPG 列為成人限制，多國搜尋下架。開發商說：「這是非常壞的消息。」平台管控是真實的——一個分級決定，你的遊戲就從搜尋消失。建在你掌控分發管道的地方。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/gaming/comments/1wf9qpj/" target="_blank">Reddit r/gaming ↗</a> · <a href="https://www.reddit.com/r/Games/comments/1wfaqqs/" target="_blank">Reddit r/Games ↗</a>　pub 2026-09-14　verified ✓（雙榜確認）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>YouTuber 衝上 Roblox 開發者大會的台、抗議兒童安全——「快」和「信任」的帳，遲早要還</div>
+            <div class="ln"><b>新聞事實：</b>9/11，Roblox 開發者大會（RDC 2026，聖荷西）CEO David Baszucki 開場時，YouTuber Emathiio 衝上台大喊「We deserve better」、穿著「Kids Deserve Better」T 恤，被保全當場架走、驅離會場。事件正值美國參議院對 Roblox 兒童安全展開調查期間；Roblox 近期才推出「兒童帳號」機制回應外界壓力（PC Gamer，pub 2026-09-13；Dexerto，pub 2026-09-11）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這不是單一瘋狂粉絲事件，是「UGC 平台規模衝太快、信任建設跟不上」的縮影。GameGen 從第一天就是小體量、高透明、內容即時可審——當巨頭在成長和信任之間選了成長，我們的「輕量、可控、對創作者誠實」反而是差異化，不是限制。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A creator stormed the stage at Roblox's own developer conference to protest child safety — while the US Senate investigates the platform. When platforms outgrow trust, the smaller, more transparent ones start looking like the safer bet."<br><span style="color:var(--ink-dim)">中譯：一名創作者衝上 Roblox 自家開發者大會的舞台，抗議兒童安全問題——同時間美國參議院正在調查這個平台。當平台的成長超過了信任建設的速度，更小、更透明的平台反而開始顯得更可靠。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pcgamer.com/software/platforms/youtuber-runs-onto-the-stage-at-roblox-developers-conference-shouting-we-deserve-better-gets-tackled-and-ejected-from-show/" target="_blank">PC Gamer ↗</a> / <a href="https://www.dexerto.com/roblox/roblox-youtuber-tackled-after-running-on-stage-during-ceo-talk-in-kids-deserve-better-shirt-3408260/" target="_blank">Dexerto ↗</a>　pub 2026-09-11　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>EA 在 NHL 27 用 genAI 製作球評配音——AI 配音正式進入 AAA 體育遊戲主流</div>
-            <div class="ln"><b>新聞事實：</b>一名體育播報員在 Game Developer 投稿，指出 EA 的 NHL 27 使用 genAI 技術生成球評配音（commentator voiceover），取代真人錄音（Game Developer.com，pub 2026-09-14）。這是 AAA 體育遊戲首次被公開確認大規模採用 genAI 配音的案例。</div>
-            <div class="ln"><b>GameGen 角度：</b>當 EA 在旗艦體育遊戲系列用 AI 做配音，AI 工具化已是主流，不再是「實驗性」。問題不再是「AI 會不會進遊戲」，而是「誰掌控 AI 工具、誰得益」。GameGen 把 AI 工具直接交給創作者，而非鎖在大廠的 pipeline 裡。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "EA is using genAI for commentator voiceover in NHL 27. AI in AAA games isn't coming — it's already here. The question is who controls the tools. When a one-person creator can now do what EA's audio department does, the playing field is shifting."<br><span style="color:var(--ink-dim)">中譯：EA 在 NHL 27 使用 genAI 製作球評配音。AAA 遊戲裡的 AI 不是「即將到來」——它已經在了。問題是誰掌控工具。當一個人的創作者現在能做 EA 音頻部門做的事，競爭場地正在轉移。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/report-ea-s-nhl-27-is-using-genai-to-create-voiceover-claims-a-sports-commentator" target="_blank">Game Developer ↗</a>　pub 2026-09-14　verified partial（標題確認，全文未 fetch）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>沙烏地 PIF 考慮把 EA 和 Savvy Games 合併——遊戲業正在被「一個口袋」整碗端走</div>
+            <div class="ln"><b>新聞事實：</b>Bloomberg 9/10 報導，沙烏地主權基金 PIF 正評估將旗下 EA（8/4 以 $550 億私有化完成）與 Savvy Games Group 合併，兩者合體會把 Battlefield、Madden、模擬市民、Pokémon GO、地產大亨 GO 收進同一個公司；PIF 表示尚未拍板，且要等 Savvy 完成對 Moonton（$60 億）的收購才會推進（gHacks 引 Bloomberg，pub 2026-09-11）。</div>
+            <div class="ln"><b>GameGen 角度：</b>當一個口袋同時握有主機大作、手遊、電競（ESL FACEIT）、UGC（Niantic 遊戲業務），遊戲業的「分發權」正在往少數幾個超級平台集中。GameGen 的位置剛好相反：不靠併購規模，靠「今天的梗，今天就能玩」的速度取勝——巨頭的整合期通常也是創作者最容易被忽略的時候。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "One sovereign fund is quietly assembling EA, Scopely, Pokémon GO, and esports under one roof. While the giants consolidate, speed to the trend — not the size of the portfolio — is still the fastest way to reach players."<br><span style="color:var(--ink-dim)">中譯：一個主權基金正悄悄把 EA、Scopely、Pokémon GO、電競收進同一個屋簷下。當巨頭忙著整併，「對熱點的反應速度」而不是「投資組合的規模」，仍然是觸及玩家最快的路。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.ghacks.net/2026/09/11/saudi-arabias-pif-reportedly-considers-merging-ea-with-savvy-games-group/" target="_blank">gHacks ↗</a>　pub 2026-09-11　verified ✓</div>
           </div>
         </div>
 
@@ -270,24 +272,27 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Roblox 開發者大會遭 YouTuber 闖台——高喊「We deserve better」被保安架走、直播播出<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Roblox Developers Conference 現場，一名 YouTuber 衝上舞台高喊「We deserve better」（我們值得更好的對待），被保安架離並逐出會場——這一過程被直播觀眾全程目睹（PC Gamer，pub 2026-09-14）。事件迅速在遊戲圈擴散，創作者對平台的不滿情緒達到可視化的爆發點。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "A YouTuber just ran onto the stage at Roblox Developers Conference and yelled 'We deserve better.' Then got tackled and removed. The creator-platform tension just went fully physical. What would you do if the platform you built on ignored you for years?"<br><span style="color:var(--ink-dim)">中譯：一名 YouTuber 衝上 Roblox 開發者大會舞台高喊「我們值得更好的」，然後被架走。創作者與平台之間的張力剛剛變成了肉體衝突。如果你建在上面的平台忽視你好幾年，你會怎麼做？</span></div>
-            <div class="meta">來源 <a href="https://www.pcgamer.com/software/platforms/youtuber-runs-onto-the-stage-at-roblox-developers-conference-shouting-we-deserve-better-gets-tackled-and-ejected-from-show/" target="_blank">PC Gamer ↗</a>　pub 2026-09-14　verified partial（標題確認，全文未 fetch）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>Borderlands 4 新角色「Loveless」讓全網花癡，限免週末今天最後一天<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Gearbox 9/10 推出 DLC 角色 Loveless（前 Anshin 駭客、能召喚數位病毒化身），社群被她的外型洗版，加上 Steam/Xbox/PlayStation 限時免費週末，Borderlands 4 24 小時同時在線衝到 16,475 人（8 月均值僅約 4,000），重回 Steam 熱銷前三；免費週末<b>今天（9/14）是最後一天</b>（Dexerto，pub 2026-09-11）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Everyone's obsessing over Borderlands 4's new character today. Free weekend ends tonight. So — while it's still free, make your OWN vault hunter in 60 seconds. 👇"　<span style="color:var(--ink-dim)">中譯：今天大家都在瘋 Borderlands 4 的新角色。限免週末今晚就結束。趁還免費，用 60 秒做一個你自己的角色。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>一句話生一個泛化「駭客刺客」風格角色卡（不挪用 Loveless 美術/名字），出「上頭指數」分享卡拚誰的角色設計最多人點愛心。</div>
+            <div class="meta">來源 <a href="https://www.dexerto.com/gaming/borderlands-4-surges-into-steams-top-three-as-players-thirst-over-new-dlc-character-3408222/" target="_blank">Dexerto ↗</a>　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Terraria 週一無公告有機暴衝 +18.9%（35,488 人）——社群自發驅動，零行銷預算<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Steam 官方 API 09/14 07:30 即時數字：Terraria 今日 35,488 人，昨日 29,855 人，漲幅 +18.9%，今日所有追蹤遊戲裡 velocity 最強。週一通常是 Steam 數字最低的一天，卻出現接近 19% 的逆勢上漲，且無任何官方公告——TF2 同樣週一異常漲 +13.0%（59,596 人）。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Terraria spiked +19% on a Monday with zero announcement. Monday is Steam's lowest day. Yet it went up. That's pure community momentum. No marketing budget. No event. Just a game people keep coming back to. What makes YOUR game worth returning to on a random Monday?"<br><span style="color:var(--ink-dim)">中譯：Terraria 週一零公告上漲 19%。週一是 Steam 最低的一天。但它上漲了。這是純粹的社群動能。零行銷預算，零活動，只是一款人們持續回來玩的遊戲。是什麼讓你的遊戲值得在隨機的週一回來？</span></div>
-            <div class="meta">來源 <a href="https://store.steampowered.com/app/105600" target="_blank">Steam Terraria ↗</a>　heat_latest.json 09/14 07:30　verified ✓（官方 API 直抓）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新（radar 真數字）</span>週一退潮，但 Terraria 逆勢 +18.9%、TF2 +13%——老遊戲永遠有人在玩<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>今日 Steam 官方即時數字：CS2 −17.7%、Rust −20.6%、PUBG −15.5%，主流射擊/生存全面從週末高點退潮；反而 <b>13 歲的 Terraria +18.9%（35,488 人）</b>、<b>18 歲的 Team Fortress 2 +13%（59,596 人）</b>逆勢上漲（Steam 官方 API，heat-radar 09/14 07:30）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Half of Steam's top charts dropped 15–20% today. Terraria (2011) and TF2 (2007) went UP instead. Old games don't die — they just wait for someone to remix them. What would you remix today? 👇"　<span style="color:var(--ink-dim)">中譯：Steam 榜上一半的遊戲今天掉了 15–20%。反而 2011 年的 Terraria 和 2007 年的 TF2 逆勢上漲。老遊戲不會死，只是在等有人重新演繹。你今天想 remix 什麼？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「老遊戲復活賽」系列：邀玩家提名一款童年老遊戲，GameGen 一句話生出它的泛化 remix 版本。</div>
+            <div class="meta">來源 Steam 官方 API（heat-radar 09/14）　數字層 · 免驗證閘</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rockstar 法庭承認在工會 Discord 埋臥底超過 2.5 年——同份文件洩露 GTA 6 線上 32 人格式<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>英國工會訴訟庭審中，Rockstar 承認公司在被解僱員工的工會 Discord 伺服器裡安插臥底，持續超過 2.5 年。同一份庭審法律文件提到 GTA 6 線上模式的「32 player format」——這是 Rockstar 對 GTA 6 線上模式的首次公開書面確認（Rock Paper Shotgun，pub 2026-09-14）。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Rockstar had a spy in the fired workers' Discord server for 2.5 years. The same legal docs also accidentally confirmed GTA 6 online will have a 32-player format. Sometimes the leaks aren't from hackers — they're from lawyers."<br><span style="color:var(--ink-dim)">中譯：Rockstar 在被解僱員工的 Discord 伺服器裡埋臥底 2.5 年。同份法律文件也意外確認了 GTA 6 線上模式將採用 32 人格式。有時候洩露不是來自駭客——而是來自律師。</span></div>
-            <div class="meta">來源 <a href="https://www.rockpapershotgun.com/rockstar-had-a-mole-in-the-union-worker-discord-server-for-over-two-and-a-half-years-gta-6-company-reveals-during-legal-battle" target="_blank">RPS 臥底 ↗</a> · <a href="https://www.rockpapershotgun.com/gta-6-online-mode-appears-to-receive-rockstars-first-public-acknowledgment-via-mention-of-in-development-32-player-format-in-legal-docs" target="_blank">RPS GTA6 ↗</a>　pub 2026-09-14　verified partial（標題確認）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新（radar 真數字）</span>Steam 榜上的「多人混亂」老將今天同步回溫：PEAK／R.E.P.O.／Garry's Mod 排名一起往上爬<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>今日 Steam 新品/熱銷榜排名跳動：<b>PEAK</b>（多人攀爬）+6 名、<b>R.E.P.O.</b>（多人恐怖搬運）+5 名、<b>Garry's Mod</b>（多人沙盒亂鬥）+5 名，三款走的都是「跟朋友一起手忙腳亂」的 co-op 混亂 loop（Steam 官方 API，heat-radar 09/14）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Three totally different games are climbing the charts today — and they all have one thing in common: chaos is more fun with friends. That's the whole GameGen formula. 👇"　<span style="color:var(--ink-dim)">中譯：三款完全不同的遊戲今天一起爬榜——共通點只有一個：混亂跟朋友一起玩比較好玩。這就是 GameGen 的公式。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「共享一顆按鈕」co-op 混亂小遊戲：2–4 人共同操控同一個角色/載具，比賽誰先把場面搞砸。</div>
+            <div class="meta">來源 Steam 官方 API（heat-radar 09/14）　數字層 · 免驗證閘</div>
           </div>
         </div>
 
@@ -295,10 +300,10 @@
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「吸血鬼夜店 RPG」——蹭 Nighthawks 話題爆炸，零 IP 風險，原創吸血鬼主題可玩原型<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>玩家扮演一家地下夜店的老闆（恰好是吸血鬼），在夜間接待神秘客人、解鎖對話選項、追蹤秘密——極簡 RPG 對話 loop，60 秒可進入，結束給「你招待了幾位貴客」分享卡。完全原創角色美術，不挪 Nighthawks 任何設定或資產。</div>
-            <div class="ln"><b>為何是今天首選：</b>Nighthawks Adults Only 事件今日 Reddit 雙榜 #1，吸血鬼題材今天是遊戲圈情緒最高的品類。做的是「夜店/社交 RPG」的品類感，完全原創，零 IP 風險。今天發布這個 demo，話題借力效果最大。</div>
-            <div class="meta">綁 <a href="https://www.reddit.com/r/gaming/comments/1wf9qpj/" target="_blank">Reddit Nighthawks ↗</a>　模板：對話 RPG / 夜店社交 loop</div>
+            <div class="ti"><span class="fresh f-new">🆕 今日 Show HN</span>「Shared Robot Chaos」——2–4 人共同操控同一台巨大機器人的混亂 co-op 原型<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>靈感來自今天 Hacker News 上一個小型 Show HN 專案「和朋友一起操控同一台巨大機器人」的機制。GameGen 版本：2–4 名玩家各控制機甲的一個部位（左手／右手／腿／頭），共同完成簡單任務（走到終點、打倒目標），愈多人愈手忙腳亂、愈好笑。結束出「默契值」分享卡。</div>
+            <div class="ln"><b>為何是今天首選：</b>直接對上 GameGen 的核心場景——Discord 語音房裡臨時揪人玩、30–90 秒一輪、天然適合直播/共同創作；機制完全原創、零 IP 風險，且呼應本日「多人混亂」暴衝訊號（PEAK / R.E.P.O. / Garry's Mod）。</div>
+            <div class="meta">靈感來源：Hacker News Show HN（heat-radar 09/14 官方 API 收錄）　模板：多人共控 / 混亂 co-op</div>
           </div>
         </div>
       </div>
@@ -314,40 +319,31 @@
         <div class="board b-steam">
           <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 09/14 即時</span></div>
           <ol>
-            <li class="down"><span class="nm">Counter-Strike 2</span><span class="vn">548K ▼17.7%</span></li>
-            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">98K ▼15.5%</span></li>
-            <li><span class="nm">Rainbow Six Siege</span><span class="vn">89K ▼1.7%</span></li>
+            <li class="down"><span class="nm">Counter-Strike 2</span><span class="vn">549K ▼17.7%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">99K ▼15.5%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">89K ▼1.7%</span></li>
             <li class="down"><span class="nm">Palworld</span><span class="vn">82K ▼7.7%</span></li>
-            <li class="down"><span class="nm">Rust</span><span class="vn">68K ▼20.6%</span></li>
-            <li class="hot up"><span class="nm">Team Fortress 2</span><span class="vn">59K ▲13.0%</span></li>
+            <li class="down hot"><span class="nm">Rust</span><span class="vn">69K ▼20.6%</span></li>
+            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">60K ▲13%</span></li>
           </ol>
           <div class="bf">Steam 官方 API · 09/14 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
-        <div class="board b-twch">
-          <div class="bh"><span>STEAM 最多人遊玩</span><span class="metric">Top 8 Most Played · 09/14</span></div>
-          <ol>
-            <li class="hot"><span class="nm">Counter-Strike 2</span><span class="vn">#1</span></li>
-            <li><span class="nm">Dota 2</span><span class="vn">#2</span></li>
-            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">#3</span></li>
-            <li><span class="nm">Wallpaper Engine</span><span class="vn">#4</span></li>
-            <li><span class="nm">Apex Legends</span><span class="vn">#5</span></li>
-            <li class="hot"><span class="nm">WARDOGS</span><span class="vn">#6 持2天</span></li>
-            <li><span class="nm">Valheim</span><span class="vn">#7</span></li>
-            <li><span class="nm">Marvel Rivals</span><span class="vn">#8</span></li>
-          </ol>
-          <div class="bf">Steam 官方 API · 09/14 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Roblox 即時 CCU（roblox.com/charts / RTrack 需瀏覽器渲染，本次 request_access 被婉拒）。<b>目前無法完全證實</b>。CC 互動 session 有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
         </div>
 
         <div class="board b-dim">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
-          <div class="nodata">⚠️ 本次排程環境請求瀏覽器存取被拒（非互動 session，無人可核准），<b>無法即時抓</b> roblox.com/charts 即時 CCU。<b>目前無法完全證實</b>。本欄誠實標暫缺，不以估計假裝 live。</div>
-          <div class="bf">Roblox Charts（需瀏覽器）</div>
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得（request_access 被婉拒）。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-14T07:30:34）。Steam 為 <b>09-14 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。今日 Most Played 榜：#1 CS2、#2 Dota 2、#3 PUBG、#4 Wallpaper Engine、#5 Apex、#6 WARDOGS（第 2 天持榜）、#7 Valheim、#8 Marvel Rivals、#9 GTA V Legacy、#10 Slay the Spire 2。Steam 排名跳榜：Borderlands 4 +15（第 85，昨日 100）、MECCHA CHAMELEON +11（第 80，昨日 91）、PEAK +6（第 32）、R.E.P.O. +5（第 40）。新進榜：RV There Yet?（#98）。本次排程非互動，Roblox CCU 誠實標暫缺。
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-14T07:30），Steam 為 <b>09-14 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。今天是明顯的週一退潮：熱榜前段幾乎全跌，只有 TF2 逆勢 +13%。Roblox CCU / Twitch 觀看因本次為沙箱排程、<b>無瀏覽器</b>仍標「暫缺」。
       </div>
     </section>
 
@@ -356,22 +352,22 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>暴衝</span></span>Terraria 週一逆勢 +18.9%（35,488 人）——今日 velocity 最強；TF2 +13.0%（59,596 人）週一異常</h3>
-        <div class="sum">Steam 官方 API 09/14 07:30 真數字：<b>Terraria 今日 35,488 人（昨日 29,855，+18.9%）</b>，今日所有追蹤遊戲裡 velocity 最強；<b>Team Fortress 2 今日 59,596 人（昨日 52,729，+13.0%）</b>。這兩個上漲都發生在週一——Steam 傳統最低谷的一天——且均無官方公告支撐。Stardew Valley 今日 44,443 人（昨日 42,072，+5.6%），BG3 平穩（50,881 vs 50,353，+1.0%）。週一典型下跌：CS:GO -17.7%、Rust -20.6%、PUBG -15.5%。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Terraria +18.9% 和 TF2 +13% 在週一逆勢上漲是今日最值得追蹤的訊號——這種「無公告有機暴衝」通常代表社群層面有某個觸發點（YouTuber 做了影片、某個梗在擴散、某個 mod 更新）。對 GameGen：Terraria 式的「社群持續回流」是 Create-loop 遊戲設計的終極目標——不靠行銷，靠遊戲本身讓人週一還想回來。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Terraria 單日 +18.9% 是今天唯一過 ≥15% 旗標的暴衝；多人混亂三兄弟排名同步上爬</h3>
+        <div class="sum">今日真·日比只有 <b>Terraria 35,488 人（+18.9%）</b>過 ≥15% 暴衝旗標，緊追在後的是 <b>Team Fortress 2 59,596 人（+13%）</b>（未過旗標但方向一致）；同時主流射擊/生存全面回落——<b>CS2 −17.7%、Rust −20.6%、PUBG −15.5%、PoE2 −14%</b>，是典型「週末高點 → 週一退潮」。另一組訊號是 <b>steam_movers 排名跳動</b>：<b>Borderlands 4</b>（第 100 名 → 第 85 名，+15）、<b>MECCHA CHAMELEON</b>（第 91 → 80，+11，GameGen 過去已多次報導、此為延續動能非新事件）、<b>PEAK</b>（+6）、<b>R.E.P.O.</b>（+5）、<b>Garry's Mod</b>（+5）；新進榜 <b>RV There Yet?</b>（第 98 名）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天的暴衝不是「新梗在爆」，是「老遊戲被重新想起」——Terraria/TF2 靠的是長線黏著度，Borderlands 4 靠的是新 DLC 角色 + 限免週末（已收頭版 X Top 1），PEAK/R.E.P.O./Garry's Mod 這組則共通指向「co-op 混亂」這個永遠好用的 loop（已收頭版 Demo）。MECCHA CHAMELEON 因為過去已密集報導多次，本日僅記錄動能延續、不重複做為頭條。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">STEAM 官方 API · 09/14 即時 · <a href="https://store.steampowered.com/app/105600" target="_blank">Terraria ↗</a> · <a href="https://store.steampowered.com/app/440" target="_blank">TF2 ↗</a></div>
+          <div class="src">STEAM 官方 API · 09/14 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器，本次排程非互動，<b>目前無法完全證實</b>。Steam 真·日比為 09-14 官方 API 即時（radar 07:30）。今日 steam_movers 跳榜：Borderlands 4 +15（rank 85←100）、MECCHA CHAMELEON +11（rank 80←91）——這兩個是今日最強的排名加速訊號，值得後續追蹤有無公告支撐。Steam 熱賣榜：WARDOGS 繼續領榜，Halloween: The Game（#92 Most Played）持續爬升，Blood of Dawnwalker 在熱賣榜維持。
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次沙箱排程無瀏覽器、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比與排名跳動皆為 09-14 官方 API 即時（radar 07:30）。
       </div>
     </section>
 
@@ -383,35 +379,35 @@
         <div class="board b-steam">
           <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
           <ol>
-            <li><span class="nm">Clickoire</span><span class="vn">新品</span></li>
-            <li><span class="nm">Daemon</span><span class="vn">新品</span></li>
-            <li class="hot"><span class="nm">Animaly Bar: NO HUMANITY!</span><span class="vn">新品</span></li>
-            <li><span class="nm">Spirit Animal Survival</span><span class="vn">新品</span></li>
-            <li><span class="nm">Friendly Fire</span><span class="vn">新品</span></li>
-            <li class="hot"><span class="nm">WARDOGS</span><span class="vn">熱賣 ★</span></li>
+            <li class="hot"><span class="nm">Clickoire</span><span class="vn">新品</span></li>
+            <li><span class="nm">GAMBLE LIFE（人生模擬，非博弈）</span><span class="vn">新品</span></li>
+            <li><span class="nm">Post Office: Tidy Up!</span><span class="vn">新品</span></li>
+            <li><span class="nm">Beyond Yardwork Simulator</span><span class="vn">新品</span></li>
+            <li><span class="nm">Animaly Bar: NO HUMANITY!</span><span class="vn">新品</span></li>
+            <li><span class="nm">Quest Industries</span><span class="vn">新品</span></li>
           </ol>
           <div class="bf">Steam 新品榜 · 09/14 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-rblx">
-          <div class="bh"><span>ITCH.IO HTML5 新爆</span><span class="metric">小體量早期</span></div>
+          <div class="bh"><span>早期訊號</span><span class="metric">HN Show + itch.io</span></div>
           <ol>
-            <li class="hot"><span class="nm">Death Loop（Danganronpa 風）</span><span class="vn">推理</span></li>
-            <li><span class="nm">Twilight Observer</span><span class="vn">恐怖</span></li>
-            <li><span class="nm">The Freak Circus</span><span class="vn">荒誕</span></li>
-            <li class="hot"><span class="nm">StreamRush</span><span class="vn">直播衝刺</span></li>
-            <li><span class="nm">RarityRNG</span><span class="vn">random/viral</span></li>
-            <li><span class="nm">ClickBait</span><span class="vn">viral</span></li>
+            <li class="hot"><span class="nm">Shared Robot Chaos（共控巨大機器人）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">MorphMove（移動後變形的棋子）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">Death Loop（Danganronpa 風推理）</span><span class="vn">itch</span></li>
+            <li><span class="nm">Twilight Observer</span><span class="vn">itch</span></li>
+            <li><span class="nm">Carnival of Shadows</span><span class="vn">itch</span></li>
+            <li><span class="nm">魯莽公車司機模擬（80.lv 報導）</span><span class="vn">早期</span></li>
           </ol>
-          <div class="bf">itch.io html5 · 09/14 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+          <div class="bf">Hacker News Show HN / itch.io html5 · 09/14 heat-radar</div>
         </div>
 
       </div>
 
       <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>Steam 新品今日「生存 + 荒誕動物酒吧」主題；itch.io 推理恐怖持續；Halloween: The Game 爬上 Most Played #92，萬聖節視窗開啟</h3>
-        <div class="sum">Steam 新品今日最有趣的是 <b>Animaly Bar: NO HUMANITY!</b>——動物+酒吧+荒誕社交的組合，跟 Wardogs「奇怪設定有市場」的邏輯一脈相承。itch.io 繼續由恐怖推理（Death Loop Danganronpa 風、Twilight Observer）主導，<b>StreamRush</b>（直播衝刺競爭 loop）是創作者/實況主題材的持續訊號，與 GameGen C 側定位高度重疊。<b>最值得注意的訊號</b>：Halloween: The Game 今日進入 Steam Most Played #92，距萬聖節還有約 47 天，這是今年第一個「萬聖節早鳥」訊號——現在做萬聖節主題 demo，時機窗口比競爭者早。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Nighthawks 事件今日把吸血鬼/黑暗題材的話題熱度拉到最高，itch.io 的恐怖推理主流、Halloween: The Game 爬榜同步印證：黑暗/怪誕題材今天是所有品類裡情緒最強的窗口。「吸血鬼夜店 RPG」作為今天的 Demo 首選，踩在三個訊號的交叉點上。</div>
+        <h3><span class="tag rl"><span>洞察</span></span>今天的早期 loop 共相：共同操控／變形機關／荒謬職業模擬——規則一句話講完</h3>
+        <div class="sum">今日 Hacker News Show HN + itch.io 新作歸納出三類值得抄的簡單 loop：<b>共同操控</b>（Shared Robot Chaos，多人共享一個角色的不同部位）、<b>移動變形機關</b>（MorphMove，走過的格子改變形狀，考驗規劃）、<b>荒謬職業模擬</b>（80.lv 報導的「魯莽公車司機」——把日常工作包成誇張玩法）。三者共通點：一句話講完規則、體量小、上手快。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「共同操控」是今天最值得優先做的公式，直接對應 GameGen 的 Discord 共玩場景，已收頭版 Demo；「荒謬職業模擬」則是 Trend-to-Game 的萬用殼——任何一個當紅職業/身份都能套進去做成誇張版模擬器。unityroom 今週得獎機制因無瀏覽器暫缺，<b>目前無法完全證實</b>，CC 互動 session 有瀏覽器時補上。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
@@ -419,62 +415,32 @@
             <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">ITCH.IO / STEAM · 09/14 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+          <div class="src">HACKER NEWS / ITCH.IO / 80.LV · 09/14 · <a href="https://news.ycombinator.com/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
     <!-- 高討論文章 -->
     <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · 產業動向</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>平台爭議</span></span>Nighthawks AO 下架：Valve 分級一決定，完工遊戲從搜尋消失——獨立開發商：「非常壞的消息」</h3>
-        <div class="sum">吸血鬼 RPG《Nighthawks》尚未正式發售，Valve 將其分類為 Adults Only（AO），導致遊戲從 Steam 搜尋結果移除，並在多個國家停止銷售。開發商公開表示「It's very bad news for us」。這個故事今日同時佔據 Reddit r/gaming（<a href="https://www.reddit.com/r/gaming/comments/1wf9qpj/" target="_blank">↗</a>）與 r/Games（<a href="https://www.reddit.com/r/Games/comments/1wfaqqs/" target="_blank">↗</a>）的最高討論位，是今日遊戲圈最高熱度事件（2026-09-14）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Nighthawks 事件展示了 Steam 平台控制的極端形態：分級等於存在——AO 等級的遊戲在搜尋引擎裡幾乎是隱形的。這對所有以 Steam 為主要分發管道的獨立開發商都是清醒劑。GameGen 的可玩連結分發邏輯（直接分享連結而非依賴平台搜尋），在今天的背景下有了最強的現實論據。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">REDDIT · 09/14 · <a href="https://www.reddit.com/r/gaming/comments/1wf9qpj/" target="_blank">r/gaming ↗</a> · <a href="https://www.reddit.com/r/Games/comments/1wfaqqs/" target="_blank">r/Games ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>產業</span></span>Rockstar 庭審承認工會 Discord 臥底 2.5 年；GTA 6 線上 32 人格式首次書面確認；Physint 從 PlayStation 轉 Xbox</h3>
-        <div class="sum"><b>Rockstar 工會臥底：</b>英國庭審（Rockstar 反工會訴訟）中，Rockstar 被披露在被解僱員工的工會 Discord 伺服器裡安插臥底，持續時間「超過 2.5 年」——Game Developer 及 RPS 同日報道（09/14）。同一份庭審法律文件中提到 GTA 6 線上的「32 player format in development」，是 Rockstar 首次書面公開承認 GTA 6 將有線上模式（RPS，09/14）。<br><b>Physint 易主：</b>PlayStation 因預算超支、時程延誤、Death Stranding 銷量不如預期等原因放棄小島製作所的《Physint》計畫，Xbox 將接手發行（Game Developer.com，09/14）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Rockstar 工會臥底事件不只是勞資糾紛，它讓「GTA 6 線上 32 人」這個訊號從洩露變成了法庭文件確認。Physint 易主是今年少見的「大廠放棄 IP、競爭對手接手」案例，說明 IP 開發的平台歸屬在大廠之間仍有高度流動性。</div>
+        <h3><span class="tag ig"><span>產業信任</span></span>Rockstar 在 GTA6 工會 Discord 埋線人兩年半，仲裁庭文件曝光</h3>
+        <div class="sum">Glasgow 仲裁庭本週公開的文件顯示：Rockstar 內部有一名線人，自 2024 年 2 月起持續向人資主管回報工會私人 Discord（340 人，2022 年成立）的動態長達逾兩年半，2025 年 10 月工會即將達到英國法定 10% 承認門檻前，公司一次開除 34 名員工。Rockstar 不否認線人存在，但主張對方是「主動反映安全疑慮的吹哨者」而非被安插的間諜；仲裁庭審理預計進行到 10/16（Cheat Code Central 引 Rock Paper Shotgun / Game Developer，pub 2026-09-11）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是本週第二起「平台/公司在信任上抄捷徑」的案例（另一起是 Roblox，已收頭版）。對 GameGen 的提醒：我們主打的「創作者友善、Discord 原生」定位，前提是社群真的相信我們不會反過來監控他們——這是護城河，也是紅線，任何社群數據蒐集都要對創作者透明。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低（觀察用，不遊戲化）</span></span></div></div>
           </div>
-          <div class="src">RPS / GAME DEVELOPER · <a href="https://www.rockpapershotgun.com/rockstar-had-a-mole-in-the-union-worker-discord-server-for-over-two-and-a-half-years-gta-6-company-reveals-during-legal-battle" target="_blank">RPS 臥底 ↗</a> · <a href="https://www.gamedeveloper.com/business/xbox-to-publish-kojima-productions-physint-after-playstation-ditches-project" target="_blank">Physint ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI × 產業</span></span>EA genAI 配音進 NHL 27；Saber Interactive 北美開發清零 + AI 工具化；Polyarc/Moss 遊戲工作室在 VR-less 版發布 2 個月後宣告關閉</h3>
-        <div class="sum"><b>EA genAI：</b>一名體育播報員在 Game Developer.com 揭露，EA NHL 27 使用 genAI 生成球評配音（commentator voiceover）——AAA 體育遊戲系列首次確認大規模採用 genAI 配音（09/14）。<b>Saber Interactive：</b>CEO Tim Willits 在 GamesIndustry.biz 訪談中直白說「我們在北美已經沒有真正的開發了」（no real development in North America any more），同時強調全面採用生成式 AI 工具，並轉向有辨識度的 IP（GamesIndustry，09/14）。<b>Polyarc 關閉：</b>《Moss》開發商 Polyarc 宣布關閉工作室，距離推出無 VR 版本僅 2 個月（RPS，09/14）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>三個訊號指向同一趨勢：AI 工具化 + 成本壓縮 + 北美開發空間縮窄。Polyarc 的故事說明即使「去 VR 化」也未必能救一個工作室——時機和市場定位比技術決定更關鍵。Saber 的「零北美開發」宣言是遊戲業地理重組的最明確表態之一。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAME DEVELOPER / GI.BIZ / RPS · <a href="https://www.gamedeveloper.com/business/report-ea-s-nhl-27-is-using-genai-to-create-voiceover-claims-a-sports-commentator" target="_blank">EA genAI ↗</a> · <a href="https://www.gamesindustry.biz/saber-interactive-has-no-real-development-in-north-america-any-more" target="_blank">Saber ↗</a> · <a href="https://www.rockpapershotgun.com/moss-developer-polyarc-share-that-theyre-shutting-down-just-two-months-after-releasing-a-vr-less-port-of-the-beloved-mousey-adventure-games" target="_blank">Polyarc ↗</a></div>
+          <div class="src">CHEAT CODE CENTRAL / ROCK PAPER SHOTGUN · 9/11 · <a href="https://www.cheatcc.com/articles/rockstar-planted-an-informant-in-gta-6-workers-union-discord-tribunal-filings/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        📊 <b>其他產業動向</b>：WoW Forever $30 高精靈爭議——新種族「Skyborne」鎖在付費擴充包內，玩家反彈（PC Gamer，09/14，<a href="https://www.pcgamer.com/games/world-of-warcraft/our-world-of-warcraft-forever-hype-is-dampened-by-usd30-elves-new-skyborne-race-locked-behind-expansion-tier-purchase/" target="_blank">↗</a>）；Steam 澳洲年齡驗證改用信用卡（Game Developer.com，<a href="https://www.gamedeveloper.com/pc/report-steam-now-requires-australian-users-to-verify-their-age-with-credit-cards" target="_blank">↗</a>）；FF7 Revelation 的 Knights of the Round 太簡單，開發商臨時開緊急會議重做（Reddit r/gaming，<a href="https://www.reddit.com/r/gaming/comments/1wfacad/" target="_blank">↗</a>）；Steam 成就系統洩露未公布遊戲列表（80.lv，<a href="https://80.lv/articles/steam-leak-reveals-achievements-for-unreleased-and-unannounced-games/" target="_blank">↗</a>）。
+        🛰️ <b>背景（非今日新聞，已於前日收錄）</b>：BlizzCon 2026 一次公布 Diablo 5（2029）、StarCraft Dominion（開放世界射擊，2030）、WoW Forever 已於 9/13 收錄為 CJ 頭版，本日不重複；Level-5 CEO 坦承大量使用 AI 製作 Professor Layton / Yo-Kai Watch 展示、引發粉絲「AI Slop」反彈的爭議也已於 9/11–9/13 收錄，本日僅供背景參考，<b>♨️ 延燒中（非新梗）</b>。
       </div>
     </section>
 
@@ -483,32 +449,17 @@
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因</span></span>Roblox DevCon「We deserve better」被架走現場——創作者不滿情緒的最強可視化時刻</h3>
-        <div class="sum">一名 YouTuber 衝上 Roblox Developers Conference 舞台高喊「We deserve better」，被保安架離——這一過程在直播中全程播出，迅速成為今日社群最廣傳的遊戲圈事件（PC Gamer，09/14）。「We deserve better」成為今日最強共鳴金句：它代表的不是個人行為，而是長期積累的創作者-平台信任崩潰。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「We deserve better」這個時刻值得收進素材庫。對 GameGen 的 C 側創作者受眾來說，這句話是情緒共鳴點：被平台漠視、拿不到應有收益、沒有話語權。GameGen 的社群策略可以直接接這個情緒：「不需要你衝上舞台。直接做自己的遊戲，自己分發，那就是你自己的舞台。」</div>
+        <h3><span class="tag ai"><span>迷因訊號</span></span>今日迷因彈藥改由「角色花癡」擔綱：Borderlands 4 新角色的全網反應本身就是迷因素材</h3>
+        <div class="sum">本次排程無瀏覽器可抓 Know Your Meme「Popular right now」與 Threads 繁中熱話，<b>目前無法完全證實</b>純網路迷因的當日新鮮度。但今日已驗證的「Borderlands 4 Loveless」全網花癡反應（社群瘋傳角色截圖、玩家用「DEAR. MOTHER. OF. GOD.」等誇張反應洗版）本身就具備迷因傳播的樣態，已收錄於頭版 X Top 1，可視為今日最可靠的迷因型素材。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>⚠️ 目前無法完全證實</b>當日是否有新生純網路迷因（KYM/Threads 需瀏覽器）。可追的長線母題：Roblox 抗議事件的「Kids Deserve Better」T 恤畫面若持續發酵，繁中/英文迷因圈很可能長出二創變體，下次有瀏覽器時驗證 first-seen 是否 ≤14 天再決定是否採用。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>未證實</span></span></div></div>
           </div>
-          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/software/platforms/youtuber-runs-onto-the-stage-at-roblox-developers-conference-shouting-we-deserve-better-gets-tackled-and-ejected-from-show/" target="_blank">PC Gamer ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因</span></span>BioWare「21 天上班、1 天休息」做出 Mass Effect——前員工說：「非常辛苦，但值得」</h3>
-        <div class="sum">Reddit r/gamedev 今日熱門貼文：BioWare 前員工分享，在製作初代 Mass Effect 期間曾持續「21 days on, one day off」的高壓節奏，並說「That was really, really hard, but really worth it」（Reddit r/gamedev，<a href="https://www.reddit.com/r/gamedev/comments/1wfg06y/" target="_blank">↗</a>，pub 2026-09-14）。這個說法在遊戲開發者社群裡引發兩極討論：一邊認為那個時代的作品品質體現了熱情，另一邊批評這種文化對開發者造成長期傷害。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「21 天上班 1 天休息」做出的是 Mass Effect——但沒人知道那個過程裡損失了多少人。這個故事今天是 r/gamedev 的熱門討論，GameGen 的借力方向不是評判，而是「你不需要 21 天做出第一版可玩原型——30 秒。」</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">REDDIT r/gamedev · <a href="https://www.reddit.com/r/gamedev/comments/1wfg06y/" target="_blank">原文 ↗</a></div>
+          <div class="src">（KYM / Threads 需瀏覽器 · 本次暫缺；Borderlands 4 反應見 <a href="https://www.dexerto.com/gaming/borderlands-4-surges-into-steams-top-three-as-players-thirst-over-new-dlc-character-3408222/" target="_blank">Dexerto ↗</a>）</div>
         </div>
       </article>
     </section>
@@ -518,22 +469,22 @@
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
       <div class="boards reveal">
         <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（Nighthawks / Roblox / Chess.com / Naavik）</span></div>
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（HN / itch / Steam movers）</span></div>
           <ol>
-            <li class="hot"><span class="nm">吸血鬼夜店 RPG — Nighthawks 借力</span><span class="vn">★ 今日首選</span></li>
-            <li class="hot"><span class="nm">「We deserve better」創作者對決 loop</span><span class="vn">平台 vs 創作者</span></li>
-            <li><span class="nm">Chess.com 100x 留存公式——極簡規則×無盡精通</span><span class="vn">機制原則</span></li>
-            <li><span class="nm">臥底推理 — Rockstar 臥底角色化</span><span class="vn">社交推理</span></li>
-            <li><span class="nm">萬聖節早鳥 — Halloween: The Game 爬榜訊號</span><span class="vn">季節性窗口</span></li>
+            <li class="hot"><span class="nm">共同操控（Shared Robot Chaos）— 多人共享一個角色</span><span class="vn">★ 共控</span></li>
+            <li><span class="nm">co-op 混亂搬運（R.E.P.O. 風）</span><span class="vn">co-op</span></li>
+            <li><span class="nm">多人攀爬 / 摔倒（PEAK 風）</span><span class="vn">攀爬</span></li>
+            <li><span class="nm">荒謬職業模擬（魯莽公車司機）</span><span class="vn">模擬</span></li>
+            <li><span class="nm">移動變形機關（MorphMove）</span><span class="vn">解謎</span></li>
           </ol>
-          <div class="bf">Naavik / Steam / Reddit · 09/14 · <a href="https://naavik.co/f2p-mobile/how-chess-com-100xd-mobile-revenue-in-10-years/" target="_blank">Chess.com 100x ↗</a></div>
+          <div class="bf">Hacker News / itch.io / Steam movers · 09/14 · <a href="https://news.ycombinator.com/" target="_blank">原始 ↗</a></div>
         </div>
       </div>
 
       <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>Chess.com 10 年 100x 行動收入的公式：「極簡入門 × 無窮精通 × 社交羞辱」——Naavik 拆解</h3>
-        <div class="sum">Naavik 今日分析 Chess.com 如何在 10 年內將行動收入成長 100 倍（<a href="https://naavik.co/f2p-mobile/how-chess-com-100xd-mobile-revenue-in-10-years/" target="_blank">↗</a>）：關鍵公式是 <b>①極簡規則（一分鐘學會）② 無窮精通天花板（一輩子練不完）③ 社交羞辱動力（被朋友贏了必須復仇）</b>。同日 Naavik 亦發表「How AI is Unlocking Novel Game Mechanics」（<a href="https://naavik.co/ai-gaming/how-ai-is-unlocking-novel-game-mechanics/" target="_blank">↗</a>），討論 AI 如何讓全新類型的遊戲機制成為可能（原本需要大型 dataset 或大量手工製作才能實現的機制，現在 AI 可以即時生成）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Chess.com 的公式對 GameGen 的 Create-loop 設計是直接的啟示：每一個 GameGen 生成的小遊戲都應該具備「30 秒學會入門，但有辦法玩更久」的結構。「無窮精通」不等於「複雜」——它是「每次玩都有細微不同」。Naavik 的 AI 機制文章進一步印證：AI 作為機制生成工具的空間剛剛打開，不只是美術生成。</div>
+        <h3><span class="tag rl"><span>洞察</span></span>今天的首抄公式是「共同操控」；co-op 混亂與荒謬職業模擬緊追在後</h3>
+        <div class="sum">今日機制靈感頭號公式是<b>共同操控</b>——多人共享同一個角色的不同部位，天然需要語音溝通、極適合直播和 Discord 場景。其次是<b>co-op 混亂</b>（R.E.P.O./PEAK 風的「一起手忙腳亂」）與<b>荒謬職業模擬</b>（把任何當紅身份包成誇張版模擬器，公車司機只是一個例子）。<b>unityroom 今週ピックアップ需瀏覽器，本次排程暫缺、無法完全證實。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>機制本身不受版權保護，照抄 loop、換泛化皮即可。優先順序：共同操控（對應今天 Demo 首選，社交黏著度最高）→ co-op 混亂 / 攀爬（IP 風險最低、樣板已有多款驗證）→ 荒謬職業模擬（萬用殼，套當紅話題最快）。下次有瀏覽器時補 unityroom 得獎機制。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
@@ -541,7 +492,7 @@
             <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">NAAVIK · <a href="https://naavik.co/f2p-mobile/how-chess-com-100xd-mobile-revenue-in-10-years/" target="_blank">Chess.com 100x ↗</a> · <a href="https://naavik.co/ai-gaming/how-ai-is-unlocking-novel-game-mechanics/" target="_blank">AI Mechanics ↗</a></div>
+          <div class="src">HACKER NEWS / ITCH.IO · <a href="https://news.ycombinator.com/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
@@ -551,8 +502,8 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
 
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>本次排程無瀏覽器存取，繁中 Threads 熱話暫缺</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ 本次為非互動排程，向瀏覽器發出 request_access 被自動婉拒（無人可核准），<b>無法</b>抓取 Threads 繁中圈當日熱話（Threads 需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。今天 Nighthawks 下架事件、Roblox 闖台事件、Rockstar 臥底三條都是極高話題性——繁中遊戲圈（巴哈姆特/PTT/Threads）大概率有大量討論，下次有瀏覽器時驗證是否有原生繁中觀點值得收進素材庫。</div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話（Threads 需登入 / JS 渲染，本次 request_access 被婉拒），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。CC 互動 session 或本機環境有瀏覽器時，請補抓三國 / 武俠 / 恐怖 / 捕捉 RPG 等題材變體與當日代表貼文。可追的長線母題：今天全球最熱的 Roblox 兒童安全抗議事件，繁中圈家長社群是否有本地化討論（尤其台灣家長對 Roblox 的兒童安全疑慮），下次有瀏覽器時驗證是否已落到 Threads 繁中熱話。</div>
       </div>
     </section>
 
@@ -563,12 +514,13 @@
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>Nighthawks AO 下架事件</td><td><span class="tmpl">吸血鬼夜店 RPG · 對話 loop</span></td><td>「在平台限制之外，這款遊戲依然可玩」</td><td class="rk-low">低 · 原創角色</td><td>★ 今日 Demo 首選，話題借力窗口最強</td></tr>
-          <tr><td>Roblox「We deserve better」創作者反叛</td><td><span class="tmpl">平台 vs 創作者對決 loop</span></td><td>「我站哪邊」分享卡</td><td class="rk-low">低</td><td>今日 X 首選，情緒鉤子最強</td></tr>
-          <tr><td>Rockstar Discord 臥底 2.5 年</td><td><span class="tmpl">臥底推理 / 社交解謎</span></td><td>「你是臥底嗎」判定結果卡</td><td class="rk-low">低</td><td>有趣遊戲化方向，不具名化角色</td></tr>
-          <tr><td>BioWare 21 天連班做 Mass Effect</td><td><span class="tmpl">遊戲開發廠 / 生存模擬</span></td><td>「30 秒就能有第一版可玩原型」反差</td><td class="rk-low">低</td><td>情緒鉤子強，接「AI 30 秒 vs 21 天」對比</td></tr>
-          <tr><td>Terraria +18.9% 無公告有機暴衝</td><td><span class="tmpl">留存機制 / 社群驅動效應素材</span></td><td>「你的遊戲值得週一回來嗎」</td><td class="rk-low">低</td><td>觀察教材，接 Chess.com 100x 留存公式</td></tr>
-          <tr><td>Halloween: The Game 爬上 Most Played #92</td><td><span class="tmpl">萬聖節主題 60 秒 loop</span></td><td>「萬聖節還有 47 天」搶先分享卡</td><td class="rk-low">低</td><td>季節性窗口提前佈局，現在是早鳥時機</td></tr>
+          <tr><td>Borderlands 4「Loveless」花癡熱潮（限免最後一天）</td><td><span class="tmpl">一句話角色生成器</span></td><td>「上頭指數」分享卡、蹭限免倒數</td><td class="rk-mid">中 · 角色 IP</td><td>★ 本日 X 首選，泛化駭客刺客風，不挪 Loveless 美術/名字</td></tr>
+          <tr><td>共同操控巨大機器人（HN Show）</td><td><span class="tmpl">多人共控 co-op</span></td><td>「默契值」分享卡、直播友善</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，機制原創、零 IP 風險</td></tr>
+          <tr><td>PEAK／R.E.P.O.／Garry's Mod 排名同步上爬</td><td><span class="tmpl">co-op 混亂 loop</span></td><td>「搞砸現場」失誤瞬間最好拍</td><td class="rk-low">低</td><td>抄 co-op 混亂公式，泛化角色</td></tr>
+          <tr><td>Terraria / TF2 老遊戲逆勢上漲</td><td><span class="tmpl">老遊戲 remix 徵集</span></td><td>「猜猜這是哪年的遊戲」懷舊感</td><td class="rk-low">低</td><td>徵集玩家提名老遊戲，泛化重新演繹</td></tr>
+          <tr><td>魯莽公車司機模擬（80.lv）</td><td><span class="tmpl">荒謬職業模擬</span></td><td>誇張翻車瞬間好剪</td><td class="rk-low">低</td><td>套當紅職業話題最快的萬用殼</td></tr>
+          <tr><td>Roblox 兒童安全抗議事件</td><td>—</td><td>—</td><td class="rk-high">高 · 真人 / 未成年安全</td><td>⚠️ 不建議遊戲化，僅作 CJ 敘事線素材（已收頭版），涉真實人物與兒童安全敏感議題</td></tr>
+          <tr><td>Rockstar 工會線人事件</td><td>—</td><td>—</td><td class="rk-high">高 · 真人 / 勞資爭議</td><td>⚠️ 不建議遊戲化，勞資糾紛敏感，僅作產業信任觀察</td></tr>
         </tbody>
       </table>
       </div>
@@ -581,13 +533,14 @@
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>Nighthawks：平台守門人風險</td><td>Valve 以 AO 分級將完工 RPG 從多國搜尋移除；開發商說「非常壞的消息」（Reddit r/gaming+r/Games 雙榜 #1，09/14）</td><td>"Platform power is the silent risk every indie dev ignores — until the day it isn't. One classification change. Your finished game disappears from search in 15 countries. Build with a distribution layer you actually control."</td><td><a href="https://www.reddit.com/r/gaming/comments/1wf9qpj/" target="_blank">↗</a></td></tr>
-          <tr><td>EA genAI NHL 27：AI 配音主流化</td><td>EA 在 AAA 旗艦體育系列採用 genAI 生成球評配音，被球評員公開揭露（Game Developer，09/14）</td><td>"When EA uses genAI in a flagship franchise — AI in games isn't coming, it's already in the product. The question isn't whether to use AI tools. It's who designs the creative with them."</td><td><a href="https://www.gamedeveloper.com/business/report-ea-s-nhl-27-is-using-genai-to-create-voiceover-claims-a-sports-commentator" target="_blank">↗</a></td></tr>
-          <tr><td>Saber Interactive：北美開發清零 + genAI</td><td>CEO Tim Willits 宣布「北美已無真正開發」，全球分布 + genAI 工具化（GamesIndustry.biz，09/14）</td><td>"A major studio just said they have 'no real development in North America any more.' The geography of game development is shifting. AI tools are part of the reason costs allow that shift. What does your team look like in 3 years?"</td><td><a href="https://www.gamesindustry.biz/saber-interactive-has-no-real-development-in-north-america-any-more" target="_blank">↗</a></td></tr>
+          <tr><td>平台「快」與「信任」對撞，透明的小平台是機會</td><td>Roblox YouTuber 9/11 衝上 RDC 舞台抗議兒童安全，正值美國參議院調查期間（PC Gamer / Dexerto，9/11–13）</td><td>"When platforms outgrow trust, the smaller, more transparent ones start looking like the safer bet."</td><td><a href="https://www.pcgamer.com/software/platforms/youtuber-runs-onto-the-stage-at-roblox-developers-conference-shouting-we-deserve-better-gets-tackled-and-ejected-from-show/" target="_blank">↗</a></td></tr>
+          <tr><td>遊戲業分發權正往少數超級平台集中</td><td>沙烏地 PIF 評估合併 EA 與 Savvy Games Group，整合 Battlefield、Madden、Pokémon GO 等（Bloomberg / gHacks，9/10–11）</td><td>"While the giants consolidate under one owner, speed to the trend is still the fastest way to reach players."</td><td><a href="https://www.ghacks.net/2026/09/11/saudi-arabias-pif-reportedly-considers-merging-ea-with-savvy-games-group/" target="_blank">↗</a></td></tr>
+          <tr><td>創作者信任是護城河，也是紅線</td><td>Rockstar 在 GTA6 工會 Discord 埋線人兩年半，仲裁庭文件曝光（Cheat Code Central，9/11）</td><td>"Creator trust isn't a nice-to-have — it's the thing giants keep losing, and the thing smaller platforms can't afford to lose."</td><td><a href="https://www.cheatcc.com/articles/rockstar-planted-an-informant-in-gta-6-workers-union-discord-tribunal-filings/" target="_blank">↗</a></td></tr>
+          <tr><td>老 IP 的長尾價值持續被低估</td><td>13 歲的 Terraria、18 歲的 TF2 在週一逆勢上漲，同期主流射擊全面回落（Steam 官方 API，9/14）</td><td>"The oldest games on Steam outperformed the newest today. Longevity beats hype — if the loop was good enough to remix."</td><td>Steam 官方 API（heat-radar 09/14）</td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（Nighthawks 平台守門人、EA genAI 主流化）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。對外用字已過濾賭場語言。⚠️ Nighthawks 為雙榜確認（Reddit r/gaming + r/Games 原文 URL 均已記錄）；EA genAI 為標題確認（Game Developer 標題「EA is using genAI for commentator voiceover in NHL 27」），全文未 fetch，已標記 partial；Saber 為標題確認（GamesIndustry 原文），全文未 fetch，已標記 partial。
+        📄 頭版 🎯 CJ Top 2（Roblox 平台信任危機、PIF/EA/Savvy 併購）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 驗原文日期 2026-09-11 + 主張比對（見文末 Evidence Log）。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
@@ -596,10 +549,10 @@
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Nighthawks AO 下架：「Valve 一個分級，完工遊戲從搜尋消失——創作者需要掌控自己的分發管道」</li><li>Roblox「We deserve better」：「不需要衝上別人的舞台——做自己的遊戲，那就是你自己的舞台」</li><li>Terraria +18.9% 週一零公告：「零行銷預算、週一逆勢漲 19%——這叫留存，不叫行銷」</li><li>Rockstar 臥底 2.5 年：「2.5 年臥底只為了監控員工——同份文件意外確認 GTA 6 線上 32 人」</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「吸血鬼夜店 RPG」60 秒對話 loop（蹭 Nighthawks 話題）—— 本日首選</li><li>「We deserve better」互動問答：三個選項判定「你是哪種創作者」——Roblox 事件借力</li><li>「臥底推理」：多人玩家裡找出臥底，2 分鐘局——Rockstar 事件趣味化</li><li>「萬聖節搶先」：吸血鬼/幽靈主題 60 秒恐怖 loop，趁 Halloween: The Game 早鳥爬榜</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Nighthawks 後續：Valve 是否回應、開發商是否有進一步聲明、社群情緒是否持續發酵</li><li>Terraria +18.9% 觸發點：確認有無 YouTuber 影片、mod 更新或社群活動讓它週一逆漲</li><li>Borderlands 4 +15 跳榜：確認有無公告或行銷活動，還是有機爬升</li><li>Physint 易主後 Xbox 後續：公告時程、開發狀態</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Nighthawks 任何原始美術、角色設定 → 「吸血鬼夜店」是品類借力，不是 IP 挪用</li><li>Rockstar 臥底的具體人員身份 → 只討論事件本身，不點名/猜測</li><li>Steam 澳洲年齡驗證話題 → 避免帶入任何對平台監管的批評角度</li><li>對外文案的任何類真錢/投注暗示 → 即使是玩笑也不寫</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭 Borderlands 4 限免最後一天：「上頭指數」一句話角色生成器，今晚免費倒數</li><li>「老遊戲不會死」：Terraria/TF2 逆勢上漲，徵集玩家提名要 remix 的老遊戲</li><li>PEAK/R.E.P.O./Garry's Mod 同步爬榜：「混亂跟朋友一起玩比較好玩」co-op 主題週</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「Shared Robot Chaos」2–4 人共控巨大機器人 co-op 混亂原型 —— 本日首選</li><li>一句話「上頭指數」角色生成器（蹭 Borderlands 4 限免最後一天）</li><li>老遊戲 remix 徵集系列（蹭 Terraria/TF2 逆勢上漲）</li><li>荒謬職業模擬萬用殼（抄「魯莽公車司機」公式，套當紅話題）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Roblox 兒童安全爭議後續：美國參議院調查進展、平台是否有具體回應</li><li>Rockstar 仲裁庭審理進度（預計至 10/16），是否影響其他studio 對員工社群的態度</li><li>PIF/EA/Savvy 合併：Savvy 收購 Moonton（$60 億）進度是否成為合併觸發點</li><li>Borderlands 4 限免週末結束後，Steam 排名是否明顯回落（驗證熱度真偽）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Roblox 抗議事件、Rockstar 線人事件：涉真實人物（Emathiio / David Baszucki / Rockstar 員工）與敏感議題（兒童安全 / 勞資），僅作敘事素材，<b>不遊戲化、不消費真人</b></li><li>Borderlands 4 / TF2 / Terraria 角色與美術直接挪用 → 一律用泛化皮</li><li>對外文案避開賭場語言（下注 / payout / big win / guaranteed）</li><li>純網路迷因無瀏覽器驗證新鮮度時，不假裝「今天的梗」</li></ul></div>
       </div>
     </section>
 
@@ -607,26 +560,22 @@
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>Nighthawks AO 從搜尋移除 + 多國下架</td><td><a href="https://www.reddit.com/r/gaming/comments/1wf9qpj/" target="_blank">Reddit r/gaming</a> + <a href="https://www.reddit.com/r/Games/comments/1wfaqqs/" target="_blank">Reddit r/Games</a>（heat_latest.json reddit 欄位，order: top-of-day）　原文日期 2026-09-14　驗：標題「Upcoming vampire RPG Nighthawks has been removed from Steam search and delisted in certain countries as Valve classifies it Adults Only: 'It's very bad news for us'」雙榜確認<span class="ok">✓</span>　🆕</td></tr>
-        <tr><td>EA genAI NHL 27 球評配音</td><td><a href="https://www.gamedeveloper.com/business/report-ea-s-nhl-27-is-using-genai-to-create-voiceover-claims-a-sports-commentator" target="_blank">Game Developer</a>（heat_latest.json story_gamedeveloper）　原文日期 2026-09-14 估算　驗：標題「EA is using genAI for commentator voiceover in NHL 27」確認；全文未 fetch<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Roblox DevCon 闖台「We deserve better」</td><td><a href="https://www.pcgamer.com/software/platforms/youtuber-runs-onto-the-stage-at-roblox-developers-conference-shouting-we-deserve-better-gets-tackled-and-ejected-from-show/" target="_blank">PC Gamer</a>（heat_latest.json story_pcgamer）　原文日期 2026-09-14 估算　驗：標題完整確認；全文未 fetch<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Terraria +18.9% Steam velocity</td><td>heat_latest.json（<code>fetched_at</code> 2026-09-14T07:30:34）官方 GetNumberOfCurrentPlayers 直抓　今日 35,488 / 昨日 29,855 / +18.9%<span class="ok">✓</span>　🆕（今日官方 API 數字）</td></tr>
-        <tr><td>TF2 +13.0% Steam velocity</td><td>heat_latest.json（<code>fetched_at</code> 2026-09-14T07:30:34）　今日 59,596 / 昨日 52,729 / +13.0%<span class="ok">✓</span>　🆕（官方 API 直抓）</td></tr>
-        <tr><td>Rockstar 工會 Discord 臥底 2.5 年 + GTA 6 32 人</td><td><a href="https://www.rockpapershotgun.com/rockstar-had-a-mole-in-the-union-worker-discord-server-for-over-two-and-a-half-years-gta-6-company-reveals-during-legal-battle" target="_blank">RPS 臥底</a> + <a href="https://www.rockpapershotgun.com/gta-6-online-mode-appears-to-receive-rockstars-first-public-acknowledgment-via-mention-of-in-development-32-player-format-in-legal-docs" target="_blank">RPS GTA6</a>（heat_latest.json story_rps）　驗：標題確認兩則；全文未 fetch<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Polyarc/Moss 工作室關閉</td><td><a href="https://www.rockpapershotgun.com/moss-developer-polyarc-share-that-theyre-shutting-down-just-two-months-after-releasing-a-vr-less-port-of-the-beloved-mousey-adventure-games" target="_blank">RPS</a>（heat_latest.json story_rps）　驗：標題確認；全文未 fetch<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Xbox 接手 Physint（PlayStation 放棄）</td><td><a href="https://www.gamedeveloper.com/business/xbox-to-publish-kojima-productions-physint-after-playstation-ditches-project" target="_blank">Game Developer</a>（heat_latest.json story_gamedeveloper）　驗：標題「Xbox to publish Kojima Productions' Physint after PlayStation ditches project」確認<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>BioWare「21 天上班 1 天休息」</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wfg06y/" target="_blank">Reddit r/gamedev</a>（heat_latest.json reddit，order: top-of-day）　標題「BioWare crunched '21 days on, one day off' making Mass Effect」確認<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Chess.com 100x 行動收入 / AI Unlocking Novel Mechanics</td><td><a href="https://naavik.co/f2p-mobile/how-chess-com-100xd-mobile-revenue-in-10-years/" target="_blank">Naavik Chess.com</a> + <a href="https://naavik.co/ai-gaming/how-ai-is-unlocking-novel-game-mechanics/" target="_blank">Naavik AI Mechanics</a>（heat_latest.json story_naavik）　驗：標題確認；全文未 fetch<span class="pp">partial</span>　🔄</td></tr>
-        <tr><td>Saber Interactive 北美開發清零 + genAI</td><td><a href="https://www.gamesindustry.biz/saber-interactive-has-no-real-development-in-north-america-any-more" target="_blank">GamesIndustry.biz</a>（heat_latest.json story_gamesindustry）　驗：標題確認<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Steam 數字層（全部 velocity）</td><td>heat_latest.json 2026-09-14T07:30:34 官方 GetNumberOfCurrentPlayers（API 直抓）　全部 velocity 數字為真·日比<span class="ok">✓</span></td></tr>
+        <tr><td>Roblox RDC 2026 抗議事件</td><td><a href="https://www.pcgamer.com/software/platforms/youtuber-runs-onto-the-stage-at-roblox-developers-conference-shouting-we-deserve-better-gets-tackled-and-ejected-from-show/" target="_blank">PC Gamer</a> / <a href="https://www.dexerto.com/roblox/roblox-youtuber-tackled-after-running-on-stage-during-ceo-talk-in-kids-deserve-better-shirt-3408260/" target="_blank">Dexerto</a>（皆 web_fetch）　原文日期：Dexerto 2026-09-11（meta published_time）、PC Gamer 2026-09-13 跟進　驗：Emathiio 衝上台、「Kids Deserve Better」T 恤、被保全架走驅離、正值美國參議院調查期間<span class="ok">✓</span>　🔄 近期（事件 9/11，距今 3 天）</td></tr>
+        <tr><td>PIF 考慮合併 EA / Savvy Games</td><td><a href="https://www.ghacks.net/2026/09/11/saudi-arabias-pif-reportedly-considers-merging-ea-with-savvy-games-group/" target="_blank">gHacks</a>（web_fetch，引 Bloomberg 9/10 報導）　原文日期 2026-09-11　驗：PIF 評估合併、涉及 Battlefield/Madden/Pokémon GO 等品牌、尚未拍板、需等 Savvy 完成 Moonton 收購<span class="ok">✓</span>　🔄 近期（距今 3 天）</td></tr>
+        <tr><td>Borderlands 4「Loveless」DLC 花癡熱潮</td><td><a href="https://www.dexerto.com/gaming/borderlands-4-surges-into-steams-top-three-as-players-thirst-over-new-dlc-character-3408222/" target="_blank">Dexerto</a>（web_fetch）　原文日期 2026-09-11　驗：Loveless 9/10 上線、24hr peak 16,475 人（SteamCharts）、限免週末至 9/14<span class="ok">✓</span>　🔄 近期（距今 3 天，限免今日到期）</td></tr>
+        <tr><td>Rockstar 工會 Discord 線人事件</td><td><a href="https://www.cheatcc.com/articles/rockstar-planted-an-informant-in-gta-6-workers-union-discord-tribunal-filings/" target="_blank">Cheat Code Central</a>（web_fetch，引 Rock Paper Shotgun / Game Developer 原始文件）　原文日期 2026-09-11　驗：線人自 2024/2 起回報逾兩年半、2025/10 開除 34 人、仲裁庭審理至 10/16<span class="ok">✓</span>　🔄 近期（距今 3 天）</td></tr>
+        <tr><td>Steam 數字層（即時 CCU / 排名跳動）</td><td>heat_latest.json 2026-09-14T07:30 官方 GetNumberOfCurrentPlayers（API 直抓，免敘事閘）　CS2 −17.7%／Rust −20.6%／PUBG −15.5%／TF2 +13%／Terraria +18.9%／Borderlands 4 rank +15／PEAK +6／R.E.P.O. +5／Garry's Mod +5<span class="ok">✓</span></td></tr>
+        <tr><td>Hacker News Show HN（早期訊號 / Demo 靈感）</td><td>heat_latest.json 2026-09-14 官方 HN Algolia API（數字層，免敘事閘）　Show HN 機甲共控專案 points=1</td></tr>
+        <tr><td>BlizzCon 2026 / Level-5 AI 爭議（背景，非本日新聞）</td><td>已於 2026-09-13 / 09-11–13 收錄為頭版（見前期 used_topics）　本日僅作背景引用，未重複計入頭版<span class="pp">已收錄</span>　♨️ 延燒中（非新梗）</td></tr>
+        <tr><td>Roblox / Twitch / Threads / unityroom / KYM</td><td>本次沙箱排程 request_access 全數被婉拒，無瀏覽器可深掃，<b>目前無法完全證實</b>，未以估計數字或舊資料補位</td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 均為 URL 確認（Reddit 雙榜 + Game Developer 標題）· Steam＝官方 API 09-14 即時真數字（radar 07:30）· 本次排程 request_access 被自動婉拒，Roblox CCU／KYM／Threads 三箱誠實標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/09/14 · 對外發布前一律過賭場語言 + 真人 / IP 風險濾鏡</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 + Rockstar 線人事件全 web_fetch 驗、小編 X 線 / Demo 線混合真數字（radar 免驗證閘）與 web_fetch 驗證 · Steam＝官方 API 09-14 即時真數字（radar 07:30）· Roblox/Twitch/Threads/unityroom/KYM 因沙箱排程無瀏覽器（request_access 被婉拒）標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/09/14 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
