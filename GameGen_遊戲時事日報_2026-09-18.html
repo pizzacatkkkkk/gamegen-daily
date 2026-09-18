@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/09/18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">09 · 18 · FRI</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 09 / 18 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑，19/19 站）· 本次沙箱排程無瀏覽器，Roblox/Twitch/Threads/unityroom/KYM 暫缺</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>AI 遊戲開發爭議本週達到臨界點：</b>CESA 2026 調查顯示 85% 日本遊戲開發者使用生成式 AI（去年僅 51%，Reddit r/Games 9/18 top-of-day）；Level-5 對 AI 使用方式發出官方道歉聲明（Polygon 9/17）；《Ocarina of Time》PC 移植版團隊承認多年使用 AI，粉絲怒稱「vibecoded slop」（Kotaku 9/17）；同日，Zelda Majora's Mask 美術總監也因 prototype 用 AI 遭批評。今天不是一個事件，是整個行業 AI 使用問題的總爆發。</p>
+        <p>其他重要新聞：<b>Nintendo/Capcom/Konami 更健康的「日系模型」</b>今日高討論（Reddit top-of-day）；<b>GTA 6 Album 11/19 推出（34 首原創曲）</b>＋ GTA Online 2027（Twitch CEO，多源確認）；<b>Rust +29.4% 今日 Steam 最大正向暴衝</b>（75,933 人）；Hideo Kojima 宣布 Bill Skarsgård 出演 PHYSINT；EU 提議禁止 13 歲以下兒童使用線上遊戲和社群媒體。</p>
+        <div class="pull">▸ 今天就能蹭：AI 85% → CJ「透明度是護城河」角度；Nintendo 模型 → X 反差觀點貼；GTA 6 Album → 文化資本複利觀點；今日 Demo 首選「AI 偵探」——你能判斷哪個遊戲素材是 AI 生的嗎？</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 1 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 1</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>AI 遊戲開發爭議達臨界點：85% 日本開發者用 AI，Level-5 公開道歉——透明度才是護城河</div>
+            <div class="ln"><b>新聞事實：</b>CESA（日本電腦娛樂協會）2026 年調查顯示，85% 日本遊戲開發者使用生成式 AI，較去年 51% 大幅上升（Reddit r/Games 9/18 top-of-day 引用 CESA 調查）；Level-5 對 AI 使用發出官方道歉聲明（Polygon 9/17：「Level-5 Finally Issues Official Apology for Rampant AI Use」）；《Ocarina of Time》熱門 PC 移植版團隊承認多年使用 AI，粉絲強烈反彈稱「vibecoded slop」（Kotaku 9/17）。CESA 調查原始連結未在本次抓取資料中直接出現，標注 partial。</div>
+            <div class="ln"><b>GameGen 角度：</b>AI 已是行業現實，不是例外。問題從來不是「用不用」，而是「透明不透明」。GameGen 是 AI-native 平台——我們的賭注是讓 AI 成為創作加速器而非創作替代者，透明度才是長期護城河。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "85% of Japanese game devs now use generative AI. Level-5 just publicly apologized for it. The question was never 'will studios use AI?' — it's 'will they be honest about it?' Transparency is the new moat."<br><span style="color:var(--ink-dim)">中譯：85% 的日本遊戲開發者已在用生成式 AI。Level-5 剛公開道歉了。問題從來不是工作室會不會用 AI——而是他們說不說實話。透明度才是新的護城河。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/Games/comments/1wipd2q/over_85_of_japanese_game_developers_use/" target="_blank">Reddit r/Games ↗</a>　<a href="https://www.polygon.com/level-5-ai-use-apology-statement/" target="_blank">Polygon ↗</a>　<a href="https://kotaku.com/team-behind-popular-ocarina-of-time-pc-port-admit-to-using-ai-for-years-and-now-fans-are-freaking-out-about-vibecoded-slop-2000735358" target="_blank">Kotaku ↗</a>　pub 2026-09-17~18　verified partial</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Nintendo、Capcom、Konami 比西方大廠更健康：不付主管 $30M、小團隊、不大規模裁員<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/gaming 今日 top-of-day 高討論帖引用業界評論，指出日本三大遊戲公司相對健康的原因：一、團隊規模小；二、主管薪酬合理（不像西方大廠動輒 $30M）；三、鮮少大規模裁員（Reddit r/gaming 9/18 top-of-day，引用「expert」，未明確指名，partial）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Nintendo, Capcom, and Konami are some of the healthiest game companies right now. Reason? Small teams, no $30M exec pay, no mass layoffs. Boring discipline wins. 👇"　<span style="color:var(--ink-dim)">中譯：Nintendo、Capcom、Konami 是遊戲業目前最健康的公司——原因？小團隊、主管不拿 $30M、沒有大規模裁員。枯燥的紀律，最後贏了。👇</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wj3mib/japanese_companies_like_nintendo_capcom_and/" target="_blank">Reddit r/gaming ↗</a>　verified partial（Reddit 引用，具體 expert 來源未確認）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 Album 11/19 推出（34 首原創曲）+ Twitch CEO：GTA Online 2027——Rockstar 文化日曆機器<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Rockstar 宣布《Grand Theft Auto VI: The Album》將於 2026 年 11 月 19 日發行（黑膠/CD/串流），包含 34 首原創曲目（Reddit r/Games top-of-day / Eurogamer / VGC / Gamespot 多源確認，9/17-9/18）；Twitch CEO Dan Clancy 預期 GTA VI Online 多人模式將於 2027 年推出（Reddit / RPS / Gamespot 多源，9/18）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6 is dropping a 34-track original album on November 19 — before the game is even out. GTA Online follows in 2027. Rockstar builds entire cultural calendars, not just games. 👇"　<span style="color:var(--ink-dim)">中譯：GTA 6 在遊戲出來之前，先推出 34 首原創曲目專輯（11/19）。GTA Online 2027 跟上。Rockstar 不是在做遊戲——他們在策劃整個文化日曆。👇</span></div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/gta-6-original-soundtrack-six-track-preview" target="_blank">Eurogamer ↗</a>　<a href="https://www.videogameschronicle.com/news/grand-theft-auto-6-is-getting-a-vinyl-cd-and-streaming-soundtrack-with-34-original-tracks/" target="_blank">VGC ↗</a>　<a href="https://www.reddit.com/r/Games/comments/1wis5ko/grand_theft_auto_vi_the_album_coming_november_19/" target="_blank">Reddit ↗</a>　verified ✓</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rust 今日 Steam 暴衝 +29.4%：75,933 同時在線，週五生存模式啟動<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam 官方 GetNumberOfCurrentPlayers API 09/18 07:30 快照：Rust 今日 75,933 人，對比昨日 58,680 人，+29.4%（heat_latest.json steam_velocity 官方 API 真數字）。觸發原因本次抓取資料無明確說明，<b>目前無法完全確認</b>，不猜測。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Rust jumped +29% on Steam this Friday. 75K players didn't get the TGIF memo — they got a server invite. Survival mode: activated. 👇"　<span style="color:var(--ink-dim)">中譯：Rust 週五在 Steam 暴衝 +29%。75K 玩家沒收到「終於週五了」——他們收到的是伺服器邀請。生存模式：啟動。👇</span></div>
+            <div class="meta">來源 STEAM 官方 API · 09/18 07:30 即時真數字 <a href="https://store.steampowered.com/app/252490" target="_blank">原始 ↗</a>　verified ✓</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 Top 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「AI 偵探」——你能判斷哪個遊戲素材是 AI 生成的嗎？（蹭 Level-5 道歉 + 85% 日本開發者調查）<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>玩家看到 10 張虛構遊戲素材描述（全原創泛化設定，非真實遊戲或公司），包括角色設計風格、背景插圖描述、道具圖等，每張只有兩個選項：「AI 生成」或「人手繪製」。30 秒完成所有判斷，最後揭曉正確答案 + 生成「AI 偵探等級」分享卡（從「完全信任 AI」到「人肉驗證機器」五個等級）。所有素材描述均為原創泛化，不使用任何真實遊戲、公司或開發者名稱。</div>
+            <div class="ln"><b>為何是今天首選：</b>直接蹭 Level-5 道歉 + 85% 日本開發者的最大討論熱點；挑戰 + 揭曉謎底結構天生有轉發動機；規則一句話；全原創設定不觸及任何真實品牌或人名。</div>
+            <div class="meta">綁 <a href="https://www.polygon.com/level-5-ai-use-apology-statement/" target="_blank">Polygon 報導 ↗</a>　模板：快速判斷 + 揭曉 + 等級分享卡</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 09/18 即時</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">548K ▼0.9%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">94K ▲2.9%</span></li>
+            <li class="hot up"><span class="nm">Rust</span><span class="vn">75K ▲29.4%</span></li>
+            <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">73K ▲0.9%</span></li>
+            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">63K ▲10.4%</span></li>
+            <li><span class="nm">Apex Legends</span><span class="vn">54K ▲0.2%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 09/18 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Roblox 即時 CCU（roblox.com/charts / RTrack 需瀏覽器渲染）。<b>目前無法完全證實</b>。CC 互動 session（chrome-devtools）有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-18T07:30，19/19 站連通），Steam 為 <b>09-18 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。今日最大正暴衝：<b>Rust ▲29.4%</b>（75,933 vs 昨日 58,680）；TF2 ▲10.4%（63,541 vs 昨日 57,554）。CS:GO 從昨日 552K 高峰回落至 548K（-0.9%）。Roblox CCU / Twitch 觀看因本次為沙箱排程、<b>無瀏覽器</b>仍標「暫缺」。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>正暴衝</span></span>Rust ▲29.4%：今日最大正向暴衝，75,933 同時在線超越昨日 58,680</h3>
+        <div class="sum">今日真·日比（對比昨日 radar 快照）Top 15 中，<b>Rust 以 75,933 人（▲29.4%，+17,253 人）</b>是今天最大暴衝。TF2 ▲10.4%（63,541 vs 57,554）為第二名正暴衝。CS:GO 從昨日 552K 高峰回落至 548K（-0.9%），昨日的暴衝是一日現象。<code>steam_movers</code> 排名跳動：Arena Breakout: Infinite ↑11 名（68→之前 79）、Limbus Company ↑7 名（22→之前 29）。新晉 Most Played：Aniimo（#8）、RuneScape: Dragonwilds（#92）、AION 2 Playtest（#98）。WARDOGS 繼續維持 Most Played 前 5（#5）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Rust 週五暴衝的觸發原因在本次抓取資料中無明確說明，<b>目前無法完全確認</b>，不猜測。今天真正的主題是 AI 在遊戲開發的大爆發（Level-5 道歉 + 85% 日本開發者），Steam 數字做背景觀察即可。週五生存類遊戲峰值是常見現象，Rust 今日數字在歷史範圍內屬合理波動。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 09/18 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對，本次沙箱排程無瀏覽器、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比為 09-18 官方 API 即時（radar 07:30）。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品／熱賣</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">WARDOGS</span><span class="vn">熱賣 🔥</span></li>
+            <li class="hot"><span class="nm">EA SPORTS FC™ 27</span><span class="vn">熱賣 🔥</span></li>
+            <li><span class="nm">RuneScape: Dragonwilds</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Halloween: The Game</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">Cooking Crusade</span><span class="vn">新品</span></li>
+            <li><span class="nm">Dimraeth</span><span class="vn">熱賣</span></li>
+          </ol>
+          <div class="bf">Steam 新品／熱賣榜 · 09/18 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO 迷因/病毒</span><span class="metric">viral/meme 標籤</span></div>
+          <ol>
+            <li class="hot"><span class="nm">StreamRush（直播主衝刺）</span><span class="vn">viral</span></li>
+            <li><span class="nm">ClickBait（標題黨選擇）</span><span class="vn">viral</span></li>
+            <li><span class="nm">BOMB DEFUSER（快速反應）</span><span class="vn">viral</span></li>
+            <li><span class="nm">RarityRNG（稀有度 RNG）</span><span class="vn">viral</span></li>
+            <li><span class="nm">Three Nights Lobotomized</span><span class="vn">meme</span></li>
+            <li><span class="nm">Cirno Fumo: The Horror Game</span><span class="vn">meme</span></li>
+          </ol>
+          <div class="bf">itch.io viral/meme 標籤 · 09/18 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>EA FC 27 今日新登熱賣榜、Aniimo 新進 Most Played #8；itch viral 格局穩定</h3>
+        <div class="sum">Steam 熱賣榜最新變化：EA SPORTS FC™ 27 今日新登榜（一日內進熱賣）；WARDOGS 繼續榜首；RuneScape: Dragonwilds 持續熱賣；Cooking Crusade 為今日新品。Most Played 新晉者：Aniimo（#8，可能為今日發行或重大更新觸發）、RuneScape: Dragonwilds（#92）、AION 2 Playtest（#98，測試版）。itch.io viral 標籤格局不變：StreamRush / ClickBait / BOMB DEFUSER 持續活躍。⚠️ itch 榜單以累積熱度排序，不代表今日首發。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天最好的機會在 AI 爭議蹭法——Level-5 道歉給了「AI 偵探」一個完美的話題鉤子。itch.io 的 StreamRush（直播主資源衝刺）和 ClickBait（標題黨選擇）是今天 Demo 外的次選備用機制，技術複雜度接近零。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>本週最大 AI 爆發</span></span>85% 日本遊戲開發者用 AI + Level-5 道歉 + OoT 移植「vibecoded slop」：AI 在遊戲開發的臨界點週</h3>
+        <div class="sum">三個事件同週爆發：<b>① CESA 2026 調查：85% 日本遊戲開發者使用生成式 AI</b>（較去年 51% 大增，Reddit r/Games 9/18 top-of-day，CESA = 日本電腦娛樂協會）；<b>② Level-5 官方道歉</b>（Polygon 9/17：「Level-5 Finally Issues Official Apology for Rampant AI Use」，承諾修正 Yo-Kai Watch 2 和 Professor Layton 展示影片）；<b>③《Ocarina of Time》熱門 PC 移植版團隊承認多年使用 AI</b>，粉絲強烈反彈稱「vibecoded slop」（Kotaku 9/17）。另：Zelda Majora's Mask 美術總監 Takaya Imamura 因分享 AI prototype 測試遭到批評（Kotaku 9/13，表示「沒想到被攻擊得這麼猛」）。日本 automaton-media 另有報導指出背景美術師、道具師、程式助手為受 AI 衝擊最大的職位。CESA 調查原文連結未在本次抓取資料中直接出現，標注 partial。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天的核心張力：<b>工具使用率（85%）vs 透明度預期（粉絲憤怒）</b>。開發者普遍在用，但不說；消費者察覺，就爆了。GameGen 是 AI-native 平台，立場清楚——今天最好的 CJ 角度：<b>透明度是護城河，不是負擔</b>。如果你的整個創作流程是公開的，粉絲沒有什麼可以「揭穿」的。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不評論個別公司決策</span></span></div></div>
+          </div>
+          <div class="src">REDDIT / POLYGON / KOTAKU · 9/17-18 · <a href="https://www.reddit.com/r/Games/comments/1wipd2q/over_85_of_japanese_game_developers_use/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>產業分析</span></span>Nintendo/Capcom/Konami 更健康因為「從不付主管 $30M」——日系模型今日高討論</h3>
+        <div class="sum">Reddit r/gaming 今日 top-of-day：業界評論分析指出，Nintendo、Capcom、Konami 相對健康的三個原因：一、不擁有龐大團隊；二、主管薪酬合理（不像 Take-Two 等西方大廠高管年薪 $30M+）；三、不頻繁大規模裁員（帖子引用「expert」，具體來源未明確，標注 partial）。此討論在昨日 MindsEye 工作室傳出關閉、Heart Machine 幾乎全員裁員的背景下，與上述事件形成鮮明對比，成為本週工作室生死討論的另一個視角。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>昨日 MindsEye 關閉 + 今日日系健康模型分析 = 同一週的兩個故事。不是「大廠必死」，也不是「小廠必贏」，而是路線選擇。GameGen 的賭注恰好在日系模型的交叉點：用 AI 工具讓小團隊做到大廠做不到的效率，而不是用 AAA 預算堵一個不確定的市場缺口。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 純觀點</span></span></div></div>
+          </div>
+          <div class="src">REDDIT r/gaming · 9/18 · <a href="https://www.reddit.com/r/gaming/comments/1wj3mib/japanese_companies_like_nintendo_capcom_and/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>文化資本</span></span>GTA 6 Album 11/19（34 首原創曲）＋ GTA Online 2027：Rockstar 文化複利機器</h3>
+        <div class="sum">Rockstar 正式宣布《Grand Theft Auto VI: The Album》將於 2026 年 11 月 19 日發行，包含 34 首原創曲目，匯集多位知名藝術家（今日 Reddit r/Games top-of-day；Eurogamer、VGC、Gamespot 多源同日確認）；另有六首可先行在各平台串流試聽。Twitch CEO Dan Clancy 預期 GTA VI Online 多人模式將在 2027 年推出（Reddit r/gaming top-of-day；RPS；Gamespot 多源，均 9/17-9/18）。GTA VI 預計 2026 年發行（Rockstar 官方），Online 部分則需等到 2027 年。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>GTA 6 在正式上市前先推出一張 34 首原創曲目的官方專輯——這是文化資本複利效應的教科書案例。IP 不只是遊戲本身，而是整個文化生態系的建構。GameGen Trend-to-Game 的長期目標之一：讓每個遊戲從第一天就開始建立文化資產，而不是等 20 年後才被人提起。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">EUROGAMER / VGC / REDDIT · 9/17-18 · <a href="https://www.eurogamer.net/gta-6-original-soundtrack-six-track-preview" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>大作宣布</span></span>Hideo Kojima 宣布 Bill Skarsgård 出演 PHYSINT + OD 恐怖遊戲最新進度</h3>
+        <div class="sum">Hideo Kojima 宣布好萊塢演員 Bill Skarsgård（《牠》Pennywise 扮演者）將擔任動作潛行遊戲 PHYSINT 的主演，傳奇設計師 Yoji Shinkawa 確認參與角色設計（PCGamer / Eurogamer / Reddit 多源，9/18 today top-of-day）；同日 Kojima 亦就神秘恐怖遊戲 OD 進行了更新（Xbox 官方 / Reddit r/gaming top-of-day）。PHYSINT 為 Kojima Productions 繼 Death Stranding 後的新作，動作潛行類型，細節仍有限。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Kojima 用好萊塢頂級演員做遊戲主角，繼續模糊遊戲與電影的界線。和昨日《Resident Evil》電影最高分改編一起看——遊戲 IP 與影視產業的融合正在加速。GameGen 不做 AAA，但這個方向說明「說故事的密度」正在成為遊戲業的核心武器。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PCGAMER / EUROGAMER · 9/18 · <a href="https://www.pcgamer.com/games/action/hideo-kojima-announces-bill-skarsgard-will-star-in-stealth-action-physint-legendary-designer-yoji-shinkawa-also-confirmed-for-character-design/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>監管</span></span>EU 提議禁止 13 歲以下兒童使用社群媒體、線上遊戲和 chatbot</h3>
+        <div class="sum">歐盟委員會主席提議禁止 13 歲以下未成年人使用社群媒體、線上遊戲和聊天機器人（AP News，收錄於 HN 9/18；GamesIndustry 同期：「Draft of new EU law proposes sweeping restrictions on online games」）。法規草案細節未在本次抓取資料中完整呈現，標注 partial。這是繼法國、英國等國各自出台兒童網路管制措施後，歐盟層級的首個整體性提議。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>監管機構已將遊戲和 chatbot 並列在同一個兒童保護框架中。對有年輕受眾的遊戲平台而言，這是一個重要信號——不是要現在行動，而是要知道這個方向正在成形。GameGen C 側創作者中有面向年輕受眾的，值得追蹤。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不站政治立場</span></span></div></div>
+          </div>
+          <div class="src">AP NEWS / HN / GAMESINDUSTRY · 9/18 · <a href="https://apnews.com/article/europe-leyen-social-media-ban-kids-3e7176ea409ba4af0a069f5ca7dd9680" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        🛰️ <b>其他值得追蹤（非今日首推彈藥）</b>：Louis Rossmann 批評 Sony「你不擁有你的遊戲」立場（Reddit top-of-day，數位所有權話題）；PC ports 成為 AI vibe coding 的新戰場（PCGamer / HN 9/18）；Valve Lepton（在 Linux 跑 Android 遊戲工具）正式開源（HN / GamingOnLinux 9/18）；Nex Playground 宣布 $150M 融資、硬體銷量突破 100 萬（GamesIndustry / GameDeveloper 9/18）；「I want to be more involved in your hobbies」貼文（Reddit r/gaming top-of-day，伴侶遊戲投入共鳴梗）。
+      </div>
+    </section>
+
+    <!-- 迷因題材 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>今日病毒</span></span>三大創意迷因：Stirling Engine 跑 DOOM / RDR2 Tamagotchi / 「我想更投入你的嗜好」</h3>
+        <div class="sum"><b>① Stirling Engine Powered DOOM</b>（Reddit r/gaming 9/18 top-of-day）：有人用熱力發動機（Stirling Engine）驅動計算裝置跑 DOOM，「在任何東西上跑 DOOM」的傳統再進化，技術浪漫主義的終極表現（single Reddit source，partial）。<b>② RDR2 Tamagotchi 模擬器</b>（Reddit r/gaming 9/18 top-of-day）：一位玩家把 Red Dead Redemption 2 改造成虛擬寵物模擬器，Arthur Morgan 成了你需要定時餵食、照顧情緒的 Tamagotchi（single Reddit source，partial）。<b>③「I want to be more involved in your hobbies」</b>（Reddit r/gaming top-of-day）：伴侶想更投入另一半電玩嗜好的共鳴貼，病毒式傳播。⚠️ KYM / Threads 繁中圈因無瀏覽器，<b>目前無法完全證實</b>，不補舊梗。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天最可操作的迷因是「在任何東西上跑 DOOM + 把任何遊戲做成 Tamagotchi」的雙公式——兩者都完全泛化、不涉及任何版權素材，且機制本身就是內容。「RDR2 Tamagotchi」直接可借用為 Demo 機制：把任何泛化設定的角色做成虛擬寵物 loop，截圖傳播天然自帶。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 全泛化設定</span></span></div></div>
+          </div>
+          <div class="src">REDDIT r/gaming · 9/18 top-of-day</div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Know Your Meme「Popular right now」與繁中 Threads 熱話需瀏覽器，本次沙箱排程無法取得，<b>目前無法完全證實</b>。不以 SEO 彙整頁回收舊梗充數。CC 互動 session 有瀏覽器時請補當日新梗 + first-seen 驗證。今日 AI 爭議（Level-5 道歉 + OoT AI）可能已在繁中 Threads 發酵，下次有瀏覽器時驗證。
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">今日話題 + itch 原創 loop</span></div>
+          <ol>
+            <li class="hot"><span class="nm">AI 偵探 — 判斷 + 揭曉 + 等級分享卡</span><span class="vn">★ 話題首選</span></li>
+            <li><span class="nm">Tamagotchi 公式 — 任意角色 × 虛擬寵物</span><span class="vn">創意迷因</span></li>
+            <li><span class="nm">StreamRush — 直播主資源衝刺</span><span class="vn">計時</span></li>
+            <li><span class="nm">ClickBait — 標題黨選擇分支</span><span class="vn">選擇</span></li>
+            <li><span class="nm">BOMB DEFUSER — 快速反應拆彈</span><span class="vn">反應</span></li>
+          </ol>
+          <div class="bf">今日話題 + itch.io · 09/18 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日首抄公式：「AI 偵探」判斷 + 揭曉 + 等級分享卡；次選「Tamagotchi 化」任意角色</h3>
+        <div class="sum">今日話題最自然的機制借用是「<b>AI 偵探判斷</b>」（接 Level-5 道歉 + 85% 日本開發者：你能辨認 AI 生成的遊戲素材嗎？）和「<b>Tamagotchi 化任意角色</b>」（接 RDR2 Tamagotchi 迷因：把任何泛化設定的角色做成虛擬寵物 loop）。AI 偵探的挑戰 + 揭曉結構天生有轉發動機；Tamagotchi 公式技術複雜度接近零。兩類機制全原創設定，不涉及任何真實品牌或人名。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天最適合套用的話題是「AI 偵探」——玩家在 30 秒內完成 10 個判斷，最後揭曉自己的「AI 偵探等級」並生成分享卡。這個格式完全對上 Level-5 道歉的爆點，判斷+揭曉機制的轉發動機天生自帶，技術複雜度接近零。角色、公司、作品名稱全部原創泛化。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 全泛化設定</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO + 今日話題 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話（Threads 需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。可追的長線母題：今天「<b>Level-5 道歉 + 85% 日本開發者用 AI</b>」「<b>Nintendo/Capcom/Konami 日系健康模型</b>」都是全球級討論，繁中圈很可能有「台灣遊戲公司的 AI 政策」「台灣也有這樣的工作室嗎？」等討論變體，下次有瀏覽器時驗證是否已落到 Threads 繁中熱話。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>AI 遊戲素材爭議（Level-5 + 85% 日本開發者）</td><td><span class="tmpl">「AI 偵探」判斷 + 揭曉 + 等級分享卡</span></td><td>「你的 AI 偵探等級」截圖傳播</td><td class="rk-low">低 · 全原創泛化設定，不使用任何真實遊戲素材</td><td>★ 本日 Demo 首選，規則一句話、揭曉+分享機制天生自帶</td></tr>
+          <tr><td>Nintendo/Capcom/Konami 日系健康模型</td><td><span class="tmpl">「小工作室存活計算機」選擇遊戲</span></td><td>開發者/創作者共鳴</td><td class="rk-low">低 · 泛化設定，不使用真實公司名稱</td><td>CJ 角度 + X 反差觀點貼（接昨日 MindsEye 關閉）</td></tr>
+          <tr><td>GTA 6 Album 11/19 + GTA Online 2027</td><td><span class="tmpl">「遊戲配樂風格選角」互動問答</span></td><td>粉絲參與感</td><td class="rk-mid">中 · 避免使用 GTA/Rockstar 商標直接比對</td><td>泛化「你的遊戲會有什麼風格的原聲帶？」問答貼；CJ 角度：文化複利</td></tr>
+          <tr><td>RDR2 Tamagotchi + Stirling Engine DOOM</td><td><span class="tmpl">「任意角色 Tamagotchi 化」虛擬寵物 loop</span></td><td>創意改造共鳴</td><td class="rk-low">低 · 全泛化設定，不使用 RDR2/DOOM 版權素材</td><td>借用「Tamagotchi 公式」而非 RDR2/DOOM 本身，角色全原創</td></tr>
+          <tr><td>EU 13 歲以下兒童線上遊戲禁令提案</td><td><span class="tmpl">「你幾歲開始打遊戲？」互動問答</span></td><td>共鳴感、兒時遊戲回憶</td><td class="rk-low">低 · 純調查式，不站政治立場</td><td>兒時初遊情感貼 + 政策觀點貼（中性，不評論歐盟對錯）</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>AI in game dev：85% 日本開發者已在用，Level-5 公開道歉——透明度才是護城河</td><td>CESA 2026 調查：85% 日本遊戲開發者用 AI（vs 去年 51%）；Level-5 官方道歉（Polygon 9/17）；OoT PC 移植「vibecoded slop」事件（Kotaku 9/17）</td><td>"85% of Japanese game devs now use generative AI. Level-5 just apologized publicly. The question was never 'will they use AI?' — it's 'will they be honest about it?' Transparency is the new moat."</td><td><a href="https://www.reddit.com/r/Games/comments/1wipd2q/over_85_of_japanese_game_developers_use/" target="_blank">↗</a></td></tr>
+          <tr><td>Nintendo/Capcom/Konami 日系健康模型：小團隊 + 低主管薪酬 + 少裁員</td><td>Reddit 高討論分析（9/18 top-of-day）：日系三巨頭相對健康，不付主管 $30M、不大規模裁員</td><td>"Nintendo, Capcom, and Konami are healthy. The reason? No $30M exec packages. Small teams. No mass layoffs. While AAA bets implode around them — boring discipline compounds."</td><td><a href="https://www.reddit.com/r/gaming/comments/1wj3mib/japanese_companies_like_nintendo_capcom_and/" target="_blank">↗</a></td></tr>
+          <tr><td>GTA 6 文化複利：Album 11/19 + GTA Online 2027——IP 建構的教科書</td><td>34 首原創曲目 Album 先於遊戲上市（多源確認，9/17-9/18）；GTA Online 2027（Twitch CEO，多源）</td><td>"GTA 6 is dropping a 34-track original album before the game ships. Then GTA Online in 2027. This is what IP with real cultural compounding power looks like — it builds before the product even exists."</td><td><a href="https://www.eurogamer.net/gta-6-original-soundtrack-six-track-preview" target="_blank">↗</a></td></tr>
+          <tr><td>EU 兒童線上遊戲禁令提案：遊戲與 chatbot 被納入同一監管框架</td><td>EU chief 提議禁止 13 歲以下使用社群媒體、線上遊戲、chatbot（AP News / GamesIndustry 9/18）</td><td>"The EU wants to ban under-13s from online games, social media, and chatbots in the same law. When games are regulated like cigarettes, the industry's approach to young audiences just changed permanently."</td><td><a href="https://apnews.com/article/europe-leyen-social-media-ban-kids-3e7176ea409ba4af0a069f5ca7dd9680" target="_blank">↗</a></td></tr>
+          <tr><td>Nex Playground $150M + 100 萬硬體銷量：體感遊戲的反彈</td><td>Nex Playground 宣布完成 $150M 融資，硬體銷量突破 100 萬（GamesIndustry / GameDeveloper 9/18）；主要發行商主動提供 Kinect/Wii 舊目錄授權</td><td>"Someone just raised $150M for a new physical gaming hardware play — and sold 1M units. When every major publisher is offering their old Kinect and Wii catalogues: the pendulum is swinging back to embodied play."</td><td><a href="https://www.gamesindustry.biz/nex-playground-announces-150m-in-new-funding-as-hardware-sales-pass-one-million" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 1（AI 85% 日本開發者 + Level-5 道歉 → 透明度護城河）已附完整 EN hook + 中譯，可直接交 CJ 每日包。去賭場化 ✅。主要來源 Reddit CESA survey + Polygon + Kotaku 交叉確認。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭 AI 85% + Level-5 道歉：「透明度是護城河」角度（不評論 Level-5 個別決策，談結構性觀點）</li><li>蹭 Nintendo/Capcom/Konami 模型：「昨日 MindsEye 關閉，今日日系模型高討論——工作室生死差在哪？」反差觀點貼</li><li>蹭 GTA 6 Album：「遊戲還沒出，Album 先行，34 首——文化複利是怎麼建的」觀點貼</li><li>蹭 Rust +29.4%：「週五生存模式啟動，75K 玩家不 TGIF」數字貼</li><li>蹭 Stirling Engine DOOM + RDR2 Tamagotchi：「今天有人在熱力發動機上跑了 DOOM。另一個人把 RDR2 做成了 Tamagotchi。這就是為什麼遊戲這個形式永遠不會死。」情感貼</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「AI 偵探」（蹭 Level-5 道歉 + 85% 日本開發者）——本日首選，判斷+揭曉+等級分享卡，30 秒完成</li><li>「任意角色 Tamagotchi 化」（蹭 RDR2 Tamagotchi，全泛化設定：虛擬創作者寵物 loop）</li><li>「你幾歲開始打遊戲？」互動問答（蹭 EU 兒童禁令，情感 + 資料收集雙效）</li><li>「小工作室存活計算機」選擇遊戲（蹭 Nintendo 模型 + MindsEye 關閉，三選一決策 + 結局揭曉）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>CESA 2026 調查完整報告（目前只有 Reddit 引用，原文未在抓取資料中出現）</li><li>Level-5 實際修正 Yo-Kai Watch 2 / Professor Layton 展示影片的時程</li><li>Aniimo 新進 Steam Most Played #8 的觸發原因（今日新晉，但細節不明）</li><li>Rust +29.4% 的觸發事件（週五週期？更新？創作者效應？待補）</li><li>EU 兒童線上遊戲禁令草案的具體條文（目前僅有 APNews 概述）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>對 Level-5 或 OoT 移植團隊的個別決策發表個人定性評論（「他們是騙子 / 他們做得對」）</li><li>使用 Level-5、Yo-Kai Watch、Professor Layton、Ocarina of Time、Zelda 的任何商標素材製作遊戲或貼文</li><li>對 EU 兒童禁令提案發表政治立場（「歐盟完全正確 / 歐盟在監控兒童」）</li><li>對外文案使用推薦、必勝、保證等語言（全面排除賭場語言）</li><li>使用 Rust、GTA、DOOM、RDR2 的商標素材製作任何遊戲或分享卡</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>85% 日本遊戲開發者使用生成式 AI（CESA 2026）</td><td><a href="https://www.reddit.com/r/Games/comments/1wipd2q/over_85_of_japanese_game_developers_use/" target="_blank">Reddit r/Games 9/18 top-of-day</a>（heat_latest reddit）引用 CESA 調查；數字「85%（vs 去年 51%）」由 Reddit 帖標題直接引用。CESA 調查原文連結未在抓取資料中直接出現<span class="pp">partial</span>　🆕 今天新（≤24h，Reddit 今日 top-of-day）</td></tr>
+        <tr><td>Level-5 官方道歉 AI 使用</td><td><a href="https://www.polygon.com/level-5-ai-use-apology-statement/" target="_blank">Polygon 9/17</a>（heat_latest tavily_news，score 0.41）：「Level-5 Finally Issues Official Apology for Rampant AI Use」；<a href="https://kotaku.com/level-5-promises-to-fix-yo-kai-watch-2-and-professor-layton-presentation-in-the-wake-of-ai-backlash-and-explains-that-many-of-its-artwork-mistakes-were-simply-down-to-human-error-2000735123" target="_blank">Kotaku 9/16</a>（tavily_news）確認修正承諾<span class="pp">partial（道歉聲明全文未在本次資料中完整呈現）</span>　🆕 今天新</td></tr>
+        <tr><td>OoT PC 移植「vibecoded slop」</td><td><a href="https://kotaku.com/team-behind-popular-ocarina-of-time-pc-port-admit-to-using-ai-for-years-and-now-fans-are-freaking-out-about-vibecoded-slop-2000735358" target="_blank">Kotaku 9/17</a>（heat_latest tavily_news，score 0.287）：標題明確「Fans Are Freaking Out About 'Vibecoded Slop'」<span class="pp">partial（未有第二來源確認細節）</span>　🆕 今天新</td></tr>
+        <tr><td>Nintendo/Capcom/Konami 日系健康模型</td><td><a href="https://www.reddit.com/r/gaming/comments/1wj3mib/japanese_companies_like_nintendo_capcom_and/" target="_blank">Reddit r/gaming 9/18 top-of-day</a>（heat_latest reddit）：帖子引用「expert」，未明確指名<span class="pp">partial（單一 Reddit 帖，具體 expert 來源未確認）</span>　🆕 今天新</td></tr>
+        <tr><td>GTA 6 Album 11/19 + 34 首原創曲目</td><td><a href="https://www.reddit.com/r/Games/comments/1wis5ko/grand_theft_auto_vi_the_album_coming_november_19/" target="_blank">Reddit r/Games 9/18 top-of-day</a>＋ <a href="https://www.eurogamer.net/gta-6-original-soundtrack-six-track-preview" target="_blank">Eurogamer 9/17</a>（story_eurogamer）＋ <a href="https://www.videogameschronicle.com/news/grand-theft-auto-6-is-getting-a-vinyl-cd-and-streaming-soundtrack-with-34-original-tracks/" target="_blank">VGC 9/17</a>（story_vgc）＋ <a href="https://www.gamespot.com/articles/gta-6-will-feature-the-next-evolution-of-in-game-radio-rockstar-says/" target="_blank">Gamespot</a>　驗：多源一致，11/19 日期和 34 首曲目確認<span class="ok">✓</span>　🆕 今天新</td></tr>
+        <tr><td>GTA Online 2027（Twitch CEO）</td><td><a href="https://www.reddit.com/r/gaming/comments/1wizta9/grand_theft_auto_online_for_gta_vi_to_release_in/" target="_blank">Reddit r/gaming top-of-day</a>＋ <a href="https://www.rockpapershotgun.com/twitch-ceo-expects-gta-6-online-multiplayer-will-launch-next-year-which-if-accurate-would-leave-only-the-pc-ports-arrival-point-up-in-the-air" target="_blank">RPS</a>（story_rps）＋ <a href="https://www.gamespot.com/articles/gta-6-multiplayer-could-launch-in-2027-twitch-ceo-says/" target="_blank">Gamespot</a>（story_gamespot）　驗：多源一致，Dan Clancy（Twitch CEO）發言確認<span class="ok">✓</span>　🆕 今天新</td></tr>
+        <tr><td>Hideo Kojima / PHYSINT / Bill Skarsgård</td><td><a href="https://www.pcgamer.com/games/action/hideo-kojima-announces-bill-skarsgard-will-star-in-stealth-action-physint-legendary-designer-yoji-shinkawa-also-confirmed-for-character-design/" target="_blank">PCGamer</a>（story_pcgamer）＋ <a href="https://www.eurogamer.net/hideo-kojima-bill-skarsgard-physint-mysterious-horror-game-od" target="_blank">Eurogamer</a>（story_eurogamer）＋ Reddit r/gaming / r/Games 多個 top-of-day　驗：多源一致<span class="ok">✓</span>　🆕 今天新</td></tr>
+        <tr><td>Rust +29.4% Steam 暴衝</td><td>heat_latest.json steam_velocity 2026-09-18T07:30 官方 GetNumberOfCurrentPlayers：Rust 75,933（今日）vs 58,680（昨日）= +29.4%；TF2 63,541 vs 57,554 = +10.4%　驗：Steam 官方 API 直抓真數字<span class="ok">✓</span></td></tr>
+        <tr><td>EU 兒童線上遊戲禁令提案</td><td><a href="https://apnews.com/article/europe-leyen-social-media-ban-kids-3e7176ea409ba4af0a069f5ca7dd9680" target="_blank">AP News</a>（heat_latest hackernews）＋ <a href="https://www.gamesindustry.biz/draft-of-new-eu-law-proposes-sweeping-restrictions-on-online-games" target="_blank">GamesIndustry</a>（story_gamesindustry）　驗：兩源一致，EU chief 提議確認<span class="pp">partial（草案細節各有側重）</span>　🆕 今天新</td></tr>
+        <tr><td>Stirling Engine DOOM / RDR2 Tamagotchi</td><td><a href="https://www.reddit.com/r/gaming/comments/1wietw5/stirling_engine_powered_doom/" target="_blank">Reddit r/gaming top-of-day</a>（Stirling Engine DOOM）；Reddit r/gaming top-of-day（RDR2 Tamagotchi，heat_latest）　驗：兩則均為 Reddit top-of-day 原創展示帖<span class="pp">partial（無第三方媒體核實）</span>　🆕 今天新</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 1 三源交叉驗（Reddit CESA + Polygon + Kotaku）、小編 / Demo 摘要層 · Steam＝官方 API 09-18 即時真數字（radar 07:30，19/19 站）· Roblox/Twitch/Threads/unityroom/KYM 因沙箱排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/09/18 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
