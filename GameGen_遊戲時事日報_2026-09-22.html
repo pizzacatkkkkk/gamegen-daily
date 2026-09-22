@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -227,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 09 / 22 · 彈藥工廠模式 · Steam 快照 09/21 07:30（昨日 radar 數據，今晨 09/22 06:51 熱點回流已更新）· TGS 2026 已閉幕（颱風 Dujuan 取消最終日 9/21）· 沙箱排程：Roblox/Twitch/Threads/KYM 暫缺</span>
+        <span class="dateflag">2026 / 09 / 22 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑 · 19/19 源全綠）· 來源 19 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -235,32 +237,33 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>米哈遊勝訴：中國法院判 AI 配音服務賠 112,000 美元</b>——某 AI 語音服務以生成式 AI 複製《原神》角色聲音，法院裁定侵權（GameDeveloper.com 確認）。這是遊戲 IP 保護對抗 AI 聲音盜用的指標性判決，AI 聲音侵權從此有了明確法律成本。另一大新聞：<b>《Control Resonant》上市，Remedy 類型轉型豪賭全面成功</b>——RPS、VGC、GamesIndustry、80.lv 四家媒體同步好評，VGC 稱「迄今最令人印象深刻的作品之一」，RPS「讓你同時感覺渺小又至高的詭異動作 RPG」（多源確認，2026-09-21/22）。</p>
-        <p>其他今日重要新聞：<b>TGS 2026 已閉幕</b>（颱風 Dujuan 取消最終日，30 年來首次五天展縮成四天）；<b>《生化危機 4》GameCube 版完整 C/C++ 反編譯發布</b>（HN 76 分確認，2005 年遊戲變成開放教科書）；<b>King 瑞典員工罷工</b>（Candy Crush 開發商集體談判破局，GamesIndustry + GameDeveloper 雙源確認）；<b>「io 遊戲死亡報告」</b>——Reddit r/gamedev 熱帖：「2017 年靠 io 遊戲賺 10 萬美元，2026 年靠 io 遊戲虧錢」，今日最強市場窗口警示。今日 Steam 最大異動（昨日快照）：<b>CoD MW2 +26.0%（35,102 人）</b>、Stardew Valley +6.0%、BG3 +4.4%。</p>
-        <div class="pull">▸ 今天就能蹭：米哈遊 AI 聲音勝訴 → CJ「AI 時代的 IP 保護有了第一個里程碑」；Control Resonant + Remedy 轉型 → CJ「類型轉型的勇氣」；io 遊戲死亡報告 → X「市場窗口不等人」；RE4 反編譯 → Demo「逆向工程挑戰」；Castlevania Demo 10/1 → 限時話題窗</div>
+        <p><b>「這是 AI 做的吧？」變成玩家的預設指控——而且本週三次裡有兩次抓錯人。</b>9/18 GameSpot 揭露：兩人團隊 Refractive 的《Luminary》被 Steam 評論罵「爛透的 AI 語音毀了整款」，<span class="hl">結果那是創意總監 Keith Kolod 的太太 Mikell 第一次配音</span>（原句：「我可以保證她是真人不是 AI」）。同一週，Insomniac 社群總監 James Stevenson 出面澄清《Marvel's Wolverine》那塊被 TikTok 瘋傳 70 萬次觀看的怪廁所標示是 <span class="hl">UV map 貼圖 bug，不是 AI slop</span>。而真的用了 AI 的 Level-5（9/10 VISION 2026 II 發表會影片），9/17 道歉後反而說明：<span class="hl">粉絲抓出來的那些「AI 破綻」其實是設計師手繪時刻意簡化的背景</span>。</p>
+        <p>方向很清楚：<b>「AI 嫌疑」已經是一種會誤傷的社會成本</b>——不是用沒用 AI 的問題，是「看起來不夠 AAA 就被當成 AI」。對 GameGen 的訊號：這條賽道上唯一安全的位置，是<span class="hl">把「AI 做的」變成明擺著的玩法前提，而不是需要藏的羞恥</span>。當所有人都在花力氣證明「我沒用 AI」，GameGen 該大聲說「就是 AI 做的，重點是這個梗是你的」。</p>
+        <div class="pull">▸ 今天就能蹭：做一款「Spot the Slop」5 秒辨圖挑戰（素材全用 GameGen 自己生成的兩版：趕工版 vs 精修版，零第三方 IP、零真人肖像）＋ 一條 CJ 貼文「速度已經不是護城河了——AI 山寨只要一個週末就能追上你，真正的護城河是社群與分發」。</div>
       </div>
 
-      <!-- 今日彈藥 頭版 -->
+      <!-- 📰 今日彈藥 頭版 -->
       <div class="ammo">
         <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
 
-        <!-- CJ LinkedIn Top 1 -->
+        <!-- CJ LinkedIn Top 2 -->
         <div class="ammo-grp l-cj reveal">
-          <div class="gt">🎯 CJ · LinkedIn 線　TOP 1</div>
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>米哈遊勝訴：AI 配音盜用《原神》角色，中國法院判賠 112,000 美元<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>新聞事實：</b>中國法院裁定某 AI 語音服務以生成式 AI 複製《原神》角色聲音，構成侵權，判賠米哈遊 112,000 美元（GameDeveloper.com 2026-09-21 確認）。此為遊戲業 AI 聲音侵權的重要指標性判決。</div>
-            <div class="ln"><b>GameGen 角度：</b>AI 聲音盜用現在有了明確法律成本。對 GameGen 創作者受眾（VTuber、聲優、一人公司）的啟示：原創聲音、形象、玩法從此可被法律保護——建立可識別原創資產的人才能在這種環境中有護城河。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "A Chinese court just awarded MiHoYo $112,000 after an AI voice service cloned Genshin Impact characters. AI voice theft now has a price tag. This is the first generation of creators where IP protection for voice, likeness, and style will be enforced — not just talked about. Builders who own their creative assets win the next decade."<br><span style="color:var(--ink-dim)">中譯：中國法院剛判決 AI 配音服務侵權《原神》角色聲音，賠米哈遊 112,000 美元。AI 聲音盜用從此有了代價。這是創作者的 IP 保護從口號變成法律事實的第一代——擁有原創資產的人贏得下個十年。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/mihoyo-awarded-112-000-by-chinese-court-after-ai-voice-service-dupes-genshin-impact-characters" target="_blank">GameDeveloper ↗</a>　pub 2026-09-21　verified ✓</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>viral 小遊戲被 AI 山寨搶先上市——「快」已經不是護城河了</div>
+            <div class="ln"><b>新聞事實：</b>波蘭獨立開發者 Rado Klasa 在 <b>2026 年 7 月 GMTK Game Jam</b> 做出物理削皮遊戲《1,000,000 Potatoes》（第一人稱、蘇聯風軍用倉庫、手動削一百萬顆馬鈴薯）並爆紅；他為了打磨機制暫緩上 Steam 頁面。<b>9/20</b> 顧問 Indie Game Joe 轉發 Golden Horn Studios 的《Potato Please》預告，<b>9/21</b> Klasa 公開指控兩者在機制、主題、視覺風格上幾乎相同、是「一句 AI prompt 就複製走」。Golden Horn 否認，稱靈感來自社群內流傳的網路迷因；但 Steam 社群鑑賞家已開始把《Potato Please》頁面標記為含 AI 生成視覺的 clone（IGN 9/21；Kantan.News 整理）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這件事把一個殘酷前提攤開：<b>當複製只要一個週末，「先做出來」不再是護城河</b>。能守住的只剩三樣——你先擁有的社群、你能多快把下一個梗變成下一款、以及玩家願不願意在你這裡 remix。這正是 Trend-to-Game engine 該被評估的方式：不是「能生幾款」，而是「玩家生完之後留在哪裡」。GameGen 從第一天就把速度當成基礎設施、把社群當成護城河——而不是反過來。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "An indie dev spent months on a viral potato-peeling game. A studio shipped a lookalike in days — allegedly from a prompt. If cloning takes a weekend, shipping first isn't a moat. Your community is. Your remix loop is. Speed is now infrastructure, not advantage."<br><span style="color:var(--ink-dim)">中譯：一個獨立開發者花了好幾個月做出爆紅的削皮遊戲。一間工作室幾天內就端出一款極相似的作品——據稱只靠一段 prompt。如果複製只要一個週末，「先出貨」就不是護城河了。你的社群才是，你的 remix 迴圈才是。速度現在是基礎設施，不是優勢。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.ign.com/articles/indie-game-developer-accuses-studio-of-using-ai-to-rip-off-his-viral-potato-peeling-game" target="_blank">IGN ↗</a>　<a href="https://kantan.news/news/allegations-of-ai-cloning-in-indie-game-stir-up-industry-controversy" target="_blank">Kantan ↗</a>　pub 2026-09-21　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Remedy 類型轉型豪賭：《Control Resonant》上市全面好評——「讓你同時感覺渺小又至高」<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>《Control Resonant》上市後獲多家媒體好評：RPS「superbly strange action-RPG」；VGC「gambles on a genre change — one of its most impressive games ever」；GamesIndustry Critical Consensus 確認；80.lv「fantastic evolution of Remedy's formula」（多源，2026-09-21/22）。Remedy 放棄熟悉公式大膽轉型。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Remedy just launched Control Resonant — a genre gamble. Critics call it 'one of their most impressive games ever.' The studio that built Max Payne, Alan Wake, and Control just proved: in games, the biggest risk isn't changing your formula. It's refusing to change when the market already has."<br><span style="color:var(--ink-dim)">中譯：Remedy 剛推出《Control Resonant》——一場類型轉型豪賭。評論稱「迄今最令人印象深刻的作品之一」。製作 Max Payne、心靈殺手、控制的工作室剛證明：遊戲業最大的風險不是改變公式，而是在市場已經改變後拒絕改變。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.rockpapershotgun.com/control-resonant-review" target="_blank">RPS ↗</a>　<a href="https://www.videogameschronicle.com/review/control-resonant/" target="_blank">VGC ↗</a>　pub 2026-09-21　verified ✓（多源）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rockstar 在 GTA 6 上市前封死 mod——UGC 的「借來的土地」風險正在被兌現</div>
+            <div class="ln"><b>新聞事實：</b>GTA 6 於 <b>11/19</b> 上市前，Rockstar 官方 mod 規範頁（頁面標註 9/10、9/20 由官方社群帳號公開推播、9/21 媒體大量報導）開出硬線：<b>不得擴充或修改官方劇情、任務、角色與既定世界觀；不得把 A 作的地圖／角色／資產混進 B 作；不得移植到未官方發行的平台；多人 mod 僅限官方授權的 Creator Platform；不得將 Rockstar 資產營利</b>。首條規則直接寫「Respect our games」。值得對照：Rockstar 幾年前才收購 GTA 5 的大型 RP 框架 FiveM（該框架今年 3 月曾破 20 萬 Steam 同上線）（GamesRadar 9/21，全文 fetch）。</div>
+            <div class="ln"><b>GameGen 角度：</b>過去十年最強的 UGC 社群，全都長在別人的土地上——Rockstar、Nintendo、Roblox 隨時可以改規則。<b>對 operator 與 studio 的啟示不是「別做 UGC」，是「別把 UGC 蓋在你不擁有的 IP 上」。</b>GameGen 的 remix 迴圈建立在泛化玩法與用戶自己的梗之上，不依附任何第三方 IP——這不只是法遵姿態，這是產品的耐久性設計。當平台收緊，你的創作者不會一夜之間失去作品。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Weeks before GTA 6, Rockstar just told modders: no new missions, no new maps, no cross-title mods, no ports. Rule one is literally 'Respect our games.' Here's the lesson for anyone building UGC: the strongest creator communities of the last decade were all built on borrowed land. Build the remix loop on mechanics and your users' own jokes — not on someone else's IP."<br><span style="color:var(--ink-dim)">中譯：GTA 6 上市前幾週，Rockstar 對 modder 說：不准新任務、不准新地圖、不准跨作品 mod、不准移植。第一條規則直接寫「尊重我們的遊戲」。對所有在做 UGC 的人，教訓是：過去十年最強的創作者社群全蓋在借來的土地上。把 remix 迴圈蓋在玩法機制和用戶自己的梗上——不要蓋在別人的 IP 上。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesradar.com/games/grand-theft-auto/ahead-of-gta-6-rockstar-releases-modding-guidelines-that-axe-new-missions-maps-ports-and-more-respect-our-games/" target="_blank">GamesRadar ↗</a>　pub 2026-09-21（政策頁標註 9/10）　verified ✓</div>
           </div>
         </div>
 
@@ -269,35 +272,38 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「2017 年靠 io 遊戲賺 10 萬美元，2026 年靠 io 遊戲虧錢」——市場窗口不等人<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/gamedev 今日熱帖（top-of-day 確認）：「We made $100k with an io game in 2017. Now we're making negative dollars with an io game in 2026.」帖子討論 io 遊戲市場在 9 年間從藍海到負報酬的轉變（heat_latest.json Reddit r/gamedev 確認，2026-09-21）。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "$100K from an io game in 2017. Negative dollars from an io game in 2026. Same category. Different timing. The market doesn't wait. The creators who read the window — and build while it's open — survive. GameGen exists to close the gap between 'this is trending' and 'this is playable.'"<br><span style="color:var(--ink-dim)">中譯：2017 年靠 io 遊戲賺 10 萬美元。2026 年靠 io 遊戲虧錢。同樣類別，不同時機。市場不等人。讀懂窗口、在窗口開著時動手的創作者才能存活。GameGen 存在就是縮短「這個在趨勢」到「這個可以玩」的距離。</span></div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/gamedev/comments/1wl60e7/we_made_100k_with_an_io_game_in_2017_now_were/" target="_blank">Reddit r/gamedev ↗</a>　pub 2026-09-21　verified ✓</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>「那個爛 AI 語音」其實是他老婆——第一次配音就被全網當成機器人<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>兩人團隊 Refractive Entertainment 的《Luminary》8/11 進 Steam 搶先體驗，首週銷售破 $100K（扣完 Steam 抽成約 $70K）。9/10 一位只玩了 0.4 小時的玩家留下負評：「爛透的 AI 語音毀了它」。創意總監 Keith Kolod 回覆：「我太太可能不是最厲害的配音員（那是她第一次），但我可以保證她是真人不是 AI。」他 9/11 把這則負評貼上 X：「現在只要獨立遊戲裡的聲音不夠 AAA，大家就自動假設是 AI 嗎？」（GameSpot 9/18）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A player called this voice 'awful AI.' It was the dev's wife. First time ever recording. 🎙️ Everyone's now an AI detective and everyone's wrong. So let's just say it out loud: our games ARE AI-made. The joke inside them is 100% yours. 👇"　<span style="color:var(--ink-dim)">中譯：有玩家說這個聲音是「爛透的 AI」。那是開發者的太太，人生第一次錄音。🎙️ 現在人人都是 AI 偵探，人人都猜錯。所以我們就大聲說了：我們的遊戲就是 AI 做的。裡面那個梗，100% 是你的。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>順勢推「Spot the Slop」5 秒辨圖挑戰——素材全用 GameGen 自己生成的兩版（趕工版 vs 精修版），玩完出正確率分享卡揪朋友比眼力。<b>絕不拿真實作品或真人素材當題目。</b></div>
+            <div class="meta">來源 <a href="https://www.gamespot.com/articles/indie-dev-says-ai-voice-in-his-game-was-actually-his-wife/" target="_blank">GameSpot ↗</a>　pub 2026-09-18　摘要層（本條另經 web_fetch 全驗，見 Evidence Log）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>《生化危機 4》GameCube 版完整反編譯發布——2005 年老遊戲變成開放教科書<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>GitHub 專案 adonis-singh/re4：《Resident Evil 4》GameCube 版完整字節級反編譯成 C/C++（HN 2026-09-21，76 points，48 留言確認）。這代表 2005 年遊戲的所有設計決策現在都可以從源碼層面研究。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Someone just fully decompiled Resident Evil 4 (GameCube) to C/C++. A game from 2005 is now an open textbook. Every design decision RE4 made — its item management, pacing, enemy AI — is now readable code. The modding community turned one of the most studied game designs in history into something you can learn from directly."<br><span style="color:var(--ink-dim)">中譯：有人剛把《生化危機 4》GameCube 版完整反編譯成 C/C++。一款 2005 年的遊戲現在成了開放教科書。RE4 的所有設計決策——物品管理、節奏、敵人 AI——現在都是可讀代碼。社群把遊戲史上被研究最多的設計之一變成了直接可學習的東西。</span></div>
-            <div class="meta">來源 <a href="https://github.com/adonis-singh/re4" target="_blank">HN + GitHub ↗</a>　HN 76pts 48 comments　pub 2026-09-21　verified ✓</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>微軟申請專利：遊戲讀取／過場／通關時「凍結畫面播廣告」，看完換無廣告時數<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Microsoft Technology Licensing 公開一份專利申請：系統先給玩家一段「無廣告遊玩時數」（可依時間或關卡／王戰進度計算），時數用完後在<b>非戰鬥空檔</b>（王戰結束、過場播完、關卡載入、完成任務、進選單）開窗播「promoted content」；播放期間遊戲進入<b>凍結狀態</b>以免影響進度，看完就重置無廣告時數。目前僅是專利申請，未見實裝（Tom's Hardware 9/20；今日 HN 遊戲類最高討論，30 分）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Big platforms are patenting how to FREEZE your game to show you an ad. We're over here making games that are 60 seconds long — the whole thing is shorter than their ad break. 👇"　<span style="color:var(--ink-dim)">中譯：大平台正在申請專利，研究怎麼把你的遊戲凍住來播廣告。我們這邊在做 60 秒就玩完的遊戲——整款比他們的廣告時段還短。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>做一款「廣告躲避」泛化 clicker——螢幕不斷跳出泛化彈窗（自製圖示、不挪任何真實品牌），玩家比誰撐最久不被打斷，出「專注秒數」分享卡。</div>
+            <div class="meta">來源 <a href="https://www.tomshardware.com/video-games/microsoft-patents-system-to-freeze-games-and-inject-ads-during-downtimes-watching-commercials-earns-ad-free-playtime-credits" target="_blank">Tom's Hardware ↗</a>　pub 2026-09-20　摘要層</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>King 瑞典員工罷工——集體談判破局，Candy Crush 廠商成勞工戰場<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>King（Candy Crush 開發商，Activision Blizzard 子公司）瑞典員工因集體談判協議遭資方拒絕，宣布罷工（GamesIndustry.biz 確認；GameDeveloper.com 確認，2026-09-21 雙源）。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "King workers in Sweden just called a strike. The maker of Candy Crush — one of the highest-grossing mobile games in history — is now a labor battleground. Big studios are getting squeezed from two ends: AI makes small teams competitive. Workers with collective power make large teams expensive. The era of scale-as-moat is over."<br><span style="color:var(--ink-dim)">中譯：King 瑞典員工宣布罷工。Candy Crush 的開發商——有史以來最高收入的手遊之一——現在成了勞工戰場。大型工作室從兩端受壓：AI 讓小團隊也有競爭力，有組織力的工人讓大團隊更昂貴。「規模即護城河」的時代結束了。</span></div>
-            <div class="meta">來源 <a href="https://www.gamesindustry.biz/king-workers-to-strike-in-sweden-following-rejection-of-collective-bargaining-agreement" target="_blank">GamesIndustry ↗</a>　<a href="https://www.gamedeveloper.com/production/king-workers-call-strike-after-collective-agreement-negotiations-stall" target="_blank">GameDeveloper ↗</a>　pub 2026-09-21　verified ✓（雙源）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>梗遊戲正在攻進主流通路：Steam 新品榜今天有《Brainrot Simulator》，itch 熱榜有《The Community Notes Are Wrong》<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>今日 heat-radar 07:30 抓取的 <b>Steam 新品榜</b>出現《Brainrot Simulator》（brainrot 梗直球做成模擬器）；同日 <b>itch.io 熱榜</b>上排著《The Community Notes Are Wrong》（社群筆記梗）、《I got the ZOOMIES!!!!!!!!!!!!!!!!》（寵物暴衝梗）、《Kill the Ice Age Baby Adventure》。共通點：<b>標題就是梗、規則一句話講完、玩完就能剪</b>。<span style="color:var(--ink-dim)">（榜單為 9/22 官方／平台快照；個別作品 first-seen 未逐一驗證，不宣稱「今天誕生」。）</span></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Today's Steam new releases include a literal Brainrot Simulator. itch's front page has a game called 'The Community Notes Are Wrong.' The meme-to-game pipeline is not a theory anymore — it's a storefront. What's the dumbest joke on your timeline right now? 👇"　<span style="color:var(--ink-dim)">中譯：今天 Steam 新品榜裡有一款直接叫《Brainrot Simulator》。itch 首頁上有款遊戲叫《社群筆記是錯的》。「梗變成遊戲」不再是理論，它已經是一整排貨架了。你時間軸上現在最蠢的梗是什麼？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>發起「把你今天看到最蠢的梗留言給我，我們當場生成」——留言直接當 prompt，回覆可玩連結，最高讚的做成當日挑戰頁。</div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/explore/new/" target="_blank">Steam 新品榜 ↗</a>　<a href="https://itch.io/games/html5" target="_blank">itch.io ↗</a>　榜單快照 2026-09-22（radar 直抓，數字層）</div>
           </div>
         </div>
 
-        <!-- Demo 線 Top 1 -->
+        <!-- Demo 線 1 -->
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「聲音辨識法官」——蹭米哈遊 AI 聲音勝訴 + AI 污名雙線，今日窗口最強<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>玩家聽 5 段原創語音情境描述（純文字版：旁白描述「你聽到一個聲音說……」），判斷「AI 生成」或「真人錄音」，並解釋理由。最後揭曉「你的辨識能力屬於哪種法官類型」（從「過度懷疑派」到「直覺精準派」）。進階版：連結今日 MiHoYo 判決——「你能辨識出哪些聲音值得被法律保護嗎？」</div>
-            <div class="ln"><b>為何今天首選：</b>米哈遊 AI 聲音勝訴 + 上週 AI 配音老婆事件兩線疊加，今天「AI 聲音辨識」話題熱度最高。全原創文字，零版權問題；去賭場化 ✅；分享鉤子天然（「你是什麼類型的聲音法官？」）。</div>
-            <div class="meta">蹭 MiHoYo AI 聲音勝訴 + AI 配音老婆事件 · 模板：辨識挑戰 + 類型揭曉分享卡 · 文字版今天就能做</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「Spot the Slop」5 秒辨圖挑戰——蹭本週最大敘事「人人都在當 AI 偵探，人人都猜錯」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>連續 10 組圖／音，每組 5 秒選「趕工版 or 精修版」。<b>所有素材一律由 GameGen 自己生成兩版</b>（同 prompt、一版刻意低步數粗糙、一版精修），結束給「偵探正確率」分享卡 + 一鍵挑戰朋友。<b>零第三方作品、零真人肖像、絕不拿真實遊戲或開發者當題目</b>——這是本 demo 的紅線，也是它能上線的原因。</div>
+            <div class="ln"><b>為何是今天首選：</b>綁住本週全網最大的情緒（AI 獵巫誤判），而且天生自帶爭勝與分享（辨識率是社交貨幣）；同時把 GameGen 的定位一次說完——<b>我們不藏 AI，我們讓 AI 好玩</b>。5 秒一題、60 秒一局，完全落在 30–90 秒模板規格內。</div>
+            <div class="meta">綁 <a href="https://www.gamespot.com/articles/indie-dev-says-ai-voice-in-his-game-was-actually-his-wife/" target="_blank">GameSpot ↗</a>　模板：限時二選一 / 正確率排行</div>
           </div>
         </div>
       </div>
@@ -305,345 +311,322 @@
   </header>
 
   <main>
-    <!-- 01 即時熱榜 -->
+    <!-- 即時熱榜 -->
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
       <div class="boards reveal">
 
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 09/21 07:30 快照</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 09/22 即時</span></div>
           <ol>
-            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">576K ▼13.7%</span></li>
-            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">96K ▼14.2%</span></li>
-            <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">85K ▲1.3%</span></li>
-            <li class="down"><span class="nm">Rust</span><span class="vn">66K ▼25.2%</span></li>
-            <li><span class="nm">Apex Legends</span><span class="vn">63K ▼0.6%</span></li>
-            <li class="up"><span class="nm">Baldur's Gate 3</span><span class="vn">54K ▲4.4%</span></li>
+            <li class="down"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">531K ▼7.8%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">91K ▼5.2%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">73K ▼13.9%</span></li>
+            <li class="hot up"><span class="nm">Team Fortress 2</span><span class="vn">64K ▲5.5%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">63K ▼4.5%</span></li>
+            <li class="down"><span class="nm">Apex Legends</span><span class="vn">56K ▼10.8%</span></li>
           </ol>
-          <div class="bf">Steam 官方 API · <b>09/21 07:30 快照（昨日數據）</b> · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 09/22 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
-        <div class="board b-steam">
-          <div class="bh"><span>STEAM 昨日暴衝</span><span class="metric">velocity top · 09/21</span></div>
-          <ol>
-            <li class="hot up"><span class="nm">CoD: Modern Warfare II</span><span class="vn">+26.0% ▲</span></li>
-            <li class="up"><span class="nm">Stardew Valley</span><span class="vn">+6.0% ▲</span></li>
-            <li class="up"><span class="nm">Baldur's Gate 3</span><span class="vn">+4.4% ▲</span></li>
-            <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">+1.3% ▲</span></li>
-            <li class="down"><span class="nm">Rust</span><span class="vn">▼25.2%</span></li>
-            <li class="down"><span class="nm">PUBG</span><span class="vn">▼14.2%</span></li>
-          </ol>
-          <div class="bf">CoD MW2 週一異常暴衝原因待確認 · BG3 Act 2 Mod 效應延續 · <a href="https://store.steampowered.com/app/1938090" target="_blank">CoD MW2 ↗</a></div>
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，瀏覽器存取在非互動環境被拒（roblox.com/charts / RTrack 需瀏覽器渲染），<b>目前無法完全證實</b>。CC 互動 session（chrome-devtools）有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RoMonitor / RTrack（需瀏覽器）</div>
         </div>
 
         <div class="board b-dim">
           <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
-          <div class="nodata">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 TwitchTracker 即時快照（需 JS 渲染），<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
           <div class="bf">TwitchTracker（需瀏覽器）</div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ℹ️ 今日 Steam 數字為 09/21 07:30 官方 API 快照（昨日數據，今晨 09/22 雷達未收到更新）。週一普遍回落正常，但 <b>CoD MW2 +26.0%（35,102 人，昨日 27,852）</b>是最大異常——週一出現此幅度上升不常見，可能代表新活動或賽季開始，原因待確認。Steam Most Played 排名跳升：Among Us +9 位（#87）、Resident Evil 4 +8 位（#92）、PEAK +6 位（#38）、RuneScape: Dragonwilds +5 位（#93）。RE4 排名跳升與《惡靈古堡》電影首映效應吻合（電影 9/21 首映週末 $108M，partial 數字）。Roblox CCU / Twitch 觀看因沙箱排程標「暫缺」。
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-22T07:30，<b>19/19 源全綠</b>），Steam 為 <b>09-22 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。Roblox CCU / Twitch 觀看因本次為沙箱排程、瀏覽器存取被拒仍標「暫缺」。<b>今日榜單重點：週一回落日，前 15 名幾乎全面下滑，Team Fortress 2 是唯一上漲款。</b>
       </div>
     </section>
 
-    <!-- 02 暴衝訊號 -->
+    <!-- 暴衝訊號 -->
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
-      <article class="story rl reveal">
-        <h3><span class="tag rl"><span>週一異常</span></span>CoD MW2 昨日 +26.0%——非常規週一暴衝，新活動或賽季訊號</h3>
-        <div class="sum">Call of Duty: Modern Warfare II 昨日（09/21 07:30）在線人數從 27,852 暴增至 35,102（+26.0%，Steam 官方 API 確認）。週一通常是 Steam 在線最低谷之一，出現 26% 的上升幅度屬異常。可能原因：CoD 系列新活動/賽季開始、或 CoD MW4（10/23 上市前）相關更新——目前原因未確認，需追蹤。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>週一暴衝（非週末正常節律）是強力留存訊號，代表玩家「停不下來」。這種「Monday spike」任何遊戲設計者都在追——BG3 有 Act 2 Mod 持續效應、Stardew 有週末習慣延伸，CoD MW2 的昨日暴衝背後可能有內容部門的動作，今天應追蹤確認。</div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>今日無 ≥15% 上衝旗標：週一全面回落，TF2 是榜上唯一紅盤</h3>
+        <div class="sum">Steam 真·日比（09/22 vs 09/21）顯示這是典型<b>週末退潮日</b>：前 15 名只有 <b>Team Fortress 2 63,863 人（+5.5%）</b>逆勢上漲，其餘全數下滑。跌最兇的是 <b>Palworld −23.5%（47,878）</b>、<b>Baldur's Gate 3 −21.3%（42,453）</b>、<b>HELLDIVERS 2 −21.1%（34,435）</b>、<b>Stardew Valley −21.0%（33,835）</b>、<b>GTA V Legacy −20.3%（31,256）</b>；CS:GO 531,159（−7.8%）仍是絕對量王者。<b>沒有任何一款過 ≥15% 上衝旗標。</b>排名跳動方面只有中段的小幅移動：<b>Farming Simulator 25（69→60，+9）</b>、<b>RuneScape: Dragonwilds（93→84，+9）</b>、<b>RimWorld（86→79，+7）</b>；<b>新進榜今日掛零</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是作息造成的回落，不是任何題材在退燒——<b>別把「週一大家上班了」誤讀成趨勢訊號</b>。今天的彈藥完全不在熱榜上，在敘事層：「AI 獵巫誤判潮」與「AI 山寨搶先上市」。真正值得記的一筆是 <b>Palworld −23.5%</b> 這種波幅本身：大型買斷／生存遊戲的注意力是脈衝式的，中間的低谷正是 30–90 秒即玩內容的空窗。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">STEAM API · 09/21 07:30 · 原因待確認</div>
+          <div class="src">STEAM 官方 API · 09/22 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>跨媒體效應</span></span>《惡靈古堡》電影首映 + RE4 Steam 跳 +8——IP 飛輪即時可量化（延續訊號）</h3>
-        <div class="sum">昨日（9/21）《Resident Evil》電影全球首映週末 $108M（美國 $60M，partial：Reddit 帖標題，非第一手票房機構），打破系列票房紀錄，Steam RE4 同日跳升 +8 位（#100→#92，heat_latest rank_jumps 確認）。今日這個效應可能延續——RE4 是否保持在 #92 附近值得觀察。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日仍是 RE 電影第一週效應最強的時間窗口，跨媒體效應在首映週末最顯著。昨日已多源確認事件主幹，今天的 CJ LinkedIn 可繼續使用「IP 情感帳即時兌現」角度——數字新鮮且有 Steam 官方 API 背書。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 報導事實，不使用 RE 版權素材</span></span></div></div>
-          </div>
-          <div class="src">Reddit r/gaming + Steam API · 9/21 延續 · <a href="https://www.reddit.com/r/gaming/comments/1wll82q/box_office_zach_creggers_resident_evil_breaks/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次沙箱排程瀏覽器存取被拒、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比與排名跳動為 09-22 官方 API 即時（radar 07:30，baseline_ready = true）。
+      </div>
     </section>
 
-    <!-- 03 早期訊號 -->
+    <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
       <div class="boards reveal">
 
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 新品／熱賣</span><span class="metric">New &amp; Trending · 09/21</span></div>
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
           <ol>
-            <li class="hot"><span class="nm">Steam Frame（Valve 新硬體）</span><span class="vn">熱賣 🔥</span></li>
-            <li class="hot"><span class="nm">WARDOGS</span><span class="vn">熱賣 🔥</span></li>
-            <li><span class="nm">RuneScape: Dragonwilds</span><span class="vn">熱賣（+5 位）</span></li>
-            <li><span class="nm">EA SPORTS FC™ 27</span><span class="vn">熱賣</span></li>
-            <li><span class="nm">Baldur's Gate 3</span><span class="vn">熱賣（Mod 效應）</span></li>
-            <li><span class="nm">Castlevania: Belmont's Curse</span><span class="vn">Demo 10/1 公告</span></li>
+            <li class="hot"><span class="nm">Brainrot Simulator</span><span class="vn">★ 梗直球</span></li>
+            <li><span class="nm">Grim Siege 攻城</span><span class="vn">新品</span></li>
+            <li><span class="nm">Ludus Deceptor</span><span class="vn">新品</span></li>
+            <li><span class="nm">Soggy Beans</span><span class="vn">新品</span></li>
+            <li><span class="nm">Kick Bot DX（單鍵動作）</span><span class="vn">單鍵</span></li>
+            <li><span class="nm">Puzzles Trees / BlockScavenger</span><span class="vn">益智</span></li>
           </ol>
-          <div class="bf">Steam 新品／熱賣 + rank_jumps · 09/21 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 新品榜 · 09/22 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-rblx">
-          <div class="bh"><span>ITCH.IO 迷因/病毒</span><span class="metric">viral/meme 標籤</span></div>
+          <div class="bh"><span>ITCH.IO HTML5 新爆</span><span class="metric">小體量早期</span></div>
           <ol>
-            <li class="hot"><span class="nm">StreamRush（直播主衝刺）</span><span class="vn">viral</span></li>
-            <li><span class="nm">BOMB DEFUSER</span><span class="vn">viral</span></li>
-            <li><span class="nm">Dating Killmulator 1 &amp; 2</span><span class="vn">html5 popular</span></li>
-            <li><span class="nm">RarityRNG（稀有度 RNG）</span><span class="vn">viral</span></li>
-            <li><span class="nm">I got the ZOOMIES!!!</span><span class="vn">meme</span></li>
-            <li><span class="nm">Kill the Ice Age Baby Adventure</span><span class="vn">meme</span></li>
+            <li class="hot"><span class="nm">The Community Notes Are Wrong（社群筆記梗）</span><span class="vn">★ 梗</span></li>
+            <li class="hot"><span class="nm">I got the ZOOMIES!!!（寵物暴衝梗）</span><span class="vn">速度</span></li>
+            <li><span class="nm">Rock Declutterer（整理 / 清空）</span><span class="vn">整理</span></li>
+            <li><span class="nm">Kill the Ice Age Baby Adventure</span><span class="vn">荒謬</span></li>
+            <li><span class="nm">Eat not, Want not（進食 / 節制）</span><span class="vn">吞噬</span></li>
+            <li><span class="nm">Dating Killmulator 1 &amp; 2（反差戀愛）</span><span class="vn">反差</span></li>
           </ol>
-          <div class="bf">itch.io viral/meme 標籤 · 09/21 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+          <div class="bf">itch.io html5 · 09/22 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
         </div>
 
       </div>
 
       <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>早期訊號</span></span>RE4 GameCube 完整反編譯（HN 76 pts）——2005 年遊戲設計的開放教科書</h3>
-        <div class="sum">HN 今日重量級技術訊號：adonis-singh/re4——《Resident Evil 4》GameCube 版完整字節級反編譯成 C/C++（HN 2026-09-21，76 points，48 留言）。這代表 RE4 2005 年的所有設計決策（物品管理、節奏控制、敵人 AI）現在都可以從源碼層面研究，是保存社群的重大里程碑。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>當一款遊戲被完整反編譯，它就成了最真實的設計教科書。RE4 被廣泛認為是遊戲設計的教科書級作品——「Merchant Room」的安全感設計、章節節奏、敵人 AI 的反應曲線，現在任何人都可以從源碼驗證。GameGen 的方向相反：先造原創資產，讓社群有延伸的空間和法律保護。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 技術社群話題，不涉版權</span></span></div></div>
-          </div>
-          <div class="src">HN · 09/21 · 76 pts · <a href="https://github.com/adonis-singh/re4" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 04 高討論文章 -->
-    <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>業界事件</span></span>米哈遊 AI 聲音勝訴：中國法院裁定侵權，賠 112,000 美元——AI 配音盜用有了里程碑判決</h3>
-        <div class="sum">中國法院裁定某 AI 語音服務以生成式 AI 複製《原神》角色聲音，構成侵權，判賠米哈遊 112,000 美元（GameDeveloper.com 2026-09-21 確認）。此為遊戲業 AI 聲音侵權的重要指標性判決，也是同週「AI 配音其實是我老婆」AI 污名事件的法律面對照——AI 聲音的真偽辨識與法律保護正同時成為業界討論熱點。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這個判決對 GameGen 創作者受眾（VTuber、聲優、一人公司）的訊號是明確的：你的原創聲音、形象、玩法從現在起更容易受到法律保護。這也是為什麼「建立可識別的原創資產」從策略建議變成了生存指南——複製你的人現在有法律成本。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 報導法律判決，不評論判決是非</span></span></div></div>
-          </div>
-          <div class="src">GAMEDEVELOPER · 9/21 · <a href="https://www.gamedeveloper.com/business/mihoyo-awarded-112-000-by-chinese-court-after-ai-voice-service-dupes-genshin-impact-characters" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story rl reveal">
-        <h3><span class="tag rl"><span>新作評測</span></span>《Control Resonant》上市全面好評——Remedy 類型轉型豪賭成功，「讓你感覺渺小又至高」</h3>
-        <div class="sum">《Control Resonant》上市後獲多家媒體好評：RPS「A superbly strange action-RPG that'll make you feel tiny and godly at once」；VGC「Remedy gambles on a genre change in one of its most impressive games ever」；GamesIndustry Critical Consensus 確認；80.lv「A Fantastic Evolution of Remedy's Formula」（多源，2026-09-21/22 確認）。Remedy 放棄熟悉的射擊公式，大膽轉向一個不同的設計方向，並且全面勝出。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Remedy 的教訓很清楚：最危險的事不是嘗試新類型，而是在市場改變後繼續做同樣的事。這也是 GameGen Trend-to-Game 的核心邏輯——遊戲形式本身也需要跟著今天的梗走，不能用昨天的公式服務今天的受眾。</div>
+        <h3><span class="tag rl"><span>洞察</span></span>早期 loop 共相：整理 / 清空、荒謬動詞、反差戀愛、單鍵速度——外加「標題即是梗」</h3>
+        <div class="sum">把 Steam 新品 + itch.io html5 兩榜歸納，今天的早期款集中四類：<b>整理 / 清空（Rock Declutterer、Soggy Beans）、荒謬動詞（Kill the Ice Age Baby、I got the ZOOMIES）、反差戀愛（Dating Killmulator 1 &amp; 2）、單鍵速度（Kick Bot DX）</b>。但今天真正的共相不是機制，是<b>命名</b>：《Brainrot Simulator》《The Community Notes Are Wrong》——<b>標題本身就是梗，玩法只負責把梗變成可點的東西</b>。<span style="color:var(--ink-dim)">（榜單為 9/22 平台快照；個別作品 first-seen 未逐一驗證。）</span></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這對 Trend-to-Game 是很實際的一課：<b>生成器該先產「梗標題」，玩法模板再去配。</b>現在的流程多半反過來（先選模板、再想主題），導致產出好玩但不好傳。建議在生成流程加一步「一句話梗標題」欄位，並讓它直接進分享卡——標題是分享的第一個把手，不是裝飾。整理 / 清空、荒謬動詞、單鍵速度三類 IP 風險最低，適合直接做泛化模板。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 報導評測事實，不評論 Remedy 商業決策</span></span></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
           </div>
-          <div class="src">RPS + VGC + GAMESINDUSTRY · 9/21 · <a href="https://www.rockpapershotgun.com/control-resonant-review" target="_blank">RPS ↗</a>　<a href="https://www.videogameschronicle.com/review/control-resonant/" target="_blank">VGC ↗</a></div>
+          <div class="src">STEAM 新品 / ITCH.IO · 09/22 radar · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
         </div>
       </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>業界動態</span></span>King 瑞典員工罷工——Candy Crush 廠商集體談判破局，遊戲業勞工議題再升溫</h3>
-        <div class="sum">King（Candy Crush 開發商，Activision Blizzard 子公司）瑞典員工因集體談判協議遭資方拒絕，宣布罷工（GamesIndustry.biz + GameDeveloper.com 雙源確認，2026-09-21）。這是本週遊戲業勞工衝突的最新案例——此前 WARDOGS 開發商 Bulkhead CEO 因「強制加班」言論引發的爭議仍在延燒（9/16 報導），遊戲業工人集體組織力正在同一時間增長。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>大型遊戲廠商從兩端受壓：AI 讓小團隊也能做到以前需要大廠才能做到的事，有組織力的工人讓大型工作室的人力成本更難管理。「規模即護城河」的邏輯正在快速失效。GameGen 的小團隊定位剛好處於這個壓力的盲點外。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 報導業界事實，不評論 King 勞資雙方立場</span></span></div></div>
-          </div>
-          <div class="src">GAMESINDUSTRY + GAMEDEVELOPER · 9/21 · <a href="https://www.gamesindustry.biz/king-workers-to-strike-in-sweden-following-rejection-of-collective-bargaining-agreement" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        🛰️ <b>其他值得追蹤</b>：《The Last of Us》導演為批評 God of War: Laufey 而公開道歉（VGC + Eurogamer 確認）；Insomniac 否認在《Marvel's Wolverine》中使用生成 AI（Eurogamer，廁所標誌奇異事件澄清為 UV map bug）；WoW Forever Beta「17 年最瘋狂數字」持續（Eurogamer 確認）；《Hellraiser Revival》demo 上線 + 新預告（Eurogamer）；《Castlevania: Belmont's Curse》Demo 10 月 1 日上線，存檔可轉移正式版（Reddit r/Games + VGC 確認）；Denuvo 起訴知名破解者——繞過 26 款遊戲 DRM，身份仍成謎（RPS 確認）；85% 日本遊戲開發者使用生成式 AI（CESA 2026 調查，automaton 確認，較去年 51% 大幅增加）。
-      </div>
     </section>
 
-    <!-- 05 迷因題材 -->
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>本週最大敘事：AI 獵巫三連——兩次抓錯人，一次抓對但理由錯了</h3>
+        <div class="sum">三件事同週發生：①《Luminary》被罵「爛 AI 語音」，實際是開發者太太第一次配音（GameSpot 9/18）；② Insomniac 社群總監 James Stevenson 澄清《Marvel's Wolverine》被 TikTok 瘋傳 70 萬次觀看的怪廁所標示是 <b>UV map 貼圖 bug</b>、全作無任何生成式 AI 資產（Kotaku / IGN 9/18–9/19）；③ Level-5 執行長日野晃博承認 9/10「VISION 2026 II」發表會的<b>影片素材</b>用了生成式 AI 並道歉，但同時說明粉絲抓出的電線／販賣機／排水溝異常<b>其實是設計師手繪時刻意簡化的背景</b>，遊戲本體全手工製作；公司於 TGS 期間重新上傳修正版預告（Polygon / IGN / Nintendo Wire 9/17–9/18）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是本日最強的定位彈藥。<b>市場現在懲罰的不是「用了 AI」，是「看起來像在藏」。</b>GameGen 的路線因此更清楚：把生成明示在產品正面（「這款是 AI 做的，梗是你的」），把人味放在<b>梗與社群</b>而不是放在「假裝手工」。已收頭版 hero + 小編 Top 1。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESPOT / KOTAKU / POLYGON · 9/17–9/19 · <a href="https://www.gamespot.com/articles/indie-dev-says-ai-voice-in-his-game-was-actually-his-wife/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>UGC / IP</span></span>Rockstar 在 GTA 6 前封死 mod：不准新任務、新地圖、跨作品混搭、非官方移植</h3>
+        <div class="sum">官方 mod 規範首條即「Respect our games」，明文禁止擴充或修改官方劇情／任務／角色／既定世界觀、禁止把一作的地圖／角色／資產混進另一作、禁止移植到未官方發行的平台、多人 mod 僅限官方授權 Creator Platform、禁止營利化 Rockstar 資產。GTA 6 於 11/19 上市。對照組：Rockstar 幾年前才收購 GTA 5 的 RP 框架 FiveM，該框架今年 3 月曾破 20 萬 Steam 同上線（GamesRadar 9/21，全文 fetch；Eurogamer / RPS / PC Gamer 同日並報）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>UGC 的結構性風險在今天被兌現：<b>最強的創作者社群都長在別人的土地上。</b>對 GameGen 的直接意義有二——(1) 產品面：remix 迴圈必須建立在泛化玩法與用戶自己的梗，不依附第三方 IP；(2) 敘事面：這是對 operator / studio 說「為什麼要自有 UGC 層」的最佳現成案例。已收頭版 CJ Top 2。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESRADAR · 9/21 · <a href="https://www.gamesradar.com/games/grand-theft-auto/ahead-of-gta-6-rockstar-releases-modding-guidelines-that-axe-new-missions-maps-ports-and-more-respect-our-games/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>AI 山寨搶先上市：削皮遊戲《1,000,000 Potatoes》指控被《Potato Please》複製</h3>
+        <div class="sum">Rado Klasa 7 月在 GMTK Game Jam 做出物理削皮遊戲《1,000,000 Potatoes》爆紅、為打磨機制暫緩上架；9/20 顧問 Indie Game Joe 轉發 Golden Horn Studios 的《Potato Please》預告，9/21 Klasa 指控機制／主題／視覺高度雷同、稱只需一段 AI prompt 即可複製。Golden Horn 否認、稱靈感來自社群迷因；Steam 社群鑑賞家已開始把該頁面標記為含 AI 生成視覺的 clone（IGN 9/21；Kantan.News 整理）。<b>⚠️ 雙方各執一詞，指控尚未有第三方裁定，本報僅陳述雙方說法。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>不論這樁個案最後怎麼判，前提已經成立：<b>複製的邊際成本趨近於零，「先做出來」不再是護城河。</b>對 GameGen 的產品含義很直接——要贏的不是生成速度（那會被追平），是<b>留存與 remix</b>：玩家生完之後留在哪裡、願不願意在你這裡改成自己的版本。這也是為何 KPI 要看 Play-to-Remix / Repeat Creation，而不是生成數。已收頭版 CJ Top 1。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 爭議未決</span></span></div></div>
+          </div>
+          <div class="src">IGN · 9/21 · <a href="https://www.ign.com/articles/indie-game-developer-accuses-studio-of-using-ai-to-rip-off-his-viral-potato-peeling-game" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>大廠對標</span></span>Roblox 的 AI 輔助創作大賭注 + 微軟「凍結遊戲播廣告」專利 + miHoYo AI 語音勝訴</h3>
+        <div class="sum">三則對標訊號：① <b>Naavik</b> 專文《Inside Roblox's Massive Bet On AI-assisted Creation》剖析 Roblox 把 AI 押在創作端（本報僅引標題與主題，<b>未逐句 fetch，內容細節目前無法完全證實</b>）；② <b>微軟專利申請</b>：在王戰結束／過場／載入／進選單等空檔凍結遊戲播廣告，看完重置無廣告時數（Tom's Hardware 9/20，今日 HN 遊戲類最高 30 分）；③ <b>miHoYo 獲中國法院判賠約 $112,000</b>，被告為盜用原神角色聲線的 AI 語音服務（Game Developer，radar 故事源）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>三條線指向同一件事：<b>大廠的 AI 都留在牆內</b>——Roblox 把 AI 給自己的既有創作者、微軟拿 AI 優化廣告時機、miHoYo 用法律把角色聲線圈起來。消費端「讓一般人用 AI 做一款遊戲」仍是空位。miHoYo 那則同時是給 GameGen 的紅線提醒：<b>角色聲線與可辨識 IP 的仿製有實際法律後果，模板一律走泛化。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NAAVIK / TOM'S HARDWARE / GAME DEVELOPER · <a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
     <section id="meme">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>今日迷因</span></span>「io 遊戲死亡報告」Reddit 帖 + RE4 完整反編譯 + 「I got the ZOOMIES!!!」itch 迷因</h3>
-        <div class="sum"><b>io 遊戲死亡報告：</b>Reddit r/gamedev 今日熱帖「2017 靠 io 遊戲賺 10 萬美元，2026 靠 io 遊戲虧錢」是今天最強的市場窗口迷因——開發者社群在自嘲，但裡面有真實的悲哀（heat_latest 確認）。<b>RE4 反編譯：</b>HN 76 points，開發者社群的「考古迷因」——「終於可以看他們的代碼」是每個遊戲開發者都有的夢想。<b>「I got the ZOOMIES!!!」：</b>itch.io 今日 meme 標籤，短促的情緒宣洩型遊戲，代表今天的 casual-meme 遊戲口味（heat_latest 確認）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「io 遊戲死亡」是今天最可操作的 X 話題——發一個問答貼「你玩過哪款已死亡的 io 遊戲？」，留言串自然形成。RE4 反編譯是開發者社群的技術梗，適合 nerd-focused 的 X 帳號。ZOOMIES 是今日 itch 最純粹的「做出來就能玩」範本。</div>
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>「標題即是梗」正在上貨架：Brainrot Simulator（Steam）／ The Community Notes Are Wrong（itch）</h3>
+        <div class="sum">今日兩榜同時出現把網路語彙直接當商品名的作品：Steam 新品榜的 <b>《Brainrot Simulator》</b>（brainrot 梗做成模擬器）、itch 熱榜的 <b>《The Community Notes Are Wrong》</b>（社群筆記梗，EXTENDED DEMO）、<b>《I got the ZOOMIES!!!!!!!!!!!!!!!!》</b>（寵物暴衝梗，連驚嘆號都是梗的一部分）、<b>《Kill the Ice Age Baby Adventure》</b>（老迷因延燒）。共通點：<b>標題就是完整的笑點，玩法只負責讓人能點</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這正是 Trend-to-Game 的活教材，而且給了一個可立刻落地的產品調整：<b>生成流程應該先問「這個梗的標題怎麼寫」，再配玩法模板</b>，並把標題直接帶進分享卡。目前多數生成流程是先選模板再想主題——好玩但不好傳。另可抄的公式：把一個社群共識（社群筆記、brainrot、寵物暴衝）壓成一個荒謬動詞 + 一句話規則。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低（io 帖/RE4）· 不碰 Wolverine/God of War 敏感爭議</span></span></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
           </div>
-          <div class="src">REDDIT r/gamedev 9/21 + HN 9/21 + itch.io · <a href="https://www.reddit.com/r/gamedev/comments/1wl60e7/we_made_100k_with_an_io_game_in_2017_now_were/" target="_blank">io 帖 ↗</a></div>
+          <div class="src">STEAM 新品 / ITCH.IO · 09/22 radar · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ Know Your Meme「Popular right now」與繁中 Threads 熱話需瀏覽器，本次沙箱排程無法取得，<b>目前無法完全證實</b>。不以 SEO 彙整頁回收舊梗充數。今日 io 遊戲死亡報告 + RE4 反編譯在技術與開發者圈有高傳播性；CC 互動 session 有瀏覽器時請補 first-seen 驗證。
-      </div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>新鮮度警示</span></span>純網路迷因今日無可驗證新料：KYM「Popular right now」需瀏覽器，本次取不到</h3>
+        <div class="sum">Know Your Meme 的「Popular right now」與 TikTok Creative Center 皆需瀏覽器渲染，本次沙箱排程的瀏覽器存取被拒，<b>今日無法對任何純網路迷因做 first-seen 驗證</b>。依紀律：不以 SEO 彙整頁（napoleoncat 等常青回收頁）補位、不把來路不明的舊梗寫成「今天的梗」。今天的迷因彈藥改由<b>有平台快照佐證的梗遊戲</b>（Brainrot Simulator / The Community Notes Are Wrong）擔綱。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>⚠️ 目前無法完全證實</b>當日新生純網路迷因的新鮮度。CC 互動 session 有瀏覽器時，優先補 KYM 當日新梗 + first-seen 驗證。可追的長線母題：本週「AI 獵巫誤判」情緒很可能在社群長出「AI 偵探翻車」類變體（指控別人是 AI 結果打臉），那會是極好的 Trend-to-Game 素材。</div>
+      </article>
     </section>
 
-    <!-- 06 機制靈感庫 -->
+    <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
       <div class="boards reveal">
         <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">今日話題 + itch 原創 loop</span></div>
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（itch / Steam 新品）</span></div>
           <ol>
-            <li class="hot"><span class="nm">「聲音辨識法官」— 選擇 + 類型揭曉</span><span class="vn">★ 首選</span></li>
-            <li><span class="nm">「io 生存者」— 極簡 browser 計時</span><span class="vn">互動貼</span></li>
-            <li><span class="nm">「逆向工程挑戰」— 猜設計意圖</span><span class="vn">開發者向</span></li>
-            <li><span class="nm">StreamRush — 直播主資源衝刺</span><span class="vn">計時</span></li>
-            <li><span class="nm">Castlevania Demo 存檔轉移 — 連續玩法</span><span class="vn">留存模型</span></li>
+            <li class="hot"><span class="nm">限時二選一辨識（Spot the Slop 型）</span><span class="vn">★ 辨識</span></li>
+            <li><span class="nm">Rock Declutterer — 整理 / 清空</span><span class="vn">整理</span></li>
+            <li><span class="nm">I got the ZOOMIES — 速度暴衝</span><span class="vn">速度</span></li>
+            <li><span class="nm">Kick Bot DX — 單鍵動作</span><span class="vn">單鍵</span></li>
+            <li><span class="nm">Eat not, Want not — 進食 / 節制取捨</span><span class="vn">取捨</span></li>
           </ol>
-          <div class="bf">今日話題 + itch.io · 09/22 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+          <div class="bf">itch.io html5 / Steam 新品 · 09/22 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
         </div>
       </div>
 
       <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>今日首抄公式：「聲音辨識法官」；次選「io 遊戲死亡問答貼」</h3>
-        <div class="sum">今日話題最自然的機制借用是「<b>聲音辨識法官</b>」（蹭米哈遊 AI 聲音勝訴 + AI 配音老婆事件：5 段原創語音情境，判斷 AI/真人，揭曉法官類型，去賭場化 ✅，全原創，今日窗口最強）和「<b>io 遊戲死亡問答</b>」（直接在 X 發「你玩過哪款已死亡的 io 遊戲？」讓留言自然形成，技術複雜度零，互動性極高）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「聲音辨識法官」的情緒窗口在今明兩天最強——米哈遊勝訴新聞剛出，AI 聲音是否有法律價值的討論正在發酵。今天做這個 Demo，背後有法律里程碑支撐，分享動機最強。</div>
+        <h3><span class="tag rl"><span>洞察</span></span>今日首抄機制＝「限時二選一辨識」：天生有正確率、天生有社交貨幣</h3>
+        <div class="sum">今天最值得做成模板的不是任何一款具體作品，而是本週敘事直接指出的機制：<b>限時二選一辨識</b>（5 秒內判斷 A 還是 B）。它符合三個條件——規則一句話講完、結果是可比較的數字（正確率）、失敗瞬間好剪。其次是可直接泛化的早期 loop：整理 / 清空（Rock Declutterer）、速度暴衝（I got the ZOOMIES）、單鍵動作（Kick Bot DX）、進食取捨（Eat not, Want not）。<b>unityroom 今週ピックアップ需瀏覽器，本次排程暫缺、目前無法完全證實。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>機制本身不受版權保護，照抄 loop、換泛化皮即可；受保護的是美術、角色、商標與可辨識聲線。</b>今日 IP 地雷提醒有二：(1) miHoYo 靠 AI 語音仿原神角色勝訴（約 $112K）——<b>模板絕不做可辨識角色聲線</b>；(2) Rockstar 新規明示禁止跨作品資產混搭——<b>別做任何「把 A 遊戲塞進 B 遊戲」的哏</b>。做 Spot the Slop 時，<b>題目素材一律 GameGen 自產雙版本，不得使用任何真實作品或真人素材</b>。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 全原創設定</span></span></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 自產素材</span></span></div></div>
           </div>
-          <div class="src">GAMEDEVELOPER 9/21 + REDDIT 9/21 · <a href="https://itch.io/games/html5" target="_blank">itch.io ↗</a></div>
+          <div class="src">ITCH.IO / STEAM 新品 · 09/22 radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
-    <!-- 07 繁中 Threads 熱話 -->
+    <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
 
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無瀏覽器，繁中 Threads 熱話暫缺</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，<b>無瀏覽器</b>可抓 Threads 繁中圈當日熱話（需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料補位。可追的長線母題：<b>《Control Resonant》上市好評</b>——Remedy 在繁中遊戲社群有鐵粉基礎；<b>米哈遊 AI 聲音勝訴</b>——台灣《原神》玩家眾多，AI 保護議題有強共鳴；<b>TGS 2026 閉幕</b>——繁中任天堂/Capcom 粉絲對 TGS 動態高度關注；<b>io 遊戲死亡報告</b>——台灣開發者社群有感，共鳴深。</div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日瀏覽器存取被拒，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，瀏覽器在非互動環境無法取得站點授權（Threads 需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。CC 互動 session（chrome-devtools）或本機環境有瀏覽器時，請補抓三國 / 武俠 / 恐怖 / 捕捉 RPG 等題材變體與當日代表貼文。<b>可追的長線母題：</b>本週全球級話題「AI 獵巫誤判」在繁中圈有很高機率長出「被誤認成 AI 圖 / AI 文」的創作者吐槽變體（台灣插畫、同人、獨立遊戲圈已長期有此爭議），下次有瀏覽器時優先驗證是否已落到 Threads 繁中熱話；若成立，那是繁中圈最好蹭的一條。</div>
       </div>
     </section>
 
-    <!-- 08 Trend-to-Game 題材 -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>「AI 聲音辨識法官」（米哈遊勝訴 + AI 配音老婆雙線）</td><td><span class="tmpl">「聲音辨識法官」— 選擇 + 類型揭曉</span></td><td>「你能辨識哪些聲音值得法律保護嗎？」</td><td class="rk-low">低 · 全原創情境文字，不使用原神聲音素材</td><td>★ 本日 Demo 首選，米哈遊勝訴情緒窗口今明兩天最強；文字版今天就能做；去賭場化 ✅</td></tr>
-          <tr><td>「io 遊戲死亡報告」（Reddit 今日熱帖）</td><td><span class="tmpl">「市場窗口計時器」— 你的 io 遊戲活了幾年？</span></td><td>開發者自嘲共鳴，留言串社群化</td><td class="rk-low">低 · 純文字問答，零版權風險</td><td>今天直接發 X 問答貼「你玩過哪款已死亡的 io 遊戲？那一年是什麼感覺？」；技術複雜度零，互動性最高</td></tr>
-          <tr><td>《Control Resonant》上市好評（類型轉型豪賭）</td><td><span class="tmpl">「你願意賭哪個類型？」— 設計師身份揭曉</span></td><td>設計師 / 開發者對「轉型還是堅守」的共鳴</td><td class="rk-low">低 · 泛化類型討論，不使用 Remedy 版權素材</td><td>CJ 角度：今日第二強 LinkedIn 素材——「類型轉型最大的風險不是失敗，而是不敢試」；X：「你上一個敢賭的設計決策是什麼？」</td></tr>
-          <tr><td>《惡魔城》Demo 存檔轉移（10/1 上線）</td><td><span class="tmpl">「Demo 存檔累積」— 連續玩法留存設計</span></td><td>「Demo 就是第一章」的設計洞見</td><td class="rk-low">低 · 泛化留存設計討論，不使用 Konami 版權素材</td><td>X：「Castlevania 新作 Demo 存檔可轉移正式版——這就是為什麼 Demo 應該是遊戲的一部分，不是試用品」設計洞見貼；窗口今明兩天（10/1 Demo 前）</td></tr>
-          <tr><td>King 瑞典員工罷工（勞工組織 vs 大廠）</td><td><span class="tmpl">「談判模擬器」— 資方/工方角色扮演選擇</span></td><td>遊戲業勞工議題共鳴，留言爭議性強</td><td class="rk-mid">中 · 勞資議題有站隊風險；避免明確支持任一方</td><td>CJ 角度最安全：「大型遊戲廠商從兩端受壓——AI 讓小團隊競爭，有組織的工人讓大團隊更貴」；不要評論 King 個案對錯</td></tr>
+          <tr><td>AI 獵巫誤判（老婆配音被當 AI）</td><td><span class="tmpl">限時二選一辨識</span></td><td>「偵探正確率」分享卡</td><td class="rk-low">低 · 自產素材</td><td>★ 本日 Demo 首選；素材一律 GameGen 自產雙版本，禁用真實作品 / 真人</td></tr>
+          <tr><td>AI 山寨搶先上市（削皮遊戲爭議）</td><td><span class="tmpl">速度競賽 / 削皮型重複動作</span></td><td>「誰先做完」秒數卡</td><td class="rk-mid">中 · 爭議未決</td><td>做泛化「重複勞動速度賽」，別點名任何一方、別用雙方素材</td></tr>
+          <tr><td>微軟「凍結遊戲播廣告」專利</td><td><span class="tmpl">泛化彈窗躲避 clicker</span></td><td>「專注秒數」共鳴梗</td><td class="rk-low">低</td><td>彈窗圖示全自製，不挪任何真實品牌 / 介面</td></tr>
+          <tr><td>Brainrot Simulator 上 Steam 新品榜</td><td><span class="tmpl">梗標題 × 一句話模擬器</span></td><td>標題本身就是分享點</td><td class="rk-low">低</td><td>抄公式：先寫梗標題再配模板，標題直接進分享卡</td></tr>
+          <tr><td>The Community Notes Are Wrong（社群筆記梗）</td><td><span class="tmpl">判真假 / 標註對錯</span></td><td>「你標對幾題」比分</td><td class="rk-low">低</td><td>泛化敘述句，不引用任何真實貼文或帳號</td></tr>
+          <tr><td>I got the ZOOMIES（寵物暴衝）</td><td><span class="tmpl">速度暴衝 / 單鍵</span></td><td>失控瞬間最好剪</td><td class="rk-low">低</td><td>泛化寵物造型，不做任何可辨識網紅寵物</td></tr>
+          <tr><td>Rockstar 封死 mod（UGC 收緊）</td><td><span class="tmpl">定位素材，非玩法</span></td><td>「在自己的土地上 remix」</td><td class="rk-low">低</td><td>只做敘事使用；絕不做任何 GTA 相關哏或資產</td></tr>
         </tbody>
       </table>
       </div>
     </section>
 
-    <!-- 09 CJ LinkedIn 題材 -->
+    <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>米哈遊 AI 聲音勝訴——AI 時代的 IP 保護有了第一個法律里程碑</td><td>中國法院裁定 AI 語音服務侵權《原神》角色聲音，判賠 112,000 美元（GameDeveloper.com 9/21 確認）</td><td>"A Chinese court just awarded MiHoYo $112,000 after an AI voice service cloned Genshin Impact characters. AI voice theft now has a price tag. This is the first generation of creators where IP protection for voice, likeness, and style will be enforced — not just talked about. Builders who own their creative assets win the next decade."</td><td><a href="https://www.gamedeveloper.com/business/mihoyo-awarded-112-000-by-chinese-court-after-ai-voice-service-dupes-genshin-impact-characters" target="_blank">↗ GameDeveloper</a></td></tr>
-          <tr><td>Remedy 類型轉型豪賭——《Control Resonant》全面好評，最大的風險是不敢轉型</td><td>《Control Resonant》多媒體好評確認（RPS/VGC/GamesIndustry/80.lv，2026-09-21）；Remedy 放棄熟悉射擊公式大膽轉向，全面獲認可</td><td>"Remedy just launched Control Resonant — a genre gamble. Critics call it 'one of their most impressive games ever.' The lesson: in games (and in any product), the biggest risk isn't changing your formula. It's refusing to change when the market already has."</td><td><a href="https://www.videogameschronicle.com/review/control-resonant/" target="_blank">↗ VGC</a></td></tr>
-          <tr><td>King 瑞典罷工 + AI 雙重壓力——大型遊戲廠商的護城河正在快速消失</td><td>King 瑞典員工罷工（GamesIndustry + GameDeveloper 雙源確認）；同週 AI 工具持續壓縮大廠技術優勢；WARDOGS 8 人團隊百萬銷量（先例）</td><td>"King workers in Sweden are striking. AI makes small teams competitive. Workers with collective power make large teams expensive. The era of 'scale as moat' is ending. The studios that survive won't be the biggest — they'll be the most agile."</td><td><a href="https://www.gamesindustry.biz/king-workers-to-strike-in-sweden-following-rejection-of-collective-bargaining-agreement" target="_blank">↗ GamesIndustry</a></td></tr>
-          <tr><td>「io 遊戲死亡報告」——市場窗口的警示，適用於任何快速創作的策略決策</td><td>Reddit r/gamedev 今日熱帖：「2017 靠 io 遊戲賺 10 萬，2026 靠 io 遊戲虧錢」（heat_latest 確認，top-of-day）</td><td>"$100K from an io game in 2017. Negative dollars from the same category in 2026. Markets don't wait. The window opens and closes. The difference between a studio that wins and one that doesn't is often just timing — reading the window while it's still open."</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wl60e7/we_made_100k_with_an_io_game_in_2017_now_were/" target="_blank">↗ Reddit</a></td></tr>
+          <tr><td>複製成本趨零 → 速度不是護城河，社群才是</td><td>《1,000,000 Potatoes》（7 月 GMTK jam 爆紅）指控被《Potato Please》以 AI 複製並搶先上市（9/20 預告、9/21 指控）</td><td>"If cloning takes a weekend, shipping first isn't a moat. Your community is. Your remix loop is."</td><td><a href="https://www.ign.com/articles/indie-game-developer-accuses-studio-of-using-ai-to-rip-off-his-viral-potato-peeling-game" target="_blank">↗</a></td></tr>
+          <tr><td>UGC 蓋在借來的土地上 → 自有 UGC 層的價值</td><td>Rockstar 9/20–21 公開 mod 新規：禁新任務 / 新地圖 / 跨作品混搭 / 非官方移植；多人僅限官方 Creator Platform</td><td>"The strongest creator communities of the last decade were built on borrowed land. Build the remix loop on mechanics, not on someone else's IP."</td><td><a href="https://www.gamesradar.com/games/grand-theft-auto/ahead-of-gta-6-rockstar-releases-modding-guidelines-that-axe-new-missions-maps-ports-and-more-respect-our-games/" target="_blank">↗</a></td></tr>
+          <tr><td>「藏 AI」是新的商業風險，透明反而是資產</td><td>同週三起：Luminary 太太配音被當 AI（9/18）、Wolverine UV bug 被當 AI slop（9/18–19）、Level-5 為發表會影片用 AI 道歉（9/17）</td><td>"The market no longer punishes using AI. It punishes looking like you're hiding it. Say it on the label."</td><td><a href="https://www.gamespot.com/articles/indie-dev-says-ai-voice-in-his-game-was-actually-his-wife/" target="_blank">↗</a></td></tr>
+          <tr><td>大廠把 AI 留在牆內，消費端仍是空位</td><td>Naavik 專文剖析 Roblox 押注 AI 輔助創作（給既有創作者）；微軟專利把 AI 用在廣告時機優化（9/20）</td><td>"Roblox gives AI to its creators. Microsoft gives AI to its ad timing. Nobody's giving it to the person who just wants to make one game about today's joke."</td><td><a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">↗</a></td></tr>
+          <tr><td>可辨識 IP 的 AI 仿製已有實際判賠 → 泛化是合規前提</td><td>miHoYo 獲中國法院判賠約 $112,000，對象為盜用原神角色聲線的 AI 語音服務</td><td>"AI voice cloning of game characters now carries court-ordered damages. Generic-by-design isn't caution — it's the only scalable posture."</td><td><a href="https://www.gamedeveloper.com/business/mihoyo-awarded-112-000-by-chinese-court-after-ai-voice-service-dupes-genshin-impact-characters" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 1（米哈遊 AI 聲音勝訴 → IP 保護里程碑）已附完整 EN hook + 中譯，可直接交 CJ 每日包。去賭場化 ✅。主要來源 GameDeveloper 確認。Top 2（Control Resonant 類型轉型）四源確認，鉤子聚焦普遍性策略洞見，不提 Remedy 個人商業細節。
+        📄 頭版 🎯 CJ Top 2（速度非護城河 / UGC 借來的土地）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 驗原文日期 2026-09-21 + 主張比對（見文末 Evidence Log）。對外用字已過濾賭場語言。<b>⚠️ 削皮遊戲一案雙方各執一詞、尚無第三方裁定，CJ 貼文建議停在「複製成本趨零」的結構性觀察，不對個案下判斷、不點名任何一方。</b>
       </div>
       </div>
     </section>
 
-    <!-- 10 今日建議動作 -->
+    <!-- Actions -->
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
-          <li>蹭「io 遊戲死亡報告」：「你玩過哪款已死亡的 io 遊戲？那一年是什麼感覺？」互動問答貼——今日互動性最高，技術複雜度零</li>
-          <li>蹭米哈遊 AI 聲音勝訴：「AI 聲音盜用現在有法律成本了——你如何保護你的原創聲音？」話題貼</li>
-          <li>蹭 RE4 完整反編譯：「《生化危機 4》GameCube 版代碼全部公開了——這就是遊戲設計的最好教科書」技術興趣貼</li>
-          <li>蹭《惡魔城》Demo 存檔轉移：「Demo 存檔可轉正式版——Demo 應該是遊戲的第一章，不是試用品」設計洞見貼</li>
-          <li>蹭 Control Resonant：「Remedy 賭了一個全新類型，全勝。你上一個敢賭的設計決策是什麼？」</li>
-        </ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
-          <li>★ 「聲音辨識法官」（蹭米哈遊 AI 聲音勝訴）——本日首選，5 段原創語音情境描述，玩家判斷 AI/真人，揭曉法官類型分享卡；今天窗口最強，全原創，去賭場化 ✅</li>
-          <li>「io 遊戲計時器」（蹭 io 遊戲死亡報告）——選擇你的遊戲類別 + 上市年份，計算你的窗口剩餘壽命；諷刺喜感強，分享力高</li>
-          <li>「逆向工程挑戰」（蹭 RE4 反編譯）——猜 RE4 某個設計決策背後的代碼意圖，開發者向 demo</li>
-          <li>「Demo 存檔連續玩法」（蹭 Castlevania）——模擬「你的 Demo 進度轉移到哪個正式遊戲的哪個點」的選擇題</li>
-        </ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
-          <li>King 瑞典罷工解決方案——是否影響 Candy Crush 開發進度？罷工持續時間？</li>
-          <li>CoD MW2 週一 +26% 原因——是新活動、賽季更新還是其他觸發點？今天應確認</li>
-          <li>《Control Resonant》銷售數字——VGC 好評是否轉化為 Steam 銷售榜入列？</li>
-          <li>《惡魔城》Demo 10/1 上線——提前一週跟進，搭上新話題窗口</li>
-          <li>米哈遊 AI 聲音勝訴是否有更多技術細節或判決書摘要——法律細節影響國際適用範圍</li>
-        </ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
-          <li>《Marvel's Wolverine》AI 爭議 / God of War: Laufey 導演道歉事件——政治敏感 + 娛樂產業衝突，建議完全迴避</li>
-          <li>以米哈遊 / 原神 / 《惡魔城》/ Konami 版權素材製作任何 Demo 或貼文圖片</li>
-          <li>King 罷工事件的個人化評論——只談結構性大廠困境，不評論 King 或工會雙方對錯</li>
-          <li>「遊戲免費」或任何暗示 GameGen 為免費的文案（9/22 Pizza 親口確認：GameGen 不是免費，只送 500 積分）</li>
-          <li>對外文案使用推薦、必勝、保證等語言（全面排除任何類賭場語言）</li>
-        </ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>★ 蹭 AI 獵巫誤判：「那個爛 AI 語音其實是他老婆」＋ 我們大方說「就是 AI 做的，梗是你的」</li><li>微軟凍結遊戲播廣告專利：「他們的廣告時段比我們整款遊戲還長」</li><li>梗遊戲上貨架：「今天 Steam 新品有《Brainrot Simulator》——留言你最蠢的梗，我們當場生成」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「Spot the Slop」5 秒辨圖挑戰（素材全 GameGen 自產雙版本）—— 本日首選</li><li>泛化彈窗躲避 clicker（蹭微軟廣告專利，出「專注秒數」卡）</li><li>泛化「重複勞動速度賽」（蹭削皮爭議的機制、不碰個案）</li><li>「梗標題生成器」：先產一句話梗標題，再配玩法模板，標題直接進分享卡</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>削皮遊戲爭議後續：Steam 是否下架 / 鑑賞家標記是否擴散 / 雙方有無第三方裁定</li><li>「AI 偵探翻車」是否長成獨立迷因母題（繁中圈尤其值得盯）</li><li>Rockstar 新規執行力道：FiveM 與既有大型 RP 社群會不會實際受影響</li><li>Naavik 的 Roblox AI 創作專文全文（今日僅取標題，待補逐句驗證）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li><b>可辨識角色聲線的 AI 仿製</b>——miHoYo 已有判賠 $112K 先例，模板一律泛化</li><li><b>Spot the Slop 絕不可用真實作品 / 真人 / 真實開發者當題目</b>，只用 GameGen 自產雙版本素材</li><li>削皮爭議尚未裁定，對外文案不點名、不站邊，只講結構性觀察</li><li>跨作品資產混搭哏（Rockstar 新規明文禁止，也是通用 IP 地雷）</li><li>對外文案的賭場語言（下注 / payout / big win / guaranteed earnings）</li><li>別把週一 Steam 全面回落寫成「趨勢退燒」——那是作息，不是訊號</li></ul></div>
       </div>
     </section>
 
     <!-- 彈藥 Evidence Log -->
     <div class="evlog reveal">
-      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證 · 2026-09-22）</h4>
       <table>
-        <tr><td>米哈遊 AI 聲音勝訴，賠 112,000 美元</td><td><a href="https://www.gamedeveloper.com/business/mihoyo-awarded-112-000-by-chinese-court-after-ai-voice-service-dupes-genshin-impact-characters" target="_blank">GameDeveloper 9/21</a>（單源確認，中國法院判決）<span class="ok">✓</span>　🆕 今天新</td></tr>
-        <tr><td>《Control Resonant》多媒體好評</td><td><a href="https://www.rockpapershotgun.com/control-resonant-review" target="_blank">RPS ↗</a>；<a href="https://www.videogameschronicle.com/review/control-resonant/" target="_blank">VGC ↗</a>；<a href="https://www.gamesindustry.biz/control-resonant-critical-consensus" target="_blank">GamesIndustry ↗</a>；<a href="https://80.lv/articles/control-resonant-is-a-fantastic-evolution-of-remedy-s-formula/" target="_blank">80.lv ↗</a>（四源確認）<span class="ok">✓</span>　🆕 今天新</td></tr>
-        <tr><td>King 瑞典員工罷工</td><td><a href="https://www.gamesindustry.biz/king-workers-to-strike-in-sweden-following-rejection-of-collective-bargaining-agreement" target="_blank">GamesIndustry 9/21 ↗</a>；<a href="https://www.gamedeveloper.com/production/king-workers-call-strike-after-collective-agreement-negotiations-stall" target="_blank">GameDeveloper 9/21 ↗</a>（雙源確認）<span class="ok">✓</span>　🆕 今天新</td></tr>
-        <tr><td>「io 遊戲死亡報告」Reddit r/gamedev 熱帖</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wl60e7/we_made_100k_with_an_io_game_in_2017_now_were/" target="_blank">Reddit r/gamedev top-of-day 9/21</a>（heat_latest 確認）<span class="ok">✓</span>　🆕 今天新</td></tr>
-        <tr><td>RE4 GameCube 完整 C/C++ 反編譯</td><td><a href="https://github.com/adonis-singh/re4" target="_blank">HN 9/21，76 points，48 留言</a>（heat_latest hackernews 確認）<span class="ok">✓</span>　🆕 今天新</td></tr>
-        <tr><td>《Castlevania: Belmont's Curse》Demo 10/1 存檔轉移</td><td><a href="https://www.reddit.com/r/Games/comments/1wldehz/castlevania_belmonts_curse_demo_releasing_on/" target="_blank">Reddit r/Games top-of-day 9/21</a>；<a href="https://www.videogameschronicle.com/news/a-demo-of-castlevania-belmonts-curse-has-been-officially-announced/" target="_blank">VGC 9/21 ↗</a>（雙源確認）<span class="ok">✓</span>　🆕 今天新</td></tr>
-        <tr><td>CoD MW2 昨日 +26.0%（35,102 人，昨日 27,852）</td><td>heat_latest.json steam_velocity 09/21 07:30 官方 GetNumberOfCurrentPlayers<span class="ok">✓（官方 API 快照）</span></td></tr>
-        <tr><td>Steam RE4 排名 +8 位（#100→#92）</td><td>heat_latest.json steam_movers rank_jumps 09/21 07:30（官方 API）<span class="ok">✓</span></td></tr>
-        <tr><td>85% 日本遊戲開發者使用生成式 AI（CESA 2026 調查）</td><td><a href="https://80.lv/articles/over-85-of-japanese-game-developers-now-use-generative-ai-according-to-tgs-report/" target="_blank">80.lv 9/18 ↗</a>；automaton 9/17 確認（雙源）<span class="ok">✓</span>　🔄 近期（9/17-18）</td></tr>
+        <tr><td><b>hero</b>　AI 獵巫誤判三連</td><td><a href="https://www.gamespot.com/articles/indie-dev-says-ai-voice-in-his-game-was-actually-his-wife/" target="_blank">GameSpot</a>（web_fetch 全文）　原文日期 <b>2026-09-18</b>（meta parsely-pub-date 2026-09-18T23:41:54Z）　驗：Luminary 8/11 進 EA、9/10 NyteKnyte 玩 0.4 小時留負評「the awful AI-generated voice killed it」、Kolod 回覆原句「I can assure you she is a real person and not AI haha」、9/11 X 貼文、首週 $100K 銷售 / 約 $70K 淨收、兩人團隊<span class="ok">✓</span>　+ Wolverine 線經 WebSearch 多源（Kotaku / IGN / Escapist）交叉：James Stevenson 指為 UV map bug、TikTok 逾 70 萬觀看、確認無生成式 AI 資產<span class="ok">✓</span>　+ Level-5 線經 WebSearch 多源（Nintendo Wire 9/17 / Polygon / IGN / AUTOMATON）交叉：VISION 2026 II 於 9/10、日野晃博承認<b>發表會影片</b>用 AI 並道歉、粉絲抓出的異常實為設計師手繪簡化、TGS 期間重傳修正版<span class="ok">✓</span>　🔄 進展更新（最新一則 9/18，4 天）</td></tr>
+        <tr><td><b>CJ #1</b>　削皮遊戲 AI 山寨指控</td><td><a href="https://www.ign.com/articles/indie-game-developer-accuses-studio-of-using-ai-to-rip-off-his-viral-potato-peeling-game" target="_blank">IGN</a>（radar tavily，published_date <b>Mon, 21 Sep 2026 21:05:44 GMT</b>）+ <a href="https://kantan.news/news/allegations-of-ai-cloning-in-indie-game-stir-up-industry-controversy" target="_blank">Kantan.News</a>（WebSearch 交叉）　驗：Klasa 於 <b>2026 年 7 月 GMTK Game Jam</b> 發表《1,000,000 Potatoes》、9/20 Indie Game Joe 轉發《Potato Please》預告、9/21 Klasa 公開指控、Golden Horn 否認稱靈感來自社群迷因、Steam 鑑賞家標記為含 AI 視覺的 clone<span class="ok">✓</span>　🆕 今天新（≤48h）　<b>⚠️ 雙方各執一詞，未有第三方裁定，報中僅陳述雙方說法</b></td></tr>
+        <tr><td><b>CJ #2</b>　Rockstar GTA 6 mod 新規</td><td><a href="https://www.gamesradar.com/games/grand-theft-auto/ahead-of-gta-6-rockstar-releases-modding-guidelines-that-axe-new-missions-maps-ports-and-more-respect-our-games/" target="_blank">GamesRadar</a>（web_fetch 全文）　原文日期 <b>Published 21 September 2026</b>（文內嵌 Rockstar 推文 September 20, 2026；另有報導指官方政策頁標註 9/10）　驗：首條「Respect our games」、禁擴充 / 修改官方劇情任務角色與既定世界觀、禁跨作品混搭地圖 / 角色 / 資產、禁移植到未官方發行平台、FiveM 收購與今年 3 月破 20 萬 Steam 同上線、GTA 6 於 11/19 上市<span class="ok">✓</span>　🆕 今天新（文章 ≤48h）</td></tr>
+        <tr><td><b>小編 #1</b>　老婆配音被當 AI</td><td>同 hero 第一腳（<a href="https://www.gamespot.com/articles/indie-dev-says-ai-voice-in-his-game-was-actually-his-wife/" target="_blank">GameSpot</a> web_fetch 全文）　原文日期 2026-09-18<span class="ok">✓</span>　🔄 進展更新</td></tr>
+        <tr><td><b>小編 #2</b>　微軟凍結遊戲播廣告專利</td><td><a href="https://www.tomshardware.com/video-games/microsoft-patents-system-to-freeze-games-and-inject-ads-during-downtimes-watching-commercials-earns-ad-free-playtime-credits" target="_blank">Tom's Hardware</a>（web_fetch，取得 <b>Published 20 September 2026</b>）+ WebSearch 多源（GosuGamers / Lowyat / RespawnFirst）交叉　驗：Microsoft Technology Licensing 專利申請、先給無廣告時數（依時間或關卡 / 王戰進度）、於王戰後 / 過場後 / 載入 / 完成任務 / 進選單等空檔播 promoted content、播放時遊戲凍結、看完重置時數、<b>僅為專利申請未見實裝</b><span class="pp">summary</span>　🔄 進展更新（2 天）　HN 客觀熱度 30 分（radar 數字層，免閘）</td></tr>
+        <tr><td><b>小編 #3</b>　梗遊戲上貨架</td><td>heat_latest.json 2026-09-22T07:30 之 <code>sources.steam_new_top</code>（《Brainrot Simulator》）與 <code>sources.itch_io</code>（《The Community Notes Are Wrong》《I got the ZOOMIES!!!》《Kill the Ice Age Baby Adventure》）　平台榜單直抓，屬 radar 數字層（免敘事閘）<span class="ok">✓</span>　🆕 榜單快照 2026-09-22　<b>⚠️ 個別作品 first-seen 未逐一驗證，報中未宣稱「今天誕生」</b></td></tr>
+        <tr><td><b>Demo</b>　Spot the Slop</td><td>為 GameGen 原創提案，綁定 hero 敘事（GameSpot 2026-09-18 已驗）　無外部事實主張需驗；風險控制已寫入：素材一律自產雙版本、禁用真實作品 / 真人<span class="ok">✓</span></td></tr>
+        <tr><td>Roblox AI 創作（附錄 #4）</td><td><a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">Naavik</a>（radar RSS，僅取標題與主題）　<b>未 web_fetch 全文、日期未驗</b><span class="pp">partial</span>　報中僅引標題並標「目前無法完全證實」，<b>未進頭版</b></td></tr>
+        <tr><td>miHoYo AI 語音判賠（附錄 #4）</td><td><a href="https://www.gamedeveloper.com/business/mihoyo-awarded-112-000-by-chinese-court-after-ai-voice-service-dupes-genshin-impact-characters" target="_blank">Game Developer</a>（radar RSS 標題層）　日期未驗<span class="pp">partial</span>　主張收在標題支撐範圍內（金額約 $112,000、中國法院、AI 語音服務盜用原神角色），<b>未進頭版</b></td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-09-22T07:30 官方 GetNumberOfCurrentPlayers（API 直抓，免敘事閘）　CS:GO 531,159（−7.8%）/ TF2 63,863（+5.5%，榜上唯一上漲）/ Palworld 47,878（−23.5%）/ BG3 42,453（−21.3%）/ HELLDIVERS 2 34,435（−21.1%）為真·日比；rank_jumps：Farming Simulator 25 69→60、RuneScape: Dragonwilds 93→84、RimWorld 86→79；new_entrants 空<span class="ok">✓</span>　radar 19/19 源全綠</td></tr>
+        <tr><td>⚠️ 排除紀錄</td><td>WebSearch 過程中出現 <a href="https://automaton-media.com/en/news/ai-generated-rip-off-of-unfinished-japanese-indie-game-beats-original-to-release-sparking-concerns-about-safety-of-sharing-dev-progress/" target="_blank">AUTOMATON 的 AI 抄襲報導</a>，經 web_fetch 驗出<b>原文日期 2026-03-24</b>、講的是 unityroom 上《Typing Magician》另一起案件——<b>與本日削皮遊戲案無關，已排除、未混入同一條敘事</b>（一條主張＝一個來源原則）</td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 1（米哈遊勝訴）GameDeveloper 單源確認 · CJ Top 2（Control Resonant）四源確認 · King 罷工雙源確認 · Steam＝官方 API 09/21 07:30 快照（昨日數據，今晨 09/22 06:51 hotspots 已更新）· Roblox/Twitch/Threads/KYM 因沙箱排程無瀏覽器標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · TGS 2026 後記日 · 米哈遊 AI 聲音勝訴 · 2026/09/22 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· hero + CJ Top 2 全 web_fetch 驗、小編 / Demo 摘要層 · Steam＝官方 API 09-22 即時真數字（radar 07:30，19/19 源全綠）· Roblox / Twitch / Threads / unityroom / KYM / TikTok 因沙箱排程瀏覽器存取被拒標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/09/22 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
