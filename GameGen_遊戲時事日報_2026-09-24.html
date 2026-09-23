@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/09/24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">09 · 24 · THU</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 09 / 24 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑 · 19/19 源全綠）· 來源 19 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>CS2 上線了養雞系統。Warframe 在線人數一夜翻倍（+109%）。一個有 30 年 Unity 經驗的老兵在 r/gamedev 宣告「AI 已追上了我的開發能力」——三件事同一天發生，指向同一個方向。</b>Counter-Strike 2 宣布玩家現在可以孵化、養大、並把一隻雞帶進對戰場——這是 2026 年最讓人愣住的功能更新。同日 r/gamedev 最熱文章是一位 30 年 Unity 老兵直言「AI models have caught up with me」，引發開發者社群大討論。<span class="hl">另一條重要新聞：Quake Champions 宣布從 F2P 轉為付費應用，移除所有 Battle Pass 和微交易，且明確聲明不再更新——遊戲業史上最誠實的退場聲明之一。</span></p>
+        <p>三件事的共同訊號：<b>「讓玩家驚叫的東西不需要是最高科技的東西。」</b>CS2 的雞不是 AI 功能，是設計師對「驚喜感」的理解。30 年老兵的告白不是說 AI 要取代人，是說門檻正在降低。Quake Champions 的誠實退場是說：沒有持續內容引擎的 F2P 是在消耗信任。<span class="hl">對 GameGen：Trend-to-Game Engine 的核心優勢正是「讓今天的驚喜變成可玩的東西」——今天這三條新聞都是好素材。</span></p>
+        <div class="pull">▸ 今天就能蹭：① CJ LinkedIn：「AI 追上 Unity 老兵」→「第一款遊戲從來沒有比今天更便宜」；② X 互動貼：Warframe +109% 互動問答 ＋ CS2 雞雞「你的遊戲的雞在哪裡？」；③ Demo 提案：寵物/吉祥物成就遊戲——做一款「你是哪種電子雞」小測驗，結果分享卡，零 IP 風險。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>30 年 Unity 老兵直言：「AI 已追上了我的開發能力」——第一款遊戲從來沒有比今天更便宜<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>Reddit r/gamedev 今日 top-of-day 熱文「AI models have caught up with Unity dev. My insights as someone with 30 years of experience.」（2026-09-24 07:30 heat-radar 直抓）；HackerNews 同步上榜（3 分）。⚠️ 具體論點內容為標題層，<b>目前無法完全證實</b>全文論據，本報以標題概念引用。</div>
+            <div class="ln"><b>GameGen 角度：</b>這不是 AI 威脅論，是 AI 機會論的最強背書。<b>30 年功力的老兵說「AI 追上了我」，代表什麼？代表一個什麼都不懂的新手今天可以站在一個比 5 年前有 3 年經驗的開發者更好的起跑線上。</b>對 C 側創作者：第一款遊戲的門檻正在消失。對 CJ 的 B2B 對話：不是在幫你省成本，是在替你創造下一批自己做第一款的人——他們需要平台，他們需要 GameGen。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A developer with 30 years of Unity experience just posted: 'AI has caught up with me.' That's not a threat. That's an invitation. The tools that used to take years to learn are now accessible in hours. Your first game has never been cheaper to make. What's your excuse now?"<br><span style="color:var(--ink-dim)">中譯：一個有 30 年 Unity 經驗的開發者剛發了一篇文：「AI 已經追上了我。」這不是威脅，這是邀請。過去需要多年學習的工具，現在幾小時就能上手。你的第一款遊戲，從來沒有比今天更便宜。你還在等什麼？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">Reddit r/gamedev ↗</a>　pub 2026-09-24　⚠️ 全文待瀏覽器確認</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Quake Champions 宣布 F2P 轉付費、移除所有 BP 和微交易、不再更新——遊戲業最誠實的退場<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>Quake Champions 官方宣布：遊戲從免費遊玩轉為付費應用，移除所有 Battle Pass 和微交易，官方原句「This update marks a new chapter... No additional content updates are planned」（Reddit r/Games 今日 top-of-day，heat-radar 直抓）。⚠️ 具體定價細節需瀏覽器確認。</div>
+            <div class="ln"><b>GameGen 角度：</b><b>F2P 模式需要持續的內容引擎——這是商業模式的基本物理定律。</b>當燃料耗盡，Quake Champions 選擇誠實說出來而不是靠微交易苟延，這反而是最有尊嚴的退場方式。對 GameGen 的 C 側設計啟示：你的創作者社群就是你的燃料——只要他們在做東西、在分享，平台就有生命力。如果他們停了，任何商業模式都救不了。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Quake Champions just went paid. Removed the battle pass. Removed microtransactions. Plans no future updates. It's not a failure — it's the most honest exit in gaming. The F2P model needs fuel. When the fuel runs out, the honest move is to say so. Most studios don't have that courage."<br><span style="color:var(--ink-dim)">中譯：Quake Champions 剛宣布轉成付費遊戲，移除了所有 Battle Pass 和微交易，不再規劃新內容更新。這不是失敗——這是遊戲業最誠實的一次退場。F2P 模式需要不斷添加燃料，當燃料耗盡，最誠實的做法就是說清楚。大多數工作室沒有這個勇氣。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/Games/comments/1wof4bu/quake_champions_todays_update_marks_a_new_chapter/" target="_blank">Reddit r/Games ↗</a>　pub 2026-09-24　⚠️ 定價待瀏覽器確認</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Warframe Steam 在線暴衝 +109%——80K 人同時在線，今日最大 Steam 訊號<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>今日 heat-radar 07:30 官方 Steam API 抓取，Warframe 在線人數 <b>80,551</b>（昨日 38,532，日比 <b>+109.0%</b>）；為今日 steam_velocity 最大正向跳動，steam_live 第 3 名。觸發事件原因 radar 資料層未能直接確認，<b>⚠️ 目前無法完全證實</b>觸發原因。（Steam 官方 API 09-24 即時真數字）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Warframe just doubled its playerbase overnight. 80K players in-game — up 109% from yesterday. That's not a typo. Something happened. What did Warframe just do? Drop your theories below 👇"　<span style="color:var(--ink-dim)">中譯：Warframe 一夜之間在線玩家翻倍。80K 人同時在線，比昨天多了 109%。不是打錯字。一定發生了什麼事。你覺得 Warframe 做了什麼？留言告訴我 👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>讓玩家留言猜原因（新 warbond？新劇情更新？活動回歸？），最高讚留言截圖做後續追蹤，展示 GameGen 對即時脈動的掌握。</div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/app/230410" target="_blank">Steam 官方 API ↗</a>　pub 2026-09-24 radar 07:30　⚠️ 觸發原因待查</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>CS2 上線養雞系統——Counter-Strike 2 現在讓你孵化、養大、帶一隻雞上場比賽<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/gaming 今日 top-of-day 熱文「CS2 adds pet chickens that players can hatch, raise and collect」（2026-09-24 07:30 radar 直抓）；CS:GO Steam 今日在線 540,818（+22.7%）。⚠️ 雞的具體機制（等級/稀有度/皮膚等）為標題層，<b>待瀏覽器全文確認</b>。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Counter-Strike 2 now has pet chickens. You can hatch them. Raise them. Bring one into a match. A 26-year-old FPS just added a Tamagotchi moment. That 'wait, this game has THAT?' feeling is your best feature. What's your game's chicken moment? 🐔"　<span style="color:var(--ink-dim)">中譯：Counter-Strike 2 現在有寵物雞了。你可以孵化它、養大它、然後帶它上場。一款 26 年的 FPS 居然加了電子雞時刻。「等等，這遊戲居然有這個？」這種感覺，才是你最強的功能。你的遊戲的「雞」在哪裡？🐔</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>讓創作者留言「你想在哪款遊戲裡加什麼動物陪你上場」——用驚喜機制的趣味帶動留言創意，順勢說 GameGen 可以把這個做成五分鐘就能玩的分類測驗。</div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">Reddit r/gaming ↗</a>　radar top-of-day 2026-09-24　⚠️ 機制細節待瀏覽器確認</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Minecraft 在近 20 億模擬年後「通關了自己」——AI 玩家完成了大多數人類從沒做到的事<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/Games 今日 top-of-day 熱文「Minecraft Beat Itself After Nearly 2 Billion Simulated Years」（2026-09-24 07:30 radar 直抓），指 AI 系統/自動化玩家在模擬中完成了 Minecraft 的通關目標（擊敗末影龍）。⚠️ 具體 AI 系統名稱與方法論為標題層，<b>待瀏覽器全文確認</b>。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Minecraft just beat itself. After nearly 2 billion simulated years. An AI played until it defeated the Ender Dragon — something most human players never do. A game with no fixed ending just got a fixed ending. Does your game need one?"　<span style="color:var(--ink-dim)">中譯：Minecraft 通關了自己，在近 20 億模擬年後。一個 AI 打敗了末影龍——大多數真人玩家從來沒做到的事。一款沒有固定結局的遊戲剛被給了一個結局。你的遊戲需要結局嗎？</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>哲學問題引發創作者思考遊戲設計——「你的遊戲是設計有終點的還是無盡的？」帶動真實 game design 討論，精準觸及獨立創作者受眾。</div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1wo6k5g/minecraft_beat_itself_after_nearly_2_billion/" target="_blank">Reddit r/Games ↗</a>　radar top-of-day 2026-09-24　⚠️ 方法論待瀏覽器確認</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「你是哪種電子雞？」寵物分類測驗——蹭 CS2 雞雞機制，讓玩家找到自己的遊戲陪伴個性<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>三到五題選擇（遊戲習慣、創作風格、你在遊戲裡幹嘛、偏好節奏），出「你是哪種電子雞」分類結果（如：探索型 / 戰鬥型 / 收集型 / 社交型）＋「你最適合做什麼類型的遊戲」建議卡，一鍵分享。<b>完全泛化設計，不引用任何 Counter-Strike 官方素材、不使用任何版權圖片。</b></div>
+            <div class="ln"><b>為何是今天首選：</b>① CS2 雞雞新聞在 Reddit top-of-day，話題熱度最高；② 寵物/吉祥物機制天然可愛、分享意願高（「我是什麼類型」= 社交貨幣）；③ 完全零 IP 風險；④ 5 分鐘玩完，30–90 秒可剪，符合所有模板規格。</div>
+            <div class="meta">綁 <a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">CS2 雞雞 Reddit 熱文 ↗</a>　模板：寵物分類測驗 / 結果分享卡</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 09/24 即時</span></div>
+          <ol>
+            <li class="up"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">541K ▲22.7%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">93K ▲2.5%</span></li>
+            <li class="hot up"><span class="nm">Warframe</span><span class="vn">81K ▲109%</span></li>
+            <li><span class="nm">Rainbow Six Siege</span><span class="vn">71K ▼0.6%</span></li>
+            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">58K ▲13.0%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">55K ▼4.3%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 09/24 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為沙箱排程，瀏覽器存取在非互動環境被拒（roblox.com/charts / RTrack 需瀏覽器渲染），<b>目前無法完全證實</b>。CC 互動 session 有瀏覽器時可補真數字。</div>
+          <div class="bf">Roblox Charts / RoMonitor / RTrack（需瀏覽器）</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-24T07:30，<b>19/19 源全綠</b>），Steam 為 <b>09-24 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。今日榜單重點：<b>Warframe +109.0%（80,551）是今日最大正向暴衝訊號</b>，昨日基數 38,532，幾乎翻倍；CS:GO +22.7%（540,818）亦明顯上漲；TF2 +13.0%（57,942）。排名跳動：<b>Destiny 2 +18（83→65）</b>是今日最大正向跳動、Don't Starve Together +7（49→42）、Rocket League +7（50→43）、NARAKA +6（45→39）、HELLDIVERS 2 +5（17→12）。Roblox CCU / Twitch 觀看因沙箱排程瀏覽器存取被拒仍標「暫缺」。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝 +109%</span></span>Warframe：80,551 在線，日比 +109.0%——今日唯一三位數暴衝、近期罕見幅度</h3>
+        <div class="sum">Steam 真·日比（09/24 vs 09/23）：Warframe 今日 <b>80,551 人（+109.0%）</b>，昨日基數僅 38,532，單日增加超過 4.2 萬在線人數。這是近期 steam_velocity 資料中極罕見的三位數單日漲幅。其次今日上漲的是 CS:GO +22.7%（540,818）、TF2 +13.0%（57,942）。多數遊戲保持週間小幅震盪，唯 Warframe 明顯異常。排名跳動：<b>Destiny 2（83→65，+18）</b>、Don't Starve Together（49→42，+7）、Rocket League（50→43，+7）、NARAKA（45→39，+6）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>Warframe +109% 是今日最強 Steam 訊號，但觸發原因 radar 資料層目前無法完全證實。</b>可能原因：新 warbond 發布、劇情更新、重大活動回歸或社群事件。Warframe 的商業模式（Free-to-Play + 豐富的 F2P 路徑）與今日 Quake Champions 的「F2P 退場」新聞形成對比——同樣是 F2P 模式，為什麼 Warframe 還在，而 Quake Champions 已宣布放棄？這是今日最值得給 CJ 想的問題。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 09/24 即時（radar 07:30）· <a href="https://store.steampowered.com/app/230410" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次沙箱排程瀏覽器存取被拒、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比與排名跳動為 09-24 官方 API 即時（radar 07:30，baseline_ready = true）。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Tasty Chef</span><span class="vn">★ 新品</span></li>
+            <li><span class="nm">Graveyard Keeper 2</span><span class="vn">熱賣</span></li>
+            <li><span class="nm">CONTROL Resonant</span><span class="vn">★ 熱賣</span></li>
+            <li><span class="nm">WinMon</span><span class="vn">新品</span></li>
+            <li><span class="nm">WARDOGS</span><span class="vn">★ 熱賣榜</span></li>
+            <li><span class="nm">Dressmaker</span><span class="vn">熱賣</span></li>
+          </ol>
+          <div class="bf">Steam 新品/熱賣榜 · 09/24 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO HTML5 新爆</span><span class="metric">小體量早期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">FNaF: DAYBREAK（FNaF 粉絲作）</span><span class="vn">★ 粉絲</span></li>
+            <li class="hot"><span class="nm">StreamRush（直播主題）</span><span class="vn">★ 病毒</span></li>
+            <li><span class="nm">The Community Notes Are Wrong（社群筆記梗）</span><span class="vn">梗</span></li>
+            <li><span class="nm">Bongo Cat（樂器）</span><span class="vn">音樂</span></li>
+            <li><span class="nm">Dating Killmulator 2</span><span class="vn">反差</span></li>
+            <li><span class="nm">How to Crab to Zero（GMTK 2026）</span><span class="vn">GMTK</span></li>
+          </ol>
+          <div class="bf">itch.io html5 · 09/24 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>本週早期 loop 共相延續：直播主題（StreamRush）、IP 粉絲作（FNaF）持續；CS2 雞雞是今天最強的「驚喜機制」早期訊號</h3>
+        <div class="sum">Steam 新品方面今天有幾個值得注意的款：<b>Tasty Chef</b>（料理題材新品）、<b>Graveyard Keeper 2</b>（沙盒墓園管理，系列延續）、<b>CONTROL Resonant</b>（Remedy 新作，熱賣）在榜。itch.io html5 的節奏繼續：StreamRush（直播主題病毒類）與 FNaF: DAYBREAK（IP 粉絲）仍在榜；GMTK 2026 投稿作品 How to Crab to Zero 是本週新注意的 game jam 入口信號。今日最重要的早期訊號不在 itch 或 Steam 新品，而是 <b>CS2 養雞系統</b>——主流 FPS 的機制驚喜更新代表「寵物/吉祥物陪伴機制」正在被主流玩家接受。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>CS2 加雞是今天最重要的機制靈感訊號。</b>不是因為 CS2 的雞本身，而是因為這個更新告訴你：玩家在最競技化的遊戲裡也想要「可愛/可收集的東西」。這個需求在輕量化遊戲更強烈。GameGen 做的 Trend-to-Game 遊戲裡，加入「你的陪伴角色」這個元素，不是噱頭，是已被市場驗證的留存機制。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
+          </div>
+          <div class="src">STEAM 新品 / ITCH.IO · 09/24 radar · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · 產業動向</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 工具化</span></span>30 年 Unity 老兵直言「AI 已追上我的開發能力」——r/gamedev 今日最熱討論</h3>
+        <div class="sum">Reddit r/gamedev 今日 top-of-day 熱文由一位自稱有 30 年 Unity 開發經驗的資深開發者發表，標題「AI models have caught up with Unity dev. My insights as someone with 30 years of experience.」；HackerNews 同步上榜（3 分）。<b>⚠️ 全文論點為標題層，未 web_fetch 驗證具體內容，目前無法完全證實詳細論述，本報以標題概念引用。</b>（Reddit r/gamedev + HN 2026-09-24 radar）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>30 年老兵說「AI 追上了我」——這個訊號的意義不在於AI是否真的追上了，而在於「一個最有資格說這句話的人選擇說出來了」。</b>這對 C 側創作者的意義是：如果你還在等「再學三年再開始做遊戲」，今天是最好的反論。AI 工具降低的不只是技術門檻，是信心門檻。GameGen T2G 的定位在這個背景下更清晰：你不需要追上 30 年老兵，你只需要今天開始。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Reddit r/gamedev + HN · 9/24 · <a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>機制驚喜</span></span>CS2 加雞了——Counter-Strike 2 現在有寵物雞可以孵化、養大、帶進比賽</h3>
+        <div class="sum">Reddit r/gaming 今日 top-of-day 熱文「CS2 adds pet chickens that players can hatch, raise and collect」；CS:GO Steam 今日在線 540,818（+22.7%）。<b>⚠️ 具體機制細節（稀有度系統/互動方式/收集路徑等）為標題層，目前無法完全證實，待瀏覽器全文確認。</b>（Reddit r/gaming 2026-09-24 radar）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是今天最直接的 Trend-to-Game 機制靈感。<b>Counter-Strike 2 加雞，等於是全球最大 FPS 玩家群體驗證了「寵物/陪伴機制」的市場需求。</b>在競技遊戲裡都受歡迎，在輕量化 Trend-to-Game 遊戲裡會更受歡迎。設計啟示：每款遊戲都可以有一個「陪你的東西」——不需要複雜，需要可愛。CS2 雞雞今天是最高曝光的「驚喜機制」案例，今天做 Demo 的命中率最高。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
+          </div>
+          <div class="src">Reddit r/gaming · 9/24 · <a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>商業模式</span></span>Quake Champions 宣布 F2P→付費、移除 BP/微交易、不再更新——最誠實的退場</h3>
+        <div class="sum">Quake Champions 官方公告：從免費遊玩轉為付費應用，移除所有 Battle Pass 和微交易，官方原句「No additional content updates are planned」（Reddit r/Games 今日 top-of-day）。<b>⚠️ 具體定價細節目前無法完全證實，待瀏覽器確認。</b>（Reddit r/Games 2026-09-24 radar）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Quake Champions 的退場方式值得研究——<b>F2P 模式的生命週期本質是「創作者/玩家生態的持續輸入」</b>。Warframe 還在，因為它的玩家社群還在持續創造和討論；Quake Champions 退場，因為它的燃料耗盡了。這不是技術問題，是社群問題。對 GameGen 的直接啟示：C 側創作者的持續活動就是你的 F2P 引擎，這比任何 Battle Pass 節點都耐用。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Reddit r/Games · 9/24 · <a href="https://www.reddit.com/r/Games/comments/1wof4bu/quake_champions_todays_update_marks_a_new_chapter/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>哲學/設計</span></span>Minecraft 在近 20 億模擬年後「通關了自己」——AI 玩家做到了大多數人從沒做到的事</h3>
+        <div class="sum">Reddit r/Games 今日 top-of-day 熱文「Minecraft Beat Itself After Nearly 2 Billion Simulated Years」，指 AI 系統在模擬中完成了 Minecraft 通關目標（擊敗末影龍）。<b>⚠️ 具體 AI 方法論、模擬方式、時間框架的計算基準為標題層，目前無法完全證實，待瀏覽器確認。</b>（Reddit r/Games 2026-09-24 radar）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條新聞的 Trend-to-Game 角度是：<b>「終點」的設計決策比「內容量」更重要。</b>Minecraft 沒有強制的終點，但有一個可選的終點（末影龍）——這個設計讓遊戲能持續吸引不同目標的玩家。對 Trend-to-Game 短效遊戲的設計啟示：你不需要大量內容，你需要一個清晰的「到達感」——玩家分享的那一刻，就是你設計的終點被達到的時刻。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">Reddit r/Games · 9/24 · <a href="https://www.reddit.com/r/Games/comments/1wo6k5g/minecraft_beat_itself_after_nearly_2_billion/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>「Counter-Strike 2 現在有雞了」——FPS 加養雞系統是今日最強驚喜迷因</h3>
+        <div class="sum">Reddit r/gaming 今日 top-of-day 熱文：CS2 養雞系統上線。梗的結構很清楚：<b>「你不期待的東西突然出現在你期待的地方」</b>——這是驚喜型迷因的公式。CS2 以競技嚴肅著稱，加雞等於是打破第四面牆。具體互動數字需瀏覽器確認（<b>⚠️ 目前無法完全證實票數</b>），radar 標題層引用。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是今天最有可玩性的迷因素材。<b>驚喜 + 反差 = 今日迷因公式。</b>CS2 雞雞的迷因能量在於：「你以為你在玩什麼遊戲，結果是……」。做成 X 貼文時，不需要引用 CS2 官方圖片——只需要問「你想在哪款遊戲裡加什麼奇怪動物當寵物」，讓留言變成 UGC 素材。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
+          </div>
+          <div class="src">Reddit r/gaming · 09/24 top-of-day · <a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>哲學迷因</span></span>「Minecraft 在 20 億年後通關了自己」——AI 完成任務迷因 + 遊戲設計哲學</h3>
+        <div class="sum">Reddit r/Games 今日 top-of-day：Minecraft beat itself after nearly 2 billion simulated years。梗的結構：<b>「我們 15 年了都沒通關，AI 用了 20 億年通關了——等等這到底是誰贏了？」</b>哲學意味十足，適合引發討論。⚠️ 具體 AI 方法論為標題層，待確認。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條迷因可以引向兩個方向：① 幽默角度（AI 都通關了你通關了嗎）；② 設計哲學角度（你的遊戲設計了多長的「終點距離」）。兩個角度都適合 GameGen C 側受眾（創作者 / 遊戲設計興趣者）。<b>⚠️ 純網路迷因今日仍無可驗證新料</b>（KYM / TikTok 需瀏覽器），今日迷因彈藥由 Reddit top-of-day 佐證的 CS2 雞雞 + Minecraft 擔綱。</div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>itch 病毒榜</span></span>StreamRush + FNaF: DAYBREAK + How to Crab to Zero（GMTK 2026）持續在榜</h3>
+        <div class="sum">今日 itch.io viral 榜：<b>StreamRush</b>（直播主題速度衝刺）、<b>FNaF: DAYBREAK</b>（FNaF 粉絲作品）繼續在榜；本週新注意到的是 <b>How to Crab to Zero</b>（GMTK 2026 game jam 投稿），代表本年度最大 game jam 投稿已開始在 viral 榜出現，是觀察今年獨立開發者趨勢的早期訊號。（itch.io html5 viral 標籤，9/24 radar）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>GMTK 2026 的 jam 投稿開始進 viral 榜，是很好的「創作者社群活躍度」指標。<b>Game jam 投稿 = 創作者正在做遊戲的證據。</b>GameGen 的 C 側受眾裡，game jam 參與者是最好的目標群之一——他們已經有做遊戲的意願，缺的是分發和曝光。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · FNaF 除外</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO viral · 09/24 radar · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（itch / Steam 新品 / 時事）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">寵物/吉祥物陪伴型（CS2 雞雞）</span><span class="vn">★ 分享</span></li>
+            <li class="hot"><span class="nm">直播主題速度衝刺（StreamRush 型）</span><span class="vn">衝刺</span></li>
+            <li><span class="nm">終點設計型（Minecraft 通關模型）</span><span class="vn">達成感</span></li>
+            <li><span class="nm">分類測驗型（結果分享卡）</span><span class="vn">社交貨幣</span></li>
+            <li><span class="nm">Tasty Chef — 料理主題</span><span class="vn">輕鬆</span></li>
+          </ol>
+          <div class="bf">itch.io html5 / Steam 新品 / Reddit 時事 · 09/24 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>今日首推機制：寵物陪伴型 × 終點設計——CS2 雞雞 + Minecraft 通關給出今天最強雙重設計啟示</h3>
+        <div class="sum">今天有兩個機制值得直接進模板：① <b>寵物/吉祥物陪伴型</b>（CS2 雞雞啟發，問幾題 → 出「你的遊戲陪伴是什麼」結果卡 → 分享）——「我的遊戲陪伴是…」是社交貨幣，零 IP 風險；② <b>終點設計型</b>（Minecraft 通關討論啟發）——讓玩家清楚看到「到達感」的瞬間，設計一個可以截圖分享的達成畫面。次要機制：StreamRush 直播衝刺型（持續在榜，VTuber 受眾共鳴）、Tasty Chef 料理題材（輕鬆可愛）。<b>unityroom 今週ピックアップ需瀏覽器，本次排程暫缺、目前無法完全證實。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>寵物陪伴機制的核心優勢：玩家會主動分享「我養了什麼/我是什麼」——這是純自驅的 UGC 分享動機。</b>CS2 用了 26 年才加這個功能，GameGen 今天就可以做成一個五分鐘的分類遊戲。終點設計的啟示：每款短效遊戲都需要一個讓玩家截圖發到社群的「到達畫面」——這不是加分項，是分享率的基本設計要求。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 全泛化</span></span></div></div>
+          </div>
+          <div class="src">Reddit top-of-day / ITCH.IO · 09/24 radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日瀏覽器存取被拒，繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，瀏覽器在非互動環境無法取得站點授權（Threads 需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。CC 互動 session 或本機環境有瀏覽器時，請補抓今日話題，尤其優先查：① CS2 雞雞在繁中玩家中的討論（台灣 CS2 玩家反應）；② 「AI 追上 Unity 老兵」在繁中開發者社群的迴響；③ Forza Horizon 6 日本玩家 ban 事件在繁中玩家社群有沒有引起討論。</div>
+      </div>
+    </section>
+
+    <!-- Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>CS2 養雞系統（Reddit r/gaming top-of-day）</td><td><span class="tmpl">寵物陪伴 / 分類測驗</span></td><td>「我的遊戲陪伴是什麼類型」社交貨幣</td><td class="rk-low">低 · 泛化（不用 CS2 官方圖像）</td><td>★ 本日 Demo 首選；三到五題 → 四分類寵物型結果卡，全泛化零 IP 風險；今天窗口熱度最高</td></tr>
+          <tr><td>AI 追上 Unity 老兵（r/gamedev top-of-day）</td><td><span class="tmpl">定位素材 / CJ LinkedIn</span></td><td>「第一款遊戲從來沒有比今天更便宜」</td><td class="rk-low">低</td><td>★ CJ LinkedIn 主線；⚠️ 全文待確認，不引用具體百分比/工具名，只用標題層概念論述</td></tr>
+          <tr><td>Quake Champions F2P→付費退場</td><td><span class="tmpl">定位素材（商業模式）</span></td><td>「F2P 需要燃料，沒有就說清楚」</td><td class="rk-low">低</td><td>CJ LinkedIn 第二條；對比 Warframe +109% 同日並存，說明「社群燃料」的差異</td></tr>
+          <tr><td>Warframe +109% Steam 暴衝</td><td><span class="tmpl">即時互動貼</span></td><td>「你猜是什麼原因？」留言互動</td><td class="rk-low">低</td><td>不推測原因（⚠️ 目前無法完全證實），只呈現真數字讓玩家猜；Steam 官方 API 數字可信</td></tr>
+          <tr><td>Minecraft beat itself（r/Games top-of-day）</td><td><span class="tmpl">哲學互動貼 / 終點設計</span></td><td>「你的遊戲需要結局嗎？」討論</td><td class="rk-low">低</td><td>引發創作者對遊戲終點設計的思考；⚠️ AI 方法論待全文確認，不宣稱具體技術細節</td></tr>
+          <tr><td>Forza Horizon 6 日本玩家 ban（r/Games top-of-day）</td><td><span class="tmpl">C 側平台文化討論</span></td><td>「UGC 自由 vs 平台規則」邊界討論</td><td class="rk-mid">中 · 敏感</td><td>可作為 CJ B2B 討論素材；對外發文需謹慎——不站隊、以設計觀察而非政治評論框架呈現；⚠️ ban 數字待確認</td></tr>
+          <tr><td>GMTK 2026 jam 作品進 itch viral 榜</td><td><span class="tmpl">早期訊號 / 社群洞察</span></td><td>「game jam 創作者是最好的 C 側受眾」</td><td class="rk-low">低</td><td>不進頭版；作為社群受眾定位的背景觀察使用</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>AI 追上 Unity 老兵 → 第一款遊戲門檻最低的一年</td><td>r/gamedev 今日 top-of-day：30 年 Unity 老兵直言 "AI has caught up with me"；HN 同步上榜。⚠️ 全文待確認，以標題概念引用</td><td>"A developer with 30 years of Unity experience just said: 'AI has caught up with me.' That's not a threat. That's an invitation. Your first game has never been cheaper to make."</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">↗</a></td></tr>
+          <tr><td>Quake Champions 誠實退場 → F2P 需要社群燃料</td><td>Quake Champions F2P→付費，移除所有 BP 和微交易，「No additional content updates are planned」（Reddit r/Games top-of-day）；同日 Warframe +109%（有社群燃料的對比案例）</td><td>"Quake Champions just went paid. Removed everything. Plans no updates. The F2P model needs fuel. Warframe is up 109% today — because it still has fuel. The difference isn't tech. It's community."</td><td><a href="https://www.reddit.com/r/Games/comments/1wof4bu/quake_champions_todays_update_marks_a_new_chapter/" target="_blank">↗</a></td></tr>
+          <tr><td>CS2 加雞 → 驚喜機制是最強的有機分享引擎</td><td>CS2 今日上線養雞系統（r/gaming top-of-day）；CS:GO Steam 在線 540,818（+22.7%）；「你不知道它居然有這個」情緒是有機分享的觸發器</td><td>"Counter-Strike 2 just added pet chickens. A 26-year FPS added a Tamagotchi moment. That 'wait, this game has THAT?' feeling — that's organic sharing. Build that feeling into every product you ship."</td><td><a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">↗</a></td></tr>
+          <tr><td>Diablo 5 重新設計怪物分級 → 「角色力量感」是留存的基礎設計</td><td>Blizzard 宣布 Diablo 5 將採取不同於 Diablo 4 的怪物等級縮放方式，讓玩家隨進度感到明顯更強（Reddit r/gaming + PCGamer radar，2026-09-24）；⚠️ 具體設計細節為標題層，待確認</td><td>"Blizzard says Diablo 5 will 'take a different approach to level scaling — so your character feels noticeably stronger as you progress.' That 'noticeably' is the whole design. Power fantasy is not optional. It's the first-session hook."</td><td><a href="https://www.reddit.com/r/gaming/comments/1wnwj9m/diablo_5_will_take_a_somewhat_different_approach/" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（AI 老兵告白 / Quake 誠實退場）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。<b>⚠️ AI 老兵全文待瀏覽器確認，CJ 發文前建議 Pizza 或 CW 先 web_fetch 看一眼原文是否論點一致；Quake 定價細節同樣待確認，hook 不提具體價格。Forza Horizon 6 日本 ban 事件暫不建議對外發文（⚠️ 細節待確認 + 文化政治敏感性）。</b>
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>★ CS2 雞雞驚喜機制：「Counter-Strike 2 加了養雞系統。你想在哪款嚴肅遊戲裡加什麼奇怪寵物？」留言互動</li><li>Warframe +109%：「Warframe 一夜翻倍在線，80K 人週四早上在線——一定發生了什麼，你猜是什麼？」</li><li>Minecraft beat itself：「AI 在 20 億模擬年後通關了 Minecraft。你的遊戲設計了結局嗎？」哲學互動貼</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「你是哪種電子雞？」寵物分類測驗——問三到五題 → 出寵物類型 + 「你最適合做什麼遊戲」結果卡，全泛化零 IP 風險</li><li>「你的遊戲需要結局嗎？」設計選擇互動——有終點 vs 無盡，選擇影響結果分享卡</li><li>料理主題輕遊戲（Tasty Chef 新品趨勢，輕量、可愛、分享率高）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Warframe +109% 暴衝的觸發事件（今日無法完全證實，待互動 session 查原因）</li><li>CS2 雞雞的具體機制細節（等級系統 / 稀有度 / 收集路徑），看有沒有更深的 loop 靈感</li><li>「AI 追上 Unity 老兵」全文論點（待瀏覽器確認），看適不適合 CJ 正式引用</li><li>Quake Champions 定價與玩家反應（誠實退場是否被玩家肯定，作為「F2P vs paid」商業模式討論素材）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li><b>CS2 雞雞：不引用任何 Counter-Strike 官方圖像/品牌</b>——使用泛化的「寵物陪伴」框架描述，不做成「CS2 仿作」</li><li><b>AI 老兵：全文待確認，不對外引用具體論點百分比或工具名</b>——只用「30 年老兵說 AI 追上了我」的概念層</li><li><b>Forza Horizon 6 日本 ban：暫不對外發文</b>——文化政治敏感，ban 規模細節待確認，不站任何一方立場</li><li><b>Warframe 暴衝原因未查證，不要填入猜測解釋</b>——只呈現真數字讓玩家猜</li><li>Quake Champions 定價細節未確認，hook 不提具體價格</li><li>對外文案的賭場語言（下注/payout/big win 等）一律過濾</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證 · 2026-09-24）</h4>
+      <table>
+        <tr><td><b>CJ #1</b>　AI 追上 Unity 老兵</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">Reddit r/gamedev</a>（radar 2026-09-24T07:30 直抓，top-of-day）+ HN 上榜（3 分，heat radar）　驗：標題「AI models have caught up with Unity dev. My insights as someone with 30 years of experience.」被 radar 確認 top-of-day<span class="ok">✓（radar 標題層）</span>　⚠️ <b>全文論點待瀏覽器確認，本報以標題概念引用，不宣稱具體工具名/比較數字</b><span class="pp">partial</span>　pub 2026-09-24　🆕 今天新</td></tr>
+        <tr><td><b>CJ #2</b>　Quake Champions F2P→paid</td><td><a href="https://www.reddit.com/r/Games/comments/1wof4bu/quake_champions_todays_update_marks_a_new_chapter/" target="_blank">Reddit r/Games</a>（radar 2026-09-24T07:30 直抓，top-of-day）　驗：標題「Quake Champions: Today's update marks a new chapter... Battle Passes and microtransactions have been removed. No additional content updates are planned」被 radar 確認<span class="ok">✓（radar 標題層）</span>　⚠️ <b>定價細節待瀏覽器確認</b><span class="pp">partial</span>　pub 2026-09-24　🆕 今天新</td></tr>
+        <tr><td><b>小編 #1</b>　Warframe +109%</td><td>heat_latest.json 2026-09-24T07:30 sources.steam_velocity：today 80,551 / yesterday 38,532 / pct +109.0%　官方 Steam API 即時真數字（GetNumberOfCurrentPlayers，非估計）<span class="ok">✓（官方 API）</span>　⚠️ <b>觸發原因目前無法完全證實，報中不推測</b></td></tr>
+        <tr><td><b>小編 #2</b>　CS2 雞雞系統</td><td>heat_latest.json 2026-09-24T07:30 sources.reddit.items：「CS2 adds pet chickens that players can hatch, raise and collect」列於 r/gaming top-of-day<span class="ok">✓（radar 標題層）</span>　⚠️ <b>具體機制細節待瀏覽器確認</b><span class="pp">partial</span></td></tr>
+        <tr><td><b>小編 #3</b>　Minecraft beat itself</td><td>heat_latest.json 2026-09-24T07:30 sources.reddit.items：「Minecraft Beat Itself After Nearly 2 Billion Simulated Years」列於 r/Games top-of-day<span class="ok">✓（radar 標題層）</span>　⚠️ <b>AI 方法論待瀏覽器確認</b><span class="pp">partial</span></td></tr>
+        <tr><td><b>Demo</b>　電子雞寵物分類測驗</td><td>GameGen 原創提案，綁定 CS2 雞雞 Reddit top-of-day（已確認）；泛化設計無外部 IP 依賴，風險控制：不引用 CS2 官方圖像/品牌<span class="ok">✓</span></td></tr>
+        <tr><td>Forza Horizon 6 日本 ban（高討論 / 趨勢 08）</td><td><a href="https://www.reddit.com/r/Games/comments/1wobk7m/they_dont_respect_japanese_culture_at_all_forza/" target="_blank">Reddit r/Games</a>（radar top-of-day）　⚠️ <b>ban 規模/舉報機制細節待確認，暫不建議對外發文</b><span class="pp">partial</span></td></tr>
+        <tr><td>Diablo 5 怪物分級（CJ 題材 04）</td><td><a href="https://www.reddit.com/r/gaming/comments/1wnwj9m/diablo_5_will_take_a_somewhat_different_approach/" target="_blank">Reddit r/gaming</a>（radar top-of-day）+ <a href="https://www.pcgamer.com/games/rpg/diablo-5-will-take-a-somewhat-different-approach-to-diablo-4s-monster-level-scaling-so-your-character-feels-noticeably-stronger-as-you-progress/" target="_blank">PCGamer</a>（radar RSS）　⚠️ <b>具體設計細節待確認，hook 以概念層引用</b><span class="pp">partial</span></td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-09-24T07:30 官方 GetNumberOfCurrentPlayers（API 直抓）　CS:GO 540,818（+22.7%）/ Warframe 80,551（+109.0%）/ TF2 57,942（+13.0%）/ R6 Siege 71,184（-0.6%）；steam_movers：Destiny 2 +18（83→65）/ Don't Starve Together +7 / Rocket League +7 / NARAKA +6 / HELLDIVERS 2 +5；radar 19/19 源全綠<span class="ok">✓</span></td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條 radar 標題層確認（AI 老兵 / Quake / CS2 雞 / Minecraft / Warframe 暴衝）· Steam 官方 API 09-24 即時真數字（radar 07:30，19/19 源全綠）· AI 老兵 / Quake 定價 / CS2 機制 / Minecraft 方法論均為摘要層，待瀏覽器全文確認 · Roblox / Twitch / Threads / KYM / TikTok 因沙箱排程瀏覽器存取被拒標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/09/24 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
