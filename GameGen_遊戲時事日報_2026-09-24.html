@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -227,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 09 / 24 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑 · 19/19 源全綠）· 來源 19 站</span>
+        <span class="dateflag">2026 / 09 / 24 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）+ 瀏覽器深掃 Twitch／Roblox／KYM／Threads／unityroom · 來源 19+5 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -235,9 +237,9 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>CS2 上線了養雞系統。Warframe 在線人數一夜翻倍（+109%）。一個有 30 年 Unity 經驗的老兵在 r/gamedev 宣告「AI 已追上了我的開發能力」——三件事同一天發生，指向同一個方向。</b>Counter-Strike 2 宣布玩家現在可以孵化、養大、並把一隻雞帶進對戰場——這是 2026 年最讓人愣住的功能更新。同日 r/gamedev 最熱文章是一位 30 年 Unity 老兵直言「AI models have caught up with me」，引發開發者社群大討論。<span class="hl">另一條重要新聞：Quake Champions 宣布從 F2P 轉為付費應用，移除所有 Battle Pass 和微交易，且明確聲明不再更新——遊戲業史上最誠實的退場聲明之一。</span></p>
-        <p>三件事的共同訊號：<b>「讓玩家驚叫的東西不需要是最高科技的東西。」</b>CS2 的雞不是 AI 功能，是設計師對「驚喜感」的理解。30 年老兵的告白不是說 AI 要取代人，是說門檻正在降低。Quake Champions 的誠實退場是說：沒有持續內容引擎的 F2P 是在消耗信任。<span class="hl">對 GameGen：Trend-to-Game Engine 的核心優勢正是「讓今天的驚喜變成可玩的東西」——今天這三條新聞都是好素材。</span></p>
-        <div class="pull">▸ 今天就能蹭：① CJ LinkedIn：「AI 追上 Unity 老兵」→「第一款遊戲從來沒有比今天更便宜」；② X 互動貼：Warframe +109% 互動問答 ＋ CS2 雞雞「你的遊戲的雞在哪裡？」；③ Demo 提案：寵物/吉祥物成就遊戲——做一款「你是哪種電子雞」小測驗，結果分享卡，零 IP 風險。</div>
+        <p><b>Roblox 今天同時證明了兩件互相矛盾的事：AI 基礎建設可以蓋到多大，以及玩家真正想玩的東西可以多簡單。</b>Naavik 9/17 報導 Roblox 已跑 <span class="hl">400+ 套 AI 系統、每秒 150 萬次推論</span>，用 <span class="hl">130 億小時</span>玩家互動數據訓練模型，Cube 上線數月內生出 <b>100 萬個 3D 資產</b>，2026 年單月已有 <b>44% 的前 1000 大創作者</b>用過 Assistant 或 MCP。而就在我們今天直接連上 roblox.com/charts 看到的即時榜：<b>同時在線 130–140 萬人</b>排第一的遊戲，是規則單純到一句話講完的「偷一顆蛋」——比 Roblox 自己砸重本的 AI 生成內容還要熱得多。</p>
+        <p>訊號很直接：<b>基礎建設的軍備競賽在巨頭那邊，但贏的仍是最簡單的 loop</b>。GameGen 不需要跟 Roblox 比 AI 系統規模，要比的是「把今天的梗變成一句話規則的遊戲」有多快。今天的彈藥也印證同一個公式——Warframe 靠一次更新一天內同時在線 <b>+109%</b>，以及一款「削馬鈴薯」的迷你遊戲爆紅到被人指控 AI 抄襲——都在說同一件事：<b>簡單、即時、有話題的 loop 永遠贏過大投資</b>。</p>
+        <div class="pull">▸ 今天就能蹭：削馬鈴薯的 AI 抄襲爭議正在全網吵——GameGen 今天就做一版泛化「削蔬菜」速切 loop，公開標「remix, not clone」＋創作者掛名，用實際行動回答這場AI原創權辯論，同時示範 GameGen 的 remix 機制本來就是設計來公開掛名、而非偷偷抄。</div>
       </div>
 
       <!-- 📰 今日彈藥 頭版 -->
@@ -249,19 +251,19 @@
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>30 年 Unity 老兵直言：「AI 已追上了我的開發能力」——第一款遊戲從來沒有比今天更便宜<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>新聞事實：</b>Reddit r/gamedev 今日 top-of-day 熱文「AI models have caught up with Unity dev. My insights as someone with 30 years of experience.」（2026-09-24 07:30 heat-radar 直抓）；HackerNews 同步上榜（3 分）。⚠️ 具體論點內容為標題層，<b>目前無法完全證實</b>全文論據，本報以標題概念引用。</div>
-            <div class="ln"><b>GameGen 角度：</b>這不是 AI 威脅論，是 AI 機會論的最強背書。<b>30 年功力的老兵說「AI 追上了我」，代表什麼？代表一個什麼都不懂的新手今天可以站在一個比 5 年前有 3 年經驗的開發者更好的起跑線上。</b>對 C 側創作者：第一款遊戲的門檻正在消失。對 CJ 的 B2B 對話：不是在幫你省成本，是在替你創造下一批自己做第一款的人——他們需要平台，他們需要 GameGen。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "A developer with 30 years of Unity experience just posted: 'AI has caught up with me.' That's not a threat. That's an invitation. The tools that used to take years to learn are now accessible in hours. Your first game has never been cheaper to make. What's your excuse now?"<br><span style="color:var(--ink-dim)">中譯：一個有 30 年 Unity 經驗的開發者剛發了一篇文：「AI 已經追上了我。」這不是威脅，這是邀請。過去需要多年學習的工具，現在幾小時就能上手。你的第一款遊戲，從來沒有比今天更便宜。你還在等什麼？</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">Reddit r/gamedev ↗</a>　pub 2026-09-24　⚠️ 全文待瀏覽器確認</div>
+            <div class="ti"><span class="fresh f-cont">🔄 進展更新</span>Roblox 砸出 400+ 套 AI 系統、每秒 150 萬次推論——但基礎建設規模不是創作者經濟的護城河</div>
+            <div class="ln"><b>新聞事實：</b>Naavik 9/17 深度報導：Roblox 目前運行 <b>400+ 個 AI 系統</b>、每秒處理 <b>150 萬次推論</b>，用 <b>130 億小時</b>玩家互動數據訓練模型；生成工具 Cube 上線數月內已產出 <b>100 萬個 3D 資產</b>；2026 年某一個月內，Roblox 前 1000 大創作者中有 <b>44%</b> 用過 AI Assistant 或 MCP；Roblox 目前佔全球遊戲內容支出 <b>3.4%</b>；CEO Dave Baszucki：「AI 將從根本上加速遊戲產業，我們有獨特的位置引領這場轉型」（Naavik，pub 2026-09-17）。</div>
+            <div class="ln"><b>GameGen 角度：</b>Roblox 把 AI 蓋成「一整套操作系統」——引擎、基礎設施、服務全包，這是資本規模的比賽，GameGen 打不了也不需要打。GameGen 的護城河是<b>速度</b>：不需要 400 套系統、不需要 130 億小時數據，一句話 prompt、一個熱點，30–90 秒內變成可玩連結。跟 Roblox 比創作者滲透率沒意義，比 Trend Response Time 才是我們的戰場。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Roblox just showed us the AI infrastructure ceiling: 400+ systems, 1.5M inferences a second, 13B hours of data. Impressive. But the #1 game on their own charts today is 'Steal an Egg' — a one-sentence rule. Scale isn't the moat. Speed is."<br><span style="color:var(--ink-dim)">中譯：Roblox 剛展示了 AI 基礎建設的天花板：400+ 系統、每秒 150 萬次推論、130 億小時數據。很猛。但他們自己榜單今天的第一名，是規則一句話講完的「偷一顆蛋」。規模不是護城河，速度才是。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">Naavik ↗</a>　pub 2026-09-17　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Quake Champions 宣布 F2P 轉付費、移除所有 BP 和微交易、不再更新——遊戲業最誠實的退場<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>新聞事實：</b>Quake Champions 官方宣布：遊戲從免費遊玩轉為付費應用，移除所有 Battle Pass 和微交易，官方原句「This update marks a new chapter... No additional content updates are planned」（Reddit r/Games 今日 top-of-day，heat-radar 直抓）。⚠️ 具體定價細節需瀏覽器確認。</div>
-            <div class="ln"><b>GameGen 角度：</b><b>F2P 模式需要持續的內容引擎——這是商業模式的基本物理定律。</b>當燃料耗盡，Quake Champions 選擇誠實說出來而不是靠微交易苟延，這反而是最有尊嚴的退場方式。對 GameGen 的 C 側設計啟示：你的創作者社群就是你的燃料——只要他們在做東西、在分享，平台就有生命力。如果他們停了，任何商業模式都救不了。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Quake Champions just went paid. Removed the battle pass. Removed microtransactions. Plans no future updates. It's not a failure — it's the most honest exit in gaming. The F2P model needs fuel. When the fuel runs out, the honest move is to say so. Most studios don't have that courage."<br><span style="color:var(--ink-dim)">中譯：Quake Champions 剛宣布轉成付費遊戲，移除了所有 Battle Pass 和微交易，不再規劃新內容更新。這不是失敗——這是遊戲業最誠實的一次退場。F2P 模式需要不斷添加燃料，當燃料耗盡，最誠實的做法就是說清楚。大多數工作室沒有這個勇氣。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/Games/comments/1wof4bu/quake_champions_todays_update_marks_a_new_chapter/" target="_blank">Reddit r/Games ↗</a>　pub 2026-09-24　⚠️ 定價待瀏覽器確認</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Discord 同週上線「年齡驗證」＋測試 FanDuel 博弈廣告——GameGen 的無賭博語言政策現在是真的資產</div>
+            <div class="ln"><b>新聞事實：</b>Discord 本週開始推出年齡驗證機制（2 月已預告、延後上線做更不侵入的方案），官方稱「超過 90% 的用戶不會被要求驗證」，用帳號年齡 / 伺服器參與等訊號判斷，而非強制生物辨識；同一時間 Discord 對美國用戶限量測試 <b>FanDuel 運動博弈廣告</b>，用戶立刻質疑時機，Discord 回應這是有限測試、仍禁止傳統賭博廣告、會用「年齡訊號」阻擋未成年人看到（GameSpot，pub 2026-09-23）。</div>
+            <div class="ln"><b>GameGen 角度：</b>Discord 是 GameGen 最重要的 C 側分發通路，現在它一邊收緊年齡把關、一邊測試博弈廣告，平台的信任風險正在上升。GameGen 從第一天就禁用賭博語言（big win / jackpot / payout），這在今天的環境下不只是合規口號，是能直接講給 operator 聽的<b>信任資產</b>：我們的內容天生適合一個正在收緊年齡驗證的平台。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Discord tightened age verification and tested gambling ads in the same week. Platforms are getting stricter on trust. GameGen's no-gambling-language rule from day one just became a distribution advantage, not just a policy."<br><span style="color:var(--ink-dim)">中譯：Discord 同一週收緊年齡驗證、又測試博弈廣告。平台對信任的要求正在變嚴。GameGen 從第一天就沒有賭博語言的規矩，現在不只是合規，是分發優勢。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamespot.com/articles/discord-begins-rolling-out-age-verification-and-a-sponsorship-with-fanduel/" target="_blank">GameSpot ↗</a>　pub 2026-09-23　verified ✓</div>
           </div>
         </div>
 
@@ -270,27 +272,27 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Warframe Steam 在線暴衝 +109%——80K 人同時在線，今日最大 Steam 訊號<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>今日 heat-radar 07:30 官方 Steam API 抓取，Warframe 在線人數 <b>80,551</b>（昨日 38,532，日比 <b>+109.0%</b>）；為今日 steam_velocity 最大正向跳動，steam_live 第 3 名。觸發事件原因 radar 資料層未能直接確認，<b>⚠️ 目前無法完全證實</b>觸發原因。（Steam 官方 API 09-24 即時真數字）</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Warframe just doubled its playerbase overnight. 80K players in-game — up 109% from yesterday. That's not a typo. Something happened. What did Warframe just do? Drop your theories below 👇"　<span style="color:var(--ink-dim)">中譯：Warframe 一夜之間在線玩家翻倍。80K 人同時在線，比昨天多了 109%。不是打錯字。一定發生了什麼事。你覺得 Warframe 做了什麼？留言告訴我 👇</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>讓玩家留言猜原因（新 warbond？新劇情更新？活動回歸？），最高讚留言截圖做後續追蹤，展示 GameGen 對即時脈動的掌握。</div>
-            <div class="meta">來源 <a href="https://store.steampowered.com/app/230410" target="_blank">Steam 官方 API ↗</a>　pub 2026-09-24 radar 07:30　⚠️ 觸發原因待查</div>
+            <div class="ti"><span class="fresh f-cont">🔄 進展更新</span>兩款「削馬鈴薯」遊戲吵起來了：一邊喊 AI 抄襲，一邊喊沒聽過你<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>獨立開發者控訴另一款「Potato Please」用 AI 抄襲他先發的病毒遊戲「1,000,000 Potatoes」（削馬鈴薯的簡單 loop），對方否認、稱從沒聽過他的遊戲（IGN，原文 pub 2026-09-21，Dexerto / 多家媒體持續跟進報導至 9/23）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這場吵架的核心就是「AI 生成的界線在哪」——GameGen 的 remix 機制天生解決這個問題：每次 remix 都掛原作者名、可追溯，不是暗地裡複製。今天正是把這個機制講清楚的最佳時機。</div>
+            <div class="ln"><b>Create-loop 勾子：</b>做一版泛化「削蔬菜」速切 loop（不是馬鈴薯，換成任意蔬菜避免像素級撞臉），公開標「Remix of [靈感來源]，非抄襲」＋排行榜比削幾顆，直接示範「公開掛名 vs 偷偷抄」的差異。</div>
+            <div class="meta">來源 <a href="https://www.dexerto.com/gaming/two-indie-devs-locked-in-copying-dispute-over-games-about-peeling-potatoes-3411132/" target="_blank">Dexerto ↗</a>　摘要層</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>CS2 上線養雞系統——Counter-Strike 2 現在讓你孵化、養大、帶一隻雞上場比賽<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/gaming 今日 top-of-day 熱文「CS2 adds pet chickens that players can hatch, raise and collect」（2026-09-24 07:30 radar 直抓）；CS:GO Steam 今日在線 540,818（+22.7%）。⚠️ 雞的具體機制（等級/稀有度/皮膚等）為標題層，<b>待瀏覽器全文確認</b>。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Counter-Strike 2 now has pet chickens. You can hatch them. Raise them. Bring one into a match. A 26-year-old FPS just added a Tamagotchi moment. That 'wait, this game has THAT?' feeling is your best feature. What's your game's chicken moment? 🐔"　<span style="color:var(--ink-dim)">中譯：Counter-Strike 2 現在有寵物雞了。你可以孵化它、養大它、然後帶它上場。一款 26 年的 FPS 居然加了電子雞時刻。「等等，這遊戲居然有這個？」這種感覺，才是你最強的功能。你的遊戲的「雞」在哪裡？🐔</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>讓創作者留言「你想在哪款遊戲裡加什麼動物陪你上場」——用驚喜機制的趣味帶動留言創意，順勢說 GameGen 可以把這個做成五分鐘就能玩的分類測驗。</div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">Reddit r/gaming ↗</a>　radar top-of-day 2026-09-24　⚠️ 機制細節待瀏覽器確認</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Warframe 一天同時在線暴衝 +109%（Steam 官方真數字）→ 老遊戲一次更新就能翻紅<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam 官方 API 今日真·日比：Warframe 同時在線從 38,532 衝到 <b>80,551 人（+109%）</b>，是今天所有追蹤遊戲裡漲幅最大的一款；時間點疑似對應 9/22 釋出的新更新，<b>確切因果目前無法完全證實</b>。</div>
+            <div class="ln"><b>GameGen 角度：</b>一款 2013 年上線的老遊戲，靠一次更新一天內玩家數翻倍——證明「對的時機 + 對的內容」比「多老的 IP / 多大的預算」重要。這正是 Trend Response Time 這個 KPI 想講的故事：反應快，舊題材也能再爆一次。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A 2013 game just doubled its player count overnight off one update. Age doesn't matter. Timing does. That's the whole GameGen thesis in one Steam chart. 👇"<br><span style="color:var(--ink-dim)">中譯：一款 2013 年的老遊戲靠一次更新一天內玩家翻倍。年齡不重要，時機才重要。這就是 GameGen 整套論述，濃縮在一張 Steam 圖表裡。</span></div>
+            <div class="meta">來源 heat_latest.json · Steam 官方 API（radar 07:30 即時真數字）　verified ✓（因果推測未證實）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Minecraft 在近 20 億模擬年後「通關了自己」——AI 玩家完成了大多數人類從沒做到的事<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/Games 今日 top-of-day 熱文「Minecraft Beat Itself After Nearly 2 Billion Simulated Years」（2026-09-24 07:30 radar 直抓），指 AI 系統/自動化玩家在模擬中完成了 Minecraft 的通關目標（擊敗末影龍）。⚠️ 具體 AI 系統名稱與方法論為標題層，<b>待瀏覽器全文確認</b>。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Minecraft just beat itself. After nearly 2 billion simulated years. An AI played until it defeated the Ender Dragon — something most human players never do. A game with no fixed ending just got a fixed ending. Does your game need one?"　<span style="color:var(--ink-dim)">中譯：Minecraft 通關了自己，在近 20 億模擬年後。一個 AI 打敗了末影龍——大多數真人玩家從來沒做到的事。一款沒有固定結局的遊戲剛被給了一個結局。你的遊戲需要結局嗎？</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>哲學問題引發創作者思考遊戲設計——「你的遊戲是設計有終點的還是無盡的？」帶動真實 game design 討論，精準觸及獨立創作者受眾。</div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1wo6k5g/minecraft_beat_itself_after_nearly_2_billion/" target="_blank">Reddit r/Games ↗</a>　radar top-of-day 2026-09-24　⚠️ 方法論待瀏覽器確認</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>又一個「vibe-coded games」的家：Vibecade 今天衝上 HN 首頁<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Hacker News「Show HN」今天冒出 <b>Vibecade</b>——一個瀏覽器獨立遊戲的發現／分享平台，主打「discover new games, share your own」，可依類別瀏覽、開發者可直接送作品上架（HN 今日榜、實測網站）。</div>
+            <div class="ln"><b>GameGen 角度：</b>越來越多人想當「AI 做的遊戲」的家，但 Vibecade 是<b>瀏覽 + 收藏既有作品</b>的目錄型產品，不是「今天的梗，今天生成」的即時引擎。差異點要講清楚：我們不是多一個遊戲圖書館，是把熱點變成遊戲的速度機器。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Another 'home for vibe-coded games' launched today. Cool — but browsing a library isn't the same as turning today's meme into a playable link in 90 seconds. That's still just us. 👇"<br><span style="color:var(--ink-dim)">中譯：今天又一個「vibe-coded games 的家」上線。不錯——但瀏覽遊戲圖書館，跟把今天的梗在 90 秒內變成可玩連結，是兩件事。後者現在還是只有我們在做。</span></div>
+            <div class="meta">來源 <a href="https://vibecade.co/" target="_blank">Vibecade ↗</a>　Hacker News Show HN 今日榜　verified ✓（產品頁直接查看）</div>
           </div>
         </div>
 
@@ -298,10 +300,10 @@
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「你是哪種電子雞？」寵物分類測驗——蹭 CS2 雞雞機制，讓玩家找到自己的遊戲陪伴個性<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>三到五題選擇（遊戲習慣、創作風格、你在遊戲裡幹嘛、偏好節奏），出「你是哪種電子雞」分類結果（如：探索型 / 戰鬥型 / 收集型 / 社交型）＋「你最適合做什麼類型的遊戲」建議卡，一鍵分享。<b>完全泛化設計，不引用任何 Counter-Strike 官方素材、不使用任何版權圖片。</b></div>
-            <div class="ln"><b>為何是今天首選：</b>① CS2 雞雞新聞在 Reddit top-of-day，話題熱度最高；② 寵物/吉祥物機制天然可愛、分享意願高（「我是什麼類型」= 社交貨幣）；③ 完全零 IP 風險；④ 5 分鐘玩完，30–90 秒可剪，符合所有模板規格。</div>
-            <div class="meta">綁 <a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">CS2 雞雞 Reddit 熱文 ↗</a>　模板：寵物分類測驗 / 結果分享卡</div>
+            <div class="ti"><span class="fresh f-cont">🔄 進展更新</span>「削蔬菜大賽」速切 loop——公開掛名、蹭今天最熱的 AI 抄襲爭議<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>60 秒內用滑動 / 點擊「削」一顆泛化蔬菜（不是馬鈴薯，避免像素級撞臉），削得越乾淨分數越高，結束出「削皮值」分享卡；發布時公開標註「Remix of the viral potato-peeling game genre，非抄襲」＋開放玩家投稿自己的蔬菜皮膚。</div>
+            <div class="ln"><b>為何是今天首選：</b>直接蹭全網正在吵的「AI 遊戲抄襲」爭議，而且是用<b>行動</b>回答爭議——GameGen 的 remix 本來就設計成透明掛名，今天正好拿真實案例示範差異；機制本身極簡單、零 IP 風險（不影射任何一方遊戲的美術或角色）。</div>
+            <div class="meta">綁 <a href="https://www.dexerto.com/gaming/two-indie-devs-locked-in-copying-dispute-over-games-about-peeling-potatoes-3411132/" target="_blank">Dexerto ↗</a>　模板：單鍵 / 滑動速切</div>
           </div>
         </div>
       </div>
@@ -317,31 +319,45 @@
         <div class="board b-steam">
           <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 09/24 即時</span></div>
           <ol>
-            <li class="up"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">541K ▲22.7%</span></li>
+            <li class="hot up"><span class="nm">Counter-Strike 2</span><span class="vn">541K ▲22.7%</span></li>
             <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">93K ▲2.5%</span></li>
             <li class="hot up"><span class="nm">Warframe</span><span class="vn">81K ▲109%</span></li>
-            <li><span class="nm">Rainbow Six Siege</span><span class="vn">71K ▼0.6%</span></li>
-            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">58K ▲13.0%</span></li>
-            <li class="down"><span class="nm">Rust</span><span class="vn">55K ▼4.3%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">71K ▼0.6%</span></li>
+            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">58K ▲13%</span></li>
+            <li class="down"><span class="nm">Apex Legends</span><span class="vn">53K ▼8.5%</span></li>
           </ol>
           <div class="bf">Steam 官方 API · 09/24 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
-        <div class="board b-dim">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
-          <div class="nodata">⚠️ 本次為沙箱排程，瀏覽器存取在非互動環境被拒（roblox.com/charts / RTrack 需瀏覽器渲染），<b>目前無法完全證實</b>。CC 互動 session 有瀏覽器時可補真數字。</div>
-          <div class="bf">Roblox Charts / RoMonitor / RTrack（需瀏覽器）</div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">Top Playing Now · 瀏覽器 09/24 真抓</span></div>
+          <ol>
+            <li class="hot up"><span class="nm">偷一顆蛋</span><span class="vn">130–140 萬</span></li>
+            <li class="up"><span class="nm">布魯克海文 🏡RP</span><span class="vn">337K</span></li>
+            <li class="up"><span class="nm">謀殺之謎 2</span><span class="vn">213K</span></li>
+            <li class="up"><span class="nm">Blox Fruits</span><span class="vn">188K</span></li>
+            <li class="up"><span class="nm">[🏆] 對手</span><span class="vn">172K</span></li>
+            <li class="up"><span class="nm">殺手 2</span><span class="vn">155K</span></li>
+          </ol>
+          <div class="bf">roblox.com/charts · 瀏覽器 09/24 深掃真抓 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-dim">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
-          <div class="nodata">⚠️ TwitchTracker 即時觀看快照需瀏覽器深掃，本次排程環境無法取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
-          <div class="bf">TwitchTracker（需瀏覽器）</div>
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">7 天均觀看 · 09 月 · 瀏覽器真抓</span></div>
+          <ol>
+            <li class="up"><span class="nm">Just Chatting</span><span class="vn">273K</span></li>
+            <li class="up"><span class="nm">Grand Theft Auto V</span><span class="vn">118K</span></li>
+            <li class="up"><span class="nm">World of Warcraft</span><span class="vn">114K</span></li>
+            <li class="up"><span class="nm">League of Legends</span><span class="vn">86K</span></li>
+            <li class="hot up"><span class="nm">WARDOGS</span><span class="vn">64K</span></li>
+            <li class="up"><span class="nm">VALORANT</span><span class="vn">62K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 瀏覽器 09/24 真抓（7 天均值，非單日快照）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-24T07:30，<b>19/19 源全綠</b>），Steam 為 <b>09-24 官方 API 即時真數字</b>（GetNumberOfCurrentPlayers，非估計）。今日榜單重點：<b>Warframe +109.0%（80,551）是今日最大正向暴衝訊號</b>，昨日基數 38,532，幾乎翻倍；CS:GO +22.7%（540,818）亦明顯上漲；TF2 +13.0%（57,942）。排名跳動：<b>Destiny 2 +18（83→65）</b>是今日最大正向跳動、Don't Starve Together +7（49→42）、Rocket League +7（50→43）、NARAKA +6（45→39）、HELLDIVERS 2 +5（17→12）。Roblox CCU / Twitch 觀看因沙箱排程瀏覽器存取被拒仍標「暫缺」。
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-09-24T07:30），Steam 為官方 API 即時真數字。今天環境有瀏覽器，Roblox / Twitch 兩箱皆為<b>今日直接連線真抓</b>，非估計、非暫缺——注意 Roblox 兩個榜單（Top Trending／Top Playing Now）對「偷一顆蛋」給出 130 萬與 140 萬兩個相近但不完全一致的數字，這裡取 Top Playing Now 較保守的區間標示。
       </div>
     </section>
 
@@ -350,9 +366,9 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>暴衝 +109%</span></span>Warframe：80,551 在線，日比 +109.0%——今日唯一三位數暴衝、近期罕見幅度</h3>
-        <div class="sum">Steam 真·日比（09/24 vs 09/23）：Warframe 今日 <b>80,551 人（+109.0%）</b>，昨日基數僅 38,532，單日增加超過 4.2 萬在線人數。這是近期 steam_velocity 資料中極罕見的三位數單日漲幅。其次今日上漲的是 CS:GO +22.7%（540,818）、TF2 +13.0%（57,942）。多數遊戲保持週間小幅震盪，唯 Warframe 明顯異常。排名跳動：<b>Destiny 2（83→65，+18）</b>、Don't Starve Together（49→42，+7）、Rocket League（50→43，+7）、NARAKA（45→39，+6）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>Warframe +109% 是今日最強 Steam 訊號，但觸發原因 radar 資料層目前無法完全證實。</b>可能原因：新 warbond 發布、劇情更新、重大活動回歸或社群事件。Warframe 的商業模式（Free-to-Play + 豐富的 F2P 路徑）與今日 Quake Champions 的「F2P 退場」新聞形成對比——同樣是 F2P 模式，為什麼 Warframe 還在，而 Quake Champions 已宣布放棄？這是今日最值得給 CJ 想的問題。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Warframe 同時在線一天 +109%，CS2 週末 / 賽事帶動 +22.7%</h3>
+        <div class="sum">Steam 官方 API 今日真·日比，過 ≥15% 暴衝旗標的有兩款：<b>Warframe 80,551 人（+109%，今日漲幅最大）</b>、<b>Counter-Strike 2 540,818 人（+22.7%，週末 / 賽事帶動）</b>。Team Fortress 2 +13% 微幅上升；HELLDIVERS 2 −13.3%、Palworld −6.7%、Apex −8.5% 回落。steam_movers 排名跳動：<b>Destiny 2 名次從 83 衝到 65（+18 名）</b>，Don't Starve Together、Rocket League 各 +7 名，NARAKA: BLADEPOINT +6 名，HELLDIVERS 2 +5 名；今日無全新進榜黑馬。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Warframe 的暴衝疑似對應 9/22 新更新，但<b>確切因果目前無法完全證實</b>——不過這正是最值得抄的公式：<b>一次內容更新就能讓 12 年老遊戲一天翻倍</b>，比起等待新 IP，「快速回應」本身就是內容策略。Destiny 2 名次跳動則多半是裁員新聞帶動的關注度回流，話題性大於玩法題材。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
@@ -360,102 +376,72 @@
             <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">STEAM 官方 API · 09/24 即時（radar 07:30）· <a href="https://store.steampowered.com/app/230410" target="_blank">原文 ↗</a></div>
+          <div class="src">STEAM 官方 API · 09/24 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次沙箱排程瀏覽器存取被拒、<b>目前無法完全證實</b>，不以估計數字補位。Steam 真·日比與排名跳動為 09-24 官方 API 即時（radar 07:30，baseline_ready = true）。
+        📡 今日另補：WARDOGS 同時出現在 Steam「最多人玩」排行（第 5 名）與 Twitch 觀看榜前 10（7 天均值 63,824 人），但未進入 Steam 即時 CCU 前 15，<b>確切同時在線數字目前無法完全證實</b>，值得列入觀察名單。
       </div>
     </section>
 
     <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <div class="boards reveal">
-
-        <div class="board b-steam">
-          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
-          <ol>
-            <li class="hot"><span class="nm">Tasty Chef</span><span class="vn">★ 新品</span></li>
-            <li><span class="nm">Graveyard Keeper 2</span><span class="vn">熱賣</span></li>
-            <li><span class="nm">CONTROL Resonant</span><span class="vn">★ 熱賣</span></li>
-            <li><span class="nm">WinMon</span><span class="vn">新品</span></li>
-            <li><span class="nm">WARDOGS</span><span class="vn">★ 熱賣榜</span></li>
-            <li><span class="nm">Dressmaker</span><span class="vn">熱賣</span></li>
-          </ol>
-          <div class="bf">Steam 新品/熱賣榜 · 09/24 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
-        </div>
-
-        <div class="board b-rblx">
-          <div class="bh"><span>ITCH.IO HTML5 新爆</span><span class="metric">小體量早期</span></div>
-          <ol>
-            <li class="hot"><span class="nm">FNaF: DAYBREAK（FNaF 粉絲作）</span><span class="vn">★ 粉絲</span></li>
-            <li class="hot"><span class="nm">StreamRush（直播主題）</span><span class="vn">★ 病毒</span></li>
-            <li><span class="nm">The Community Notes Are Wrong（社群筆記梗）</span><span class="vn">梗</span></li>
-            <li><span class="nm">Bongo Cat（樂器）</span><span class="vn">音樂</span></li>
-            <li><span class="nm">Dating Killmulator 2</span><span class="vn">反差</span></li>
-            <li><span class="nm">How to Crab to Zero（GMTK 2026）</span><span class="vn">GMTK</span></li>
-          </ol>
-          <div class="bf">itch.io html5 · 09/24 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
-        </div>
-
-      </div>
-
-      <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>本週早期 loop 共相延續：直播主題（StreamRush）、IP 粉絲作（FNaF）持續；CS2 雞雞是今天最強的「驚喜機制」早期訊號</h3>
-        <div class="sum">Steam 新品方面今天有幾個值得注意的款：<b>Tasty Chef</b>（料理題材新品）、<b>Graveyard Keeper 2</b>（沙盒墓園管理，系列延續）、<b>CONTROL Resonant</b>（Remedy 新作，熱賣）在榜。itch.io html5 的節奏繼續：StreamRush（直播主題病毒類）與 FNaF: DAYBREAK（IP 粉絲）仍在榜；GMTK 2026 投稿作品 How to Crab to Zero 是本週新注意的 game jam 入口信號。今日最重要的早期訊號不在 itch 或 Steam 新品，而是 <b>CS2 養雞系統</b>——主流 FPS 的機制驚喜更新代表「寵物/吉祥物陪伴機制」正在被主流玩家接受。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>CS2 加雞是今天最重要的機制靈感訊號。</b>不是因為 CS2 的雞本身，而是因為這個更新告訴你：玩家在最競技化的遊戲裡也想要「可愛/可收集的東西」。這個需求在輕量化遊戲更強烈。GameGen 做的 Trend-to-Game 遊戲裡，加入「你的陪伴角色」這個元素，不是噱頭，是已被市場驗證的留存機制。</div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>itch.io 本週 html5 熱門：怪題材小體量款持續冒出頭</h3>
+        <div class="sum">itch.io html5 熱門榜本週上榜：<b>FNaF: DAYBREAK</b>（Five Nights at Freddy's 同人衍生，IP 風險高）、<b>Eat not, Want not</b>、<b>The Community Notes Are Wrong</b>（諷刺時事的敘事向小品）、<b>Dating Killmulator</b>（約會 + 殺人模擬混搭荒謬 loop）、<b>Bloody Flower of Teyvat</b>（原神同人 fangame，IP 風險高）、<b>How to Crab to Zero</b>（GMTK 2026 Game Jam 作品，物理解謎）。同步 Hacker News「Show HN」今日湧入多款極簡瀏覽器小遊戲：漢字組字文字遊戲、「敲鐘變 techno」音樂玩具、免費跑酷 Steppy Fox。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>早期訊號的共通公式仍是「荒謬混搭動詞 + 一句話規則」（約會+殺人、削皮、組字），這正是 GameGen 每日該抄的範本庫；<b>兩款同人 fangame（FNaF / 原神）示範的是 IP 風險而非機制範本</b>，GameGen 內部絕不可直接挪用角色美術或商標，只能學其「粉絲共創熱情」轉譯成泛化題材。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 部分 fangame 高風險</span></span></div></div>
           </div>
-          <div class="src">STEAM 新品 / ITCH.IO · 09/24 radar · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+          <div class="src">ITCH.IO / HACKER NEWS · 09/24 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
     <!-- 高討論文章 -->
     <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · 產業動向</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI 工具化</span></span>30 年 Unity 老兵直言「AI 已追上我的開發能力」——r/gamedev 今日最熱討論</h3>
-        <div class="sum">Reddit r/gamedev 今日 top-of-day 熱文由一位自稱有 30 年 Unity 開發經驗的資深開發者發表，標題「AI models have caught up with Unity dev. My insights as someone with 30 years of experience.」；HackerNews 同步上榜（3 分）。<b>⚠️ 全文論點為標題層，未 web_fetch 驗證具體內容，目前無法完全證實詳細論述，本報以標題概念引用。</b>（Reddit r/gamedev + HN 2026-09-24 radar）</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>30 年老兵說「AI 追上了我」——這個訊號的意義不在於AI是否真的追上了，而在於「一個最有資格說這句話的人選擇說出來了」。</b>這對 C 側創作者的意義是：如果你還在等「再學三年再開始做遊戲」，今天是最好的反論。AI 工具降低的不只是技術門檻，是信心門檻。GameGen T2G 的定位在這個背景下更清晰：你不需要追上 30 年老兵，你只需要今天開始。</div>
+        <h3><span class="tag ai"><span>對標</span></span>Roblox：400+ 套 AI 系統、每秒 150 萬次推論——「遊戲業的作業系統」野心攤開</h3>
+        <div class="sum">Naavik 深度報導 Roblox 的 AI 全景：<b>400+ AI 系統</b>、每秒 <b>150 萬次推論</b>、<b>130 億小時</b>互動數據訓練模型，生成工具 Cube 數月內產出 <b>100 萬個 3D 資產</b>，2026 年某月 <b>44%</b> 前 1000 大創作者用過 Assistant / MCP，Roblox 佔全球遊戲內容支出 <b>3.4%</b>，H1 2026 研發 + 基礎建設支出大增、約四分之一的毛利下滑歸因於 AI 投資（Naavik，pub 2026-09-17）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>已收頭版 CJ Top 1，是今天最重要的競品情報——Roblox 的策略是「蓋好整套 AI 操作系統」，GameGen 的策略是「用最少的基礎建設換最快的反應速度」。兩者不是同一個賽道，B2B 對話時要清楚定位：我們賣的是速度，不是規模。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NAAVIK · 9/17 · <a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>微軟研究：用你的表情訓練生成式 AI，讓它「照你的臭臉」設計一款遊戲</h3>
+        <div class="sum">Rock Paper Shotgun 報導微軟一項研究方向：記錄玩家的臉部表情（例如皺眉），餵給生成式 AI，讓它依照這個情緒訊號去設計遊戲內容——文章對此持強烈懷疑與嘲諷態度（RPS，radar 故事源）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>又一個巨頭把「AI 生成遊戲」的想像放在<b>被動情緒偵測</b>而非<b>主動創作意圖</b>上。GameGen 的路線相反：玩家主動輸入一個梗、一句話，而不是被攝影機讀臉。這個對比本身就是很好的差異化敘事素材。⚠️ 摘要層，未逐句 web_fetch 全文。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">Reddit r/gamedev + HN · 9/24 · <a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">原文 ↗</a></div>
+          <div class="src">ROCK PAPER SHOTGUN · <a href="https://www.rockpapershotgun.com/microsoft-want-to-record-your-face-and-feed-it-to-a-generative-ai-telling-it-to-go-off-and-design-a-game-from-your-frown" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>機制驚喜</span></span>CS2 加雞了——Counter-Strike 2 現在有寵物雞可以孵化、養大、帶進比賽</h3>
-        <div class="sum">Reddit r/gaming 今日 top-of-day 熱文「CS2 adds pet chickens that players can hatch, raise and collect」；CS:GO Steam 今日在線 540,818（+22.7%）。<b>⚠️ 具體機制細節（稀有度系統/互動方式/收集路徑等）為標題層，目前無法完全證實，待瀏覽器全文確認。</b>（Reddit r/gaming 2026-09-24 radar）</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是今天最直接的 Trend-to-Game 機制靈感。<b>Counter-Strike 2 加雞，等於是全球最大 FPS 玩家群體驗證了「寵物/陪伴機制」的市場需求。</b>在競技遊戲裡都受歡迎，在輕量化 Trend-to-Game 遊戲裡會更受歡迎。設計啟示：每款遊戲都可以有一個「陪你的東西」——不需要複雜，需要可愛。CS2 雞雞今天是最高曝光的「驚喜機制」案例，今天做 Demo 的命中率最高。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
-          </div>
-          <div class="src">Reddit r/gaming · 9/24 · <a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>商業模式</span></span>Quake Champions 宣布 F2P→付費、移除 BP/微交易、不再更新——最誠實的退場</h3>
-        <div class="sum">Quake Champions 官方公告：從免費遊玩轉為付費應用，移除所有 Battle Pass 和微交易，官方原句「No additional content updates are planned」（Reddit r/Games 今日 top-of-day）。<b>⚠️ 具體定價細節目前無法完全證實，待瀏覽器確認。</b>（Reddit r/Games 2026-09-24 radar）</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Quake Champions 的退場方式值得研究——<b>F2P 模式的生命週期本質是「創作者/玩家生態的持續輸入」</b>。Warframe 還在，因為它的玩家社群還在持續創造和討論；Quake Champions 退場，因為它的燃料耗盡了。這不是技術問題，是社群問題。對 GameGen 的直接啟示：C 側創作者的持續活動就是你的 F2P 引擎，這比任何 Battle Pass 節點都耐用。</div>
+        <h3><span class="tag ai"><span>社群熱議</span></span>r/gamedev 熱議：「AI 模型的能力已經追上 Unity 開發者」，30 年資歷開發者親身分享</h3>
+        <div class="sum">今日 heat-radar 同時在 Reddit r/gamedev 與 Hacker News 榜上看到同一篇貼文：一位自稱有 30 年經驗的開發者發文稱「AI 模型已經追上 Unity 開發能力」，引發開發者社群熱烈討論（radar reddit / hackernews 榜單直抓，貼文完整內容未逐句查證，<b>目前無法完全證實</b>其具體論點細節）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>不論貼文細節如何，這篇能同時衝上兩個開發者社群的榜單本身就是訊號：<b>開發者對「AI 能不能做遊戲」的懷疑正在鬆動</b>。這是說服潛在創作者用戶「這是認真的工具，不是玩具」的好時機切角。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
@@ -463,22 +449,7 @@
             <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">Reddit r/Games · 9/24 · <a href="https://www.reddit.com/r/Games/comments/1wof4bu/quake_champions_todays_update_marks_a_new_chapter/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>哲學/設計</span></span>Minecraft 在近 20 億模擬年後「通關了自己」——AI 玩家做到了大多數人從沒做到的事</h3>
-        <div class="sum">Reddit r/Games 今日 top-of-day 熱文「Minecraft Beat Itself After Nearly 2 Billion Simulated Years」，指 AI 系統在模擬中完成了 Minecraft 通關目標（擊敗末影龍）。<b>⚠️ 具體 AI 方法論、模擬方式、時間框架的計算基準為標題層，目前無法完全證實，待瀏覽器確認。</b>（Reddit r/Games 2026-09-24 radar）</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條新聞的 Trend-to-Game 角度是：<b>「終點」的設計決策比「內容量」更重要。</b>Minecraft 沒有強制的終點，但有一個可選的終點（末影龍）——這個設計讓遊戲能持續吸引不同目標的玩家。對 Trend-to-Game 短效遊戲的設計啟示：你不需要大量內容，你需要一個清晰的「到達感」——玩家分享的那一刻，就是你設計的終點被達到的時刻。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">Reddit r/Games · 9/24 · <a href="https://www.reddit.com/r/Games/comments/1wo6k5g/minecraft_beat_itself_after_nearly_2_billion/" target="_blank">原文 ↗</a></div>
+          <div class="src">REDDIT R/GAMEDEV · <a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
@@ -488,38 +459,32 @@
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因</span></span>「Counter-Strike 2 現在有雞了」——FPS 加養雞系統是今日最強驚喜迷因</h3>
-        <div class="sum">Reddit r/gaming 今日 top-of-day 熱文：CS2 養雞系統上線。梗的結構很清楚：<b>「你不期待的東西突然出現在你期待的地方」</b>——這是驚喜型迷因的公式。CS2 以競技嚴肅著稱，加雞等於是打破第四面牆。具體互動數字需瀏覽器確認（<b>⚠️ 目前無法完全證實票數</b>），radar 標題層引用。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是今天最有可玩性的迷因素材。<b>驚喜 + 反差 = 今日迷因公式。</b>CS2 雞雞的迷因能量在於：「你以為你在玩什麼遊戲，結果是……」。做成 X 貼文時，不需要引用 CS2 官方圖片——只需要問「你想在哪款遊戲裡加什麼奇怪動物當寵物」，讓留言變成 UGC 素材。</div>
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>「削馬鈴薯」病毒遊戲吵出 AI 抄襲羅生門</h3>
+        <div class="sum">獨立開發者控訴「Potato Please」用 AI 抄襲他先發布、已病毒式傳播的削馬鈴薯遊戲「1,000,000 Potatoes」，對方否認、稱從未聽過該作品；爭議延燒（IGN 原文 9/21，Dexerto 等多家媒體 9/23 持續跟進）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天迷因圈最大的話題，剛好精準命中 GameGen 的核心敘事：<b>當 AI 讓「快速複製」變得太容易，「公開掛名的 remix」就是唯一站得住腳的做法</b>。已收頭版 X Top 1 + Demo Top 1。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 需泛化避撞臉</span></span></div></div>
           </div>
-          <div class="src">Reddit r/gaming · 09/24 top-of-day · <a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">原文 ↗</a></div>
+          <div class="src">DEXERTO / IGN · 9/21–23 · <a href="https://www.dexerto.com/gaming/two-indie-devs-locked-in-copying-dispute-over-games-about-peeling-potatoes-3411132/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>哲學迷因</span></span>「Minecraft 在 20 億年後通關了自己」——AI 完成任務迷因 + 遊戲設計哲學</h3>
-        <div class="sum">Reddit r/Games 今日 top-of-day：Minecraft beat itself after nearly 2 billion simulated years。梗的結構：<b>「我們 15 年了都沒通關，AI 用了 20 億年通關了——等等這到底是誰贏了？」</b>哲學意味十足，適合引發討論。⚠️ 具體 AI 方法論為標題層，待確認。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這條迷因可以引向兩個方向：① 幽默角度（AI 都通關了你通關了嗎）；② 設計哲學角度（你的遊戲設計了多長的「終點距離」）。兩個角度都適合 GameGen C 側受眾（創作者 / 遊戲設計興趣者）。<b>⚠️ 純網路迷因今日仍無可驗證新料</b>（KYM / TikTok 需瀏覽器），今日迷因彈藥由 Reddit top-of-day 佐證的 CS2 雞雞 + Minecraft 擔綱。</div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>itch 病毒榜</span></span>StreamRush + FNaF: DAYBREAK + How to Crab to Zero（GMTK 2026）持續在榜</h3>
-        <div class="sum">今日 itch.io viral 榜：<b>StreamRush</b>（直播主題速度衝刺）、<b>FNaF: DAYBREAK</b>（FNaF 粉絲作品）繼續在榜；本週新注意到的是 <b>How to Crab to Zero</b>（GMTK 2026 game jam 投稿），代表本年度最大 game jam 投稿已開始在 viral 榜出現，是觀察今年獨立開發者趨勢的早期訊號。（itch.io html5 viral 標籤，9/24 radar）</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>GMTK 2026 的 jam 投稿開始進 viral 榜，是很好的「創作者社群活躍度」指標。<b>Game jam 投稿 = 創作者正在做遊戲的證據。</b>GameGen 的 C 側受眾裡，game jam 參與者是最好的目標群之一——他們已經有做遊戲的意願，缺的是分發和曝光。</div>
+        <h3><span class="tag ai"><span>迷因</span></span>Know Your Meme 今日新鮮條目：Wawario / Wawaluigi 同人吉祥物、TikTok「家鄉配動漫角色」熱潮</h3>
+        <div class="sum">KYM 今日（瀏覽器真抓）新鮮條目：<b>Wawario / Wawaluigi</b>——粉絲二創的 Mario 反轉角色，因造型爆紅（約 6 小時前收錄，<b>直接挪用任天堂角色設計，IP 風險高</b>）；<b>「How I Feel In My Hometown」</b>——TikTok 用戶把動漫角色配自己家鄉的迷因玩法（約 8 小時前收錄）。另有台灣繁中 Threads 今日真實貼文：一位獨立開發者自嘲「Steam 首作上線快 24 小時只賣出 12 份、0 評論」，語氣幽默自嘲，22 分鐘前發布，互動熱烈。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「家鄉 × 動漫角色」配對玩法可直接轉譯成 GameGen 泛化「你是哪個原創角色」測驗型小遊戲，零 IP 風險、天生適合分享卡；Wawario/Wawaluigi 只能拿來說明「反轉配色吉祥物」這個造型公式，<b>執行時必須換成完全原創角色，不可有任何任天堂元素</b>。獨立開發者自嘲貼文則提醒我們：GameGen 小編語氣要往「真人開發者的自嘲幽默」靠，而不是官方公告腔。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · FNaF 除外</span></span></div></div>
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · Wawario 系需泛化</span></span></div></div>
           </div>
-          <div class="src">ITCH.IO viral · 09/24 radar · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+          <div class="src">KNOW YOUR MEME / THREADS · 瀏覽器 09/24 真抓 · <a href="https://knowyourmeme.com/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
@@ -529,30 +494,30 @@
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
       <div class="boards reveal">
         <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（itch / Steam 新品 / 時事）</span></div>
+          <div class="bh"><span>本日可借用機制</span><span class="metric">unityroom 今週ピックアップ · 瀏覽器真抓</span></div>
           <ol>
-            <li class="hot"><span class="nm">寵物/吉祥物陪伴型（CS2 雞雞）</span><span class="vn">★ 分享</span></li>
-            <li class="hot"><span class="nm">直播主題速度衝刺（StreamRush 型）</span><span class="vn">衝刺</span></li>
-            <li><span class="nm">終點設計型（Minecraft 通關模型）</span><span class="vn">達成感</span></li>
-            <li><span class="nm">分類測驗型（結果分享卡）</span><span class="vn">社交貨幣</span></li>
-            <li><span class="nm">Tasty Chef — 料理主題</span><span class="vn">輕鬆</span></li>
+            <li class="hot"><span class="nm">オート寿司バトル Online — 壽司主題自動戰鬥</span><span class="vn">自動戰</span></li>
+            <li><span class="nm">見ないで — 「別看我」躲藏恐怖</span><span class="vn">躲藏</span></li>
+            <li><span class="nm">指示どおり塗ってください — 照指令塗色</span><span class="vn">合規塗色</span></li>
+            <li><span class="nm">一筆進化 — 一筆畫進化</span><span class="vn">一筆畫</span></li>
+            <li><span class="nm">偷一顆蛋（Roblox）— 偷取＋躲避</span><span class="vn">偷取躲避</span></li>
           </ol>
-          <div class="bf">itch.io html5 / Steam 新品 / Reddit 時事 · 09/24 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+          <div class="bf">unityroom.com 今週ピックアップ + Roblox Top Playing Now · 瀏覽器 09/24 真抓 · <a href="https://unityroom.com/" target="_blank">原始 ↗</a></div>
         </div>
       </div>
 
       <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>今日首推機制：寵物陪伴型 × 終點設計——CS2 雞雞 + Minecraft 通關給出今天最強雙重設計啟示</h3>
-        <div class="sum">今天有兩個機制值得直接進模板：① <b>寵物/吉祥物陪伴型</b>（CS2 雞雞啟發，問幾題 → 出「你的遊戲陪伴是什麼」結果卡 → 分享）——「我的遊戲陪伴是…」是社交貨幣，零 IP 風險；② <b>終點設計型</b>（Minecraft 通關討論啟發）——讓玩家清楚看到「到達感」的瞬間，設計一個可以截圖分享的達成畫面。次要機制：StreamRush 直播衝刺型（持續在榜，VTuber 受眾共鳴）、Tasty Chef 料理題材（輕鬆可愛）。<b>unityroom 今週ピックアップ需瀏覽器，本次排程暫缺、目前無法完全證實。</b></div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>寵物陪伴機制的核心優勢：玩家會主動分享「我養了什麼/我是什麼」——這是純自驅的 UGC 分享動機。</b>CS2 用了 26 年才加這個功能，GameGen 今天就可以做成一個五分鐘的分類遊戲。終點設計的啟示：每款短效遊戲都需要一個讓玩家截圖發到社群的「到達畫面」——這不是加分項，是分享率的基本設計要求。</div>
+        <h3><span class="tag rl"><span>洞察</span></span>「偷一顆蛋」1.3M CCU 證明：GameGen 該優先做「偷取／躲避」單一動詞 loop</h3>
+        <div class="sum">今天最強的機制證據不是來自小型指標站，而是 Roblox 自己的即時榜：一款規則濃縮成「偷一顆蛋、別被抓到」的遊戲，同時在線衝到 <b>130–140 萬人</b>，遠遠超過同榜其他任何一款（包含 AI 生成內容）。其次可抄的泛化模板：壽司主題自動戰鬥（經營 + 放置）、照指令塗色（合規／找碴向）、一筆畫進化（極簡操作）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「偷取＋躲避」是目前證據最硬的單一動詞公式——機制本身零版權疑慮，任何物件都能套用（不限於蛋）。建議下一個 MVP 模板直接排「偷 / 躲」類別，優先於自動戰鬥或合規塗色這類需要更多 UI 的機制。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 全泛化</span></span></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">Reddit top-of-day / ITCH.IO · 09/24 radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原文 ↗</a></div>
+          <div class="src">ROBLOX / UNITYROOM · 瀏覽器 09/24 真抓 · <a href="https://www.roblox.com/charts" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
@@ -562,25 +527,24 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
 
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日瀏覽器存取被拒，繁中 Threads 熱話暫缺</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ 本次為沙箱排程，瀏覽器在非互動環境無法取得站點授權（Threads 需登入 / JS 渲染），<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。CC 互動 session 或本機環境有瀏覽器時，請補抓今日話題，尤其優先查：① CS2 雞雞在繁中玩家中的討論（台灣 CS2 玩家反應）；② 「AI 追上 Unity 老兵」在繁中開發者社群的迴響；③ Forza Horizon 6 日本玩家 ban 事件在繁中玩家社群有沒有引起討論。</div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads 遊戲圈：自嘲首作銷量、社群小編求經驗</h3>
+        <div class="sum" style="margin-bottom:0">今日瀏覽器真抓兩則具代表性貼文：一位獨立開發者發文自嘲「人生第一個 Steam 遊戲，發售快 24 小時、賣出 12 份、0 評論」，語氣幽默自嘲、附上「後續會不會回去看論文」的無奈梗（22 分鐘前發布，互動熱烈）；另一則是遊戲開發者詢問「不同社群平台（X / IG / Threads）該怎麼經營」，反映繁中遊戲圈對社群操作方法論的需求（19 小時前）。<b>三國 / 武俠 / 恐怖 / 捕捉 RPG 等主題變體本次未見明顯今日新熱話，需持續追蹤。</b></div>
       </div>
     </section>
 
-    <!-- Trend-to-Game 題材 -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>CS2 養雞系統（Reddit r/gaming top-of-day）</td><td><span class="tmpl">寵物陪伴 / 分類測驗</span></td><td>「我的遊戲陪伴是什麼類型」社交貨幣</td><td class="rk-low">低 · 泛化（不用 CS2 官方圖像）</td><td>★ 本日 Demo 首選；三到五題 → 四分類寵物型結果卡，全泛化零 IP 風險；今天窗口熱度最高</td></tr>
-          <tr><td>AI 追上 Unity 老兵（r/gamedev top-of-day）</td><td><span class="tmpl">定位素材 / CJ LinkedIn</span></td><td>「第一款遊戲從來沒有比今天更便宜」</td><td class="rk-low">低</td><td>★ CJ LinkedIn 主線；⚠️ 全文待確認，不引用具體百分比/工具名，只用標題層概念論述</td></tr>
-          <tr><td>Quake Champions F2P→付費退場</td><td><span class="tmpl">定位素材（商業模式）</span></td><td>「F2P 需要燃料，沒有就說清楚」</td><td class="rk-low">低</td><td>CJ LinkedIn 第二條；對比 Warframe +109% 同日並存，說明「社群燃料」的差異</td></tr>
-          <tr><td>Warframe +109% Steam 暴衝</td><td><span class="tmpl">即時互動貼</span></td><td>「你猜是什麼原因？」留言互動</td><td class="rk-low">低</td><td>不推測原因（⚠️ 目前無法完全證實），只呈現真數字讓玩家猜；Steam 官方 API 數字可信</td></tr>
-          <tr><td>Minecraft beat itself（r/Games top-of-day）</td><td><span class="tmpl">哲學互動貼 / 終點設計</span></td><td>「你的遊戲需要結局嗎？」討論</td><td class="rk-low">低</td><td>引發創作者對遊戲終點設計的思考；⚠️ AI 方法論待全文確認，不宣稱具體技術細節</td></tr>
-          <tr><td>Forza Horizon 6 日本玩家 ban（r/Games top-of-day）</td><td><span class="tmpl">C 側平台文化討論</span></td><td>「UGC 自由 vs 平台規則」邊界討論</td><td class="rk-mid">中 · 敏感</td><td>可作為 CJ B2B 討論素材；對外發文需謹慎——不站隊、以設計觀察而非政治評論框架呈現；⚠️ ban 數字待確認</td></tr>
-          <tr><td>GMTK 2026 jam 作品進 itch viral 榜</td><td><span class="tmpl">早期訊號 / 社群洞察</span></td><td>「game jam 創作者是最好的 C 側受眾」</td><td class="rk-low">低</td><td>不進頭版；作為社群受眾定位的背景觀察使用</td></tr>
+          <tr><td>削馬鈴薯 AI 抄襲羅生門</td><td><span class="tmpl">泛化削蔬菜速切</span></td><td>「削皮值」排行榜、公開掛名 remix</td><td class="rk-mid">中 · 需泛化避撞臉</td><td>★ 本日 Demo 首選，公開標「remix, not clone」</td></tr>
+          <tr><td>Roblox「偷一顆蛋」1.3–1.4M CCU</td><td><span class="tmpl">偷取／躲避 60 秒 loop</span></td><td>「存活時間 / 被抓次數」分享卡</td><td class="rk-low">低</td><td>優先驗證：換任意物件皆可套用同一機制</td></tr>
+          <tr><td>Warframe 更新一天 +109%</td><td><span class="tmpl">「一天翻新」改版挑戰</span></td><td>「新規則挑戰卡」邀朋友玩舊題材新規則</td><td class="rk-low">低</td><td>示範 Trend Response Time 的價值</td></tr>
+          <tr><td>Wawario / Wawaluigi 反轉配色迷因</td><td><span class="tmpl">原創「反轉配色吉祥物」生成器</span></td><td>自訂吉祥物分享卡</td><td class="rk-high">高 · 任天堂 IP</td><td>絕不用任天堂角色元素，走純原創角色</td></tr>
+          <tr><td>「家鄉配動漫角色」TikTok 熱潮</td><td><span class="tmpl">「你是哪個原創角色」測驗</span></td><td>結果分享卡、標籤朋友配對</td><td class="rk-low">低</td><td>用原創角色庫，避免任何已知動漫 IP</td></tr>
+          <tr><td>unityroom 壽司自動戰鬥</td><td><span class="tmpl">主題式自動戰鬥／經營</span></td><td>數值成長、離線收益分享</td><td class="rk-low">低</td><td>換梗題材（如今日熱點）套用同一系統</td></tr>
         </tbody>
       </table>
       </div>
@@ -593,14 +557,13 @@
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>AI 追上 Unity 老兵 → 第一款遊戲門檻最低的一年</td><td>r/gamedev 今日 top-of-day：30 年 Unity 老兵直言 "AI has caught up with me"；HN 同步上榜。⚠️ 全文待確認，以標題概念引用</td><td>"A developer with 30 years of Unity experience just said: 'AI has caught up with me.' That's not a threat. That's an invitation. Your first game has never been cheaper to make."</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">↗</a></td></tr>
-          <tr><td>Quake Champions 誠實退場 → F2P 需要社群燃料</td><td>Quake Champions F2P→付費，移除所有 BP 和微交易，「No additional content updates are planned」（Reddit r/Games top-of-day）；同日 Warframe +109%（有社群燃料的對比案例）</td><td>"Quake Champions just went paid. Removed everything. Plans no updates. The F2P model needs fuel. Warframe is up 109% today — because it still has fuel. The difference isn't tech. It's community."</td><td><a href="https://www.reddit.com/r/Games/comments/1wof4bu/quake_champions_todays_update_marks_a_new_chapter/" target="_blank">↗</a></td></tr>
-          <tr><td>CS2 加雞 → 驚喜機制是最強的有機分享引擎</td><td>CS2 今日上線養雞系統（r/gaming top-of-day）；CS:GO Steam 在線 540,818（+22.7%）；「你不知道它居然有這個」情緒是有機分享的觸發器</td><td>"Counter-Strike 2 just added pet chickens. A 26-year FPS added a Tamagotchi moment. That 'wait, this game has THAT?' feeling — that's organic sharing. Build that feeling into every product you ship."</td><td><a href="https://www.reddit.com/r/gaming/comments/1wo2v1z/cs2_adds_pet_chickens_that_players_can_hatch/" target="_blank">↗</a></td></tr>
-          <tr><td>Diablo 5 重新設計怪物分級 → 「角色力量感」是留存的基礎設計</td><td>Blizzard 宣布 Diablo 5 將採取不同於 Diablo 4 的怪物等級縮放方式，讓玩家隨進度感到明顯更強（Reddit r/gaming + PCGamer radar，2026-09-24）；⚠️ 具體設計細節為標題層，待確認</td><td>"Blizzard says Diablo 5 will 'take a different approach to level scaling — so your character feels noticeably stronger as you progress.' That 'noticeably' is the whole design. Power fantasy is not optional. It's the first-session hook."</td><td><a href="https://www.reddit.com/r/gaming/comments/1wnwj9m/diablo_5_will_take_a_somewhat_different_approach/" target="_blank">↗</a></td></tr>
+          <tr><td>Roblox 的 AI 基礎建設規模 vs GameGen 的速度定位</td><td>400+ AI 系統、每秒 150 萬次推論、130 億小時數據、44% 前 1000 創作者用過 AI 工具（9/17）</td><td>"Roblox built the AI infrastructure ceiling. The #1 game on their own chart today still won on a one-sentence rule. Scale isn't the moat — speed is."</td><td><a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">↗</a></td></tr>
+          <tr><td>Discord 年齡驗證 + FanDuel 廣告測試，平台信任風險上升</td><td>Discord 本週上線年齡驗證系統，同時限量測試 FanDuel 博弈廣告（9/23）</td><td>"Discord tightened age gates and tested gambling ads the same week. A no-gambling-language policy from day one just became a distribution advantage."</td><td><a href="https://www.gamespot.com/articles/discord-begins-rolling-out-age-verification-and-a-sponsorship-with-fanduel/" target="_blank">↗</a></td></tr>
+          <tr><td>開發者社群對「AI 能不能做遊戲」的懷疑正在鬆動</td><td>30 年資歷開發者發文稱「AI 模型已追上 Unity 開發能力」，同時衝上 r/gamedev 與 Hacker News 榜單</td><td>"Even skeptical game developers are starting to admit AI models can keep up with Unity work. The audience for AI-made games just got a lot less niche."</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（AI 老兵告白 / Quake 誠實退場）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。<b>⚠️ AI 老兵全文待瀏覽器確認，CJ 發文前建議 Pizza 或 CW 先 web_fetch 看一眼原文是否論點一致；Quake 定價細節同樣待確認，hook 不提具體價格。Forza Horizon 6 日本 ban 事件暫不建議對外發文（⚠️ 細節待確認 + 文化政治敏感性）。</b>
+        📄 頭版 🎯 CJ Top 2（Roblox AI 基建規模 vs 速度定位、Discord 年齡驗證 + FanDuel）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 驗原文日期與主張比對（見文末 Evidence Log）。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
@@ -609,34 +572,38 @@
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>★ CS2 雞雞驚喜機制：「Counter-Strike 2 加了養雞系統。你想在哪款嚴肅遊戲裡加什麼奇怪寵物？」留言互動</li><li>Warframe +109%：「Warframe 一夜翻倍在線，80K 人週四早上在線——一定發生了什麼，你猜是什麼？」</li><li>Minecraft beat itself：「AI 在 20 億模擬年後通關了 Minecraft。你的遊戲設計了結局嗎？」哲學互動貼</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「你是哪種電子雞？」寵物分類測驗——問三到五題 → 出寵物類型 + 「你最適合做什麼遊戲」結果卡，全泛化零 IP 風險</li><li>「你的遊戲需要結局嗎？」設計選擇互動——有終點 vs 無盡，選擇影響結果分享卡</li><li>料理主題輕遊戲（Tasty Chef 新品趨勢，輕量、可愛、分享率高）</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Warframe +109% 暴衝的觸發事件（今日無法完全證實，待互動 session 查原因）</li><li>CS2 雞雞的具體機制細節（等級系統 / 稀有度 / 收集路徑），看有沒有更深的 loop 靈感</li><li>「AI 追上 Unity 老兵」全文論點（待瀏覽器確認），看適不適合 CJ 正式引用</li><li>Quake Champions 定價與玩家反應（誠實退場是否被玩家肯定，作為「F2P vs paid」商業模式討論素材）</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li><b>CS2 雞雞：不引用任何 Counter-Strike 官方圖像/品牌</b>——使用泛化的「寵物陪伴」框架描述，不做成「CS2 仿作」</li><li><b>AI 老兵：全文待確認，不對外引用具體論點百分比或工具名</b>——只用「30 年老兵說 AI 追上了我」的概念層</li><li><b>Forza Horizon 6 日本 ban：暫不對外發文</b>——文化政治敏感，ban 規模細節待確認，不站任何一方立場</li><li><b>Warframe 暴衝原因未查證，不要填入猜測解釋</b>——只呈現真數字讓玩家猜</li><li>Quake Champions 定價細節未確認，hook 不提具體價格</li><li>對外文案的賭場語言（下注/payout/big win 等）一律過濾</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>蹭削馬鈴薯 AI 抄襲爭議：「我們的 remix 從第一天就公開掛名」+ demo gif</li><li>Warframe 一天翻倍：「老遊戲不需要新 IP，需要對的時機」</li><li>Vibecade 上線：「圖書館 vs 生成機器，我們是後者」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「削蔬菜大賽」速切 loop，公開標 remix 來源 —— 本日首選</li><li>「偷取／躲避」60 秒 loop（驗證 Roblox「偷一顆蛋」機制假設，任意物件皆可套）</li><li>「你是哪個原創角色」家鄉配對測驗（零 IP 風險）</li><li>「一天翻新」改版挑戰卡（蹭 Warframe 更新案例）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>削馬鈴薯抄襲爭議後續：是否有平台方（Steam / itch）介入或下架</li><li>Discord 年齡驗證全面上線後，對未成年創作者流量的實際影響</li><li>Roblox「偷一顆蛋」熱度是否延燒超過一週，或只是單日爆量</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Wawario/Wawaluigi、FNaF、原神同人內容 → 絕不挪用角色美術或商標，一律走泛化原創</li><li>削蔬菜 demo 若做得跟「1,000,000 Potatoes」太像 → 換蔬菜、換視覺、公開標明 remix 來源</li><li>對外文案避免賭博語言（尤其在提及 Discord/FanDuel 話題時，不可暗示 GameGen 也做博弈）</li><li>Warframe / r/gamedev 因果推測皆標「未能完全查證」，不可寫成確定結論</li></ul></div>
       </div>
     </section>
 
     <!-- 彈藥 Evidence Log -->
     <div class="evlog reveal">
-      <h4>📑 彈藥 Evidence Log（頭版逐條驗證 · 2026-09-24）</h4>
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td><b>CJ #1</b>　AI 追上 Unity 老兵</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">Reddit r/gamedev</a>（radar 2026-09-24T07:30 直抓，top-of-day）+ HN 上榜（3 分，heat radar）　驗：標題「AI models have caught up with Unity dev. My insights as someone with 30 years of experience.」被 radar 確認 top-of-day<span class="ok">✓（radar 標題層）</span>　⚠️ <b>全文論點待瀏覽器確認，本報以標題概念引用，不宣稱具體工具名/比較數字</b><span class="pp">partial</span>　pub 2026-09-24　🆕 今天新</td></tr>
-        <tr><td><b>CJ #2</b>　Quake Champions F2P→paid</td><td><a href="https://www.reddit.com/r/Games/comments/1wof4bu/quake_champions_todays_update_marks_a_new_chapter/" target="_blank">Reddit r/Games</a>（radar 2026-09-24T07:30 直抓，top-of-day）　驗：標題「Quake Champions: Today's update marks a new chapter... Battle Passes and microtransactions have been removed. No additional content updates are planned」被 radar 確認<span class="ok">✓（radar 標題層）</span>　⚠️ <b>定價細節待瀏覽器確認</b><span class="pp">partial</span>　pub 2026-09-24　🆕 今天新</td></tr>
-        <tr><td><b>小編 #1</b>　Warframe +109%</td><td>heat_latest.json 2026-09-24T07:30 sources.steam_velocity：today 80,551 / yesterday 38,532 / pct +109.0%　官方 Steam API 即時真數字（GetNumberOfCurrentPlayers，非估計）<span class="ok">✓（官方 API）</span>　⚠️ <b>觸發原因目前無法完全證實，報中不推測</b></td></tr>
-        <tr><td><b>小編 #2</b>　CS2 雞雞系統</td><td>heat_latest.json 2026-09-24T07:30 sources.reddit.items：「CS2 adds pet chickens that players can hatch, raise and collect」列於 r/gaming top-of-day<span class="ok">✓（radar 標題層）</span>　⚠️ <b>具體機制細節待瀏覽器確認</b><span class="pp">partial</span></td></tr>
-        <tr><td><b>小編 #3</b>　Minecraft beat itself</td><td>heat_latest.json 2026-09-24T07:30 sources.reddit.items：「Minecraft Beat Itself After Nearly 2 Billion Simulated Years」列於 r/Games top-of-day<span class="ok">✓（radar 標題層）</span>　⚠️ <b>AI 方法論待瀏覽器確認</b><span class="pp">partial</span></td></tr>
-        <tr><td><b>Demo</b>　電子雞寵物分類測驗</td><td>GameGen 原創提案，綁定 CS2 雞雞 Reddit top-of-day（已確認）；泛化設計無外部 IP 依賴，風險控制：不引用 CS2 官方圖像/品牌<span class="ok">✓</span></td></tr>
-        <tr><td>Forza Horizon 6 日本 ban（高討論 / 趨勢 08）</td><td><a href="https://www.reddit.com/r/Games/comments/1wobk7m/they_dont_respect_japanese_culture_at_all_forza/" target="_blank">Reddit r/Games</a>（radar top-of-day）　⚠️ <b>ban 規模/舉報機制細節待確認，暫不建議對外發文</b><span class="pp">partial</span></td></tr>
-        <tr><td>Diablo 5 怪物分級（CJ 題材 04）</td><td><a href="https://www.reddit.com/r/gaming/comments/1wnwj9m/diablo_5_will_take_a_somewhat_different_approach/" target="_blank">Reddit r/gaming</a>（radar top-of-day）+ <a href="https://www.pcgamer.com/games/rpg/diablo-5-will-take-a-somewhat-different-approach-to-diablo-4s-monster-level-scaling-so-your-character-feels-noticeably-stronger-as-you-progress/" target="_blank">PCGamer</a>（radar RSS）　⚠️ <b>具體設計細節待確認，hook 以概念層引用</b><span class="pp">partial</span></td></tr>
-        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-09-24T07:30 官方 GetNumberOfCurrentPlayers（API 直抓）　CS:GO 540,818（+22.7%）/ Warframe 80,551（+109.0%）/ TF2 57,942（+13.0%）/ R6 Siege 71,184（-0.6%）；steam_movers：Destiny 2 +18（83→65）/ Don't Starve Together +7 / Rocket League +7 / NARAKA +6 / HELLDIVERS 2 +5；radar 19/19 源全綠<span class="ok">✓</span></td></tr>
+        <tr><td>Roblox AI 基礎建設數字</td><td><a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">Naavik</a>（web_fetch 全文）　原文日期 2026-09-17　驗：400+ AI 系統、150 萬次/秒推論、130 億小時數據、100 萬 3D 資產、44% 前 1000 創作者、3.4% 內容支出、CEO 引言<span class="ok">✓</span>　🔄 進展更新（7 天內）</td></tr>
+        <tr><td>Discord 年齡驗證 + FanDuel</td><td><a href="https://www.gamespot.com/articles/discord-begins-rolling-out-age-verification-and-a-sponsorship-with-fanduel/" target="_blank">GameSpot</a>（web_fetch 全文）　原文日期 2026-09-23　驗：年齡驗證機制細節、「90% 不會被要求驗證」、FanDuel 限量測試、Discord 官方回應<span class="ok">✓</span>　🆕 今天新（≤48h）</td></tr>
+        <tr><td>削馬鈴薯 AI 抄襲爭議</td><td><a href="https://www.dexerto.com/gaming/two-indie-devs-locked-in-copying-dispute-over-games-about-peeling-potatoes-3411132/" target="_blank">Dexerto</a> / IGN（tavily_news 摘要，IGN 原文站方阻擋 web_fetch，改以 WebSearch 多源交叉核對）　原文日期 2026-09-21（IGN），Dexerto 等跟進至 9/23　驗：兩款遊戲名稱、指控與否認立場一致<span class="pp">summary</span>　🔄 進展更新</td></tr>
+        <tr><td>Warframe Steam 同時在線 +109%</td><td>heat_latest.json（Steam 官方 GetNumberOfCurrentPlayers API 直抓，免敘事閘）　2026-09-24T07:30　驗：38,532 → 80,551 人，+109%<span class="ok">✓</span>　🆕（因果推測未查證，已標註）</td></tr>
+        <tr><td>Vibecade（Hacker News Show HN）</td><td><a href="https://vibecade.co/" target="_blank">Vibecade</a>（web_fetch 網站本身）　無獨立文章日期，today's HN 榜單直抓　驗：產品定位、功能描述<span class="ok">✓</span>　🆕（首見於今日 HN）</td></tr>
+        <tr><td>r/gamedev「AI 追上 Unity 開發」</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wo5asm/ai_models_have_caught_up_with_unity_dev_my/" target="_blank">Reddit</a>（站方阻擋 web_fetch，僅引用 radar today 榜單標題）　日期未驗（radar 今日榜單直抓）<span class="pp">summary</span>　🆕（標題層級，內文未逐句查證）</td></tr>
+        <tr><td>微軟「讀臉設計遊戲」研究</td><td><a href="https://www.rockpapershotgun.com/microsoft-want-to-record-your-face-and-feed-it-to-a-generative-ai-telling-it-to-go-off-and-design-a-game-from-your-frown" target="_blank">Rock Paper Shotgun</a>（radar 故事源，摘要層未逐句 fetch）　日期未驗<span class="pp">summary</span></td></tr>
+        <tr><td>Roblox「偷一顆蛋」CCU</td><td>roblox.com/charts（瀏覽器直接連線真抓，非二手轉述）　2026-09-24　驗：Top Playing Now 榜 1.3M、另一榜面 1.4M，取較保守數字<span class="ok">✓</span></td></tr>
+        <tr><td>Twitch 7 天均觀看榜</td><td>twitchtracker.com/games（瀏覽器直接連線真抓）　2026-09（7 天均值，非單日快照）<span class="ok">✓</span></td></tr>
+        <tr><td>Know Your Meme 今日新鮮條目</td><td>knowyourmeme.com（瀏覽器直接連線真抓）　Wawario/Wawaluigi 約 6 小時前、「家鄉配動漫」約 8 小時前收錄<span class="ok">✓</span>　🆕</td></tr>
+        <tr><td>繁中 Threads 今日貼文</td><td>threads.com 搜尋（瀏覽器直接連線真抓）　22 分鐘前 / 19 小時前發布<span class="ok">✓</span>　🆕</td></tr>
+        <tr><td>unityroom 今週ピックアップ</td><td>unityroom.com（瀏覽器直接連線真抓）　2026-09-24 首頁快照<span class="ok">✓</span></td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-09-24T07:30 官方 GetNumberOfCurrentPlayers（API 直抓，免敘事閘）　CS2 +22.7%（541K）/ Warframe +109%（81K）/ TF2 +13% / HELLDIVERS2 −13.3% 為真·日比；steam_movers：Destiny 2 +18 名 / Don't Starve Together +7 / Rocket League +7 / NARAKA +6 / HELLDIVERS2 +5<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條 radar 標題層確認（AI 老兵 / Quake / CS2 雞 / Minecraft / Warframe 暴衝）· Steam 官方 API 09-24 即時真數字（radar 07:30，19/19 源全綠）· AI 老兵 / Quake 定價 / CS2 機制 / Minecraft 方法論均為摘要層，待瀏覽器全文確認 · Roblox / Twitch / Threads / KYM / TikTok 因沙箱排程瀏覽器存取被拒標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/09/24 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險濾鏡</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 部分摘要層 · Steam＝官方 API 09-24 即時真數字（radar 07:30）· Roblox / Twitch / KYM / Threads / unityroom 今日環境有瀏覽器，皆為直接連線真抓，非估計 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 + 瀏覽器深掃 · 2026/09/24 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
