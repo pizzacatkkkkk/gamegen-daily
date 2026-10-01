@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/10/02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">10 · 02 · FRI</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 10 / 02 · 彈藥工廠模式 · Steam 官方真數字（10/01 07:30 radar）· 來源 20+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>Suda 51 的草蜢工作室（Grasshopper Manufacture）從 NetEase 全身而退，正式恢復獨立——IP 完整帶走。</b>同一天，Valve 的 Deadlock 在邀請制閉測中躋身 <span class="hl">Steam 最多人玩第 9 名</span>（從 #20 暴衝），官方仍稱「仍太未完成不適合公開」。Xbox CEO Asha Sharma 同日喊「Xbox 不賣」，但 Microsoft CEO 承認三年裁員逾 5,750 人，稱此為「精簡」而非撤退。</p>
+        <p>三個故事指向同一個訊號：<span class="hl">大廠在收縮，獨立創作的空間正在擴大</span>。草蜢工作室靠創意文化存活；Deadlock 靠限制供給製造飢餓感；Xbox 縮手讓行動/瀏覽器小遊戲的需求空間擴大。<b>對 GameGen：AI 工具加 Create→Share loop，正是填進這個空間的基礎建設。</b></p>
+        <div class="pull">▸ 今天就能蹭：CJ 貼文「Suda 51 出走 NetEase：獨立工具 + AI，小團隊不再需要大廠」＋小編貼 GTA 6 颶風話題 → 天氣災難 Demo。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Suda 51 的草蜢工作室從 NetEase 全身而退——創意 &gt; 資本，AI 工具讓小團隊的上限更高了</div>
+            <div class="ln"><b>新聞事實：</b>Grasshopper Manufacture（《殺手7》《No More Heroes》系列）正式從 NetEase Games 分拆，恢復完全獨立；NetEase 主動讓其出走，IP 全數保留。多站同日確認（Game Developer / GamesIndustry.biz / RPS 標題「NO GAME NO LIFE」/ VGC / Reddit r/Games）。⚠️ 財務細節與出走條款為標題層，未開原文完整驗證。</div>
+            <div class="ln"><b>GameGen 角度：</b>草蜢工作室靠文化資本與獨特創意存活，不靠大廠後盾——這個故事的情緒是「有靈魂就能獨立」。今天的環境更有利：<b>AI 工具把小型工作室的可做天花板往上推，分發從大廠手中移到社群</b>。GameGen 服務的正是這條路上的創作者。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Suda 51's studio just walked out of NetEase — with their IP intact. 2022 acquisition, 2026 independence. Sometimes freedom is worth more than funding. AI tools mean the ceiling for a tiny creative team just got a lot higher."<br><span style="color:var(--ink-dim)">中譯：Suda 51 的草蜢工作室從 NetEase 走人了，IP 完整帶走。2022 被收購，2026 恢復自由。有時候自由比資金更值錢。AI 工具讓小型團隊的上限大幅提升。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">Game Developer ↗</a> · <a href="https://www.gamesindustry.biz/grasshopper-manufacture-becomes-independent-as-it-splits-from-netease-games" target="_blank">GamesIndustry.biz ↗</a>　pub 2026-10-01　verified ✓（多源確認）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam 折扣與活動頁面即將全面演算法驅動——上線頭 48 小時的互動數據決定能否被看見</div>
+            <div class="ln"><b>新聞事實：</b>Valve 宣布 Steam 的 Discounts and Events 分頁即將由演算法完全驅動，不再靠編輯人工排序（Game Developer，標題層，未開原文）。⚠️ 實施時間與演算法具體細節未能完全驗證。</div>
+            <div class="ln"><b>GameGen 角度：</b>演算法驅動意味著「第一天的互動密度」決定了能否被看見。<b>Launch-day Create→Share loop 從可選項變成唯一的演算法入場券</b>。GameGen 的每次「梗→遊戲→分享」loop 就是在積累這個權重。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Steam's discounts tab is going fully algorithm-driven. Day-one engagement decides everything. Launch-day viral loops are no longer a nice-to-have — they're the only on-ramp onto the shelf."<br><span style="color:var(--ink-dim)">中譯：Steam 折扣頁要全由演算法決定了。上線第一天的互動密度決定一切。病毒式 loop 從可選項變成唯一的上架入口。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/pc/steam-s-discounts-and-events-tab-will-soon-be-fully-algorithm-driven" target="_blank">Game Developer ↗</a>　pub 近日　verified partial（標題層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Deadlock 尚未公開發售，卻是 Steam 最多人玩的遊戲之一（榜位 #9，從 #20 暴衝）<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam 官方 API radar（10/01 07:30）：Deadlock 排名 20→9（跳 11）；Eurogamer 標題「just became one of the most played games on Steam」；PC Gamer 標題：Valve 說「仍太未完成不適合公開發行」但正在開發英雄外觀與新遊戲模式。邀請制測試中，未公開發售。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Deadlock just became one of Steam's most played games. It hasn't officially launched. Valve says it's 'too unfinished.' The waitlist IS the product. Limited access IS the best marketing."　<span style="color:var(--ink-dim)">中譯：Deadlock 躋身 Steam 最多人玩之列，根本還沒公開發售。Valve 說太未完成。等待清單本身就是產品。限制供給是最好的行銷。</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>閉測/限量製造飢餓感 = Create→Share loop 中加入「限量早鳥邀請碼」機制可借用同一心理。</div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/deadlock-update-steam-most-played-games" target="_blank">Eurogamer ↗</a> · <a href="https://www.pcgamer.com/games/moba/valve-says-deadlock-is-still-too-unfinished-to-release-publicly-but-has-hero-cosmetics-and-new-game-modes-in-the-works/" target="_blank">PC Gamer ↗</a>　Steam 排名：官方 radar ✓　標題層 partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Xbox CEO「不賣」，Microsoft CEO 說「精簡」——三年裁員 5,750 人<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Xbox CEO Asha Sharma：「Xbox is not for sale」，稱「會做一切必要的事」扭轉局勢（GamesIndustry.biz）；Microsoft CEO Satya Nadella：Xbox 是「streamlining」，三年超過 5,750 名員工被裁（Game Developer 標題）。HN 見「Xbox for Sale: Don't Believe Anything Until It Is Officially Denied」（Kotaku 同日）。⚠️ 兩者均標題層，完整引述未開原文驗。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Xbox CEO says 'not for sale.' Microsoft CEO says 'just streamlining.' 5,750 jobs cut in 3 years. Whatever you call it — less big platform in gaming = more room for small teams and player-creation tools."　<span style="color:var(--ink-dim)">中譯：Xbox CEO 說不賣，Microsoft CEO 說只是精簡，三年裁員 5,750 人。不管叫什麼，大平台縮手 = 小團隊和玩家創作工具的空間更大了。</span></div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/production/microsoft-ceo-says-xbox-is-streamlining-after-laying-off-5-750-workers-in-three-years" target="_blank">Game Developer ↗</a> · <a href="https://www.gamesindustry.biz/xbox-ceo-asha-sharma-insists-xbox-is-not-for-sale" target="_blank">GamesIndustry.biz ↗</a>　verified partial（標題層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 重工整個天氣系統：颶風、彩虹、暴雨全加，「達到前所未有的尺度感」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Rockstar 揭露 GTA 6 完全「re-engineered」天氣系統，加入颶風、彩虹、大暴雨，稱要「achieve a sense of scale we haven't felt before」（Eurogamer 標題，未開原文）。⚠️ 標題層，未開原文驗。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Rockstar re-engineered GTA 6's entire weather system — hurricanes, rainbows, heavy rain. 'A sense of scale we haven't felt before.' What if the player triggered the storm? Build a weather event. 👇"　<span style="color:var(--ink-dim)">中譯：Rockstar 重工 GTA 6 整個天氣系統，加入颶風、彩虹、暴雨，說「前所未有的尺度感」。如果讓玩家觸發颶風呢？做一個天氣事件小遊戲。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入天氣類型（颶風 / 暴雨 / 龍捲風）→ 生成對應閃躲求生地圖 → 「我在 X 天氣撐了 Y 秒」分享卡。⚠️ 不用 GTA 美術 / 角色 / 地名。</div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain" target="_blank">Eurogamer ↗</a>　pub 近日　verified partial（標題層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「天氣災難」：輸入一種氣象事件，生成閃躲 + 求生小遊戲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入氣象類型（颶風 / 暴雨 / 龍捲風 / 雷暴）→ 生成 60 秒閃躲求生地圖（障礙依氣象變化：飛石 / 水位上升 / 旋轉風牆）→ 結束給「我在 X 天氣存活了 Y 秒」分享卡（純分數，無金額）。</div>
+            <div class="ln"><b>為何是今天首選：</b>綁 GTA 6 颶風話題；自然災難全泛化、零 GTA 素材限制；單鍵閃躲模板現成；「你觸發了哪種天氣？」是天然的 Create→Share 鉤子。</div>
+            <div class="meta">綁 <a href="https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain" target="_blank">Eurogamer GTA 6 ↗</a>　模板：單鍵閃躲 / 倒數計時</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/01 07:30 radar</span></div>
+          <ol>
+            <li class="down"><span class="nm">Counter-Strike</span><span class="vn">378K ▼20.4%</span></li>
+            <li class="hot up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">100K ▲12.6%</span></li>
+            <li><span class="nm">Rainbow Six Siege</span><span class="vn">68K ▲0.3%</span></li>
+            <li class="up"><span class="nm">Apex Legends</span><span class="vn">53K ▲7.5%</span></li>
+            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">53K ▲4.9%</span></li>
+            <li class="down"><span class="nm">Warframe</span><span class="vn">47K ▼2.0%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 10/01 07:30 radar · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">Top Playing Now · 10/01</span></div>
+          <ol>
+            <li class="hot"><span class="nm">偷一顆蛋（Steal-an-egg 類）</span><span class="vn">1M</span></li>
+            <li><span class="nm">布魯克海文 RP</span><span class="vn">313.8K</span></li>
+            <li><span class="nm">謀殺之謎2</span><span class="vn">202.7K</span></li>
+            <li><span class="nm">Blox Fruits</span><span class="vn">171.7K</span></li>
+            <li><span class="nm">[天空刺客] 法術惡作劇</span><span class="vn">138.2K</span></li>
+            <li><span class="nm">對手</span><span class="vn">136.9K</span></li>
+          </ol>
+          <div class="bf">roblox.com/charts · 10/01 真抓（最新可用）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-twitch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">7 天平均 · 10/01</span></div>
+          <ol>
+            <li><span class="nm">Just Chatting</span><span class="vn">269K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">114K</span></li>
+            <li><span class="nm">VALORANT</span><span class="vn">80.2K</span></li>
+            <li><span class="nm">World of Warcraft</span><span class="vn">79.6K</span></li>
+            <li class="hot"><span class="nm">WARDOGS</span><span class="vn">40.3K</span></li>
+            <li class="hot"><span class="nm">SILENT HILL: townfall</span><span class="vn">27.2K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 10/01 真抓（最新可用）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 本日 heat-radar 資料為 10/01 07:30 最新抓取；Steam 為官方 API 真數字。Roblox / Twitch 亦為 10/01 瀏覽器真抓（最新可用）。若今日（10/02）radar 已更新，請以最新 heat_latest.json 為準。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Deadlock 排名 20→9（本日重點）；Witcher 3 Remastered 77→7（持續）；PUBG +12.6%</h3>
+        <div class="sum">Steam 排名跳動（官方 radar 10/01）：<b>Deadlock 20→9（跳 11，尚未公開發售）</b>；Witcher 3 Remastered 77→7（跳 70，昨日起持續）；How to Fish 43→31（跳 12）；Wuthering Waves 68→59。新進榜：Minecraft Dungeons II（#73）、American Truck Simulator（#88）。真·日比：PUBG +12.6%（未達 15% 旗標）、CS −20.4%。Eurogamer 確認 Deadlock「just became one of the most played games on Steam」。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Deadlock 是今天的重點——<b>邀請制閉測本身就是最強行銷工具</b>，未公開發售卻衝進榜位第 9。Witcher 3 為持續訊號（昨日已報，今日不重複聚焦）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 現象分析</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 10/01 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>業界暴衝</span></span>Grasshopper Manufacture 分拆獨立——Suda 51「NO GAME NO LIFE」，IP 完整帶走</h3>
+        <div class="sum">多站同日確認（Game Developer、GamesIndustry.biz、RPS「NO GAME NO LIFE」、VGC、Reddit r/Games）。Suda 51 的《殺手7》《No More Heroes》工作室 2022 年被 NetEase 收購，2026 年主動被放行獨立（細節為標題層）。屬「業界地殼移動」型訊號。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「創意 &gt; 資本」的情緒訊號，與 GameGen「把創作還給玩家」的核心定位高度共振。<b>今天 CJ LinkedIn 首選素材</b>。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAME DEVELOPER · GBI · <a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Desktop Tower Survivor</span><span class="vn">新品</span></li>
+            <li><span class="nm">ShipCrafter</span><span class="vn">新品</span></li>
+            <li><span class="nm">HEATSINK</span><span class="vn">新品</span></li>
+            <li><span class="nm">VHS Chaos</span><span class="vn">新品</span></li>
+            <li><span class="nm">Fickle Allies</span><span class="vn">新品</span></li>
+            <li><span class="nm">Pop 'Un Orc</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 10/01 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO 迷因 / HTML5</span><span class="metric">小體量早期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Aura Farmer（迷因）</span><span class="vn">梗</span></li>
+            <li><span class="nm">StreamRush（viral）</span><span class="vn">viral</span></li>
+            <li><span class="nm">Kromer Kollector Neo（迷因）</span><span class="vn">收集</span></li>
+            <li><span class="nm">The Freak Circus</span><span class="vn">氛圍</span></li>
+            <li><span class="nm">SPLOOB</span><span class="vn">html5</span></li>
+            <li><span class="nm">All The Birds</span><span class="vn">html5</span></li>
+          </ol>
+          <div class="bf">itch.io html5 / tag-meme · 10/01 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>早期 loop 共相：塔防生存、收集 × 偷取、viral 行為遊戲化</h3>
+        <div class="sum">Steam 新品（Desktop Tower Survivor、VHS Chaos）與 itch.io（Aura Farmer、StreamRush、Kromer Kollector Neo）合看，loop 集中在<b>塔防/生存、收集 × 偷取、把 viral 行為本身做成玩法</b>（StreamRush = 串流主爆紅模擬）。⚠️ 體量與增速為榜單標題層，無精確數字。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>StreamRush「把 viral 行為遊戲化」與 GameGen 的 Create→Share→Trend loop 有概念共鳴——值得跟蹤。收集 × 偷取（蛋系公式）繼續保持低 IP 風險熱度。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO · 10/01 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>業界</span></span>Grasshopper Manufacture 正式從 NetEase 分拆——「創意 &gt; 資本」的業界情緒訊號</h3>
+        <div class="sum">Game Developer、GamesIndustry.biz、RPS（「NO GAME NO LIFE: Grasshopper Manufacture have leapt from the jaws of NetEase and gone indie again」）、VGC 同日確認。2022 年被 NetEase 收購後，2026 年恢復完全獨立，IP 全數保留（細節為標題層）。Reddit r/Games 同日報導。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>小型創意工作室靠文化資本存活——這個故事搭配「AI 工具民主化」論點，是今日最強 CJ LinkedIn 素材。不做遊戲化，純觀點文。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAME DEV / GBI / RPS · <a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>平台</span></span>Xbox「不賣」+ Microsoft 三年裁 5,750 人：大廠收縮，行動/瀏覽器遊戲空間擴大</h3>
+        <div class="sum">GamesIndustry.biz：Xbox CEO Asha Sharma 聲明「Xbox is not for sale」；Game Developer 標題：Microsoft CEO 稱 Xbox 是「streamlining」，三年裁員超 5,750 人；HN 見「Xbox for Sale: Don't Believe Anything Until It Is Officially Denied」（Kotaku）。Reddit r/gaming 同日出現「How Will Activision Handle Halo?」討論。均為標題層，未開原文。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Xbox 縮手 = 主機平台不確定性 = 行動端/瀏覽器小遊戲的替代需求上升。發文角度：觀點文，不做遊戲化，不參戰辯論。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAME DEV / GBI / HN · <a href="https://www.gamedeveloper.com/production/microsoft-ceo-says-xbox-is-streamlining-after-laying-off-5-750-workers-in-three-years" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Naavik：「遊戲業在 AI 泡沫中嗎？交易數據說了什麼」</h3>
+        <div class="sum">Naavik 播客（story_naavik feed，無確切日期）：「Is Gaming in an AI Bubble? What the Deal Data Says」——從融資交易數據角度評估 AI 遊戲工具投資是否過熱。同源另有「How AI Makes Game Creation More Accessible」。⚠️ 播客細節為標題層，未取得原文。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「AI 遊戲泡沫」討論是 CJ 觀點機會——GameGen 的角度：不在泡沫內，因為服務的是玩家創作端，不是另一個工作室效率工具。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NAAVIK · <a href="https://naavik.co/podcast/is-gaming-in-an-ai-bubble-what-the-deal-data-says/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>現象梗</span></span>Deadlock「最多人玩但沒公開」——「waitlist 是產品」成本週遊戲業最大文化梗</h3>
+        <div class="sum">Steam 官方 radar 確認 Deadlock #9（從 #20 跳），Eurogamer 標題「就成最多人玩之一」，PC Gamer 報 Valve 稱「too unfinished」——兩個標題的邏輯矛盾本身就是迷因。屬「業界事件衍生」型，非純網路梗。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「還沒完成卻最多人玩」= 限制供給製造飢餓感的極端案例。Create→Share loop 中加入「限量早鳥邀請碼」可借用同一心理。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 現象梗</span></span></div></div>
+          </div>
+          <div class="src">EUROGAMER / STEAM API · <a href="https://www.eurogamer.net/deadlock-update-steam-most-played-games" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>新鮮度警示</span></span>KYM 連續第 2 日只取得常青榜，無法確認當日新梗</h3>
+        <div class="sum">Know Your Meme 抓到的是常青榜（Navy Seal Copypasta、Trollface 等），非「Popular right now」。今日可確認的文化梗訊號為「Deadlock most played before release」（現象型）與「Grasshopper NO GAME NO LIFE」（情緒型），均屬業界事件衍生，非純網路迷因。<b>目前無法完全證實</b>新生純網路梗。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：<b>⚠️ 目前無法完全證實</b>當日新生純網路迷因。</span></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>未證實</span></span></div></div>
+          </div>
+          <div class="src">KYM · <a href="https://knowyourmeme.com/memes/popular" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        今日機制建議（取自暴衝 + 早期訊號 + 新聞）：<b>① 天氣災難閃躲</b>（GTA 6 颶風；輸入氣象 → 倒數閃躲 → 分享卡）；<b>② 閉測飢餓感機制</b>（Deadlock 邀請制；限量早鳥版 Create→Share loop）；<b>③ 收集 × 偷取</b>（Roblox 蛋系持續；泛化任意名詞）；<b>④ Viral 行為遊戲化</b>（StreamRush itch.io；把 viral 本身做成玩法）。⚠️ 資料為 10/01 抓取；unityroom 本次未取得。IP 地雷：GTA 場景/角色/地名一律不用；不挪 Deadlock 美術。
+      </div>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        今日無顯著更新：Threads 繁中圈需登入渲染，本次未取得當日熱話，<b>目前無法完全證實</b>。建議題材變體（推測，非已證實熱度）：把「天氣災難」在地化為台灣常見災害（颱風 / 豪雨 / 地震）語氣版，繁中受眾比「颶風」更有共鳴；Grasshopper 獨立消息可包裝為「不是只有大公司才能做出有靈魂的遊戲」在地故事。
+      </div>
+    </section>
+
+    <!-- Trend-to-Game -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>GTA 6 颶風天氣系統（Eurogamer 標題）</td><td><span class="tmpl">天氣災難閃躲</span></td><td>「我在 X 天氣撐了 Y 秒」卡、輸入任意氣象</td><td class="rk-low">低 · 全泛化</td><td>★ 本日 Demo 首選，不用 GTA 素材</td></tr>
+          <tr><td>Deadlock 邀請制閉測最多人玩（Steam #9）</td><td><span class="tmpl">閉測飢餓感 loop</span></td><td>「我在等待清單上」邀請卡</td><td class="rk-low">低</td><td>借機制設計概念，不做 Deadlock 同人</td></tr>
+          <tr><td>Grasshopper 獨立（Suda 51 出走 NetEase）</td><td><span class="tmpl">（非玩法）CJ 貼文</span></td><td>「AI + 小團隊 &gt; 大廠資金」故事</td><td class="rk-low">低</td><td>走 LinkedIn，今日首選 CJ 素材</td></tr>
+          <tr><td>Xbox 縮手 + 裁員 5,750 人</td><td><span class="tmpl">（非玩法）X 貼文</span></td><td>「大廠縮手 = 小工具的機會」對比</td><td class="rk-low">低</td><td>觀點文，不做遊戲化，中性立場</td></tr>
+          <tr><td>Steam 折扣演算法驅動</td><td><span class="tmpl">（非玩法）CJ 貼文</span></td><td>「Launch-day loop 成唯一上架入口」</td><td class="rk-low">低</td><td>搭配 GameGen Create loop 論點</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>創意 &gt; 資本：小工作室靠 IP 和自由活著</td><td>Grasshopper Manufacture 從 NetEase 分拆（多源確認，10/01）</td><td>"Suda 51's studio just walked out of NetEase with all their IP. AI tools mean the ceiling for a tiny creative team just got a lot higher."</td><td><a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">↗</a></td></tr>
+          <tr><td>Steam 演算法驅動 = Launch-day loop 成唯一入口</td><td>Steam 折扣/活動頁全面演算法（Game Developer 標題，近日）</td><td>"Steam's discounts tab is going algorithm-driven. Day-one engagement decides everything. Launch-day viral loops are the only on-ramp."</td><td><a href="https://www.gamedeveloper.com/pc/steam-s-discounts-and-events-tab-will-soon-be-fully-algorithm-driven" target="_blank">↗</a></td></tr>
+          <tr><td>Deadlock：「未完成」也可以是最多人玩的祕密</td><td>Deadlock Steam #9，邀請制閉測；Eurogamer「one of the most played」（10/01 radar）</td><td>"The waitlist IS the product. Limited access IS the best marketing. What GameGen's Create→Share loop borrows from the same psychology."</td><td><a href="https://www.eurogamer.net/deadlock-update-steam-most-played-games" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2 已附 EN hook + 中譯。Grasshopper 多源確認（✓）；Steam 演算法標題層（partial）。對外用字已過濾賭場語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>GTA 6 天氣梗：天氣災難 demo gif ＋「輸入天氣，生成遊戲」</li><li>Deadlock 梗：「等待清單本身就是產品」＋閉測機制反思</li><li>Xbox 縮手觀點：「大廠退出 = 玩家創作工具的空間更大了」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「天氣災難」：輸入氣象 → 生成閃躲求生（本日首選）</li><li>「限量邀請」：Create→Share 限量版，生成「我的邀請碼」分享卡</li><li>泛化「收集 × 偷取」（蹭 Roblox 蛋系，任意名詞版）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Deadlock 何時正式公開發售（Valve 說「too unfinished」→ 何時改變？）</li><li>Grasshopper 獨立後首個新作公告</li><li>Steam 折扣演算法驅動的正式上線時間</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>GTA 場景 / 角色 / 地名 / 品牌：天氣 Demo 只用泛化場景</li><li>Deadlock 角色 / 美術：只借行銷機制概念</li><li>Xbox / Microsoft 政治立場：只做客觀平台趨勢分析，中性語氣</li><li>Grasshopper 報導不包裝為對 NetEase 的控訴</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Grasshopper Manufacture 從 NetEase 獨立</td><td><a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">Game Developer</a> · <a href="https://www.gamesindustry.biz/grasshopper-manufacture-becomes-independent-as-it-splits-from-netease-games" target="_blank">GamesIndustry.biz</a> · <a href="https://www.rockpapershotgun.com/no-game-no-life-grasshopper-manufacture-have-leapt-from-the-jaws-of-netease-and-gone-indie-again" target="_blank">RPS</a> · <a href="https://www.videogameschronicle.com/news/suda-51s-grasshopper-officially-regains-independence-from-netease-avoiding-studio-cull/" target="_blank">VGC</a>　pub 10/01（多源同日）　驗：分拆事實多源確認<span class="ok">✓</span>　財務細節標題層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Deadlock Steam #9（從 #20 跳 11）</td><td>Steam 官方 API radar（heat_latest.json 10/01 07:30）　驗：排名官方數字<span class="ok">✓</span>　<a href="https://www.eurogamer.net/deadlock-update-steam-most-played-games" target="_blank">Eurogamer</a> / <a href="https://www.pcgamer.com/games/moba/valve-says-deadlock-is-still-too-unfinished-to-release-publicly-but-has-hero-cosmetics-and-new-game-modes-in-the-works/" target="_blank">PC Gamer</a>　標題層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Xbox CEO「不賣」/ Microsoft 裁員 5,750</td><td><a href="https://www.gamedeveloper.com/production/microsoft-ceo-says-xbox-is-streamlining-after-laying-off-5-750-workers-in-three-years" target="_blank">Game Developer</a> · <a href="https://www.gamesindustry.biz/xbox-ceo-asha-sharma-insists-xbox-is-not-for-sale" target="_blank">GamesIndustry.biz</a>　標題層<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>GTA 6 天氣系統重工</td><td><a href="https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain" target="_blank">Eurogamer</a>　標題層（原文未開）<span class="pp">summary</span>　🆕</td></tr>
+        <tr><td>Steam 折扣演算法驅動</td><td><a href="https://www.gamedeveloper.com/pc/steam-s-discounts-and-events-tab-will-soon-be-fully-algorithm-driven" target="_blank">Game Developer</a>　標題層（原文未開）<span class="pp">summary</span>　近日</td></tr>
+        <tr><td>數字層（Steam / Roblox / Twitch）</td><td>Steam＝heat_latest.json 官方 API 10/01 07:30；Roblox＝roblox.com/charts 10/01；Twitch＝twitchtracker.com/games 10/01（最新可用）<span class="ok">✓</span></td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　Grasshopper 多源確認 ✓ · Deadlock 排名 Steam 官方 ✓ · 其他新聞標題層 partial · Steam 官方 API 10/01 07:30 · Roblox / Twitch 10/01 真抓 · KYM 連續 2 日僅常青榜、Threads / unityroom 未取得，標暫缺 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/10/02 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
