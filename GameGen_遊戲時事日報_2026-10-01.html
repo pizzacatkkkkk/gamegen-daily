@@ -24,6 +24,7 @@
   .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
   .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
   a{color:inherit}
+
   nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
   .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
   .brand{display:flex;align-items:center;gap:10px}
@@ -38,6 +39,7 @@
   .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
     border-left:2px solid var(--ink);padding-left:18px}
   @media(max-width:820px){.nav-links{display:none}}
+
   .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
   .hero::before{content:"";position:absolute;inset:0;opacity:.5;
@@ -53,6 +55,7 @@
   .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
   .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
   .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
     letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
   .hero h1 .yl{color:var(--yellow)}
@@ -60,6 +63,7 @@
     letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
   .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
   .hero .tagline b{background:var(--ink);padding:1px 8px}
+
   .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
     box-shadow:8px 8px 0 rgba(0,0,0,.85)}
   .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
@@ -69,6 +73,8 @@
   .lead b{color:var(--ink);font-weight:900}
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -85,7 +91,7 @@
   .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
   .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
     border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
-  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
   .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
   .ammo-item .ln b{color:var(--ink);font-weight:900}
   .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
@@ -94,6 +100,7 @@
   .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
   .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
     background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
   main{max-width:880px;margin:0 auto;padding:0 26px 90px}
   section{padding:56px 0 0;scroll-margin-top:64px}
   .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
@@ -104,10 +111,12 @@
   .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
   .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
   .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
   .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
     padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
   .tag>span{display:inline-block;transform:skewX(8deg)}
   .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
   .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
     position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -118,6 +127,7 @@
   .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
   .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
   .story .obs b{font-weight:900}
+
   .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .scores{display:flex;gap:18px}
   .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
@@ -131,6 +141,7 @@
   .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
   .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
   .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
   .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
     border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
@@ -142,6 +153,8 @@
   .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -162,6 +175,7 @@
   .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
   .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
   .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
   .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -174,13 +188,15 @@
   .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
   .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
   .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
   .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
   .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
   .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
   .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
   .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
-  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800} .evlog .no{color:var(--red);font-weight:800}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
   footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
   footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
@@ -190,8 +206,10 @@
   footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
   footer .legend b{background:var(--ink);padding:1px 7px}
   footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
   .reveal.in{opacity:1;transform:none}
+
   @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
 </style>
 </head>
@@ -211,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 01 · 彈藥工廠模式 · Steam 數字 10/01 07:30 真抓 · Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
+        <span class="dateflag">2026 / 10 / 01 · 彈藥工廠模式 · Steam 官方真數字 + Twitch / Roblox 瀏覽器真抓（10/01）· 來源 20+ 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -219,12 +237,12 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>歐洲消費者保護當局今日正式對多家主要遊戲公司的虛擬貨幣設計展開執法行動</b>（GamesIndustry.biz，2026-10-01）——遊戲貨幣設計的合規時代正式來臨。同一天，<b>洩露的歐盟法案草案顯示可能終止所有私人遊戲伺服器並要求強制 ID 驗證</b>，Reddit r/gaming 今日熱榜第一，Stop Killing Games 運動面臨最大威脅。歐洲監管對遊戲業的雙重壓力是今日最大行業警訊。</p>
-        <p>在 Steam 戰場，<b>《巫師 3：狂獵—重製版》今日排名從 #77 暴衝至 #7（+70 名），為全榜史上最大跳幅</b>（heat_latest.json 真數字）；但昨日的歡呼今日轉向：Eurogamer 報導「My god this new lighting is lifeless」的社群批評引爆新論戰。另一大事：<b>Suda 51 的 Grasshopper Manufacture 今日正式脫離 NetEase 獨立</b>（多媒體確認），「NO GAME NO LIFE」成為今日最強獨立精神迷因。</p>
-        <p>AI 行業數字：<b>超過 85% 的日本遊戲開發者使用 AI 工具，63% 每日使用</b>（Kotaku，2026-09-30）。Diablo 5 確認回歸 Diablo 2 式戰鬥，「正確的 build 比動作更重要」。</p>
-        <div class="pull">▸ 今天最強切角：EU 執法（CJ A 級）+ AI 滲透率數字（CJ A 級）。《巫師 3》±70 vs 打光批評（X 分析帖高質）。Grasshopper 獨立（迷因感情帖）。洩露 EU Act 是今日最大社群討論窗口。</div>
+        <p><b>日本開發者 85.8% 已在用生成式 AI（一年前是 51%），而且 63% 每天用——但只有 8.6% 有公司規範。</b>CESA 在 CEDEC 調查 1,349 位開發者（Kotaku，pub 2026-09-30）：<span class="hl">AI 已經是產線日常，不是實驗</span>；同週 UK Games Expo 反向宣布禁 AI 生成遊戲（9/26）。<b>供給側全面用 AI、規則卻還沒跟上</b>。</p>
+        <p>同一天 <span class="hl">歐盟 CPC 網絡對 Activision Blizzard、King、Mojang、Riot、Supercell、Ubisoft 等 10 家發動虛擬貨幣協調執法</span>（RTÉ / TechBuzz Ireland 10/01 同日報導；PocketGamer 列公司名單）。對 GameGen 的訊號：AI 創作工具若賣 Credits，<b>透明定價要第一天就設計進去</b>；而「玩家自己用 AI 做遊戲」這件事，產業還沒人好好服務。</p>
+        <div class="pull">▸ 今天就能蹭：CJ 貼文「85.8% 用 AI 做遊戲，8.6% 有規範」＋小編貼「America.gov 聊天機器人把 Minecraft 結尾詩改寫成公文」的公文梗，做一款「官方公文閃躲」小遊戲 demo。</div>
       </div>
 
+      <!-- 📰 今日彈藥 頭版 -->
       <div class="ammo">
         <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
 
@@ -232,19 +250,19 @@
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>歐洲當局對主要遊戲公司虛擬貨幣展開執法——遊戲貨幣設計的合規時代來臨</div>
-            <div class="ln"><b>新聞事實：</b>歐洲消費者保護監管機構今日正式公告，對多家主要遊戲公司的虛擬貨幣使用方式採取執法行動。GamesIndustry.biz 及 Reddit r/gaming（top-of-day）今日同步報導（2026-10-01）。這是歐洲監管機構首次針對遊戲業虛擬貨幣設計展開系統性執法。</div>
-            <div class="ln"><b>GameGen 角度：</b>遊戲貨幣設計的合規壓力首次系統化——不能向監管機構解釋自己貨幣邏輯的設計，就是下一個目標。<b>透明、可解釋的貨幣設計是現在最有前瞻性的護城河</b>。GameGen 的有機社群路線天然規避此風險。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "European authorities just launched enforcement actions against major game studios over virtual currency design. If you can't explain your in-game economy to a regulator, you're next. The studios that survive this are the ones with transparent, player-aligned monetization built in from day one."<br><span style="color:var(--ink-dim)">中譯：歐洲當局剛對多家主要遊戲公司的虛擬貨幣設計展開執法行動。如果你解釋不清楚自己遊戲的貨幣邏輯，你就是下一個目標。能撐過這波的工作室，是從第一天就建立透明、以玩家為中心貨幣設計的那些人。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/european-authorities-launch-enforcement-actions-against-several-major-video-games-companies-over-their-use-of-virtual-currencies" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.reddit.com/r/gaming/comments/1wu6cfk/european_authorities_launch_enforcement_actions/" target="_blank">Reddit ↗</a>　pub 今日　partial（摘要層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>日本開發者 85.8% 已用生成式 AI（去年 51%）——但只有 8.6% 有公司指引</div>
+            <div class="ln"><b>新聞事實：</b>日本 CESA 於 CEDEC 調查 1,349 位開發者：<b>85.8% 使用生成式 AI、63% 每天用、22.8% 偶爾用</b>；僅 <b>8.6%</b> 有公司 AI 使用指引；去年採用率為 51%。CESA 會員公司層面 74% 有 AI 政策，但只有 12 家用於視覺素材（Kotaku，pub 2026-09-30；原文另提事件背景為 Level-5 發表會被疑似 AI 圖像）。</div>
+            <div class="ln"><b>GameGen 角度：</b>AI 已是遊戲產線日常，但全是「專業人士 × 內部工具」。同一份調查只有 147 位開發者認為 AI 對最終用戶體驗有利——代表<b>消費端價值還沒被兌現</b>。GameGen 站另一端：不是讓工作室更快，是讓玩家與創作者自己把今天的梗做成能玩的遊戲，並且大方標示「AI 生成」。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "85.8% of Japanese game developers now use generative AI — 63% every day. Only 8.6% have company guidance. And only 147 of 1,349 think it helps players. The tools are inside the studio. The player-facing side is still wide open."<br><span style="color:var(--ink-dim)">中譯：日本 85.8% 的遊戲開發者在用生成式 AI，63% 天天用，只有 8.6% 有公司指引，1,349 人裡只有 147 人覺得它對玩家有幫助。工具都在工作室內部，面向玩家的那一側還是空的。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">Kotaku ↗</a>　pub 2026-09-30　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>85% 以上日本遊戲開發者使用 AI 工具，63% 每日使用——AI 已是遊戲業的預設狀態</div>
-            <div class="ln"><b>新聞事實：</b>Kotaku 報導（2026-09-30）：日本遊戲開發者調查顯示超過 85% 正在使用 AI 工具，63% 每日使用。Level-5（《暗雲》《雷頓教授》開發商）近期展示疑似 AI 生成圖片引發廣泛討論。tavily 今日二次確認（score 0.582）。</div>
-            <div class="ln"><b>GameGen 角度：</b>85% 的真實數字說明 AI 已是遊戲業的作業系統，不是選配項。<b>新的競爭問題不再是「要不要用 AI」，而是「用哪些工具才能在同樣使用 AI 的競爭者中差異化」</b>。今日 CJ 最強論據。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Over 85% of Japanese game developers are using AI tools. 63% daily. AI in game development isn't a trend — it's the default. The new competitive question isn't 'should I use AI?' It's 'which AI tools give me the best creative leverage over others who are also using AI?'"<br><span style="color:var(--ink-dim)">中譯：超過 85% 的日本遊戲開發者正在使用 AI 工具，63% 每日使用。AI 在遊戲開發不是趨勢了——它是預設狀態。新的競爭問題不是「要不要用 AI」，而是「哪些 AI 工具讓我在同樣用 AI 的競爭者中脫穎而出」。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">Kotaku ↗</a>　pub 2026-09-30　partial（摘要層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>歐盟對 10 家遊戲公司發動虛擬貨幣協調執法——「Credits 透明度」變成產業課題</div>
+            <div class="ln"><b>新聞事實：</b>歐盟消費者保護合作（CPC）網絡對 Activision Blizzard、Crytek、InnoGames、King、Mojang、Plarium、PLR Worldwide Sales、Riot Games、Supercell、Ubisoft 提出關切，聚焦遊戲內虛擬貨幣的真實價格透明度、隱藏費用、強迫購買、撤回權與對兒童的影響；若未處理「可能導致各國主管機關執法」，未訂明具體期限（PocketGamer 名單與內容；RTÉ / TechBuzz Ireland 10/01 同日報導）。⚠️ PocketGamer 頁面未顯示日期，日期依 RTÉ 網址 2026/10/01。</div>
+            <div class="ln"><b>GameGen 角度：</b>GameGen 中期變現是 B2C Credits。監管正在盯「虛擬貨幣讓人看不清真實價格」。AI 創作工具的 Credits 若第一天就做到「一個 Credit＝多少錢、一次生成耗幾個、不用就不扣」，是對平台與合作方的信任資產，而不是合規負擔。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "EU regulators just put 10 game companies on notice over in-game currencies. For anyone building AI creation tools on credits: the lesson is simple — price it so a player can say out loud what one generation costs."<br><span style="color:var(--ink-dim)">中譯：歐盟剛對 10 家遊戲公司的遊戲內貨幣發出關切。做 AI 創作工具又靠 Credits 的人，課題很簡單——定價要讓玩家能說出一次生成到底多少錢。</span></div>
+            <div class="meta">去賭場化 ✅（只談消費者透明度，不談 payout）　來源 <a href="https://www.pocketgamer.biz/europes-cpc-targets-king-supercell-mojang-and-others-over-virtual-currencies/" target="_blank">PocketGamer.biz ↗</a> · <a href="https://www.rte.ie/news/business/2026/1001/1593563-gaming-companies/" target="_blank">RTÉ ↗</a>　pub 2026-10-01（網址日期）　verified partial</div>
           </div>
         </div>
 
@@ -252,37 +270,37 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>《巫師 3》重製版 Steam 排名暴衝 +70（#77 → #7）——但社群今日轉向「打光毫無生氣」批評<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>heat_latest.json steam_movers（10/01 07:30 真抓）：《巫師 3：狂獵—重製版》今日 Steam 排名從昨日 #77 躍升至 #7（上升 70 名），全榜最大跳幅。Eurogamer 同日報導社群對新打光的強烈批評（原文引用："My god this new lighting is lifeless"）。</div>
-            <div class="ln"><b>GameGen 角度：</b>昨天歷史最高在線，今天社群批評打光——這是玩家社群最真實的生命週期：回流之後，立刻變成評論家。被批評是比被無視更好的處境。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Yesterday: Witcher 3 Remastered hit an all-time Steam CCU record. Today: 'My god this new lighting is lifeless.' Steam rank jumped +70 to #7. The community came back — then immediately started critiquing. That's what love looks like in gaming. Players who ignore you don't review you."<br><span style="color:var(--ink-dim)">中譯：昨天：《巫師 3》重製版創 Steam 史上最高在線。今天：「這個新打光毫無生氣。」Steam 排名暴衝 +70 至第 7 名。玩家回來了——然後馬上開始批評。這就是遊戲圈的愛。無視你的玩家不會評論你。</span></div>
-            <div class="meta">來源 <a href="https://www.eurogamer.net/witcher-3-remastered-community-reaction-lighting" target="_blank">Eurogamer ↗</a>　steam_movers 10/01 07:30 真數字　yes（Heat JSON 真抓）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>America.gov 聊天機器人一聽到「play Minecraft」就改寫結尾詩成公文，還否認寫過<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>在 America.gov 聊天機器人輸入 "play Minecraft"，它會產出公文版的 Minecraft End Poem（把宇宙換成 republic、constituent、ZIP code），事後還否認寫過（Engadget，pub 2026-09-30）；HN 當日 103 points / 40 則留言（radar）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A government chatbot turned a famous game poem into paperwork. We made a game where you have to survive the paperwork. Stamp it before it stamps you. 👇"　<span style="color:var(--ink-dim)">中譯：政府聊天機器人把名作詩改成了公文。我們做了一款「撐過公文」的遊戲。你蓋章，不然它蓋你。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入任何「官僚語氣」（市政府 / 社區管委會 / 客服）→ 生一款蓋章閃躲小遊戲 → 出「已駁回」分享卡。⚠️ 政治敏感、Minecraft IP：只用泛化「市政窗口」，不用美國政府名稱 / 印章 / 人物，不挪用 Minecraft 美術或詩文。</div>
+            <div class="meta">來源 <a href="https://www.engadget.com/2272978/the-us-governments-new-ai-chatbot-gives-minecrafts-end-poem-a-bureaucratic-twist/" target="_blank">Engadget ↗</a>　pub 2026-09-30　verified ✓（Engadget 開原文）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Suda 51 的 Grasshopper Manufacture 正式脫離 NetEase 獨立——「NO GAME NO LIFE」精神的最強示範<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Grasshopper Manufacture（Suda 51）今日正式與 NetEase 分割，重新成為獨立工作室，成功避開被關閉的命運。RPS 以 Grasshopper 的聲明語「NO GAME NO LIFE」為標題。GamesIndustry.biz、Game Developer、VGC、RPS 多媒體確認（2026-10-01）。</div>
-            <div class="ln"><b>GameGen 角度：</b>Suda 51 脫離大廠回歸獨立——今日最強獨立創作者迷因材料。切角：被大廠收購，然後逃出來，重新掌控自己的創作。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Suda 51's Grasshopper Manufacture just split from NetEase and went indie again. Their announcement: 'NO GAME NO LIFE.' Some studios get acquired and disappear. Some come back. The ones that come back know exactly what they're fighting for — and it's not the acquisition price."<br><span style="color:var(--ink-dim)">中譯：Suda 51 的 Grasshopper Manufacture 剛正式脫離 NetEase，重新獨立。他們的公告標題：「NO GAME NO LIFE」。有些工作室被收購就消失了。有些人回來了。回來的人清楚知道自己在為什麼而戰——絕對不是為了收購價格。</span></div>
-            <div class="meta">來源 <a href="https://www.gamesindustry.biz/grasshopper-manufacture-becomes-independent-as-it-splits-from-netease-games" target="_blank">GI.biz ↗</a> / <a href="https://www.rockpapershotgun.com/no-game-no-life-grasshopper-manufacture-have-leapt-from-the-jaws-of-netease-and-gone-indie-again" target="_blank">RPS ↗</a>　pub 今日　yes（多媒體確認）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>英國最大桌遊展 UK Games Expo 宣布禁 AI 生成遊戲——要求展商撤下，違規可禁展<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>UKGE 要求展出 / 販售 AI 生成遊戲的展商撤下，可關攤並禁止未來參展，例外限於「輕度編輯與輔助製作或無障礙用途」；背景為 2025 年推廣 AI RPG《Gates of Krystalia》引發反彈（Kotaku，pub 2026-09-26）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Tabletop's biggest UK show just banned AI-made games. Fair. The fix isn't hiding it — it's a big label that says 'made with AI in 60 seconds' and a challenge button. 👇"　<span style="color:var(--ink-dim)">中譯：英國最大桌遊展禁了 AI 做的遊戲。合理。解法不是藏起來，而是大大方方標「AI 60 秒生成」，旁邊放挑戰鍵。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>每款遊戲自動帶「Made with AI」標籤與生成 prompt 公開，玩家可一鍵 remix。不參戰「AI 該不該存在」，站透明。</div>
+            <div class="meta">來源 <a href="https://kotaku.com/uks-largest-tabletop-convention-bans-ai-with-few-exceptions-2000737334" target="_blank">Kotaku ↗</a>　pub 2026-09-26　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>洩露歐盟草案：終止私人遊戲伺服器 + 強制 ID 驗證——Stop Killing Games 的最大威脅<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/gaming 今日熱帖（top-of-day）：洩露的歐盟法案草案顯示可能終止私人遊戲伺服器並要求所有遊戲強制 ID 驗證。Reddit r/Games 同日「This could legitimately end Stop Killing Games.」⚠️ 洩露文件，尚未官方確認。（Reddit，2026-10-01）</div>
-            <div class="ln"><b>GameGen 角度：</b>如果屬實，是對玩家自我維護遊戲生態的最大威脅。今日最大社群討論窗口，情緒強烈，分享率高。⚠️ 發文時需明確標注「洩露未確認」。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "A leaked EU draft would ban all private game servers and require mandatory ID verification. If this passes — mods, fan servers, 'play forever' culture — gone. The games you truly own are the ones you built yourself."<br><span style="color:var(--ink-dim)">中譯：洩露的歐盟草案可能禁止所有私人遊戲伺服器，並強制 ID 驗證。如果通過——模改社群、自架伺服器、「永遠可玩」文化全部消失。你真正擁有的遊戲，是你自己做的那些。</span></div>
-            <div class="meta">⚠️ 洩露未確認，發文須標注　來源 <a href="https://www.reddit.com/r/gaming/comments/1wuc336/leaked_eu_act_would_put_an_end_to_private_video/" target="_blank">Reddit r/gaming ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1wubi8w/this_could_legitimately_end_stop_killing_games/" target="_blank">r/Games ↗</a>　pub 今日　no（洩露文件）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Witcher 3 Remastered 一夜衝進 Steam 在線榜第 7（前日第 77）、Twitch 單週均 1.94 萬觀看<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam 官方 radar：排名 77→7（跳 70 名，本日最大）；Twitch 7 天平均觀看 19.4K（TwitchTracker 10/01 瀏覽器真抓）；GamesIndustry.biz 標題稱其創下歷來最高 Steam 同時在線（僅標題層級，內文被擋未能開）；Eurogamer 報導玩家對重製版燈光意見兩極。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Remaster drops, the whole internet argues about the lighting. Meme it: build a 30-second 'spot what the remaster changed' challenge in your own fantasy world. 👇"　<span style="color:var(--ink-dim)">中譯：重製版一出，全網吵燈光。用梗收：做一款 30 秒「找出重製版改了什麼」挑戰，背景用你自己的奇幻世界。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>找不同 / 光影猜謎，泛化奇幻場景，不用《巫師》角色美術與標誌。</div>
+            <div class="meta">來源 <a href="https://www.gamesindustry.biz/the-witcher-3-hits-its-highest-ever-steam-concurrent-player-count-following-remastered-launch" target="_blank">GamesIndustry.biz ↗</a> · <a href="https://www.eurogamer.net/witcher-3-remastered-community-reaction-lighting" target="_blank">Eurogamer ↗</a>　摘要層（headline）</div>
           </div>
         </div>
 
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「合規透明化」loop——蹭 EU 執法 + AI NPC 低於 2 秒反應時間（emcom.ai HN），今日窗口<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法概念：</b>（1）AI NPC Demo：LLM 驅動的角色即時對話（sub-2s），玩家選擇 → NPC 即時回應，展示「你說話，它聽懂」體驗；（2）EU Act 蹭題：「逃出受監管遊戲」極簡動作 loop，玩家扮演開發者在監管機構到來前快速修改系統，合法通關。配文：「如果今天就有監管機構查你，你的遊戲能解釋清楚嗎？」</div>
-            <div class="ln"><b>為何是今天：</b>EU 執法確認 + 洩露草案同日，遊戲監管話題情緒最高峰。AI NPC sub-2s 是今日 HN 上的技術訊號（emcom.ai，1pt 但方向正確）。</div>
-            <div class="meta">EU 執法來源 <a href="https://emcom.ai/2026/09/26/the-quest-for-real-time/" target="_blank">emcom.ai ↗</a>（HN 今日出現）　不用任何受監管公司品牌素材</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「公文閃躲」：輸入任何官僚語氣，生一款蓋章 / 填表求生小遊戲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入語氣（市政窗口 / 社區管委會 / 客服話術）→ 60 秒單鍵蓋章：對的表單蓋章、錯的躲開，連擊加分 → 結束給「已駁回 / 已核准」分享卡（純梗分數，無金額）。</div>
+            <div class="ln"><b>為何是今天首選：</b>綁 HN 103 points 的「play Minecraft」公文梗，情緒是好笑 + 荒謬；單鍵反應模板現成、Create→Share loop 內建；全程泛化窗口、<b>不用政府標誌 / 政治人物 / Minecraft 素材</b>。</div>
+            <div class="meta">綁 <a href="https://www.engadget.com/2272978/the-us-governments-new-ai-chatbot-gives-minecrafts-end-poem-a-bureaucratic-twist/" target="_blank">Engadget ↗</a>　模板：單鍵反應 / 表單速度</div>
           </div>
         </div>
       </div>
@@ -290,304 +308,306 @@
   </header>
 
   <main>
-    <!-- 01 即時熱榜 -->
+    <!-- 即時熱榜 -->
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
       <div class="boards reveal">
+
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/01 07:30 真抓</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/01 即時</span></div>
           <ol>
-            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">377K ▼20.4%</span></li>
-            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">99K ▲12.6%</span></li>
-            <li><span class="nm">Rainbow Six Siege</span><span class="vn">68K ▲0.3%</span></li>
-            <li class="up"><span class="nm">Apex Legends</span><span class="vn">52K ▲7.5%</span></li>
-            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">52K ▲4.9%</span></li>
-            <li><span class="nm">Warframe</span><span class="vn">46K ▼2.0%</span></li>
+            <li class="down"><span class="nm">Counter-Strike</span><span class="vn">378K ▼20.4%</span></li>
+            <li class="hot up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">100K ▲12.6%</span></li>
+            <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">68K ▲0.3%</span></li>
+            <li class="up"><span class="nm">Apex Legends</span><span class="vn">53K ▲7.5%</span></li>
+            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">53K ▲4.9%</span></li>
+            <li class="down"><span class="nm">Warframe</span><span class="vn">47K ▼2.0%</span></li>
           </ol>
-          <div class="bf">Steam 官方 API · 10/01 07:30 真數字（週四）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 10/01 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
+
         <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。近期數據顯示高人氣生存/模擬類遊戲持續領榜，今日具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">Top Playing Now · 10/01</span></div>
+          <ol>
+            <li class="hot"><span class="nm">偷一顆蛋（Steal-an-egg 類）</span><span class="vn">1M</span></li>
+            <li><span class="nm">布魯克海文 RP</span><span class="vn">313.8K</span></li>
+            <li><span class="nm">謀殺之謎2</span><span class="vn">202.7K</span></li>
+            <li><span class="nm">Blox Fruits</span><span class="vn">171.7K</span></li>
+            <li><span class="nm">[天空刺客] 法術惡作劇</span><span class="vn">138.2K</span></li>
+            <li><span class="nm">對手</span><span class="vn">136.9K</span></li>
+          </ol>
+          <div class="bf">roblox.com/charts · 瀏覽器 10/01 真抓（全裝置 / 全地區；遊戲名為繁中介面顯示名）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
         </div>
-        <div class="board b-dim">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。《巫師 3》重製版社群論戰與 EU 監管消息可能影響今日直播流量，具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+
+        <div class="board b-twitch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">7 天平均 · 10/01</span></div>
+          <ol>
+            <li><span class="nm">Just Chatting</span><span class="vn">269K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">114K</span></li>
+            <li><span class="nm">VALORANT</span><span class="vn">80.2K</span></li>
+            <li><span class="nm">World of Warcraft</span><span class="vn">79.6K</span></li>
+            <li class="hot"><span class="nm">WARDOGS</span><span class="vn">40.3K</span></li>
+            <li class="hot"><span class="nm">SILENT HILL: townfall</span><span class="vn">27.2K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 瀏覽器 10/01 真抓 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
         </div>
+
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 今日 Steam 數字為 2026-10-01T07:30 真抓（heat_latest.json）。PUBG +12.6%、Apex +7.5%、TF2 +4.9% 逆勢上漲（週四回升）。CS:GO 最大跌幅 -20.4%。熱賣榜：AION 2、Minecraft Dungeons II、WARDOGS、ACE COMBAT 8、Gears of War: E-Day 進入熱賣名單。Roblox / Twitch / Threads 今日無瀏覽器工具，均標記「資料不足」。
+        ✅ 本機 heat-radar 10/01 07:30 已跑成功；Steam 為官方 API 真數字。Roblox / Twitch 為本次瀏覽器即時真抓。Roblox 榜上「蛋」主題遊戲密集出現（見下箱）。
       </div>
     </section>
 
-    <!-- 02 暴衝訊號 -->
+    <!-- 暴衝訊號 -->
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>排名跳動</span></span>《巫師 3》重製版排名暴衝 +70（#77→#7）——全榜史上最大跳幅；Deadlock +11、How to Fish +12</h3>
-        <div class="sum">steam_movers（10/01 07:30）排名跳動紀錄：<b>《巫師 3：狂獵—重製版》+70 名</b>（77 → 7），今日最大跳幅，也是近期全榜有記錄以來的史上最大單日跳幅；<b>How to Fish +12 名</b>（43 → 31）；<b>Deadlock +11 名</b>（20 → 9）；Wuthering Waves +9；Arena Breakout: Infinite +5；Magic: The Gathering Arena +5。新進榜：Minecraft Dungeons II（#73）、American Truck Simulator（#88）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>《巫師 3》重製版的 +70 跳幅是今日最重要的數據訊號——昨日免費重製版上線帶來的歷史在線人數，今日正式轉化為 Steam 排名的歷史級上升。<b>這是「免費升級忠誠飛輪」在 Steam 數字上最清晰的物質化體現</b>。How to Fish +12 和 Deadlock +11 也值得追蹤，前者輕鬆陪伴類別持續受歡迎，後者受益於昨日「City Never Sleeps」超大更新。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/01 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>速度觀察</span></span>PUBG +12.6%、Apex +7.5%、TF2 +4.9%——週四三連漲；CS:GO -20.4% 最大跌幅</h3>
-        <div class="sum">Steam 在線速度（10/01 vs 前日）：今日三大上漲：<b>PUBG: BATTLEGROUNDS +12.6%</b>（99,815 人，前日 88,659 人）；<b>Apex Legends +7.5%</b>（52,825 人，前日 49,129 人）；<b>Team Fortress 2 +4.9%</b>（52,766 人，前日 50,308 人）。最大跌幅：<b>Counter-Strike: Global Offensive -20.4%</b>（377,808 人，前日 474,442 人）。Rust -13.3% 也是顯著跌幅。War Thunder +3.6% 穩定上升。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>PUBG 今日 +12.6% 的逆勢上漲值得注意——在許多遊戲下滑的週三→週四走勢中，PUBG 持續回升，可能有活動或更新的支撐。<b>Apex 和 TF2 同步上漲，說明傳統射擊遊戲週四回暖是有規律的</b>。CS:GO -20.4% 的大幅回落在前日 474K 的高基數下是正常回調，不代表趨勢反轉。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/01 07:30 · <a href="https://store.steampowered.com/app/578080" target="_blank">PUBG ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 03 早期訊號 -->
-    <section id="early">
-      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>早期</span></span>HN 最高分：「America.gov 輸入 play Minecraft 會發生什麼」（103pts/40c）——政府 AI 幻覺 Minecraft 結尾詩；sub-2s LLM NPC（emcom.ai）</h3>
-        <div class="sum">Hacker News 今日遊戲相關最高分：<b>「America.gov goes crazy on 'play Minecraft'」</b>（103 points / 40 comments）——美國政府官網 america.gov 的 AI 聊天機器人在輸入「play minecraft」後，幻覺生成了 Minecraft 的標誌性《End Poem》（遊戲通關彩蛋文）。多個相關帖同日衝上 HN（共 4 條相關條目）。早期信號 <b>「Sub-two-second LLM-driven NPC behavior in a 3D action game」</b>（emcom.ai，1pt）——LLM 驅動 NPC 首度在 3D 動作遊戲中達到低於 2 秒的實時反應。itch.io：Kill the Ice Age Baby Adventure 持續在 meme 榜，FNaF: DAYBREAK 進入 popular 榜。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>America.gov 的「play Minecraft」幻覺是今日 HN 最強遊戲迷因——AI 在政府網站上幻覺出 Minecraft 的詩，說明 <b>Minecraft 的文化滲透力已超出遊戲範疇</b>。對創作者的訊號：任何人可以隨口想到「play minecraft」，這是知名度的門檻。emcom.ai 的 sub-2s LLM NPC 則是技術層的真實訊號：<b>AI NPC 即時對話的門檻正在被打破</b>，值得 GameGen 工具層追蹤。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">HACKER NEWS · 10/01 · <a href="https://america.gov/chat" target="_blank">america.gov ↗</a> / <a href="https://emcom.ai/2026/09/26/the-quest-for-real-time/" target="_blank">emcom.ai ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 04 高討論文章 -->
-    <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>監管大事</span></span>歐洲當局正式對多家主要遊戲公司虛擬貨幣設計展開執法——遊戲貨幣合規時代來臨</h3>
-        <div class="sum">GamesIndustry.biz 及 Reddit r/gaming（top-of-day）今日報導（2026-10-01）：歐洲消費者保護監管機構正式公告，對多家主要遊戲公司的虛擬貨幣使用方式採取執法行動。這是歐洲監管機構首次針對遊戲業虛擬貨幣設計展開系統性執法行動，對象涉及多個大型遊戲發行商。同日，洩露的歐盟法案草案顯示可能進一步管控私人遊戲伺服器（詳見第 05 節）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>歐洲執法的象徵意義大於實際懲罰：<b>監管機構已明確表示遊戲虛擬貨幣是執法目標</b>——這意味著所有發行商都必須重新審視自己的貨幣設計合規性。對 GameGen 的意義：透明度 = 不需要擔心這個問題的護城河；有機、去貨幣化的社群設計天然合規。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAMESINDUSTRY.BIZ · <a href="https://www.gamesindustry.biz/european-authorities-launch-enforcement-actions-against-several-major-video-games-companies-over-their-use-of-virtual-currencies" target="_blank">GI.biz ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業大事</span></span>Grasshopper Manufacture 正式脫離 NetEase 獨立——Suda 51「NO GAME NO LIFE」成今日最強獨立精神宣言</h3>
-        <div class="sum">多媒體確認（GamesIndustry.biz、Game Developer、VGC、RPS，2026-10-01）：Grasshopper Manufacture（Suda 51，代表作《殺手 7》《模仿犯》《英雄不再》等）今日正式與 NetEase 分割，重新成為獨立工作室，並成功避開工作室被關閉的命運。Rock Paper Shotgun 以 Grasshopper 的公告語「NO GAME NO LIFE」為標題。VGC 確認：「Suda 51's Grasshopper officially regains independence from NetEase, avoiding studio cull.」</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Grasshopper 的故事是 2026 年遊戲業最具感情力量的商業新聞之一——被收購、在大廠裡掙扎、最後逃出來、重新獨立。<b>這是「創作自主性是真正的資產」最強的現實案例</b>。對創作者的啟示：如果你的遊戲從第一天起就是你掌控的，你就永遠不需要「逃跑」。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GI.BIZ / VGC / RPS · <a href="https://www.gamesindustry.biz/grasshopper-manufacture-becomes-independent-as-it-splits-from-netease-games" target="_blank">GI.biz ↗</a> / <a href="https://www.videogameschronicle.com/news/suda-51s-grasshopper-officially-regains-independence-from-netease-avoiding-studio-cull/" target="_blank">VGC ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>平台戰略</span></span>Xbox CEO Asha Sharma 堅稱「Xbox 不出售」——但裁員 5,750 人後的「永續商業模式」困境依然懸而未決</h3>
-        <div class="sum">GamesIndustry.biz、Game Developer、GameSpot、Eurogamer 今日同步報導（2026-10-01）：Xbox CEO Asha Sharma 公開否認 Xbox 出售傳言（「Xbox is not for sale」），並表示「we will do whatever it takes」扭轉局面。同日 Kotaku 刊登 HN 條目「Xbox for Sale: Don't Believe Anything Until It Is Officially Denied」，暗示輿論仍有高度疑慮。上月微軟 CEO Nadella 承認 Xbox 需要「永續商業模式」，三年裁員逾 5,750 人。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Xbox 的困境持續——CEO 越強調「不出售」，外界的疑慮就越大。<b>「永續商業模式」的困境說明：訂閱制（Game Pass）本身無法自動形成護城河</b>，需要真實的創作者生態和玩家留存才能支撐。這是 GameGen 工具賦權路線的最大行業反面教材。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Witcher 3 Remastered 榜位 77→7；Deadlock 20→9；PUBG +12.6% 微旗</h3>
+        <div class="sum">Steam 排名跳動（官方 radar）：<b>The Witcher 3 Remastered 77→7（跳 70 名）</b>、Deadlock 20→9（跳 11）、How to Fish 43→31、Wuthering Waves 68→59；新進榜：Minecraft Dungeons II（#73）、American Truck Simulator（#88）。真·日比：PUBG +12.6%（未達 15% 旗標）、CS −20.4%（前日基期偏高）。Twitch 端 Witcher 3 Remastered 7 天均 19.4K、SILENT HILL: townfall 27.2K 在榜。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Witcher 重製版是今天唯一「新事件型」暴衝，且玩家吵燈光（Eurogamer）＝可玩化的爭議點（找不同 / 光影猜謎）。但屬大作 IP，一律走泛化奇幻皮。其餘為老遊戲日常波動，不當趨勢。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · IP</span></span></div></div>
           </div>
-          <div class="src">GI.BIZ / EUROGAMER · <a href="https://www.gamesindustry.biz/xbox-ceo-asha-sharma-insists-xbox-is-not-for-sale" target="_blank">GI.biz ↗</a> / <a href="https://www.eurogamer.net/xbox-not-for-sale-ceo-asha-sharma-console" target="_blank">Eurogamer ↗</a></div>
+          <div class="src">STEAM 官方 API · 10/01 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
-    </section>
 
-    <!-- 05 迷因 -->
-    <section id="meme">
-      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>政策迷因</span></span>洩露歐盟草案：終止私人遊戲伺服器——「Stop Killing Games」運動面臨最大威脅，Reddit 今日熱榜第一</h3>
-        <div class="sum">Reddit r/gaming（top-of-day）今日：洩露的歐盟法案草案顯示可能終止所有私人遊戲伺服器（user-hosted servers）並要求所有遊戲強制 ID 驗證。Reddit r/Games 同日熱帖「This could legitimately end Stop Killing Games.」引發大量討論。評論區情緒強烈，大量玩家分享自己最愛的已關閉遊戲私服故事。⚠️ 洩露文件，尚未官方確認。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「Stop Killing Games」運動代表了玩家對遊戲所有權最強烈的集體情緒。這個洩露草案（如果屬實）是對整個運動的直接威脅——私服是「遊戲死後繼續活著」的唯一非官方途徑。<b>迷因切角（不引用任何官方機構名稱）：「如果今天有人關掉你最愛的遊戲的伺服器，你還有什麼是真正屬於你的？」</b> ⚠️ 發文必須明確標注「洩露未確認」。</div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Roblox「蛋」主題克隆潮：偷一顆蛋 1M 同上線，Up-and-Coming 榜同款一排</h3>
+        <div class="sum">Roblox 全榜 Top Playing Now 第一名「偷一顆蛋」<b>1M 同時在線</b>，第二名布魯克海文僅 313.8K（約 3 倍差）。Top Trending / Up-and-Coming 榜另見「打破並偷走一顆蛋」13.4K、「打亂一顆蛋」5.3K、「+1 雞蛋翅膀」10.4K、「蛋競賽」7.2K、「揮棒尋蛋」8.5K 等同題材款（遊戲名為繁中介面顯示名，英文原名未逐一核對）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是「<b>一個爆款公式被快速複製成一整排</b>」的教科書——正是 Trend-to-Game 要比人類更快做到的事。可借的是公式（收集 × 偷取 × 一個名詞），不是任何一款的素材。⚠️ 目前無法完全證實該榜上遊戲的上線日期與各款是否為同一團隊。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 洩露未確認，發文須標注</span></span></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div>
           </div>
-          <div class="src">REDDIT · <a href="https://www.reddit.com/r/gaming/comments/1wuc336/leaked_eu_act_would_put_an_end_to_private_video/" target="_blank">r/gaming ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1wubi8w/this_could_legitimately_end_stop_killing_games/" target="_blank">r/Games ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI 幻覺迷因</span></span>America.gov 輸入「play Minecraft」後 AI 自動生成《End Poem》——政府網站的 Minecraft 文化滲透 HN #1</h3>
-        <div class="sum">Hacker News 今日最高分遊戲帖（103pts/40c）：美國政府官網 america.gov 的 AI 聊天機器人在輸入「play minecraft」後，幻覺生成了 Minecraft 著名的《End Poem》（遊戲通關彩蛋詩）全文。多個相關帖同日湧現（4 條相關條目，總計超過 170pts）。評論討論政府 AI 的訓練數據品質和 Minecraft 文化的深度滲透。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這個迷因說明 Minecraft 的《End Poem》已成為 AI 訓練語料中的標誌性文本——深度到政府 AI 都「記住了它」。<b>遊戲文化滲透力的測試：如果一個 AI 聊天機器人會幻覺你的遊戲台詞，你就成功了</b>。迷因分享格式天然高：「你知道嗎，政府 AI 會幫你打 Minecraft。」</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不引用 Minecraft 品牌素材</span></span></div></div>
-          </div>
-          <div class="src">HACKER NEWS · <a href="https://america.gov/chat" target="_blank">america.gov ↗</a></div>
+          <div class="src">ROBLOX CHARTS · 瀏覽器 10/01 · <a href="https://www.roblox.com/charts" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
-    <!-- 06 機制靈感庫 -->
-    <section id="lab">
-      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
       <div class="boards reveal">
-        <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
-          <ol>
-            <li class="hot"><span class="nm">AI NPC 即時對話 loop（sub-2s，emcom.ai 公式）</span><span class="vn">角色互動</span></li>
-            <li class="up"><span class="nm">合規透明化機制（EU 執法公式：解釋你的系統）</span><span class="vn">信任設計</span></li>
-            <li class="hot"><span class="nm">獨立精神 / 逃脫大廠 loop（Grasshopper 公式）</span><span class="vn">情感迷因</span></li>
-            <li><span class="nm">Build 深度 vs Action 表面（Diablo 5 D2 公式）</span><span class="vn">系統深度</span></li>
-            <li><span class="nm">遊戲保存 / 私服求生 loop（Stop Killing Games 公式）</span><span class="vn">遊戲保存主題</span></li>
-          </ol>
-          <div class="bf">itch.io + 今日新聞衍生 · 10/01 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
-        </div>
-      </div>
 
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Desktop Tower Survivor</span><span class="vn">新品</span></li>
+            <li><span class="nm">ShipCrafter</span><span class="vn">新品</span></li>
+            <li><span class="nm">HEATSINK</span><span class="vn">新品</span></li>
+            <li><span class="nm">VHS Chaos</span><span class="vn">新品</span></li>
+            <li><span class="nm">Pop 'Un Orc</span><span class="vn">新品</span></li>
+            <li><span class="nm">Bodian's Bay Wash</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 10/01 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO 迷因 / HTML5</span><span class="metric">小體量早期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Aura Farmer（迷因）</span><span class="vn">梗</span></li>
+            <li><span class="nm">Kromer Kollector Neo（迷因）</span><span class="vn">收集</span></li>
+            <li><span class="nm">The Freak Circus</span><span class="vn">氛圍</span></li>
+            <li><span class="nm">SPLOOB</span><span class="vn">html5</span></li>
+            <li><span class="nm">Magical Greenhouse</span><span class="vn">養成</span></li>
+            <li><span class="nm">All The Birds</span><span class="vn">html5</span></li>
+          </ol>
+          <div class="bf">itch.io html5 / tag-meme · 10/01 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
       <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>AI NPC sub-2s 設計公式——LLM 即時角色對話正式進入可玩門檻</h3>
-        <div class="sum">emcom.ai（HN 今日出現）展示了在 3D 動作遊戲中 LLM 驅動 NPC 行為低於 2 秒的實時反應。這個技術指標的意義：<b>AI NPC 的對話反應時間首度突破玩家可接受的「感知即時」門檻</b>（&lt;2 秒）。設計公式：玩家說話 → NPC 即時理解上下文 → 即時行動/回應。這不只是技術演示——它是「遊戲 NPC 能聽懂你說話」的第一個可實際落地的原型。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>sub-2s LLM NPC 是今日最具前瞻性的技術訊號。<b>GameGen 工具的下一個前沿：如果每個 GameGen 遊戲都可以有「聽得懂玩家說話的 NPC」，Trend-to-Game 的創作能力邊界就會大幅擴張</b>。今天值得追蹤 emcom.ai 的後續進展。</div>
+        <h3><span class="tag rl"><span>洞察</span></span>早期 loop 共相：塔防生存、收集 × 偷取、養成、氛圍短篇</h3>
+        <div class="sum">Steam 新品（Desktop Tower Survivor、VHS Chaos、Pop 'Un Orc）與 Roblox 蛋系克隆、itch 迷因款（Aura Farmer、Kromer Kollector）合看，loop 集中在<b>塔防 / 生存、收集 × 偷取、放置養成</b>。⚠️ 以上為榜單標題層級歸納，體量與增速<b>目前無法完全證實</b>（itch/Steam 新品榜無數字）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>收集 × 偷取與養成最好做泛化版、IP 風險低；itch 迷因款多半挪用既有 IP（如 Undertale 系），只借「梗→小遊戲」的做法，不借素材。</div>
         <div class="footrow">
           <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">EMCOM.AI · <a href="https://emcom.ai/2026/09/26/the-quest-for-real-time/" target="_blank">原文 ↗</a></div>
+          <div class="src">STEAM / ITCH.IO · 10/01 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
-    <!-- 07 繁中 Threads 熱話 -->
-    <section id="zh">
-      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
-        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：歐盟法案草案洩露（台灣玩家私服使用率高，反應強烈）、《巫師 3》重製版打光論戰（台灣 CD Projekt 粉絲社群規模大）、Grasshopper 獨立（Suda 51 在台灣有固定粉絲群）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>日本 CESA：85.8% 開發者用生成式 AI、63% 每天用，僅 8.6% 有公司指引</h3>
+        <div class="sum">CEDEC 調查 1,349 人，採用率從去年 51% 升到 85.8%；CESA 會員公司 74% 有 AI 政策但僅 12 家用於視覺素材；僅 147 人認為 AI 對終端用戶體驗有益（Kotaku 9/30）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>AI 在產線已成日常，但價值還沒到玩家手上——GameGen 的「玩家端創作」定位被數字背書。Kotaku 9/25 另報 NIS America 負責人稱「研究中」，顯示仍有保守派。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">KOTAKU · 9/30 · <a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>監管</span></span>歐盟 CPC 對 10 家遊戲公司的虛擬貨幣做法發出關切（10/01）</h3>
+        <div class="sum">名單含 Activision Blizzard、King、Mojang、Riot、Supercell、Ubisoft 等；焦點為真實價格透明、隱藏費用、強迫購買、撤回權與對兒童影響；CPC 原則屬指引而非法律，未訂期限（PocketGamer）。Reddit r/gaming 當日同題與「洩漏的歐盟法案將終結私人伺服器」並列高位（後者僅 Reddit 標題，<b>目前無法完全證實</b>）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Credits 定價透明＝信任資產。GameGen 的文案與介面避免「幣值模糊」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">POCKETGAMER.BIZ · 10/01 · <a href="https://www.pocketgamer.biz/europes-cpc-targets-king-supercell-mojang-and-others-over-virtual-currencies/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>對標</span></span>Meta Horizon Create / Studio（9/24–25）：手機與瀏覽器 AI 做遊戲（♨️ 昨日前已用過，僅列背景）</h3>
+        <div class="sum">GamesIndustry.biz 與 The Verge 標題層級：Meta 發表 Horizon Create（行動）與 Horizon Studio，主打 agentic 創作；Verge 作者持懷疑態度。本次兩站被擋、未開原文，細節<b>目前無法完全證實</b>。EverVibe 的 $500 AI 桌遊主機（Polygon 9/24）為另一個「AI 生成遊戲」硬體訊號。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>大廠把 AI 做遊戲往手機與瀏覽器推，GameGen 的差異要放在「趨勢速度 + 社群分享 loop」，不是生成本身。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESINDUSTRY.BIZ / VERGE · 9/24 · <a href="https://www.theverge.com/games/999972/meta-horizon-create-studio-ai-games" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因</span></span>America.gov 聊天機器人「play Minecraft」→ 公文版結尾詩，並否認寫過（9/30 · 🆕）</h3>
+        <div class="sum">輸入 "play Minecraft" 會得到把宇宙換成 republic / constituent / ZIP code 的公文版詩；事後否認（Engadget 9/30）。HN 103 points / 40 則留言（當日 radar 最高的遊戲相關題）。屬「官方機構 × 遊戲彩蛋」型自然梗。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>荒謬反差、易截圖、好改寫＝高分享。可遊戲化成「公文閃躲」（見頭版 Demo）。⚠️ 政治與 Minecraft IP：只用泛化窗口。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 政治/IP</span></span></div></div>
+          </div>
+          <div class="src">ENGADGET · 9/30 · <a href="https://www.engadget.com/2272978/the-us-governments-new-ai-chatbot-gives-minecrafts-end-poem-a-bureaucratic-twist/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>新鮮度警示</span></span>KYM 本次只取得常青榜，無法確認當日新梗</h3>
+        <div class="sum">Know Your Meme 瀏覽器抓到的是「All Entries 熱門」（Navy Seal Copypasta、Trollface 等經典），非「Popular right now」，<b>不當作今天的梗</b>。Reddit 另見「Mario Kart Tour 結束營運」（僅標題）情緒題，屬懷舊型，<b>目前無法完全證實</b>熱度數字。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：<b>⚠️ 目前無法完全證實</b>當日新生純網路迷因。</span></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>未證實</span></span></div></div>
+          </div>
+          <div class="src">KNOW YOUR MEME · 瀏覽器 10/01 · <a href="https://knowyourmeme.com/memes/popular" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        今日無顯著更新：unityroom 本次未抓取（需瀏覽器逐頁），<b>目前無法完全證實</b>。可借機制建議（取自今日早期訊號）：<b>單鍵蓋章 / 表單速度</b>（公文閃躲）、<b>收集 × 偷取</b>（Roblox 蛋系公式，泛化為任意名詞）、<b>找不同 / 光影猜謎</b>。⚠️ IP 二創地雷：Witcher、Minecraft、Undertale 系迷因款一律不挪美術 / 名稱 / 文本。
       </div>
     </section>
 
-    <!-- 08 Trend-to-Game 題材 -->
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        今日無顯著更新：Threads 繁中圈需登入渲染，本次未取得當日熱話，<b>目前無法完全證實</b>。建議題材變體（推測，非已證實熱度）：把「公文閃躲」做成繁中政府窗口 / 里長 / 管委會語氣版，三國、武俠皮可套同一單鍵模板。
+      </div>
+    </section>
+
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>EU 虛擬貨幣執法（行業警訊）</td><td><span class="tmpl">透明貨幣設計 / 合規展示</span></td><td>「監管來了，你的設計能解釋清楚嗎？」</td><td class="rk-low">低</td><td>★ CJ A 級素材，今日最強行業觀察帖，中長期有效</td></tr>
-          <tr><td>《巫師 3》+70 排名 vs 打光批評（社群矛盾）</td><td><span class="tmpl">免費升級後反應曲線分析</span></td><td>「愛你的玩家才會批評你——無視你的玩家不會」</td><td class="rk-low">低 · 不用 Witcher 3 素材</td><td>X 分析帖高質素，今日窗口，明後天話題降溫</td></tr>
-          <tr><td>Grasshopper 獨立（Suda 51 精神）</td><td><span class="tmpl">獨立創作者迷因 / 自主設計</span></td><td>「做你能從頭到尾掌控的東西」</td><td class="rk-low">低</td><td>X 感情帖今日最強，不用 Grasshopper/Suda 51 品牌素材</td></tr>
-          <tr><td>洩露歐盟私人伺服器禁令（Stop Killing Games）</td><td><span class="tmpl">遊戲保存 / 所有權主題</span></td><td>「你真正擁有的遊戲，是你自己做的那些」</td><td class="rk-mid">中 · 洩露未確認，發文須標注</td><td>X 社群討論今日窗口，情緒強烈，需謹慎標注來源</td></tr>
-          <tr><td>Diablo 5 D2 式戰鬥回歸（Build 深度）</td><td><span class="tmpl">系統深度 vs 動作表面 loop</span></td><td>「相信玩家有思考能力是最強的設計決策」</td><td class="rk-low">低</td><td>RPG 社群 X 帖，有機分享率高，不用 Diablo 品牌素材</td></tr>
-          <tr><td>85%+ 日本開發者用 AI（行業數字）</td><td><span class="tmpl">AI 工具效率比較 / 創作力展示</span></td><td>「問題不是要不要用 AI，而是用哪些工具贏」</td><td class="rk-low">低</td><td>CJ A 級，行業數字有說服力，今日和下週均適合</td></tr>
+          <tr><td>America.gov「play Minecraft」公文詩（HN 103）</td><td><span class="tmpl">單鍵蓋章 / 表單速度</span></td><td>「已駁回」分享卡、可改任何官僚語氣</td><td class="rk-mid">中 · 政治 / IP</td><td>★ 本日 Demo 首選，只用泛化窗口</td></tr>
+          <tr><td>Roblox 蛋系克隆潮（偷一顆蛋 1M）</td><td><span class="tmpl">收集 × 偷取 loop</span></td><td>「我的蛋庫」收藏卡、排行</td><td class="rk-low">低</td><td>公式泛化成任意名詞，一句話換主題</td></tr>
+          <tr><td>Witcher 3 Remastered 燈光爭議（Steam #7）</td><td><span class="tmpl">找不同 / 光影猜謎</span></td><td>「我答對 X/10」挑戰卡</td><td class="rk-mid">中 · 大作 IP</td><td>泛化奇幻場景，不用角色美術與標誌</td></tr>
+          <tr><td>UK Games Expo 禁 AI</td><td><span class="tmpl">明示生成 + prompt 公開</span></td><td>「Made with AI」透明標</td><td class="rk-low">低</td><td>當定位素材，不參戰辯論</td></tr>
+          <tr><td>日本 85.8% 開發者用 AI</td><td><span class="tmpl">（非玩法）CJ 貼文</span></td><td>數字對比「工作室 vs 玩家」</td><td class="rk-low">低</td><td>走 LinkedIn，不做 demo</td></tr>
         </tbody>
       </table>
       </div>
     </section>
 
-    <!-- 09 CJ LinkedIn 題材 -->
+    <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>歐洲虛擬貨幣執法——遊戲貨幣設計合規時代來臨</td><td>歐洲消費者保護監管機構今日正式對多家主要遊戲公司虛擬貨幣使用方式採取執法行動（GamesIndustry.biz，2026-10-01）</td><td>"European authorities just launched enforcement actions against major game studios over virtual currency design. If you can't explain your in-game economy to a regulator, you're next. The studios that survive this are the ones with transparent, player-aligned monetization built in from day one."</td><td><a href="https://www.gamesindustry.biz/european-authorities-launch-enforcement-actions-against-several-major-video-games-companies-over-their-use-of-virtual-currencies" target="_blank">↗</a></td></tr>
-          <tr><td>85%+ 日本開發者用 AI——AI 是遊戲業的預設狀態，不是趨勢</td><td>日本遊戲開發者調查：85%+ 使用 AI 工具，63% 每日使用（Kotaku，2026-09-30）</td><td>"Over 85% of Japanese game developers are using AI tools. 63% daily. AI in game development isn't a trend — it's the default. The new competitive question isn't 'should I use AI?' It's 'which AI tools give me the best creative leverage over others who are also using AI?'"</td><td><a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">↗</a></td></tr>
-          <tr><td>Grasshopper 獨立 + Xbox「永續商業模式」困境——獨立精神 vs 平台依賴的最強對比</td><td>Grasshopper Manufacture 今日脫離 NetEase 獨立（多媒體確認，2026-10-01）；Xbox CEO 同日堅稱「不出售」但「永續商業模式」問題未解；三年裁員 5,750 人</td><td>"Today: Grasshopper Manufacture split from NetEase and went indie. Also today: Xbox CEO insists 'we're not for sale' — after 5,750 layoffs. One studio bet on creative independence. One platform is scrambling to define what it even is. In 2026, independence isn't a compromise. It's the strategy."</td><td><a href="https://www.gamesindustry.biz/grasshopper-manufacture-becomes-independent-as-it-splits-from-netease-games" target="_blank">↗</a></td></tr>
+          <tr><td>AI 在工作室內已日常，玩家端仍空著</td><td>CESA：85.8% 用、63% 每天、僅 8.6% 有指引、147/1,349 認為利於玩家（9/30）</td><td>"The tools are inside the studio. The player-facing side is still wide open."</td><td><a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">↗</a></td></tr>
+          <tr><td>Credits 透明度成為監管題</td><td>歐盟 CPC 對 10 家遊戲公司虛擬貨幣關切（10/01）</td><td>"Price it so a player can say out loud what one generation costs."</td><td><a href="https://www.pocketgamer.biz/europes-cpc-targets-king-supercell-mojang-and-others-over-virtual-currencies/" target="_blank">↗</a></td></tr>
+          <tr><td>供給側分裂：有人全面用，有人禁</td><td>日本 85.8% 採用 vs UK Games Expo 禁 AI 生成遊戲（9/26）</td><td>"Half the industry runs on AI, the other half bans it. Both sides need a label players can trust."</td><td><a href="https://kotaku.com/uks-largest-tabletop-convention-bans-ai-with-few-exceptions-2000737334" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（EU 執法、85% AI 數字）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。第 3 條（Grasshopper + Xbox 對比）需 CJ 確認合適語氣後發布。對外用字已過濾所有禁用語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
+        📄 頭版 🎯 CJ Top 2 已附 EN hook + 中譯。第 1 條 Kotaku 開原文驗過；第 2 條 PocketGamer 驗了公司名單與內容但頁面無日期（日期依 RTÉ 網址），為 partial，發文前建議再補一個有日期的來源。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
 
-    <!-- 10 建議動作 -->
+    <!-- Actions -->
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
-          <li>EU 執法：「歐洲當局剛對遊戲公司虛擬貨幣設計採取執法行動。如果你解釋不清楚自己的貨幣設計，你就是下一個。」（CJ 今日最強窗口）</li>
-          <li>Grasshopper 獨立：「Suda 51 脫離 NetEase：NO GAME NO LIFE。有些合作在第一通電話就死了。做你能從頭到尾掌控的東西。」</li>
-          <li>《巫師 3》±70 vs 打光批評：「昨天：歷史最高在線。今天：打光毫無生氣。Steam +70 名。被批評是比被無視更好的處境。」</li>
-          <li>洩露 EU Act：「洩露草案可能終止私人伺服器。你真正擁有的遊戲，是你自己做的那些。」（需標注：洩露未確認）</li>
-        </ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
-          <li>★ AI NPC 即時對話 demo——蹭 sub-2s LLM NPC 技術訊號（emcom.ai），玩家說話、角色即時回應，展示「你說話，它聽懂」體驗。今日技術信心窗口。</li>
-          <li>「獨立創作者逃脫」loop——蹭 Grasshopper 獨立精神，開發者扮演工作室主管在被收購壓力下保留創作自主權。情感迷因轉遊戲。</li>
-          <li>「遊戲保存求生」loop——蹭 Stop Killing Games 主題，玩家在伺服器關閉前搶救最愛遊戲存檔的時間壓力機制。</li>
-        </ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
-          <li>EU 虛擬貨幣執法後續——涉及哪些具體公司？懲罰措施為何？影響多大範圍？</li>
-          <li>《巫師 3》Steam 排名走勢——+70 之後能否在 #7 附近穩定？忠誠飛輪的持續性指標。</li>
-          <li>洩露 EU Act 的真實性確認——如果進入官方程序，是 2026 年最大遊戲政策新聞之一。</li>
-          <li>emcom.ai sub-2s LLM NPC 的更多細節——技術方案是什麼？可否直接整合？</li>
-        </ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
-          <li>洩露 EU Act：未經官方確認，發文必須明確標注「洩露未確認」，不可引用為確定事實。</li>
-          <li>Grasshopper 話題：不使用 Suda 51 / Grasshopper Manufacture / NetEase 品牌素材，只借獨立精神概念。</li>
-          <li>《巫師 3》話題：不使用 CD Projekt / Witcher 品牌素材，只借排名數據和玩家反應分析。</li>
-          <li>EU 執法：所有涉及虛擬貨幣的發文均需標注「不構成法律建議，僅供行業觀察」語氣，避免被誤解為法律指引。</li>
-          <li>所有來源均為摘要層——對外不寫成「確定事實」，保留「報導指出 / 確認」語氣。</li>
-        </ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>公文梗：「政府聊天機器人把名作詩改成公文，我們做了撐過公文的遊戲」＋ demo gif</li><li>UKGE 禁 AI：「大大方方標 Made with AI + 挑戰鍵」</li><li>Witcher 重製版燈光吵架：30 秒找不同挑戰</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「公文閃躲」單鍵蓋章（本日首選）</li><li>泛化「收集 × 偷取」一句話換名詞（蹭 Roblox 蛋系）</li><li>光影找不同（泛化奇幻場景）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>歐盟 CPC 後續：各公司回應與是否訂期限</li><li>America.gov 事件是否出現官方回應或被修補</li><li>Roblox 蛋系款是否持續霸榜或快速降溫</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>政府標誌 / 政治人物 / Minecraft 詩文與美術</li><li>Witcher 角色與標誌</li><li>Credits 文案避免任何幣值模糊與賭場語言</li><li>別寫成「新梗」：KYM 本次無新鮮度證據</li></ul></div>
       </div>
     </section>
 
+    <!-- 彈藥 Evidence Log -->
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>EU 虛擬貨幣執法行動</td><td><a href="https://www.gamesindustry.biz/european-authorities-launch-enforcement-actions-against-several-major-video-games-companies-over-their-use-of-virtual-currencies" target="_blank">GamesIndustry.biz</a> / <a href="https://www.reddit.com/r/gaming/comments/1wu6cfk/european_authorities_launch_enforcement_actions/" target="_blank">Reddit r/gaming top-of-day</a>　驗：標題一致，兩源確認；具體被執法公司名稱尚未公開　<span class="pp">partial</span>　pub 今日</td></tr>
-        <tr><td>85%+ 日本開發者使用 AI</td><td><a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">Kotaku</a>　驗：摘要層「85 Percent Of Japanese Game Developers Are Using AI」，63% 每日，tavily score 0.582 確認　<span class="pp">partial</span>　pub 2026-09-30</td></tr>
-        <tr><td>《巫師 3》Steam 排名 +70（#77→#7）</td><td>heat_latest.json steam_movers 10/01 07:30 真抓：rank 7 / prev_rank 77 / jump 70　驗：真數字，無需摘要層確認　<span class="ok">✓</span>（今日真數字）　pub 今日</td></tr>
-        <tr><td>《巫師 3》「打光毫無生氣」社群批評</td><td><a href="https://www.eurogamer.net/witcher-3-remastered-community-reaction-lighting" target="_blank">Eurogamer</a>　驗：標題「'My god this new lighting is lifeless' - The Witcher 3 Remastered Edition divides players」，story_eurogamer 今日確認　<span class="pp">partial</span>（摘要層）　pub 今日</td></tr>
-        <tr><td>Grasshopper Manufacture 脫離 NetEase 獨立</td><td><a href="https://www.gamesindustry.biz/grasshopper-manufacture-becomes-independent-as-it-splits-from-netease-games" target="_blank">GI.biz</a> / <a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">Game Developer</a> / <a href="https://www.videogameschronicle.com/news/suda-51s-grasshopper-officially-regains-independence-from-netease-avoiding-studio-cull/" target="_blank">VGC</a> / <a href="https://www.rockpapershotgun.com/no-game-no-life-grasshopper-manufacture-have-leapt-from-the-jaws-of-netease-and-gone-indie-again" target="_blank">RPS</a>　驗：四媒體確認　<span class="ok">✓</span>（多媒體確認）　pub 今日</td></tr>
-        <tr><td>洩露歐盟草案（私人伺服器終止 + ID 驗證）</td><td><a href="https://www.reddit.com/r/gaming/comments/1wuc336/leaked_eu_act_would_put_an_end_to_private_video/" target="_blank">Reddit r/gaming top-of-day</a> / <a href="https://www.reddit.com/r/Games/comments/1wubi8w/this_could_legitimately_end_stop_killing_games/" target="_blank">r/Games hot</a>　驗：Reddit 帖文標題層；洩露文件尚未官方確認　<span class="no">⚠️ 未確認</span>（洩露）　pub 今日</td></tr>
-        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-10-01T07:30 官方 API　CSGO 377K -20.4% / PUBG 99K +12.6% / R6 68K +0.3% / Apex 52K +7.5% / TF2 52K +4.9% / Warframe 46K -2.0%　<span class="ok">✓</span>（今日真數字）；steam_movers：Witcher3 +70 / How to Fish +12 / Deadlock +11 / Wuthering Waves +9；新進榜：Minecraft Dungeons II #73、American Truck Simulator #88</td></tr>
+        <tr><td>日本 CESA 85.8% AI</td><td><a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">Kotaku</a>（WebFetch）　原文日期 2026-09-30　驗：85.8%、63% 每天、22.8% 偶爾、8.6% 有指引、1,349 人、去年 51%、147 人<span class="ok">✓</span>　🆕</td></tr>
+        <tr><td>歐盟 CPC 虛擬貨幣</td><td><a href="https://www.pocketgamer.biz/europes-cpc-targets-king-supercell-mojang-and-others-over-virtual-currencies/" target="_blank">PocketGamer.biz</a>（WebFetch）/ <a href="https://www.rte.ie/news/business/2026/1001/1593563-gaming-companies/" target="_blank">RTÉ</a>（僅搜尋列表，403 未開）　日期依 RTÉ 網址 2026-10-01，PocketGamer 頁面無日期　驗：10 家公司名單、關切項目、無期限<span class="pp">partial</span></td></tr>
+        <tr><td>America.gov「play Minecraft」</td><td><a href="https://www.engadget.com/2272978/the-us-governments-new-ai-chatbot-gives-minecrafts-end-poem-a-bureaucratic-twist/" target="_blank">Engadget</a>（WebFetch）　原文日期 2026-09-30　驗：公文版詩、事後否認；HN 103 pts 為 radar 官方數字<span class="ok">✓</span>　🆕（摘要層條目）</td></tr>
+        <tr><td>UK Games Expo 禁 AI</td><td><a href="https://kotaku.com/uks-largest-tabletop-convention-bans-ai-with-few-exceptions-2000737334" target="_blank">Kotaku</a>（WebFetch）　原文日期 2026-09-26　驗：撤下要求、可禁展、例外條款、Gates of Krystalia 背景<span class="ok">✓</span>　🔄</td></tr>
+        <tr><td>Witcher 3 Remastered</td><td><a href="https://www.gamesindustry.biz/the-witcher-3-hits-its-highest-ever-steam-concurrent-player-count-following-remastered-launch" target="_blank">GamesIndustry.biz</a>（被擋，僅標題）/ <a href="https://www.eurogamer.net/witcher-3-remastered-community-reaction-lighting" target="_blank">Eurogamer</a>（標題）　日期未驗<span class="pp">summary</span>　數字層：Steam 排名 77→7 為官方 radar、Twitch 19.4K 為 TwitchTracker 瀏覽器真抓</td></tr>
+        <tr><td>Meta Horizon Create / Studio</td><td>GamesIndustry.biz / The Verge（皆被擋）　標題與 Tavily 摘要層，pub 2026-09-24/25　♨️ 昨日前已用過，僅列背景<span class="pp">summary</span></td></tr>
+        <tr><td>數字層（Steam / Roblox / Twitch）</td><td>Steam＝heat_latest.json 官方 API；Roblox＝roblox.com/charts 瀏覽器 10/01；Twitch＝twitchtracker.com/games 瀏覽器 10/01（遊戲名依介面顯示）<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 10/01 07:30 真數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️） · 洩露文件均標注「未確認」</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 10/01 07:30 + 多源新聞 · 2026/10/01 · 對外發布前一律過濾禁用語言 + 真人 / IP 風險 · 洩露文件須另行核實</div>
+    <div class="legend"><b>方法</b>　CJ Top 2 逐條開原文驗（第 2 條 partial）· 小編 / Demo 摘要層 · Steam＝官方 API 10/01 · Roblox / Twitch＝瀏覽器 10/01 真抓 · KYM 僅常青榜、Threads / unityroom 未取得，標暫缺 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/10/01 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
