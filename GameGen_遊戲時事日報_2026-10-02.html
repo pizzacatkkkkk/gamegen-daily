@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -227,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 02 · 彈藥工廠模式 · Steam 官方真數字（10/01 07:30 radar）· 來源 20+ 站</span>
+        <span class="dateflag">2026 / 10 / 02 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）· 來源 19 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -235,9 +237,9 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>Suda 51 的草蜢工作室（Grasshopper Manufacture）從 NetEase 全身而退，正式恢復獨立——IP 完整帶走。</b>同一天，Valve 的 Deadlock 在邀請制閉測中躋身 <span class="hl">Steam 最多人玩第 9 名</span>（從 #20 暴衝），官方仍稱「仍太未完成不適合公開」。Xbox CEO Asha Sharma 同日喊「Xbox 不賣」，但 Microsoft CEO 承認三年裁員逾 5,750 人，稱此為「精簡」而非撤退。</p>
-        <p>三個故事指向同一個訊號：<span class="hl">大廠在收縮，獨立創作的空間正在擴大</span>。草蜢工作室靠創意文化存活；Deadlock 靠限制供給製造飢餓感；Xbox 縮手讓行動/瀏覽器小遊戲的需求空間擴大。<b>對 GameGen：AI 工具加 Create→Share loop，正是填進這個空間的基礎建設。</b></p>
-        <div class="pull">▸ 今天就能蹭：CJ 貼文「Suda 51 出走 NetEase：獨立工具 + AI，小團隊不再需要大廠」＋小編貼 GTA 6 颶風話題 → 天氣災難 Demo。</div>
+        <p><b>日本 85.8% 遊戲開發者已在用生成式 AI——但只有 147 人說它真的讓「玩家體驗」變好；一週前 Meta 才宣布讓人用手機一句話做遊戲。AI 還關在工作室裡，沒到玩家手上。</b>CESA 調查（1,349 人回覆，Kotaku 9/30）：<span class="hl">85.8% 使用、63% 每天用</span>，用途集中在素材生成與行政；<span class="hl">僅 147 人認為對終端玩家體驗有實際助益</span>。另一條時間線：Meta Connect（約 9/25 報導）推出 <span class="hl">Horizon Create（手機自然語言做遊戲）＋ Horizon Studio（瀏覽器精修）</span>，目前為早期存取候補名單。</p>
+        <p>兩條新聞各自獨立（日期不同），但合起來是同一個訊號：<b>供給側的 AI 已普及，需求側「讓玩家自己用」才剛被巨頭碰到邊</b>。對 GameGen：巨頭走「創作者工具」路線（要學、要候補），GameGen 的差異是<span class="hl">梗進、遊戲出、零學習成本、當天可玩可分享</span>。</p>
+        <div class="pull">▸ 今天就能蹭：CJ 貼文「85.8% of Japanese devs use AI, 147 say players benefit — the AI is still inside the studio」＋ 小編 X 做「退訂地獄」迷你遊戲（蹭 HN 上的 Cancel Your Subscription 熱度）。</div>
       </div>
 
       <!-- 📰 今日彈藥 頭版 -->
@@ -248,19 +250,19 @@
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Suda 51 的草蜢工作室從 NetEase 全身而退——創意 &gt; 資本，AI 工具讓小團隊的上限更高了</div>
-            <div class="ln"><b>新聞事實：</b>Grasshopper Manufacture（《殺手7》《No More Heroes》系列）正式從 NetEase Games 分拆，恢復完全獨立；NetEase 主動讓其出走，IP 全數保留。多站同日確認（Game Developer / GamesIndustry.biz / RPS 標題「NO GAME NO LIFE」/ VGC / Reddit r/Games）。⚠️ 財務細節與出走條款為標題層，未開原文完整驗證。</div>
-            <div class="ln"><b>GameGen 角度：</b>草蜢工作室靠文化資本與獨特創意存活，不靠大廠後盾——這個故事的情緒是「有靈魂就能獨立」。今天的環境更有利：<b>AI 工具把小型工作室的可做天花板往上推，分發從大廠手中移到社群</b>。GameGen 服務的正是這條路上的創作者。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Suda 51's studio just walked out of NetEase — with their IP intact. 2022 acquisition, 2026 independence. Sometimes freedom is worth more than funding. AI tools mean the ceiling for a tiny creative team just got a lot higher."<br><span style="color:var(--ink-dim)">中譯：Suda 51 的草蜢工作室從 NetEase 走人了，IP 完整帶走。2022 被收購，2026 恢復自由。有時候自由比資金更值錢。AI 工具讓小型團隊的上限大幅提升。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">Game Developer ↗</a> · <a href="https://www.gamesindustry.biz/grasshopper-manufacture-becomes-independent-as-it-splits-from-netease-games" target="_blank">GamesIndustry.biz ↗</a>　pub 2026-10-01　verified ✓（多源確認）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>85.8% 日本開發者用 AI，只有 147 人說玩家真的受益——AI 還關在工作室裡</div>
+            <div class="ln"><b>新聞事實：</b>日本 CESA 調查 <b>1,349 位開發者</b>回覆：<b>85.8%</b> 正在使用生成式 AI、<b>63%</b> 每天使用、22.8% 偶爾使用；僅 <b>8.6%</b> 任職公司有明確 AI 指引；去年使用率為 51%。受訪者認為好處是縮短時程與成本（創意擴張 837 人、降低技術門檻 738 人），但只有 <b>147 人</b>表示「確實讓終端使用者體驗受益」（Kotaku，pub 2026-09-30）。</div>
+            <div class="ln"><b>GameGen 角度：</b>採用率一年從 51% 衝到 85.8%，但受益者是<b>工作室的成本表</b>，不是玩家。AI 還是內部生產工具。GameGen 把同一個能力直接放進玩家手裡：把今天的梗一句話變成可玩的遊戲，價值在<b>消費端</b>而不是製程端。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "85.8% of Japanese game devs now use generative AI. Only 147 of 1,349 say it actually improved the player experience. The AI is still inside the studio. We're putting it in the player's hands."<br><span style="color:var(--ink-dim)">中譯：85.8% 的日本遊戲開發者已在用生成式 AI；1,349 人中只有 147 人說它真的改善了玩家體驗。AI 還在工作室裡。我們把它放進玩家手裡。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">Kotaku ↗</a>　pub 2026-09-30　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam 折扣與活動頁面即將全面演算法驅動——上線頭 48 小時的互動數據決定能否被看見</div>
-            <div class="ln"><b>新聞事實：</b>Valve 宣布 Steam 的 Discounts and Events 分頁即將由演算法完全驅動，不再靠編輯人工排序（Game Developer，標題層，未開原文）。⚠️ 實施時間與演算法具體細節未能完全驗證。</div>
-            <div class="ln"><b>GameGen 角度：</b>演算法驅動意味著「第一天的互動密度」決定了能否被看見。<b>Launch-day Create→Share loop 從可選項變成唯一的演算法入場券</b>。GameGen 的每次「梗→遊戲→分享」loop 就是在積累這個權重。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Steam's discounts tab is going fully algorithm-driven. Day-one engagement decides everything. Launch-day viral loops are no longer a nice-to-have — they're the only on-ramp onto the shelf."<br><span style="color:var(--ink-dim)">中譯：Steam 折扣頁要全由演算法決定了。上線第一天的互動密度決定一切。病毒式 loop 從可選項變成唯一的上架入口。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/pc/steam-s-discounts-and-events-tab-will-soon-be-fully-algorithm-driven" target="_blank">Game Developer ↗</a>　pub 近日　verified partial（標題層）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展 / 近期</span>Meta 推 Horizon Create：手機一句話做遊戲——巨頭正式進場「AI 創作給人人」</div>
+            <div class="ln"><b>新聞事實：</b>Meta Connect 期間宣布 <b>Horizon Create（手機 App，用自然語言描述想法、試玩、再調整）</b>與 <b>Horizon Studio（瀏覽器版，精細控制美術、資產、腳本參數）</b>，稱建立在 Meta Horizon Engine 的 agentic creation 能力，可做 2D / 3D 手機遊戲；兩者間可轉移資產與迭代歷史；目前測試中，透過早期存取候補名單逐步開放；發佈管道含 Facebook、Instagram 與 Horizon（PocketGamer.biz 內文；GamesIndustry.biz 報導時間約 2026-09-25，該站擋抓、日期取自 radar 元資料）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這是同賽道巨頭的明確訊號：「對話式創作 + 社群分發」不是小眾想法。差異點在<b>速度與入口</b>——Meta 走「創作者工具 + 候補名單」，GameGen 走「梗進、遊戲出、連結即玩」，Trend Response Time 以小時計。⚠️ 目前無法完全證實 Meta 的實際產出品質與開放時程。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Meta just put 'describe a game, play it, tweak it' on your phone — behind an early-access waitlist. The format is validated. The open question is who gets from today's meme to a playable link first."<br><span style="color:var(--ink-dim)">中譯：Meta 剛把「描述一款遊戲、玩它、再調整」放上手機——還在候補名單後面。這個形式被驗證了。剩下的問題是：誰最快把今天的梗變成可玩連結。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pocketgamer.biz/meta-unveils-horizon-create-and-studio-for-ai-powered-game-creation/" target="_blank">PocketGamer.biz ↗</a> / <a href="https://www.gamesindustry.biz/meta-unveils-ai-powered-game-tools-for-mobile-devices-and-browsers-announces-vr-glasses-with-day-one-unity-support" target="_blank">GamesIndustry.biz ↗</a>　約 2026-09-25　verified partial（內文已驗、日期取自 radar）</div>
           </div>
         </div>
 
@@ -268,36 +270,37 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Deadlock 尚未公開發售，卻是 Steam 最多人玩的遊戲之一（榜位 #9，從 #20 暴衝）<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Steam 官方 API radar（10/01 07:30）：Deadlock 排名 20→9（跳 11）；Eurogamer 標題「just became one of the most played games on Steam」；PC Gamer 標題：Valve 說「仍太未完成不適合公開發行」但正在開發英雄外觀與新遊戲模式。邀請制測試中，未公開發售。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Deadlock just became one of Steam's most played games. It hasn't officially launched. Valve says it's 'too unfinished.' The waitlist IS the product. Limited access IS the best marketing."　<span style="color:var(--ink-dim)">中譯：Deadlock 躋身 Steam 最多人玩之列，根本還沒公開發售。Valve 說太未完成。等待清單本身就是產品。限制供給是最好的行銷。</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>閉測/限量製造飢餓感 = Create→Share loop 中加入「限量早鳥邀請碼」機制可借用同一心理。</div>
-            <div class="meta">來源 <a href="https://www.eurogamer.net/deadlock-update-steam-most-played-games" target="_blank">Eurogamer ↗</a> · <a href="https://www.pcgamer.com/games/moba/valve-says-deadlock-is-still-too-unfinished-to-release-publicly-but-has-hero-cosmetics-and-new-game-modes-in-the-works/" target="_blank">PC Gamer ↗</a>　Steam 排名：官方 radar ✓　標題層 partial</div>
+            <div class="ti"><span class="fresh f-hot">日期未驗</span>「Cancel Your Subscription」：一款專門刁難你退訂的瀏覽器遊戲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>HN 上的 Show 型貼文（3 pts / 0 comments，量小）。玩法：你要成功取消訂閱，但畫面用藏起來的連結、慰留優惠、問卷與客服 chatbot「Dennis」層層阻擋（fundr studio 遊戲頁，頁面無發布日期）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Everyone's been stuck in a 'cancel subscription' maze. Someone made it a game. We can make YOUR most-hated flow into one in 60 seconds. What should we build? 👇"　<span style="color:var(--ink-dim)">中譯：每個人都被「取消訂閱」迷宮困過。有人把它做成遊戲。我們 60 秒能把「你最討厭的流程」做成遊戲。你想要哪一個？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>留言投稿「最想吐槽的流程」（退訂 / 客服 / 排隊）→ 一句話生成泛化「闖關阻礙」迷你遊戲 → 出「撐了幾秒才退成功」分享卡。不挪用原遊戲美術 / 角色名稱。</div>
+            <div class="meta">來源 <a href="https://www.fundrstudio.com/games/cancel-your-subscription/" target="_blank">fundr studio ↗</a>　摘要層（頁面已開，日期未驗，不標 🆕）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Xbox CEO「不賣」，Microsoft CEO 說「精簡」——三年裁員 5,750 人<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Xbox CEO Asha Sharma：「Xbox is not for sale」，稱「會做一切必要的事」扭轉局勢（GamesIndustry.biz）；Microsoft CEO Satya Nadella：Xbox 是「streamlining」，三年超過 5,750 名員工被裁（Game Developer 標題）。HN 見「Xbox for Sale: Don't Believe Anything Until It Is Officially Denied」（Kotaku 同日）。⚠️ 兩者均標題層，完整引述未開原文驗。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Xbox CEO says 'not for sale.' Microsoft CEO says 'just streamlining.' 5,750 jobs cut in 3 years. Whatever you call it — less big platform in gaming = more room for small teams and player-creation tools."　<span style="color:var(--ink-dim)">中譯：Xbox CEO 說不賣，Microsoft CEO 說只是精簡，三年裁員 5,750 人。不管叫什麼，大平台縮手 = 小團隊和玩家創作工具的空間更大了。</span></div>
-            <div class="meta">來源 <a href="https://www.gamedeveloper.com/production/microsoft-ceo-says-xbox-is-streamlining-after-laying-off-5-750-workers-in-three-years" target="_blank">Game Developer ↗</a> · <a href="https://www.gamesindustry.biz/xbox-ceo-asha-sharma-insists-xbox-is-not-for-sale" target="_blank">GamesIndustry.biz ↗</a>　verified partial（標題層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>AION 2 搶先體驗衝 171,530 Steam 同時在線、登 Top Sellers 全球第 1——10/5 正式全球上線<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>9/30 Founder's Pack 搶先體驗開跑，Steam 同時在線峰值 <b>171,530</b>，當日居 Steam 全球「Top Sellers」第 1、並在 12 個國家銷售榜第 1；官方全球上線日為 10/5（Inven Global，pub 2026-09-30）。今日 radar 亦顯示 AION 2 為 Steam 排行<b>新進榜（#40）</b>（本機 heat-radar 真數字）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "AION 2 just pulled 171K players on Steam before its global launch even starts. Everyone's hyped for the class meta — what's YOUR build? We'll turn it into a mini-game. 👇"　<span style="color:var(--ink-dim)">中譯：AION 2 還沒正式全球上線就拉出 17 萬人在線。大家都在討論職業流派——你的配置是什麼？我們把它做成小遊戲。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入「你的職業配置 / 戰力梗」→ 生成泛化奇幻職業對戰小遊戲 → 出「戰力卡」揪人 PK。⚠️ 不用 AION 角色 / 美術 / 商標；用泛化奇幻角色。</div>
+            <div class="meta">來源 <a href="https://www.invenglobal.com/articles/26680/aion-2-hits-170000-concurrent-players-on-steam-tops-global-top-sellers-chart" target="_blank">Inven Global ↗</a>　摘要層（已開原文驗日期）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 重工整個天氣系統：颶風、彩虹、暴雨全加，「達到前所未有的尺度感」<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Rockstar 揭露 GTA 6 完全「re-engineered」天氣系統，加入颶風、彩虹、大暴雨，稱要「achieve a sense of scale we haven't felt before」（Eurogamer 標題，未開原文）。⚠️ 標題層，未開原文驗。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Rockstar re-engineered GTA 6's entire weather system — hurricanes, rainbows, heavy rain. 'A sense of scale we haven't felt before.' What if the player triggered the storm? Build a weather event. 👇"　<span style="color:var(--ink-dim)">中譯：Rockstar 重工 GTA 6 整個天氣系統，加入颶風、彩虹、暴雨，說「前所未有的尺度感」。如果讓玩家觸發颶風呢？做一個天氣事件小遊戲。👇</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>輸入天氣類型（颶風 / 暴雨 / 龍捲風）→ 生成對應閃躲求生地圖 → 「我在 X 天氣撐了 Y 秒」分享卡。⚠️ 不用 GTA 美術 / 角色 / 地名。</div>
-            <div class="meta">來源 <a href="https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain" target="_blank">Eurogamer ↗</a>　pub 近日　verified partial（標題層）</div>
+            <div class="ti"><span class="fresh f-hot">日期未驗</span>Gears of War: E-Day 評測串雙雙衝上 Reddit 當日榜——同時開發者擔心上市後就被裁<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>今日 Reddit r/Games、r/gaming 各有一串 E-Day Review Thread 進當日 top；r/Games 另有一串高熱討論「E-Day 開發者擔心上市後、領獎金前被裁」（標題層級，Reddit 當日 top 序為客觀訊號）；80.lv 標題稱其為「15 年來評價最高的 Gears」，Eurogamer 評測標題為「老 Cogs 學新把戲」（均為標題層級，未逐句驗）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Gears of War: E-Day reviews are in and the discourse is loud. Pick your side: 'chainsaw bayonet speedrun' or 'survive the horde with one bullet'. We make the mini-game, you choose the rules. 👇"　<span style="color:var(--ink-dim)">中譯：Gears E-Day 評測出爐、討論很熱。選邊站：「電鋸速通」還是「一顆子彈撐過獸潮」。我們做小遊戲，規則你來定。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>一句話生成泛化「末日射擊 / 守點」迷你遊戲 → 出生存秒數卡。⚠️ 不挪用 Gears 角色、武器造型、商標；裁員議題只當背景，不拿真人與公司內部消息開玩笑。</div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/gears-of-war-eday-campaign-review" target="_blank">Eurogamer ↗</a> / <a href="https://80.lv/articles/gears-of-war-e-day-is-the-highest-rated-gears-game-in-over-15-years/" target="_blank">80.lv ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1wuyt8v/gears_of_war_eday_review_thread/" target="_blank">Reddit ↗</a>　摘要層（日期未驗）</div>
           </div>
         </div>
 
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「天氣災難」：輸入一種氣象事件，生成閃躲 + 求生小遊戲<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>輸入氣象類型（颶風 / 暴雨 / 龍捲風 / 雷暴）→ 生成 60 秒閃躲求生地圖（障礙依氣象變化：飛石 / 水位上升 / 旋轉風牆）→ 結束給「我在 X 天氣存活了 Y 秒」分享卡（純分數，無金額）。</div>
-            <div class="ln"><b>為何是今天首選：</b>綁 GTA 6 颶風話題；自然災難全泛化、零 GTA 素材限制；單鍵閃躲模板現成；「你觸發了哪種天氣？」是天然的 Create→Share 鉤子。</div>
-            <div class="meta">綁 <a href="https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain" target="_blank">Eurogamer GTA 6 ↗</a>　模板：單鍵閃躲 / 倒數計時</div>
+            <div class="ti"><span class="fresh f-hot">日期未驗</span>「退訂地獄」泛化版：輸入你最討厭的流程，60 秒生成一款「闖關阻礙」小遊戲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入「退訂 / 客服 / 排隊 / 填表」任一種煩人流程 → 生成一款 60 秒泛化「點擊闖關」遊戲：每一層是一個荒謬阻礙（假的關閉鈕、慰留彈窗、計時等待）→ 結束出「撐了 N 秒才成功」分享卡。純梗分數，不涉及金錢字眼。</div>
+            <div class="ln"><b>為何是今天首選：</b>題材人人有共鳴、不綁任何大廠 IP（風險最低）、Create→Share loop 內建（留言投稿流程 = UGC 供料）、做法簡單（單頁 + 層層彈窗）。是否蹭到熱度取決於 HN 上這款小品的後續發酵，⚠️ 目前無法完全證實其熱度會擴大。</div>
+            <div class="meta">綁 <a href="https://www.fundrstudio.com/games/cancel-your-subscription/" target="_blank">fundr studio ↗</a>　模板：單鍵 / 點擊闖關</div>
           </div>
         </div>
       </div>
@@ -311,47 +314,35 @@
       <div class="boards reveal">
 
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/01 07:30 radar</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/02 即時</span></div>
           <ol>
-            <li class="down"><span class="nm">Counter-Strike</span><span class="vn">378K ▼20.4%</span></li>
-            <li class="hot up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">100K ▲12.6%</span></li>
-            <li><span class="nm">Rainbow Six Siege</span><span class="vn">68K ▲0.3%</span></li>
-            <li class="up"><span class="nm">Apex Legends</span><span class="vn">53K ▲7.5%</span></li>
-            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">53K ▲4.9%</span></li>
-            <li class="down"><span class="nm">Warframe</span><span class="vn">47K ▼2.0%</span></li>
+            <li class="hot up"><span class="nm">Counter-Strike（app 730）</span><span class="vn">545K ▲44.3%</span></li>
+            <li class="hot up"><span class="nm">Rust</span><span class="vn">101K ▲123.5%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">98K ▼2.1%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">65K ▼5.6%</span></li>
+            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">59K ▲11.6%</span></li>
+            <li class="down"><span class="nm">Apex Legends</span><span class="vn">50K ▼4.9%</span></li>
+            <li class="up"><span class="nm">Warframe</span><span class="vn">49K ▲5.1%</span></li>
+            <li class="down"><span class="nm">Baldur's Gate 3</span><span class="vn">35K ▼4.0%</span></li>
           </ol>
-          <div class="bf">Steam 官方 API · 10/01 07:30 radar · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 10/02 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
-        <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">Top Playing Now · 10/01</span></div>
-          <ol>
-            <li class="hot"><span class="nm">偷一顆蛋（Steal-an-egg 類）</span><span class="vn">1M</span></li>
-            <li><span class="nm">布魯克海文 RP</span><span class="vn">313.8K</span></li>
-            <li><span class="nm">謀殺之謎2</span><span class="vn">202.7K</span></li>
-            <li><span class="nm">Blox Fruits</span><span class="vn">171.7K</span></li>
-            <li><span class="nm">[天空刺客] 法術惡作劇</span><span class="vn">138.2K</span></li>
-            <li><span class="nm">對手</span><span class="vn">136.9K</span></li>
-          </ol>
-          <div class="bf">roblox.com/charts · 10/01 真抓（最新可用）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為排程環境、未取得瀏覽器渲染（roblox.com/charts / RTrack 需瀏覽器）。<b>目前無法完全證實</b>，不以估計假裝 live。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
         </div>
 
-        <div class="board b-twitch">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">7 天平均 · 10/01</span></div>
-          <ol>
-            <li><span class="nm">Just Chatting</span><span class="vn">269K</span></li>
-            <li><span class="nm">Grand Theft Auto V</span><span class="vn">114K</span></li>
-            <li><span class="nm">VALORANT</span><span class="vn">80.2K</span></li>
-            <li><span class="nm">World of Warcraft</span><span class="vn">79.6K</span></li>
-            <li class="hot"><span class="nm">WARDOGS</span><span class="vn">40.3K</span></li>
-            <li class="hot"><span class="nm">SILENT HILL: townfall</span><span class="vn">27.2K</span></li>
-          </ol>
-          <div class="bf">TwitchTracker · 10/01 真抓（最新可用）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 即時觀看快照需瀏覽器深掃，本次無法取得。<b>目前無法完全證實</b>。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ 本日 heat-radar 資料為 10/01 07:30 最新抓取；Steam 為官方 API 真數字。Roblox / Twitch 亦為 10/01 瀏覽器真抓（最新可用）。若今日（10/02）radar 已更新，請以最新 heat_latest.json 為準。
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-10-02T07:30），Steam 為官方 API 即時真數字。⚠️ 「日比」採 radar 前一筆快照對比，CS（+44.3%）與 Rust（+123.5%）幅度異常大，<b>根據現有資料推測</b>為抓取時段落差或活動（Rust 每月首個週四有例行更新，10/1 即為週四）所致，<b>目前無法完全證實</b>，不當成「新梗爆發」。
       </div>
     </section>
 
@@ -360,34 +351,17 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>暴衝</span></span>Deadlock 排名 20→9（本日重點）；Witcher 3 Remastered 77→7（持續）；PUBG +12.6%</h3>
-        <div class="sum">Steam 排名跳動（官方 radar 10/01）：<b>Deadlock 20→9（跳 11，尚未公開發售）</b>；Witcher 3 Remastered 77→7（跳 70，昨日起持續）；How to Fish 43→31（跳 12）；Wuthering Waves 68→59。新進榜：Minecraft Dungeons II（#73）、American Truck Simulator（#88）。真·日比：PUBG +12.6%（未達 15% 旗標）、CS −20.4%。Eurogamer 確認 Deadlock「just became one of the most played games on Steam」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Deadlock 是今天的重點——<b>邀請制閉測本身就是最強行銷工具</b>，未公開發售卻衝進榜位第 9。Witcher 3 為持續訊號（昨日已報，今日不重複聚焦）。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Rust 101K（+123.5%）、CS 545K（+44.3%）過 ≥15% 旗標；排名跳動：Wuthering Waves +15、Crusader Kings III +19；AION 2 新進榜 #40</h3>
+        <div class="sum">今日 Steam 真·日比過 ≥15% 旗標的是 <b>Rust 101,041（前筆 45,214）</b>與 <b>Counter-Strike 545,334（前筆 377,808）</b>，另 TF2 +11.6%。排名跳動（≥5 名）：<b>Crusader Kings III 100→81（+19）</b>、<b>Wuthering Waves 59→44（+15）</b>、TF2 27→20（+7）、Minecraft Dungeons II 73→67（+6）。新進榜：<b>AION 2（#40）</b>、Transport Fever 3（#74）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Rust / CS 的幅度大概率是更新或抓取時段造成（見 01 說明），<b>不是新梗</b>。真正有題材價值的是 <b>AION 2 新進榜</b>（Inven 9/30 驗：171,530 峰值、Top Sellers 第 1），已進頭版小編線。Wuthering Waves 排名上升原因目前無法完全證實，勿編故事。</div>
         <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 現象分析</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/01 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+          <div class="src">STEAM 官方 API · 10/02 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>業界暴衝</span></span>Grasshopper Manufacture 分拆獨立——Suda 51「NO GAME NO LIFE」，IP 完整帶走</h3>
-        <div class="sum">多站同日確認（Game Developer、GamesIndustry.biz、RPS「NO GAME NO LIFE」、VGC、Reddit r/Games）。Suda 51 的《殺手7》《No More Heroes》工作室 2022 年被 NetEase 收購，2026 年主動被放行獨立（細節為標題層）。屬「業界地殼移動」型訊號。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「創意 &gt; 資本」的情緒訊號，與 GameGen「把創作還給玩家」的核心定位高度共振。<b>今天 CJ LinkedIn 首選素材</b>。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAME DEVELOPER · GBI · <a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜需瀏覽器比對昨日快照，本次無法取得，<b>目前無法完全證實</b>，不以估計補位。
+      </div>
     </section>
 
     <!-- 早期訊號 -->
@@ -398,92 +372,71 @@
         <div class="board b-steam">
           <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
           <ol>
-            <li class="hot"><span class="nm">Desktop Tower Survivor</span><span class="vn">新品</span></li>
-            <li><span class="nm">ShipCrafter</span><span class="vn">新品</span></li>
-            <li><span class="nm">HEATSINK</span><span class="vn">新品</span></li>
-            <li><span class="nm">VHS Chaos</span><span class="vn">新品</span></li>
-            <li><span class="nm">Fickle Allies</span><span class="vn">新品</span></li>
-            <li><span class="nm">Pop 'Un Orc</span><span class="vn">新品</span></li>
+            <li class="hot"><span class="nm">Opi Popi</span><span class="vn">新品</span></li>
+            <li><span class="nm">Lucid Rumination</span><span class="vn">新品</span></li>
+            <li><span class="nm">Simple Squares</span><span class="vn">新品</span></li>
+            <li><span class="nm">Pinched</span><span class="vn">新品</span></li>
+            <li><span class="nm">KKUL-TTEOK!</span><span class="vn">新品</span></li>
+            <li><span class="nm">Monster Ops 23</span><span class="vn">新品</span></li>
           </ol>
-          <div class="bf">Steam 新品榜 · 10/01 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 新品榜 · 10/02 heat-radar（僅標題，玩法未逐款驗）· <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-rblx">
-          <div class="bh"><span>ITCH.IO 迷因 / HTML5</span><span class="metric">小體量早期</span></div>
+          <div class="bh"><span>ITCH.IO</span><span class="metric">html5 popular / meme tag</span></div>
           <ol>
-            <li class="hot"><span class="nm">Aura Farmer（迷因）</span><span class="vn">梗</span></li>
-            <li><span class="nm">StreamRush（viral）</span><span class="vn">viral</span></li>
-            <li><span class="nm">Kromer Kollector Neo（迷因）</span><span class="vn">收集</span></li>
-            <li><span class="nm">The Freak Circus</span><span class="vn">氛圍</span></li>
-            <li><span class="nm">SPLOOB</span><span class="vn">html5</span></li>
-            <li><span class="nm">All The Birds</span><span class="vn">html5</span></li>
+            <li class="hot"><span class="nm">SPLOOB</span><span class="vn">html5</span></li>
+            <li><span class="nm">Tokidoki Tactical Squad</span><span class="vn">html5</span></li>
+            <li><span class="nm">Remember</span><span class="vn">html5</span></li>
+            <li class="hot"><span class="nm">Kill the Ice Age Baby Adventure（+2）</span><span class="vn">meme</span></li>
+            <li><span class="nm">Asgore Runs Over Dess</span><span class="vn">meme</span></li>
+            <li><span class="nm">Jest Messters</span><span class="vn">meme</span></li>
           </ol>
-          <div class="bf">itch.io html5 / tag-meme · 10/01 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+          <div class="bf">itch.io · 10/02 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
         </div>
-
       </div>
-      <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>早期 loop 共相：塔防生存、收集 × 偷取、viral 行為遊戲化</h3>
-        <div class="sum">Steam 新品（Desktop Tower Survivor、VHS Chaos）與 itch.io（Aura Farmer、StreamRush、Kromer Kollector Neo）合看，loop 集中在<b>塔防/生存、收集 × 偷取、把 viral 行為本身做成玩法</b>（StreamRush = 串流主爆紅模擬）。⚠️ 體量與增速為榜單標題層，無精確數字。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>StreamRush「把 viral 行為遊戲化」與 GameGen 的 Create→Share→Trend loop 有概念共鳴——值得跟蹤。收集 × 偷取（蛋系公式）繼續保持低 IP 風險熱度。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM / ITCH.IO · 10/01 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+      <div class="story ig reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        共通 loop 觀察：本日僅有標題層級資料，<b>目前無法完全證實</b>各款玩法。可確認的是 itch meme tag 多為「角色 / 梗的同人遊戲」（含 Undertale / Deltarune 系 fan game），<b>IP 風險高</b>，只借「梗 → 一句話規則」的公式，不挪角色。
+      </div>
     </section>
 
     <!-- 高討論文章 -->
     <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>業界</span></span>Grasshopper Manufacture 正式從 NetEase 分拆——「創意 &gt; 資本」的業界情緒訊號</h3>
-        <div class="sum">Game Developer、GamesIndustry.biz、RPS（「NO GAME NO LIFE: Grasshopper Manufacture have leapt from the jaws of NetEase and gone indie again」）、VGC 同日確認。2022 年被 NetEase 收購後，2026 年恢復完全獨立，IP 全數保留（細節為標題層）。Reddit r/Games 同日報導。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>小型創意工作室靠文化資本存活——這個故事搭配「AI 工具民主化」論點，是今日最強 CJ LinkedIn 素材。不做遊戲化，純觀點文。</div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>日本 CESA：85.8% 開發者用生成式 AI，僅 147 人認為玩家體驗受益</h3>
+        <div class="sum">1,349 位受訪者中 <b>85.8% 使用、63% 每天用</b>，較去年 51% 大增；僅 8.6% 的公司有明確 AI 指引；好處集中在縮短時程與成本，<b>真正讓終端使用者受益只有 147 人勾選</b>。（Kotaku，pub 2026-09-30，已 web_fetch 驗原文）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>採用已普及，但價值卡在<b>工作室內部</b>。GameGen 的「消費端 AI」論述有數據可引。已收頭版 CJ 線第 1。</div>
         <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAME DEV / GBI / RPS · <a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>平台</span></span>Xbox「不賣」+ Microsoft 三年裁 5,750 人：大廠收縮，行動/瀏覽器遊戲空間擴大</h3>
-        <div class="sum">GamesIndustry.biz：Xbox CEO Asha Sharma 聲明「Xbox is not for sale」；Game Developer 標題：Microsoft CEO 稱 Xbox 是「streamlining」，三年裁員超 5,750 人；HN 見「Xbox for Sale: Don't Believe Anything Until It Is Officially Denied」（Kotaku）。Reddit r/gaming 同日出現「How Will Activision Handle Halo?」討論。均為標題層，未開原文。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Xbox 縮手 = 主機平台不確定性 = 行動端/瀏覽器小遊戲的替代需求上升。發文角度：觀點文，不做遊戲化，不參戰辯論。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAME DEV / GBI / HN · <a href="https://www.gamedeveloper.com/production/microsoft-ceo-says-xbox-is-streamlining-after-laying-off-5-750-workers-in-three-years" target="_blank">原文 ↗</a></div>
+          <div class="src">KOTAKU · 9/30 · <a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI 動向</span></span>Naavik：「遊戲業在 AI 泡沫中嗎？交易數據說了什麼」</h3>
-        <div class="sum">Naavik 播客（story_naavik feed，無確切日期）：「Is Gaming in an AI Bubble? What the Deal Data Says」——從融資交易數據角度評估 AI 遊戲工具投資是否過熱。同源另有「How AI Makes Game Creation More Accessible」。⚠️ 播客細節為標題層，未取得原文。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「AI 遊戲泡沫」討論是 CJ 觀點機會——GameGen 的角度：不在泡沫內，因為服務的是玩家創作端，不是另一個工作室效率工具。</div>
+        <h3><span class="tag ai"><span>AI 動向</span></span>Meta Horizon Create / Studio：手機自然語言做遊戲、瀏覽器精修，候補名單開放中</h3>
+        <div class="sum">Create 為手機 App（描述想法、試玩、再調整），Studio 為瀏覽器端精細控制；稱 2D / 3D 手機遊戲皆可、含難度平衡與多人，遊戲可在兩者間移轉資產與迭代歷史；發佈管道含 Facebook / Instagram / Horizon。目前測試中、早期存取候補。（PocketGamer.biz 內文；GamesIndustry 約 9/25）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>同賽道巨頭驗證「對話式創作 + 社群分發」。差異在入口與速度；⚠️ 實際產出品質、開放時程目前無法完全證實。已收頭版 CJ 線第 2。</div>
         <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">NAAVIK · <a href="https://naavik.co/podcast/is-gaming-in-an-ai-bubble-what-the-deal-data-says/" target="_blank">原文 ↗</a></div>
+          <div class="src">POCKETGAMER.BIZ · <a href="https://www.pocketgamer.biz/meta-unveils-horizon-create-and-studio-for-ai-powered-game-creation/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>候選未驗</span></span>Naavik：「Inside Roblox's Massive Bet On AI-assisted Creation」／「From Disney to miHoYo: The Road Toward AI-Enabled Fandom」</h3>
+        <div class="sum">兩篇皆出現在今日 radar 的 Naavik 清單，與 GameGen 的 C 側創作者與粉絲經濟直接相關。但 RSS 無發布日期、本次未開原文，<b>目前無法完全證實</b>內容與時間，僅列標題作閱讀清單。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Roblox AI 輔助創作是真對手動向、粉絲經濟 AI 則對應 VTuber / 迷因社群；建議 Pizza 週末挑一篇精讀再決定是否做成 CJ 素材。</div>
+        <div class="footrow">
+          <div class="src">NAAVIK · <a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">Roblox ↗</a> / <a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">粉絲經濟 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>風險 / 監管</span></span>歐盟消費者保護合作網路對 9 家公司的遊戲內貨幣發動協調行動</h3>
+        <div class="sum">GamesIndustry.biz 標題稱 Consumer Protection Cooperation Network 對九家公司就遊戲內貨幣發動協調行動；HN 同步有 RTÉ 報導「線上遊戲公司因遊戲內購被調查」（2 pts）。標題層級，GamesIndustry 擋抓、<b>目前無法完全證實</b>細節與日期。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>GameGen 的 Credits / 變現設計需留意「遊戲內貨幣」揭露與未成年保護；對外文案維持去賭場語言。屬風險備忘，不進彈藥。</div>
+        <div class="footrow">
+          <div class="src">GAMESINDUSTRY.BIZ · <a href="https://www.gamesindustry.biz/consumer-protection-cooperation-network-launches-coordinated-actions-against-nine-companies-on-in-game-currency" target="_blank">標題 ↗</a> / <a href="https://www.rte.ie/news/business/2026/1001/1593563-gaming-companies/" target="_blank">RTÉ ↗</a></div>
         </div>
       </article>
     </section>
@@ -493,32 +446,20 @@
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>現象梗</span></span>Deadlock「最多人玩但沒公開」——「waitlist 是產品」成本週遊戲業最大文化梗</h3>
-        <div class="sum">Steam 官方 radar 確認 Deadlock #9（從 #20 跳），Eurogamer 標題「就成最多人玩之一」，PC Gamer 報 Valve 稱「too unfinished」——兩個標題的邏輯矛盾本身就是迷因。屬「業界事件衍生」型，非純網路梗。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「還沒完成卻最多人玩」= 限制供給製造飢餓感的極端案例。Create→Share loop 中加入「限量早鳥邀請碼」可借用同一心理。</div>
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>「Cancel Your Subscription」：把全民共同痛點做成瀏覽器遊戲（HN 上量小）</h3>
+        <div class="sum">玩家要取消訂閱，介面用隱藏連結、慰留優惠、問卷與客服 chatbot「Dennis」層層阻擋。這是「共同痛點 → 一句話規則 → 好剪」的標準梗型遊戲。HN 僅 3 pts，熱度小，但公式可複製。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>可複製成「投稿你最討厭的流程」徵集活動，天然 UGC 供料。已進頭版 Demo 線。</div>
         <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 現象梗</span></span></div></div>
-          </div>
-          <div class="src">EUROGAMER / STEAM API · <a href="https://www.eurogamer.net/deadlock-update-steam-most-played-games" target="_blank">原文 ↗</a></div>
+          <div class="src">FUNDR STUDIO · <a href="https://www.fundrstudio.com/games/cancel-your-subscription/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>新鮮度警示</span></span>KYM 連續第 2 日只取得常青榜，無法確認當日新梗</h3>
-        <div class="sum">Know Your Meme 抓到的是常青榜（Navy Seal Copypasta、Trollface 等），非「Popular right now」。今日可確認的文化梗訊號為「Deadlock most played before release」（現象型）與「Grasshopper NO GAME NO LIFE」（情緒型），均屬業界事件衍生，非純網路迷因。<b>目前無法完全證實</b>新生純網路梗。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：<b>⚠️ 目前無法完全證實</b>當日新生純網路迷因。</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>梗情報</span></span>Reddit 當日榜情緒：遊戲崩潰梗「沒看過這麼會崩的遊戲，上次是 Cyberpunk 首發」、Valve Deadlock 還沒做完</h3>
+        <div class="sum">r/gaming 當日 top 序含兩條高情緒串：「I haven't seen a game crash this much since Cyberpunk launch」與「Valve says Deadlock is still too unfinished to release publicly」；另有「Half-Life mod 圈品質爆發」。皆為標題層級，Know Your Meme 因無瀏覽器<b>未查 first-seen，無法完全證實新鮮度</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「崩潰梗」可做成「撐住別崩」的點擊挑戰；但缺 first-seen，標 ♨️ 延燒、不寫成「今天的梗」。</div>
         <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>未證實</span></span></div></div>
-          </div>
-          <div class="src">KYM · <a href="https://knowyourmeme.com/memes/popular" target="_blank">原文 ↗</a></div>
+          <div class="src">REDDIT · <a href="https://www.reddit.com/r/gaming/comments/1wuumsi/i_havent_seen_a_game_crash_this_much_since/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
@@ -526,31 +467,47 @@
     <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        今日機制建議（取自暴衝 + 早期訊號 + 新聞）：<b>① 天氣災難閃躲</b>（GTA 6 颶風；輸入氣象 → 倒數閃躲 → 分享卡）；<b>② 閉測飢餓感機制</b>（Deadlock 邀請制；限量早鳥版 Create→Share loop）；<b>③ 收集 × 偷取</b>（Roblox 蛋系持續；泛化任意名詞）；<b>④ Viral 行為遊戲化</b>（StreamRush itch.io；把 viral 本身做成玩法）。⚠️ 資料為 10/01 抓取；unityroom 本次未取得。IP 地雷：GTA 場景/角色/地名一律不用；不挪 Deadlock 美術。
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（HN / itch / Steam 新品）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Cancel Your Subscription — 層層阻礙闖關</span><span class="vn">★ 阻礙</span></li>
+            <li><span class="nm">GeoPreneur — 每日一題猜位置（HN）</span><span class="vn">每日</span></li>
+            <li><span class="nm">Kanmaps — 技能樹式路線圖（HN 6 pts）</span><span class="vn">技能樹</span></li>
+            <li><span class="nm">Stratego 不完全資訊（AI 研究）</span><span class="vn">資訊差</span></li>
+            <li><span class="nm">Simple Squares / Pinched — Steam 新品（僅標題）</span><span class="vn">極簡</span></li>
+          </ol>
+          <div class="bf">HN / itch.io / Steam 新品 · 10/02 · unityroom 因無瀏覽器暫缺 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:14px;padding:12px 16px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ IP 二創地雷：itch meme tag 內多為 Undertale / Deltarune 系 fan game，只借公式，不挪角色與美術。
       </div>
     </section>
 
     <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
-      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        今日無顯著更新：Threads 繁中圈需登入渲染，本次未取得當日熱話，<b>目前無法完全證實</b>。建議題材變體（推測，非已證實熱度）：把「天氣災難」在地化為台灣常見災害（颱風 / 豪雨 / 地震）語氣版，繁中受眾比「颶風」更有共鳴；Grasshopper 獨立消息可包裝為「不是只有大公司才能做出有靈魂的遊戲」在地故事。
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次排程環境未取得瀏覽器，Threads 繁中圈當日熱話（需登入 / JS 渲染）<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。可追蹤題材變體方向：三國 / 武俠 / 恐怖 / 捕捉 RPG，待有瀏覽器的 session 補抓當日代表貼文。</div>
       </div>
     </section>
 
-    <!-- Trend-to-Game -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>GTA 6 颶風天氣系統（Eurogamer 標題）</td><td><span class="tmpl">天氣災難閃躲</span></td><td>「我在 X 天氣撐了 Y 秒」卡、輸入任意氣象</td><td class="rk-low">低 · 全泛化</td><td>★ 本日 Demo 首選，不用 GTA 素材</td></tr>
-          <tr><td>Deadlock 邀請制閉測最多人玩（Steam #9）</td><td><span class="tmpl">閉測飢餓感 loop</span></td><td>「我在等待清單上」邀請卡</td><td class="rk-low">低</td><td>借機制設計概念，不做 Deadlock 同人</td></tr>
-          <tr><td>Grasshopper 獨立（Suda 51 出走 NetEase）</td><td><span class="tmpl">（非玩法）CJ 貼文</span></td><td>「AI + 小團隊 &gt; 大廠資金」故事</td><td class="rk-low">低</td><td>走 LinkedIn，今日首選 CJ 素材</td></tr>
-          <tr><td>Xbox 縮手 + 裁員 5,750 人</td><td><span class="tmpl">（非玩法）X 貼文</span></td><td>「大廠縮手 = 小工具的機會」對比</td><td class="rk-low">低</td><td>觀點文，不做遊戲化，中性立場</td></tr>
-          <tr><td>Steam 折扣演算法驅動</td><td><span class="tmpl">（非玩法）CJ 貼文</span></td><td>「Launch-day loop 成唯一上架入口」</td><td class="rk-low">低</td><td>搭配 GameGen Create loop 論點</td></tr>
+          <tr><td>Cancel Your Subscription（HN 小熱）</td><td><span class="tmpl">單鍵 / 點擊闖關</span></td><td>「撐了 N 秒才退成功」分享卡、投稿討厭的流程</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，泛化阻礙，不挪原作</td></tr>
+          <tr><td>AION 2 搶先體驗 171K / 10/5 全球上線</td><td><span class="tmpl">泛化奇幻職業對戰</span></td><td>「戰力卡」揪人 PK</td><td class="rk-mid">中 · 遊戲 IP</td><td>用泛化奇幻角色，不碰 AION 美術 / 商標</td></tr>
+          <tr><td>Gears E-Day 評測熱</td><td><span class="tmpl">末日守點 / 生存秒數</span></td><td>生存秒數卡</td><td class="rk-mid">中 · IP + 裁員敏感</td><td>泛化末日，裁員只當背景、不開玩笑</td></tr>
+          <tr><td>遊戲崩潰梗（Cyberpunk 首發比喻）</td><td><span class="tmpl">撐住別崩點擊</span></td><td>「崩潰前撐幾秒」</td><td class="rk-low">低</td><td>缺 first-seen，作延燒題材，勿稱今天的梗</td></tr>
+          <tr><td>Stop Killing Games / EU 法規討論（HN 低分）</td><td><span class="tmpl">一句話保存遊戲</span></td><td>「你想保存哪一款」投票卡</td><td class="rk-mid">中 · 政策爭議</td><td>只做中立徵集，不表態法案立場</td></tr>
+          <tr><td>日本 85.8% 用 AI vs 僅 147 人說玩家受益</td><td><span class="tmpl">明示 AI 生成 + 透明標</span></td><td>「我們大方說是 AI 做的」</td><td class="rk-low">低</td><td>定位素材非玩法，主打給玩家手上</td></tr>
         </tbody>
       </table>
       </div>
@@ -563,13 +520,13 @@
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>創意 &gt; 資本：小工作室靠 IP 和自由活著</td><td>Grasshopper Manufacture 從 NetEase 分拆（多源確認，10/01）</td><td>"Suda 51's studio just walked out of NetEase with all their IP. AI tools mean the ceiling for a tiny creative team just got a lot higher."</td><td><a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">↗</a></td></tr>
-          <tr><td>Steam 演算法驅動 = Launch-day loop 成唯一入口</td><td>Steam 折扣/活動頁全面演算法（Game Developer 標題，近日）</td><td>"Steam's discounts tab is going algorithm-driven. Day-one engagement decides everything. Launch-day viral loops are the only on-ramp."</td><td><a href="https://www.gamedeveloper.com/pc/steam-s-discounts-and-events-tab-will-soon-be-fully-algorithm-driven" target="_blank">↗</a></td></tr>
-          <tr><td>Deadlock：「未完成」也可以是最多人玩的祕密</td><td>Deadlock Steam #9，邀請制閉測；Eurogamer「one of the most played」（10/01 radar）</td><td>"The waitlist IS the product. Limited access IS the best marketing. What GameGen's Create→Share loop borrows from the same psychology."</td><td><a href="https://www.eurogamer.net/deadlock-update-steam-most-played-games" target="_blank">↗</a></td></tr>
+          <tr><td>AI 在工作室很普及，玩家沒感覺</td><td>CESA：85.8% 使用、63% 每天用、僅 147 / 1,349 人認為玩家體驗受益（9/30）</td><td>"85.8% use AI, 147 say players benefit. The AI is still inside the studio."</td><td><a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">↗</a></td></tr>
+          <tr><td>巨頭正式進場「對話式遊戲創作」</td><td>Meta Horizon Create（手機）/ Studio（瀏覽器）候補名單開放（約 9/25）</td><td>"Describe a game, play it, tweak it — now on a phone. The format is validated. The race is distribution speed."</td><td><a href="https://www.pocketgamer.biz/meta-unveils-horizon-create-and-studio-for-ai-powered-game-creation/" target="_blank">↗</a></td></tr>
+          <tr><td>遊戲內貨幣監管升溫（風險角度）</td><td>歐盟消保網路對 9 家公司發動協調行動（標題層級，無法完全證實細節）</td><td>"Regulators are looking at in-game currency. Transparent, no-pressure monetization is a feature, not a footnote."</td><td><a href="https://www.gamesindustry.biz/consumer-protection-cooperation-network-launches-coordinated-actions-against-nine-companies-on-in-game-currency" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2 已附 EN hook + 中譯。Grasshopper 多源確認（✓）；Steam 演算法標題層（partial）。對外用字已過濾賭場語言。
+        📄 頭版 🎯 CJ Top 2（CESA 調查：AI 在工作室內、Meta Horizon Create：巨頭入場）已附完整 EN hook + 中譯，可交 CW 的 CJ 每日包。第 1 條已 web_fetch 驗原文與日期；第 2 條內文已驗、日期取自 radar 元資料（verified partial）。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
@@ -578,10 +535,10 @@
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>GTA 6 天氣梗：天氣災難 demo gif ＋「輸入天氣，生成遊戲」</li><li>Deadlock 梗：「等待清單本身就是產品」＋閉測機制反思</li><li>Xbox 縮手觀點：「大廠退出 = 玩家創作工具的空間更大了」</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「天氣災難」：輸入氣象 → 生成閃躲求生（本日首選）</li><li>「限量邀請」：Create→Share 限量版，生成「我的邀請碼」分享卡</li><li>泛化「收集 × 偷取」（蹭 Roblox 蛋系，任意名詞版）</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Deadlock 何時正式公開發售（Valve 說「too unfinished」→ 何時改變？）</li><li>Grasshopper 獨立後首個新作公告</li><li>Steam 折扣演算法驅動的正式上線時間</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>GTA 場景 / 角色 / 地名 / 品牌：天氣 Demo 只用泛化場景</li><li>Deadlock 角色 / 美術：只借行銷機制概念</li><li>Xbox / Microsoft 政治立場：只做客觀平台趨勢分析，中性語氣</li><li>Grasshopper 報導不包裝為對 NetEase 的控訴</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>「退訂地獄」徵集：留言你最討厭的流程，我們 60 秒做成遊戲</li><li>AION 2 職業配置梗：輸入配置生成戰力卡 PK</li><li>Gears E-Day 評測熱：泛化末日守點挑戰（不挪 IP）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「退訂地獄」泛化闖關小遊戲（單頁 + 層層彈窗）—— 本日首選</li><li>「撐住別崩」點擊挑戰（崩潰梗，標延燒）</li><li>每日一題風格小遊戲（借 GeoPreneur 公式）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Meta Horizon Create 候補名單開放進度與實際產出</li><li>AION 2 10/5 正式上線後的在線曲線</li><li>歐盟遊戲內貨幣協調行動的後續細節</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>AION / Gears / Undertale 系美術與角色直接挪用 → 用泛化皮</li><li>缺 first-seen 的梗別寫成「今天的梗」</li><li>對外文案的賭場語言（下注 / payout / big win / guaranteed）</li><li>Gears 裁員議題只作背景，不拿真人與公司開玩笑</li></ul></div>
       </div>
     </section>
 
@@ -589,20 +546,21 @@
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>Grasshopper Manufacture 從 NetEase 獨立</td><td><a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">Game Developer</a> · <a href="https://www.gamesindustry.biz/grasshopper-manufacture-becomes-independent-as-it-splits-from-netease-games" target="_blank">GamesIndustry.biz</a> · <a href="https://www.rockpapershotgun.com/no-game-no-life-grasshopper-manufacture-have-leapt-from-the-jaws-of-netease-and-gone-indie-again" target="_blank">RPS</a> · <a href="https://www.videogameschronicle.com/news/suda-51s-grasshopper-officially-regains-independence-from-netease-avoiding-studio-cull/" target="_blank">VGC</a>　pub 10/01（多源同日）　驗：分拆事實多源確認<span class="ok">✓</span>　財務細節標題層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Deadlock Steam #9（從 #20 跳 11）</td><td>Steam 官方 API radar（heat_latest.json 10/01 07:30）　驗：排名官方數字<span class="ok">✓</span>　<a href="https://www.eurogamer.net/deadlock-update-steam-most-played-games" target="_blank">Eurogamer</a> / <a href="https://www.pcgamer.com/games/moba/valve-says-deadlock-is-still-too-unfinished-to-release-publicly-but-has-hero-cosmetics-and-new-game-modes-in-the-works/" target="_blank">PC Gamer</a>　標題層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Xbox CEO「不賣」/ Microsoft 裁員 5,750</td><td><a href="https://www.gamedeveloper.com/production/microsoft-ceo-says-xbox-is-streamlining-after-laying-off-5-750-workers-in-three-years" target="_blank">Game Developer</a> · <a href="https://www.gamesindustry.biz/xbox-ceo-asha-sharma-insists-xbox-is-not-for-sale" target="_blank">GamesIndustry.biz</a>　標題層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>GTA 6 天氣系統重工</td><td><a href="https://www.eurogamer.net/gta6-rockstar-weather-systems-hurricanes-rainbows-rain" target="_blank">Eurogamer</a>　標題層（原文未開）<span class="pp">summary</span>　🆕</td></tr>
-        <tr><td>Steam 折扣演算法驅動</td><td><a href="https://www.gamedeveloper.com/pc/steam-s-discounts-and-events-tab-will-soon-be-fully-algorithm-driven" target="_blank">Game Developer</a>　標題層（原文未開）<span class="pp">summary</span>　近日</td></tr>
-        <tr><td>數字層（Steam / Roblox / Twitch）</td><td>Steam＝heat_latest.json 官方 API 10/01 07:30；Roblox＝roblox.com/charts 10/01；Twitch＝twitchtracker.com/games 10/01（最新可用）<span class="ok">✓</span></td></tr>
+        <tr><td>CESA 日本開發者 AI 調查</td><td><a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">Kotaku</a>（web_fetch）　原文日期 2026-09-30　驗：1,349 回覆、85.8% 使用、63% 每天、22.8% 偶爾、8.6% 公司有指引、去年 51%、147 人認為終端體驗受益<span class="ok">✓</span>　🆕（≤48h）</td></tr>
+        <tr><td>Meta Horizon Create / Studio</td><td><a href="https://www.pocketgamer.biz/meta-unveils-horizon-create-and-studio-for-ai-powered-game-creation/" target="_blank">PocketGamer.biz</a>（web_fetch 內文）／<a href="https://www.gamesindustry.biz/meta-unveils-ai-powered-game-tools-for-mobile-devices-and-browsers-announces-vr-glasses-with-day-one-unity-support" target="_blank">GamesIndustry.biz</a>（擋抓，日期取自 radar tavily 元資料 2026-09-25）　驗：Create=手機、Studio=瀏覽器、agentic creation 引句、測試中候補名單、發佈管道<span class="pp">partial</span>　🔄 近期（約 7 天）</td></tr>
+        <tr><td>Cancel Your Subscription</td><td><a href="https://www.fundrstudio.com/games/cancel-your-subscription/" target="_blank">fundr studio</a>（web_fetch）　頁面無日期　驗：玩法、Dennis 客服 chatbot<span class="pp">summary</span>　日期未驗，不標 🆕</td></tr>
+        <tr><td>AION 2 搶先體驗</td><td><a href="https://www.invenglobal.com/articles/26680/aion-2-hits-170000-concurrent-players-on-steam-tops-global-top-sellers-chart" target="_blank">Inven Global</a>（web_fetch）　原文日期 2026-09-30　驗：171,530 峰值、Top Sellers 全球第 1、12 國銷售榜第 1、10/5 全球上線<span class="pp">summary</span>　🆕（Eurogamer 擋抓）</td></tr>
+        <tr><td>Gears of War: E-Day 熱度</td><td><a href="https://www.reddit.com/r/Games/comments/1wuyt8v/gears_of_war_eday_review_thread/" target="_blank">Reddit</a> / <a href="https://80.lv/articles/gears-of-war-e-day-is-the-highest-rated-gears-game-in-over-15-years/" target="_blank">80.lv</a> / <a href="https://www.eurogamer.net/gears-of-war-eday-campaign-review" target="_blank">Eurogamer</a>（radar 標題層級）　日期未驗<span class="pp">summary</span>　Reddit 當日 top 序為客觀訊號</td></tr>
+        <tr><td>歐盟遊戲內貨幣行動</td><td><a href="https://www.gamesindustry.biz/consumer-protection-cooperation-network-launches-coordinated-actions-against-nine-companies-on-in-game-currency" target="_blank">GamesIndustry.biz</a>（擋抓，標題層級）　日期未驗<span class="pp">summary</span>　僅列風險備忘，不進彈藥</td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-10-02T07:30 官方 GetNumberOfCurrentPlayers（API 直抓，免敘事閘）　Rust +123.5% / CS +44.3% 為 radar 日比，⚠️ 幅度異常，推測與時段或更新有關，無法完全證實<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　Grasshopper 多源確認 ✓ · Deadlock 排名 Steam 官方 ✓ · 其他新聞標題層 partial · Steam 官方 API 10/01 07:30 · Roblox / Twitch 10/01 真抓 · KYM 連續 2 日僅常青榜、Threads / unityroom 未取得，標暫缺 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/10/02 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2：Kotaku 全驗、Meta 內文驗＋日期取自 radar · 小編 / Demo 摘要層 · Steam＝官方 API 10-02 即時真數字（radar 07:30）· Roblox/Twitch/Threads/unityroom/KYM 因排程環境無瀏覽器標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️；日期未驗不標 🆕）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/10/02 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
