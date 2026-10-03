@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/10/04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">10 · 04 · SUN</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 10 / 04 · 彈藥工廠模式 · Steam 數字 10/04 07:30 真抓 · Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>Capcom 正式宣布計畫將 RE Engine 轉型為「AI 生成遊戲引擎」——「我們的目標是未來與 AI 共同創作遊戲」</b>。這是今天最值得深挖的訊號：一家連續推出《惡靈古堡》《Monster Hunter Wilds》等年度大作的 AAA 工作室，正在把「AI 一起做遊戲」從口號變成引擎架構。同一天，GamesIndustry.biz 報導 AI 工具在實際開發中反而讓人工作更多——這個對比是今日最強 CJ 素材。</p>
+        <p><b>RuneScape 4 在 RuneFest 正式宣布</b>——不是擴充包，是全新 MMO 第四代。22 年老 IP 引爆懷舊情緒，Reddit 雙榜（r/gaming + r/Games）同日熱帖。同場：<b>AI 生成的《輻射：紐約》瀏覽器遊戲拿到 350 萬觀看後，Bethesda 發停止令下架</b>——需求已被驗證，合法路徑是今天最清晰的市場缺口。</p>
+        <p>今日 Steam 秋季特賣週末數字一出，<b>Baldur's Gate 3 +22.7%、Palworld +21.6%、星露谷 +18.8%</b>，三款深具有機社群的遊戲同步暴衝——再次驗證有機社群是折扣效果的乘數器。Steam 排名最大跳動：<b>ACE COMBAT 8 +31 名（#95→#64）</b>，無明顯新聞觸發，純社群自燃。</p>
+        <div class="pull">▸ 今天最強切角：Capcom AI 引擎宣告 + GI.biz「AI 讓人更忙」對比（CJ A 級素材）。RuneScape 4 情懷爆炸（X 情緒鉤子強）。AI Fallout C&D 合法缺口（Demo 靈感：零 IP 依賴的泛化 Trend-to-Game 遊戲正是答案）。</div>
+      </div>
+
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Capcom 宣布將 RE Engine 轉型為「AI 生成遊戲引擎」——「未來與 AI 共同創作遊戲」</div>
+            <div class="ln"><b>新聞事實：</b>Capcom 在 2026 年 10 月 3 日正式宣布計畫，將旗下 RE Engine 進化為「AI generation game engine」（AI 生成遊戲引擎）。Technical Director Kazuki Ishida 表示：「Our goal is a future where we create games together with AI.」Capcom 同時強調不會在遊戲中直接使用 AI 生成美術資產，而是專注於開發效率提升。IGN、The Verge、Eurogamer、VGC、PC Gamer 今日多媒體同步確認，Reddit r/Games 熱帖。（摘要層，2026-10-03）</div>
+            <div class="ln"><b>GameGen 角度：</b>Capcom 沒有說「AI 會取代開發者」，而是說「未來我們一起做遊戲」——這個框架和 GameGen 完全一致。<b>大廠在蓋基礎設施，獨立創作者需要的是今天就能用的入口</b>。GameGen 的 Trend-to-Game 管線，就是把同樣的邏輯規模化到每一個創作者。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Capcom just announced it's turning its RE Engine into an AI-generation game engine. Their goal: 'A future where we create games together with AI.' The largest studios are building the infrastructure now. The question for independent creators: what are you building with the tools that already exist today?"<br><span style="color:var(--ink-dim)">中譯：Capcom 宣布把 RE Engine 改造成「AI 生成遊戲引擎」，目標是「未來和 AI 一起做遊戲」。大廠在蓋基礎設施。獨立創作者，你在用今天已有的工具做什麼？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.ign.com/articles/capcom-announces-plans-to-transform-the-re-engine-into-an-ai-generation-game-engine-our-goal-is-a-future-where-we-create-games-together-with-ai" target="_blank">IGN ↗</a> / <a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge ↗</a> / <a href="https://www.eurogamer.net/capcom-re-engine-ai-generation-game-engine-rex-project" target="_blank">Eurogamer ↗</a>　pub 2026-10-03　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「AI 經常讓我工作更多」——GamesIndustry.biz 揭露 AI 工具的反直覺代價</div>
+            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 今日發表深度報導（標題：'Quite often it's given me more to do – Why AI might be creating more work for games companies, rather than saving time'），訪談多位遊戲公司從業者，記錄 AI 工具在實際開發中反而增加工作量的情形。（GamesIndustry.biz，標題層）</div>
+            <div class="ln"><b>GameGen 角度：</b>與 Capcom AI 引擎宣告同日出現，構成今日最強對比：大廠宣布方向、現場從業者說「更忙了」。<b>工具不等於效率——效率的關鍵是誰能真正讓 AI 為自己工作，而非被工具淹沒</b>。GameGen 的核心價值主張就在這個缺口。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Capcom announces an AI game engine. Same day, GamesIndustry.biz reports AI tools are giving developers *more* work, not less. Both things are true at once. The gap between 'AI exists' and 'AI works for you' is the opportunity. The creators who close that gap first win."<br><span style="color:var(--ink-dim)">中譯：Capcom 宣布 AI 引擎，同一天 GamesIndustry.biz 報導 AI 讓開發者工作更多。兩件事同時為真。「AI 存在」和「AI 為你工作」之間的缺口就是機會，先填上的人就先贏。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/quite-often-its-given-me-more-to-do-why-ai-might-be-creating-more-work-for-games-companies-rather-than-saving-time" target="_blank">GamesIndustry.biz ↗</a>　pub 今日　partial（標題層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>RuneScape 4 正式宣布——22 年 MMO 推第四代，懷舊情緒引爆<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Jagex 在 RuneFest 活動正式宣布 RuneScape 4，定位為完整 MMO 續作。PC Gamer 確認「A new RuneScape age is coming」，並報導遊戲最初是從生存遊戲 Dragonwilds 的擴充發展而來。Reddit r/gaming 和 r/Games 今日均有帖文進入熱榜，獲大量回應。（PC Gamer、Reddit r/Games，2026-10-03，摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>22 年 IP 推第四代——情緒共鳴型內容的最高規格案例。老玩家的情感連結是最高品質的有機傳播素材，不需要廣告預算，只需要觸動「當年的自己」。今日情緒窗口最強，明天降溫。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "RuneScape 4 just got announced. 22 years of one of gaming's most beloved MMOs. A new age is coming. Old players don't just remember the game — they remember who they were when they played it. That emotional pull is the most powerful organic content there is."<br><span style="color:var(--ink-dim)">中譯：RuneScape 4 宣布了。22 年 MMO。老玩家記得的不只是遊戲，他們記得玩遊戲時的自己。那種情感連結，是最強的有機內容燃料。</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1wwwmky/runescape_official_4th_mmo_teaser_trailer/" target="_blank">Reddit r/Games ↗</a> / <a href="https://www.pcgamer.com/games/mmo/runescape-4-announced-at-runefest-full-mmo-sequel-started-as-expansion-to-survival-game-dragonwilds/" target="_blank">PC Gamer ↗</a>　pub 2026-10-03　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 48h</span>AI 生成《輻射：紐約》350 萬觀看後被 Bethesda 下架——需求已驗證，合法路徑是缺口<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>一款 AI 生成的《Fallout: New York》瀏覽器遊戲在網路上累計超過 350 萬觀看後，Bethesda 向製作者發出停止令（Cease and Desist），遊戲已下架。IGN 確認（2026-10-02）。Kotaku 同期報導「遊戲混搭 mod」（Skate 3 in MW2、Minecraft in Elden Ring）成病毒式趨勢。（IGN、Kotaku、RPS，摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>350 萬觀看說明玩家需求真實；C&D 說明未授權路行不通。切角：「需求存在，合法路徑才是唯一出口。」GameGen 的 Trend-to-Game 做的是零 IP 依賴的全新遊戲，正是需求與合法性之間缺口的直接答案。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "An AI-generated Fallout: New York browser game hit 3.5M views. Then Bethesda sent a C&D. The demand is absolutely real. The unauthorized route isn't the answer. The gap between 'players want AI-made games' and 'doing it legally from scratch' — that's the opportunity."<br><span style="color:var(--ink-dim)">中譯：AI 做的《輻射：紐約》拿了 350 萬觀看，然後 Bethesda 說停。需求是真的，未授權的路行不通。「玩家想玩 AI 做的遊戲」和「從零合法做到」之間的空白，就是機會。</span></div>
+            <div class="meta">來源 <a href="https://www.ign.com/articles/person-behind-viral-ai-generated-fallout-new-york-game-hauls-it-offline-says-bethesda-issued-cease-and-desist" target="_blank">IGN ↗</a> / <a href="https://www.rockpapershotgun.com/ai-generated-fallout-new-york-browser-game-full-of-utterly-cursed-faces-slapped-with-bethesda-cease-and-desist-its-slop-prompter-claims" target="_blank">RPS ↗</a>　pub 2026-10-02　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam 秋季特賣週末：BG3 +22.7%、Palworld +21.6%、星露谷 +18.8%——有機社群讓折扣翻倍<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam 在線速度（2026-10-04 07:30，官方 API 真數字）：Baldur's Gate 3 今日 48,821 人（前日 39,777），+22.7%；Palworld 45,948（前日 37,789），+21.6%；Stardew Valley 39,644（前日 33,372），+18.8%。Steam Autumn Sale 進行中（80.lv 報導確認）。（真數字，已驗證）</div>
+            <div class="ln"><b>GameGen 角度：</b>三款深具有機社群的遊戲在折扣期同步暴衝，而同一個折扣對無社群遊戲的效果接近零。<b>有機社群是折扣效果的乘數器，不是加法，是乘法</b>。Trend-to-Game 管線建立的正是這個乘數器。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Steam Autumn Sale weekend. Baldur's Gate 3 +22.7%. Palworld +21.6%. Stardew Valley +18.8%. Discounts don't create momentum — they amplify it. Games with community energy 10x their results. Games without it? The discount barely moves the needle. Community first."<br><span style="color:var(--ink-dim)">中譯：Steam 秋季特賣週末。BG3 +22.7%，Palworld +21.6%，星露谷 +18.8%。折扣不創造動能，它放大動能。有社群的遊戲效果 10 倍，沒有的幾乎沒動。先有社群。</span></div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">Steam 官方 API ↗</a>　pub 今日　yes（官方 API 真數字）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「零 IP 依賴 AI 遊戲」——蹭 Fallout C&D 引爆的合法缺口需求，今天窗口最強<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法概念：</b>趨勢蹭法——不 remix 任何現有 IP，直接用今天的熱話做全新遊戲。發布配文：「AI 做的《輻射》遊戲被下架了。這個，完全合法，你現在就可以玩。」Demo 格式：極簡廢土生存 / 城市重建，30 秒可玩，配文對比「AI + IP = 風險」vs「AI + 原創 = 今天就可以發」。⚠️ 絕對不使用任何 Fallout / Bethesda 品牌素材。</div>
+            <div class="ln"><b>為何是今天：</b>Fallout C&D 是今日業界討論最熱話題之一，情緒複雜（需求真實 + 路徑被封）。搭這個窗口展示「合法的 AI 遊戲今天就可以做」的反例，訊息精準，明天窗口縮小。</div>
+            <div class="meta">⚠️ 不使用任何 Fallout / Bethesda / Rockstar / 任何第三方 IP 素材　模板：廢土生存 / 城市重建 loop　去賭場化 OK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/04 07:30 真抓</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">681K ▲8.0%</span></li>
+            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">114K ▲7.8%</span></li>
+            <li><span class="nm">Rust</span><span class="vn">107K ▲2.1%</span></li>
+            <li><span class="nm">Rainbow Six Siege</span><span class="vn">73K ▲7.3%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">71K ▼7.0%</span></li>
+            <li class="up"><span class="nm">Baldur's Gate 3</span><span class="vn">48K ▲22.7%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 10/04 07:30 真數字（週日 Autumn Sale 效應）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。近期數據顯示高人氣生存 / 模擬類遊戲持續領榜，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。RuneScape 4 宣布可能帶動相關直播，Capcom AI 新聞也可能引發遊戲評論 / 分析直播，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 今日 Steam 數字為 2026-10-04T07:30 真抓（heat_latest.json 官方 API）。Steam Autumn Sale 週末效應明顯：全榜多數上漲，BG3 +22.7%、Palworld +21.6%、Stardew Valley +18.8% 最顯著。唯 TF2 -7.0%。排名最大跳動：ACE COMBAT 8 +31（#95→#64）。新進榜：The Outlast Trials (#52)、Last Epoch (#92)。Roblox / Twitch / Threads 今日無瀏覽器工具，均標記「資料不足」。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>排名跳動</span></span>ACE COMBAT 8 排名暴衝 +31（#95→#64）——今日最大跳幅，其次 Skyrim SE +13、Among Us +10</h3>
+        <div class="sum">steam_movers（10/04 07:30）排名跳動紀錄：<b>ACE COMBAT 8: WINGS OF THEVE +31 名</b>（#95 → #64），今日最大跳幅；<b>Skyrim Special Edition +13 名</b>（#67 → #54）；<b>Among Us +10 名</b>（#94 → #84）；<b>Space Marine 2 +9 名</b>（#65 → #56）；<b>Left 4 Dead 2 +8 名</b>（#38 → #30）；Cyberpunk 2077 +5；Garry's Mod +5。新進榜：The Outlast Trials（#52）、Last Epoch（#92）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>ACE COMBAT 8 今日 +31 是本週期最大單日跳幅，無明顯新聞觸發——很可能是 Steam Autumn Sale 折扣 + 社群自發推薦共振效應。<b>「有折扣 + 已有社群口碑」= 排名自然飛升，這正是有機社群比廣告更值錢的最新案例</b>。Skyrim SE +13 同樣屬於「經典作品 + 折扣 = 自然回流」的教科書案例。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 10/04 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>速度觀察</span></span>BG3 +22.7%、Palworld +21.6%、星露谷 +18.8%——Steam Autumn Sale 週末效應讓有機社群型遊戲集體暴衝</h3>
+        <div class="sum">Steam 在線速度（10/04 vs 前日）：<b>Baldur's Gate 3 +22.7%</b>（48,821，前日 39,777）；<b>Palworld +21.6%</b>（45,948，前日 37,789）；<b>Stardew Valley +18.8%</b>（39,644，前日 33,372）；Destiny 2 +15.0%；HELLDIVERS 2 +10.6%；CS:GO +8.0%。TF2 -7.0% 為今日少數下跌。Autumn Sale 週末效應明顯，但漲幅集中在已有有機社群能量的遊戲。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>三款有機社群深厚的遊戲（BG3、Palworld、星露谷）在同一個折扣期同步衝 18-22%。<b>折扣是乘數器，不是引擎——有社群才有東西被放大，沒有社群，折扣效果接近加法而非乘法</b>。這對創作者的啟示：先建社群，再做促銷。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 10/04 07:30 · <a href="https://store.steampowered.com/app/1086940" target="_blank">BG3 ↗</a> / <a href="https://store.steampowered.com/app/413150" target="_blank">Stardew ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>HN：Newgrounds.com 432pts/128c（瀏覽器遊戲社群再熱）+ 城市建造遊戲靈魂問題 pt.2（126pts）；itch.io：Remember 熱、Three Nights Lobotomized 迷因榜</h3>
+        <div class="sum">Hacker News 今日遊戲相關最高分：<b>Newgrounds.com</b>（432 points / 128 comments）——討論 Flash 遊戲遺產與獨立瀏覽器遊戲社群的現狀。<b>「City building games have a Soul Problem pt.2」</b>（radical-elements.com，126pts / 120 comments）——深度討論城市建造遊戲的「靈魂缺失」問題，與 GameGen 機制設計極為相關。另有「Teleoperator – Game for Driving Waymo in SF」（實機感控制遊戲 demo，2pts）以及「Show HN: 80s Choplifter game ported to Vision Pro」（4pts）。itch.io 今日：<b>Remember</b>（html5 popular 榜熱度最高）、<b>Three Nights Lobotomized</b>（meme 榜）、Bite Your Tongue、Next Station: The Moon。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Newgrounds.com 的 432pts 是今日 HN 最值得注意的訊號——這不是懷舊，而是 HN 工程師社群在討論「瀏覽器遊戲社群為何還在、甚至更強」。<b>這和 AI 降低遊戲製作門檻的趨勢直接呼應：更多人做遊戲 → 瀏覽器是最低摩擦的分發管道</b>。城市建造「靈魂問題」文章的 126pts 說明設計深度話題有廣大受眾，今日可以直接蹭做設計觀點貼文。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HACKER NEWS / ITCH.IO · 10/04 · <a href="https://www.newgrounds.com/" target="_blank">Newgrounds ↗</a> / <a href="https://www.radical-elements.com/minor-epiphanies/city-building-games-have-a-soul-problem-pt2" target="_blank">Soul Problem ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>行業大事</span></span>Capcom 宣布 RE Engine 轉型 AI 生成引擎——多媒體同日確認「與 AI 共同創作遊戲」的未來方向</h3>
+        <div class="sum">多媒體確認（IGN、The Verge、Eurogamer、VGC、PC Gamer、Reddit r/Games，2026-10-03）：Capcom 正式宣布計畫將 RE Engine 進化為「AI generation game engine」。Technical Director Kazuki Ishida 表示：「Our goal is a future where we create games together with AI.」Capcom 強調 AI 將用於開發效率提升，而非直接生成遊戲中的美術資產。Reddit r/Games 帖文 'A Future Where We Create Games Together With AI — Capcom Announces Plans to Transform the RE Engine' 今日進入熱榜。VGC 深度報導了 Capcom 的技術路線圖。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Capcom 的做法示範了 AI 最有說服力的定位：不是「取代人」，而是「和人一起」。<b>「We create games together with AI」這個語言框架，去除了威脅感，增加了期待感</b>——這是遊戲業界 AI 溝通的最佳實踐之一。GameGen 的 Trend-to-Game 管線採用的是同樣的框架：創作者提供熱話判斷，AI 提供構建速度，一起做今天的遊戲。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">IGN / THE VERGE / EUROGAMER · <a href="https://www.ign.com/articles/capcom-announces-plans-to-transform-the-re-engine-into-an-ai-generation-game-engine-our-goal-is-a-future-where-we-create-games-together-with-ai" target="_blank">IGN ↗</a> / <a href="https://www.eurogamer.net/capcom-re-engine-ai-generation-game-engine-rex-project" target="_blank">Eurogamer ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>行業整合</span></span>同日兩起關閉：Reigns 開發商 Nerial 結束營運、Krafton 終止 PUBG 衍生作 Black Budget——小型遊戲公司生存困境</h3>
+        <div class="sum">GamesIndustry.biz 確認（2026-10-04）：《Reigns》和《Card Shark》開發商 Nerial 因「過去兩年重大虧損」正式結束營運，創辦人表示將「回到根本」。Game Developer 報導 Nerial 進入「休眠模式」並裁員。同日，Krafton 宣布終止《PUBG》衍生射擊遊戲《Black Budget》，距 closed alpha test 不到九個月。GamesIndustry.biz 分析《2XKO》停刊：「要成功需要月活用戶在數十萬至百萬等級」。三個案例同日出現。（GI.biz / GD / RPS，2026-10-04）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>三個失敗案例同日出現，呈現今日遊戲業界最明顯的結構性壓力：<b>中型遊戲（需要百萬 MAU 才能生存的規模）是最危險的死亡地帶</b>。極小型遊戲（低成本、有機社群）或超大型（IP 背書 + 平台保護）相對有護城河。GameGen 的創作者定位：做能從第一天就有真實受眾反應的遊戲，不做需要百萬 MAU 才能驗證的中型豪賭。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESINDUSTRY.BIZ / GAME DEVELOPER · <a href="https://www.gamesindustry.biz/reigns-developer-nerial-closes-following-significant-trading-losses-over-past-two-years" target="_blank">Nerial ↗</a> / <a href="https://www.gamesindustry.biz/krafton-shuts-down-pubg-spin-off-black-budget-nine-months-after-closed-alpha-test" target="_blank">Black Budget ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>行業觀察</span></span>日本 85%+ 遊戲開發者使用 AI、63% 每天用，但僅 147/1349 人認為玩家體驗受益</h3>
+        <div class="sum">Kotaku 報導（2026-09-30）：日本 CESA 調查顯示 85% 以上遊戲開發者使用生成式 AI，63% 每天使用。然而在 1,349 名受訪者中，僅 147 人（約 10.9%）認為 AI 帶來了玩家可感知的體驗改善。Level-5 因 AI 生成圖像疑雲引發玩家反彈。（Kotaku，2026-09-30，摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>85% 用 AI、10.9% 認為玩家能感受到差異——這個落差說明：<b>AI 目前大量用在「開發者自己看到的地方」，而不是「玩家玩到的體驗」</b>。GameGen 的機會在玩家感受端：更快出現的遊戲（蹭今天熱話）、更貼近當下情緒的設計（Trend-to-Game），本質上都是可以在玩家端感知到的 AI 價值。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">KOTAKU · <a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>真人感動</span></span>「12 年工作（2014-10-03 到 2026-10-03），還有很多要做！」——Reddit 最高票今日帖文，indie dev 里程碑</h3>
+        <div class="sum">Reddit r/gaming 今日最高票帖文：一位獨立開發者分享「12 years of work (Oct 3, 2014 to Oct 3, 2026) &amp; still lots to do!」獲得大量留言與社群支持。帖文展示了長達 12 年的開發歷程，成為今日 Reddit 遊戲圈的情感核心話題。（Reddit r/gaming，今日熱榜第一）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>12 年開發者帖文成今日 Reddit 最高票，說明玩家社群對「長期堅持」的情感共鳴有多強。迷因切角（不用任何遊戲素材）：<b>「最困難的不是做遊戲，是在第 4 年、第 7 年、第 11 年繼續做」</b>。對比 GameGen 的 Trend-to-Game：不是要你做 12 年，而是今天做今天的遊戲，明天再做明天的。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT R/GAMING · <a href="https://www.reddit.com/r/gaming/comments/1wwqivg/12_years_of_work_oct_3_2014_to_oct_3_2026_still/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>行業段子</span></span>Banjo-Kazooie PC 移植 decomp 開發者：「AI 生成移植是到底線的競賽，不尊重原作」——反 AI 移植潮的最強聲音</h3>
+        <div class="sum">VGC 報導（2026-10-04）：《Banjo-Kazooie》PC 移植計畫（decomp 社群版）開發者公開批評 AI 生成 PC 移植，稱其為「a race to the bottom」（到底線的競賽）且「disrespectful」（不尊重）。這是在近期 AI 移植遊戲（Kotaku 報導的「AI decompiling and combining games」趨勢）引發廣泛爭議後，decomp 社群的正面回應。（VGC，標題層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這個故事的迷因結構是：同一個「AI 做遊戲」的技術，在「合法零 IP」的框架下是創新，在「remix 他人 IP」的框架下是「到底線的競賽」。<b>框架決定評價，而非技術本身</b>。今日不使用 Banjo-Kazooie 品牌素材，可直接借「AI 的應用方式決定你是創新者還是抄捷徑者」做觀點發言。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 不使用 Banjo-Kazooie / Rare 素材</span></span></div></div>
+          </div>
+          <div class="src">VGC · <a href="https://www.videogameschronicle.com/news/banjo-kazooie-pc-port-decomp-developer-says-ai-generated-pc-ports-are-a-race-to-the-bottom-and-disrespectful/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <ol>
+            <li class="hot"><span class="nm">廢土重建 / 倒數生存（AI Fallout C&D 合法答案公式）</span><span class="vn">生存設計</span></li>
+            <li class="up"><span class="nm">MMO 入門引導 loop（RuneScape 4 懷舊公式）</span><span class="vn">新手體驗</span></li>
+            <li class="hot"><span class="nm">折扣衝刺計時器（Autumn Sale 有限時間感公式）</span><span class="vn">緊迫感設計</span></li>
+            <li><span class="nm">城市靈魂系統（GD 城市建造靈魂問題文章公式）</span><span class="vn">情感連結設計</span></li>
+            <li><span class="nm">瀏覽器 30 秒可玩（Newgrounds 社群公式）</span><span class="vn">低摩擦分發</span></li>
+          </ol>
+          <div class="bf">itch.io + 今日新聞衍生 · 10/04 · <a href="https://itch.io/games/tag-viral" target="_blank">itch viral ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>廢土重建 loop 設計公式——蹭 AI Fallout C&D 引爆的「合法零 IP 需求」窗口</h3>
+        <div class="sum">AI Fallout C&D 的機制轉換公式：玩家不需要《輻射》IP，需要的是「廢土世界中做決定」的情感體驗。廢土重建 loop 的設計要素：（1）資源稀缺——每回合有限資源，強制取捨；（2）風險 / 獎勵平衡——冒險區域高獎勵高代價；（3）社群見證——玩家結果可分享（「我的城市撐了 14 天」）；（4）零 IP 依賴——廢土美學不屬於任何 IP，可自由設計。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日窗口最清晰的 Demo 公式：<b>配文「AI 做的《輻射》遊戲被下架了——這個，完全合法，你現在就可以玩」</b>。情緒鉤子（350 萬觀看的遺憾）→ 轉折（有合法的） → 行動（立刻可玩）。三段式結構，今日窗口最強，明後天話題降溫。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用 Fallout 素材</span></span></div></div>
+          </div>
+          <div class="src">IGN / RPS · <a href="https://www.ign.com/articles/person-behind-viral-ai-generated-fallout-new-york-game-hauls-it-offline-says-bethesda-issued-cease-and-desist" target="_blank">IGN ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
+        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：Capcom AI 引擎宣告（台灣 Capcom 粉絲眾多，《惡靈古堡》系列熱度高）、RuneScape 4（台灣有資深 RuneScape 老玩家社群）、Steam 秋季特賣（台灣玩家最常討論的折扣話題）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>AI Fallout C&D 合法需求缺口（48h 高熱）</td><td><span class="tmpl">廢土重建 / 零 IP 生存 loop</span></td><td>「AI 做的《輻射》被下架了——這個，合法，你現在就可以玩」</td><td class="rk-low">低 · 不用 Fallout 素材</td><td>★ 今日 Demo 首選，情緒鉤子最強，今明兩天窗口</td></tr>
+          <tr><td>Capcom AI 引擎宣告（全球最高行業熱度）</td><td><span class="tmpl">AI 輔助創作工具觀點貼</span></td><td>「大廠在蓋 AI 引擎，獨立創作者——你在用今天的工具做什麼？」</td><td class="rk-low">低</td><td>CJ / X 均適合，今日 A 級素材，多媒體確認加持</td></tr>
+          <tr><td>RuneScape 4 宣布（MMO 情懷爆炸）</td><td><span class="tmpl">懷舊 MMO 入門引導 loop</span></td><td>「老玩家記得的不只是遊戲，他們記得玩遊戲時的自己」</td><td class="rk-low">低</td><td>X 情感鉤子強，今日限時窗口，明天降溫</td></tr>
+          <tr><td>Steam Autumn Sale BG3 / Palworld 暴衝（真數字）</td><td><span class="tmpl">有機社群 × 折扣效果論文</span></td><td>「折扣是乘數器，不是引擎——先有社群，再做促銷」</td><td class="rk-low">低</td><td>CJ / X 均適合，真數字背書，今日最強數據素材</td></tr>
+          <tr><td>Nerial 結束 + Black Budget 終止（同日兩停）</td><td><span class="tmpl">小規模精準設計論點</span></td><td>「中型遊戲是最危險的死亡地帶——極小型或極大型才有護城河」</td><td class="rk-low">低</td><td>CJ 觀點貼，行業整合訊號，適合下週跟進</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>Capcom 宣布 AI 生成遊戲引擎——「未來與 AI 共同創作遊戲」的產業方向</td><td>Capcom 2026-10-03 正式宣布計畫將 RE Engine 轉型為 AI generation game engine；Technical Director 表示「Our goal is a future where we create games together with AI」（IGN、The Verge、Eurogamer、VGC、PC Gamer 多媒體確認）</td><td>"Capcom just announced it's turning its RE Engine into an AI-generation game engine. Their goal: 'A future where we create games together with AI.' The largest studios are building the infrastructure. The question for independent creators: what are you building with the tools that already exist today?"</td><td><a href="https://www.ign.com/articles/capcom-announces-plans-to-transform-the-re-engine-into-an-ai-generation-game-engine-our-goal-is-a-future-where-we-create-games-together-with-ai" target="_blank">↗</a></td></tr>
+          <tr><td>「AI 讓開發者工作更多」——工具存在與工具為你工作是兩件事</td><td>GamesIndustry.biz 今日深度報導（標題：'Quite often it's given me more to do – Why AI might be creating more work for games companies, rather than saving time'），與 Capcom AI 引擎宣告同日形成強烈對比（GamesIndustry.biz，標題層）</td><td>"Capcom announces an AI game engine. Same day, GamesIndustry.biz reports AI tools are giving developers *more* work, not less. Both things are true at once. The gap between 'AI exists' and 'AI works for you' is the opportunity. The creators who close that gap first win."</td><td><a href="https://www.gamesindustry.biz/quite-often-its-given-me-more-to-do-why-ai-might-be-creating-more-work-for-games-companies-rather-than-saving-time" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Capcom AI 引擎宣告、AI 讓開發者更忙對比）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。對外用字已過濾所有賭場語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
+          <li>Capcom AI 引擎：「大廠說『未來和 AI 一起做遊戲』——那現在已有工具的你，在做什麼？」（今日 A 級素材）</li>
+          <li>RuneScape 4 宣布：「22 年 MMO 第四代——老玩家記得的不只是遊戲，他們記得玩遊戲時的自己。」（今日情緒窗口）</li>
+          <li>AI Fallout C&D：「350 萬觀看，然後 Bethesda 說停。需求是真的，合法的路才是答案。」（今明窗口強）</li>
+          <li>Steam Autumn Sale 真數字：「BG3 +22.7%、Palworld +21.6%、星露谷 +18.8%——折扣不創造動能，它放大動能。先有社群。」</li>
+        </ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
+          <li>★ 廢土重建 loop——蹭 AI Fallout C&D 引爆的「合法版本需求」。配文：「AI 做的《輻射》遊戲被下架了。這個，完全合法，你現在就可以玩。」不用 Fallout IP，今日窗口最強。</li>
+          <li>MMO 入門引導小遊戲——蹭 RuneScape 4 懷舊熱，極簡 30 秒「你在哪個職業」測驗或選角 loop，今日情緒窗口強。</li>
+          <li>城市「靈魂系統」demo——蹭 HN 126pts 城市建造靈魂問題討論，加入情感 / 意義系統的極簡城市 loop。</li>
+        </ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
+          <li>Capcom RE Engine AI 計畫進展——何時有具體 demo 或技術展示？是否影響其他 AAA 工作室公開表態？</li>
+          <li>RuneScape 4 話題熱度——宣布後的 Reddit 討論量和 Steam 搜索趨勢，判斷懷舊 MMO 熱的持續時間。</li>
+          <li>Steam Autumn Sale 週末結束後（10/06）BG3 / Palworld 回落幅度——驗證有機社群的持續留存力。</li>
+          <li>ACE COMBAT 8 的 +31 名跳動——是社群自燃回流還是 Autumn Sale 折扣？下週能否維持排名？</li>
+        </ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
+          <li>AI Fallout C&D：不引用任何 Fallout / Bethesda 品牌美術、角色、對話，只借「廢土生存」情感設定。</li>
+          <li>RuneScape 4：不使用任何 Jagex / RuneScape 品牌素材，只借「22 年老玩家情感連結」概念。</li>
+          <li>Capcom AI 引擎：不使用 Capcom 任何品牌素材，只借「AI 共同創作」框架語言。</li>
+          <li>AI 遊戲混搭 mod 趨勢（Skate 3 in MW2 等）：這類做法有明確 IP 侵權風險，一律不鼓勵，不使用相關素材。</li>
+          <li>所有來源均為摘要層——對外不寫成「確定事實」，保留「報導指出 / 確認」語氣。</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Capcom RE Engine → AI 生成遊戲引擎</td><td><a href="https://www.ign.com/articles/capcom-announces-plans-to-transform-the-re-engine-into-an-ai-generation-game-engine-our-goal-is-a-future-where-we-create-games-together-with-ai" target="_blank">IGN</a> / <a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge</a> / <a href="https://www.eurogamer.net/capcom-re-engine-ai-generation-game-engine-rex-project" target="_blank">Eurogamer</a> / <a href="https://www.videogameschronicle.com/news/capcom-details-plans-to-evolve-re-engine-into-an-ai-generation-game-engine/" target="_blank">VGC</a>　驗：五媒體同日確認，熱榜 Reddit r/Games；「Our goal is a future where we create games together with AI」引言多媒體確認　<span class="pp">partial</span>（摘要層）　pub 2026-10-03</td></tr>
+        <tr><td>GamesIndustry.biz：AI 讓開發者工作更多</td><td><a href="https://www.gamesindustry.biz/quite-often-its-given-me-more-to-do-why-ai-might-be-creating-more-work-for-games-companies-rather-than-saving-time" target="_blank">GamesIndustry.biz</a>　驗：標題確認「Quite often it's given me more to do」　<span class="pp">partial</span>（標題層）　pub 今日</td></tr>
+        <tr><td>RuneScape 4 正式宣布</td><td><a href="https://www.pcgamer.com/games/mmo/runescape-4-announced-at-runefest-full-mmo-sequel-started-as-expansion-to-survival-game-dragonwilds/" target="_blank">PC Gamer</a> / <a href="https://www.reddit.com/r/Games/comments/1wwwmky/runescape_official_4th_mmo_teaser_trailer/" target="_blank">Reddit r/Games</a>　驗：標題確認「A new RuneScape age is coming」；Reddit 熱榜雙帖確認　<span class="pp">partial</span>（摘要層）　pub 2026-10-03</td></tr>
+        <tr><td>AI 生成 Fallout: New York C&D</td><td><a href="https://www.ign.com/articles/person-behind-viral-ai-generated-fallout-new-york-game-hauls-it-offline-says-bethesda-issued-cease-and-desist" target="_blank">IGN</a> / <a href="https://www.rockpapershotgun.com/ai-generated-fallout-new-york-browser-game-full-of-utterly-cursed-faces-slapped-with-bethesda-cease-and-desist-its-slop-prompter-claims" target="_blank">RPS</a>　驗：兩媒體確認停止令；350 萬觀看數字為媒體引述　<span class="pp">partial</span>（摘要層）　pub 2026-10-02</td></tr>
+        <tr><td>Steam 在線速度（10/04 07:30 真數字）</td><td>heat_latest.json 2026-10-04T07:30 官方 API　BG3 48,821（+22.7%）/ Palworld 45,948（+21.6%）/ Stardew 39,644（+18.8%）/ CS:GO 681K（+8.0%）　<span class="ok">✓</span>（官方 API 真數字）</td></tr>
+        <tr><td>Steam 排名跳動（steam_movers 10/04）</td><td>heat_latest.json steam_movers　ACE COMBAT 8 +31（#95→#64）/ Skyrim SE +13（#67→#54）/ Among Us +10（#94→#84）/ Space Marine 2 +9（#65→#56）/ L4D2 +8（#38→#30）；新進榜：The Outlast Trials (#52)、Last Epoch (#92)　<span class="ok">✓</span>（官方 API 真數字）</td></tr>
+        <tr><td>85%+ 日本遊戲開發者使用 AI（Kotaku）</td><td><a href="https://kotaku.com/over-85-percent-of-japanese-game-developers-are-using-ai-2000736041" target="_blank">Kotaku</a>　驗：標題確認「Over 85 Percent Of Japanese Game Developers Are Using AI」；63% 每日使用、147/1349 認為玩家受益數字摘自報導摘要　<span class="pp">partial</span>（摘要層）　pub 2026-09-30</td></tr>
+        <tr><td>Nerial 結束 / Black Budget 終止</td><td><a href="https://www.gamesindustry.biz/reigns-developer-nerial-closes-following-significant-trading-losses-over-past-two-years" target="_blank">GI.biz Nerial</a> / <a href="https://www.gamesindustry.biz/krafton-shuts-down-pubg-spin-off-black-budget-nine-months-after-closed-alpha-test" target="_blank">GI.biz Black Budget</a>　驗：兩篇報導均為今日發布，標題確認事實　<span class="pp">partial</span>（摘要層）　pub 今日</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 10/04 07:30 真數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 10/04 07:30 + 多源新聞 · 2026/10/04 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
