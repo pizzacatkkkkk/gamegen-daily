@@ -24,6 +24,7 @@
   .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
   .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
   a{color:inherit}
+
   nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
   .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
   .brand{display:flex;align-items:center;gap:10px}
@@ -38,6 +39,7 @@
   .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
     border-left:2px solid var(--ink);padding-left:18px}
   @media(max-width:820px){.nav-links{display:none}}
+
   .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
   .hero::before{content:"";position:absolute;inset:0;opacity:.5;
@@ -53,6 +55,7 @@
   .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
   .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
   .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
     letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
   .hero h1 .yl{color:var(--yellow)}
@@ -60,6 +63,7 @@
     letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
   .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
   .hero .tagline b{background:var(--ink);padding:1px 8px}
+
   .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
     box-shadow:8px 8px 0 rgba(0,0,0,.85)}
   .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
@@ -69,6 +73,8 @@
   .lead b{color:var(--ink);font-weight:900}
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -85,7 +91,7 @@
   .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
   .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
     border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
-  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
   .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
   .ammo-item .ln b{color:var(--ink);font-weight:900}
   .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
@@ -94,6 +100,7 @@
   .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
   .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
     background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
   main{max-width:880px;margin:0 auto;padding:0 26px 90px}
   section{padding:56px 0 0;scroll-margin-top:64px}
   .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
@@ -104,10 +111,12 @@
   .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
   .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
   .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
   .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
     padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
   .tag>span{display:inline-block;transform:skewX(8deg)}
   .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
   .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
     position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -118,6 +127,7 @@
   .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
   .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
   .story .obs b{font-weight:900}
+
   .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .scores{display:flex;gap:18px}
   .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
@@ -131,6 +141,7 @@
   .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
   .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
   .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
   .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
     border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
@@ -142,6 +153,8 @@
   .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -162,6 +175,7 @@
   .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
   .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
   .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
   .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -174,6 +188,7 @@
   .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
   .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
   .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
   .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
   .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
@@ -181,6 +196,7 @@
   .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
   .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
   .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
   footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
   footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
@@ -190,8 +206,10 @@
   footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
   footer .legend b{background:var(--ink);padding:1px 7px}
   footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
   .reveal.in{opacity:1;transform:none}
+
   @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
 </style>
 </head>
@@ -211,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 03 · 彈藥工廠模式 · Steam 數字 10/03 07:30 真抓 · Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
+        <span class="dateflag">2026 / 10 / 03 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）· 來源 19 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -219,12 +237,12 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>Miami Heat NBA 球隊今日官方宣布：將在 GTA 6 發售前一天以「Vice City」身份參賽</b>——球員穿 GTA 6 球衣、球場全面 Vice City 主題改裝。VGC、Gamespot、PCGamer 三媒體確認。這不是廣告植入，是品牌身份的完整置換——Rockstar 讓一支真實 NBA 球隊「變成」了遊戲世界的一部分。同一天 PEGI 歐洲分級局發布 GTA 6 的 18+ 詳情：確認包含隨時可用毒品、屍首分離內容與完整性愛場景。GTA 6 行銷機器今日全速運轉。</p>
-        <p><b>AI 模組戰爭同日爆發</b>：Total War: Warhammer 3 最熱門模組之一的作者主動故意破壞自己的模組，以抗議 AI 製作的未授權翻版在全網擴散，並宣告「Support modders, not AI」；同日 Bethesda 對 AI 生成的 Fallout: New York 瀏覽器遊戲發出停止函，將其下線；Vibe-Coded Mashup Mods（AI 遊戲混搭）本週已在 X 上引爆數百萬觀看。兩條互相矛盾的訊號：創作者抵制 AI 翻版，但 Vibe-Coded Mashup 的有機傳播力卻是真實的。</p>
-        <p>Steam 今日最大 rank jump：<b>Space Marine 2 暴衝 +27（#92→#65），Season Pass 3 上線帶動舊作回流</b>。週六效應明顯，全榜幾乎全面上漲，TF2 在線人數較前一日 +29.7%（76K）是今日最大速度增幅。HN 今日最高分（148pts）：AI 終於在預算限制下攻克 Stratego，宣告隱藏資訊賽局最後堡壘被破。</p>
-        <div class="pull">▸ 今日最強切角：GTA 6 x Miami Heat 品牌跨界（CJ A 級素材）+ 2XKO「需要百萬 MAU」F2P 診斷書（CJ B 級素材）。AI 模組戰 + Vibe-Coded Mashup 是今日 X 最強窗口。Demo 首選：Mashup loop（零 IP 風險、今天話題窗口最大）。</div>
+        <p><b>「用 AI 把遊戲拼在一起」這週在 X 上爆了，同一週第一款爆紅的 AI 做的 Fallout 同人遊戲就被 Bethesda 發 C&amp;D 下架。</b>Forbes 9/30 報導：業餘玩家用 AI 把 <span class="hl">Minecraft 塞進 Elden Ring</span>、讓 Mario 對 Master Chief 開槍、Steve 走進 Skyrim；社群已幫它取名「slopcomp」。10/2 GamesRadar：一款用 Claude Opus 5.5 做出的瀏覽器版 <span class="hl">Fallout: New York（117 地點 / 112 角色 / 46 武器，零貼圖零音檔）影片累計 350 萬觀看</span>，作者說「免費、我沒賺錢」，仍被 ZeniMax 發 C&amp;D 撤下。</p>
+        <p>訊號很清楚：<b>「AI 一句話生成可玩混搭」的需求已經被市場證明（350 萬觀看），但「直接挪用大作 IP」的路被法務堵死。</b>這正是 GameGen 的位置：同一套 remix 爽感，但用泛化角色 / 梗，並把 Remix 按鈕做成產品本身。對 Pizza：今天最強的社群切角是「想玩混搭？可以，但用原創版」。</p>
+        <div class="pull">▸ 今天就能蹭：做一款「泛化版 Mashup」demo（A 遊戲機制 × B 遊戲機制，全用原創皮）＋ CJ 貼文「AI 做出一款 350 萬人看的遊戲，3 天後被下架——需求是真的，缺的是合法的 remix 平台」。</div>
       </div>
 
+      <!-- 📰 今日彈藥 頭版 -->
       <div class="ammo">
         <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
 
@@ -232,19 +250,19 @@
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Miami Heat 改名「Vice City」——GTA 6 x NBA 跨界是遊戲史最強文化身份置換</div>
-            <div class="ln"><b>新聞事實：</b>VGC、Gamespot、PCGamer 確認（2026-10-03）：Miami Heat NBA 球隊宣布在 GTA 6 正式發售前一天以「Vice City」品牌身份參戰一場 NBA 例行賽，球員穿 GTA 6 主題球衣、球場以 Vice City 視覺全面重新布置。Gamespot 標題：'NBA's Miami Heat Will Wear GTA 6 Jerseys And Play On A Branded Court The Day Before Release'。VGC：'Miami Heat NBA team to rebrand as Vice City in GTA 6 marketing stunt'。</div>
-            <div class="ln"><b>GameGen 角度：</b>Rockstar 沒有買廣告位——他們讓一支真實 NBA 球隊「變成」了遊戲世界的一部分。這是品牌身份置換，不是贊助。<b>GameGen 創作者的類比：不需要預算，需要的是找到一個文化鉤子讓你的遊戲「成為」那個文化的一部分，而不只是「提到」它</b>。今日最強 CJ 素材，聽眾是行銷 / 品牌人。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6 didn't just buy an ad. They turned the Miami Heat into Vice City for a day. The jerseys, the court, the whole identity — swapped. That's not sponsorship. That's cultural infiltration. Your game doesn't need a marketing budget to do this. It needs a cultural hook."<br><span style="color:var(--ink-dim)">中譯：GTA 6 不是買了廣告——他們讓 Miami Heat 變成了 Vice City 整整一天。球衣、球場、整個品牌身份全部置換。這不是贊助，這是文化滲透。你的遊戲不需要行銷預算，需要一個文化鉤子。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.videogameschronicle.com/news/miami-heat-nba-team-to-rebrand-as-vice-city-in-gta-6-marketing-stunt/" target="_blank">VGC ↗</a> / <a href="https://www.gamespot.com/articles/nbas-miami-heat-will-wear-gta-6-jerseys-and-play-on-a-branded-court-the-day-before-release/" target="_blank">Gamespot ↗</a>　pub 今日　partial（三媒體標題層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>AI 做的 Fallout 遊戲 350 萬觀看後被下架——需求驗證了，缺的是「合法的 remix 平台」</div>
+            <div class="ln"><b>新聞事實：</b>某 AI 創作者用 Claude Opus 5.5 做出瀏覽器版 Fallout: New York（117 地點、112 角色、46 武器、程序化生成音畫、零貼圖零音檔），影片累計 <b>350 萬觀看</b>；他表示「完全免費、我沒賺錢」，但 Bethesda 母公司 ZeniMax 發 cease-and-desist，作品下架（GamesRadar，pub 2026-10-02）。</div>
+            <div class="ln"><b>GameGen 角度：</b>兩個真相同時被證明：① 大眾極度想玩「AI 一句話生成的可玩遊戲」（350 萬觀看）；② 直接挪用 AAA IP 的路只有 3 天壽命。創作者要的是 remix 爽感，不是 IP 官司——缺口是「有 Remix 按鈕、用原創 / 泛化素材、可合法分享」的平台。這就是 Trend-to-Game 的產品定義。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "An AI-built Fallout game got 3.5M views — then a cease and desist. The demand is real. What's missing is a place where remixing is the product, not the legal risk."<br><span style="color:var(--ink-dim)">中譯：一款 AI 做的 Fallout 遊戲拿到 350 萬觀看，然後收到下架函。需求是真的。缺的是一個「remix 本身就是產品、而不是法律風險」的地方。</span></div>
+            <div class="meta">去賭場化 ✅　⚠️ 對外只講事件與平台缺口，不挪用 Fallout 任何素材　來源 <a href="https://www.gamesradar.com/games/fallout/bethesda-kills-ai-fans-viral-fallout-game-much-to-their-chagrin-how-about-you-make-a-fallout-game-instead-so-i-dont-have-to/" target="_blank">GamesRadar ↗</a>　pub 2026-10-02　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>2XKO 需要「高幾十萬甚至百萬 MAU」才能活——F2P 格鬥遊戲商業模型診斷書</div>
-            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 和 Reddit r/Games 今日確認：Riot Games F2P 格鬥遊戲 2XKO 開發商表示，遊戲需要「monthly active userbase in the high hundreds of thousands, if not millions」才能作為免費模型存活。2XKO 已停止開發。（GI.biz、Reddit r/Games，2026-10-03）</div>
-            <div class="ln"><b>GameGen 角度：</b>這是免費遊戲規模化數學問題最直接的公開承認：不是遊戲不夠好，是免費 F2P 本身需要百萬活躍用戶才能維持。<b>有機社群先於平台分發，是小型創作者唯一可行的路徑——先建受眾，再讓遊戲對他們說話</b>。GameGen 的 Trend-to-Game 管線是這個邏輯的最短實現路徑。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "The devs behind 2XKO said it needed hundreds of thousands — maybe millions — of monthly active users to survive as a free game. It didn't get there. That's not a failure of execution. That's the math of free-to-play at scale. Build your community before you build your game."<br><span style="color:var(--ink-dim)">中譯：2XKO 開發商說需要幾十萬甚至百萬月活才能作為免費遊戲存活。結果沒達到。這不是執行失敗——是免費遊戲規模化的數學問題。先建社群，再建遊戲。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/2xko-would-have-needed-an-mau-base-in-the-high-hundreds-of-thousands-if-not-millions-to-succeed" target="_blank">GI.biz ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1ww5rdr/2xko_would_have_needed_a_monthly_active_userbase/" target="_blank">Reddit r/Games ↗</a>　pub 今日　partial（標題層）</div>
+            <div class="ti"><span class="fresh f-rec">🔄 近期（4 天）</span>Naavik：Disney、miHoYo 都從「擋 AI 同人」轉向「自己蓋官方 AI 粉絲互動系統」</div>
+            <div class="ln"><b>新聞事實：</b>Naavik 9/29 分析：IP 方正從阻擋未授權 AI 角色內容，轉為自建受控的官方 AI 粉絲互動基礎設施（Disney、miHoYo、Hasbro）；文中數字：Character.AI 20M MAU、&gt;$30M ARR；miHoYo 三年投入上限 RMB 100B；ByteDance 貓箱（Maoxiang）8M+ MAU；日本開發者生成式 AI 使用率 85.8%（一年前 51%）（Naavik，pub 2026-09-29）。</div>
+            <div class="ln"><b>GameGen 角度：</b>與上一條放在一起看是完整故事：IP 方「擋」（Bethesda）與「自建」（Disney / miHoYo）並存，代表<b>粉絲創作需求被承認、但控制權之爭未解</b>。中小 IP、VTuber、實況主、迷因社群沒有 miHoYo 的預算——GameGen 把「官方授權的 remix 層」做成輕量工具，是 C 側創作者的空位。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Disney and miHoYo are done blocking AI fan content — they're building their own. Great, if you're Disney. Every streamer, VTuber and meme community needs the lightweight version."<br><span style="color:var(--ink-dim)">中譯：Disney 和 miHoYo 不再擋 AI 粉絲內容，改成自己蓋。如果你是 Disney 很好；但每個實況主、VTuber、迷因社群都需要輕量版。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">Naavik ↗</a>　pub 2026-09-29　verified ✓（數字皆取自原文摘要）</div>
           </div>
         </div>
 
@@ -252,37 +270,38 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Total War 模組作者主動破壞自己的熱門模組以抗議 AI 未授權翻版——「Support modders, not AI」<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>IGN 和 RPS 確認（2026-10-02）：Total War: Warhammer 3 最熱門模組之一的作者主動故意損壞（deliberately corrupted）自己的模組檔案，以抗議 AI 製作的未授權翻版在多個平台流傳。作者聲明：「Support modders, not AI.」同日，Bethesda 對一款 AI 生成的 Fallout: New York 瀏覽器遊戲發出停止函，強制下線。（IGN、RPS，2026-10-02）</div>
-            <div class="ln"><b>GameGen 角度：</b>模組作者自毀作品的訊號比任何聲明都強烈——「這是我的東西，你沒有授權 AI 化它」。Bethesda 的停止函說明現有 IP + AI 生成 = 法律目標。<b>GameGen 的安全路徑：從零生成新 IP，沒有版權目標，不在現有 IP 的砧板上操作</b>。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "A Total War modder just deliberately corrupted their own popular mod to protest AI reuploads. 'Support modders, not AI.' Same day: Bethesda hit an AI-generated Fallout game with a C&amp;D. The creator economy is fighting back. Safest path in 2026: build from scratch, own everything."<br><span style="color:var(--ink-dim)">中譯：Total War 模組作者主動破壞自己的熱門作品以抗議 AI 翻版，同日 Bethesda 對 AI 生成的 Fallout 遊戲發出停止函。創作者經濟在反擊。2026 最安全路徑：從零建立，擁有一切。</span></div>
-            <div class="meta">來源 <a href="https://www.ign.com/articles/modder-deliberately-corrupts-their-own-hugely-popular-total-war-warhammer-iii-mod-as-row-over-ai-escalates" target="_blank">IGN ↗</a> / <a href="https://www.rockpapershotgun.com/support-modders-not-ai-total-war-warhammer-3-mod-deliberately-corrupted-by-its-own-creator-in-protest-of-ai-infused-unauthorised-reuploads" target="_blank">RPS ↗</a>　pub 10/02　partial（標題層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Minecraft 塞進 Elden Ring、Mario 打 Master Chief——「slopcomp」混搭潮<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Forbes 9/30：業餘玩家用 AI 合併既有遊戲（Minecraft × Elden Ring、COD 加滑板機制、Mario 對 Master Chief、Steve 走 Skyrim），社群稱之 "slopcomp"；擔憂含 AI 程式碼難維護與 IP 未授權。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Everyone's mashing two games together with AI. We'll do the legal version: pick two mechanics, one meme, get a playable in 60 seconds. Drop your mashup 👇"　<span style="color:var(--ink-dim)">中譯：大家都在用 AI 把兩款遊戲拼一起。我們做合法版：選兩個機制＋一個梗，60 秒變可玩。留言你的混搭 👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>留言「A 機制 + B 機制」→ 小編當日生成泛化版 → 回覆可玩連結 + Remix 按鈕。</div>
+            <div class="meta">來源 <a href="https://www.forbes.com/sites/danidiplacido/2026/09/30/minecraft-in-elden-ring-vibe-coders-are-remixing-video-games-with-ai/" target="_blank">Forbes ↗</a>　pub 2026-09-30　已開原文</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>AI 終於破解 Stratego——HN 148pts，隱藏資訊賽局最後堡壘攻克<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Ars Technica 報導（HN 148pts/68c，2026-10-03）：AI 系統首次以「budget-friendly」方式打敗 Stratego 史上最強玩家，Nature 期刊論文確認結果（標題：Scalable decision-making for games of imperfect information）。Stratego 的特殊性：大部分棋子對雙方均隱藏，是 AI 最難攻克的策略遊戲類型。</div>
-            <div class="ln"><b>GameGen 角度：</b>隱藏資訊 = 玩家不確定性 = 最強的持續參與驅動力。Stratego 難倒 AI 幾十年，正因為不確定性是其核心玩法。<b>這是本週最好的設計原則：把資訊隱藏設計進你的遊戲 loop</b>。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "AI just beat the best Stratego player in history — on a budget. Stratego stumped AI for decades because most pieces stay hidden. Imperfect information = endless engagement. That's the design principle behind every game that keeps you coming back for 'one more round'."<br><span style="color:var(--ink-dim)">中譯：AI 終於以低成本擊敗 Stratego 史上最強玩家。Stratego 難倒 AI 幾十年，因為大部分棋子是隱藏的。不完整資訊 = 無盡參與。這是讓玩家「再玩一局」的設計原則。</span></div>
-            <div class="meta">來源 <a href="https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/" target="_blank">Ars Technica ↗</a> / <a href="https://www.nature.com/articles/s41586-026-11036-y" target="_blank">Nature ↗</a>　pub 今日　partial（標題層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Total War 超熱門 mod 作者「故意弄壞自己的 mod」抗議 AI 風波<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>IGN 10/2 標題：Total War: Warhammer III 一款熱門 mod 的作者故意破壞自己的作品，因 AI 生成「遊戲混搭 mod」風波升級（IGN 站點本次無法開原文，僅憑 Tavily 摘要，<b>目前無法完全證實細節</b>）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Modders vs AI is getting heated. Our take: creators shouldn't have to pick a side. Make it with AI, credit the remix chain, keep it original. Where do you stand?"　<span style="color:var(--ink-dim)">中譯：Modder 與 AI 的衝突升溫。我們的看法：創作者不該被逼選邊。用 AI 做、標清楚 remix 來源、用原創素材。你站哪邊？</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>投票貼文＋「Remix 來源鏈」展示（誰做的 → 誰改的）。⚠️ 不具名批評任何 modder。</div>
+            <div class="meta">來源 <a href="https://www.ign.com/articles/modder-deliberately-corrupts-their-own-hugely-popular-total-war-warhammer-iii-mod-as-row-over-ai-escalates" target="_blank">IGN ↗</a>　pub 2026-10-02（摘要層）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Space Marine 2 Steam 排名暴衝 +27——Season Pass 3 帶動老作品回流示範<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>heat_latest.json steam_movers（10/03 07:30）確認：Warhammer 40K: Space Marine 2 今日排名從 #92 跳至 #65（+27），是今日 Steam 最大 rank jump；steam_new_top 確認 Season Pass 3 及 1+2+3 合輯均進入熱賣新品榜。（heat_latest.json 官方 API 真數字，2026-10-03）</div>
-            <div class="ln"><b>GameGen 角度：</b>不需要新遊戲，只需要新的回來的理由。Season Pass 3 讓一個月前的遊戲今日在 Steam 跳 27 名。<b>現有用戶回流 > 新用戶獲取</b>——這是今日 Steam 最清晰的示範。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Space Marine 2 just jumped 27 spots on Steam today. Season Pass 3 dropped. No new game — just new reasons to return. That's 27 rank positions from one content drop. Your existing players are your strongest growth lever."<br><span style="color:var(--ink-dim)">中譯：Space Marine 2 今日 Steam 排名暴衝 +27。Season Pass 3 上線，不是新遊戲，只是新的回來的理由。一個內容包換來 27 個名次。你的現有玩家是最強成長槓桿。</span></div>
-            <div class="meta">來源 <a href="https://store.steampowered.com/app/2183900" target="_blank">Steam ↗</a>（heat_latest.json API 真數字）　pub 今日　yes（官方 API）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GamesByAI：528 款 AI 做的瀏覽器遊戲，Claude Code 做了 202 款<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>gamesbyai.win 統計（截至 2026-10-02）：共 528 款、Claude Code 202 款（38%）、Cursor 106、Codex 90；Three.js 佔 306 款（58%）；92% 為 game jam 作品；Action 類佔 41%。（HN 當日 2 points，資料來自其人工審核目錄，非全網）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "528 browser games built with AI, 92% for game jams. Making a game is getting easy. Getting people to play it is still the hard part. That's the part we built for."　<span style="color:var(--ink-dim)">中譯：528 款 AI 做的瀏覽器遊戲，92% 是 game jam 作品。做遊戲越來越簡單，讓人玩才是難題——我們做的就是這一塊。</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「生成容易、分發難」→ 導向 challenge page + share card。</div>
+            <div class="meta">來源 <a href="https://gamesbyai.win/stats/" target="_blank">GamesByAI ↗</a>　2026-10-02 資料　已開原文</div>
           </div>
         </div>
 
-        <div class="ammo-grp l-dm reveal">
+        <div class="ammo-grp l-demo reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「Vibe-Coded Mashup」loop——AI 遊戲混搭本週佔領 X，今日 Demo 窗口最強<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法概念：</b>IGN 確認（2026-10-02）：Vibe-Coded Mashup Mods 本週在 X 上病毒式擴散，玩家把不同遊戲（Minecraft + Elden Ring、Skate 3 + MW2 等）用 AI 合成全新玩法，多個 demo 引爆數百萬觀看。Demo 設計：玩家輸入任意兩個遊戲的名稱，60 秒生成一個混搭機制小遊戲。配文：「你的 mashup 是什麼？60 秒，我們做給你看。」⚠️ 不使用任何現有遊戲的 IP 素材，只借用機制抽象。</div>
-            <div class="ln"><b>為何是今天：</b>Vibe-Coded Mashup 今日熱度仍在高點（exa 確認持續至 10/02，10/03 仍有討論），是今日最強的互動鉤子格式。用戶提供 UGC（告訴我 mashup 什麼），降低製作摩擦。</div>
-            <div class="meta">來源 <a href="https://sea.ign.com/elden-ring/249748/vibe-coded-mashup-mods-have-taken-over-x-this-week" target="_blank">IGN ↗</a>　⚠️ 不使用現有遊戲品牌素材，只借機制抽象概念</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「泛化 Mashup」：兩個機制 × 一個梗，全原創皮的 60 秒小遊戲</div>
+            <div class="ln"><b>新聞依據：</b>混搭潮（Forbes 9/30）＋ Fallout 同人被下架（GamesRadar 10/2）。</div>
+            <div class="ln"><b>做法：</b>表單選「機制 A（躲避 / 接字 / 放置 / 單鍵速度）＋機制 B ＋ 今日梗（泛化角色）」→ 生成可玩連結＋「Mashup 分數」分享卡＋ Remix 按鈕。<b>不使用任何大作角色 / 美術 / 商標。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Pick two mechanics. Add one meme. Play it in 60 seconds. Remix it if you can beat it."　<span style="color:var(--ink-dim)">中譯：選兩個機制、加一個梗，60 秒就能玩。覺得你能做更好？Remix 它。</span></div>
+            <div class="meta">去賭場化 ✅　IP 風險：低（泛化皮）</div>
           </div>
         </div>
       </div>
@@ -290,304 +309,183 @@
   </header>
 
   <main>
-    <!-- 01 即時熱榜 -->
+    <!-- 即時熱榜 -->
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
       <div class="boards reveal">
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/03 07:30 真抓</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/03 即時</span></div>
           <ol>
-            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">630K ▲15.6%</span></li>
+            <li class="hot up"><span class="nm">Counter-Strike（CS:GO 條目）</span><span class="vn">631K ▲15.6%</span></li>
             <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">106K ▲8.7%</span></li>
             <li class="up"><span class="nm">Rust</span><span class="vn">105K ▲3.9%</span></li>
-            <li class="hot"><span class="nm">Team Fortress 2</span><span class="vn">76K ▲29.7%</span></li>
+            <li class="hot up"><span class="nm">Team Fortress 2</span><span class="vn">76K ▲29.7%</span></li>
             <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">69K ▲6.4%</span></li>
             <li class="up"><span class="nm">Apex Legends</span><span class="vn">57K ▲12.7%</span></li>
           </ol>
-          <div class="bf">Steam 官方 API · 10/03 07:30 真數字（週六全榜上漲）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
-        </div>
-        <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。近期生存/模擬類遊戲持續領榜。今日具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 10/03 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
         <div class="board b-dim">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法連線 TwitchTracker。週六通常為直播高峰日，GTA 6 話題持續熱度可能帶動相關直播流量。今日具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 本次為無人值守排程，未取得瀏覽器渲染的 Roblox 即時 CCU。<b>目前無法完全證實</b>。</div>
+          <div class="bf">Roblox Charts / RTrack（需瀏覽器）</div>
         </div>
-      </div>
-      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 今日 Steam 數字為 2026-10-03T07:30 真抓（heat_latest.json）。週六效應明顯：全榜幾乎全面上漲（與週二全降相反）。最大速度增幅：TF2 +29.7%（76K，前日 58.9K）——無明顯新聞觸發，可能為週六玩家回流。CS:GO +15.6%（630K），HELLDIVERS 2 +21.4%，GTA V Legacy +20.0%。Steam most_played top 10：CS:GO #1, Dota 2 #2, PUBG #3, Wallpaper Engine #4, Apex #5, WARDOGS #6, Witcher 3 Remastered #7, Deadlock #8, Valheim #9, GTA V Legacy #10。Roblox / Twitch / Threads 今日無瀏覽器工具，均標記「資料不足」。
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">暫缺</span></div>
+          <div class="nodata">⚠️ 同上，TwitchTracker 快照本次未取得。<b>目前無法完全證實</b>，不以估計數字假裝 live。</div>
+          <div class="bf">TwitchTracker（需瀏覽器）</div>
+        </div>
       </div>
     </section>
 
-    <!-- 02 暴衝訊號 -->
+    <!-- 暴衝訊號 -->
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>排名跳動</span></span>Space Marine 2 +27（#92→#65）今日最大 rank jump；Limbus Company +10；Forza Horizon 6 +7；CK3 +7</h3>
-        <div class="sum">steam_movers（10/03 07:30）排名跳動紀錄：<b>Warhammer 40K: Space Marine 2 +27 名</b>（92 → 65），今日最大跳幅，Season Pass 3 及合輯同步進入熱賣榜；<b>Limbus Company +10 名</b>（23 → 13）；<b>Forza Horizon 6 +7 名</b>（62 → 55）；<b>Crusader Kings III +7 名</b>（81 → 74）；AION 2 +5；Bongo Cat +5。新進榜：Ori and the Will of the Wisps（#93）、ACE COMBAT 8: WINGS OF THEVE（#95）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Space Marine 2 的 +27 是今日最清晰的「內容發布 = 回流飛輪」示範——Season Pass 3 上線，讓一個月前的遊戲今日跳 27 名。<b>不需要新遊戲，只需要現有玩家有新的回來的理由</b>。Ori 和 ACE COMBAT 8 的新進榜說明高品質後期 IP 在週六有持續長尾效應。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/03 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>速度觀察</span></span>TF2 今日 +29.7%（76K），CS:GO +15.6%（630K）——週六效應全面逆轉週二跌勢</h3>
-        <div class="sum">steam_velocity（10/03 vs 前日）：今日最大漲幅：<b>Team Fortress 2 +29.7%</b>（76,355 人，前日 58,874 人）——無明顯新聞觸發；<b>HELLDIVERS 2 +21.4%</b>；<b>GTA V Legacy +20.0%</b>；<b>Palworld +14.8%</b>；BG3 +14.1%；Apex +12.7%；CS:GO +15.6%（630K）。今日完全逆轉 09/30 週二的全面下跌——週六是玩家高峰日，和週二截然相反。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>TF2 +29.7% 無新聞觸發，純屬週六玩家自然回流。<b>週六的遊戲內容對玩家社群的影響力最大——正確的窗口比正確的內容更重要</b>。GTA V Legacy +20.0% 同步印證：GTA 6 的強力行銷（Miami Heat Vice City）正在帶動玩家重溫 GTA V。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/03 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 03 早期訊號 -->
-    <section id="early">
-      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>早期</span></span>HN 148pts：AI 破解 Stratego；itch.io viral：STREAMFLIPPY'S CUSTOM NIGHT / StreamRush；Dreams PS5 → PC 導出正式開放</h3>
-        <div class="sum">Hacker News 今日遊戲相關最高分：<b>「With most information hidden, the game Stratego had stumped AI until now」</b>（Ars Technica，148 points / 68 comments）——Nature 論文確認 AI 以低成本攻克 Stratego。<b>「Capcom RE:Dox, open source serialization/deserialization for game engines」</b>（GitHub，24pts）——Capcom 開源遊戲引擎工具。<b>「Show HN: Our space game has a built-in RISC-V emulator that runs Linux」</b>（14pts）——遊戲內嵌真實 Linux 的獨特設計。itch.io viral 榜今日：STREAMFLIPPY'S CUSTOM NIGHT、StreamRush、BOMB DEFUSER 持續佔據熱門。Reddit r/Games：Dreams PS4/5 to PC Exporting is here！（Media Molecule 創作工具正式支援 PC 導出）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Stratego AI 的 148pts 是今日 HN 最強遊戲訊號——隱藏資訊機制的設計價值被 AI 研究社群再次驗證。<b>itch.io viral 榜上的 STREAMFLIPPY'S CUSTOM NIGHT 和 StreamRush 都是「主播梗 → 遊戲」的成功案例</b>——Trend-to-Game 的 itch.io 版本。Dreams PC 導出意味著大量 PS5 原創遊戲概念即將可在 PC 測試，值得追蹤早期創意。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">HACKER NEWS / ITCH.IO · 10/03 · <a href="https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/" target="_blank">Ars Technica ↗</a> / <a href="https://itch.io/games/tag-viral" target="_blank">itch viral ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 04 高討論文章 -->
-    <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行銷大事</span></span>GTA 6 PEGI 18+ 詳情公布：可隨時使用毒品、屍首分離、完整性愛場景——同日 Miami Heat 改名「Vice City」</h3>
-        <div class="sum">Eurogamer 和 Reddit r/Games 今日確認（2026-10-03）：GTA 6 的 PEGI 18+ 分級詳情公開，確認 Lucia 和 Jason 角色可「直接從背包中」隨時使用毒品（at any time）、遊戲包含屍首分離（decapitation）內容，以及可能是首款有完整性愛場景的 GTA（Eurogamer）。同一天 VGC、Gamespot、PCGamer 確認 Miami Heat 的「Vice City」跨界企劃。GTA 6 的行銷與話題機器今日同步全速運轉。另：Warhorse COO 公開呼籲 GTA 6 帶動 $80 定價標準（VGC）；Kingdom Come: Deliverance 2 主管稱漲價「early overdue」（Eurogamer）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>GTA 6 的行銷策略是今日最值得研究的案例：<b>PEGI 評級本身成為新聞素材（確認成人向定位）+ NBA 球隊跨界（文化身份置換）= 雙線同步引爆，涵蓋不同受眾圈</b>。創作者的啟示：讓「官方資訊發布」本身帶有新聞性，比做廣告便宜一百倍。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">EUROGAMER / VGC · <a href="https://www.eurogamer.net/gta6-age-rating-pegi-lucia-jason-drug-use" target="_blank">Eurogamer ↗</a> / <a href="https://www.videogameschronicle.com/news/miami-heat-nba-team-to-rebrand-as-vice-city-in-gta-6-marketing-stunt/" target="_blank">VGC ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI 版權戰</span></span>Total War 模組自毀 + Fallout AI 遊戲遭 C&amp;D——AI 遊戲版權戰正式開打</h3>
-        <div class="sum">IGN 和 RPS 確認（2026-10-02）：Total War: Warhammer 3 熱門模組作者主動損壞自己的模組以抗議 AI 未授權翻版，喊出「Support modders, not AI」；Bethesda 對一款 AI 生成的 Fallout: New York 瀏覽器遊戲（RPS 描述：「full of utterly cursed faces」）發出停止函，強制下線。同週 X 上 Vibe-Coded Mashup Mods（AI 遊戲混搭）引爆數百萬觀看（IGN 10/02）——同樣是 AI 遊戲，但方向完全相反。Kotaku 另報導 Ubisoft 的 GenAI 計畫內部代號為「Motherbrain」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日 AI 遊戲出現了鮮明的分叉：<b>現有 IP + AI 生成 = 版權雷區（Bethesda C&amp;D、模組作者抗議）；零 IP 新建 + AI 生成 = 安全可行（Vibe-Coded Mashup 病毒式傳播）</b>。GameGen 的核心路徑（從趨勢生成全新遊戲，不踩任何現有 IP）是今日最被驗證的安全路線。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用現有 IP</span></span></div></div>
-          </div>
-          <div class="src">IGN / RPS · <a href="https://www.ign.com/articles/modder-deliberately-corrupts-their-own-hugely-popular-total-war-warhammer-iii-mod-as-row-over-ai-escalates" target="_blank">IGN ↗</a> / <a href="https://www.ign.com/articles/person-behind-viral-ai-generated-fallout-new-york-game-hauls-it-offline-says-bethesda-issued-cease-and-desist" target="_blank">IGN ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業觀察</span></span>Reigns 開發商 Nerial 關閉——「重大交易損失」後進入休眠，獨立工作室財務壓力再確認</h3>
-        <div class="sum">GI.biz、Game Developer、RPS 三媒體確認（2026-10-03）：Reigns 和 Card Shark 的開發商 Nerial 宣布關閉，裁員同時創辦人表示「going back to our roots」。GI.biz 標題：'Reigns developer Nerial closes following significant trading losses over past two years'。同日 Suda 51 的 Grasshopper Manufacture 宣布脫離 NetEase 獨立——兩個截然相反的結局：一個關閉，一個奮力獨立。Xbox CEO Asha Sharma 則宣稱「Xbox is not for sale」（Game Developer）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Nerial 的「重大交易損失」和 2XKO 的「需要百萬 MAU」同日出現——<b>今日最清晰的訊號是：傳統發行模式（等媒體評測、等平台推流）的壓力已達臨界點</b>。Grasshopper Manufacture 選擇獨立，說明創作者主導的路徑仍然可行。有機社群是兩者差距的根本因素之一。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GI.BIZ / GAME DEVELOPER / RPS · <a href="https://www.gamesindustry.biz/reigns-developer-nerial-closes-following-significant-trading-losses-over-past-two-years" target="_blank">GI.biz ↗</a> / <a href="https://www.gamedeveloper.com/business/suda-51-s-grasshopper-manufacture-splits-from-netease" target="_blank">GD ↗</a></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- 05 迷因 -->
-    <section id="meme">
-      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>本週最強迷因</span></span>Vibe-Coded Mashup Mods 本週佔領 X——AI 遊戲混搭引爆百萬觀看，Minecraft + Elden Ring 是今日最多截圖的組合</h3>
-        <div class="sum">IGN 確認（2026-10-02）：Vibe-Coded Mashup Mods 本週在 X 上病毒式擴散，玩家用 AI 把兩款完全不同的遊戲（Minecraft + Elden Ring、Skate 3 + MW2 等）合成全新玩法，多個 demo 引爆數百萬觀看。IGN 標題：'Vibe-Coded Mashup Mods Have Taken Over X This Week'。Ars Technica 同日報導 Doom 在 SQL 資料庫中運行（「Can it run Doom? SQL Database edition」）——另一種媒介轉移迷因的延伸形式。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Vibe-Coded Mashup 的傳播公式很清晰：<b>「玩家認識的兩個世界 × 意想不到的組合 = 分享衝動」</b>。這是今日最值得直接抄的 Demo 格式——不依賴任何現有 IP（只用機制抽象），零版權風險，卻具備完整的病毒傳播邏輯。今日窗口仍在高點，明天開始降溫。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用現有 IP</span></span></div></div>
-          </div>
-          <div class="src">IGN / ARS TECHNICA · <a href="https://sea.ign.com/elden-ring/249748/vibe-coded-mashup-mods-have-taken-over-x-this-week" target="_blank">IGN ↗</a> / <a href="https://arstechnica.com/gaming/2026/10/can-it-run-doom-sql-database-edition/" target="_blank">Ars ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>病毒梗</span></span>「二手 CPU 可能帶著別人的遊戲封禁」——Reddit / HN 今日雙榜同現，玩家恐懼梗</h3>
-        <div class="sum">Reddit r/gaming 和 HN（3pts/2c）今日同步出現：「Your used CPU might come with someone else's Valorant ban」——玩家購買二手 CPU 後發現 Valorant 硬體封禁跟著來。heise.de（德國科技媒體）確認此案例。Reddit 帖文今日進入 top-of-day 榜，評論區充滿「我的 CPU 是乾淨的嗎？」和「反作弊機制走火入魔」的討論。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>反作弊封禁跟著硬體走而不是帳號走，是今日最強的「遊戲系統 bug 引發群眾共鳴」迷因。<b>切角（不提 Valorant IP）：「一個你沒做過的決定，因為前一個使用者而懲罰了你——這種設計讓人憤怒，但也是最好的反面設計教材。」</b> 今日迷因窗口，明天降溫。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>TF2 +29.7%、Helldivers 2 +21.4%、GTA V +20% 過 ≥15% 旗標</h3>
+        <div class="sum">今日 Steam 真·日比過旗標：<b>Team Fortress 2 76,355（+29.7%）</b>、<b>HELLDIVERS 2 37,015（+21.4%）</b>、<b>GTA V Legacy 34,265（+20%）</b>、<b>Counter-Strike 631K（+15.6%）</b>；Palworld +14.8%、BG3 +14.1% 差一點。排名跳動：Warhammer 40K: Space Marine 2 92→65（+27 名）、Limbus Company 23→13；新進榜：Ori and the Will of the Wisps（#93）、ACE COMBAT 8（#95）。今天是週六，週末流量是主因，原因（特價 / 更新）<b>目前無法完全證實</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>多為週末與老遊戲回流，沒有明確新梗可蹭，對 trend-to-game 題材價值低；GTA V 回溫與 GTA 6 話題熱度同時出現，可當「GTA 6 話題外溢」的旁證（因果未證實）。</div>
         <div class="footrow">
           <div class="scores">
             <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 今日限時，不提 Valorant IP</span></span></div></div>
+            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
           </div>
-          <div class="src">REDDIT / HEISE.DE · <a href="https://www.reddit.com/r/gaming/comments/1ww0tvj/your_used_cpu_might_come_with_someone_elses/" target="_blank">Reddit ↗</a> / <a href="https://www.heise.de/en/news/Used-processor-leads-to-game-ban-11471562.html" target="_blank">Heise ↗</a></div>
+          <div class="src">STEAM 官方 API · 10/03 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
+      </article>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ Twitch 7 天漲幅 / Roblox 黑馬新進榜本次未取得，<b>目前無法完全證實</b>。</div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>itch.io html5 熱門與 Steam 新品：今天沒有明確「爆量小品」</h3>
+        <div class="sum">itch.io /games/html5 熱門：Remember、Bite Your Tongue、Next Station: The Moon [DEMO]、My Own Sweet Dionaea、Steal Me Softly、The Angel Act 等，多為敘事 / 視覺小說 / 恐怖風；Steam 新品榜：Birb、Major Mutt、Super Gem Shatter、Deer Hunting Season 2、Factorized、Painted Crowns。未取得成長率數字，<b>無法判斷哪款「快速成長」</b>。另 Reddit r/IndieGaming 有「一個輪胎＋超大斜坡」原型（單一物理 loop）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>共通 loop 是「單一物理 / 單一視覺鉤 + 敘事小品」，與 30–90 秒小遊戲相容；今天不足以形成可引用的趨勢結論，僅列觀察。</div>
+        <div class="footrow"><div class="src">ITCH.IO / STEAM · 10/03 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div></div>
       </article>
     </section>
 
-    <!-- 06 機制靈感庫 -->
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>「AI 混搭遊戲」之亂：Fallout 被下架、Total War mod 作者自毀作品</h3>
+        <div class="sum">見頭版。補充（Tavily / IGN 摘要）：IGN 稱近週「AI 生成的遊戲混搭 mod 影片」瘋傳，已讓 mod 社群質疑「mod 創作乃至整個遊戲產業的根基」（IGN 無法開原文，細節<b>目前無法完全證實</b>）。同日 Kotaku：UK Games Expo 禁 AI（9/26，♨️）；GamesIndustry.biz 10/2：AI 讓遊戲公司「反而更多工作」（人資申訴信量增加的訪談）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>輿論兩極：「AI 做遊戲太容易＝slop」 vs 「大家真的在看」。GameGen 要站的立場：透明標示 AI、標示 remix 來源、用原創素材。</div>
+        <div class="footrow"><div class="src">GAMESRADAR / FORBES / IGN · 10/02 · <a href="https://www.forbes.com/sites/danidiplacido/2026/09/30/minecraft-in-elden-ring-vibe-coders-are-remixing-video-games-with-ai/" target="_blank">原文 ↗</a></div></div>
+      </article>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>大廠對標</span></span>Naavik：從 Disney 到 miHoYo，IP 方轉向自建 AI 粉絲互動</h3>
+        <div class="sum">9/29 分析文，核心：IP 方從「擋未授權 AI 角色內容」轉向「自建受控官方系統」。見頭版 CJ 第 2 條。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>驗證「粉絲創作＝成長引擎」，但大廠自建意味小 IP 缺工具，C 側創作者是空位。</div>
+        <div class="footrow"><div class="src">NAAVIK · 9/29 · <a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">原文 ↗</a></div></div>
+      </article>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>數據</span></span>GamesByAI：528 款 AI 瀏覽器遊戲，Claude Code 佔 38%</h3>
+        <div class="sum">見頭版小編第 3 條。HN 同日另一熱門：AI 擊敗 Stratego 世界頂尖玩家（Ars Technica，148 points）——與遊戲 AI 研究相關，非 GameGen 直接題材。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>AI 做遊戲的供給量已很大，差異化在「分發 + 社交 + remix」而非生成本身。</div>
+        <div class="footrow"><div class="src">GAMESBYAI · 10/02 · <a href="https://gamesbyai.win/stats/" target="_blank">原文 ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>迷因</span></span>今日可用梗：「slopcomp」（AI 混搭）＋「How about you make a Fallout game instead」</h3>
+        <div class="sum">① <b>slopcomp</b>：社群給 AI 混搭遊戲的稱呼（Forbes 9/30 引 X 貼文），約 1 週內，🆕 新梗。② Fallout 創作者的金句「How about you make a Fallout game instead so I don't have to?」（GamesRadar 10/2）。③ GTA 6 PEGI 18+ 分級內容（Reddit r/Games 當日熱串）與 Miami Heat 將為 GTA 6 行銷改名 Vice City（VGC）＝延燒中的 GTA 6 話題（♨️，非新梗）。迷因遊戲實例：本次未取得 KYM 當日資料，<b>目前無法完全證實</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「slopcomp」可直接做成反向玩法：「做一款你不會被稱為 slop 的混搭」。注意不要挪用 GTA / Fallout 任何角色與美術。</div>
+        <div class="footrow"><div class="src">FORBES / GAMESRADAR / REDDIT · <a href="https://www.forbes.com/sites/danidiplacido/2026/09/30/minecraft-in-elden-ring-vibe-coders-are-remixing-video-games-with-ai/" target="_blank">原文 ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <div class="boards reveal">
-        <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
-          <ol>
-            <li class="hot"><span class="nm">Mashup loop（今日最強：兩個設定 × 機制化學反應）</span><span class="vn">Vibe-Coded</span></li>
-            <li class="up"><span class="nm">隱藏資訊賽局（Stratego AI 破解公式）</span><span class="vn">不完整資訊</span></li>
-            <li class="hot"><span class="nm">主播梗 → 遊戲（STREAMFLIPPY itch viral 公式）</span><span class="vn">Trend-to-Game</span></li>
-            <li><span class="nm">內容回流 DLC（Space Marine 2 Season Pass 公式）</span><span class="vn">留存設計</span></li>
-            <li><span class="nm">硬體/系統 bug → 反設計（CPU 封禁迷因公式）</span><span class="vn">反烏托邦設計</span></li>
-          </ol>
-          <div class="bf">itch.io + 今日新聞衍生 · 10/03 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
-        </div>
-      </div>
-
-      <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>Mashup loop 設計公式——今日窗口最強，Vibe-Coded 病毒格式可直接使用</h3>
-        <div class="sum">Mashup loop 的設計要素（零 IP 依賴版本）：（1）<b>設定 A</b>——從一個熟知遊戲類型借用世界背景（不用品牌素材）；（2）<b>機制 B</b>——從另一個遊戲類型借用核心玩法動詞；（3）<b>化學反應</b>——A + B 碰撞產生意料之外的新體驗；（4）<b>分享格式</b>——「我把 [類型 A] 的世界和 [類型 B] 的玩法混了，看看這個」。itch.io 和 X 的玩家對這個格式的反應是「立刻想試」→「立刻想轉發給朋友」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Mashup loop 的最大優點是 UGC 供料內建——<b>用「你告訴我 mashup 什麼」的互動式發帖，把受眾變成共同創作者</b>。今日 X 上的 Vibe-Coded Mashup 熱度正是這個格式的最佳時機窗口。配文公式：「本週最火的 AI 玩法：把任意兩個遊戲 mashup 成一個新遊戲。你想 mashup 什麼？留言告訴我，我 60 秒做出來給你看。」</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用現有 IP</span></span></div></div>
-          </div>
-          <div class="src">IGN · <a href="https://sea.ign.com/elden-ring/249748/vibe-coded-mashup-mods-have-taken-over-x-this-week" target="_blank">IGN ↗</a></div>
-        </div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>機制</span></span>可借用機制：單物理 loop（輪胎滾斜坡）、機制混搭組合器</h3>
+        <div class="sum">Reddit r/IndieGaming 一個「輪胎＋大斜坡」原型（單一物理鉤）；本日未取得 unityroom 資料（<b>目前無法完全證實</b>）。<b>IP 二創地雷：</b>Fallout 案證明「免費、非營利」不是護身符，直接用 Fallout / GTA / Elden Ring 素材一律有下架風險。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>把「機制庫」做成可組合模組（躲避、接字、放置、單鍵速度、物理滾動），Mashup 組合器就是現成產品點。</div>
+        <div class="footrow"><div class="src">REDDIT · <a href="https://www.reddit.com/r/IndieGaming/comments/1wvwfm1/i_wish_i_had_a_tire_and_a_veeery_big_slope_so_i/" target="_blank">原文 ↗</a></div></div>
       </article>
     </section>
 
-    <!-- 07 繁中熱話 -->
+    <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
-        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：GTA 6 x Miami Heat「Vice City」跨界（台灣 GTA 粉絲群體大）、AI 模組版權戰爭（繁中獨立遊戲圈對 AI 使用爭議持續熱烈）、Space Marine 2 Season Pass 3（41K 系列有穩定台灣用戶）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
-      </div>
+
+      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ 今日無顯著更新：Threads 繁中熱話本次排程環境未取得，<b>目前無法完全證實</b>，不編造。可借題：把頭版「AI 混搭」換成繁中常見題材（三國 × 恐怖、武俠 × 放置）做泛化版變體。</div>
     </section>
 
-    <!-- 08 Trend-to-Game 題材 -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
-        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <thead><tr><th>題材</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>Vibe-Coded Mashup（X 本週最強迷因）</td><td><span class="tmpl">Mashup loop · 零 IP 依賴</span></td><td>「你想 mashup 什麼遊戲？60 秒我做給你看」</td><td class="rk-low">低 · 不用品牌素材</td><td>★ 今日 Demo 首選，今天窗口最強，本週持續有效</td></tr>
-          <tr><td>GTA 6 x Miami Heat「Vice City」（全球高熱度）</td><td><span class="tmpl">文化跨界 · 品牌身份置換</span></td><td>「遊戲不需要廣告預算，需要文化鉤子」</td><td class="rk-low">低 · 不用 GTA 素材</td><td>CJ 頭條，LinkedIn 行銷觀察類，今日最強</td></tr>
-          <tr><td>AI 模組版權戰（Total War 自毀 + Fallout C&amp;D）</td><td><span class="tmpl">從零建立 · 版權安全路徑</span></td><td>「現有 IP + AI = 版權雷區；從零建立 = 安全」</td><td class="rk-low">低</td><td>X 貼文適合，行業觀察層，今日多媒體確認</td></tr>
-          <tr><td>2XKO 「需要百萬 MAU」（F2P 診斷）</td><td><span class="tmpl">有機社群先於平台</span></td><td>「先建社群，再建遊戲」</td><td class="rk-low">低</td><td>CJ 素材，LinkedIn 商業策略類，今日新鮮</td></tr>
-          <tr><td>AI 破解 Stratego（HN 148pts）</td><td><span class="tmpl">隱藏資訊賽局設計</span></td><td>「不完整資訊 = 無盡參與動力」</td><td class="rk-low">低</td><td>X 貼文適合，設計類受眾，今日最強 HN 訊號</td></tr>
+          <tr><td>泛化 Mashup（兩機制×一梗）</td><td>機制組合器</td><td>「Mashup 分數」卡＋Remix 按鈕</td><td>低（全原創皮）</td><td>★ 今日首選，今天就做</td></tr>
+          <tr><td>「slopcomp」反向玩法：做一款不被叫 slop 的混搭</td><td>投票＋挑戰頁</td><td>社群投票結果卡</td><td>低</td><td>可當小編互動題</td></tr>
+          <tr><td>物理單鍵：輪胎滾大斜坡</td><td>單鍵物理</td><td>最遠距離排行榜</td><td>低</td><td>備選 demo</td></tr>
+          <tr><td>GTA 6 話題外溢（泛化犯罪都市）</td><td>躲避 / 計分</td><td>混亂值卡</td><td>中（勿用 GTA 元素）</td><td>延燒 ♨️，視情況</td></tr>
         </tbody>
       </table>
       </div>
     </section>
 
-    <!-- 09 CJ LinkedIn 題材 -->
+    <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
       <div class="reveal">
       <table class="t2g">
-        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <thead><tr><th>切角</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>GTA 6 x Miami Heat「Vice City」——品牌身份置換 vs 廣告贊助</td><td>Miami Heat 宣布在 GTA 6 發售前一天以「Vice City」身份參戰一場 NBA 例行賽（VGC、Gamespot、PCGamer，2026-10-03）；球員穿 GTA 6 球衣、球場主題全面置換</td><td>"GTA 6 didn't just buy an ad. They turned the Miami Heat into Vice City for a day. The jerseys, the court, the whole identity — swapped. That's not sponsorship. That's cultural infiltration. Your game doesn't need a marketing budget to do this. It needs a cultural hook."</td><td><a href="https://www.videogameschronicle.com/news/miami-heat-nba-team-to-rebrand-as-vice-city-in-gta-6-marketing-stunt/" target="_blank">↗</a></td></tr>
-          <tr><td>2XKO「需要百萬 MAU」——F2P 免費格鬥遊戲的商業模型診斷</td><td>2XKO 開發商表示需要「monthly active userbase in the high hundreds of thousands, if not millions」才能作為免費遊戲存活（GI.biz，2026-10-03）；2XKO 已停止開發</td><td>"The devs behind 2XKO said it needed hundreds of thousands — maybe millions — of monthly active users to survive as a free game. It didn't get there. That's not a failure of execution. That's the math of free-to-play at scale. Build your community before you build your game."</td><td><a href="https://www.gamesindustry.biz/2xko-would-have-needed-an-mau-base-in-the-high-hundreds-of-thousands-if-not-millions-to-succeed" target="_blank">↗</a></td></tr>
-          <tr><td>AI 版權戰：創作者自毀 vs Bethesda C&amp;D——AI 遊戲的法律邊界正式開打</td><td>Total War 模組作者主動損壞自己的模組、Bethesda 對 AI 生成 Fallout: New York 發出停止函（IGN、RPS，2026-10-02）；同日 Vibe-Coded Mashup（無 IP 生成）在 X 上引爆百萬觀看</td><td>"Two AI game stories on the same day: 1) Bethesda hit an AI Fallout game with a C&amp;D. 2) Vibe-coded mashup mods are going viral on X. The difference: one used existing IP, one didn't. The rule is simple: build from scratch, own everything."</td><td><a href="https://www.ign.com/articles/modder-deliberately-corrupts-their-own-hugely-popular-total-war-warhammer-iii-mod-as-row-over-ai-escalates" target="_blank">↗</a></td></tr>
+          <tr><td>需求已驗證、缺合法 remix 平台</td><td>AI 做的 Fallout 遊戲 350 萬觀看後被 C&amp;D 下架（10/2）</td><td>"3.5M views, then a cease and desist. The demand is real. The missing piece is a platform where remixing is the product."</td><td><a href="https://www.gamesradar.com/games/fallout/bethesda-kills-ai-fans-viral-fallout-game-much-to-their-chagrin-how-about-you-make-a-fallout-game-instead-so-i-dont-have-to/" target="_blank">↗</a></td></tr>
+          <tr><td>IP 方從「擋」轉「自建」，中小 IP 沒工具</td><td>Naavik 9/29：Disney / miHoYo / Hasbro 自建官方 AI 粉絲互動；日本開發者 AI 使用率 85.8%</td><td>"Big IP is building its own AI fan platforms. Everyone else needs the lightweight version."</td><td><a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">↗</a></td></tr>
+          <tr><td>生成已商品化，分發才是難題</td><td>GamesByAI：528 款 AI 瀏覽器遊戲，92% 為 game jam 作品（10/2）</td><td>"Building a game with AI is easy now. Getting people to play it is the hard part."</td><td><a href="https://gamesbyai.win/stats/" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
-      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（Miami Heat Vice City 跨界、2XKO F2P 診斷）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。對外用字已過濾所有賭場語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
-      </div>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">📄 頭版 CJ Top 2 已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包；兩條皆已開原文驗日期與主張（見 Evidence Log）。對外用字已過濾賭場語言與大作 IP。</div>
       </div>
     </section>
 
-    <!-- 10 建議動作 -->
+    <!-- Actions -->
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
-          <li>GTA 6 x Miami Heat「Vice City」：「Rockstar 沒有買廣告。他們讓一支 NBA 球隊變成了遊戲世界的一部分。這不是贊助，是文化滲透。你的遊戲需要一個文化鉤子。」（今日最強 CJ 素材）</li>
-          <li>AI 模組版權戰：「Total War 模組作者主動破壞自己的作品以抗議 AI 翻版。Bethesda 對 AI 生成 Fallout 遊戲發出停止函。同日——Vibe-Coded Mashup 在 X 引爆百萬觀看。差別是什麼？從零建立，擁有一切。」</li>
-          <li>AI 破解 Stratego：「AI 終於打敗了 Stratego 最強玩家。Stratego 難倒 AI 幾十年，因為大部分資訊是隱藏的。不完整資訊 = 無盡參與。本週設計原則。」</li>
-          <li>Space Marine 2 +27：「Season Pass 3 上線，Space Marine 2 今日 Steam 排名跳 27 名。不是新遊戲，只是現有玩家有了新的回來的理由。你的現有玩家是最強成長槓桿。」</li>
-        </ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
-          <li>★ Mashup loop——蹭 Vibe-Coded Mashup 在 X 的熱度，今日窗口最強。格式：玩家留言告訴我兩個遊戲類型，60 秒生成混搭小遊戲。互動式 UGC 鉤子，零 IP 依賴。</li>
-          <li>隱藏資訊賽局——蹭 Stratego AI 被破解的話題，設計一個「大部分資訊隱藏」的極簡策略遊戲 loop。分享格式：「你能看穿對手嗎？」</li>
-          <li>Season Pass 升等 loop——蹭 Space Marine 2 回流訊號，設計一個「解鎖 = 回來的理由」的留存機制 demo。</li>
-        </ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
-          <li>Space Marine 2 Season Pass 3 後的 Steam 排名走勢——今日 +27，明日能否繼續？DLC 回流效應的持續時間指標。</li>
-          <li>AI 版權戰後續——Bethesda C&amp;D 之後會不會有更多大廠跟進？模組社群的反應力道如何？AI 版權邊界正在動態形成。</li>
-          <li>GTA 6 Miami Heat 跨界反應——其他體育隊或品牌是否跟進複製這個模式？跨界格式的傳播效應。</li>
-          <li>ARC Raiders 免費試玩週（10/8-10/12）——免費試玩能把 Steam 排名（目前 #57）拉多高？免費試玩窗口策略的觀察樣本。</li>
-        </ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
-          <li>GTA 6 / Miami Heat 話題：不引用 GTA 美術、Vice City 視覺素材、Rockstar / Take-Two 品牌，只借「文化跨界」概念。</li>
-          <li>Total War / Fallout 話題：不使用 Total War / Warhammer / Bethesda / Fallout 任何品牌素材，只借「版權安全路徑」論點。</li>
-          <li>Mashup Demo：不以現有遊戲的品牌名稱、角色、視覺風格作素材，只借機制抽象（「生存類 + 卡牌類」而非「Rust + Slay the Spire」）。</li>
-          <li>今日 CPU 封禁迷因：不提 Valorant / Riot 品牌，只借「懲罰無辜者的系統設計」概念，且今日限時窗口。</li>
-          <li>所有來源均為摘要層——對外不寫成「確定事實」，保留「報導指出 / 確認」語氣。</li>
-        </ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>「想玩混搭？選兩個機制＋一個梗」互動貼，留言收題</li><li>GamesByAI 528 款數據：「生成容易，分發才難」</li><li>modder vs AI 投票：不選邊，講 remix 來源鏈</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 泛化 Mashup 組合器（兩機制×一梗，全原創皮）—— 本日首選</li><li>單鍵物理「輪胎滾斜坡」排行榜</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Fallout 案後續：其他 IP 方是否跟進發函</li><li>「slopcomp」是否長成固定梗</li><li>Roblox / Twitch 即時數字（今日未取得）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Fallout / GTA / Elden Ring / Minecraft 等任何素材與角色直接挪用</li><li>不具名批評 modder 或被下架的創作者</li><li>IGN 兩條僅摘要層，引用前先確認</li><li>對外文案的賭場語言</li></ul></div>
       </div>
     </section>
 
+    <!-- 彈藥 Evidence Log -->
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>Miami Heat「Vice City」GTA 6 跨界</td><td><a href="https://www.videogameschronicle.com/news/miami-heat-nba-team-to-rebrand-as-vice-city-in-gta-6-marketing-stunt/" target="_blank">VGC</a> / <a href="https://www.gamespot.com/articles/nbas-miami-heat-will-wear-gta-6-jerseys-and-play-on-a-branded-court-the-day-before-release/" target="_blank">Gamespot</a> / <a href="https://www.pcgamer.com/games/grand-theft-auto/gta-6-marketing-stunt-reveals-none-of-our-uk-editors-have-heard-of-the-miami-heat/" target="_blank">PCGamer</a>　驗：三媒體標題層確認「Vice City rebrand」「jerseys and branded court」　<span class="pp">partial</span>（摘要層）　pub 今日</td></tr>
-        <tr><td>GTA 6 PEGI 18+ 詳情（毒品、屍首分離、性愛場景）</td><td><a href="https://www.eurogamer.net/gta6-age-rating-pegi-lucia-jason-drug-use" target="_blank">Eurogamer</a> / <a href="https://www.reddit.com/r/Games/comments/1ww0f21/gta_6_pegi_age_rating_reveals_mentions_of/" target="_blank">Reddit r/Games</a>　驗：兩源確認 PEGI 分級詳情　<span class="pp">partial</span>（摘要層）　pub 今日</td></tr>
-        <tr><td>2XKO 需要百萬 MAU</td><td><a href="https://www.gamesindustry.biz/2xko-would-have-needed-an-mau-base-in-the-high-hundreds-of-thousands-if-not-millions-to-succeed" target="_blank">GI.biz</a> / <a href="https://www.reddit.com/r/Games/comments/1ww5rdr/2xko_would_have_needed_a_monthly_active_userbase/" target="_blank">Reddit r/Games</a>　驗：兩源確認「high hundreds of thousands, if not millions」　<span class="pp">partial</span>（標題層）　pub 今日</td></tr>
-        <tr><td>Total War 模組自毀 + Fallout AI C&D</td><td><a href="https://www.ign.com/articles/modder-deliberately-corrupts-their-own-hugely-popular-total-war-warhammer-iii-mod-as-row-over-ai-escalates" target="_blank">IGN TW 模組</a> / <a href="https://www.ign.com/articles/person-behind-viral-ai-generated-fallout-new-york-game-hauls-it-offline-says-bethesda-issued-cease-and-desist" target="_blank">IGN Fallout C&D</a> / <a href="https://www.rockpapershotgun.com/support-modders-not-ai-total-war-warhammer-3-mod-deliberately-corrupted-by-its-own-creator-in-protest-of-ai-infused-unauthorised-reuploads" target="_blank">RPS</a>　驗：三源確認兩事件　<span class="pp">partial</span>（摘要層）　pub 10/02</td></tr>
-        <tr><td>AI 破解 Stratego（Nature 論文）</td><td><a href="https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/" target="_blank">Ars Technica</a>（HN 148pts/68c）　驗：HN 高分 + Ars 標題確認　<span class="pp">partial</span>（標題層）　pub 今日</td></tr>
-        <tr><td>Reigns / Nerial 關閉</td><td><a href="https://www.gamesindustry.biz/reigns-developer-nerial-closes-following-significant-trading-losses-over-past-two-years" target="_blank">GI.biz</a> / <a href="https://www.gamedeveloper.com/business/nerial-to-enter-hibernation-mode-and-lay-off-developers" target="_blank">GD</a> / <a href="https://www.rockpapershotgun.com/reigns-and-card-shark-developers-nerial-are-closing-down-laying-staff-off-while-the-founders-go-back-to-our-roots" target="_blank">RPS</a>　驗：三媒體確認　<span class="ok">✓</span>　pub 今日</td></tr>
-        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-10-03T07:30 官方 API　CS:GO 630K +15.6% / PUBG 106K +8.7% / Rust 105K +3.9% / TF2 76K +29.7% / R6 69K +6.4% / Apex 57K +12.7%；steam_movers：Space Marine 2 +27 / Limbus Company +10 / FH6 +7 / CK3 +7；新進榜：Ori #93, ACE COMBAT 8 #95　<span class="ok">✓</span>（今日真數字）</td></tr>
-        <tr><td>Vibe-Coded Mashup Mods</td><td><a href="https://sea.ign.com/elden-ring/249748/vibe-coded-mashup-mods-have-taken-over-x-this-week" target="_blank">IGN</a>（exa，pub 2026-10-02）　驗：IGN 標題確認「Vibe-Coded Mashup Mods Have Taken Over X This Week」　<span class="pp">partial</span>（標題層）　pub 10/02</td></tr>
+        <tr><td>AI Fallout: New York 被 C&amp;D</td><td><a href="https://www.gamesradar.com/games/fallout/bethesda-kills-ai-fans-viral-fallout-game-much-to-their-chagrin-how-about-you-make-a-fallout-game-instead-so-i-dont-have-to/" target="_blank">GamesRadar</a>（web_fetch）　原文日期 2026-10-02　驗：Claude Opus 5.5、117 地點/112 角色/46 武器、350 萬觀看、ZeniMax C&amp;D、作者引句<span class="ok">✓</span>　🆕（IGN 原稿被站點擋，以 GamesRadar 佐證）</td></tr>
+        <tr><td>Naavik AI-Enabled Fandom</td><td><a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">Naavik</a>（web_fetch）　原文日期 2026-09-29　驗：核心論點與 Character.AI 20M MAU / RMB 100B / 8M+ MAU / 85.8% 皆見於原文摘要<span class="ok">✓</span>　🔄 近期（4 天）</td></tr>
+        <tr><td>AI 遊戲混搭潮 / slopcomp</td><td><a href="https://www.forbes.com/sites/danidiplacido/2026/09/30/minecraft-in-elden-ring-vibe-coders-are-remixing-video-games-with-ai/" target="_blank">Forbes</a>（web_fetch）　原文日期 2026-09-30　驗：Minecraft×Elden Ring、COD 滑板、Mario vs Master Chief、Skyrim、"slopcomp"<span class="ok">✓</span>　🆕（≤4 天，標 🆕 因話題 10/2 仍升溫；嚴格 48h 計為 🔄）</td></tr>
+        <tr><td>Total War mod 作者自毀</td><td><a href="https://www.ign.com/articles/modder-deliberately-corrupts-their-own-hugely-popular-total-war-warhammer-iii-mod-as-row-over-ai-escalates" target="_blank">IGN</a>（站點擋抓，僅 Tavily 摘要）　2026-10-02<span class="pp">summary</span>　⚠️ 未能開原文，細節未驗</td></tr>
+        <tr><td>GamesByAI 統計</td><td><a href="https://gamesbyai.win/stats/" target="_blank">GamesByAI</a>（web_fetch）　資料日 2026-10-02　驗：528 款、Claude Code 202、Cursor 106、Codex 90、Three.js 306、92% game jam<span class="pp">summary</span></td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-10-03T07:30 官方 API 直抓（免敘事閘）　TF2 +29.7% / Helldivers 2 +21.4% / GTA V +20% / CS +15.6%；Space Marine 2 排名 92→65</td></tr>
+        <tr><td>去重</td><td>Japanese 85% AI、Ubisoft Motherbrain、UK Games Expo 已為 ♻️ 用過，未入彈藥 Top（僅在 AI 箱旁述）</td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 10/03 07:30 真數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 10/03 07:30 + 多源新聞 · 2026/10/03 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 皆開原文驗、小編 / Demo 摘要層 · Steam＝官方 API 10-03 即時真數字（radar 07:30）· Roblox / Twitch / Threads / unityroom / KYM 本次無人值守未取得，標暫缺，不以估計假裝 live · 新鮮度由日期機械判定</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/10/03 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
