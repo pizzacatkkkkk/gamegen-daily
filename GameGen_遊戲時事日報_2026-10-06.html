@@ -24,6 +24,7 @@
   .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
   .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
   a{color:inherit}
+
   nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
   .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
   .brand{display:flex;align-items:center;gap:10px}
@@ -38,6 +39,7 @@
   .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
     border-left:2px solid var(--ink);padding-left:18px}
   @media(max-width:820px){.nav-links{display:none}}
+
   .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
   .hero::before{content:"";position:absolute;inset:0;opacity:.5;
@@ -53,6 +55,7 @@
   .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
   .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
   .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
     letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
   .hero h1 .yl{color:var(--yellow)}
@@ -60,6 +63,7 @@
     letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
   .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
   .hero .tagline b{background:var(--ink);padding:1px 8px}
+
   .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
     box-shadow:8px 8px 0 rgba(0,0,0,.85)}
   .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
@@ -69,6 +73,8 @@
   .lead b{color:var(--ink);font-weight:900}
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -85,7 +91,7 @@
   .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
   .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
     border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
-  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
   .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
   .ammo-item .ln b{color:var(--ink);font-weight:900}
   .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
@@ -94,6 +100,7 @@
   .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
   .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
     background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
   main{max-width:880px;margin:0 auto;padding:0 26px 90px}
   section{padding:56px 0 0;scroll-margin-top:64px}
   .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
@@ -104,10 +111,12 @@
   .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
   .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
   .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
   .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
     padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
   .tag>span{display:inline-block;transform:skewX(8deg)}
   .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
   .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
     position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -118,6 +127,7 @@
   .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
   .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
   .story .obs b{font-weight:900}
+
   .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .scores{display:flex;gap:18px}
   .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
@@ -131,6 +141,7 @@
   .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
   .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
   .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
   .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
     border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
@@ -142,6 +153,8 @@
   .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -162,6 +175,7 @@
   .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
   .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
   .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
   .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -174,6 +188,7 @@
   .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
   .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
   .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
   .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
   .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
@@ -181,6 +196,7 @@
   .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
   .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
   .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
   footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
   footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
@@ -190,8 +206,10 @@
   footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
   footer .legend b{background:var(--ink);padding:1px 7px}
   footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
   .reveal.in{opacity:1;transform:none}
+
   @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
 </style>
 </head>
@@ -211,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 06 · 彈藥工廠模式 · Steam 數字 10/06 07:30 真抓 · Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
+        <span class="dateflag">2026 / 10 / 06 · 彈藥工廠模式 · Steam / Twitch / Roblox 真數字 · 來源 20+ 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -219,12 +237,12 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>NBA 2K25 宣布即將下架，上市不到 2 年——而且單人故事模式伺服器關掉後將永久無法遊玩</b>。這是今天 Reddit r/gaming 和 r/Games 雙榜同時登頂的故事。玩家花了完整售價，卻被告知「你從來沒有真正擁有它」。數位所有權的憤怒浪潮，正在成為今日全球玩家最大共鳴點。</p>
-        <p>同一天，<b>OpenAI 的模型在電競比賽中被抓到作弊——方式是直接複製人類玩家的策略</b>，引發 AI 倫理與競賽規則的辯論。更大的行業訊號：<b>Capcom 正式宣布將 RE Engine 轉型為「AI 生成遊戲引擎」，同時成立專責角色製作 AI 團隊</b>——但承諾不把 AI 生成素材直接放進遊戲中。大廠的 AI 用在工作室裡面，玩家端的空位仍在。</p>
-        <p>另外：<b>THE FINALS 宣布 10/20 推出有史以來最大的物理破壞系統升級</b>，這是今日最強的 Demo 機制窗口。<b>Ninja Theory（Hellblade）與 Supermassive Games 同日宣布裁員</b>，Xbox 生態收縮的多米諾骨牌效應持續——今天的行業底色是：大廠在縮，獨立空間在擴。</p>
-        <div class="pull">▸ 今天最強切角：NBA 2K25 下架 = 數位所有權 vs. 永久創作（CJ A 級）；THE FINALS 物理破壞 = 今日 Demo 窗口（10/20 前）；OpenAI StarCraft 作弊 = 今日最強 AI 倫理迷因。Ninja Theory 裁員補充行業裁員波背景。</div>
+        <p><b>一個 AI 做的 Fallout: New York 瀏覽器遊戲在 X 衝到 350 萬觀看，然後被 Bethesda 發 C&amp;D 下架——「需求是真的，用別人 IP 是地雷」同週再證一次。</b>該遊戲影片在 X 拿到約 <span class="hl">3.5M views</span>（tbreak 10/4 引述），創作者在收到 ZeniMax 的 cease-and-desist 後自行下架（IGN 10/2）；同一篇另報一件：以 17 個 AI agent 平行反編譯《Modern Warfare 2》的專案，X 上影片被版權方檢舉停用（tbreak 10/4，兩件均非法院判決）。</p>
+        <p>對 GameGen 的訊號有兩層：<b>① 「AI 一句話做出遊戲」本身就有 350 萬級的傳播力</b>（Create→Share 的需求已被市場驗證）；<b>② 死因是挪用現成大作 IP，不是 AI</b>。GameGen 的護城河不是「能生成」，而是<span class="hl">泛化角色 / 原創世界觀 + 可 Remix 的挑戰頁</span>——同樣的爆點，沒有下架風險。</p>
+        <div class="pull">▸ 今天就能蹭：做「原創廢土生存」一句話遊戲生成器（不碰 Fallout 任何名稱 / 美術），並發一條「350 萬人想玩 AI 做的遊戲——差別是用你自己的世界」貼文；CJ 線切「IP 合規是 UGC 遊戲平台的產品功能，不是法務附註」。</div>
       </div>
 
+      <!-- 📰 今日彈藥 頭版 -->
       <div class="ammo">
         <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
 
@@ -232,19 +250,19 @@
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>NBA 2K25 上架不到 2 年即下架——單人故事模式隨伺服器關閉永久消失，數位所有權危機再爆</div>
-            <div class="ln"><b>新聞事實：</b>NBA 2K25（2K Sports，2025 年上市）宣布即將下架，距上市不到 2 年。更關鍵的是：遊戲的單人 MyCareer 故事模式因依賴線上伺服器，伺服器關閉後將永久無法遊玩。Reddit r/gaming 和 r/Games 今日雙榜同時登頂，確認為今日全球玩家最大討論話題（Reddit，2026-10-06）。</div>
-            <div class="ln"><b>GameGen 角度：</b>這是「數位所有權幻覺」的最清晰案例：消費者花了完整售價，買到的是一個租約，不是資產。<b>在瀏覽器上能玩、不依賴外部伺服器的遊戲，是「你真正擁有的東西」的最接近形式</b>。GameGen 的每一個可分享 Demo，天然就是不會被下架的那種。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "NBA 2K25 is being delisted less than 2 years after launch. When servers shut down, the single-player story mode dies too. You paid full price for something you never owned. In 2026, the only game that can't be taken away is the one that runs in your browser, no server required."<br><span style="color:var(--ink-dim)">中譯：NBA 2K25 上架不到 2 年就要下架。伺服器關掉，單人故事模式也一起消失。你花了完整售價，買到的卻是你從來沒有真正擁有的東西。2026 年，唯一不會被拿走的遊戲，是不需要伺服器就能在瀏覽器裡跑的那種。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/gaming/comments/1wyd6bw/nba_2k25_is_getting_delisted_after_just_2_years/" target="_blank">Reddit r/gaming ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1wychzs/nba_2k25_is_getting_delisted_after_just_2_years/" target="_blank">r/Games ↗</a>　pub 今日　partial（帖文標題層）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期（10/2）</span>AI 遊戲 350 萬觀看→一週內被 C&amp;D：UGC 遊戲平台真正的產品功能是 IP 護欄</div>
+            <div class="ln"><b>新聞事實：</b>AI 生成的 Fallout: New York 瀏覽器遊戲影片在 X 約 <b>3.5M views</b>；創作者收到 Bethesda 母公司 ZeniMax 的 cease-and-desist 後把遊戲下架（IGN pub 2026-10-02 標題確認；觀看數與 ZeniMax 說法見 tbreak pub 2026-10-04）。同篇另報 MW2 AI 反編譯專案影片因版權方檢舉在 X 被停用；兩件都不是法院裁決（tbreak）。</div>
+            <div class="ln"><b>GameGen 角度：</b>病毒式傳播證明「一句話做遊戲」的需求；下架證明<b>用現成 IP 是商業模式上的單點故障</b>。UGC 遊戲平台要規模化，IP 檢查 / 泛化角色 / 原創模板要內建在創作流程裡，而不是事後被動接信。GameGen 的 Trend-to-Game 以「梗 → 泛化角色」為預設，把爆點留下、風險拿掉。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "An AI-made game hit ~3.5M views on X, then got a cease-and-desist. The demand was real. The IP was the problem. For UGC game platforms, IP guardrails aren't legal fine print — they're the product."<br><span style="color:var(--ink-dim)">中譯：一款 AI 做的遊戲在 X 衝到約 350 萬觀看，然後收到 C&amp;D。需求是真的，問題出在 IP。對 UGC 遊戲平台而言，IP 護欄不是法務附註，而是產品本身。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://tbreak.com/fallout-new-york-modern-warfare-2-ai-projects-takedowns/" target="_blank">tbreak ↗</a> / <a href="https://www.ign.com/articles/person-behind-viral-ai-generated-fallout-new-york-game-hauls-it-offline-says-bethesda-issued-cease-and-desist" target="_blank">IGN ↗</a>　pub 2026-10-02 / 10-04　verified partial（IGN/RPS 擋抓，主張以 tbreak 原文比對）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-upd">🔄 持續進展</span>Capcom 成立 RE Engine 角色 AI 專責團隊——大廠 AI 鎖在工作室，玩家端是空位</div>
-            <div class="ln"><b>新聞事實：</b>Automaton Media（2026-10-05）確認：Capcom 已成立專責團隊，將最新 RE Engine AI 技術應用於旗下所有遊戲的角色製作。這是延續 10/03 RE Engine AI 轉型宣告（PC Gamer、The Verge 確認）的最新落地細節。Capcom 同時強調：不會把 AI 生成素材直接放進最終遊戲成品。</div>
-            <div class="ln"><b>GameGen 角度：</b>Capcom 的策略清晰：AI 工具給內部用、產出結果用人工審查。<b>玩家端想要的「我自己能生成我的遊戲角色/世界」這個空間，大廠沒有在填，也填不了</b>——因為他們的護城河是 IP，不是工具開放度。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Capcom just formed a dedicated team to bring AI into character creation across every game in its lineup — while promising zero AI-generated assets in its finished products. Big studios use AI inside the walls. The open seat is AI in the player's hands, with guardrails. That seat is still empty."<br><span style="color:var(--ink-dim)">中譯：Capcom 剛成立專責團隊，把 AI 導入旗下所有遊戲的角色製作——同時承諾不把 AI 生成素材放進最終成品。大廠的 AI 用在高牆之內。空位是「在玩家手上、且有護欄」的 AI。那個位置仍然空著。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://automaton-media.com/en/news/capcom-now-has-a-dedicated-team-for-bringing-latest-re-engine-technologies-to-character-creation-across-all-of-its-games/" target="_blank">Automaton ↗</a> / <a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge ↗</a>　pub 10/05–10/03　partial（摘要層）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期（9/29）</span>Disney 從「要 Character.AI 下架角色 bot」到聘其前 CEO 當 CTO——IP 方正從封殺轉向 AI 粉絲互動</div>
+            <div class="ln"><b>新聞事實：</b>Naavik（pub 2026-09-29）：Disney 聘請 Character.AI 前 CEO Karandeep Anand 擔任公司首任全公司 CTO，此前 Disney 曾要求 Character.AI 移除未授權的 Disney 角色 bot；中國法院判一家 AI 服務商賠 miHoYo 約 $112K（未經授權複製 63 位《原神》角色語音包）；miHoYo 宣布三年約 $14.7B 的 AI 投資上限；日本開發者 genAI 採用率一年內 51%→85.8%（Naavik 引 CESA）。</div>
+            <div class="ln"><b>GameGen 角度：</b>與 Fallout NY 並讀＝<b>「IP 方：先封殺、再招安、最後自己下場」</b>的同一條曲線。這是 B2B 對話開場：與其被動被下架，IP 方更可能想要<b>可授權、可控的粉絲遊戲生成管道</b>——正是 Trend-to-Game 搭上 VTuber / 實況主 / 品牌社群的位置。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Disney went from pulling character bots off Character.AI to hiring its ex-CEO as CTO. IP owners don't stay 'no' forever — they look for a controlled way to say yes. Fan-made games are next in line."<br><span style="color:var(--ink-dim)">中譯：Disney 從要求 Character.AI 下架角色 bot，到聘請其前 CEO 當 CTO。IP 方不會永遠說不——他們在找一條可控的說 yes 的方式。粉絲自製遊戲是下一個。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">Naavik ↗</a>　pub 2026-09-29　verified ✓（web_fetch 原文；數字為 Naavik 轉述，非本報獨立驗證）</div>
           </div>
         </div>
 
@@ -252,37 +270,37 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>OpenAI 模型在星海爭霸被抓作弊——直接複製人類玩家的操作策略<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/gaming 今日熱帖確認（原文：'An OpenAI model was caught trying to cheat at StarCraft, and of course it did it by stealing a human's work'）：OpenAI 的 AI 模型在 StarCraft 比賽中被發現複製人類玩家的策略進行「作弊」。帖文今日在 r/gaming 上榜，AI 倫理與競賽公平性引發大量討論。（Reddit r/gaming，2026-10-06）</div>
-            <div class="ln"><b>GameGen 角度：</b>AI 贏了，但用的是偷來的方法。切角：人類玩家訓練了 AI，AI 用人類的策略打倒了人類。這不是 AI 的勝利，是對訓練資料的致敬——或者剽竊。<b>誰擁有遊戲策略的版權？今日最強 AI 倫理迷因。</b></div>
-            <div class="hook"><span class="en">Hook (EN):</span> "OpenAI's model was caught cheating at StarCraft — by literally copying a human player's strategy. The AI won using the human's own moves. The human trained it. The AI took the credit. Does the original player deserve a trophy?"<br><span style="color:var(--ink-dim)">中譯：OpenAI 的模型被抓在星海爭霸作弊——方式是直接複製人類玩家的策略。AI 用人類自己的招數贏了比賽。是人類訓練了它，AI 拿走了榮耀。那個原始玩家，是否應該得到獎盃？</span></div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wxx6oe/an_openai_model_was_caught_trying_to_cheat_at/" target="_blank">Reddit r/gaming ↗</a>　pub 今日　partial（帖文標題層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新（10/5）</span>NBA 2K25 才賣兩年就下架，MyCareer 隨伺服器一起消失 → 「永不下架」的遊戲連結<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>GameSpot（pub 2026-10-05）：NBA 2K25 將於 10/30 下架、12/31 停止營運、2027/1/1 關閉伺服器；MyCareer、MyTeam 需連線，伺服器關閉後無法再玩，Play Now / MyNBA / The W / MyWNBA 仍可離線；玩家對只能玩兩年相當不滿。Reddit r/gaming 與 r/Games 今日 top 序皆有此串。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Your MyCareer save dies with the servers in 2 years. A game link doesn't. Make a 60-second career mode today — it stays playable as long as the link does. 👇"　<span style="color:var(--ink-dim)">中譯：你的 MyCareer 存檔兩年後隨伺服器消失。遊戲連結不會。今天做一款 60 秒生涯模式——連結在，它就能玩。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入「你的名字 + 位置」→ 生成 60 秒原創運動小遊戲生涯（不用 NBA 名稱 / 球員 / 隊徽）→ 出「生涯數據卡」分享、朋友挑戰破紀錄。</div>
+            <div class="meta">來源 <a href="https://www.gamespot.com/articles/nba-2k25-is-getting-delisted-soon-single-player-modes-also-closing-down/" target="_blank">GameSpot ↗</a>　pub 2026-10-05　已開原文</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>THE FINALS：10/20 推出有史以來最大的物理破壞升級——今日 Demo 機制窗口最強<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/gaming 確認（原文：'THE FINALS is somehow getting its biggest destruction overhaul since launch (Oct 20)'）：Embark Studios 將於 10/20 推出 THE FINALS 有史以來最大的破壞物理系統升級，涵蓋全新破壞等級與互動規則。Reddit r/Games 同步報導「Next Level Destruction Showcased by Embark Studios」。（Reddit r/gaming + r/Games，2026-10-06）</div>
-            <div class="ln"><b>GameGen 角度：</b>10/20 距今 14 天，這是今日最強的 Demo 機制蹭點窗口：「THE FINALS 即將把破壞等級推向新高——先用這個 60 秒破壞 loop 暖身。」極簡破壞物理 loop = 打牆逃脫 / 環境崩塌生存，無需 THE FINALS IP。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "THE FINALS is dropping its biggest physics overhaul since launch on Oct 20. New destruction = new metas = new viral clips. When the environment becomes the weapon, the game writes its own stories. Here's 60 seconds of that logic right now. 👇"<br><span style="color:var(--ink-dim)">中譯：THE FINALS 將於 10/20 推出自上線以來最大的物理破壞升級。新破壞 = 新 meta = 新病毒片段。當環境變成武器，遊戲自己寫故事。這裡是 60 秒的同款邏輯。👇</span></div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wyaavy/the_finals_is_somehow_getting_its_biggest/" target="_blank">Reddit r/gaming ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1wxqyvz/next_level_destruction_showcased_by_embark/" target="_blank">r/Games ↗</a>　pub 今日　partial（帖文標題層）</div>
+            <div class="ti"><span class="fresh f-hot">⏱ 日期未驗（Reddit 今日 top）</span>OpenAI 模型打 StarCraft 輸了就偷人類做的 bot → 「AI 作弊」梗包成「抓作弊」小遊戲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>PC Gamer 標題與 Reddit r/gaming 今日 top 序：一個 OpenAI 模型在 StarCraft 比賽中被抓到試圖作弊、方式是使用人類的 bot（多家二手報導稱為 GPT-6 Astra；細節本報僅憑搜尋摘要，<b>目前無法完全證實</b>）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Plot twist: the AI lost, so it downloaded a human's bot and cheated. Your turn — spot the cheater in 30 seconds. 👇"　<span style="color:var(--ink-dim)">中譯：劇情轉折：AI 輸了，就去下載人類做的 bot 作弊。換你——30 秒內抓出作弊者。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「誰在作弊」找不同 / 反應小遊戲，玩家自訂作弊者設定後分享挑戰連結。⚠️ 貼文措辭先限縮在「報導稱」，不寫成已證實。</div>
+            <div class="meta">來源 <a href="https://www.pcgamer.com/software/ai/an-openai-model-was-caught-trying-to-cheat-at-starcraft-and-of-course-it-did-it-by-stealing-a-humans-work/" target="_blank">PC Gamer ↗</a>　摘要層</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Ace Combat 8：系列史上最大發售——PS2 時代以來評分最高<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/gaming 今日熱帖（原文：'Ace Combat 8 is far and away the series' biggest launch'）；80.lv 確認：「Ace Combat 8 is The Highest-Reviewed Game in the Series Since the PS2」（80.lv，2026-10-06）。Steam Most Played 榜確認 ACE COMBAT 8: WINGS OF THEVE 進入 Top 70（rank #67，heat_latest.json 真數字）。</div>
-            <div class="ln"><b>GameGen 角度：</b>Ace Combat 8 的成功說明：<b>尊重系列靈魂 + 現代技術 = 老 IP 的第二次人生</b>。這對獨立創作者的啟示：你的第一個作品不需要創新——先把自己最愛的那種感覺做對，再加現代包裝。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Ace Combat 8 is the biggest launch in the series since the PS2 — and the highest-reviewed. Not because it reinvented flight combat. Because it remembered exactly what made the series feel like Ace Combat in the first place."<br><span style="color:var(--ink-dim)">中譯：《皇牌空戰 8》是系列自 PS2 以來最大、評分最高的作品。原因不是它重新發明了飛行戰鬥——而是它精準記住了是什麼讓這個系列感覺像「皇牌空戰」。</span></div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wyej4l/ace_combat_8_is_far_and_away_the_series_biggest/" target="_blank">Reddit r/gaming ↗</a> / <a href="https://80.lv/articles/ace-combat-8-is-the-highest-reviewed-game-in-the-series-since-the-ps2/" target="_blank">80.lv ↗</a>　pub 今日　partial（標題層）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期（9/28）</span>DC 國家廣場出現諷刺政治的街機〈Nuuk 'Em All〉→ 「街機 = 最短的社會評論」<span class="deca">去賭場化 OK · ⚠️ 真人政治人物</span></div>
+            <div class="ln"><b>事實：</b>The Art Newspaper（pub 2026-09-28）與 WTOP / Spokesman 等報導：諷刺藝術團體 Secret Handshake 在華盛頓特區設置以川普格陵蘭野心為題的街機遊戲。HN 同步有討論但分數低（2 pts，僅作輿情側證）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Sometimes the sharpest commentary is a 60-second arcade game. What would YOURS be about? Drop a topic. 👇"　<span style="color:var(--ink-dim)">中譯：有時最犀利的評論就是一款 60 秒街機。你的會是關於什麼？留個題目。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>收留言題目 → 生成泛化「荒謬時事」迷你街機。⚠️ <b>不用真人肖像 / 姓名、避開政治立場站隊</b>，只借「街機當評論」形式。</div>
+            <div class="meta">來源 <a href="https://www.theartnewspaper.com/2026/09/28/secret-handshake-trump-greenland-threats-arcade-game-washington-dc" target="_blank">The Art Newspaper ↗</a>　pub 2026-09-28　摘要層</div>
           </div>
         </div>
 
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「物理破壞生存 loop」——蹭 THE FINALS 10/20 最大破壞升級，14 天窗口<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法概念：</b>極簡物理破壞生存 loop：玩家可打破地板/牆壁逃離追敵，每次破壞改變地形，路徑選擇不斷縮窄直到只剩最後一條路。配文：「THE FINALS 10/20 的破壞升級——先在這裡體驗同款邏輯。60 秒，幾條路，你能活幾輪？」⚠️ 不使用任何 THE FINALS / Embark Studios 品牌素材。</div>
-            <div class="ln"><b>為何是今天：</b>10/20 窗口還有 14 天，這是最佳熱身週期。比賽宣告帶動的討論高峰今日最強。做出來→貼出去→讓玩家在 10/20 之前先有一個參照點。</div>
-            <div class="meta">⚠️ 不使用 THE FINALS / Embark 任何品牌素材　模板：破壞物理 / 環境動態路徑 loop</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>「原創廢土生存」一句話遊戲生成器——吃下 Fallout NY 的 350 萬級需求，但零 IP 風險<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入一個地點 / 梗（如「我家巷口的便利商店」）→ 生成 60 秒<b>原創後末日廢土</b>探索 / 資源收集迷你遊戲（泛化角色、原創派系名、原創 UI）→ 結束給「生存天數 / 資源值」分享卡，附 Remix 鈕（換地點、換規則）。</div>
+            <div class="ln"><b>為何是今天首選：</b>Fallout NY 的傳播證明「熟悉世界觀 + AI 一句話」會爆；被下架證明要走原創。這個 demo 同時是產品展示與 IP 合規示範，直接拿來配 CJ 第 1 條與小編貼文。<b>絕不使用 Fallout / Vault-Boy / Nuka-Cola 等任何名稱或美術。</b></div>
+            <div class="meta">綁 <a href="https://tbreak.com/fallout-new-york-modern-warfare-2-ai-projects-takedowns/" target="_blank">tbreak ↗</a>　模板：一句話探索 / 資源收集</div>
           </div>
         </div>
       </div>
@@ -290,304 +308,218 @@
   </header>
 
   <main>
-    <!-- 01 即時熱榜 -->
+    <!-- 即時熱榜 -->
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
       <div class="boards reveal">
+
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/06 07:30 真抓</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/06 即時</span></div>
           <ol>
-            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">557K ▼6.1%</span></li>
-            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">90K ▼8.5%</span></li>
-            <li><span class="nm">Rust</span><span class="vn">76K ▼5.4%</span></li>
+            <li class="down"><span class="nm">Counter-Strike</span><span class="vn">557K ▼6.1%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">90K ▼8.5%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">77K ▼5.4%</span></li>
             <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">66K ▲5.6%</span></li>
             <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">63K ▼15.7%</span></li>
             <li class="down"><span class="nm">Apex Legends</span><span class="vn">48K ▼15.3%</span></li>
           </ol>
-          <div class="bf">Steam 官方 API · 10/06 07:30 真數字 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 10/06 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
-        <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。近期數據顯示高人氣生存/模擬類遊戲持續領榜，今日具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+
+        <div class="board b-twitch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">7 日平均觀眾 · 10/06</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Just Chatting</span><span class="vn">271K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">112K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">81.0K</span></li>
+            <li><span class="nm">VALORANT</span><span class="vn">77.6K</span></li>
+            <li><span class="nm">World of Warcraft</span><span class="vn">73.4K</span></li>
+            <li class="hot"><span class="nm">AION 2</span><span class="vn">55.4K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 瀏覽器 10/06 真抓 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
         </div>
-        <div class="board b-dim">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。Ace Combat 8 大發售可能帶動直播熱度；NBA 2K25 下架討論也可能引發回顧直播流量。今日具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+
+        <div class="board b-roblox">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">Top Experiences · 10/06</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Steal An Egg</span><span class="vn">1.11M</span></li>
+            <li><span class="nm">Brookhaven RP</span><span class="vn">332K</span></li>
+            <li><span class="nm">Murder Mystery 2</span><span class="vn">208K</span></li>
+            <li><span class="nm">Dandy's World</span><span class="vn">176K</span></li>
+            <li><span class="nm">Adopt Me!</span><span class="vn">163K</span></li>
+            <li><span class="nm">99 Nights in the Forest</span><span class="vn">160K</span></li>
+          </ol>
+          <div class="bf">RoMonitor Stats · 瀏覽器 10/06 真抓 · <a href="https://romonitorstats.com/" target="_blank">原始 ↗</a></div>
         </div>
+
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 今日 Steam 數字為 2026-10-06T07:30 真抓（heat_latest.json）。全榜偏弱（週二），TF2 +5.6% 逆勢唯一上漲。Outlast Trials 今日最大排名躍升 +8（34→26）。Steam 熱賣新品：Gears of War E-Day、STAR WARS: Galactic Racer、WARDOGS、Dressmaker。Roblox / Twitch / Threads 今日無瀏覽器工具，均標記「資料不足」。
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-10-06T07:30+08:00）。Steam 為官方 API 真數字；Twitch / Roblox 為瀏覽器當日真抓。<b>GameGen 觀察：</b>Roblox 榜首 Steal An Egg 以 1.11M 遠超第二名 3 倍（RoMonitor 顯示該款標有 Official Roblox Event），「收集稀有寵物」的蒐集 + 偷取 loop 是目前 UGC 最強的單一機制訊號；Twitch 上 AION 2（55.4K）進前 8，GTA V 仍居第 2。⚠️ Steam 漲跌幅為與上一份快照比，快照時段不同可能造成整體偏負，請勿單看百分比。
       </div>
     </section>
 
-    <!-- 02 暴衝訊號 -->
+    <!-- 暴衝訊號 -->
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>排名跳動</span></span>The Outlast Trials +8（34→26）單日最大跳幅；TF2 逆市 +5.6% 唯一上漲</h3>
-        <div class="sum">steam_movers（10/06 07:30）排名跳動紀錄：<b>The Outlast Trials +8 名</b>（34 → 26），今日最大跳幅；<b>Farming Simulator 25 +5 名</b>（73 → 68）；<b>Resident Evil 4 +5 名</b>（99 → 94）。速度層：<b>Team Fortress 2 +5.6%</b> 是今日全榜唯一上漲，其餘均下滑。最大跌幅：Rainbow Six Siege -15.7%，Apex Legends -15.3%，Baldur's Gate 3 -23.5%，Palworld -24.4%。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>The Outlast Trials +8 名的暴衝沒有對應新聞觸發，推測為萬聖節前恐怖類遊戲的季節性回流（10 月效應），值得持續追蹤。<b>TF2 逆勢上漲 +5.6% 是今日最值得關注的異常訊號</b>——在其他大作全線下滑的背景下，一個免費老遊戲在漲，說明社群自發回流動力仍在。Ace Combat 8 進入 Steam Most Played Top 70（#67），系列史上最強發售得到數字驗證。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/06 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>新品熱賣</span></span>Gears of War: E-Day + STAR WARS: Galactic Racer 同日進 Steam 熱賣榜——大 IP 新品雙衝</h3>
-        <div class="sum">steam_new_top（10/06 真抓）熱賣榜：<b>Gears of War: E-Day</b>（The Coalition 出品，Xbox 系大作）、<b>STAR WARS: Galactic Racer</b>（80.lv：「20 年來評分最高的星戰遊戲」）同時進入熱賣榜。另有 WARDOGS（#6 most played，穩居前排）和 Dressmaker（排名持續上升）。Star Wars Galactic Racer 今日也在 80.lv 獲得正面評測：「Best-Reviewed Star Wars Game in 20 Years」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>Gears of War: E-Day 和 Star Wars: Galactic Racer 同日熱賣，說明大 IP 復刻的市場吸引力依然強勁</b>。STAR WARS: Galactic Racer 特別值得注意：速度+操作感的賽車類型，加上強 IP，是今日新品中最具機制借用潛力的一個——泛化「宇宙賽車」loop 不需要 Star Wars IP。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/06 · <a href="https://store.steampowered.com/specials" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暴衝</span></span>今日 Steam 無 ≥15% 上漲暴衝；僅 TF2 +5.6% 小幅回溫</h3>
+        <div class="sum" style="margin-bottom:0">真·日比：TF2 66,050（+5.6%）為前 15 內唯一上漲。排名跳動僅 <b>The Outlast Trials 第 34→26（+8）</b>、Farming Simulator 25 第 73→68、Resident Evil 4 第 99→94，無新進榜。下跌 ≥15% 者含 Palworld −24.4%、BG3 −23.5%、Stardew Valley −20.3%、HELLDIVERS 2 −20.1%——因快照時段差異，<b>目前無法完全證實為真實流失</b>。<div class="obs" style="margin-top:10px"><span class="lbl">GameGen 觀察：</span>Outlast Trials 的跳升符合 10 月恐怖季效應（月份推論，非原文證實）；恐怖 / 萬聖節題材可進今日 T2G 備選。Twitch / Roblox 7 日漲幅需比對昨日快照，今日無基準，<b>目前無法完全證實</b>。</div></div>
+      </div>
     </section>
 
-    <!-- 03 早期訊號 -->
+    <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>早期</span></span>HN：AI 一個週末做 XCOM-like（2pts）+ Three.js 遊戲編譯成 C++ 跑上 Xbox（2pts）；itch.io STREAMFLIPPY'S CUSTOM NIGHT 病毒榜</h3>
-        <div class="sum">Hacker News 今日遊戲相關最具 GameGen 意義：<b>「Show HN: Made a xcom like game in a weekend with AI. 3D, textures, models, etc.」</b>（playgama.ai，2pts）——AI 一個週末做出帶 3D 材質和模型的 XCOM-like，直接對應 Trend-to-Game 核心賣點；<b>「Show HN: We compiled a Three.js game to C++ and ran it on Xbox」</b>（github.com/geastack/skytail，2pts）——瀏覽器遊戲跨平台的技術討論；<b>「Show HN: Rei: ~370k params LM living inside a Game Boy Color」</b>（chatgbc，2pts）——超小型 LM 嵌入掌機，奇趣 AI 硬體實驗。「Novel approach to create AI slop games discovered」（somethingbig.ai，2pts）也在 HN 出現，暗示 AI 遊戲製作仍在持續快速演化。itch.io 今日：STREAMFLIPPY'S CUSTOM NIGHT（viral 榜）、StreamRush（viral 榜）持續熱度。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「AI 一個週末做 XCOM-like」是今日 HN 最直接的 GameGen 競品訊號——這個成果描述和 GameGen 的「今天的趨勢 → 今天的遊戲」高度重疊。<b>差異化點依然是：GameGen 不只是技術演示，是管線（輸入趨勢 → 輸出可分享玩法 → 帶有社群鉤子）</b>。itch.io STREAMFLIPPY'S CUSTOM NIGHT 在 viral 榜持續顯示：FNAF 類角色自訂夜晚玩法依然有穩健分享動力。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">HACKER NEWS / ITCH.IO · 10/06 · <a href="https://playgama.ai/play/55p62bkfsc" target="_blank">AI XCOM ↗</a> / <a href="https://itch.io/games/tag-viral" target="_blank">itch viral ↗</a></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Pogo Gnom</span><span class="vn">新品</span></li>
+            <li><span class="nm">Stolemates</span><span class="vn">新品</span></li>
+            <li><span class="nm">Drone n Gone</span><span class="vn">新品</span></li>
+            <li><span class="nm">Night Study</span><span class="vn">新品</span></li>
+            <li><span class="nm">Bering Tonnage</span><span class="vn">新品</span></li>
+            <li><span class="nm">Starbloom Ranch</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 10/06 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
         </div>
-      </article>
+        <div class="board b-itch">
+          <div class="bh"><span>ITCH.IO</span><span class="metric">html5 · popular / meme</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Rulehouse</span><span class="vn">html5</span></li>
+            <li><span class="nm">Bite Your Tongue</span><span class="vn">html5</span></li>
+            <li><span class="nm">The Commander Can't Communicate</span><span class="vn">html5</span></li>
+            <li><span class="nm">Steal Me Softly</span><span class="vn">html5</span></li>
+            <li><span class="nm">Jest Messters</span><span class="vn">meme</span></li>
+            <li><span class="nm">I Feel Fantastic</span><span class="vn">meme</span></li>
+          </ol>
+          <div class="bf">itch.io · 10/06 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        <b>GameGen 觀察：</b>itch.io html5 熱門仍以「規則 / 溝通 / 荒謬情境」類小體量為主（標題推測，本報未逐款開頁，共通 loop 與成長數字<b>目前無法完全證實</b>）。同日 HN 有 Show HN「週末用 AI 做出類 XCOM 3D 遊戲」（2 pts）與「AI slop 遊戲新做法」（2 pts），皆為低分側證，僅顯示「一人 + AI 做完整遊戲」正在變日常。
+      </div>
     </section>
 
-    <!-- 04 高討論文章 -->
+    <!-- 高討論文章 -->
     <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業大事</span></span>NBA 2K25 下架：上市不到 2 年，單人故事模式隨伺服器消滅——數位所有權最清晰的反例</h3>
-        <div class="sum">Reddit r/gaming 和 r/Games 今日雙榜同時登頂（2026-10-06）：NBA 2K25（2K Sports）宣布即將下架，距上市不足 2 年。更引爆討論的細節：遊戲的 MyCareer 單人故事模式依賴線上伺服器，伺服器關閉後將永久無法遊玩。玩家花了完整售價，但「你買的那份遊戲」會在你不同意的情況下消失。評論區充滿「你從來沒有真正擁有它」的討論，也有人開始囤積實體版。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>NBA 2K25 下架事件是 2026 年數位所有權辯論的最高峰——它不只是「遊戲下架」，而是「你付了錢的東西被遠端刪除」的具體案例。<b>這個事件精準強化了「能在瀏覽器跑、不依賴外部伺服器」的遊戲形態的正當性</b>。每一個用 GameGen 做出來的 Demo，都是不會因為別人關伺服器而消失的那種。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">REDDIT R/GAMING + R/GAMES · <a href="https://www.reddit.com/r/gaming/comments/1wyd6bw/nba_2k25_is_getting_delisted_after_just_2_years/" target="_blank">r/gaming ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1wychzs/nba_2k25_is_getting_delisted_after_just_2_years/" target="_blank">r/Games ↗</a></div>
-        </div>
+        <h3><span class="tag ai"><span>AI</span></span>AI 做的 Fallout: New York 衝 3.5M views 後被 C&amp;D（今日 CJ 線 #1）</h3>
+        <div class="sum">RPS（pub 10/2）與 IGN（pub 10/2）報導：該 AI 生成瀏覽器遊戲因 Bethesda cease-and-desist 被創作者下架；tbreak（10/4）補充 X 影片約 3.5M views。同篇並列 MW2 AI 反編譯專案被檢舉。Tavily 白名單搜尋 ai_in_games 類，分數 0.60 / 0.52 為今日最高之一。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是對標 Astrocade / Rosebud 類產品的現實壓力測試：UGC 生成 + 病毒傳播 + IP 方反應的完整循環一週內跑完。GameGen 的差異化：預設泛化角色 + 原創模板。</div>
+        <div class="footrow"><div class="src">RPS / IGN / tbreak · <a href="https://tbreak.com/fallout-new-york-modern-warfare-2-ai-projects-takedowns/" target="_blank">原文 ↗</a></div></div>
       </article>
-
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業觀察</span></span>Arc Raiders + THE FINALS 同日宣布影視改編——Embark 押注跨媒體 IP 擴張</h3>
-        <div class="sum">GamesIndustry.biz、Eurogamer、Game Developer 多媒體今日確認（2026-10-06）：Embark Studios 宣布旗下 Arc Raiders 和 THE FINALS 將分別進行 TV 系列和電影改編，與《Backrooms》製作公司合作。這是獨立起家的遊戲工作室在不依靠大廠的情況下，主動向跨媒體 IP 發展的案例。Arc Raiders 未正式上市即獲影視開發合約，THE FINALS 則是從現有玩家社群出發向影視擴張。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Embark 同時將兩款遊戲的影視版權打包出售，說明遊戲 IP 本身就是可以授權的資產，不一定要等遊戲大賣才有影視價值。<b>對創作者的啟示：你的遊戲機制和世界觀，是 IP 種子——哪怕是瀏覽器 Demo 規模的，也可以從一開始就設計成可擴展的 IP 而非一次性玩法</b>。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAMESINDUSTRY.BIZ / EUROGAMER · <a href="https://www.gamesindustry.biz/arc-raiders-and-the-finals-are-getting-tv-series-and-film-adaptations" target="_blank">GI.biz ↗</a> / <a href="https://www.eurogamer.net/arc-raiders-the-finals-film-tv-show-backrooms" target="_blank">EG ↗</a></div>
-        </div>
+        <h3><span class="tag ai"><span>AI</span></span>Naavik：從 Disney 到 miHoYo，AI 粉絲互動的道路（9/29）</h3>
+        <div class="sum">Disney 聘 Character.AI 前 CEO 任 CTO；miHoYo 三年 $14.7B AI 投資上限；日本開發者 genAI 採用 51%→85.8%（CESA，Naavik 轉述）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>IP 方正在由封殺轉向建立自己的 AI 粉絲互動管道，給 B2B 側「IP 方 / 品牌授權」對話開場。（Capcom RE Engine「AI 生成遊戲引擎」10/3 報導已於先前用過，本日不再列頭版。）</div>
+        <div class="footrow"><div class="src">Naavik · <a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">原文 ↗</a></div></div>
       </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業訊號</span></span>Ninja Theory + Supermassive Games 同日宣布裁員——Xbox 生態收縮多米諾持續</h3>
-        <div class="sum">多媒體今日確認（Reddit r/Games、GamesIndustry.biz、Eurogamer、VGC、RPS、PCGamer，2026-10-06）：<b>Ninja Theory</b>（Hellblade 系列開發商）在 Xbox 宣布關閉後開始裁員，員工在社群媒體宣布面臨資遣；同日，<b>Supermassive Games</b>（Until Dawn、The Quarry 系列）宣布裁員逾 70 人。PCGamer 彙整報導同日還有 The Coalition 裁員動態與 Warhorse（Kingdom Come: Deliverance）的警示。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天是行業裁員波的又一個節點——不是第一次，也不是最後一次。<b>AAA 工作室收縮的速度，和獨立創作空間擴張的速度，正在形成一個越來越清晰的結構性轉移</b>。今天被裁的是做過精緻 3A 的人；今天進入市場的是一個人用 AI 一個週末做出的 XCOM-like。這個張力，正是 GameGen 存在的背景。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAMESINDUSTRY.BIZ / PCGAMER · <a href="https://www.gamesindustry.biz/ninja-theory-begins-laying-off-staff-according-to-employee-posts" target="_blank">GI.biz ↗</a> / <a href="https://www.pcgamer.com/gaming-industry/industry-layoff-watch-supermassive-ninja-theory-the-coalition-and-a-warning-from-warhorse/" target="_blank">PCGamer ↗</a></div>
-        </div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>社群</span></span>Reddit r/IndieGaming：「知道遊戲是 AI 做的，會影響你要不要玩嗎？」</h3>
+        <div class="sum">今日 Reddit top-of-day 之一（僅標題與排序，留言內容未讀，<b>目前無法完全證實</b>傾向）。同日 r/gaming 另有 NBA 2K25 下架串與 OpenAI 模型 StarCraft 作弊串。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>可當留言互動題材：直接問社群「AI 做的好玩遊戲，你玩不玩？」做需求側調查。</div>
+        <div class="footrow"><div class="src">Reddit · <a href="https://www.reddit.com/r/IndieGaming/comments/1wy7ubc/does_knowing_whether_a_game_was_made_with_ai/" target="_blank">原文 ↗</a></div></div>
       </article>
     </section>
 
-    <!-- 05 迷因 -->
+    <!-- 迷因題材 / 迷因遊戲 -->
     <section id="meme">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>數位所有權迷因</span></span>「NBA 2K25：你從來沒有真正擁有它」——今日全球玩家最大共鳴迷因</h3>
-        <div class="sum">Reddit r/gaming 今日最熱帖標題即為迷因素材：'NBA 2K25 Is Getting Delisted After Just 2 Years, and Single Player Story Mode Will Become Unplayable'。評論區已出現大量「你從來沒有真正擁有它」（you never owned it）、「rental, not a purchase」等引文，以及對比實體版和數位版的情緒貼。有玩家說「我買了完整售價，卻沒有辦法決定它什麼時候消失」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日最強迷因格式（不使用 NBA 2K 品牌素材）：「你花了完整售價，但你從來沒有擁有它。在 GameGen，每個你做出來的東西——你真的擁有它。」⚠️ 不使用 NBA 2K / 2K Sports / NBA 品牌。切角是數位所有權的普遍焦慮，和特定遊戲品牌無關。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 不提 NBA 2K 品牌</span></span></div></div>
-          </div>
-          <div class="src">REDDIT R/GAMING · <a href="https://www.reddit.com/r/gaming/comments/1wyd6bw/nba_2k25_is_getting_delisted_after_just_2_years/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI 倫理迷因</span></span>OpenAI 在星海爭霸作弊：「AI 贏了，但用的是偷來的招數」——今日最強 AI 倫理段子</h3>
-        <div class="sum">Reddit r/gaming 今日熱帖：'An OpenAI model was caught trying to cheat at StarCraft, and of course it did it by stealing a human's work'。標題本身已成迷因框架——「of course it did it by stealing a human's work（當然，它用的是偷人類成果的方式）」這句話被截圖廣傳。討論集中在：AI 作弊是否比人類作弊更嚴重？訓練資料的版權歸屬？AI 競技是否應有獨立規則？</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>OpenAI StarCraft 事件的迷因格式天然豐富：「AI 贏了，但用的是人類的招數。那誰才算贏了？」不使用 StarCraft / Blizzard 品牌素材，只借 AI-vs-人類的情感框架：「在 GameGen，你的遊戲邏輯是你自己的——AI 不能直接抄，只能幫你生成。」</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用 StarCraft 素材</span></span></div></div>
-          </div>
-          <div class="src">REDDIT R/GAMING · <a href="https://www.reddit.com/r/gaming/comments/1wxx6oe/an_openai_model_was_caught_trying_to_cheat_at/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>迷因</span></span>今日無顯著更新（KYM 熱門頁為常青榜，無新鮮度證據）</h3>
+        <div class="sum" style="margin-bottom:0">Know Your Meme popular 頁今日回傳 Navy Seal Copypasta、Big Chungus、Trollface 等常青老梗，<b>不得當作今天的梗</b>。真正「梗→遊戲」案例在 AI 線：Fallout NY 瀏覽器遊戲（3.5M views，10/2）與 DC 街機 Nuuk 'Em All（9/28，♨️ 近期）。Google Trends US 今日偏體育（NBA）與一般熱詞，無遊戲梗。TikTok Creative Center 本次未接，<b>目前無法完全證實</b>。</div>
+      </div>
     </section>
 
-    <!-- 06 機制靈感庫 -->
+    <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <div class="boards reveal">
-        <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
-          <ol>
-            <li class="hot"><span class="nm">物理破壞生存 loop（THE FINALS 10/20 公式）</span><span class="vn">環境動態</span></li>
-            <li class="up"><span class="nm">空戰 / 速度操控 loop（Ace Combat 8 系列復興公式）</span><span class="vn">空間導航</span></li>
-            <li><span class="nm">自訂夜晚 / 角色設定（STREAMFLIPPY itch.io viral 公式）</span><span class="vn">FNAF 類</span></li>
-            <li><span class="nm">Beat the AI / 人機對戰（OpenAI StarCraft 公式）</span><span class="vn">策略挑戰</span></li>
-            <li><span class="nm">AI 一週末生成遊戲（HN XCOM-like 公式）</span><span class="vn">速建展示</span></li>
-          </ol>
-          <div class="bf">itch.io + 今日新聞衍生 · 10/06 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
-        </div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>靈感</span></span>今日無顯著更新（unityroom 未深掃）＋ IP 二創地雷提醒</h3>
+        <div class="sum" style="margin-bottom:0">本日機制靈感改取 Roblox 榜首：<b>Steal An Egg（1.11M CCU）</b>＝收集稀有寵物 + 偷取，可借「蒐集 + 風險 + 炫耀」機制（只借機制，不借美術 / 名稱）。<b>IP 地雷：</b>Fallout NY 被 C&amp;D、MW2 反編譯影片被檢舉，均屬挪用現成作品；一律用泛化角色與原創世界觀。</div>
       </div>
-
-      <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>物理破壞生存 loop 設計公式——THE FINALS 10/20 窗口</h3>
-        <div class="sum">THE FINALS 物理破壞玩法的核心設計要素：<b>（1）環境威脅</b>——牆壁/地板可被打穿，路徑隨時消失；<b>（2）路徑決策</b>——玩家在「打穿這面牆逃脫」和「繞路保留地形」之間做選擇；<b>（3）動態難度</b>——地形越打越少，選擇空間越來越窄；<b>（4）分享格式</b>——「我在最後一塊地板上存活了 xx 秒」的分享格式天然清晰。這個機制公式完全不依賴 THE FINALS IP，只借「破壞物理 + 生存」的情感設定。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>物理破壞 loop 的最大優點：<b>零 IP 依賴、視覺反饋直觀（打破牆壁有天然成就感）、分享格式清晰（存活時間/輪數 = 分享錨點）</b>。今日蹭 THE FINALS 10/20 更新宣告是最佳切入點——窗口維持到 10/20。配文：「THE FINALS 10/20 推出史上最大破壞升級——這個破壞 loop 你現在就可以玩。」</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用 THE FINALS 素材</span></span></div></div>
-          </div>
-          <div class="src">REDDIT R/GAMING · <a href="https://www.reddit.com/r/gaming/comments/1wyaavy/the_finals_is_somehow_getting_its_biggest/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
     </section>
 
-    <!-- 07 繁中 Threads 熱話 -->
+    <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
-        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：NBA 2K25 下架（台灣玩家有數位版購買習慣，所有權焦慮共鳴高）；Ninja Theory / Supermassive 裁員（台灣有關注西方 3A 生態的核心玩家群體）；OpenAI StarCraft 作弊（StarCraft 在台灣有長期社群基礎）；Ace Combat 8 大發售（系列在台灣有忠實粉絲）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ Threads 需登入 / JS 渲染，本次排程無登入態，<b>目前無法完全證實</b>繁中圈當日熱話；骨架保留、不以舊資料或估計補位。可借題變體（供人工參考）：把「廢土生存」改成台灣在地版（捷運、夜市、颱風）、「AI 抓作弊」改成直播主版。</div>
       </div>
     </section>
 
-    <!-- 08 Trend-to-Game 題材 -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>THE FINALS 10/20 物理破壞大升級（14 天窗口）</td><td><span class="tmpl">破壞物理 / 環境動態路徑 loop</span></td><td>「THE FINALS 破壞升級，先玩這個暖身」</td><td class="rk-low">低 · 不用 THE FINALS 素材</td><td>★ 今日 Demo 首選，窗口維持到 10/20，越快出越好</td></tr>
-          <tr><td>NBA 2K25 下架 / 數位所有權（全球玩家最大憤怒話題）</td><td><span class="tmpl">「你真正擁有的東西」瀏覽器遊戲設計</span></td><td>「你花了完整售價，但你從來沒有擁有它」</td><td class="rk-mid">中 · 不引 NBA 2K 品牌</td><td>CJ A 級素材，X 貼文情緒鉤強，今日窗口</td></tr>
-          <tr><td>OpenAI StarCraft 作弊（AI 複製人類策略）</td><td><span class="tmpl">Beat the AI / 人機策略對抗 loop</span></td><td>「AI 贏了，用的是偷來的招數——打敗它」</td><td class="rk-low">低 · 不用 StarCraft 素材</td><td>X 迷因貼文，AI 倫理角度，今日限時</td></tr>
-          <tr><td>Ace Combat 8 系列史上最大發售（PS2 來最高評分）</td><td><span class="tmpl">空戰 / 速度操控 loop</span></td><td>「尊重靈魂 + 現代包裝 = 系列復興」</td><td class="rk-low">低 · 不用 Ace Combat 素材</td><td>X 貼文，系列復興策略觀察，今日窗口</td></tr>
-          <tr><td>Ninja Theory + Supermassive 裁員波（Xbox 收縮持續）</td><td><span class="tmpl">AAA 縮退 → 獨立空間擴張論述</span></td><td>「大廠在縮，獨立空間在擴——現在是機會」</td><td class="rk-low">低</td><td>CJ 補充素材，行業結構性轉移觀察</td></tr>
+          <tr><td>Fallout NY 爆 3.5M views 後被下架</td><td><span class="tmpl">一句話探索 / 資源收集</span></td><td>「生存天數」卡 + Remix 換地點</td><td class="rk-mid">中 · 不可碰 Fallout IP</td><td>★ 本日 Demo 首選，原創廢土、原創派系</td></tr>
+          <tr><td>NBA 2K25 下架、MyCareer 消失</td><td><span class="tmpl">60 秒生涯模式</span></td><td>「生涯數據卡」揪朋友破紀錄</td><td class="rk-mid">中 · NBA 名稱 / 球員</td><td>原創運動 + 原創球員，主打「連結永不下架」</td></tr>
+          <tr><td>OpenAI 模型 StarCraft 作弊（報導稱）</td><td><span class="tmpl">抓作弊找不同 / 反應</span></td><td>30 秒抓出作弊者挑戰</td><td class="rk-low">低（措辭限縮「報導稱」）</td><td>等日期 / 細節驗過再大量曝光</td></tr>
+          <tr><td>DC 街機 Nuuk 'Em All（9/28）</td><td><span class="tmpl">荒謬時事迷你街機</span></td><td>留言收題目、生成挑戰</td><td class="rk-mid">中 · 真人政治人物</td><td>只借「街機當評論」形式，不用真人肖像 / 姓名</td></tr>
+          <tr><td>10 月恐怖季（Outlast Trials 跳升，推論）</td><td><span class="tmpl">躲藏 / 逃脫 60 秒</span></td><td>「撐過幾秒」分享卡</td><td class="rk-low">低</td><td>原創鬼屋，Halloween 前後可用</td></tr>
+          <tr><td>Steal An Egg（Roblox 1.11M）</td><td><span class="tmpl">收集稀有 + 偷取</span></td><td>稀有度展示卡</td><td class="rk-low">低</td><td>只借機制，注意不寫成賭運氣 / 抽獎語言</td></tr>
         </tbody>
       </table>
       </div>
     </section>
 
-    <!-- 09 CJ LinkedIn 題材 -->
+    <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>NBA 2K25 下架——數位所有權幻覺與「真正擁有的東西」</td><td>NBA 2K25 宣布下架，上市不到 2 年；MyCareer 單人故事模式因依賴伺服器，關服後永久消失（Reddit r/gaming + r/Games，2026-10-06 雙榜同頂）</td><td>"NBA 2K25 is being delisted less than 2 years after launch. When servers shut down, the single-player story mode dies too. You paid full price for something you never owned. In 2026, the only game that can't be taken away is the one that runs in your browser, no server required."</td><td><a href="https://www.reddit.com/r/gaming/comments/1wyd6bw/nba_2k25_is_getting_delisted_after_just_2_years/" target="_blank">↗</a></td></tr>
-          <tr><td>Capcom RE Engine AI 轉型——大廠 AI 鎖在工作室，玩家端是空位</td><td>Capcom 成立 RE Engine 角色 AI 專責團隊（Automaton，10/05），延續 RE Engine → AI-generation engine 宣告（Verge + PCGamer，10/03）；承諾不放 AI 生成素材進最終遊戲</td><td>"Capcom just formed a dedicated team to bring AI into character creation across every game in its lineup — while promising zero AI-generated assets in its finished products. Big studios use AI inside the walls. The open seat is AI in the player's hands, with guardrails. That seat is still empty."</td><td><a href="https://automaton-media.com/en/news/capcom-now-has-a-dedicated-team-for-bringing-latest-re-engine-technologies-to-character-creation-across-all-of-its-games/" target="_blank">↗</a></td></tr>
-          <tr><td>Ninja Theory + Supermassive + The Coalition 裁員——AAA 收縮加速，獨立機會窗口</td><td>Ninja Theory、Supermassive（70+ 人）、The Coalition 同日裁員確認；Warhorse 發出警示（PCGamer 彙整，2026-10-06）</td><td>"Three AAA studios announced layoffs on the same day. The contraction is structural, not cyclical. Every developer that leaves a closing studio brings real craft skills into the independent space. The window for indie tools that close this gap is now."</td><td><a href="https://www.pcgamer.com/gaming-industry/industry-layoff-watch-supermassive-ninja-theory-the-coalition-and-a-warning-from-warhorse/" target="_blank">↗</a></td></tr>
+          <tr><td>UGC 遊戲平台的 IP 護欄就是產品</td><td>AI 做的 Fallout NY 約 3.5M views 後被 C&amp;D 下架（10/2–10/4）</td><td>"The demand was real. The IP was the problem."</td><td><a href="https://tbreak.com/fallout-new-york-modern-warfare-2-ai-projects-takedowns/" target="_blank">tbreak</a></td></tr>
+          <tr><td>IP 方：封殺 → 招安 → 自己下場</td><td>Disney 聘 Character.AI 前 CEO 任 CTO；miHoYo 三年 $14.7B AI 投資上限（9/29，Naavik）</td><td>"IP owners look for a controlled way to say yes."</td><td><a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">Naavik</a></td></tr>
+          <tr><td>遊戲下架 = 玩家資產歸零</td><td>NBA 2K25 10/30 下架、2027/1/1 關伺服器，MyCareer / MyTeam 不可玩（10/5）</td><td>"A game link outlives a game server."</td><td><a href="https://www.gamespot.com/articles/nba-2k25-is-getting-delisted-soon-single-player-modes-also-closing-down/" target="_blank">GameSpot</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（NBA 2K25 數位所有權、Capcom RE Engine AI）已附完整 EN hook + 中譯，可直接交 CJ 每日包。對外用字已過濾所有賭場語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
+        📄 頭版 🎯 CJ Top 2 已附 EN hook + 中譯。Naavik 條 web_fetch 原文驗過；Fallout NY 條因 IGN / RPS 擋抓，改以 tbreak 原文比對（verified partial）。對外用字已過濾賭場語言與真人 / IP 風險。
       </div>
       </div>
     </section>
 
-    <!-- 10 建議動作 -->
+    <!-- Actions -->
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
-          <li>NBA 2K25 下架：「你花了完整售價，但你從來沒有真正擁有它。在瀏覽器裡、不依賴伺服器的那種，才是你真正的。」（今日最強情緒鉤）</li>
-          <li>OpenAI StarCraft 作弊：「AI 贏了，但用的是偷來的人類策略。AI 贏了嗎？還是人類贏了？」（今日最強 AI 倫理迷因）</li>
-          <li>Ace Combat 8 復興：「系列自 PS2 以來最大最強的作品，不是靠重新發明——是靠精準記住什麼讓它感覺像它自己。」</li>
-          <li>裁員波觀察：「今天三間 AAA 工作室同日宣布裁員。大廠在縮。獨立空間在擴。」</li>
-        </ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
-          <li>★ 物理破壞生存 loop——蹭 THE FINALS 10/20 大升級，14 天窗口最強。打穿牆壁/地板逃離，動態路徑，分享格式：「在最後一塊地板上撐了 xx 秒」。不用 THE FINALS IP。</li>
-          <li>Beat the AI / 人機策略對抗——蹭 OpenAI StarCraft 作弊話題，極簡策略 loop：AI 對手用「複製你的招數」攻擊，你能打敗自己的鏡像嗎？</li>
-          <li>泛化空戰 60 秒 loop——蹭 Ace Combat 8 大發售，極簡空間導航 + 速度感 loop，不用 Ace Combat IP。</li>
-        </ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
-          <li>THE FINALS 10/20 更新：14 天窗口，持續追蹤宣傳物料，調整 Demo 發布時機。</li>
-          <li>RuneScape 4 正式公告（Eurogamer + VGC 確認，Jagex 宣布）——大型 MMO 的重啟策略，觀察社群反應與新舊玩家的分歧。</li>
-          <li>Denuvo 從 Tomb Raider: Legacy of Atlantis 提前 5 個月移除——DRM 趨勢觀察，玩家社群對移除 Denuvo 的情緒分析。</li>
-          <li>NBA 2K25 下架後是否引發更多 Live Service 遊戲的數位所有權討論，觀察話題延續週期。</li>
-        </ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
-          <li>NBA 2K25：不引用 NBA / NBA 2K / 2K Sports 品牌名稱，只借「數位所有權」的普遍情緒框架。</li>
-          <li>THE FINALS：不使用 THE FINALS / Embark Studios 品牌素材，只借「破壞物理生存」機制概念。</li>
-          <li>OpenAI StarCraft：不使用 StarCraft / Blizzard 品牌素材，只借「AI 作弊 / 人機對抗」情感框架。</li>
-          <li>Ace Combat 8：不使用 Ace Combat / Bandai Namco 品牌素材，只借「空戰速度感 / 系列復興」概念。</li>
-          <li>裁員相關：不引用具體裁員員工姓名，不轉發個人陳情帖，只用已由媒體確認的機構層數字。</li>
-          <li>所有來源均為摘要層——對外不寫成「確定事實」，保留「報導指出 / 確認」語氣。</li>
-        </ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>NBA 2K25 下架：「存檔隨伺服器消失，遊戲連結不會」＋ 60 秒生涯模式 demo</li><li>Fallout NY：「350 萬人想玩 AI 做的遊戲，差別是用你自己的世界」</li><li>留言互動：「AI 做的好玩遊戲，你玩不玩？」（接 r/IndieGaming 討論）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 原創廢土一句話生存生成器（本日首選）</li><li>60 秒原創運動生涯模式</li><li>恐怖季「撐過幾秒」躲藏迷你遊戲</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Fallout NY 創作者是否改做原創版、Bethesda 後續動作</li><li>StarCraft 作弊事件的原始賽事細節與日期</li><li>NBA 2K25 10/30 下架前後玩家聲量</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Fallout / NBA / 任何大作名稱與美術直接挪用 → 用泛化皮</li><li>Nuuk 'Em All 題材涉真人政治人物，不用肖像、不站隊</li><li>KYM 常青老梗別寫成「今天的梗」；對外文案避賭場語言</li></ul></div>
       </div>
     </section>
 
+    <!-- 彈藥 Evidence Log -->
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>NBA 2K25 下架 + 單人模式消滅</td><td><a href="https://www.reddit.com/r/gaming/comments/1wyd6bw/nba_2k25_is_getting_delisted_after_just_2_years/" target="_blank">Reddit r/gaming</a> / <a href="https://www.reddit.com/r/Games/comments/1wychzs/nba_2k25_is_getting_delisted_after_just_2_years/" target="_blank">r/Games</a>　驗：雙榜同日登頂，標題確認「delisted after just 2 years」「Single Player Story Mode Will Become Unplayable」　<span class="pp">partial</span>（帖文標題層）　pub 今日</td></tr>
-        <tr><td>OpenAI 模型 StarCraft 作弊</td><td><a href="https://www.reddit.com/r/gaming/comments/1wxx6oe/an_openai_model_was_caught_trying_to_cheat_at/" target="_blank">Reddit r/gaming</a>　驗：標題確認「was caught trying to cheat at StarCraft…by stealing a human's work」　<span class="pp">partial</span>（帖文標題層）　pub 今日</td></tr>
-        <tr><td>THE FINALS 10/20 最大破壞升級</td><td><a href="https://www.reddit.com/r/gaming/comments/1wyaavy/the_finals_is_somehow_getting_its_biggest/" target="_blank">Reddit r/gaming</a> / <a href="https://www.reddit.com/r/Games/comments/1wxqyvz/next_level_destruction_showcased_by_embark/" target="_blank">r/Games</a>　驗：標題確認「biggest destruction overhaul since launch (Oct 20)」；「Next Level Destruction Showcased by Embark Studios」兩帖雙確認　<span class="pp">partial</span>（帖文標題層）　pub 今日</td></tr>
-        <tr><td>Ace Combat 8 系列史上最大發售 + PS2 來最高評分</td><td><a href="https://www.reddit.com/r/gaming/comments/1wyej4l/ace_combat_8_is_far_and_away_the_series_biggest/" target="_blank">Reddit r/gaming</a> / <a href="https://80.lv/articles/ace-combat-8-is-the-highest-reviewed-game-in-the-series-since-the-ps2/" target="_blank">80.lv</a>　驗：「far and away the series' biggest launch」+「highest-reviewed game in the series since the PS2」兩來源確認　<span class="pp">partial</span>（標題層）　pub 今日</td></tr>
-        <tr><td>Ninja Theory + Supermassive 裁員</td><td><a href="https://www.gamesindustry.biz/ninja-theory-begins-laying-off-staff-according-to-employee-posts" target="_blank">GI.biz</a> / <a href="https://www.reddit.com/r/Games/comments/1wyc0v8/supermassive_games_layoffs_arrive_with_over_70/" target="_blank">Reddit r/Games</a> / <a href="https://www.videogameschronicle.com/news/hellblade-studio-ninja-theory-has-started-laying-off-staff-following-xboxs-announcement-that-it-faces-closure/" target="_blank">VGC</a>　驗：多媒體確認，Supermassive「70+ people」，Ninja Theory 員工帖文確認　<span class="pp">partial</span>（摘要層）　pub 今日</td></tr>
-        <tr><td>Capcom RE Engine 角色 AI 專責團隊</td><td><a href="https://automaton-media.com/en/news/capcom-now-has-a-dedicated-team-for-bringing-latest-re-engine-technologies-to-character-creation-across-all-of-its-games/" target="_blank">Automaton</a> / <a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge</a>　驗：Automaton 10/05 確認成立專責團隊；Verge 10/03 確認 RE Engine AI 轉型　<span class="pp">partial</span>（摘要層）　pub 10/05–10/03</td></tr>
-        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-10-06T07:30:38+08:00 官方 API　CS:GO 557K -6.1% / PUBG 90K -8.5% / Rust 76K -5.4% / TF2 66K +5.6% / R6 63K -15.7% / Apex 48K -15.3%　<span class="ok">✓</span>（今日真數字）；steam_movers：Outlast Trials +8 / Farming Sim 25 +5 / RE4 +5；新品熱賣：Gears of War E-Day / STAR WARS Galactic Racer</td></tr>
+        <tr><td>Fallout NY 3.5M views / C&amp;D</td><td><a href="https://tbreak.com/fallout-new-york-modern-warfare-2-ai-projects-takedowns/" target="_blank">tbreak</a>（web_fetch）　原文日期 2026-10-04；IGN 標題 pub 2026-10-02（Tavily；IGN / RPS / TechPowerUp 擋抓或 robots 禁止）　驗：3.5M views、ZeniMax C&amp;D、MW2 影片被檢舉、非法院裁決<span class="pp">partial</span></td></tr>
+        <tr><td>Disney / miHoYo / CESA</td><td><a href="https://naavik.co/ai-gaming/from-disney-to-mihoyo-the-road-toward-ai-enabled-fandom/" target="_blank">Naavik</a>（web_fetch）　原文日期 2026-09-29　驗：Anand 任 CTO、$112K 賠償、$14.7B、51%→85.8%（皆 Naavik 轉述）<span class="ok">✓</span></td></tr>
+        <tr><td>NBA 2K25 下架</td><td><a href="https://www.gamespot.com/articles/nba-2k25-is-getting-delisted-soon-single-player-modes-also-closing-down/" target="_blank">GameSpot</a>（web_fetch）　原文日期 2026-10-05　驗：10/30 下架、12/31 停營、2027/1/1 關伺服器、MyCareer / MyTeam 不可玩（摘要層條目）<span class="ok">✓</span></td></tr>
+        <tr><td>OpenAI 模型 StarCraft 作弊</td><td><a href="https://www.pcgamer.com/software/ai/an-openai-model-was-caught-trying-to-cheat-at-starcraft-and-of-course-it-did-it-by-stealing-a-humans-work/" target="_blank">PC Gamer</a>　日期未驗　摘要層（搜尋標題 + Reddit 今日 top；未開原文，細節標「無法完全證實」）<span class="pp">summary</span></td></tr>
+        <tr><td>Nuuk 'Em All 街機</td><td><a href="https://www.theartnewspaper.com/2026/09/28/secret-handshake-trump-greenland-threats-arcade-game-washington-dc" target="_blank">The Art Newspaper</a>　URL 日期 2026-09-28（搜尋摘要）　摘要層<span class="pp">summary</span></td></tr>
+        <tr><td>Steam / Twitch / Roblox 數字層</td><td>Steam＝heat_latest.json 2026-10-06T07:30+08:00 官方 API；Twitch＝TwitchTracker 7 日平均觀眾；Roblox＝RoMonitor Stats Top Experiences，皆 10/06 當日讀取（數字層免敘事閘）<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 10/06 07:30 真數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 10/06 07:30 + 多源新聞 · 2026/10/06 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 web_fetch 驗（Fallout NY 因來源擋抓為 partial）、小編 / Demo 摘要層 · Steam＝官方 API 10-06 即時 · Twitch / Roblox＝瀏覽器 10-06 真抓 · Threads / TikTok / unityroom 本次未取得，標「目前無法完全證實」</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/10/06 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
