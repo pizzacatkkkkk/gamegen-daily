@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -227,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 07 · 彈藥工廠模式 · Steam / 產業媒體 · 來源 20+ 站</span>
+        <span class="dateflag">2026 / 10 / 07 · 彈藥工廠模式 · Steam / Twitch / Roblox 真數字 · 來源 20+ 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -235,10 +237,9 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>Capcom 宣布下一版 RE Engine 將成為「AI 生成遊戲引擎」——同一週，Ninja Theory、Supermassive、Nerial 三家工作室接連裁員。</b>Capcom 在 2026-10-03 的 Capcom Open Conference RE 中揭示計劃：RE Engine 未來版本將使開發者「與 AI 共同製作遊戲」，應用在 QA、除錯、資料處理等工作流；官方同時強調「AI 生成的素材不會直接放入遊戲」（PCGamer / The Verge / Polygon / IGN / 80.lv 多家報導，三天內皆原文引述）。</p>
-        <p>同一週（皆 pub 2026-10-06），Hellblade 工作室 Ninja Theory 在 Xbox 宣布關閉計劃後開始裁員員工（Eurogamer / VGC / GamesIndustry）；Supermassive Games 裁員超過 70 人（Reddit / PCGamer）；Reigns 開發商 Nerial 宣布進入「休眠模式」（GameDeveloper）。</p>
-        <p>對 GameGen 的訊號有兩層：<b>① 大廠的 AI 鎖在生產工作流、不到玩家手上</b>——Capcom 用 AI 提升內部效率，但產品仍然只有大廠能出；<b>② 工作室縮水 = 獨立創作窗口擴大</b>。<span class="hl">GameGen 的位置是「玩家端 AI 創作」</span>——與 Capcom RE Engine 互補，而非競爭。</p>
-        <div class="pull">▸ 今天就能蹭：CJ 線以「大廠 AI 鎖在工作室 vs 玩家端 AI 創作」為切角；X 線用 RuneScape 六指角色道歉（今日最好笑 AI 翻車）做互動；Demo 選「30 秒空戰對決生成器」蹭 Ace Combat 8 話題熱度。</div>
+        <p><b>「AI 做遊戲」這週撞上兩面牆：IP 的牆與社群的牆。</b>10/6 一天內：<span class="hl">AI 協助移植到 WebAssembly 的 GTA V 瀏覽器版上線沒幾小時就被下架</span>（Tom's Hardware）；<span class="hl">Sega 高層向 Nikkei 表示「不會把遊戲的創意面交給 AI」</span>（Kotaku）；而 <span class="hl">Sega 官方 Sonic Discord 開服數小時湧入 5 萬+人</span>，隨即鎖 9 個頻道中的 8 個（VGC）。</p>
+        <p>三條連起來是同一個訊號：<b>AI 讓「做出來」變便宜，但「能不能留在線上」取決於 IP 與社群治理</b>。直接複製大作 = 數小時被下架；大廠把 AI 圈在牆內；Discord 一人潮就失控。GameGen 的位置很清楚：<span class="hl">用泛化角色、當天梗、內建 Discord 分享與審核的小遊戲</span>——速度站在 AI 這邊，安全站在 IP 與社群治理這邊。</p>
+        <div class="pull">▸ 今天就能蹭：做一款「Server Launch Panic」——你是剛開服的 Discord 版主，60 秒內分辨玩梗與惡意洗版（泛化吉祥物、不挪 Sonic）＋ 一條 CJ 貼文「AI 讓做遊戲變便宜，真正稀缺的是 IP 安全與社群治理」。</div>
       </div>
 
       <!-- 📰 今日彈藥 頭版 -->
@@ -247,59 +248,52 @@
 
         <div class="ammo-grp l-cj reveal">
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
-
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-upd">🔄 近期（10/3）</span>Capcom 宣布 RE Engine 進化為 AI 生成遊戲引擎：大廠 AI 鎖在工作室，玩家端是空位<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>新聞事實：</b>Capcom Open Conference RE 2026（pub 2026-10-03）：Capcom 揭示 RE Engine 下一版將使公司「與 AI 共同製作遊戲」；AI 應用涵蓋 QA、除錯、資料處理等開發工作流；官方強調「AI 生成素材不會直接放入最終遊戲」。報導來源：Polygon（0.61 Tavily 分）、The Verge（0.52）、PCGamer（0.49）、IGN（0.46）、80.lv。</div>
-            <div class="ln"><b>GameGen 角度：</b><b>大廠的 AI 投入是生產效率工具，產品仍在工作室控制下。</b>「玩家端 AI 創作」的空位沒有人填——GameGen 的 Trend-to-Game 讓玩家用一句話生成原創遊戲，這是 Capcom RE Engine 不打算做的事。互補，而非競爭；B2B 對話切角：「大廠 AI 化加速，玩家端創作工具是下一個缺口」。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Capcom just called its next engine 'an AI-generation game engine.' That's AI inside the studio. GameGen is AI in the player's hands. Both can be true — and the second one scales faster."<br><span style="color:var(--ink-dim)">中譯：Capcom 宣布下一版引擎將是「AI 生成遊戲引擎」。這是 AI 進入工作室。GameGen 是 AI 進入玩家的手。兩者可以並存——而後者規模更快。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge ↗</a>　pub 2026-10-03　verified ✓（多家原文引述 Capcom 官方聲明）</div>
-          </div>
-
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA V 被 AI 協助移植進瀏覽器，上線數小時就下架——「做得出來」不等於「留得住」</div>
+            <div class="ln"><b>新聞事實：</b>Tom's Hardware 10/6 報導：GTA V 的 WebAssembly 瀏覽器版（據稱用 AI 協助）上線後數小時內就被下架，PlayGTA5.com 之後連不上（Cloudflare 1014），後來被換成不相干的頁面；原文<b>未說明是誰要求下架</b>，開發者身分也不明（Tom's Hardware，pub 2026-10-06）。同週 AI 生成的 Fallout: New York 瀏覽器遊戲也被 Bethesda 發 C&amp;D（♻️ 10/2 已用過，僅作背景）。</div>
+            <div class="ln"><b>GameGen 角度：</b>AI 把「複製大作」的成本壓到近乎零，但結果是<b>數小時內消失</b>——沒有累積任何社群、分享或留存。GameGen 的差異在<b>設計上就不碰 IP</b>：用泛化角色把「當天的梗」做成可分享、可 remix 的遊戲，價值留在創作者與玩家手上，而不是等法務信。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> &quot;AI can clone a AAA game into a browser tab. It lasted hours. Speed to build isn't the moat — building something you're allowed to keep, and players want to share, is.&quot;<br><span style="color:var(--ink-dim)">中譯：AI 可以把 AAA 大作複製進瀏覽器分頁，結果只撐了幾小時。做得快不是護城河——做出你能保有、玩家又想分享的東西才是。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.tomshardware.com/video-games/pc-gaming/gta-v-playable-in-browser-immediately-nuked-unofficial-webassembly-port-built-with-ai-gets-taken-down-within-hours-of-going-live" target="_blank">Tom's Hardware ↗</a>　pub 2026-10-06　verified ✓（日期、WebAssembly / AI、數小時下架；<b>下架方未證實</b>）</div></div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新（10/6）</span>Arc Raiders 與 THE FINALS 宣布改編電視劇和電影：遊戲 IP 娛樂媒體價值升高<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz / Eurogamer / GameDeveloper（pub 2026-10-06）：Arc Raiders 和 THE FINALS 與 Backrooms 共同製片人合作取得電視劇和電影改編授權；THE FINALS 同時預告 10/20 最大規模毀滅系統改版（Reddit r/gaming 今日 top）。</div>
-            <div class="ln"><b>GameGen 角度：</b>「遊戲 → 電視劇 → 電影」的媒體改編鏈正在加速；兩款遊戲的共同公式是<b>免費玩 + 病毒式傳播機制 + 玩家社群</b>。UGC 遊戲平台如果能讓玩家創作的遊戲被分享、被發現，等同在培養下一批可改編的 IP——這是 B2B 方向「IP 授權 / 品牌社群」對話的開場。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Arc Raiders and The Finals just got TV and film deals. Formula: free-to-play + viral mechanics + community = IP worth adapting. User-created games can walk the same path."<br><span style="color:var(--ink-dim)">中譯：Arc Raiders 和 THE FINALS 剛取得電視劇和電影改編權。公式：免費玩 + 病毒機制 + 社群 = 值得改編的 IP。UGC 遊戲也能走這條路。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/arc-raiders-and-the-finals-are-getting-tv-series-and-film-adaptations" target="_blank">GamesIndustry ↗</a>　pub 2026-10-06　verified ✓</div>
-          </div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Sega：「不會把遊戲的創意面交給 AI」——大廠把 AI 圈在牆內，消費端是空位</div>
+            <div class="ln"><b>新聞事實：</b>Sega 資深執行官 Tsuyoshi Saito 對 Nikkei 表示對 AI 用於開發流程「非常謹慎」、「不會把遊戲創意面交給 AI」；AI 目前用在出版與公司部門及發想商業點子；起因是 Crazy Taxi: World Tour 的 Steam AI 揭露引發混淆，後釐清 AI 僅用於參考素材、未用於成品資產（Kotaku，pub 2026-10-06，引 Nikkei 機翻）。對照：Capcom 10/3 才說要「與 AI 一起做遊戲」（♻️ 已用過，僅作對照）。</div>
+            <div class="ln"><b>GameGen 角度：</b>大廠在「AI 放不放進創意」上立場分裂，且<b>共通點是 AI 留在工作室內部</b>。沒人在服務「玩家自己當創作者」這一側。GameGen 不替大廠做創意，而是讓創作者與社群自己拿 AI 做小遊戲，並明說是 AI 生成。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> &quot;Sega won't hand creativity to AI. Capcom wants to build games with it. Both keep it inside the studio. The open seat is AI in the players' hands.&quot;<br><span style="color:var(--ink-dim)">中譯：Sega 不把創意交給 AI，Capcom 想與 AI 一起做遊戲。兩家都把 AI 留在工作室裡。空位在於把 AI 交到玩家手上。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://kotaku.com/sega-genai-ai-crazy-taxi-world-tour-assets-tsuyoshi-saito-interview-2000740914" target="_blank">Kotaku ↗</a>　pub 2026-10-06　verified ✓（Saito 職稱 / 引言 / AI 用途）</div></div>
         </div>
 
         <div class="ammo-grp l-ed reveal">
           <div class="gt">📣 小編 · X 線　TOP 3</div>
-
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新（10/6）</span>RuneScape RuneFest 宣傳圖驚現 AI 生成六指角色，Jagex 公開道歉<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>PCGamer（pub 2026-10-06）：RuneScape RuneFest 活動上一張宣傳圖出現 AI 生成的六指角色，在社群引發廣泛嘲笑；Jagex 公開道歉，表示素材來自「信任的外部合作夥伴」製作的預告片；GamesIndustry.biz 同日跟進報導。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "RuneScape just debuted an AI-generated character with SIX FINGERS at RuneFest. Their response: 'trusted external partner.' Your AI game character: how many fingers does it have? 👇"<br><span style="color:var(--ink-dim)">中譯：RuneScape 在 RuneFest 發布了一個 AI 生成的六指角色。公關：「信任的外部合作夥伴做的」。你的 AI 遊戲角色有幾根手指？👇</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>讓玩家生成自己的角色，按下「AI 隨機化手指數量」按鈕，出分享卡「我的角色有幾根手指？挑戰朋友猜！」互動串。⚠️ 不用 RuneScape / Jagex 名稱或美術。</div>
-            <div class="meta">來源 <a href="https://www.pcgamer.com/games/mmo/runescape-dev-apologises-after-runefest-debut-of-an-ai-generated-six-fingered-character-thats-pretty-hard-to-explain-away/" target="_blank">PCGamer ↗</a>　pub 2026-10-06　verified ✓</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Sega 官方 Sonic Discord 開服數小時進 5 萬人、8/9 頻道被鎖——社群湧入比管理快<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>10/5 晚開服，數小時內 5 萬+人加入；出現性與歧視內容、誤封（有人因說「我喜歡 Super Mario」被封）、全大寫訊息自動刪除；9 個聊天頻道鎖 8 個、開 slow mode，僅 booster 或夠 XP 者可全頻道發言；Sega FAQ 稱此情況對大型伺服器開服「很標準」（VGC，pub 2026-10-06）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "50,000 people joined an official Discord in hours. The mods locked 8 of 9 channels. Fun idea: be the mod for 60 seconds. 👇"　<span style="color:var(--ink-dim)">中譯：5 萬人幾小時湧進官方 Discord，版主鎖了 9 個頻道裡的 8 個。有趣的點子：當 60 秒的版主。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入你的伺服器梗 → 生成「版主恐慌」60 秒小遊戲（分辨玩梗 vs 洗版）→ 「冷靜值」分享卡丟回 Discord 揪人破紀錄（泛化吉祥物，不用 Sonic 任何元素）。</div>
+            <div class="meta">來源 <a href="https://www.videogameschronicle.com/news/segas-newly-launched-sonic-discord-server-is-off-to-a-rough-start-with-questionable-content-bans-and-a-lockdown/" target="_blank">VGC ↗</a>　pub 2026-10-06　摘要層＋fetch 讀過</div>
           </div>
-
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新（10/6）</span>Ninja Theory + Supermassive + Nerial 裁員浪潮：Xbox 關閉觸發連鎖效應<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>多家媒體（pub 2026-10-06）：Hellblade 工作室 Ninja Theory 在 Xbox 宣布關閉計劃後啟動裁員（Eurogamer / VGC / GamesIndustry）；Supermassive Games（Until Dawn 系列）裁員超過 70 人（Reddit r/Games / PCGamer）；Reigns 開發商 Nerial 進入「休眠模式」並裁員（GameDeveloper）。PCGamer 標題稱「本週遊戲業裁員監測：Supermassive、Ninja Theory、The Coalition，以及 Warhorse 示警」。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Ninja Theory. Supermassive. Nerial. Three more studios hit this week. Small teams with AI tools are quietly filling the gap — that's the window GameGen was built for."<br><span style="color:var(--ink-dim)">中譯：Ninja Theory、Supermassive、Nerial。本週又三家工作室中招。靠 AI 工具的小團隊正在悄悄填補空缺——這就是 GameGen 誕生的那個窗口。</span></div>
-            <div class="ln"><b>注意：</b>情感共鳴題材，貼文措辭要共情，不要輕率。角度：「工作室縮水，AI 讓小團隊頂上」而非「大廠活該」。</div>
-            <div class="meta">來源 <a href="https://www.gamesindustry.biz/ninja-theory-begins-laying-off-staff-according-to-employee-posts" target="_blank">GamesIndustry ↗</a>　pub 2026-10-06　verified ✓</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>Escape the Backrooms：騎著迷因熱度，登 PS5 的隔天就是 A24 電影上映<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Game Developer 10/6 co-dev 個案：PC 1.0 於 2025/10/23 出貨（48K 同時在線，為先前紀錄 3 倍）；2026/5/28 登 PS5 / Xbox（A24 Backrooms 電影上映前一天）；至 2026 年 7 月累計 4 百萬玩家；Backrooms 本身為延燒中的舊梗（♨️ 非新梗），新的是這篇個案與「梗 × 上市窗口」的時間差打法（Game Developer，pub 2026-10-06）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A meme + a movie date = a launch window. One Backrooms game hit 4M players riding it. Your meme's window is days, not quarters. 👇"　<span style="color:var(--ink-dim)">中譯：一個梗加一個電影日期就是一個上市窗口。一款 Backrooms 遊戲乘著它拿到 4 百萬玩家。你的梗的窗口是幾天，不是幾季。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入「本週迷因 + 即將上映 / 發布的日期」→ 生成泛化「走廊逃脫」小遊戲，倒數計時卡一起分享。</div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/production/co-dev-case-study-how-blackbird-interactive-and-secret-mode-helped-escape-the-backrooms-ride-the-backrooms-hype-wave" target="_blank">Game Developer ↗</a>　pub 2026-10-06（梗本身♨️）　verified ✓</div>
           </div>
-
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新（10/6）</span>Ace Combat 8 創系列 PS2 時代後最佳首週：飛行戰鬥回來了<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/gaming 今日 top、80.lv（pub 2026-10-06）：Ace Combat 8 是系列 PS2 時代後評分最高作品；Reddit 引述首週銷售為系列最大（詳細數字摘要層，<b>未獨立驗證</b>）；Steam 最受歡迎排名 rank 67（heat_latest.json）。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Ace Combat 8 just had the series' biggest launch since the PS2 era. 20+ years of pent-up aerial combat demand. What if anyone could make their own 30-second dogfight? 👇"<br><span style="color:var(--ink-dim)">中譯：Ace Combat 8 創下系列 PS2 後最佳首週。20 年壓抑的空戰需求一次爆發。如果每個人都能做一款 30 秒空戰對決？👇</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>輸入「你的飛行員代號 + 戰機塗裝顏色」→ 生成 30 秒原創空戰小遊戲 → 出「擊落數 + 存活率」分享卡，附對戰邀請。<b>不使用 Ace Combat / 萬代南夢宮名稱或美術。</b></div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1wyej4l/ace_combat_8_is_far_and_away_the_series_biggest/" target="_blank">Reddit ↗</a> / <a href="https://80.lv/articles/ace-combat-8-is-the-highest-reviewed-game-in-the-series-since-the-ps2/" target="_blank">80.lv ↗</a>　pub 2026-10-06　verified partial（銷售數字未獨立驗證）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>Arc Raiders 與 The Finals 將改編影視——遊戲 IP → 影視的單向流動<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Embark Studios 的《ARC RAIDERS》與《The Finals》將由 Chernin Entertainment 做 TV / 電影改編；該文稱 ARC RAIDERS 全球已售 1,400 萬套（Game Developer，pub 2026-10-05，約 2 天，故標 🔄 非 🆕）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Games become movies after 14M sales. Memes become games in an afternoon. Which pipeline is faster? 👇"　<span style="color:var(--ink-dim)">中譯：遊戲賣到 1,400 萬套才變電影。梗一個下午就能變遊戲。哪條管線比較快？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「你想看哪個梗被改編？」→ 一句話生成該梗的泛化小遊戲 + 「電影海報風」分享卡（不用 Arc Raiders 美術）。</div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/business/arc-raiders-and-the-finals-set-for-tv-and-film-adaptations-from-backrooms-co-producer" target="_blank">Game Developer ↗</a>　pub 2026-10-05　摘要層</div>
           </div>
         </div>
 
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天</span>「30 秒原創空戰對決生成器」——吃下 Ace Combat 8 的話題熱度，零 IP 風險<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>輸入飛行員代號 + 戰機塗裝顏色（不輸入姓名也可隨機）→ 生成 30 秒<b>原創空戰對決</b>迷你遊戲（泛化戰機、原創派系、原創 HUD 感）→ 結束出「擊落 N 架 / 存活 N 秒」分享卡，附「挑戰好友」Remix 鈕。</div>
-            <div class="ln"><b>為何是今天首選：</b>Ace Combat 8 首週創系列新高，說明玩家對「空戰感」的需求積壓多年；這個 demo 直接轉化話題熱度、同時展示 30 秒游戲生成能力。<b>絕不使用 Ace Combat / BANDAI NAMCO 任何名稱、美術、ADFX 機型名稱。</b></div>
-            <div class="meta">綁 <a href="https://www.reddit.com/r/gaming/comments/1wyej4l/ace_combat_8_is_far_and_away_the_series_biggest/" target="_blank">Reddit Ace Combat 8 ↗</a>　模板：一句話空戰對決</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「Server Launch Panic」：你是剛開服的 Discord 版主，60 秒分辨玩梗與洗版<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入社群名 / 梗 → 生成 60 秒迷你遊戲：訊息像彈幕湧進，點「放行」（梗圖 / 玩笑）或「靜音」（洗版 / 惡意），誤封玩家會扣「冷靜值」；結束給排行與分享卡，可一鍵貼回 Discord 揪人 remix 自己社群的版本。</div>
+            <div class="ln"><b>為何是今天首選：</b>綁今天最大的社群事件（Sonic Discord 5 萬人開服）、玩法天生 Discord 原生、Create→Share→Remix 內建；吉祥物用泛化角色，<b>絕不挪用 Sonic / Sega 任何美術或名稱</b>；也自然帶出 GameGen 的審核與 IP 安全賣點。</div>
+            <div class="meta">綁 <a href="https://www.videogameschronicle.com/news/segas-newly-launched-sonic-discord-server-is-off-to-a-rough-start-with-questionable-content-bans-and-a-lockdown/" target="_blank">VGC ↗</a>　模板：反應 / 分類點擊</div>
           </div>
         </div>
       </div>
@@ -311,49 +305,45 @@
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
       <div class="boards reveal">
-
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/06 07:30 快照</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/07 即時</span></div>
           <ol>
-            <li class="down"><span class="nm">Counter-Strike</span><span class="vn">557K ▼6.1%</span></li>
-            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">90K ▼8.5%</span></li>
-            <li class="down"><span class="nm">Rust</span><span class="vn">77K ▼5.4%</span></li>
-            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">66K ▲5.6%</span></li>
-            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">63K ▼15.7%</span></li>
-            <li class="down"><span class="nm">Apex Legends</span><span class="vn">48K ▼15.3%</span></li>
+            <li class="down"><span class="nm">Counter-Strike</span><span class="vn">492K ▼11.6%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">91K ▲1.2%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">70K ▼9.4%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">60K ▼4.9%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">57K ▼14%</span></li>
+            <li class="up"><span class="nm">Wallpaper Engine</span><span class="vn">47K ▲5.6%</span></li>
           </ol>
-          <div class="bf">Steam 官方 API · 10/06 07:30 雷達（今晨快照暫同昨日）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 10/07 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
-
-        <div class="board b-twch">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">前日快照 · 10/06</span></div>
+        <div class="board b-twitch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近 7 天平均觀眾</span></div>
           <ol>
-            <li class="hot"><span class="nm">Just Chatting</span><span class="vn">271K</span></li>
-            <li><span class="nm">Grand Theft Auto V</span><span class="vn">112K</span></li>
-            <li><span class="nm">League of Legends</span><span class="vn">81.0K</span></li>
-            <li><span class="nm">VALORANT</span><span class="vn">77.6K</span></li>
-            <li><span class="nm">World of Warcraft</span><span class="vn">73.4K</span></li>
-            <li class="hot"><span class="nm">AION 2</span><span class="vn">55.4K</span></li>
+            <li><span class="nm">Just Chatting</span><span class="vn">271K</span></li>
+            <li class="hot"><span class="nm">Grand Theft Auto V</span><span class="vn">110K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">81.2K</span></li>
+            <li><span class="nm">VALORANT / Counter-Strike</span><span class="vn">73.2K / 73.2K</span></li>
+            <li class="hot"><span class="nm">AION 2</span><span class="vn">70.1K</span></li>
+            <li><span class="nm">Fortnite</span><span class="vn">52.2K</span></li>
           </ol>
-          <div class="bf">TwitchTracker 前日快照（10/06）供參 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+          <div class="bf">TwitchTracker · 10/07 瀏覽器真抓 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
         </div>
-
         <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">前日快照 · 10/06</span></div>
+          <div class="bh"><span>ROBLOX 正在玩</span><span class="metric">Top Playing Now</span></div>
           <ol>
-            <li class="hot"><span class="nm">Steal An Egg</span><span class="vn">1.11M</span></li>
-            <li><span class="nm">Brookhaven RP</span><span class="vn">332K</span></li>
-            <li><span class="nm">Murder Mystery 2</span><span class="vn">208K</span></li>
-            <li><span class="nm">Dandy's World</span><span class="vn">176K</span></li>
-            <li><span class="nm">Adopt Me!</span><span class="vn">163K</span></li>
-            <li><span class="nm">99 Nights in the Forest</span><span class="vn">160K</span></li>
+            <li class="hot up"><span class="nm">偷一顆蛋（頁面中文名）</span><span class="vn">1.1M</span></li>
+            <li><span class="nm">布魯克海文 RP</span><span class="vn">314.4K</span></li>
+            <li><span class="nm">謀殺之謎 2</span><span class="vn">195.3K</span></li>
+            <li><span class="nm">收養我吧!</span><span class="vn">187.2K</span></li>
+            <li><span class="nm">丹迪的世界 [測試版]</span><span class="vn">152.5K</span></li>
+            <li><span class="nm">森林中的 99 個夜晚</span><span class="vn">145.4K</span></li>
           </ol>
-          <div class="bf">RoMonitor Stats 前日快照（10/06）供參 · <a href="https://romonitorstats.com/" target="_blank">原始 ↗</a></div>
+          <div class="bf">Roblox Charts · 10/07 瀏覽器真抓（中文介面名稱）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
         </div>
-
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ 本次雷達資料截至 2026-10-06T07:30+08:00（heat_latest.json）；Twitch / Roblox 為前日快照供參，<b>今日新數字目前無法完全證實</b>。<b>GameGen 觀察：</b>Steam 最受歡迎榜中 Ace Combat 8（rank 67）、WARDOGS（rank 6 新鮮入榜）為今日最值得關注的新動向。Roblox 前日榜首 Steal An Egg（1.11M）遠超第二名 3 倍，「收集 + 偷取」loop 仍是 UGC 最強機制訊號之一。⚠️ Steam 漲跌幅為與前一份快照比，時段差異可能造成整體偏負。
+        ✅ 本機 heat-radar 10/07 07:30 已跑成功；Steam 為官方 API 真數字。Twitch / Roblox 為本次瀏覽器直接抓取的真數字。Twitch 無昨日基準，故只列 7 天平均、不寫漲跌。
       </div>
     </section>
 
@@ -361,45 +351,34 @@
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>新品熱賣</span></span>Gears of War: E-Day、STAR WARS: Galactic Racer、WARDOGS 同列 Steam 熱賣</h3>
-        <div class="sum" style="margin-bottom:0">Steam New &amp; Trending 熱賣欄（heat_latest.json）：<b>Gears of War: E-Day</b> 和 <b>STAR WARS: Galactic Racer</b> 為本期明顯新進者；<b>WARDOGS</b> 同時出現在熱賣榜和最受歡迎 rank 6（前一期 rank 未記錄，無暴衝 % 數字可驗，<b>目前無法完全證實具體漲幅</b>）。<b>Dressmaker</b>（Steam rank 59）以時尚裁縫主題出現在熱賣欄，屬罕見品類。
-        <div class="obs" style="margin-top:10px"><span class="lbl">GameGen 觀察：</span>WARDOGS 的熱賣 + 高人氣並列，說明「現代戰術射擊 / 犬型兵器」題材正在上升；Dressmaker 出現在熱賣 = 時尚 / 設計 loop 仍有利基受眾。Outlast Trials 排名跳升（34→26，+8）持續，10 月恐怖季效應可能延伸至本週。<b>Steam 的 Gears of War: E-Day 已有新 patch 修正「巨型嘔吐青蛙」錯誤代碼（GameSpot pub 10/06）</b>——bug patch 後可能引發舊玩家回流。</div></div>
-      </div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>AION 2 單日在 Steam 排名從 41 跳到 5，Twitch 7 天平均 70.1K 同步印證</h3>
+        <div class="sum">Steam 排名跳動榜：<b>AION 2 第 41 → 第 5（+36 名）</b>；同時 TwitchTracker 7 天平均觀眾 <b>70.1K，排第 7</b>，兩個獨立來源方向一致。其他跳升：TBH: Task Bar Hero 72→63、Bongo Cat 74→67（皆為桌面 / 工作列類）。今日 Steam 真·日比<b>沒有款過 ≥15% 旗標</b>（最大跌幅 Team Fortress 2 −14%、CS −11.6%），無新進榜。AION 2 的實際 CCU 數字本次資料為 0，<b>目前無法完全證實</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>AION 2 是「新作上市熱度」不是梗，對 Trend-to-Game 題材價值有限；真正可借的是<b>「工作列 / 桌面常駐」</b>這個品類持續上升（TBH、Bongo Cat），見早期訊號。</div>
+        <div class="footrow"><div class="scores">
+          <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+        </div><div class="src">STEAM 官方 API · 10/07 即時；TwitchTracker 10/07 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div></div></article><div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ Roblox 黑馬新進榜需昨日快照比對，本次無基準、<b>目前無法完全證實</b>；僅在早期訊號箱列出今日榜單中的「偷蛋」同模板群。</div>
     </section>
 
     <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <div class="boards reveal">
-        <div class="board b-steam">
-          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
-          <ol>
-            <li class="hot"><span class="nm">Pogo Gnom</span><span class="vn">新品</span></li>
-            <li><span class="nm">Starbloom Ranch</span><span class="vn">新品</span></li>
-            <li><span class="nm">Night Study</span><span class="vn">新品</span></li>
-            <li><span class="nm">Stolemates</span><span class="vn">新品</span></li>
-            <li><span class="nm">Drone n Gone</span><span class="vn">新品</span></li>
-            <li><span class="nm">Bering Tonnage</span><span class="vn">新品</span></li>
-          </ol>
-          <div class="bf">Steam 新品榜 · 10/06 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
-        </div>
-        <div class="board b-itch">
-          <div class="bh"><span>ITCH.IO</span><span class="metric">html5 · popular / meme</span></div>
-          <ol>
-            <li class="hot"><span class="nm">Rulehouse</span><span class="vn">html5</span></li>
-            <li><span class="nm">Bite Your Tongue</span><span class="vn">html5</span></li>
-            <li><span class="nm">The Commander Can't Communicate</span><span class="vn">html5</span></li>
-            <li><span class="nm">Next Station: The Moon</span><span class="vn">html5 demo</span></li>
-            <li><span class="nm">Three Nights Lobotomized</span><span class="vn">meme</span></li>
-            <li><span class="nm">Jest Messters</span><span class="vn">meme</span></li>
-          </ol>
-          <div class="bf">itch.io · 10/06 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
-        </div>
-      </div>
-      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        <b>GameGen 觀察：</b>Steam 新品中 Starbloom Ranch（農牧 + 農場經營）與 Night Study（夜間讀書模擬）代表「低壓放鬆」品類持續冒頭；Drone n Gone 和 Pogo Gnom 則是快速挑戰反應類。itch.io html5 榜頂仍以「規則 / 溝通 / 荒謬情境」類小體量為主（共同 loop 與成長數字<b>目前無法完全證實</b>；標題推測）。<b>本日新增觀察：</b>Next Station: The Moon demo 進熱門，連線建設 + 月面探索的機制組合值得追蹤。
-      </div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>早期</span></span>Roblox「偷蛋」模板群：一款 1.1M，旁邊至少 5 款同概念小作在榜</h3>
+        <div class="sum">今日 Roblox Top Playing 第 1 名「偷一顆蛋」（頁面中文名）<b>1.1M 在線</b>；同榜 / Up-and-Coming 還有「打破並偷走一顆蛋」40.6K、「偷走動物蛋」16.6K、「複製以偷蛋」6.3K、「偷一顆壞蛋」3.5K、「打破雞蛋」5.1K。另有「+1 石頭跳躍」29.8K、「+1 雞蛋翅膀」7K 等「+1」命名群。共通 loop：<b>收集 → 被偷 / 偷人 → 升級防禦</b>。這是本頁抓到的榜單事實；「是否為同一系列衍生」<b>目前無法完全證實</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>典型的<b>「一個爆款模板 + 命名微創新」</b>：改一個名詞（蛋 → 動物 → 壞蛋）就上榜。這正是 Trend-to-Game 的邏輯，換成「當天的梗」當名詞。可做成「偷 X」模板，X 由用戶輸入梗決定，分享卡寫「你被偷了 N 次」。</div>
+        <div class="footrow"><div class="scores">
+          <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+        </div><div class="src">Roblox Charts · 10/07 瀏覽器真抓 · <a href="https://www.roblox.com/charts" target="_blank">原文 ↗</a></div></div></article><article class="story ai reveal">
+        <h3><span class="tag ai"><span>早期</span></span>工作列 / 桌面常駐品類同步冒頭：TBH: Task Bar Hero、Bongo Cat、CRETA: Taskbar Fishing</h3>
+        <div class="sum">Steam 排名跳動：TBH: Task Bar Hero 72→63、Bongo Cat 74→67；新品榜同日出現 <b>CRETA: Taskbar Fishing</b>。三款共通是<b>「常駐桌面 / 工作列、低干擾放置」</b>。另 itch.io html5·popular 有 Rulehouse、The Freak Circus、Bite Your Tongue、Quackyard、The Commander Can't Communicate，meme 標籤有 Three Nights Lobotomized、Jest Messters（無成長數字，僅列榜）。Steam 新品另有 Dry Powder、Plates of Peril、Prison Escape io。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「一邊工作一邊掛著」是低門檻、高重複回訪的 loop（Repeat Creation / D7 友善）。可借「瀏覽器分頁常駐小遊戲」做 Streamer 觀眾的「掛機」玩法，產出可截圖的成長卡。</div>
+        <div class="footrow"><div class="scores">
+          <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+        </div><div class="src">Steam 新品 / 排名跳動 · 10/07 radar；itch.io · <a href="https://store.steampowered.com/explore/new/" target="_blank">原文 ↗</a></div></div></article>
     </section>
 
     <!-- 高討論文章 -->
@@ -407,86 +386,74 @@
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI</span></span>Capcom 宣布 RE Engine 進化為 AI 生成遊戲引擎（今日 CJ 線 #1）</h3>
-        <div class="sum">Polygon（0.61）/ The Verge（0.52）/ PCGamer（0.49）/ IGN（0.46）/ 80.lv — pub 2026-10-03：Capcom Open Conference RE 2026 揭示 RE Engine 未來版本目標「與 AI 共同製作遊戲」，涵蓋 QA、除錯、資料處理；官方聲明不會將 AI 生成素材直接放入遊戲。五家媒體 Tavily 分數皆入前段，屬本週討論量最高的 AI 遊戲新聞之一。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>業界觀察：大廠 AI 化的重心在「效率工具」（QA / 除錯 / pipeline 自動化），<b>不是直接給玩家的創作工具</b>。這個缺口是 GameGen 的位置。B2B 對話角度：Capcom 在工作室端先走，玩家端 AI 創作（= GameGen）是互補而非威脅，Capcom 自己也不打算做。</div>
-        <div class="footrow"><div class="src">Polygon / Verge / PCGamer / IGN / 80.lv · <a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge ↗</a></div></div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>AI</span></span>RuneScape RuneFest AI 六指角色道歉：「信任的外部合作夥伴」成今日最大梗</h3>
-        <div class="sum">PCGamer（pub 2026-10-06）：RuneScape 在 RuneFest 活動上的宣傳圖出現 AI 生成的六指角色，Jagex 公開道歉並表示素材來自「信任的外部合作夥伴」製作的預告片（GamesIndustry.biz 同日報導）。AI 生成角色的「六指 / 畸形肢體」問題已是公認問題，但在主要活動上犯錯格外引人嘲笑。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>AI 生成角色的人體解剖問題仍未完全解決；但更重要的是：<b>「外包給信任的第三方」結果翻車</b>，正好說明為何讓玩家自己用可控的 AI 工具創作比委外生成更可靠。這是今日最好笑、最可蹭的 AI 新聞。⚠️ 不使用 RuneScape / Jagex 名稱做 demo。</div>
-        <div class="footrow"><div class="src">PCGamer / GamesIndustry · <a href="https://www.pcgamer.com/games/mmo/runescape-dev-apologises-after-runefest-debut-of-an-ai-generated-six-fingered-character-thats-pretty-hard-to-explain-away/" target="_blank">PCGamer ↗</a></div></div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>產業</span></span>Ninja Theory、Supermassive、Nerial 三家工作室同週裁員：Xbox 閉廠效應擴散</h3>
-        <div class="sum">Reddit r/Games / GamesIndustry / Eurogamer / PCGamer / GameDeveloper（pub 2026-10-06）：Xbox 宣布關閉 Ninja Theory 計劃後，工作室員工開始收到裁員通知（員工社群媒體貼文引述）；Supermassive Games 裁員 70 人以上；Nerial 宣布進入「休眠模式」。PCGamer 同時提及 The Coalition 與 Warhorse 示警。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>工作室關閉 = 有遊戲開發技能的人進入市場；同時代表獨立創作工具的需求上升。Naavik 問「遊戲業在 AI 泡沫中嗎？」（最新 podcast）——裁員數字是給那個問題的反面回答：<b>非 AI 效率化的工作室正在縮水</b>。</div>
-        <div class="footrow"><div class="src">多家 · <a href="https://www.gamesindustry.biz/ninja-theory-begins-laying-off-staff-according-to-employee-posts" target="_blank">GamesIndustry ↗</a></div></div>
-      </article>
-
-      <article class="story rl reveal">
-        <h3><span class="tag rl"><span>平台</span></span>Steam 折扣與活動分頁即將完全由演算法驅動，獨立開發者手動排期失效</h3>
-        <div class="sum">Game Developer（pub 2026-10-06）：Steam 宣布折扣與活動分頁將在近期完全改為演算法驅動，開發者無法再手動安排出現位置。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Steam 演算法化對小型獨立開發者是負面訊號——過去可以靠「卡位時間」讓折扣出現在最佳位置，未來消失。<b>不依賴 Steam 演算法的傳播方式（= 遊戲連結在社群擴散）價值上升</b>。GameGen 的遊戲連結傳播模式正好是 Steam 曝光邏輯的替代路徑。</div>
-        <div class="footrow"><div class="src">Game Developer · <a href="https://www.gamedeveloper.com/pc/steam-s-discounts-and-events-tab-will-soon-be-fully-algorithm-driven" target="_blank">原文 ↗</a></div></div>
-      </article>
+        <h3><span class="tag ai"><span>高討論</span></span>AI 生成遊戲的亂象仍在發酵：GTA V 瀏覽器版（IGN 10/6）+ 前幾天 Fallout: New York（♻️ 已用）</h3>
+        <div class="sum">IGN 10/6 標題稱 GTA 5 瀏覽器版被下架「as AI-generated game chaos continues」；HN 同題連結 3 分、Tom's Hardware 為本日已驗來源。Reddit r/Games 同日 top 有「Capcom Said ‘AI’ and the Headline Did the Rest」（討論 Capcom AI 報導的標題化）。IGN 站本次無法抓取原文，<b>僅引標題層級</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>輿論從「AI 好不好」轉向「<b>AI 生成物的法律後果</b>」。對 GameGen：對外溝通要強調<b>原創 / 泛化資產 + 內建 IP 篩檢</b>，把安全當賣點而非免責聲明。</div>
+        <div class="footrow"><div class="scores">
+          <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中</span></span></div></div>
+        </div><div class="src">IGN / Tom's Hardware / Reddit · 10/6–10/7 · <a href="https://www.tomshardware.com/video-games/pc-gaming/gta-v-playable-in-browser-immediately-nuked-unofficial-webassembly-port-built-with-ai-gets-taken-down-within-hours-of-going-live" target="_blank">原文 ↗</a></div></div></article><article class="story rl reveal">
+        <h3><span class="tag rl"><span>高討論</span></span>開發者圈：「一年來第一次不靠 AI 寫程式」登 r/gamedev 當日榜；Eclipse Game Jam 出事</h3>
+        <div class="sum">r/gamedev 當日 top 兩條：「第一次一年來不靠 AI 自己寫程式，感覺又棒又傷心」與「Something Went Very Wrong With the Eclipse Game Jam」。HN 有「Opus 5.5 builds a working game engine in one prompt (TheCherno)」影片，僅 3 分 / 1 則留言，熱度低。Game Developer 有「Reigns 開發商 Nerial 進入 hibernation mode 並裁員」。內文細節本次<b>未逐篇開讀，僅標題層級</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>創作者端對 AI 同時存在「依賴」與「失落」：GameGen 的定位要是<b>增強創作、保留作者感</b>（可 remix、可署名），而不是「一鍵取代」。Game Jam 場景也是好分發點。</div>
+        <div class="footrow"><div class="scores">
+          <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+        </div><div class="src">Reddit r/gamedev · HN · Game Developer · 10/7 radar</div></div></article><article class="story ai reveal">
+        <h3><span class="tag ai"><span>高討論</span></span>Naavik：Roblox 押注 AI 輔助創作、「AI 賦能粉絲經濟」——背景讀物</h3>
+        <div class="sum">Naavik 近期文章標題：〈Inside Roblox’s Massive Bet On AI-assisted Creation〉、〈From Disney to miHoYo: The Road Toward AI-Enabled Fandom〉、〈How AI Makes Game Creation More Accessible〉（podcast）。<b>發布日期本次未驗、內容未開讀</b>，只作競品與賽道背景，不進頭版彈藥。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Roblox 的 AI 創作工具是 GameGen 在 C 側最直接的競爭參照；「AI 賦能粉絲」與 Pizza 的 VTuber / 迷因社群主場高度重疊，值得之後專題開讀。</div>
+        <div class="footrow"><div class="scores">
+          <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+        </div><div class="src">Naavik · <a href="https://naavik.co/ai-gaming/inside-robloxs-massive-bet-on-ai-assisted-creation/" target="_blank">原文 ↗</a></div></div></article>
     </section>
 
     <!-- 迷因題材 / 迷因遊戲 -->
     <section id="meme">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>迷因</span></span>本日梗：RuneScape 六指角色 + Grasshopper Manufacture 從 NetEase 分家（Suda 51 劇情）</h3>
-        <div class="sum" style="margin-bottom:0">
-          今日兩個可操作的梗：
-          <br><b>① RuneScape 六指角色</b>——PCGamer 報導（pub 10/06），社群廣泛傳播，「信任的外部合作夥伴」這句公關話術已成梗（⚠️ 不用 RuneScape 名稱）；
-          <br><b>② Grasshopper Manufacture 從 NetEase 分家</b>——Suda 51 的工作室在被 NetEase 收購後宣布獨立（GameDeveloper pub 10/06）；「從大資本回歸獨立」的 narrative 在 indie 開發者圈子裡很有共鳴；
-          <br>⚠️ Google Trends US 今日偏體育（NBA schedule / saints game），無遊戲梗。Know Your Meme 常青榜不計今日新鮮度。itch.io meme 標籤：Three Nights Lobotomized、Jest Messters、Kill the Ice Age Baby Adventure 為近期穩定在榜品項，用梗源自外部。
-        </div>
-      </div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>梗</span></span>今天的「梗」素材來自事件本身：Sonic Discord 5 萬人洗版、GTA V 瀏覽器版秒下架</h3>
+        <div class="sum">KYM 本次抓到的是<b>常青「最受歡迎」總榜</b>（Navy Seal Copypasta、Trollface 等老梗），<b>不是當日榜，依規定不採用</b>；Google Trends 遊戲類同樣無可用新鮮項目。當日可玩的梗改取已驗證事件：<b>「版主鎖頻道」「誤封說喜歡 Super Mario 的人」「域名換成 70 年代食物廣告」</b>（皆為 VGC / Tom's Hardware 報導的細節）。first-seen 皆為 10/5–10/6，新鮮度 🆕。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>事件梗比純迷因更安全——沒有真人肖像，用泛化角色就能做。「誤封」本身就是好笑的玩法機制（點錯會被罵）。⚠️ 不要把 KYM 常青榜的老梗寫成「今天的梗」。</div>
+        <div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
+        <div class="src">VGC / Tom's Hardware · 10/6 · <a href="https://www.videogameschronicle.com/news/segas-newly-launched-sonic-discord-server-is-off-to-a-rough-start-with-questionable-content-bans-and-a-lockdown/" target="_blank">原文 ↗</a></div></div></article>
     </section>
 
     <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>靈感</span></span>今日三個機制訊號：空戰快感 / 恐怖季躲藏 / 時尚 builder</h3>
-        <div class="sum" style="margin-bottom:0">
-          <b>① 空戰快感</b>（Ace Combat 8 創系列最佳首週）：「鎖定目標 → 擊發 → 閃避」的三步 loop 極短，30 秒內完成一局；分享點是「擊落數 + 存活時間」比較卡。只借機制，不用任何 Ace Combat IP。
-          <br><b>② 恐怖季躲藏 / 逃脫</b>（Outlast Trials Steam 排名跳升 34→26；10 月恐怖季推論，非原文證實）：「計時 + 躲藏 + 資源消耗」的基礎恐怖 loop，萬聖節前後是最佳投放視窗。
-          <br><b>③ 時尚 / 裁縫 builder</b>（Dressmaker 進 Steam 熱賣 + 最受歡迎 rank 59）：「設計 → 試穿 → 分享外觀」的輕量展示 loop，分享點是造型截圖。用途：女性受眾 / UGC 角色外觀客製化。
-          <br>⚠️ 機制借用原則：只取機制結構，不取任何遊戲名稱、角色、UI 元素、美術。
-        </div>
-      </div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>機制</span></span>本日可借用的原創機制：分類點擊（版主）、被偷 / 防守（偷蛋）、桌面常駐放置</h3>
+        <div class="sum">① <b>分類點擊 / 反應</b>（Server Launch Panic）；② <b>收集—被偷—升級防禦</b>（Roblox 偷蛋群）；③ <b>工作列常駐放置</b>（Task Bar Hero / Taskbar Fishing 類）；④ itch.io html5 熱門中「The Commander Can't Communicate」「Bite Your Tongue」暗示<b>溝通 / 失誤型喜劇</b>玩法（僅標題推測，<b>目前無法完全證實玩法</b>）。unityroom 本次未取得，今日無更新。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>三種機制都是 30–90 秒可玩、可截圖、可比分。⚠️ IP 二創地雷：Sonic / Sega 角色、GTA / Fallout 美術與名稱一律不用；已有兩起 AI 生成大作遊戲被下架 / 發 C&amp;D 的新聞可當內部提醒。</div>
+        <div class="footrow"><div class="scores">
+          <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中</span></span></div></div>
+        </div><div class="src">itch.io / Steam / Roblox · 10/07 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div></div></article>
     </section>
 
     <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
 
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話暫缺</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ Threads 需登入 / JS 渲染，本次排程無登入態，<b>目前無法完全證實</b>繁中圈當日熱話；骨架保留，不以舊資料或估計補位。可借題變體（供人工參考）：RuneScape 六指角色改成台灣遊戲圈視角（「本土 AI 圖生角色翻車」系列）；裁員浪潮改成「大廠裁員季，獨立製作人機會來了？」的討論切入；Ace Combat 8 空戰熱改成「最想看哪類台灣本土飛行題材」互動。</div>
-      </div>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ Threads 繁中圈需登入與 JS 渲染，本次未取得當日熱話，<b>目前無法完全證實</b>，骨架保留、不以舊資料補位。可追的繁中母題：<b>「官方 Discord 開服秒爆」</b>與<b>「AI 協助的大作被秒下架」</b>——適合做三國 / 武俠 / 恐怖題材變體（例：「新開群組，群主 60 秒內撐住」）。繁中源為副線，英文源為主。</div>
     </section>
 
-    <!-- Trend-to-Game -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>Ace Combat 8 系列新高（今日 Reddit top）</td><td><span class="tmpl">30 秒空戰對決</span></td><td>「擊落 N 架」分享卡 + 對戰邀請</td><td class="rk-mid">中 · 不可碰 Ace Combat IP / 萬代南夢宮</td><td>★ 本日 Demo 首選，泛化飛行員 + 原創戰機</td></tr>
-          <tr><td>RuneScape 六指角色道歉（PCGamer 10/6）</td><td><span class="tmpl">AI 角色生成 + 隨機外觀</span></td><td>「你的角色有幾根手指？」互動卡</td><td class="rk-low">低（不用 RuneScape 名稱）</td><td>今日最高互動潛力梗，趁熱度發互動貼文</td></tr>
-          <tr><td>Dressmaker 進熱賣（Steam rank 59）</td><td><span class="tmpl">時尚 / 角色外觀 builder</span></td><td>造型截圖分享</td><td class="rk-low">低</td><td>女性受眾 / 角色客製化，搭 Remix 功能</td></tr>
-          <tr><td>10 月恐怖季（Outlast Trials 跳升，推論）</td><td><span class="tmpl">躲藏 / 逃脫 60 秒</span></td><td>「撐過幾秒」分享卡</td><td class="rk-low">低</td><td>原創鬼屋，10/20–31 前後最佳投放視窗</td></tr>
-          <tr><td>Arc Raiders / THE FINALS 改編電視劇電影</td><td><span class="tmpl">電影式序幕生成</span></td><td>「你的遊戲改編劇本」分享</td><td class="rk-low">低（原創世界觀）</td><td>CJ 切角為主，互動貼文輔助</td></tr>
-          <tr><td>Steam 演算法化 + 工作室裁員</td><td><span class="tmpl">一句話遊戲連結生成</span></td><td>「不靠演算法，靠分享」文案</td><td class="rk-low">低</td><td>CJ / LinkedIn 用，配今日 CJ 兩條</td></tr>
+          <tr><td>Sonic 官方 Discord 5 萬人開服、鎖 8/9 頻道</td><td><span class="tmpl">版主分類點擊</span></td><td>「冷靜值」排行 + 貼回 Discord 卡</td><td class="rk-mid">中 · Sega IP</td><td>★ 本日 Demo 首選：泛化吉祥物，不挪 Sonic / Sega 名稱與美術</td></tr>
+          <tr><td>GTA V 瀏覽器版數小時下架</td><td><span class="tmpl">倒數存活小遊戲</span></td><td>「你的作品活了幾小時」卡</td><td class="rk-mid">中 · 避開 GTA</td><td>只借「存活計時」概念，用泛化城市；不碰 R 星 / GTA 名稱</td></tr>
+          <tr><td>Roblox 偷蛋模板群（1.1M）</td><td><span class="tmpl">「偷 X」收集防守</span></td><td>「被偷 N 次」戰績卡</td><td class="rk-low">低</td><td>X 由用戶輸入當日梗；不用 Roblox 資產 / 名稱</td></tr>
+          <tr><td>Backrooms × 電影日期窗口</td><td><span class="tmpl">泛化走廊逃脫 + 倒數</span></td><td>倒數卡、通關時間</td><td class="rk-low">低</td><td>Backrooms 為舊梗（♨️），標「延燒」，不寫成今天的梗</td></tr>
+          <tr><td>桌面 / 工作列常駐（Task Bar Hero 類）</td><td><span class="tmpl">掛機放置</span></td><td>成長卡、離線收益（寫成「離線進度」）</td><td class="rk-low">低</td><td>給 Streamer 觀眾掛機用，利於 Repeat Creation</td></tr>
+          <tr><td>Sega 不把創意交給 AI</td><td><span class="tmpl">明示生成 + 透明標</span></td><td>「這款是 AI 做的，歡迎 remix」</td><td class="rk-low">低</td><td>定位素材非玩法，站透明 + 好玩</td></tr>
         </tbody>
       </table>
       </div>
@@ -499,13 +466,14 @@
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>大廠 AI 鎖在工作室，玩家端是空位</td><td>Capcom 宣布 RE Engine 進化為「AI 生成遊戲引擎」，聚焦 QA / 除錯 / pipeline（10/3，Polygon / Verge）</td><td>"Capcom's AI is inside the studio. GameGen's AI is in the player's hands."</td><td><a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge</a></td></tr>
-          <tr><td>遊戲 IP 改編媒體的公式</td><td>Arc Raiders 和 THE FINALS 宣布電視劇 + 電影改編（10/6，GamesIndustry）；THE FINALS 10/20 毀滅系統大改版</td><td>"Free-to-play + viral mechanics + community = IP worth adapting."</td><td><a href="https://www.gamesindustry.biz/arc-raiders-and-the-finals-are-getting-tv-series-and-film-adaptations" target="_blank">GamesIndustry</a></td></tr>
-          <tr><td>工作室縮水、AI 小團隊填補缺口</td><td>Ninja Theory / Supermassive / Nerial 本週裁員（10/6，多家）；Steam 演算法化讓手動曝光失效（GameDeveloper 10/6）</td><td>"Studios are shrinking. AI tools make small teams fill the gap — that's the window."</td><td><a href="https://www.gamesindustry.biz/ninja-theory-begins-laying-off-staff-according-to-employee-posts" target="_blank">GamesIndustry</a></td></tr>
+          <tr><td>AI 讓複製變便宜，IP 讓它留不住</td><td>GTA V WebAssembly 瀏覽器版（據稱 AI 協助）上線數小時即下架（10/6）</td><td>"AI can clone a AAA game in a browser tab. It lasted hours. The moat is building what you can keep."</td><td><a href="https://www.tomshardware.com/video-games/pc-gaming/gta-v-playable-in-browser-immediately-nuked-unofficial-webassembly-port-built-with-ai-gets-taken-down-within-hours-of-going-live" target="_blank"> ↗</a></td></tr>
+          <tr><td>大廠把 AI 圈在工作室內，消費端是空位</td><td>Sega 高層：不把創意面交給 AI（10/6）；Capcom 10/3 相反（♻️）</td><td>"Sega won't hand creativity to AI; Capcom will build with it. Both keep it in-house. The open seat is the players'."</td><td><a href="https://kotaku.com/sega-genai-ai-crazy-taxi-world-tour-assets-tsuyoshi-saito-interview-2000740914" target="_blank"> ↗</a></td></tr>
+          <tr><td>社群湧入比治理快</td><td>Sonic 官方 Discord 數小時 5 萬+人、鎖 8/9 頻道（10/6）</td><td>"Growth is easy now. Governing 50,000 people who arrived in hours is the hard part."</td><td><a href="https://www.videogameschronicle.com/news/segas-newly-launched-sonic-discord-server-is-off-to-a-rough-start-with-questionable-content-bans-and-a-lockdown/" target="_blank"> ↗</a></td></tr>
+          <tr><td>梗 × 日期窗口 = 上市窗口</td><td>Escape the Backrooms 登主機隔日即 A24 電影，累計 4M 玩家（Game Developer 10/6）</td><td>"A meme plus a release date is a launch window. Ours is measured in days."</td><td><a href="https://www.gamedeveloper.com/production/co-dev-case-study-how-blackbird-interactive-and-secret-mode-helped-escape-the-backrooms-ride-the-backrooms-hype-wave" target="_blank"> ↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2 已附 EN hook + 中譯。Capcom 條多家媒體原文驗過 ✓；Arc Raiders/THE FINALS 條 GamesIndustry 原文可直接取用 ✓。對外用字已過濾賭場語言與真人 / IP 風險。
+        📄 頭版 🎯 CJ Top 2（GTA V 秒下架、Sega 不交創意）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 驗原文日期 2026-10-06 + 主張比對（見文末 Evidence Log），其中「下架方」原文未說明，已照實標註。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
@@ -514,10 +482,10 @@
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>RuneScape 六指角色梗：「你的 AI 遊戲角色有幾根手指？」（互動潛力最高）</li><li>Ace Combat 8 話題：「20 年壓抑的空戰需求，一款遊戲解封——換你做一款 30 秒空戰」</li><li>裁員共情：「Ninja Theory 倒下的那週，有人用 AI 工具做出了一款遊戲。兩件事同時是真的。」</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 30 秒原創空戰對決生成器（本日首選，蹭 Ace Combat 8）</li><li>AI 角色生成 + 隨機手指數互動（蹭 RuneScape 六指梗）</li><li>恐怖季躲藏 / 逃脫 60 秒（萬聖節前後）</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Capcom RE Engine AI 功能的具體細節（目前只有聲明，無演示）</li><li>Grasshopper Manufacture（Suda 51）分家後的第一個動作</li><li>Arc Raiders / THE FINALS TV/Film 製作進度</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>RuneScape / Jagex / Ace Combat / 萬代南夢宮名稱或美術直接使用</li><li>裁員貼文措辭不要輕率，要共情不要幸災樂禍</li><li>Capcom RE Engine AI 官方聲明限縮在「效率工具」，不要誇大為「Capcom 也在做 UGC 遊戲」</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Sonic Discord：「5 萬人幾小時進場，當 60 秒版主」＋ demo gif</li><li>Backrooms 窗口：「梗 + 日期 = 上市窗口，你的窗口是幾天」</li><li>遊戲→影視 vs 梗→遊戲：哪條管線快？</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ Server Launch Panic（版主分類點擊）—— 本日首選</li><li>「偷 X」收集防守模板（X = 用戶輸入的梗）</li><li>掛機放置成長卡（對 Streamer 觀眾）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>GTA V 瀏覽器版與 Fallout: New York 事件後續：是否出現更多 C&amp;D / 平台政策</li><li>Sonic Discord 是否解鎖頻道、社群情緒轉向</li><li>Roblox 偷蛋群是否持續上榜（明日比對）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Sonic / Sega、GTA / Rockstar、Fallout / Bethesda 的美術與名稱一律不用</li><li>KYM 常青榜老梗別寫成「今天的梗」</li><li>「下架方是誰」原文未證實，對外別寫成 Take-Two 要求</li><li>避賭場語言（big win / jackpot / payout）</li></ul></div>
       </div>
     </section>
 
@@ -525,20 +493,21 @@
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>Capcom RE Engine AI 宣告</td><td><a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge</a>（pub 2026-10-03）；<a href="https://www.polygon.com/capcom-ai-re-engine-statement-2026/" target="_blank">Polygon</a>（Tavily 0.61）；PCGamer / IGN / 80.lv 跟進（Tavily 0.49 / 0.46）　驗：多源一致報導 Capcom Open Conference RE 聲明、官方「不直接放 AI 生成素材」<span class="ok">✓</span></td></tr>
-        <tr><td>Arc Raiders / THE FINALS 電視劇電影</td><td><a href="https://www.gamesindustry.biz/arc-raiders-and-the-finals-are-getting-tv-series-and-film-adaptations" target="_blank">GamesIndustry.biz</a> / <a href="https://www.eurogamer.net/arc-raiders-the-finals-film-tv-show-backrooms" target="_blank">Eurogamer</a> / <a href="https://www.gamedeveloper.com/business/arc-raiders-and-the-finals-set-for-tv-and-film-adaptations-from-backrooms-co-producer" target="_blank">GameDeveloper</a>（皆 pub 2026-10-06）　驗：三家原文一致<span class="ok">✓</span></td></tr>
-        <tr><td>RuneScape 六指角色道歉</td><td><a href="https://www.pcgamer.com/games/mmo/runescape-dev-apologises-after-runefest-debut-of-an-ai-generated-six-fingered-character-thats-pretty-hard-to-explain-away/" target="_blank">PCGamer</a> / <a href="https://www.gamesindustry.biz/jagex-responds-to-use-of-generative-ai-in-runescape-trailer-made-by-trusted-external-partner" target="_blank">GamesIndustry</a>（pub 2026-10-06）　驗：兩家一致，Jagex 道歉聲明確認<span class="ok">✓</span></td></tr>
-        <tr><td>Ninja Theory / Supermassive / Nerial 裁員</td><td>Reddit r/Games / <a href="https://www.gamesindustry.biz/ninja-theory-begins-laying-off-staff-according-to-employee-posts" target="_blank">GamesIndustry</a> / <a href="https://www.eurogamer.net/ninja-theory-hellblade-developers-layoffs-xbox-cuts" target="_blank">Eurogamer</a> / <a href="https://www.pcgamer.com/gaming-industry/industry-layoff-watch-supermassive-ninja-theory-the-coalition-and-a-warning-from-warhorse/" target="_blank">PCGamer</a>（pub 2026-10-06）　Supermassive 70 人：Reddit / GamesIndustry 一致；Nerial：GameDeveloper<span class="ok">✓</span></td></tr>
-        <tr><td>Ace Combat 8 系列最佳首週</td><td><a href="https://www.reddit.com/r/gaming/comments/1wyej4l/ace_combat_8_is_far_and_away_the_series_biggest/" target="_blank">Reddit r/gaming</a>（今日 top-of-day）/ <a href="https://80.lv/articles/ace-combat-8-is-the-highest-reviewed-game-in-the-series-since-the-ps2/" target="_blank">80.lv</a>　驗：「系列 PS2 後最佳評分」80.lv 確認；首週銷售為「系列最大」摘要層（未獨立驗證具體數字）<span class="pp">partial</span></td></tr>
-        <tr><td>Steam 演算法化折扣分頁</td><td><a href="https://www.gamedeveloper.com/pc/steam-s-discounts-and-events-tab-will-soon-be-fully-algorithm-driven" target="_blank">GameDeveloper</a>（pub 2026-10-06）　驗：原文標題一致<span class="ok">✓</span></td></tr>
-        <tr><td>Steam 數據層</td><td>heat_latest.json fetched_at 2026-10-06T07:30:38+08:00（官方 API 真數字）；Twitch / Roblox 為前日快照，標「供參」<span class="ok">✓</span></td></tr>
+<tr><td>GTA V 瀏覽器版下架</td><td><a href="https://www.tomshardware.com/video-games/pc-gaming/gta-v-playable-in-browser-immediately-nuked-unofficial-webassembly-port-built-with-ai-gets-taken-down-within-hours-of-going-live" target="_blank">Tom's Hardware ↗</a>（web_fetch）　原文日期 2026-10-06　驗：WebAssembly、AI 協助、數小時內下架、PlayGTA5.com Cloudflare 1014；<b>下架方原文未說明（未證實）</b>；「700MB」僅見 HN 標題，未採用<span class="ok">✓</span>　🆕</td></tr>
+<tr><td>Sega 不把創意交給 AI</td><td><a href="https://kotaku.com/sega-genai-ai-crazy-taxi-world-tour-assets-tsuyoshi-saito-interview-2000740914" target="_blank">Kotaku ↗</a>（web_fetch）　原文日期 2026-10-06　驗：Tsuyoshi Saito 資深執行官、Nikkei 引言、Crazy Taxi: World Tour 釐清、AI 用於出版 / 公司部門<span class="ok">✓</span>　🆕</td></tr>
+<tr><td>Sonic Discord 5 萬人</td><td><a href="https://www.videogameschronicle.com/news/segas-newly-launched-sonic-discord-server-is-off-to-a-rough-start-with-questionable-content-bans-and-a-lockdown/" target="_blank">VGC ↗</a>（web_fetch）　原文日期 2026-10-06　驗：10/5 晚開服、5 萬+、鎖 8/9 頻道、slow mode、誤封案例、Sega FAQ 說法<span class="ok">✓</span>　🆕</td></tr>
+<tr><td>Escape the Backrooms</td><td><a href="https://www.gamedeveloper.com/production/co-dev-case-study-how-blackbird-interactive-and-secret-mode-helped-escape-the-backrooms-ride-the-backrooms-hype-wave" target="_blank">Game Developer ↗</a>（web_fetch）　原文日期 2026-10-06　驗：1.0 於 2025/10/23、48K CCU、5/28 主機版、4M 玩家；「Backrooms 為舊梗」為標示判斷、原文未載首見日期<span class="pp">partial</span>　🔄（梗♨️）</td></tr>
+<tr><td>Arc Raiders / The Finals 改編</td><td><a href="https://www.gamedeveloper.com/business/arc-raiders-and-the-finals-set-for-tv-and-film-adaptations-from-backrooms-co-producer" target="_blank">Game Developer ↗</a>（web_fetch）　原文日期 2026-10-05　驗：Embark、Chernin、14M 套（該文稱）<span class="pp">summary</span>　🔄</td></tr>
+<tr><td>Fallout: New York C&amp;D（背景）</td><td>Tavily / IGN / RPS 標題（IGN 站擋抓，未開原文）　約 2026-10-02　♻️ 已用過，僅作背景，未進頭版<span class="pp">summary</span></td></tr>
+<tr><td>Capcom AI（對照）</td><td>Polygon / The Verge 標題（Tavily）　約 2026-10-03　♻️ 已用過，僅作對照<span class="pp">summary</span></td></tr>
+<tr><td>Steam / Twitch / Roblox 數字層</td><td>heat_latest.json 2026-10-07T07:30 官方 API；TwitchTracker、Roblox Charts 瀏覽器 10/07 真抓　CS 492,264（−11.6%）/ PUBG 91,128（+1.2%）/ TF2 −14% / AION 2 排名 41→5；Twitch AION 2 70.1K；Roblox 偷一顆蛋 1.1M<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 原文驗過 ✓ · 小編 / Demo partial 標注 · Steam＝官方 API 10/06 07:30 快照 · Twitch / Roblox＝前日快照供參 · Threads / TikTok 本次未取得，標「目前無法完全證實」</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 摘要層為主 · Steam＝官方 API 10-07 即時真數字 · Twitch / Roblox 瀏覽器 10-07 真抓 · KYM 抓到常青榜不採用；Threads / TikTok Creative Center / unityroom 本次未取得，標「目前無法完全證實」 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
     <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/10/07 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
