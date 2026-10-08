@@ -24,6 +24,7 @@
   .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
   .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
   a{color:inherit}
+
   nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
   .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
   .brand{display:flex;align-items:center;gap:10px}
@@ -38,6 +39,7 @@
   .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
     border-left:2px solid var(--ink);padding-left:18px}
   @media(max-width:820px){.nav-links{display:none}}
+
   .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
   .hero::before{content:"";position:absolute;inset:0;opacity:.5;
@@ -53,6 +55,7 @@
   .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
   .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
   .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
     letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
   .hero h1 .yl{color:var(--yellow)}
@@ -60,6 +63,7 @@
     letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
   .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
   .hero .tagline b{background:var(--ink);padding:1px 8px}
+
   .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
     box-shadow:8px 8px 0 rgba(0,0,0,.85)}
   .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
@@ -69,6 +73,8 @@
   .lead b{color:var(--ink);font-weight:900}
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -85,7 +91,7 @@
   .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
   .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
     border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
-  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
   .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
   .ammo-item .ln b{color:var(--ink);font-weight:900}
   .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
@@ -94,6 +100,7 @@
   .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
   .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
     background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
   main{max-width:880px;margin:0 auto;padding:0 26px 90px}
   section{padding:56px 0 0;scroll-margin-top:64px}
   .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
@@ -104,10 +111,12 @@
   .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
   .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
   .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
   .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
     padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
   .tag>span{display:inline-block;transform:skewX(8deg)}
   .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
   .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
     position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -118,6 +127,7 @@
   .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
   .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
   .story .obs b{font-weight:900}
+
   .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .scores{display:flex;gap:18px}
   .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
@@ -131,6 +141,7 @@
   .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
   .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
   .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
   .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
     border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
@@ -142,6 +153,8 @@
   .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -162,6 +175,7 @@
   .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
   .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
   .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
   .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -174,6 +188,7 @@
   .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
   .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
   .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
   .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
   .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
@@ -181,6 +196,7 @@
   .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
   .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
   .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
   footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
   footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
@@ -190,8 +206,10 @@
   footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
   footer .legend b{background:var(--ink);padding:1px 7px}
   footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
   .reveal.in{opacity:1;transform:none}
+
   @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
 </style>
 </head>
@@ -210,384 +228,176 @@
   <header class="hero">
     <div class="hero-in">
       <div class="badge-row">
-        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 08 · 彈藥工廠模式 · Steam 數字 10/08 07:30 真抓 · Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
-      </div>
-      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
-      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
-      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
-
-      <div class="lead">
-        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>Google 今日正式推出 Google Playground——實驗性 AI 遊戲創作平台，並與 Unity 合作推出 Unity Spark，讓任何人輸入提示詞即可生成可玩遊戲</b>。Hacker News 105 分 / 190 則評論，是今日所有遊戲相關新聞中互動最高的條目。同一週，AI 遊戲平台競品 Astrocade 已達每月 <b>1,000 萬用戶</b>（Kotaku），其中多為「AI 垃圾」，但需求規模已無法忽視。</p>
-        <p>三天前，<b>Capcom 宣布計畫將旗下 RE Engine 改造成「AI 生成遊戲引擎」</b>（PC Gamer / The Verge）——這是 AAA 廠商迄今最激進的引擎層 AI 押注，而非只是「效率工具」，是引擎本身的方向性轉變。同日，<b>前 Activision Blizzard CEO Bobby Kotick 正式加入 Skydance 董事會</b>（$111B Paramount / WB 大合併完成後），PC Gamer 一行標題：「Bobby's back.」</p>
-        <p>今日 Steam：<b>CS:GO 暴衝至 575K 在線（+16.9%）</b>，今日最大漲幅。另外，Reddit r/gamedev 今日熱帖：一位獨立開發者分析 Steam 上 <b>$560,000 毛收入如何變成到手 $73,000</b>——30% 手續費、地區定價、退款疊加效應的現實課。</p>
-        <div class="pull">▸ 今天最強切角：Google Playground 上線 = AI 遊戲創作正式進入主流，但「做得出值得分享的東西」才是真正稀缺。CJ 兩條都是行業轉型A級題材。Ape Escape 復活確認是今日最佳 Demo 窗口。</div>
-      </div>
-
-      <div class="ammo">
-        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
-
-        <div class="ammo-grp l-cj reveal">
-          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
-
-          <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Google Playground + Unity Spark：AI 遊戲創作門檻今日崩盤——但 Astrocade 1,000 萬用戶全是垃圾</div>
-            <div class="ln"><b>新聞事實：</b>Google 官方推出 Google Playground 實驗性 AI 遊戲創作平台（Google Blog，2026-10-07），同日 Unity 推出 Unity Spark，整合進 Google Playground，讓用戶以提示詞協作生成遊戲（The Verge，2026-10-07；Game Developer，2026-10-07）。TechCrunch：「barriers to entry for game creation are rapidly diminishing」。競品 Astrocade 同期每月 1,000 萬用戶（Kotaku，2026-10-07），Kotaku 描述多數內容為「AI slop」，但用戶規模驚人。</div>
-            <div class="ln"><b>GameGen 角度：</b>AI 讓做遊戲的門檻崩盤，但 1,000 萬用戶玩「AI 垃圾」說明：數量不等於品質，創作容易化之後，<b>真正稀缺的是「今天的熱話 → 今天可玩 → 品質足以分享」這條完整管線</b>。工具氾濫的時代，GameGen 的護城河是時效性與分享密度。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Google just launched an AI game creation platform. Unity built a tool for it. A competitor already has 10 million monthly users — mostly AI slop. The barrier to creating games collapsed today. The new moat isn't creation. It's: 'Can you make something worth sharing?'"<br><span style="color:var(--ink-dim)">中譯：Google 剛推出 AI 遊戲創作平台，Unity 為它開發了工具，競品已有 1000 萬月活——多數是 AI 垃圾。今天，做遊戲的門檻崩盤了。新的護城河不是創作，而是：你做得出值得分享的東西嗎？</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://techcrunch.com/2026/10/07/google-experiments-with-an-ai-powered-gaming-platform" target="_blank">TechCrunch ↗</a> / <a href="https://www.theverge.com/tech/1006477/google-playground-unity-spark-ai" target="_blank">The Verge ↗</a> / <a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">Kotaku ↗</a>　pub 昨日 (10/07)　partial（摘要層）</div>
-          </div>
-
-          <div class="ammo-item">
-            <div class="ti"><span class="fresh f-cont">🔄 本週</span>Capcom 計畫把 RE Engine 改造成「AI 生成遊戲引擎」——AAA 廠商最激進的引擎層 AI 押注</div>
-            <div class="ln"><b>新聞事實：</b>Capcom 官方宣布計畫將旗下 RE Engine 轉型為「AI-generation game engine」（PC Gamer，2026-10-03；The Verge：「preparing for a future where we create games together with AI」）。Capcom 同時表示不會使用 AI 生成資產於遊戲中，但將用 AI 大幅提升引擎本身效率與生成能力。（PC Gamer、The Verge，2026-10-03）</div>
-            <div class="ln"><b>GameGen 角度：</b>這不是「AI 當工具」，而是「<b>引擎本身改造</b>」。Capcom 在 RE Engine 上的押注說明：遊戲製作的下一層基礎設施正在被 AI 重建。對 GameGen 的創作者而言，今天用 AI 做遊戲不是「早期探索」，是主流浪潮已至。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Capcom just announced plans to transform their RE Engine into an 'AI-generation game engine.' Not AI as a tool. The engine itself. This is the company behind Resident Evil saying: 'We're rebuilding for a future where we create games with AI.' The wave is here."<br><span style="color:var(--ink-dim)">中譯：Capcom 宣布要把 RE Engine 改造成「AI 生成遊戲引擎」。不是把 AI 當工具，而是改造引擎本身。這是《惡靈古堡》背後的公司說：「我們正在為與 AI 共同創作遊戲的未來重建。」這波浪已經來了。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pcgamer.com/gaming-industry/game-development/capcom-announces-plans-to-transform-its-re-engine-into-an-ai-generation-game-engine" target="_blank">PC Gamer ↗</a> / <a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge ↗</a>　pub 10/03　partial（摘要層）</div>
-          </div>
-        </div>
-
-        <div class="ammo-grp l-ed reveal">
-          <div class="gt">📣 小編 · X 線　TOP 3</div>
-
-          <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Bobby's back——前 Activision CEO Bobby Kotick 加入 Skydance 董事會，$111B Paramount / WB 大合併後<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>前 Activision Blizzard CEO Bobby Kotick 已被任命為合併後 Skydance 董事會成員（Game Developer，2026-10-07）。此前，Skydance 完成約 1,110 億美元對 Paramount 的收購，Paramount Games Studio 與 WB Games 合併於 Skydance 旗下（GamesIndustry.biz）。PC Gamer 標題直白：「Bobby's back.」</div>
-            <div class="ln"><b>GameGen 角度：</b>這是今日最強迷因素材。Bobby Kotick 是遊戲業最具爭議的名字之一——離開 Activision 後，以全新身份在更大的企業版圖重新出現。切角：「做你自己的遊戲，不需要等董事會批准。」</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Bobby Kotick — who stepped down from Activision amid controversy — just joined the board of post-merger Skydance. PC Gamer's headline said it all: 'Bobby's back.' Meanwhile you're still waiting for permission to start."<br><span style="color:var(--ink-dim)">中譯：前 Activision CEO Bobby Kotick 在爭議中離職後，剛加入合併後 Skydance 的董事會。PC Gamer 的標題一語中的：「Bobby's back.」你還在等誰批准你開始嗎？</span></div>
-            <div class="meta">來源 <a href="https://www.gamedeveloper.com/business/former-activision-ceo-bobby-kotick-named-to-the-board-of-post-merger-skydance" target="_blank">Game Developer ↗</a> / <a href="https://www.pcgamer.com/gaming-industry/bobbys-back/" target="_blank">PC Gamer ↗</a>　pub 今日　partial（標題層）</div>
-          </div>
-
-          <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>獨立開發者拆解：Steam $560,000 毛收入 → 到手 $73,000——30% + 地區定價 + 退款的現實課<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/gamedev 今日熱帖：一位獨立開發者公開分析 Steam 上 $560,000 毛收入如何最終到手只剩 $73,000（Reddit，2026-10-08）。Steam 30% 抽成、地區定價折扣（部分地區售價僅原價 20-40%）、退款損失、稅務合計，壓縮比例超過 86%。</div>
-            <div class="ln"><b>GameGen 角度：</b>「$560K → $73K」是今日 r/gamedev 最共鳴的話題。分享意義：讓玩遊戲的人看到獨立開發的現實；讓開發者看到 Steam 以外的發行思路的必要性。不評論 Steam 政策，只描述現實。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "An indie dev just broke down how $560,000 in Steam gross revenue becomes $73,000 take-home. Steam's 30% cut. Regional pricing discounts. Refunds. Taxes. The math hits different when it's your money."<br><span style="color:var(--ink-dim)">中譯：一位獨立開發者剛剛拆解了 Steam $560,000 毛收入如何變成到手 $73,000：Steam 30% 抽成、地區定價差距、退款、稅務。當這是你的錢，數學感覺完全不一樣。</span></div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/gamedev/comments/1wzv6kr/how_560000_in_steam_gross_revenue_turns_into_just/" target="_blank">Reddit r/gamedev ↗</a>　pub 今日　partial（帖文標題層）</div>
-          </div>
-
-          <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>消息：Ape Escape（捉猴啦！）復活，由製作《Sonic Mania》的 Headcannon 開發——Sony 挖出 PlayStation 遺產<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>消息人士透露，Sony 正在復活旗下經典 PlayStation IP，首發為《Ape Escape》（捉猴啦！），由製作《Sonic Mania》的 Headcannon 團隊負責開發（Eurogamer / Reddit r/Games，2026-10-08）。</div>
-            <div class="ln"><b>GameGen 角度：</b>Ape Escape 是 1990 年代末的 3D 追逐捕捉類型代表作，玩法直觀、可愛、輕量。今日「復活確認」是高情緒窗口。切角：不使用 Ape Escape IP，但借「捉捕追逐 loop」的玩法設定。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Sources say Sony is reviving Ape Escape — made by the Sonic Mania team. Sony just remembered it owns some excellent PlayStation classics. While they make the real thing, you can chase something right now."<br><span style="color:var(--ink-dim)">中譯：消息稱 Sony 正在復活《捉猴啦！》，由 Sonic Mania 製作組開發。Sony 剛想起自己擁有一批超棒的 PlayStation 經典。他們做真的同時，你現在就可以追著什麼跑。</span></div>
-            <div class="meta">來源 <a href="https://www.eurogamer.net/sony-classic-playstation-games-ape-escape-sonic-mania" target="_blank">Eurogamer ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1wzs2tb/sources_ape_escape_revival_in_the_works_from/" target="_blank">Reddit r/Games ↗</a>　pub 今日　partial（消息來源層）</div>
-          </div>
-        </div>
-
-        <div class="ammo-grp l-dm reveal">
-          <div class="gt">🕹️ Demo 線　TOP 1</div>
-          <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「捉捕追逐」loop——蹭 Ape Escape 復活確認，今日情緒窗口最強<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法概念：</b>極簡追逐捕捉 loop：玩家在有限時間內捕捉在場地隨機亂竄的小怪，小怪速度和數量隨關卡提升。分享格式：「30 秒捕了 X 隻」。配文：「Ape Escape 確認復活了——在他們做完之前，先玩這個追逐遊戲熱個身。」⚠️ 不使用 Ape Escape / Sony 任何品牌素材，只借「追逐捕捉」情感設定。</div>
-            <div class="ln"><b>為何是今天：</b>Ape Escape 復活消息今日爆出，情緒正向（懷舊 + 期待）。搭這個窗口做 demo = 加入已有熱度的對話，分享率高。</div>
-            <div class="meta">⚠️ 不使用 Ape Escape / Sony / Headcannon 品牌素材　模板：追逐捕捉 / 時間壓力 loop</div>
-          </div>
-        </div>
-      </div>
+<span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+<span class="dateflag">2026 / 10 / 08 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30）+ Twitch/Roblox 瀏覽器真抓 · 來源 ~16 站</span>
+</div>
+<h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+<div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+<div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+<div class="lead">
+<div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+<p><b>Google 下場做「AI 生成遊戲平台」，Astrocade 同日自報月活 1,000 萬——賽道從「有沒有人要」進入「誰先分發」。</b>10/7：<span class="hl">Google Playground 上線</span>（對話式生成、分享連結、Explore 圖庫；僅美國 18+），並預告整合 Unity Spark（closed beta 即將開始）；同日 Kotaku 引 Astrocade CEO 說法，<span class="hl">月活約 1,000 萬、四個月前約 500 萬</span>（自報數字）。</p>
+<p>對 GameGen：大廠把「prompt → 試玩 → 分享連結」變成標準配備，創作本身會商品化。差異化只剩兩件事：<b>Trend Response Time</b>（梗還活著時上線）與<b>社群內梗 + Remix 迴圈</b>（Discord / VTuber / 迷因圈）。熱榜今天沒有新梗在爆（CS +16.9%、GTA V Legacy +20.9% 原因無法完全證實），彈藥主力在 AI 遊戲平台這條敘事線。</p>
+<div class="pull">▸ 今天就能蹭：小編發「你第一款會做什麼？」徵題 → 挑留言做成 Ghost Run 可玩連結；CJ 貼文主軸「創作商品化，稀缺的是時機」。</div>
+</div>
+<div class="ammo">
+<div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+<div class="ammo-grp l-cj reveal"><div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>Google 下場：「描述 → 試玩 → 分享連結」變成大廠產品，賽道從「有沒有人要」進入「誰先分發」<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Google 10/7 推出實驗性平台 Playground：瀏覽器內用對話描述就能生成遊戲，可保持私人、傳分享連結、或發佈到 Explore 圖庫；部分類型支援排行榜與多人；<b>僅限美國 18+</b>，創作權限依 Google One 會員分級開放；並稱將整合 Unity Spark（closed beta「coming soon」）。原文未提供用戶數或遊戲數（Google 官方部落格，pub 2026-10-07；HN 該帖 105 pts / 190 comments）。</div>
+<div class="ln"><b>GameGen 角度：</b>Google 驗證了 GameGen 的核心動作鏈：prompt → 即時可玩 → 分享連結。但它是通用創作工具、且首波只開美國成人。GameGen 的差異不在「能不能做遊戲」，而在<b>「今天的梗今天就上線」的 Trend Response Time</b>，以及 Remix / 挑戰頁把玩家變創作者的迴圈——大廠給工具，我們給「題材 + 分發」。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Google just made 'describe it, play it, share the link' a product. Creation is becoming a commodity. The scarce thing is timing: who ships the game while the meme is still alive?"<br><span style="color:var(--ink-dim)">中譯：Google 剛把「描述、試玩、分享連結」做成產品。創作正在商品化，稀缺的是時機：誰能在梗還活著的時候把遊戲推出去？</span></div>
+<div class="meta"><a href="https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/" target="_blank">Google Blog ↗</a>　pub 2026-10-07　verified ✓（全文開讀）　交叉：<a href="https://techcrunch.com/2026/10/07/google-experiments-with-an-ai-powered-gaming-platform" target="_blank">TechCrunch ↗</a> / <a href="https://www.theverge.com/tech/1006477/google-playground-unity-spark-ai" target="_blank">The Verge ↗</a>（摘要）</div>
+</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>Astrocade 自報月活 1,000 萬、四個月翻倍——AI 做遊戲的需求不是假設，是已發生的流量<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Astrocade CEO Amir Sadeghian 向 GamesBeat 表示平台月活已達 <b>1,000 萬</b>，約四個月前為 500 萬；Kotaku 報導（pub 2026-10-07）。<b>屬公司自報數字</b>，原文未提供遊戲數、創作者數或資金數（統計口徑目前無法完全證實）。</div>
+<div class="ln"><b>GameGen 角度：</b>Astrocade 是 GameGen 最直接的真對手，這則同時給兩個訊號：①C 側「玩 AI 生成遊戲」的需求已大到可被量測；②Google 同日進場代表這塊會被擠壓。GameGen 要避免和通用平台比量，應押「Discord / VTuber / 迷因社群」的內梗題材與 Play→Remix 迴圈。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Astrocade says it doubled to 10M monthly users in four months. Demand for AI-made games is no longer a thesis. The question now is whether your games travel — play, share, remix — not whether people want them."<br><span style="color:var(--ink-dim)">中譯：Astrocade 稱四個月內月活翻倍到 1,000 萬。AI 做遊戲的需求已不是假設。現在要問的是你的遊戲能不能傳出去（玩、分享、Remix），而不是有沒有人想要。</span></div>
+<div class="meta"><a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">Kotaku ↗</a>　pub 2026-10-07　verified ✓（全文開讀，引 GamesBeat 訪談，自報數字）</div>
+</div></div>
+<div class="ammo-grp l-ed reveal"><div class="gt">📣 小編 · X 線　TOP 3</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>Google Playground 開放：「你第一款會做什麼？」留言引流<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Playground 10/7 於美國上線（18+），對話式生成、可分享連結與發佈到 Explore（Google 官方部落格，pub 2026-10-07；摘要層）。</div>
+<div class="ln"><b>GameGen 角度：</b>蹭話題但不比工具：丟出「如果一句話就能做遊戲，你第一款做什麼？」讓留言變成題材投稿池 → 挑 1–2 則當天用 GameGen 做出可玩連結回覆（create-loop 勾子）。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Google says you can now describe a game and play it. So — what's the first game YOU would make? Best reply gets built into a playable link today."<br><span style="color:var(--ink-dim)">中譯：Google 說現在能描述就玩。那你第一款會做什麼？最好的回覆今天做成可玩連結。</span></div>
+<div class="meta"><a href="https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/" target="_blank">Google Blog ↗</a>　摘要層　日期 2026-10-07 ✓</div>
+</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>r/gamedev 熱帖：「Steam 毛收入 $560,000 最後只剩 $73,000」<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>r/gamedev 今日 top 帖標題稱某獨立開發者 $560,000 Steam 毛收入最終僅剩 $73,000（Reddit top-of-day，radar 10/08；僅標題層，細項拆解未開讀，目前無法完全證實拆法）。</div>
+<div class="ln"><b>GameGen 角度：</b>「做遊戲的成本與抽成」是開發者圈高共鳴話題，可對照 GameGen 的「零安裝、分享連結即玩」。只引標題數字並註明出處，不替它補拆解。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "A dev grossed $560K on Steam and kept $73K. Meanwhile a 60-second meme game can ship as a link in an afternoon. Different games, different math — which one do you want to make?"<br><span style="color:var(--ink-dim)">中譯：有開發者在 Steam 毛收 $56 萬、最後只剩 $7.3 萬。同時間，一款 60 秒梗遊戲一個下午就能用連結上線。不同的遊戲、不同的算法——你想做哪一種？</span></div>
+<div class="meta"><a href="https://www.reddit.com/r/gamedev/comments/1wzv6kr/how_560000_in_steam_gross_revenue_turns_into_just/" target="_blank">Reddit r/gamedev ↗</a>　摘要層（僅標題）</div>
+</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>機制靈感：「每次死亡，前世的你回來並肩作戰」（r/IndieGaming 今日 top）<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>r/IndieGaming 今日 top 帖：獨立遊戲機制為「每次死亡，你的前幾世會回來在你身邊戰鬥」（Reddit top-of-day，radar 10/08；摘要層）。</div>
+<div class="ln"><b>GameGen 角度：</b>「過去的失敗變成隊友」天生適合 30–60 秒 + 分享：分享卡＝「我的幽靈軍團有 N 個」，Remix＝換題材皮。已轉成今日 Demo（見 Demo 線）。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Every time you die, your past lives come back to fight beside you. Best failure-loop mechanic we've seen this week. We're turning it into a 45-second meme game — what should the ghosts be?"<br><span style="color:var(--ink-dim)">中譯：每次死亡，前世的你回來並肩作戰。本週最棒的失敗迴圈機制。我們要把它做成 45 秒梗遊戲——幽靈該是什麼？</span></div>
+<div class="meta"><a href="https://www.reddit.com/r/IndieGaming/comments/1wzr6jl/every_time_you_die_in_my_game_your_previous_lifes/" target="_blank">Reddit r/IndieGaming ↗</a>　摘要層</div>
+</div></div>
+<div class="ammo-grp l-dm reveal"><div class="gt">🕹️ Demo 線　TOP 1</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>「Ghost Run」：死過的每一次都變成隊友的 45 秒挑戰（今天就能做）<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>機制靈感來自 r/IndieGaming 今日 top 帖（見小編線 #3）；題材皮由當日留言投稿決定（摘要層）。</div>
+<div class="ln"><b>GameGen 角度：</b><b>玩法：</b>單鍵躲避 / 收集 45 秒，每次死亡留下上一輪軌跡的「幽靈」並肩跑；結束出分享卡「幽靈軍團 N 隻」，挑戰頁 + Remix 鍵換題材皮（如「開服當天恐慌」「截止日前一晚」，全泛化、無 IP）。KPI：Play-to-Share、Play-to-Remix。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Die. Come back. Your last attempt runs next to you. 45 seconds, one button. How many ghosts can you survive with?"<br><span style="color:var(--ink-dim)">中譯：死掉，再回來，你的上一輪就跑在你旁邊。45 秒，一顆按鈕。你能帶著幾隻幽靈活下來？</span></div>
+<div class="meta">機制參考 <a href="https://www.reddit.com/r/IndieGaming/comments/1wzr6jl/every_time_you_die_in_my_game_your_previous_lifes/" target="_blank">Reddit ↗</a>　模板：單鍵躲避 + 幽靈回放　風險：低（泛化角色，不挪既有 IP）</div>
+</div></div>
+</div>
     </div>
   </header>
 
   <main>
-    <!-- 01 即時熱榜 -->
+    <!-- 即時熱榜 -->
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
-      <div class="boards reveal">
-        <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/08 07:30 真抓</span></div>
-          <ol>
-            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">575K ▲16.9%</span></li>
-            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">88K ▼3.6%</span></li>
-            <li><span class="nm">Rust</span><span class="vn">65K ▼7.1%</span></li>
-            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">65K ▲13.7%</span></li>
-            <li><span class="nm">Rainbow Six Siege</span><span class="vn">61K ▲0.4%</span></li>
-            <li class="up"><span class="nm">Warframe</span><span class="vn">45K ▲12.2%</span></li>
-          </ol>
-          <div class="bf">Steam 官方 API · 10/08 07:30 真數字 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
-        </div>
-        <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。今日 Google Playground 和 Ape Escape 話題可能帶動 Roblox 相關討論，具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
-        </div>
-        <div class="board b-dim">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。CS:GO 今日 +16.9% 暴衝可能帶動直播觀看，Star Wars: Galactic Racer 新上線也可能引流，今日具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
-        </div>
-      </div>
-      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 今日 Steam 數字為 2026-10-08T07:30 真抓（heat_latest.json）。CS:GO 以 575,228 人在線領榜（+16.9%），為今日最大漲幅；Team Fortress 2 同步大漲 +13.7%（65K）、Warframe +12.2%（45K）；GTA V Legacy 逆勢 +20.9%（37K）。AION 2 在最多人玩榜排名 #5，Deadlock #6。新進最多人玩榜：MONSTER HUNTER RISE（#100）。Roblox / Twitch / Threads 今日無瀏覽器工具，均標記「資料不足」。
-      </div>
+      <div class="boards reveal"><div class="board b-steam"><div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/08 即時</span></div><ol><li class="up hot"><span class="nm">Counter-Strike（appid 730）</span><span class="vn">575K ▲16.9%</span></li><li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">88K ▼3.6%</span></li><li class="down"><span class="nm">Rust</span><span class="vn">65K ▼7.1%</span></li><li class="up"><span class="nm">Team Fortress 2</span><span class="vn">65K ▲13.7%</span></li><li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">61K ▲0.4%</span></li><li class="up"><span class="nm">Apex Legends</span><span class="vn">45K ▲2.5%</span></li></ol><div class="bf">Steam 官方 API · 10/08 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div></div><div class="board b-rblx"><div class="bh"><span>ROBLOX 熱門趨勢</span><span class="metric">Charts · 瀏覽器 10/08 真抓</span></div><ol><li class="hot"><span class="nm">Adopt Me!</span><span class="vn">165.6K</span></li><li class="up"><span class="nm">Spell Prank（法術惡作劇）</span><span class="vn">142.2K</span></li><li class="up"><span class="nm">99 Nights in the Forest</span><span class="vn">142.1K</span></li><li class="up"><span class="nm">Dandy's World [Beta]</span><span class="vn">139.8K</span></li><li class="up"><span class="nm">Husky Valley（胡斯山谷）</span><span class="vn">96.6K</span></li></ol><div class="bf">roblox.com/charts（Computer / All Locations）· 10/08 瀏覽器真抓；頁面數值未標單位，視為在線人數但<b>無法完全證實</b></div></div><div class="board b-dim"><div class="bh"><span>TWITCH 觀看</span><span class="metric">近 7 日平均觀眾 · 10/08</span></div><ol><li class="hot"><span class="nm">Just Chatting</span><span class="vn">272K</span></li><li class="up"><span class="nm">Grand Theft Auto V</span><span class="vn">109K</span></li><li class="up"><span class="nm">AION 2</span><span class="vn">87.8K</span></li><li class=""><span class="nm">League of Legends</span><span class="vn">82.4K</span></li><li class=""><span class="nm">Counter-Strike</span><span class="vn">82.4K</span></li></ol><div class="bf">TwitchTracker · 10/08 瀏覽器真抓 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div></div></div><div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">✅ 本機 heat-radar 07:30 已跑成功（fetched_at 2026-10-08T07:30）；Steam 為官方 API 真數字。Twitch / Roblox 為本次瀏覽器 10/08 真抓。</div>
     </section>
 
-    <!-- 02 暴衝訊號 -->
+    <!-- 暴衝訊號 -->
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>速度觀察</span></span>CS:GO 暴衝 +16.9%（575K）、GTA V Legacy +20.9%、TF2 +13.7%、Warframe +12.2%——今日多個大盤異動</h3>
-        <div class="sum">Steam 在線速度（10/08 07:30 vs 前日）：今日最大漲幅 <b>Counter-Strike: Global Offensive +16.9%</b>（575,228 人，前日 492,264 人）；<b>Grand Theft Auto V Legacy +20.9%</b>（37,035 人，前日 30,625 人）；<b>Team Fortress 2 +13.7%</b>（64,542 人，前日 56,779 人）；<b>Warframe +12.2%</b>（44,651 人，前日 39,782 人）。跌幅：Wallpaper Engine -12.1%、Rust -7.1%、Palworld -3.8%。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>CS:GO 今日 +16.9% 暴衝至 575K，沒有明確新聞觸發，可能是週期性社群回流（CS2 重大更新跡象或社群自發）。<b>GTA V Legacy 同日 +20.9%，Warframe 亦大幅上漲——多個老遊戲同步回流，說明週四可能是這批「長青社群型」遊戲的自然高峰日</b>。TF2 連續多日上漲，Valve 近期對 TF2 的關注信號可能持續影響玩家回流意願。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/08 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>排名跳動</span></span>Yu-Gi-Oh! Master Duel +10（55→45）、Escape from Tarkov +9（98→89）、Dead by Daylight +6（25→19）；新進：MONSTER HUNTER RISE（#100）</h3>
-        <div class="sum">steam_movers（10/08 07:30）排名跳動記錄：<b>Yu-Gi-Oh! Master Duel +10 名</b>（55 → 45），今日最大跳幅；<b>Escape from Tarkov +9 名</b>（98 → 89），首次進入 Top 100 新位置；<b>Hunt: Showdown 1896 +7 名</b>（84 → 77）；<b>Dead by Daylight +6 名</b>（25 → 19）；<b>Forza Horizon 6 +6 名</b>（68 → 62）。新進榜：<b>MONSTER HUNTER RISE</b>（#100）——同日消息確認 Monster Hunter Rise iOS/Android 移植上線（Netflix 訂閱）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Escape from Tarkov 今日衝進 Top 100（#89），與昨日 Eurogamer 等媒體確認其在 Steam 正式上架相呼應——玩家等待已久的 Steam 版本帶動首波湧入。<b>MONSTER HUNTER RISE 新進 #100 同日有 iOS/Android 移植消息，說明跨平台消息能夠帶動 Steam 版本的搜尋與回流</b>。Yu-Gi-Oh! Master Duel +10 名無明確觸發，可能是卡牌改版或社群活動。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/08 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+<h3><span class="tag ig"><span>暴衝</span></span>GTA V Legacy +20.9%、CS +16.9% 過 ≥15% 旗標——原因無法完全證實</h3>
+<div class="sum">Steam 真·日比：<b>Grand Theft Auto V Legacy 37,035（+20.9%）</b>、<b>Counter-Strike 575,228（+16.9%）</b>過旗標；TF2 +13.7%、Warframe +12.2% 接近。排名跳動：Yu-Gi-Oh! Master Duel 55→45、Dead by Daylight 25→19、Forza Horizon 6 68→62；新進榜：Monster Hunter Rise（#100）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>暴衝原因（更新 / 活動 / 週末）本次未查證，<b>目前無法完全證實</b>，不編故事。對 trend-to-game 題材價值低；今日彈藥主力在 AI 遊戲平台敘事。Roblox「胡斯山谷」同時出現在 Top Trending 與 Up-and-Coming，列黑馬觀察（無昨日快照，無法計算漲幅）。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">STEAM 官方 API · 10/08（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div></div>
+</article><div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ Twitch 7 天漲幅 / Roblox 新進榜漲幅需昨日快照比對，本次無基準，<b>目前無法完全證實</b>，不以估計補位。</div>
     </section>
 
-    <!-- 03 早期訊號 -->
+    <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>早期</span></span>HN：Google Playground（105pts/190c，今日最高）、Braid 製作人「最大謎題遊戲」（7pts）；itch.io viral：BOMB DEFUSER / StreamRush / RarityRNG；GitHub：EpicGames/raddebugger 登榜</h3>
-        <div class="sum">Hacker News 今日遊戲相關最高分：<b>Google Playground（105 points / 190 comments）</b>——今日 HN 所有遊戲條目中壓倒性最高，開發者社群對 AI 遊戲創作的高度關注已無疑問。Braid 製作人 Jonathan Blow 接受 BBC 採訪談「最大謎題遊戲」（7pts）。「AI Closed in on Unique Games Proof」數學研究（4pts）。Monolith——一款以軟體新創為主題的引擎建構遊戲（3pts）；Wick——小型語言 + 小型遊戲引擎（2pts）。itch.io 今日 viral 榜：BOMB DEFUSER、StreamRush、STREAMFLIPPY'S CUSTOM NIGHT、RarityRNG 持續熱榜。GitHub trending：EpicGames/raddebugger 新上榜（Epic Games 開源偵錯器）、boykopovar/AnyPS5（PS5 遊戲跨平台工具）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Google Playground 在 HN 190 則討論是今日遊戲圈最高度關注的開發者話題。<b>itch.io viral 榜的 BOMB DEFUSER（炸彈拆除）持續熱榜，說明「時間壓力 + 明確失敗條件」是高分享遊戲公式之一</b>。StreamRush（直播主競速類型）反映創作者經濟相關玩法的持續吸引力。EpicGames/raddebugger 上榜 GitHub trending 說明 Epic 在工具層的開源投入正受到關注。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">HACKER NEWS / ITCH.IO / GITHUB · 10/08 · <a href="https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/" target="_blank">Google Playground ↗</a> / <a href="https://itch.io/games/tag-viral" target="_blank">itch viral ↗</a></div>
-        </div>
-      </article>
+      <div class="boards reveal"><div class="board b-steam"><div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div><ol><li class="hot"><span class="nm">The Boogeyman</span><span class="vn">新品</span></li><li class=""><span class="nm">Raccoon Valley Tycoon</span><span class="vn">新品</span></li><li class=""><span class="nm">Incremental Woods</span><span class="vn">新品</span></li><li class=""><span class="nm">Royal Cartographer: Restore the Map</span><span class="vn">新品</span></li><li class=""><span class="nm">Starjaunt</span><span class="vn">新品</span></li></ol><div class="bf">Steam 新品榜 · 10/08 heat-radar（僅標題層）</div></div><div class="board b-rblx"><div class="bh"><span>ITCH.IO HTML5 新品</span><span class="metric">小體量早期</span></div><ol><li class="hot"><span class="nm">Rulehouse</span><span class="vn">新品</span></li><li class=""><span class="nm">Toss Office</span><span class="vn">新品</span></li><li class=""><span class="nm">The Freak Circus</span><span class="vn">新品</span></li><li class=""><span class="nm">sweet instincts</span><span class="vn">新品</span></li><li class=""><span class="nm">Alpine</span><span class="vn">新品</span></li></ol><div class="bf">itch.io /games/html5 · 10/08 heat-radar（僅標題，無下載 / 遊玩數）</div></div></div><div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ 這批僅有標題，無成長數據與玩法細節，<b>共通 loop 目前無法完全證實</b>，不在此歸納。</div>
     </section>
 
-    <!-- 04 高討論文章 -->
+    <!-- 高討論文章 -->
     <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>產業大事</span></span>Google Playground 正式上線 + Unity Spark 整合——AI 遊戲創作平台進入主流，Astrocade 1,000 萬用戶提前卡位</h3>
-        <div class="sum">多媒體確認（TechCrunch、The Verge、VGC、Game Developer、GamesIndustry.biz，2026-10-07）：Google 正式推出 Google Playground 實驗性 AI 遊戲創作平台，Unity 同步推出 Unity Spark，整合 Google Playground 提供 AI 協作遊戲創作體驗。TechCrunch 描述：「barriers to entry for game creation are rapidly diminishing as AI makes game development more accessible to people without traditional programming, design, or illustration skills.」同時，Kotaku 報導 AI 遊戲平台 Astrocade 已達每月 1,000 萬用戶（2026-10-07），平台充斥「AI slop」但規模不容忽視。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Google + Unity 的合體進入 AI 遊戲創作市場，是今年遊戲 AI 賽道最大的結構性事件之一。<b>Astrocade 1,000 萬用戶說明：玩家不在意「AI 做的」，他們在意「有東西玩」——這意味著平台層面的需求已成立，接下來競爭的是品質與分享性</b>。GameGen 的 Trend-to-Game 管線（今天熱話 → 今天遊戲 → 今天分享）是這個競爭的差異化答案。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">TECHCRUNCH / THE VERGE · <a href="https://techcrunch.com/2026/10/07/google-experiments-with-an-ai-powered-gaming-platform" target="_blank">TechCrunch ↗</a> / <a href="https://www.theverge.com/tech/1006477/google-playground-unity-spark-ai" target="_blank">Verge ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業觀察</span></span>Bit Reactor（Star Wars: Zero Company）宣布召回一半以上被裁員工——發行成功後的責任回應</h3>
-        <div class="sum">多媒體確認（Game Developer、GamesIndustry.biz、GameSpot，2026-10-08）：Bit Reactor 正式宣布召回被裁員的 Star Wars: Zero Company 開發人員，Game Developer 報導「超過一半」的裁員人員重返崗位。GamesIndustry.biz 描述工作室「bringing as many people back as possible」。這是本週 Reddit r/Games 和 r/gaming 熱帖——在遊戲業裁員新聞充斥的背景下，這則召回消息引發大量正向討論。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>在遊戲業持續裁員的 2026 年，這則「裁員後召回」的消息在社群引發反向正向情緒浪潮。<b>玩家和開發者都在尋找「遊戲業不是全壞的」的故事</b>——這種情緒切角適合今日發文：好遊戲帶來收入，收入帶回人才。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAME DEVELOPER / GI.BIZ · <a href="https://www.gamedeveloper.com/business/star-wars-zero-company-developer-bit-reactor-brings-back-over-half-of-furloughed-staff" target="_blank">GD ↗</a> / <a href="https://www.gamesindustry.biz/star-wars-zero-company-developer-bit-reactor-begins-bringing-furloughed-staff-back" target="_blank">GI.biz ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>硬體市場</span></span>GameStop 二手 PS5 Pro 定價 $1,399——MSRP 上加 66%，遊戲硬體黃牛化引爆討論</h3>
-        <div class="sum">Reddit r/gaming 今日熱帖：GameStop 及其他零售商將二手 PS5 Pro 定價 $1,399，比 Sony 建議售價（$849.99）高 66%（Reddit，2026-10-08；Game Developer，2026-10-08）。Game Developer 以「GameStop, other retailers to sell used PlayStation 5 Pro units for 66 percent over MSRP」為標題報導。引發玩家對主機定價、硬體供需、次世代定價期待的大量討論。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>PS5 Pro 的二手黃牛定價討論，折射出主機遊戲玩家對「次世代門檻」越來越高的焦慮。<b>行動裝置 / 瀏覽器 / PC 可玩的 GameGen 遊戲，在這個背景下有獨特的「零硬體成本」分享優勢</b>——不需要 $1,399 的機器，打開連結就能玩。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">REDDIT / GAME DEVELOPER · <a href="https://www.reddit.com/r/gaming/comments/1wzohzj/gamestop_is_now_selling_used_ps5_pros_at_1399/" target="_blank">Reddit ↗</a> / <a href="https://www.gamedeveloper.com/console/gamestop-other-retailers-to-sell-used-playstation-5-pro-units-for-66-percent-over-msrp" target="_blank">GD ↗</a></div>
-        </div>
-      </article>
+<h3><span class="tag ai"><span>AI 動向</span></span>Google Playground 上線，HN 105 pts / 190 comments；Unity Spark 預告整合</h3>
+<div class="sum">10/7 Google 官方部落格宣布 Playground（美國 18+、對話式生成、分享連結 / Explore、部分類型排行榜與多人）。Hacker News 該帖 105 points、190 則留言（radar 客觀數字）。Game Developer、80.lv 同步報導 Unity Spark（標題層）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>客觀熱度（HN 討論量）支持這是今日第一大話題。留言區是挖「大廠工具缺口」的素材池，內容本次未讀，目前無法完全證實。已收 CJ Top 1。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">GOOGLE BLOG · 10/7 · <a href="https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/" target="_blank">原文 ↗</a></div></div>
+</article><article class="story ai reveal">
+<h3><span class="tag ai"><span>AI 動向</span></span>Astrocade 自報月活 1,000 萬（四個月前約 500 萬）</h3>
+<div class="sum">Kotaku 10/7 報導，引 Astrocade CEO 對 GamesBeat 的說法；自報數字，無遊戲數 / 創作者數。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>真對手規模訊號；同日 Google 進場代表競爭升溫。已收 CJ Top 2。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">KOTAKU · 10/7 · <a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">原文 ↗</a></div></div>
+</article><article class="story rl reveal">
+<h3><span class="tag rl"><span>大廠對標</span></span>Capcom 稱將逐步把 RE Engine 變成「AI-generation game engine」（5 天前，🔄）</h3>
+<div class="sum">PC Gamer 10/3 報導：Capcom 在 Open Conference RE: 2026 提出 REX 計畫（六個程式、超過 2,000 位 RE Engine 使用者）；Capcom 先前表示不會把 AI 生成素材放進遊戲內容，重點在效率。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>大廠 AI 策略是「內部生產力」，與 GameGen 的「玩家端創作」互補不衝突。此題先前已用過，本次僅作背景，不進頭版。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">PC GAMER · 10/3 · <a href="https://www.pcgamer.com/gaming-industry/game-development/capcom-announces-plans-to-transform-its-re-engine-into-an-ai-generation-game-engine" target="_blank">原文 ↗</a></div></div>
+</article><article class="story rl reveal">
+<h3><span class="tag rl"><span>大廠對標</span></span>Sega：不把遊戲創意交給 AI，但用在其他部門提效（10/6，🔄）</h3>
+<div class="sum">GamesIndustry.biz 10/6：Sega 表示不會把創意面交給 AI；Crystal Dynamics 稱在早期原型階段用過 gen AI（Tavily 摘要層）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>業界主流口徑＝「AI 輔助、創意留給人」。GameGen 可明示「玩家創作、AI 執行」，避開創意被取代的情緒。此題昨日已用過，僅作背景。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">GAMESINDUSTRY.BIZ · 10/6 · <a href="https://www.gamesindustry.biz/sega-wont-entrust-the-creative-aspect-of-games-to-ai-but-is-using-tech-to-improve-efficiency-in-other-departments" target="_blank">原文 ↗</a></div></div>
+</article>
     </section>
 
-    <!-- 05 迷因 -->
+    <!-- 迷因題材 / 迷因遊戲 -->
     <section id="meme">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>業界段子</span></span>獨立開發者揭露：Steam $560K 毛收入 → 到手 $73K——「Steam 的數學」今日 r/gamedev 最高分帖</h3>
-        <div class="sum">Reddit r/gamedev 今日熱帖（2026-10-08）：帖文標題「How $560,000 in Steam gross revenue turns into just $73,000 for an indie dev.」——分析 Steam 30% 抽成、地區定價差異（部分地區僅原價 20-40%）、退款損失、稅務等逐層壓縮效應。評論區充斥「這就是為什麼獨立開發者需要多平台」、「Steam 稅是行業秘密」、「真實到心酸」等回應。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這則帖文在 r/gamedev 今日最高分，說明「平台抽成現實」是永久高分話題。<b>迷因切角（不涉及任何平台評論）：「$560K 的夢 → $73K 的現實。你的第一個遊戲的第一個玩家，比你以為的更值錢。」</b>——強調每個用戶的實際獲客成本遠高於表面數字，回帶有機社群的必要性。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不評論 Steam 政策，只描述現實</span></span></div></div>
-          </div>
-          <div class="src">REDDIT R/GAMEDEV · <a href="https://www.reddit.com/r/gamedev/comments/1wzv6kr/how_560000_in_steam_gross_revenue_turns_into_just/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因人物</span></span>Bobby's back——PC Gamer 一行標題道盡一切，前 Activision CEO 回歸董事會引爆評論區</h3>
-        <div class="sum">PC Gamer 今日以「Bobby's back.」作為整篇文章標題（2026-10-08），報導前 Activision Blizzard CEO Bobby Kotick 加入 Skydance 董事會一事。評論區反應兩極：部分人感嘆「遊戲業永遠是這樣」，部分人指出 Skydance 在 Bobby 加入後可調動的資源規模，以及這對 WB Games / Paramount Games 旗下 IP 的未來影響。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「Bobby's back.」這三個字是今日遊戲圈最被截圖的標題。切角不需要評論人物，只需要描述現實：<b>「遊戲業的大事永遠是企業層面的棋子移動。你在做的事，不需要董事會批准。」</b>今日限時窗口，明天話題轉移。⚠️ 不對個人做評論，只引用公開新聞標題。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 今日限時，不對人身評論</span></span></div></div>
-          </div>
-          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/gaming-industry/bobbys-back/" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+      <article class="story ig reveal">
+<h3><span class="tag ig"><span>梗→遊戲</span></span>「看輪胎滾下山」：開發者因留言需求提前開了 Steam 頁</h3>
+<div class="sum">r/IndieGaming 今日 top 帖：開發者說因為很多人也想看「輪胎滾下山」，所以提早建立 Steam 頁面（Reddit top-of-day，標題層）。這是「荒謬單一動作 + 社群起鬨 → 遊戲」的即時案例。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>梗 → 遊戲的速度正在縮短，與 Trend Response Time 直接相關。可借鏡「用社群起鬨當需求驗證」。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">REDDIT r/IndieGaming · 10/8 · <a href="https://www.reddit.com/r/IndieGaming/comments/1wzz8ii/apparently_a_lot_of_you_also_want_to_watch_a_tire/" target="_blank">原文 ↗</a></div></div>
+</article><div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ Know Your Meme「Popular」頁本次抓到的是歷史總榜（Navy Seal Copypasta、Trollface 等老梗），<b>非當日新梗</b>，依新鮮度 guard 不採用。當日全新迷因目前無法完全證實，不以舊梗充數。</div>
     </section>
 
-    <!-- 06 機制靈感庫 -->
+    <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <div class="boards reveal">
-        <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
-          <ol>
-            <li class="hot"><span class="nm">追逐捕捉 loop（Ape Escape 復活公式）</span><span class="vn">追逐型</span></li>
-            <li class="hot"><span class="nm">時間壓力 + 明確失敗條件（BOMB DEFUSER itch.io viral 公式）</span><span class="vn">緊張型</span></li>
-            <li class="up"><span class="nm">直播主競速 meta-game（StreamRush itch.io viral 公式）</span><span class="vn">創作者經濟</span></li>
-            <li><span class="nm">RNG 稀有度揭示（RarityRNG itch.io 持續熱榜公式）</span><span class="vn">開箱機制</span></li>
-            <li><span class="nm">引擎建構 / 軟體新創模擬（Monolith HN Show）</span><span class="vn">策略模擬</span></li>
-          </ol>
-          <div class="bf">itch.io + HN + 今日新聞衍生 · 10/08 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
-        </div>
-      </div>
-
-      <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>追逐捕捉 loop 設計公式——Ape Escape 復活確認後今日窗口最強</h3>
-        <div class="sum">Ape Escape（捉猴啦！）的玩法轉換公式：<b>追逐目標 + 時間壓力 + 分享指標</b>。核心設計要素：（1）目標行為——小怪以偽隨機路線逃跑，製造不可預測感；（2）捕捉成就——每捉到一隻有明確視聽回饋；（3）分享指標——「30 秒捉了 X 隻」的格式天然高分享；（4）難度爬升——速度 / 數量 / 地形複雜度隨進度增加。此機制公式完全不依賴 Ape Escape IP，只借「追逐 + 捕捉」的情感設定。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>追逐捕捉 loop 的最大優點：<b>玩家 3 秒內理解規則（跑去捉）、失敗可重試（一局 30 秒以內）、分享格式天然高（捉到幾隻）</b>。今日蹭 Ape Escape 復活確認是最佳窗口，配文：「Ape Escape 官宣回來了——先熱個身。」搭便車效率最高。明後天話題降溫。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用 Ape Escape 素材</span></span></div></div>
-          </div>
-          <div class="src">EUROGAMER · <a href="https://www.eurogamer.net/sony-classic-playstation-games-ape-escape-sonic-mania" target="_blank">Eurogamer ↗</a></div>
-        </div>
-      </article>
+      <article class="story ig reveal">
+<h3><span class="tag ig"><span>機制</span></span>「死亡後前世回來並肩作戰」：失敗即資產的幽靈迴圈</h3>
+<div class="sum">r/IndieGaming 今日 top 帖機制（標題層）。可原創拆解為「回放自己的上一輪」，不涉及特定 IP。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>失敗變成隊友，讓重玩有正向理由（Repeat Creation / Retention），並天然產出分享數字（幽靈數）。已轉成今日 Demo「Ghost Run」。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">REDDIT r/IndieGaming · 10/8 · <a href="https://www.reddit.com/r/IndieGaming/comments/1wzr6jl/every_time_you_die_in_my_game_your_previous_lifes/" target="_blank">原文 ↗</a></div></div>
+</article><div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ unityroom 本次未抓取，<b>目前無法完全證實</b>當日得獎機制，骨架保留。IP 二創地雷：避免直接使用既有遊戲角色 / 美術，沿用泛化角色。</div>
     </section>
 
-    <!-- 07 繁中熱話 -->
+    <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
-        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：Google Playground 登場（台灣開發者圈反應）、Ape Escape（捉猴啦！）復活（台灣老玩家強烈情感連結）、GameStop PS5 Pro $1,399（主機玩家論壇反應）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
-      </div>
+
+      <div class="story ig reveal" style="padding:18px 20px"><h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話暫缺</h3><div class="sum" style="margin-bottom:0">⚠️ Threads 需登入 / JS 渲染，本次未取得繁中圈當日熱話，<b>目前無法完全證實</b>，骨架保留、不以估計補位。可追母題：Google Playground 僅限美國 18+，繁中圈可能出現「台灣什麼時候開」的討論變體（尚未驗證）。</div></div>
     </section>
 
-    <!-- 08 Trend-to-Game 題材 -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
-      <div class="reveal">
-      <table class="t2g">
-        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
-        <tbody>
-          <tr><td>Google Playground / AI 遊戲創作進入主流（今日最高 HN 熱度）</td><td><span class="tmpl">AI 一句話生成 loop</span></td><td>「AI 讓做遊戲的門檻今天崩盤」</td><td class="rk-low">低</td><td>CJ / X 均適合，窗口持續數日，今日最強</td></tr>
-          <tr><td>Ape Escape 復活確認（懷舊 IP 復活情緒）</td><td><span class="tmpl">追逐捕捉 loop</span></td><td>「Ape Escape 回來了——先玩這個熱身」</td><td class="rk-low">低 · 不用 Ape Escape IP</td><td>★ 今日 Demo 首選，今天窗口最強，明後天降溫</td></tr>
-          <tr><td>獨立開發者 $560K → $73K（平台抽成現實）</td><td><span class="tmpl">獨立 dev 生存模擬 loop</span></td><td>「有人算清楚了獨立開發的數學」</td><td class="rk-low">低 · 不評論 Steam 政策</td><td>X 共鳴帖，今日 r/gamedev 最高分話題</td></tr>
-          <tr><td>Bobby's back（遊戲業企業迷因）</td><td><span class="tmpl">公司政治策略 loop</span></td><td>「不需要等董事會批准」</td><td class="rk-mid">中 · 敏感人物，今日限時，不做人身評論</td><td>X 今日迷因窗口，明天話題轉移</td></tr>
-          <tr><td>CS:GO 575K 暴衝（老遊戲長青社群）</td><td><span class="tmpl">射擊 / 競技核心 loop</span></td><td>「2026 年 CS:GO 仍是 Steam #1」</td><td class="rk-low">低</td><td>X 觀察帖，長青遊戲設計啟示，今日話題點</td></tr>
-        </tbody>
-      </table>
-      </div>
+      <div class="reveal"><table class="t2g"><thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead><tbody><tr><td>Google Playground 開放（HN 105 pts）</td><td><span class="tmpl">「你第一款會做什麼」徵題 → 即時做</span></td><td>被選中的留言者回分享</td><td class="rk-low">低</td><td>★ 小編首選：留言投稿 → 當天出可玩連結</td></tr><tr><td>死亡後幽靈回來並肩作戰（Reddit top）</td><td><span class="tmpl">單鍵躲避 + 幽靈回放</span></td><td>「幽靈軍團 N 隻」分享卡</td><td class="rk-low">低</td><td>★ 本日 Demo 首選：Ghost Run，泛化角色</td></tr><tr><td>看輪胎滾下山（r/IndieGaming）</td><td><span class="tmpl">單動作物理 / 滾動</span></td><td>失敗瞬間好剪</td><td class="rk-low">低</td><td>可作 Remix 皮：換成「開服 / 截稿」題材</td></tr><tr><td>Steam 毛收入 $560K 剩 $73K（r/gamedev）</td><td><span class="tmpl">不做遊戲，做話題貼文</span></td><td>開發者共鳴討論</td><td class="rk-low">低</td><td>僅引標題數字，不補拆解</td></tr><tr><td>Astrocade 月活 1,000 萬（自報）</td><td><span class="tmpl">不適用（競品敘事）</span></td><td>CJ 觀點貼文</td><td class="rk-low">低</td><td>註明自報，勿當獨立驗證</td></tr></tbody></table></div>
     </section>
 
-    <!-- 09 CJ LinkedIn 題材 -->
+    <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
-      <div class="reveal">
-      <table class="t2g">
-        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
-        <tbody>
-          <tr><td>Google Playground + AI 遊戲創作主流化——但 1,000 萬 AI 垃圾用戶說明品質是護城河</td><td>Google Playground（實驗性 AI 遊戲創作平台）+ Unity Spark 同日上線（TechCrunch / Verge，10/07）；競品 Astrocade 每月 1,000 萬用戶，描述多為「AI slop」（Kotaku，10/07）；HN 105pts/190c</td><td>"Google just launched an AI game creation platform. Unity built a tool for it. A competitor already has 10 million monthly users — mostly AI slop. The barrier to creating games collapsed today. The new moat isn't creation. It's: 'Can you make something worth sharing?'"</td><td><a href="https://techcrunch.com/2026/10/07/google-experiments-with-an-ai-powered-gaming-platform" target="_blank">↗</a></td></tr>
-          <tr><td>Capcom RE Engine → AI 生成引擎——AAA 廠商最激進的引擎層押注</td><td>Capcom 宣布將 RE Engine 改造為「AI-generation game engine」，準備迎接「與 AI 共同創造遊戲的未來」（PC Gamer / The Verge，10/03）；Capcom 近年多款成功作品背後引擎</td><td>"Capcom just announced plans to transform their RE Engine into an 'AI-generation game engine.' Not AI as a tool. The engine itself. This is the company behind Resident Evil saying: 'We're rebuilding for a future where we create games with AI.' The wave is here."</td><td><a href="https://www.pcgamer.com/gaming-industry/game-development/capcom-announces-plans-to-transform-its-re-engine-into-an-ai-generation-game-engine" target="_blank">↗</a></td></tr>
-          <tr><td>Bit Reactor 裁員後召回——好遊戲帶來收入，收入帶回人才</td><td>Bit Reactor 召回超過一半被裁 Star Wars: Zero Company 員工（GD / GI.biz，10/08）；在遊戲業裁員潮中罕見正向案例</td><td>"Bit Reactor just brought back over half of the staff they furloughed before launch. Star Wars: Zero Company shipped. It worked. So they brought people back. Good games create revenue. Revenue brings back people. The math works if you make something worth playing."</td><td><a href="https://www.gamedeveloper.com/business/star-wars-zero-company-developer-bit-reactor-brings-back-over-half-of-furloughed-staff" target="_blank">↗</a></td></tr>
-        </tbody>
-      </table>
-      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（Google Playground AI 主流化、Capcom RE Engine 押注）已附完整 EN hook + 中譯，可直接交 CJ 每日包。對外用字已過濾所有賭場語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
-      </div>
-      </div>
+      <div class="reveal"><table class="t2g"><thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead><tbody><tr><td>創作商品化，稀缺的是時機</td><td>Google Playground 10/7 上線；對話生成、分享連結、Explore（僅美國 18+）</td><td>"Creation is becoming a commodity. The scarce thing is timing."</td><td><a href="https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/" target="_blank"> ↗</a></td></tr><tr><td>需求已被量測</td><td>Astrocade 自報月活 1,000 萬，約四個月前 500 萬（Kotaku 引 GamesBeat，10/7）</td><td>"Demand for AI-made games isn't a thesis anymore."</td><td><a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank"> ↗</a></td></tr><tr><td>大廠把 AI 留在牆內</td><td>Capcom（10/3）、Sega（10/6）口徑皆為內部提效、創意留給人</td><td>"Studios use AI inside the studio. Players need it in their hands."</td><td><a href="https://www.pcgamer.com/gaming-industry/game-development/capcom-announces-plans-to-transform-its-re-engine-into-an-ai-generation-game-engine" target="_blank"> ↗</a></td></tr></tbody></table></div>
     </section>
 
-    <!-- 10 建議動作 -->
+    <!-- Actions -->
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
-          <li>Google Playground 上線：「AI 讓做遊戲的門檻今天崩盤了。但 1,000 萬 AI 垃圾用戶也同時出現了。真正稀缺的是：做得出值得分享的東西。」（今日最強 CJ / X 均適合）</li>
-          <li>獨立開發者 $560K → $73K：「有人算清楚了。$560,000 的 Steam 收入 → 到手 $73,000。每一個有機傳播的玩家，比你以為的更值錢。」</li>
-          <li>Ape Escape 復活：「捉猴啦！確認復活，由 Sonic Mania 製作組開發。Sony 挖出了 PlayStation 寶庫。」</li>
-          <li>Bobby's back（今日限時）：「PC Gamer 標題：『Bobby's back.』你知道那是哪個 Bobby。遊戲業的大棋局永遠在動。你不需要等棋局穩定才開始。」⚠️ 不對人身評論</li>
-        </ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
-          <li>★ 追逐捕捉 loop——蹭 Ape Escape 復活確認，今日窗口最強。玩家在場地內追捉隨機亂竄的小怪，30 秒計時，分享「捉了 X 隻」。不用 Ape Escape IP。</li>
-          <li>BOMB DEFUSER 時間壓力 loop——蹭 itch.io viral 榜持續熱榜，倒數計時 + 明確失敗條件，高分享格式。</li>
-          <li>CS:GO 暴衝梗遊戲——「CS:GO 2026 年還是 #1，你在幹嘛？」極簡操作，30 秒，分享反差感。</li>
-        </ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
-          <li>Google Playground 用戶增長 vs Astrocade 1,000 萬基準線——AI 遊戲平台的真實留存率是多少？</li>
-          <li>Capcom RE Engine AI 時程——何時正式整合 AI 生成能力進入 RE Engine？對行業的影響窗口。</li>
-          <li>Ape Escape 更多資訊——Sony 何時官宣？更多舊 IP 復活消息？</li>
-          <li>Escape from Tarkov Steam 版表現——今日 +9 名，是否維持上升趨勢？玩家對 Steam 版的長期反應。</li>
-        </ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
-          <li>Bobby Kotick：引用公開新聞標題 OK，不做任何個人評論、道德判斷。今日限時話題。</li>
-          <li>Ape Escape：不使用 Sony / Ape Escape / Headcannon 品牌素材、角色設計、配樂，只借「追逐捕捉」玩法設定。</li>
-          <li>獨立開發者 $73K 話題：不評論 Steam 抽成政策是否合理，只描述現實數字。</li>
-          <li>Google Playground / Astrocade：描述現象 OK，不暗示 GameGen 的功能與其相同或競爭——定位不同。</li>
-          <li>所有來源均為摘要層——對外不寫成「確定事實」，保留「報導指出 / 消息人士稱」語氣。</li>
-        </ul></div>
-      </div>
+<div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>「你第一款會做什麼？」徵題 → 當天做 1–2 款回覆</li><li>失敗迴圈機制徵題：「幽靈該是什麼？」</li><li>輪胎滾下山：把社群起鬨當需求驗證</li></ul></div>
+<div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ Ghost Run：單鍵躲避 + 幽靈回放，泛化角色 — 本日首選</li><li>滾動物理單動作小遊戲（蹭輪胎梗）</li></ul></div>
+<div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Playground 是否開放美國以外地區、Unity Spark closed beta 時程</li><li>Astrocade 數字是否有第三方交叉驗證</li><li>HN 留言區對 Playground 的缺口抱怨</li></ul></div>
+<div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Astrocade 為自報數字，貼文需標「自報 / per CEO」</li><li>Playground 僅美國 18+，勿暗示 Google 已全球開放</li><li>對外文案避開賭場語言；角色一律泛化</li></ul></div>
+</div>
     </section>
 
-    <div class="evlog reveal">
-      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
-      <table>
-        <tr><td>Google Playground 正式上線 + Unity Spark</td><td><a href="https://techcrunch.com/2026/10/07/google-experiments-with-an-ai-powered-gaming-platform" target="_blank">TechCrunch</a> / <a href="https://www.theverge.com/tech/1006477/google-playground-unity-spark-ai" target="_blank">The Verge</a> / <a href="https://www.gamedeveloper.com/business/google-debuts-new-ai-game-platform-named-google-playground" target="_blank">GD</a>　驗：多媒體確認，HN 105pts/190c；Google Blog 官方貼文（Google Playground，10/07）　<span class="pp">partial</span>（功能細節需親測）　pub 10/07</td></tr>
-        <tr><td>Astrocade 1,000 萬月活用戶</td><td><a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">Kotaku</a>　驗：Kotaku 標題「AI-Generated Games Platform Already Has 10 Million Monthly Users」，平台自稱數字　<span class="pp">partial</span>（平台自報，未第三方稽核）　pub 10/07</td></tr>
-        <tr><td>Capcom RE Engine → AI 生成引擎</td><td><a href="https://www.pcgamer.com/gaming-industry/game-development/capcom-announces-plans-to-transform-its-re-engine-into-an-ai-generation-game-engine" target="_blank">PC Gamer</a> / <a href="https://www.theverge.com/games/1004418/capcom-ai-game-development" target="_blank">The Verge</a>　驗：兩媒體標題確認「AI-generation game engine」　<span class="pp">partial</span>（摘要層）　pub 10/03</td></tr>
-        <tr><td>Bit Reactor 召回超過一半員工</td><td><a href="https://www.gamedeveloper.com/business/star-wars-zero-company-developer-bit-reactor-brings-back-over-half-of-furloughed-staff" target="_blank">Game Developer</a> / <a href="https://www.gamesindustry.biz/star-wars-zero-company-developer-bit-reactor-begins-bringing-furloughed-staff-back" target="_blank">GI.biz</a>　驗：兩媒體確認，Reddit r/Games 帖標確認「rehiring」　<span class="ok">✓</span>（多媒體）　pub 今日</td></tr>
-        <tr><td>Bobby Kotick 加入 Skydance 董事會</td><td><a href="https://www.gamedeveloper.com/business/former-activision-ceo-bobby-kotick-named-to-the-board-of-post-merger-skydance" target="_blank">Game Developer</a> / <a href="https://www.pcgamer.com/gaming-industry/bobbys-back/" target="_blank">PC Gamer</a>　驗：GD 標題「Former Activision Blizzard CEO Bobby Kotick named to the board of post-merger Skydance」；PCGamer 確認　<span class="pp">partial</span>（摘要層）　pub 今日</td></tr>
-        <tr><td>獨立開發者 Steam $560K → $73K</td><td><a href="https://www.reddit.com/r/gamedev/comments/1wzv6kr/how_560000_in_steam_gross_revenue_turns_into_just/" target="_blank">Reddit r/gamedev</a>　驗：帖文標題層確認「$560,000 in Steam gross revenue turns into just $73,000」　<span class="pp">partial</span>（帖文標題層，計算細節未稽核）　pub 今日</td></tr>
-        <tr><td>Ape Escape 復活確認（Sonic Mania 團隊）</td><td><a href="https://www.eurogamer.net/sony-classic-playstation-games-ape-escape-sonic-mania" target="_blank">Eurogamer</a> / <a href="https://www.reddit.com/r/Games/comments/1wzs2tb/sources_ape_escape_revival_in_the_works_from/" target="_blank">Reddit r/Games</a>　驗：Eurogamer 標題「Sony is reportedly plotting to revive classic PlayStation games, starting with a new Ape Escape from the developers behind Sonic Mania」；Reddit 帖確認　<span class="pp">partial</span>（消息來源層，未官宣）　pub 今日</td></tr>
-        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-10-08T07:30 官方 API　CS:GO 575,228 +16.9% / PUBG 87,835 -3.6% / Rust 64,620 -7.1% / TF2 64,542 +13.7% / R6 60,621 +0.4% / Apex 45,191 +2.5% / Warframe 44,651 +12.2% / GTA V Legacy 37,035 +20.9%　<span class="ok">✓</span>（今日真數字）；steam_movers：Yu-Gi-Oh! +10 / Tarkov +9 / Hunt +7 / DbD +6 / FH6 +6；新進：MONSTER HUNTER RISE #100</td></tr>
-      </table>
-    </div>
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal"><h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4><table><tr><td>Google Playground 上線</td><td><a href="https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/" target="_blank">原文 ↗</a>　原文日期 2026-10-07　驗：美國 18+、對話生成、私人 / 分享連結 / Explore、部分排行榜與多人、Unity Spark closed beta coming soon、無用戶數<span class="ok">✓</span></td></tr><tr><td>Astrocade 月活 1,000 萬</td><td><a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">原文 ↗</a>　原文日期 2026-10-07　驗：CEO 向 GamesBeat 稱 1,000 萬、約四個月前 500 萬（自報）；無遊戲 / 創作者 / 資金數<span class="ok">✓</span></td></tr><tr><td>HN 105 pts / 190 comments</td><td><a href="https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/" target="_blank">原文 ↗</a>　原文日期 2026-10-08 radar　驗：heat_latest.json 官方 API 數字<span class="pp">radar</span></td></tr><tr><td>Reddit 三則（$560K→$73K / 前世並肩作戰 / 輪胎滾下山）</td><td><a href="https://www.reddit.com/r/IndieGaming/comments/1wzr6jl/every_time_you_die_in_my_game_your_previous_lifes/" target="_blank">原文 ↗</a>　原文日期 2026-10-08 top-of-day　驗：僅標題層，內文未開讀<span class="pp">摘要層</span></td></tr><tr><td>Capcom REX</td><td><a href="https://www.pcgamer.com/gaming-industry/game-development/capcom-announces-plans-to-transform-its-re-engine-into-an-ai-generation-game-engine" target="_blank">原文 ↗</a>　原文日期 2026-10-03　驗：Open Conference RE: 2026、六個程式、2,000+ 使用者（web_fetch）<span class="ok">✓</span></td></tr><tr><td>Sega / Crystal Dynamics</td><td><a href="https://www.gamesindustry.biz/sega-wont-entrust-the-creative-aspect-of-games-to-ai-but-is-using-tech-to-improve-efficiency-in-other-departments" target="_blank">原文 ↗</a>　原文日期 2026-10-06　驗：Tavily 摘要<span class="pp">摘要層</span></td></tr></table></div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 10/08 07:30 真數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 10/08 07:30 + 多源新聞 · 2026/10/08 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+<div class="legend"><b>方法</b>　頭版 CJ Top 2 全 web_fetch 驗原文日期＋主張比對 · 小編 / Demo 摘要層 · Steam＝官方 API 10/08 真數字 · Twitch / Roblox 瀏覽器 10/08 真抓 · Threads / unityroom 本次未取得標暫缺 · KYM 抓到歷史總榜不採用 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+<div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/10/08 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
