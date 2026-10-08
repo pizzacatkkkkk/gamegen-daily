@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/10/09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">10 · 09 · FRI</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+<span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+<span class="dateflag">2026 / 10 / 09 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30）· 來源 ~16 站</span>
+</div>
+<h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+<div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+<div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+<div class="lead">
+<div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+<p><b>Cyberpunk 2077 電影版確定 + Xbox 成立跨媒體部門 XP——同一天，兩個大廠宣告「遊戲 IP 不只是遊戲」。</b>10/9：① <span class="hl">Paramount Pictures × CD Projekt Red 官宣 Cyberpunk 2077 真人電影</span>（製作人 Lorenzo di Bonaventura，《變形金剛》出品方，RPS / VGC / Eurogamer / GameSpot，pub 2026-10-09）；② <span class="hl">Xbox CEO 宣布成立 XP 部門</span>，專責遊戲外延伸：電影、電視、主題樂園（仿 Nintendo / Sony 模式，GamesIndustry.biz / Eurogamer / GameDeveloper，pub 2026-10-09）。</p>
+<p>同日 Steam：TF2 在線 +23%（79K，昨 65K）、Rust +15.7%（75K，昨 65K）暴衝，原因未查證。Triple-i Initiative 10 月展上 Machinarium 2、The Talos Principle 3 宣布（Reddit top-of-day）。Gears of War: E-Day 新進 Steam 百大（rank 96）。</p>
+<p>對 GameGen：大廠在同一天說「遊戲不只是遊戲」——這代表<b>IP 有宇宙潛力的作品正在加速</b>。差異不在預算，在「今天的梗有沒有讓人想延伸」。Remix 迴圈 + 社群內梗 = 小規模建 IP 宇宙的方式。</p>
+<div class="pull">▸ 今天就能蹭：小編發「如果你的梗遊戲拍成電影，主角是誰？」；CJ 貼文主軸「IP 跨媒體不是大廠專利，稀缺的是有人想延伸的世界觀」。</div>
+</div>
+<div class="ammo">
+<div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+<div class="ammo-grp l-cj reveal"><div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>Cyberpunk 2077 電影版：遊戲 IP 的跨媒體算法——「先做遊戲，再建宇宙」<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Paramount Pictures 與 CD Projekt Red 宣布聯合製作 Cyberpunk 2077 真人電影。製作人 Lorenzo di Bonaventura 加入（曾出品《變形金剛》系列、《G.I. Joe》）；尚無導演 / 演員 / 上映日期的官方確認。來源：Rock Paper Shotgun、VGC、Eurogamer、GameSpot，pub 2026-10-09。</div>
+<div class="ln"><b>GameGen 角度：</b>Cyberpunk 走的是「遊戲先行，再建 IP 宇宙」的路。大廠都在蓋 IP 飛輪。GameGen 的切角：<b>IP 宇宙的起點不是 3A 預算，是「有人願意在你的世界待著」</b>——你的遊戲夠有世界觀讓人想延伸嗎？</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Cyberpunk 2077 is getting a live-action movie from Paramount. The new IP playbook: build a game world deep enough that people want to see what's next. The barrier isn't budget. It's world."<br><span style="color:var(--ink-dim)">中譯：Cyberpunk 要出電影了。新 IP 算法：做出夠深的遊戲世界，讓人想看「接下來發生什麼」。門檻不是預算，是世界觀。</span></div>
+<div class="meta"><a href="https://www.rockpapershotgun.com/all-hail-brand-synergy-cyberpunk-2077-is-getting-a-live-action-adaptation-from-paramount-and-the-producer-behind-the-horrendous-doom-movie" target="_blank">RPS ↗</a>　<a href="https://www.videogameschronicle.com/news/cyberpunk-2077-is-getting-a-live-action-movie-from-paramount/" target="_blank">VGC ↗</a>　pub 2026-10-09　verified ✓（多來源交叉）</div>
+</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>Xbox 成立 XP 部門：大廠建跨媒體機器，獨立創作者的定位是什麼？<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Xbox CEO 宣布成立全新 XP 部門（Products, Places, Productions），專責遊戲外的跨媒體延伸：電影、電視、主題樂園等，追隨 Nintendo、Sony 的路線。來源：GamesIndustry.biz、Eurogamer、GameDeveloper，pub 2026-10-09。</div>
+<div class="ln"><b>GameGen 角度：</b>大廠都在複製 Disney 模式。對獨立創作者：<b>傳統路線要先有 3A 才能建宇宙，GameGen 的路線是用社群原生梗題材從第一天就建 Remix 迴圈</b>——不同起點，但目標相同：讓玩家想繼續在你的世界裡。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Xbox just built a division for movies, theme parks, and TV shows. Nintendo did it. Sony did it. Now Xbox. IP wars are accelerating. The question for indie creators: what's your universe-building play?"<br><span style="color:var(--ink-dim)">中譯：Xbox 仿 Nintendo/Sony 建跨媒體部門。IP 大戰加速。獨立創作者的問題：你怎麼建自己的 IP 宇宙？</span></div>
+<div class="meta"><a href="https://www.gamesindustry.biz/xbox-announces-new-xp-division-to-deliver-transmedia-spinoffs-including-film-tv-and-theme-parks" target="_blank">GamesIndustry ↗</a>　<a href="https://www.eurogamer.net/xbox-xp-product-partnerships-places-productions" target="_blank">Eurogamer ↗</a>　pub 2026-10-09　verified ✓（多來源交叉）</div>
+</div></div>
+<div class="ammo-grp l-ed reveal"><div class="gt">📣 小編 · X 線　TOP 3</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>Triple-i Initiative 10 月展：Machinarium 2 + The Talos Principle 3 同天宣布<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Reddit r/Games / r/gaming 今日 top：Triple-i Initiative 10 月 2026 展示會上，Machinarium 2（Amanita Design）、The Talos Principle 3 Gameplay Reveal 同日宣布（Reddit top-of-day；GameSpot 同步整理「Everything Announced」，pub 2026-10-09；標題層）。</div>
+<div class="ln"><b>GameGen 角度：</b>不靠 E3 / Gamescom，獨立展自己辦「showcase moment」。Triple-i 的模式是：小工作室集體辦展，降低個別行銷成本，同時製造集體話題效應。可借鏡：你的遊戲有沒有一個值得公開的「moment」？</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Machinarium 2 AND Talos Principle 3 announced at Triple-i Initiative today. No Sony, no Xbox stage — just indie devs claiming their own showcase moment. The format is spreading."<br><span style="color:var(--ink-dim)">中譯：Machinarium 2 + 塔羅斯 3 同天公佈，不靠大廠舞台——獨立展自己辦話題的時代來了。</span></div>
+<div class="meta"><a href="https://www.reddit.com/r/Games/comments/1x0uxg1/machinarium_2_announcement_trailer/" target="_blank">Reddit r/Games ↗</a>　<a href="https://www.gamespot.com/articles/triple-i-initiative-october-2026-everything-announced-at-the-showcase/" target="_blank">GameSpot ↗</a>　pub 2026-10-09　摘要層</div>
+</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>ReSkate 350K 次下載：玩家自己讓 Skate「脫離 live service」<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Reddit r/gaming 今日 top：模組平台 ReSkate 已累積 350,000 次下載，讓玩家在沒有官方服務的情況下繼續玩 Skate；開發者稱若 EA 律師接觸將配合（Reddit top-of-day，標題層）。</div>
+<div class="ln"><b>GameGen 角度：</b>「社群取回遊戲控制權」的話題性超高。可借力：當社群比出版商更在乎遊戲的生死，這是什麼訊號？對 GameGen：把「可 Remix / 可延伸」內建在設計裡，讓社群自發延命。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "ReSkate has 350K downloads. Players are un-live-servicing games themselves. When communities care more about a game than its publisher, the community always finds a way."<br><span style="color:var(--ink-dim)">中譯：玩家自己讓 Skate 從 live service 裡「逃出來」，35 萬次下載。社群比出版商更在乎的時候，社群會自己找出路。</span></div>
+<div class="meta"><a href="https://www.reddit.com/r/gaming/comments/1x0iz03/skate_has_been_delive_serviced_by_reskate_a/" target="_blank">Reddit r/gaming ↗</a>　pub 2026-10-09　摘要層（標題層）</div>
+</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>TF2 在線 +23%：老遊戲「社群呼喚」暴衝定律<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Steam 即時數據（heat radar 07:30）：Team Fortress 2 今日在線 79,383，昨日 64,542，增 +23.0%。暴衝原因目前<b>未查證</b>，不作推測。</div>
+<div class="ln"><b>GameGen 角度：</b>2007 年的遊戲靠社群行動就能一夜暴衝。新遊戲冷啟動的最大敵人是「沒有社群在等你」，不是品質本身。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "Team Fortress 2 hit +23% concurrent players overnight. A game from 2007. The old-game surge playbook keeps working — social, not algorithm. What would make your community rally like this?"<br><span style="color:var(--ink-dim)">中譯：TF2 +23%，2007 年的遊戲靠社群一夜暴衝。新遊戲最需要的不是品質，是「有社群在等你的下一步」。</span></div>
+<div class="meta">Steam 官方 API　heat radar 2026-10-09 07:30　<a href="https://store.steampowered.com/app/440" target="_blank">Steam ↗</a>　真數字　暴衝原因未查證</div>
+</div></div>
+<div class="ammo-grp l-dm reveal"><div class="gt">🕹️ Demo 線　TOP 1</div><div class="ammo-item">
+<div class="ti"><span class="fresh f-new">🆕 今天新</span>「射擊看板選選單」：沉浸式 UI 機制 Demo 構想<span class="deca">去賭場化 OK</span></div>
+<div class="ln"><b>新聞事實：</b>Reddit r/IndieGaming 今日 top：獨立開發者展示「用左輪手槍射擊懸掛看板」選選單的 diegetic UI（Reddit top-of-day，標題層）。</div>
+<div class="ln"><b>GameGen 角度：</b><b>玩法概念：</b>把選單本身做成遊戲機制——選項即障礙物，不射中就沒得選。可拆成 30 秒西部風格小遊戲（泛化角色，不挪既有 IP）：一次只有一個「繼續」選項看板，打中才能前進。分享點：「這個選單讓我壓力更大」。</div>
+<div class="hook"><span class="en">Hook (EN):</span> "You select options by shooting hanging signs with a revolver. No pause menu. No overlay. Just mechanic = world = brand. We're making this into a 30-second demo — what's the genre skin?"<br><span style="color:var(--ink-dim)">中譯：用左輪手槍射看板選選單。機制即世界觀即品牌。我們把它做成 30 秒 Demo——你覺得什麼題材皮最對？</span></div>
+<div class="meta">機制參考 <a href="https://www.reddit.com/r/IndieGaming/comments/1x0lvnu/you_select_options_by_shooting_hanging_signs_with/" target="_blank">Reddit ↗</a>　模板：diegetic 互動 + 徵題材皮　風險：低（泛化角色，不挪既有 IP）</div>
+</div></div>
+</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/09 即時</span></div>
+          <ol>
+            <li class="down hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">543K ▼5.5%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">92K ▲4.9%</span></li>
+            <li class="up hot"><span class="nm">Team Fortress 2</span><span class="vn">79K ▲23%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">75K ▲15.7%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">60K ▼0.4%</span></li>
+            <li class="up"><span class="nm">Apex Legends</span><span class="vn">46K ▲2.2%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 10/09 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 最多遊玩</span><span class="metric">百大榜 Top 10 · 10/09</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">#1</span></li>
+            <li class=""><span class="nm">Dota 2</span><span class="vn">#2</span></li>
+            <li class=""><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">#3</span></li>
+            <li class=""><span class="nm">Wallpaper Engine</span><span class="vn">#4</span></li>
+            <li class="up"><span class="nm">AION 2</span><span class="vn">#5 新</span></li>
+            <li class=""><span class="nm">Deadlock</span><span class="vn">#6</span></li>
+            <li class=""><span class="nm">Apex Legends</span><span class="vn">#7</span></li>
+            <li class="up"><span class="nm">WARDOGS</span><span class="vn">#8 新</span></li>
+          </ol>
+          <div class="bf">Steam 最多遊玩百大 · 10/09 heat-radar（僅排名，無人數）</div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>STEAM 新進熱賣</span><span class="metric">今日 New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Clive Barker's Hellraiser: Revival</span><span class="vn">熱賣</span></li>
+            <li class="up"><span class="nm">Gears of War: E-Day</span><span class="vn">新進百大 #96</span></li>
+            <li class=""><span class="nm">STAR WARS: Galactic Racer</span><span class="vn">熱賣</span></li>
+            <li class=""><span class="nm">Dragon's Dogma 2: Dark Arisen</span><span class="vn">熱賣</span></li>
+            <li class=""><span class="nm">Steam Machine</span><span class="vn">熱賣</span></li>
+          </ol>
+          <div class="bf">Steam New &amp; Trending 熱賣榜 · 10/09 heat-radar · <a href="https://store.steampowered.com/games/coming_soon/new_top_sellers/" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">✅ 本機 heat-radar 07:30 已跑成功（fetched_at 2026-10-09T07:30）；Steam 為官方 API 真數字。Roblox / Twitch 本次未取得真數字，骨架保留、不以估計補位。</div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+<h3><span class="tag ig"><span>暴衝</span></span>TF2 +23.0%、Rust +15.7% 過 ≥15% 旗標——老遊戲社群訊號，原因未查證</h3>
+<div class="sum">Steam 真·日比：<b>Team Fortress 2 79,383（+23.0%，昨 64,542）</b>、<b>Rust 74,758（+15.7%，昨 64,620）</b>皆過 ≥15% 旗標；PUBG +4.9%、Apex +2.2%。排名跳動：Ori and the Will of the Wisps rank 72（+8）、Forza Horizon 6 rank 55（+7）、Bloons TD 6 rank 79（+7）。新進百大：Gears of War: E-Day（rank 96）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>TF2 暴衝原因（更新 / 社群活動 / 聯署）本次未查證，<b>目前無法完全證實</b>，不編故事。老遊戲能一夜暴衝是社群動員的結果，與「今天的演算法」無關——對 GameGen 的意義是：<b>社群在等你的遊戲</b>，比在等演算法推送更有力。Forza Horizon 6 排名上升可能與 PS5 延期確認有關（VGC 報導，pub 2026-10-09），但尚未交叉確認排名原因。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">STEAM 官方 API · 10/09（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div></div>
+</article>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ Twitch 7 天漲幅 / Roblox 新進榜漲幅需昨日快照比對，本次無 Roblox/Twitch 真數字，<b>目前無法完全證實</b>，不以估計補位。</div>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Fragrance - The Second Story of Princess and Knight</span><span class="vn">新品</span></li>
+            <li class=""><span class="nm">LieStar ResiStar</span><span class="vn">新品</span></li>
+            <li class=""><span class="nm">Cozy Farm</span><span class="vn">新品</span></li>
+            <li class=""><span class="nm">Espace</span><span class="vn">新品</span></li>
+            <li class=""><span class="nm">HORSE CLUB Ride West</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 10/09 heat-radar（僅標題層）</div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO HTML5 新品</span><span class="metric">小體量早期</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Toss Office</span><span class="vn">popular</span></li>
+            <li class=""><span class="nm">The Freak Circus</span><span class="vn">popular</span></li>
+            <li class=""><span class="nm">Rulehouse</span><span class="vn">popular</span></li>
+            <li class=""><span class="nm">Three Nights Lobotomized</span><span class="vn">meme</span></li>
+            <li class=""><span class="nm">RarityRNG</span><span class="vn">viral</span></li>
+          </ol>
+          <div class="bf">itch.io /games/html5 · 10/09 heat-radar（僅標題，無下載/遊玩數）</div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>NAAVIK 早期讀物</span><span class="metric">行業觀察 · 本週</span></div>
+          <ol>
+            <li class="hot"><span class="nm">從 Disney 到 miHoYo：AI 粉絲社群之路</span><span class="vn">新</span></li>
+            <li class=""><span class="nm">手機 MMORPG 崩盤調查</span><span class="vn">最新</span></li>
+            <li class=""><span class="nm">「創新」三消關卡不算差異化</span><span class="vn">最新</span></li>
+            <li class=""><span class="nm">節日 Live-Ops 2026</span><span class="vn">最新</span></li>
+          </ol>
+          <div class="bf">Naavik.co 本週文章 · 10/09 heat-radar · <a href="https://naavik.co" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ 這批僅有標題，無成長數據與玩法細節，<b>共通 loop 目前無法完全證實</b>，不在此歸納。</div>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ig reveal">
+<h3><span class="tag ig"><span>IP 跨媒體</span></span>Cyberpunk 2077 真人電影確定：Paramount × CD Projekt，《變形金剛》製作人掛帥</h3>
+<div class="sum">Rock Paper Shotgun / VGC / Eurogamer / GameSpot 10/9 報導：Paramount Pictures 與 CD Projekt Red 官宣聯合製作 Cyberpunk 2077 真人電影；製作人 Lorenzo di Bonaventura（《變形金剛》、《G.I. Joe》出品方）確認參與；無導演 / 主演 / 上映日期公告。同日 GTA 6 也有零散資訊（收音機電台、主角可戴耳機收聽播客）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>IP 跨媒體加速不是新事，但大廠在同一天宣布兩件「遊戲→電影」的事（Cyberpunk 電影＋Xbox XP 部門），是今天最值得 CJ 切角的敘事：<b>「先做有世界觀的遊戲，再建 IP 宇宙」已是業界共識</b>。GameGen 的做法：從第一天就讓玩家想 Remix，等於在建最小可行的 IP 宇宙。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">RPS / VGC · 10/9 · <a href="https://www.videogameschronicle.com/news/cyberpunk-2077-is-getting-a-live-action-movie-from-paramount/" target="_blank">原文 ↗</a></div></div>
+</article>
+
+      <article class="story ig reveal">
+<h3><span class="tag ig"><span>大廠動態</span></span>Xbox 成立 XP 部門：電影、電視、主題樂園，追隨 Nintendo / Sony 模式</h3>
+<div class="sum">GamesIndustry.biz / Eurogamer / GameDeveloper 10/9：Xbox CEO 公開宣布 XP 部門（名稱：Products, Places, Productions），專責遊戲外周邊跨媒體業務；Microsoft 同期面臨綠卡申請被暫停的勞工政策新聞（PC Gamer，10/9，不相關但同日）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>Xbox 補上了和 Nintendo / Sony 相比唯一缺失的跨媒體機器。對獨立創作者：大廠都在走 Disney 的路，但<b>成本在門外的創作者有自己的入口——社群原生梗題材＋Remix 迴圈</b>，不用等有 3A 才能建 IP 生態。已收 CJ Top 2。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">GAMESINDUSTRY.BIZ · 10/9 · <a href="https://www.gamesindustry.biz/xbox-announces-new-xp-division-to-deliver-transmedia-spinoffs-including-film-tv-and-theme-parks" target="_blank">原文 ↗</a></div></div>
+</article>
+
+      <article class="story rl reveal">
+<h3><span class="tag rl"><span>獨立展</span></span>Triple-i Initiative 10 月展：Machinarium 2、The Talos Principle 3 宣布，獨立展自辦 showcase</h3>
+<div class="sum">Reddit r/Games / r/gaming 今日 top（同一帖出現多次）：Machinarium 2 宣傳影片（Amanita Design 出品）；The Talos Principle 3 Gameplay Reveal；GameSpot 「Everything Announced at the Showcase」整理（pub 2026-10-09，標題層）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>Triple-i Initiative 是 2024 年起獨立遊戲開發者集體辦的 showcase，今天證明這個模式能持續製造 Reddit top。<b>獨立展的模式正在打進主流討論</b>——用集體話題效應降低個別行銷成本。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">REDDIT r/Games · 10/9 · <a href="https://www.reddit.com/r/Games/comments/1x0uxg1/machinarium_2_announcement_trailer/" target="_blank">原文 ↗</a>　<a href="https://www.gamespot.com/articles/triple-i-initiative-october-2026-everything-announced-at-the-showcase/" target="_blank">GameSpot ↗</a></div></div>
+</article>
+
+      <article class="story rl reveal">
+<h3><span class="tag rl"><span>大廠/市場</span></span>EA 槓桿收購面臨債券持有人阻力；Ubisoft 關閉 Rainbow Six Mobile（不足一年）</h3>
+<div class="sum">GameDeveloper 10/9：Electronic Arts 槓桿收購案面臨債券持有人的反對（法律細節未查）。GameSpot 10/9：Ubisoft 宣布關閉 Rainbow Six Mobile，上線不到一年。兩則皆為大廠收縮訊號（Tavily / 標題層）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>大廠切割邊緣業務、中小規模手機 live service 撐不住的訊號持續。對 GameGen：短期可玩的梗遊戲不需要長期 live service 支撐，是差異化論點的旁證。<b>今日資料不足（兩則僅標題層），未深讀，不展開分析</b>。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">GAMEDEVELOPER · 10/9 · <a href="https://www.gamedeveloper.com/business/electronic-arts-leveraged-buyout-faces-a-bondholder-battle" target="_blank">原文 ↗</a></div></div>
+</article>
+    </section>
+
+    <!-- 05 迷因 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ig reveal">
+<h3><span class="tag ig"><span>社群梗</span></span>ReSkate 350K：社群取回遊戲的控制權——「去 live service」迷因</h3>
+<div class="sum">Reddit r/gaming 今日 top：ReSkate 被下載 350,000 次，讓玩家不需官方服務就能繼續玩 Skate。開發者稱若 EA 法律介入將配合（標題層）。這是「玩家 vs 大廠」話題的最新案例，有強烈共鳴點。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>「社群取回遊戲」的話題在 Reddit 能持續得分。可借鏡：當玩家比出版商更在乎一款遊戲，這是什麼訊號？GameGen 角度：<b>可 Remix / 可延伸的遊戲設計，讓社群延命比封停 live service 更有意義</b>。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">REDDIT r/gaming · 10/9 · <a href="https://www.reddit.com/r/gaming/comments/1x0iz03/skate_has_been_delive_serviced_by_reskate_a/" target="_blank">原文 ↗</a></div></div>
+</article>
+
+      <article class="story ig reveal">
+<h3><span class="tag ig"><span>梗→遊戲</span></span>「最令人惱火的 100% 完成獎勵」——成就設計迷因</h3>
+<div class="sum">Reddit r/gaming 今日 top 帖：「迄今最令人惱火的 100% 完成度獎勵」（標題層，無看圖，獎勵細節未查）。100% 完成度的情感張力——付出了全部，換到一個讓人崩潰的獎勵——是高分享率的類型。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>「成就設計」的對話性極高，可轉成「你收到過最過分的 100% 獎勵是什麼？」徵題帖，引入玩家對遊戲設計的有趣 rant。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">REDDIT r/gaming · 10/9 · <a href="https://www.reddit.com/r/gaming/comments/1x0dmq6/to_date_this_is_the_most_infuriating_100/" target="_blank">原文 ↗</a></div></div>
+</article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ Know Your Meme 今日資料不足（未取得當日新梗），依新鮮度 guard 不採用舊梗充數。</div>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <article class="story ig reveal">
+<h3><span class="tag ig"><span>機制</span></span>「射擊看板選選單」：diegetic UI ——機制即世界觀的極端示範</h3>
+<div class="sum">Reddit r/IndieGaming 今日 top：獨立開發者展示「用左輪手槍射擊懸掛看板」作為遊戲主選單——選項本身是遊戲機制的一部分，非 overlay UI（標題層）。</div>
+<div class="obs"><span class="lbl">GameGen 觀察：</span>diegetic UI 的極端案例：選單本身是世界觀的延伸。可原創拆成：「所有選項都是要打中才能選的」，讓玩家第一秒就知道你的遊戲風格。<b>機制 = 世界觀 = 品牌識別</b>，是小遊戲差異化的一種方法。已轉成今日 Demo 構想（見彈藥 Demo 線）。</div>
+<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div><div class="src">REDDIT r/IndieGaming · 10/9 · <a href="https://www.reddit.com/r/IndieGaming/comments/1x0lvnu/you_select_options_by_shooting_hanging_signs_with/" target="_blank">原文 ↗</a></div></div>
+</article>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ unityroom 本次未抓取，<b>目前無法完全證實</b>當日得獎機制，骨架保留。IP 二創地雷：避免直接使用既有遊戲角色 / 美術，沿用泛化角色。</div>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px"><h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話暫缺</h3><div class="sum" style="margin-bottom:0">⚠️ Threads 需登入 / JS 渲染，本次未取得繁中圈當日熱話，<b>目前無法完全證實</b>，骨架保留、不以估計補位。可追母題：Cyberpunk 電影版確認，繁中圈可能出現「台灣視角：遊戲改編電影成功率」、「Machinarium 2 粉絲反應」等討論（尚未驗證）。</div></div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal"><table class="t2g"><thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead><tbody>
+        <tr><td>Cyberpunk 電影版宣布（多媒體高曝光）</td><td><span class="tmpl">「你的梗遊戲要拍電影，主角是誰？」留言徵題</span></td><td>留言者自發回分享</td><td class="rk-low">低</td><td>★ 小編首選：徵題 → 當天做可玩連結</td></tr>
+        <tr><td>Xbox XP 跨媒體部門（業界話題）</td><td><span class="tmpl">CJ 觀點貼文：IP 宇宙不是大廠專利</span></td><td>開發者 / 業界共鳴</td><td class="rk-low">低</td><td>★ CJ 首選，不做遊戲，做論點</td></tr>
+        <tr><td>射擊看板選選單（r/IndieGaming top）</td><td><span class="tmpl">diegetic UI + 30 秒 Demo</span></td><td>「這個選單讓我壓力更大」</td><td class="rk-low">低</td><td>★ Demo 首選：泛化西部角色，不挪 IP</td></tr>
+        <tr><td>TF2 +23% 老遊戲暴衝（Steam 真數字）</td><td><span class="tmpl">「你的遊戲有沒有社群在等你」問句貼文</span></td><td>開發者共鳴</td><td class="rk-low">低</td><td>蹭話題貼文，引導到 GameGen 的社群策略論點</td></tr>
+        <tr><td>ReSkate 350K（r/gaming top）</td><td><span class="tmpl">可 Remix / 可延伸設計的論點貼文</span></td><td>玩家 + 開發者共鳴</td><td class="rk-low">低</td><td>僅引標題，不補細節；不用「玩家取回控制權」類聳動語氣</td></tr>
+        <tr><td>Triple-i 獨立展（r/Games top）</td><td><span class="tmpl">「你的遊戲值得一個公開 moment 嗎？」問句</span></td><td>獨立開發者共鳴</td><td class="rk-low">低</td><td>可追：Machinarium 2 正式公告細節</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal"><table class="t2g"><thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead><tbody>
+        <tr><td>IP 宇宙的門檻不是預算，是世界觀</td><td>Cyberpunk 2077 真人電影（Paramount × CD Projekt，10/9）；Xbox XP 跨媒體部門同日成立</td><td>"The new IP playbook: build a world deep enough that people want to see what's next."</td><td><a href="https://www.videogameschronicle.com/news/cyberpunk-2077-is-getting-a-live-action-movie-from-paramount/" target="_blank">VGC ↗</a></td></tr>
+        <tr><td>Xbox 仿 Disney：IP 跨媒體戰爭加速</td><td>Xbox XP 部門（電影、電視、主題樂園）成立（GamesIndustry.biz，10/9）</td><td>"Nintendo did it. Sony did it. Now Xbox. IP wars are accelerating."</td><td><a href="https://www.gamesindustry.biz/xbox-announces-new-xp-division-to-deliver-transmedia-spinoffs-including-film-tv-and-theme-parks" target="_blank">GamesIndustry ↗</a></td></tr>
+        <tr><td>獨立展 Triple-i 能持續製造 Reddit top</td><td>Machinarium 2 + Talos Principle 3 同天公佈，Reddit top-of-day（10/9）</td><td>"No Sony. No Xbox. Just indie devs claiming their own showcase moment."</td><td><a href="https://www.reddit.com/r/Games/comments/1x0uxg1/machinarium_2_announcement_trailer/" target="_blank">Reddit ↗</a></td></tr>
+      </tbody></table></div>
+    </section>
+
+    <!-- 10 Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+<div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>「如果你的梗遊戲要拍電影，主角是誰？」徵題 → 當天做可玩連結</li><li>TF2 +23%：「你的遊戲有社群在等你嗎？」開發者問句</li><li>ReSkate 350K：「玩家比出版商更在乎的遊戲」討論</li></ul></div>
+<div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「射擊看板選選單」：diegetic UI 西部風格 30 秒小遊戲，泛化角色，今日首選</li><li>「100% 完成度惱怒獎勵」反諷機制（可作 Remix）</li></ul></div>
+<div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Cyberpunk 電影導演 / 主演確認時間點</li><li>Gears of War: E-Day 在線人數能否繼續爬升</li><li>TF2 +23% 暴衝原因（更新 / 聯署 / 事件）</li></ul></div>
+<div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Cyberpunk 電影細節（演員、劇情）目前均未官方確認，勿補充</li><li>EA 槓桿收購、Ubisoft 手遊關閉僅標題層，不展開分析</li><li>對外文案避開賭場語言；角色一律泛化</li></ul></div>
+</div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal"><h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4><table>
+      <tr><td>Cyberpunk 2077 電影版（Paramount × CD Projekt）</td><td><a href="https://www.rockpapershotgun.com/all-hail-brand-synergy-cyberpunk-2077-is-getting-a-live-action-adaptation-from-paramount-and-the-producer-behind-the-horrendous-doom-movie" target="_blank">RPS ↗</a>　<a href="https://www.videogameschronicle.com/news/cyberpunk-2077-is-getting-a-live-action-movie-from-paramount/" target="_blank">VGC ↗</a>　<a href="https://www.gamespot.com/articles/cyberpunk-2077-is-getting-a-movie-adaptation-at-call-of-duty-film-studio-transformers-producer-on-board/" target="_blank">GameSpot ↗</a>　日期 2026-10-09　驗：多來源交叉，無導演/主演/上映日<span class="ok">✓</span></td></tr>
+      <tr><td>Xbox XP 跨媒體部門成立</td><td><a href="https://www.gamesindustry.biz/xbox-announces-new-xp-division-to-deliver-transmedia-spinoffs-including-film-tv-and-theme-parks" target="_blank">GamesIndustry ↗</a>　<a href="https://www.eurogamer.net/xbox-xp-product-partnerships-places-productions" target="_blank">Eurogamer ↗</a>　日期 2026-10-09　驗：多來源交叉<span class="ok">✓</span></td></tr>
+      <tr><td>Machinarium 2 / Talos Principle 3 宣布</td><td><a href="https://www.reddit.com/r/Games/comments/1x0uxg1/machinarium_2_announcement_trailer/" target="_blank">Reddit ↗</a>　<a href="https://www.gamespot.com/articles/triple-i-initiative-october-2026-everything-announced-at-the-showcase/" target="_blank">GameSpot ↗</a>　日期 2026-10-09　驗：標題層<span class="pp">摘要層</span></td></tr>
+      <tr><td>ReSkate 350K 下載（Skate de-live serviced）</td><td><a href="https://www.reddit.com/r/gaming/comments/1x0iz03/skate_has_been_delive_serviced_by_reskate_a/" target="_blank">Reddit ↗</a>　日期 2026-10-09 top-of-day　驗：標題層，數字自帖標題，未開讀<span class="pp">摘要層</span></td></tr>
+      <tr><td>TF2 +23.0%（79,383 在線）</td><td>Steam 官方 API · heat radar 07:30 · <a href="https://store.steampowered.com/app/440" target="_blank">Steam ↗</a>　驗：真數字，暴衝原因未查<span class="ok">✓（數字）</span></td></tr>
+      <tr><td>Rust +15.7%（74,758 在線）</td><td>Steam 官方 API · heat radar 07:30 · <a href="https://store.steampowered.com/app/252490" target="_blank">Steam ↗</a>　驗：真數字，暴衝原因未查<span class="ok">✓（數字）</span></td></tr>
+      <tr><td>射擊看板選選單（diegetic UI）</td><td><a href="https://www.reddit.com/r/IndieGaming/comments/1x0lvnu/you_select_options_by_shooting_hanging_signs_with/" target="_blank">Reddit ↗</a>　日期 2026-10-09 top-of-day　驗：標題層<span class="pp">摘要層</span></td></tr>
+    </table></div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+<div class="legend"><b>方法</b>　頭版 CJ Top 2 全標題層 + 多來源交叉比對日期 · 小編 / Demo 摘要層 · Steam＝官方 API 10/09 真數字 · Roblox / Twitch 本次未取得真數字標暫缺 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+<div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/10/09 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
