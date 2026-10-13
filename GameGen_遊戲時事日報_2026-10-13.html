@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -227,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 13 · 彈藥工廠模式 · ⚠️ heat-radar 本日未取得新資料，使用前日（10/12）07:30 快照 · 新聞層為今日抓取 · 來源 22 站</span>
+        <span class="dateflag">2026 / 10 / 13 · 彈藥工廠模式 · Steam / Roblox / Twitch 真數字 · 來源 19 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -235,74 +237,70 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>一場大廠財務危機、一個萬聖節前爆量訊號、一條手機遊戲速死教訓。</b>今天的三條主軸：<span class="hl">EA 沙烏地收購後首爆 $15 億債務違約疑雲</span>（Reddit r/gaming 今日頂帖＋Game Developer 報導）；<span class="hl">Phasmophobia 確認 3,000 萬銷量 + 萬聖節 Crimson Eye 活動回歸</span>（Eurogamer，萬聖前夕最佳蹭點）；<span class="hl">Ubisoft 宣布 Rainbow Six Mobile 全球上線 7 個月即關服</span>（GamesIndustry + Game Developer）。</p>
-        <p>EA 的財務動盪訊號對 GameGen 的意義不在看空，而是看機會：<b>大廠生態系搖晃時，創作者會尋找不依賴任何單一大廠的平台</b>。另有：派拉蒙 × CD Projekt Red 合作打造 Cyberpunk 2077 真人電影（IP 跨媒體外溢持續）；GTA 6 洩露者 CyberLeek 揚言釋出完整可玩版本（IP 地雷高壓在線，社群能量巨大但不可碰）；惡靈古堡電影全球票房超 3.2 億（系列史上最高）。</p>
-        <div class="pull">▸ 今天就能蹭：<b>Phasmophobia × 萬聖節</b>——3,000 萬份銷量驗證「和朋友一起嚇破膽」是長線需求；泛化鬼屋合作 30 秒模板，萬聖前夕最好發。Rainbow Six Mobile 7 個月死亡 → X 線：「大廠手遊 7 個月就不見了，我們做的東西可以活多久？」</div>
+        <p><b>Fortnite 的老闆 Epic 被報導要求整個團隊「AI-first」：不准再手寫程式碼、美術全走 AI 流程——遊戲界最大的工具方，正把「AI 做遊戲」變成內部硬規定。</b>10/12 Bloomberg 報導（VGC 轉述）：Epic 延後一款 Disney 合作、含 Marvel 與 Star Wars 角色的未公布射擊遊戲，並要求開發者採「<span class="hl">no more handwritten code</span>」、美術「full AI workflows」；Epic 發言人回應「We're embracing AI-accelerated development」，CEO Tim Sweeney 在 X 發文稱「We have a huge pivot underway here at Epic」。內部細節皆為 Bloomberg 報導、<span class="hl">Epic 未逐項證實</span>。</p>
+        <p>同一週另一端：VRChat 社群因 AI 生成內容灌爆搜尋、縮圖誤導而抗議（10/12），平台承諾禁止欺騙性縮圖並諮詢是否標示 AI 內容。<b>兩條線合起來是同一個訊號：AI 生成遊戲內容的「供給」正在爆量（從 AAA 到 UGC），但「怎麼被找到、怎麼被信任」沒人解好。</b>GameGen 的位置：供給端的熱度是順風，差異化押在「公開標示 AI 生成 + 用玩與分享排名，不是用上傳量排名」。</p>
+        <div class="pull">▸ 今天就能蹭：做一款「不准手寫一行 code」的 AI-first 開發部門模擬器（泛化角色、不挪任何大廠 IP）＋ 一條 CJ 貼文「供給在爆量，缺的是發現與信任」。</div>
       </div>
 
-      <!-- 今日彈藥 頭版 -->
+      <!-- 📰 今日彈藥 頭版 -->
       <div class="ammo">
         <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
 
-        <!-- CJ LinkedIn Top 2 -->
         <div class="ammo-grp l-cj reveal">
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>EA 沙烏地收購後首爆 $15 億債務違約疑雲：大廠動盪期是創作者工具的機會窗口<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>新聞事實：</b>Game Developer 報導：Electronic Arts 的槓桿收購面臨債券持有人爭議。Reddit r/gaming 今日頂帖標題：「Right after being bought by saudia arabia, EA is already being accused of defaulting on $1.5b of its $20b debt that it owes」。⚠️ Reddit 為貼文標題，$15 億數字未經財報驗證，<b>目前無法完全證實</b>；Game Developer 原文細節為 radar 標題層，未 fetch 全文。</div>
-            <div class="ln"><b>GameGen 角度：</b>不是要唱衰 EA，而是觀察「大廠財務壓力 → 創作者工具換平台窗口」。每次大平台搖晃，都有人在問下一個去哪做東西。GameGen 的賣點不依賴任何大廠生態，比任何 AAA 工具更輕。⚠️ 債務細節需以財報驗證再對外主張。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "EA was just bought by Saudi Arabia. Now they're accused of defaulting on $1.5B of their $20B acquisition debt. When big platforms wobble, the question isn't just what happens to them — it's where creators and players go next. Every platform crisis is someone else's opportunity."<br><span style="color:var(--ink-dim)">中譯：EA 剛被沙烏地阿拉伯收購，隨即爆出 150 億美元槓桿收購債務違約疑雲。大平台搖搖欲墜時，問的不只是它們會怎樣——而是創作者和玩家接下來去哪。每一次平台危機，都是別人的機會。</span></div>
-            <div class="meta">來源 <a href="https://www.gamedeveloper.com/business/electronic-arts-leveraged-buyout-faces-a-bondholder-battle" target="_blank">Game Developer ↗</a> + <a href="https://www.reddit.com/r/gaming/comments/1x2u8zg/right_after_being_bought_by_saudia_arabia_ea_is/" target="_blank">Reddit ↗</a>　radar 標題層（Game Developer 未 fetch）　⚠️ 債務數字為 Reddit 貼文聲稱，需財報驗證</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Epic 被報導「AI-first、不准手寫 code」——AAA 內部在 AI 化，玩家端的創作權還是空位</div>
+            <div class="ln"><b>新聞事實：</b>Bloomberg（VGC 10/12 轉述）報導：Epic 延後一款 Disney 合作的未公布射擊遊戲（含 Marvel / Star Wars 角色），開發者被告知採 AI-first 生產模式、「no more handwritten code」，總監稱遊戲美術將以 full AI workflows 製作，並使用包含 Anthropic Claude 在內的工具、由人類管理與引導產出；部分開發者在視訊會議中「stunned」。Epic 發言人：「We're embracing AI-accelerated development」；Sweeney 在 X：「We have a huge pivot underway here at Epic」，並稱目標是做更多更好的內容、而非同樣工作減少人力。<b>內部細節均為 Bloomberg 報導，VGC 註明未獨立證實。</b></div>
+            <div class="ln"><b>GameGen 角度：</b>連 Fortnite 的老闆都把 AI 變成「內部生產規定」——代表「AI 做遊戲」不再是小團隊玩具，而是產業共識。但這整套都在牆內：AI 用在專業團隊的生產線，不是用在玩家手上。GameGen 的押注是反向的：把「今天的梗 → 可玩的遊戲」這條線直接交給創作者與社群，速度是賣點。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Epic is reportedly going 'AI-first' — no more handwritten code on a Disney shooter. When even the Fortnite maker rebuilds production around AI, 'AI makes games' stops being a question. The open question: who gets to make them? We're betting on players, not just studios."<br><span style="color:var(--ink-dim)">中譯：據報 Epic 正轉向「AI-first」——一款 Disney 射擊遊戲不再手寫程式碼。連 Fortnite 的製作方都圍繞 AI 重建生產線，「AI 能不能做遊戲」已不是問題。真正的問題是：誰能做？我們押注的是玩家，不只是大廠。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.videogameschronicle.com/news/epic-games-reportedly-orders-staff-to-implement-ai-first-development/" target="_blank">VGC ↗</a>（Bloomberg 轉述）　pub 2026-10-12　verified ✓（已 web_fetch；Eurogamer / GI.biz / Polygon 被擋，未取得第二來源全文，已用 HN / Reddit / 6 家標題互證事件存在）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Cyberpunk 2077 真人電影（派拉蒙 × CD Projekt Red）：遊戲是新一代 IP 孵化器<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 報導：Paramount Pictures 改編 Cyberpunk 2077 真人電影，CD Projekt Red 共同製作。（radar 標題層，未 fetch 全文；製作時程、導演等細節<b>目前無法完全證實</b>。）</div>
-            <div class="ln"><b>GameGen 角度：</b>Witcher → Netflix、Cyberpunk → 電影、Minecraft → 即將上映……遊戲 IP 跨媒體外溢已是趨勢。GameGen 的每個小遊戲都是原創 IP 的種子：今天 60 秒的梗，明天可能是 fandom 的核心。強調原創、泛化角色 = 安全的 IP 起點。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Paramount is making a Cyberpunk 2077 live-action movie with CD Projekt Red. Witcher became Netflix. Now Cyberpunk becomes film. Games are the new IP pipeline. The next franchise might start as a 60-second meme game made on a Tuesday."<br><span style="color:var(--ink-dim)">中譯：派拉蒙 × CD Projekt Red 要把 Cyberpunk 2077 拍成真人電影。巫師變 Netflix，賽博龐克變電影。遊戲是新一代 IP 孵化器。下一個大 IP，說不定從某個週二做出來的 60 秒迷因小遊戲開始。</span></div>
-            <div class="meta">來源 <a href="https://www.gamesindustry.biz/paramount-pictures-adapting-live-action-movie-set-in-cyberpunk-2077-universe-co-produced-by-cd-projekt-red" target="_blank">GamesIndustry.biz ↗</a>　radar 標題層，未 fetch 全文</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>VRChat 社群抗議 AI 內容灌爆搜尋——UGC 平台的下一關是「發現與信任」，不是產量</div>
+            <div class="ln"><b>新聞事實：</b>Kotaku 10/12：VRChat 長期志願者 Patroll 宣布退出維基、翻譯、測試等社群工作，並號召抵制；社群指控 AI 生成的世界縮圖讓搜尋結果誤導、影響可發現性，多個熱門世界掛出抗議橫幅。VRChat 表示將「立即禁止欺騙性縮圖」，允許 AI 用於翻譯、寫程式輔助與開發工具，但玩家端的 AI 生成世界 / 素材尚未決定，正諮詢「標示或禁止」，約一週後公布結論；承諾改善搜尋、優先高品質結果。</div>
+            <div class="ln"><b>GameGen 角度：</b>這是 UGC + AI 平台最痛的一課：產量不是護城河，<b>發現與信任</b>才是。GameGen 從第一天就能把這件事做成設計原則：每款遊戲明示「AI 生成」、封面如實反映玩法、排行榜按「被玩 / 被分享 / 被 remix」而不是按上傳時間。對 B2B 夥伴也是安心點：內容品質與透明度有機制。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "VRChat's community is pushing back on AI-generated worlds crowding search with misleading thumbnails. Lesson for every UGC platform: volume isn't a moat — discovery and trust are. Label what's AI-made. Rank by what people actually play and share."<br><span style="color:var(--ink-dim)">中譯：VRChat 社群在抵制 AI 生成世界與誤導性縮圖灌爆搜尋。給所有 UGC 平台的教訓：產量不是護城河，發現與信任才是。標明哪些是 AI 做的，用大家真正玩與分享的來排名。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://kotaku.com/vr-chat-community-protests-an-influx-of-ai-slop-onto-platform-hurting-discoverability-2000742109" target="_blank">Kotaku ↗</a>　pub 2026-10-12　verified ✓（已 web_fetch；單一來源，措辭收在文中範圍）</div>
           </div>
         </div>
 
-        <!-- 小編 X Top 3 -->
         <div class="ammo-grp l-ed reveal">
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Phasmophobia 3,000 萬銷量確認 + 萬聖節 Crimson Eye 活動回歸：恐怖合作遊戲長線驗證<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Eurogamer 報導：Phasmophobia 確認銷量突破 <b>3,000 萬份</b>；Crimson Eye 萬聖節活動回歸。（radar 標題層，未 fetch 確切日期與活動細節。⚠️ 目前無法完全證實活動開始/結束日期。）</div>
-            <div class="ln"><b>Create-loop 勾子：</b>「和朋友一起嚇破膽」是長線需求（3,000 萬份就是證明）。萬聖前夕蹭點：泛化鬼屋場景＋合作躲避 → 分享卡「我在鬼屋撐了 N 秒」。用泛化鬼怪，不碰 Phasmophobia 角色與商標。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Phasmophobia just confirmed 30 million sales. A co-op horror game, still selling. Because 'playing something scary with friends' never gets old — especially the week before Halloween. What's your version of a ghost game in 60 seconds? 👻"<br><span style="color:var(--ink-dim)">中譯：Phasmophobia 剛確認 3,000 萬銷量。一款多人恐怖遊戲，還在賣。因為「和朋友一起嚇破膽」永遠不老——尤其是萬聖節前一週。你的 60 秒鬼屋遊戲長什麼樣？</span></div>
-            <div class="meta">來源 <a href="https://www.eurogamer.net/phasmophobia-30-million-sales-crimson-eye-event" target="_blank">Eurogamer ↗</a>　radar 標題層</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>Astrocade 稱月用戶達 1,000 萬（約 4 個月前約 500 萬）、iOS app 準備中<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Kotaku 10/7：Astrocade CEO 對 GamesBeat 稱月用戶 1,000 萬，約四個月前為約 500 萬；平台把內容稱為「playables」、像社群動態一樣滑動；正準備 iOS app、在美國大力行銷。（新增：用戶翻倍數字與 iOS 計畫；此題先前以不同角度用過，故標 🔄。數字為公司自稱。）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "An AI game platform says it doubled to 10M monthly users in ~4 months. The format: scroll, play, make your own. Our twist: the game starts from today's meme. What should we build first? 👇"　<span style="color:var(--ink-dim)">中譯：一個 AI 遊戲平台自稱四個月內月用戶翻倍到 1,000 萬。形式是滑著玩、玩完自己做。我們的差異：遊戲從今天的梗開始。你想先看哪個梗變遊戲？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>留言投梗 → 當天出可玩連結 → 回覆原留言者「你的梗上線了」＋ remix 按鈕。</div>
+            <div class="meta">來源 <a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">Kotaku ↗</a>　pub 2026-10-07（已 web_fetch）　公司自稱數字</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 洩露者 CyberLeek 揚言釋出完整可玩版本：IP 地雷高壓、社群能量炸鍋<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Eurogamer / VGC / RPS 多方報導：自稱「CyberLeek」的洩露者威脅，若 Rockstar/Take-Two 不取消實體版計畫，將公開完整 GTA 6 可玩 build。（radar 標題層，細節未 fetch；事件真實性<b>目前無法完全證實</b>。）</div>
-            <div class="ln"><b>Create-loop 勾子：</b>不碰 GTA 6 任何素材，但借社群能量。「IP 地雷到處都是，今天最好的創作不需要偷來的素材」→ 引導至原創 60 秒小遊戲。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "A hacker is threatening to leak a full, playable GTA 6 build. The internet is on fire. IP drama never sleeps. But the best thing you can make today doesn't need stolen assets — just a strong meme and 60 seconds."<br><span style="color:var(--ink-dim)">中譯：有人揚言要洩露 GTA 6 完整可玩版本，全網炸鍋。IP 爭議從不休假。但今天最強的作品不需要偷來的素材——只需要一個好梗和 60 秒。</span></div>
-            <div class="meta">來源 <a href="https://www.eurogamer.net/gta-6-leaker-cyberleek-threatens-playable-build-leak" target="_blank">Eurogamer ↗</a> + <a href="https://www.videogameschronicle.com/news/group-threatens-to-leak-full-gta-6-build-if-physical-plans-arent-reversed/" target="_blank">VGC ↗</a>　radar 標題層，多方報導一致</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>Google Playground：打字就能做瀏覽器遊戲、連結分享；Unity Spark 為 Playground 專屬工具<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>VGC 10/7：Google Playground 是瀏覽器端、用文字提示生成簡單 AI 遊戲的「實驗性」平台，可用連結分享；Unity Spark（Game Developer 10/7）是只能搭配 Playground 的提示式創作介面，連到 Unity Asset Store，可接 Google 的排行榜、配對與社群功能；Spark 無明確上線日。（新增：Spark 與排行榜 / 社群整合細節；此題先前用過，標 🔄。）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Type a prompt, get a game, share a link — Google and Unity are both in now. Cool. But a game from last month's idea is already stale. Ours starts from what's trending today. 👇"　<span style="color:var(--ink-dim)">中譯：打一句話、出遊戲、丟連結——Google 和 Unity 都下場了。很好。但上個月的點子做成的遊戲已經過時。我們從今天的熱點開始。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>以「Trend Response Time」為賣點：貼上今天的熱門話題 → 60 秒內出可玩版 → 一鍵分享。</div>
+            <div class="meta">來源 <a href="https://videogameschronicle.com/news/google-officially-reveals-ai-game-creation-platform-playground" target="_blank">VGC ↗</a> / <a href="https://gamedeveloper.com/programming/unity-unveils-unity-spark-an-prompt-based-tool-for-google-s-ai-games-platform" target="_blank">Game Developer ↗</a>　pub 2026-10-07（已 web_fetch）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rainbow Six Mobile 全球上線 7 個月即關服：手機遊戲速死比 PC 快、速率是護城河<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Ubisoft 宣布關閉 Rainbow Six Mobile，全球上線僅七個月。GamesIndustry.biz 與 Game Developer 均有報導。（radar 標題層，關服時間點、賠償細節未 fetch。）</div>
-            <div class="ln"><b>Create-loop 勾子：</b>「大廠手遊七個月就消失了，我們做的東西能活多久？」→ 引導出「小、快、跟梗走」的定位優勢。不需要 $200 萬，需要今天的梗 + 一個機制。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Ubisoft just shut down Rainbow Six Mobile — 7 months after global launch. A AAA mobile game, gone. Speed and lean execution aren't bugs — they're the whole moat. One meme, one mechanic, this week. That's the new velocity."<br><span style="color:var(--ink-dim)">中譯：Ubisoft 關閉了 Rainbow Six Mobile——全球上線才 7 個月。一款 AAA 手遊，就這樣消失了。速度和精簡執行不是缺點，是護城河。一個梗、一個機制、這一週。這是新的速率。</span></div>
-            <div class="meta">來源 <a href="https://www.gamesindustry.biz/ubisoft-announces-shutdown-of-rainbow-six-mobile-seven-months-after-global-launch" target="_blank">GamesIndustry.biz ↗</a> + <a href="https://www.gamedeveloper.com/mobile/ubisoft-to-sunset-rainbow-six-mobile-just-seven-months-after-launch" target="_blank">Game Developer ↗</a>　radar 標題層，兩方一致</div>
+            <div class="ti"><span class="fresh f-hot">♨️ 日期未驗</span>Dragon Quest 之父堀井雄二發布一款他稱「約 30 分鐘用 AI 做出」的遊戲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實（僅標題層）：</b>GamesIndustry.biz 與 Eurogamer 標題均稱 Yuji Horii 釋出「他說用 AI 約 30 分鐘做出」的新遊戲。兩站本次皆被擋、未能開原文，遊戲名稱、工具與平台<b>目前無法完全證實</b>，發布日未驗故不標 🆕；發文前請先人工點開確認。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Dragon Quest's co-creator says he made a game with AI in about 30 minutes. Your meme deserves a 30-second one. Drop a meme, we'll turn it into a playable. 👇"　<span style="color:var(--ink-dim)">中譯：Dragon Quest 的創作者說他用 AI 約 30 分鐘做出一款遊戲。你的梗值得一款 30 秒版。丟梗給我們，我們把它變成可玩的。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「30 分鐘 vs 30 秒」速度對比；不提堀井的作品內容或角色，只引用「他說」這個事實。</div>
+            <div class="meta">來源 <a href="https://www.gamesindustry.biz/dragon-quest-creator-yuji-horii-releases-game-he-says-he-made-with-ai-in-about-30-minutes" target="_blank">GamesIndustry.biz ↗</a>　摘要層 · 標題層（原文被擋）</div>
           </div>
         </div>
 
-        <!-- Demo 線 1 -->
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新（萬聖前夕）</span>「鬼屋 30 秒求生」：合作躲避鬼怪、計時結束出「我撐了 N 秒」分享卡，綁 Phasmophobia 萬聖節活動<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>2 人合作（或單人）在泛化鬼屋場景躲避/收集，每波鬼怪速度加快，撐越久分越高；結束出「我和朋友在鬼屋撐了 N 秒」分享卡，附截圖按鈕。純泛化鬼怪（白色幽靈、南瓜燈），不碰 Phasmophobia 任何角色、商標、角色設計。</div>
-            <div class="ln"><b>為何是今天首選：</b>Phasmophobia 3,000 萬銷量驗證市場；萬聖節活動本週正在；30 秒即可玩，分享卡「N 秒」直接有趣；Create→Share→Remix（換一組內梗朋友 = 新版）。<b>風險</b>：不用 Phasmophobia 角色、不寫商標；躲避機制不帶任何賭場視覺。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "30 seconds. Ghost house. Co-op survival. How long can you and your friend last before Halloween gets you? 👻 Drop your score."<br><span style="color:var(--ink-dim)">中譯：30 秒。鬼屋。合作求生。你和朋友能在萬聖節抓到你之前撐多久？留言你的秒數。</span></div>
-            <div class="meta">綁 <a href="https://www.eurogamer.net/phasmophobia-30-million-sales-crimson-eye-event" target="_blank">Eurogamer Phasmophobia ↗</a>　模板：計時躲避＋分享卡　萬聖前夕時效性高</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「No Hand-Written Code」：AI-first 開發部門模擬器（蹭 Epic AI-first 話題，泛化公司、不挪任何 IP）<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>60 秒點擊管理：你是被告知「不准手寫 code」的開發主管，連續下 prompt、接住 AI 吐出的功能、點掉隨機冒出的 bug；分數 =「通過 build 次數」，結尾出分享卡「我今天沒手寫一行就 ship 了 N 次」。純梗分數，不涉金錢、不寫 payout。</div>
+            <div class="ln"><b>為何是今天首選：</b>綁今天最大的業界話題、玩家與開發者都有共鳴與吐槽點，規則一句話講完、Create → Share loop 內建；公司與角色全部泛化，<b>絕不出現 Epic / Disney / Marvel / Star Wars 名稱與美術</b>。</div>
+            <div class="meta">綁 <a href="https://www.videogameschronicle.com/news/epic-games-reportedly-orders-staff-to-implement-ai-first-development/" target="_blank">VGC ↗</a>　模板：點擊 / 放置管理 loop</div>
           </div>
         </div>
       </div>
@@ -313,170 +311,252 @@
     <!-- 即時熱榜 -->
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
-      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft);margin-bottom:16px">
-        ⚠️ <b>heat-radar 本日（10/13）未取得新資料</b>，以下 Steam／Roblox／Twitch 數據均為前日（10/12 07:30）快照，不代表今日即時數字，僅供趨勢參考。
-      </div>
       <div class="boards reveal">
-<div class="board b-steam"><div class="bh"><span>STEAM 在線</span><span class="metric">前日快照 · 10/12 07:30</span></div><ol><li class="down"><span class="nm">Counter-Strike (CS2)</span><span class="vn">569,522 ▼18.9%</span></li><li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">88,078 ▼15.5%</span></li><li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">71,115 ▲1.2%</span></li><li class="down"><span class="nm">Team Fortress 2</span><span class="vn">70,784 ▼9.7%</span></li><li class="down"><span class="nm">Rust</span><span class="vn">66,839 ▼22.5%</span></li><li class="down"><span class="nm">Apex Legends</span><span class="vn">53,708 ▼3.8%</span></li><li class="up"><span class="nm">Baldur's Gate 3</span><span class="vn">48,005 ▲2.2%</span></li><li class="down"><span class="nm">Warframe</span><span class="vn">47,958 ▼1.1%</span></li><li class="down"><span class="nm">Wallpaper Engine</span><span class="vn">43,978 ▼9.5%</span></li><li class="up"><span class="nm">Stardew Valley</span><span class="vn">42,014 ▲7.0%</span></li></ol><div class="bf">Steam 官方 API · 10/12 07:30（前日快照，非 10/13 即時）· 追蹤清單 15 款 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div></div>
-<div class="board b-rblx"><div class="bh"><span>ROBLOX CCU</span><span class="metric">前日快照 · 10/12</span></div><ol><li class="up"><span class="nm">收養我吧！（Adopt Me）</span><span class="vn">287.3K</span></li><li class="up"><span class="nm">森林中的 99 個夜晚</span><span class="vn">191.4K</span></li><li class="hot up"><span class="nm">🎃 丹迪的世界 [測試版]</span><span class="vn">162.2K</span></li><li><span class="nm">胡斯山谷</span><span class="vn">103.5K</span></li><li><span class="nm">打破並偷走一顆蛋</span><span class="vn">87.6K</span></li><li><span class="nm">魚🐟[拯救納特]</span><span class="vn">78.6K</span></li><li><span class="nm">排球傳奇人物</span><span class="vn">58.7K</span></li><li><span class="nm">貝瑞大道 RP</span><span class="vn">56.5K</span></li><li><span class="nm">Pet Simulator 99!</span><span class="vn">53.1K</span></li><li><span class="nm">從一百萬隻猴子中存活下來</span><span class="vn">40.9K</span></li></ol><div class="bf">roblox.com/charts · 10/12 前日快照（29 款帶🎃萬聖標記仍屬延燒）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div></div>
-<div class="board b-twch"><div class="bh"><span>TWITCH 觀看</span><span class="metric">前日快照 · 7 日平均</span></div><ol><li class="up"><span class="nm">Just Chatting</span><span class="vn">263K</span></li><li><span class="nm">Grand Theft Auto V</span><span class="vn">104K</span></li><li><span class="nm">Counter-Strike</span><span class="vn">104K</span></li><li><span class="nm">Minecraft</span><span class="vn">102K</span></li><li class="hot"><span class="nm">AION 2</span><span class="vn">92.9K</span></li><li><span class="nm">League of Legends</span><span class="vn">86.9K</span></li><li><span class="nm">World of Warcraft</span><span class="vn">62.4K</span></li><li><span class="nm">VALORANT</span><span class="vn">61.9K</span></li><li><span class="nm">ARC Raiders</span><span class="vn">38.1K</span></li><li><span class="nm">Deadlock</span><span class="vn">20.3K</span></li></ol><div class="bf">TwitchTracker · 10/12 前日快照（7 日平均）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div></div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/13 即時</span></div>
+          <ol>
+            <li class="down"><span class="nm">Counter-Strike（appid 730）</span><span class="vn">539K ▼5.4%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">85K ▼3.4%</span></li>
+            <li class="hot up"><span class="nm">Rust</span><span class="vn">70K ▲4.5%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">69K ▼2.0%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">68K ▼4.4%</span></li>
+            <li class="down"><span class="nm">Apex Legends</span><span class="vn">48K ▼11.3%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 10/13 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX TRENDING</span><span class="metric">頁面顯示人數 · 10/13 瀏覽器真抓</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Adopt Me!（收養我吧）</span><span class="vn">259.3K</span></li>
+            <li class="hot"><span class="nm">99 Nights in the Forest</span><span class="vn">145.4K</span></li>
+            <li><span class="nm">Dandy's World [Beta]（🎃）</span><span class="vn">128.7K</span></li>
+            <li><span class="nm">胡斯山谷（官方中文譯名）</span><span class="vn">101.5K</span></li>
+            <li><span class="nm">打破並偷走一顆蛋</span><span class="vn">84.6K</span></li>
+            <li><span class="nm">Pet Simulator 99!</span><span class="vn">51.3K</span></li>
+          </ol>
+          <div class="bf">Roblox Charts · 瀏覽器 10/13 真抓（頁面人數，視為同時在線；未逐一核對各體驗官方 CCU）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近 7 日平均觀眾 · 10/13</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Just Chatting</span><span class="vn">262K</span></li>
+            <li><span class="nm">Minecraft</span><span class="vn">122K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">104K</span></li>
+            <li><span class="nm">Counter-Strike</span><span class="vn">103K</span></li>
+            <li class="hot"><span class="nm">AION 2</span><span class="vn">92.5K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">84.2K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 瀏覽器 10/13 真抓（近 7 日平均觀眾）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-10-13T07:30:40+08:00），Steam 為官方 API 即時真數字；Roblox / Twitch 為瀏覽器真抓。注意 Steam 榜上 appid 730 在 API 標題顯示為 CS:GO（實為 Counter-Strike 同一 app）。
       </div>
     </section>
 
     <!-- 暴衝訊號 -->
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>前日資料</span></span>使用 10/12 快照：Steam 無 ≥+15% 暴衝旗標，最高為 L4D2 +14.7%；今日新資料未取得</h3>
-        <div class="sum">⚠️ <b>本日（10/13）heat-radar 未取得新資料</b>，以下為前日（10/12 07:30）數據。Steam 日比：無任何款達 +15% 閾值；最接近：<b>L4D2 35,945（+14.7%）</b>、Stardew Valley 42,014（+7.0%）、Destiny 2 +4.4%。下滑：Rust −22.5%、CS −18.9%、GTA V Legacy −17.2%、PUBG −15.5%。排名跳動（前日）：Sims 4（75→69）、7 Days to Die（89→83）、Dragon's Dogma 2（90→84）各升 6 名；PEAK（60→55）、Among Us（83→78）升 5 名。新進榜：CPM 2（第 92）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日無 Steam 即時暴衝證據。前日合作／社交類（L4D2、Among Us、PEAK）弱訊號延續。今日彈藥已轉向更強的新聞層訊號（EA 財務、Phasmophobia 萬聖節）。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Steam 今日無 ≥15% 上漲旗標；多款老牌掉量，War Thunder −18.0%、Palworld −15.2%</h3>
+        <div class="sum">今日 Steam 真·日比<b>沒有任何一款過 +15% 暴衝旗標</b>；最大漲幅僅 <b>Rust +4.5%（69,826 人）</b>。下跌面反而醒目：<b>War Thunder −18.0%（29,682）、Palworld −15.2%（33,689）、Destiny 2 −12.9%、Baldur's Gate 3 −12.6%、HELLDIVERS 2 −12.3%、Apex Legends −11.3%</b>。排名跳動只有 Farming Simulator 25 由 70 → 65；無新進榜。Roblox / Twitch 本次無昨日快照可比，不標漲幅，以免用估計假裝 live。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天熱榜沒有「新梗在爆」，題材彈藥在新聞線（Epic AI-first、VRChat、Astrocade 翻倍），不在熱榜。大面積同步下滑看起來是整體大盤波動（週間 / 日比時間點），目前無法完全證實原因，別硬編成事件。</div>
         <div class="footrow">
-          <div class="scores"><div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-          <div class="src">STEAM 官方 API · 10/12 07:30 前日快照 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 10/13 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅% / Roblox 黑馬新進榜需與昨日快照比對，本次無可比快照，<b>目前無法完全證實</b>。Roblox 趨勢榜可見「偷（Steal）類」標題群聚：打破並偷走一顆蛋、偷走動物蛋、偷或死，另有多款 🎃 萬聖節活動款，為標題層觀察、非漲幅證據。
+      </div>
     </section>
 
     <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
       <div class="boards reveal">
-<div class="board b-steam"><div class="bh"><span>STEAM 熱賣新品</span><span class="metric">前日快照 · 10/12</span></div><ol><li class="hot"><span class="nm">STAR WARS: Galactic Racer™</span><span class="vn">熱賣</span></li><li class="hot"><span class="nm">Gears of War: E-Day</span><span class="vn">熱賣</span></li><li><span class="nm">Risk of Rain 2: Hallowed Concepts</span><span class="vn">熱賣 DLC</span></li><li class="hot"><span class="nm">WARDOGS</span><span class="vn">熱賣</span></li><li><span class="nm">Dressmaker</span><span class="vn">熱賣</span></li><li><span class="nm">Hood Warfare 2</span><span class="vn">熱賣</span></li><li><span class="nm">Clive Barker's Hellraiser: Revival</span><span class="vn">熱賣</span></li><li><span class="nm">Backrooms: The Lost Circus</span><span class="vn">新品</span></li><li><span class="nm">Next time... I'll work from home</span><span class="vn">新品</span></li><li><span class="nm">Traitor</span><span class="vn">新品</span></li></ol><div class="bf">Steam 新品榜 · 10/12 前日快照 · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div></div>
-<div class="board b-rblx"><div class="bh"><span>ITCH.IO HTML5 熱門</span><span class="metric">前日快照 · meme 標籤</span></div><ol><li class="hot"><span class="nm">SITE BURIAL (v1.8)</span><span class="vn">html5 popular</span></li><li><span class="nm">don't rock the boat</span><span class="vn">html5 popular</span></li><li><span class="nm">The Freak Circus</span><span class="vn">html5 popular</span></li><li><span class="nm">People Watching</span><span class="vn">html5 popular</span></li><li class="hot"><span class="nm">This Role: You are Hamster</span><span class="vn">meme</span></li><li><span class="nm">Three Nights Lobotomized</span><span class="vn">meme</span></li><li><span class="nm">Bongo (and other instruments) Cat</span><span class="vn">meme</span></li><li><span class="nm">Kill the Ice Age Baby Adventure</span><span class="vn">meme</span></li><li><span class="nm">StreamRush</span><span class="vn">viral</span></li><li><span class="nm">RarityRNG</span><span class="vn">viral</span></li></ol><div class="bf">itch.io /games/html5 · 10/12 前日快照 · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div></div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Witch Cabin Cleanup</span><span class="vn">新品</span></li>
+            <li><span class="nm">Magic Cursor</span><span class="vn">新品</span></li>
+            <li><span class="nm">Blocky Miner</span><span class="vn">新品</span></li>
+            <li><span class="nm">Triet Cat</span><span class="vn">新品</span></li>
+            <li><span class="nm">Beach Volleyball Empire</span><span class="vn">新品</span></li>
+            <li><span class="nm">Knightime / Beset</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 10/13 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO HTML5 熱門</span><span class="metric">popular</span></div>
+          <ol>
+            <li class="hot"><span class="nm">SITE BURIAL (v1.8)</span><span class="vn">html5</span></li>
+            <li><span class="nm">The Freak Circus</span><span class="vn">html5</span></li>
+            <li><span class="nm">don't rock the boat</span><span class="vn">html5</span></li>
+            <li><span class="nm">The Margot Collapse</span><span class="vn">html5</span></li>
+            <li><span class="nm">People Watching</span><span class="vn">html5</span></li>
+            <li><span class="nm">Friday Night Funkin'（常青）</span><span class="vn">老牌</span></li>
+          </ol>
+          <div class="bf">itch.io html5 popular · 10/13 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
       </div>
-      <article class="story rl reveal">
-        <h3><span class="tag rl"><span>洞察</span></span>Steam 熱賣新品：Galactic Racer（IP 授權賽車）大熱；itch 延續 meme + 動物角色潮</h3>
-        <div class="sum">Steam 熱賣榜：<b>Star Wars: Galactic Racer</b> 連日高位——IP 授權 × 懷舊向的組合仍有市場；<b>Gears of War E-Day</b> 大廠品牌新作也在熱賣。itch meme 標籤延續倉鼠、貓咪等動物角色（This Role: You are Hamster / Bongo Cat）；html5 popular 仍有「don't rock the boat」這類純粹物理感趣味小品。玩法細節未逐款開頁驗證。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>動物角色（倉鼠、貓咪）是低成本泛化角色的天然選擇——不侵 IP、高辨識度、任何情境都能套。「不搖晃船」類物理感 loop 適合萬聖節主題換皮（「撐住不讓鬼把船翻」）。避開 Galactic Racer 的星際大戰授權視覺。</div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>早期 loop 線索（僅憑標題，玩法未驗）：整理 / 清潔、游標 / 單鍵、挖礦放置、氛圍小品</h3>
+        <div class="sum">從標題歸納（未逐款開玩，<b>玩法目前無法完全證實</b>）：<b>整理清潔類（Witch Cabin Cleanup）、游標 / 單操作類（Magic Cursor）、挖礦放置類（Blocky Miner）、氛圍小品（The Freak Circus、People Watching、SITE BURIAL）</b>。Roblox 趨勢榜另見「偷蛋」群聚與 🎃 萬聖節活動款。共通點是名稱就講完規則、體量小。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>整理 / 放置 / 單操作三類最容易做成泛化模板、IP 風險低；萬聖節（10/31 前）是現成的季節題材，可預排「恐怖氛圍 × 今日梗」的迷你遊戲。</div>
         <div class="footrow">
-          <div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化動物</span></span></div></div></div>
-          <div class="src">STEAM / ITCH.IO · 10/12 前日快照 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / ITCH.IO / ROBLOX · 10/13 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
     <!-- 高討論文章 -->
     <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · 產業動向</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>產業大事</span></span>EA 沙烏地收購後爆 $15 億債務違約疑雲：槓桿收購面臨債券持有人爭議</h3>
-        <div class="sum">Game Developer 報導 EA 槓桿收購面臨債券持有人爭議（Electronic Arts' leveraged buyout faces a bondholder battle）。Reddit r/gaming 今日頂帖聲稱 EA 在沙烏地阿拉伯完成收購後，被指控對 $200 億債務中的 $15 億違約。⚠️ Reddit 貼文標題為用戶聲稱，$15 億數字<b>目前無法完全證實</b>；Game Developer 原文細節為 radar 標題層未 fetch。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>大廠財務動盪 = 創作者遷徙視窗。EA 系下的工具（如 EA Creator Network）可能受影響；獨立、不依賴大廠生態的創作平台在此刻有定位優勢。不唱衰，只陳述機會視窗。已收 CJ Top 1。</div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Epic 被報導 AI-first：HN 70 分、Reddit r/gaming 當日榜、6 家以上媒體跟進</h3>
+        <div class="sum">Bloomberg 10/12 報導 Epic 延後 Disney 合作射擊遊戲並要求 AI-first；跟進者含 VGC、Eurogamer、GamesIndustry.biz、RPS、PC Gamer、80.lv、Kotaku、Polygon。客觀熱度：HN（AV Club 連結）<b>70 分 / 50 則留言</b>、Reddit r/gaming 當日榜；PC Gamer 標題引 Epic CEO「survive the AI revolution」（標題層）。細節同頭版，內部說法為 Bloomberg 報導。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>爭議點是「人被 AI 取代」的情緒，GameGen 的對外語氣要站在「AI 讓更多人能做遊戲」而不是「AI 取代開發者」，避免被拉進裁員 / 反 AI 的情緒戰。</div>
         <div class="footrow">
-          <div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 待財報驗證</span></span></div></div></div>
-          <div class="src">GAME DEVELOPER · <a href="https://www.gamedeveloper.com/business/electronic-arts-leveraged-buyout-faces-a-bondholder-battle" target="_blank">原文 ↗</a></div>
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中</span></span></div></div>
+          </div>
+          <div class="src">VGC · 10/12 · <a href="https://www.videogameschronicle.com/news/epic-games-reportedly-orders-staff-to-implement-ai-first-development/" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>IP 趨勢</span></span>Cyberpunk 2077 真人電影確認：派拉蒙 × CD Projekt Red 共製，遊戲→電影管線持續</h3>
-        <div class="sum">GamesIndustry.biz 報導：Paramount Pictures 將改編以 Cyberpunk 2077 宇宙為背景的真人電影，CD Projekt Red 共同製作。（radar 標題層；導演、時程、預算等細節<b>目前無法完全證實</b>。）延伸背景：Witcher 已成 Netflix 系列、Minecraft 電影即將上映，遊戲 IP 跨媒體化趨勢明確。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>IP 跨媒體化是長線趨勢，但對 GameGen 的直接意義是：<b>原創 IP 比版權 IP 安全</b>。GameGen 每個小遊戲都是潛在 IP 種子，鼓勵創作者建立自己的泛化角色、自己的世界觀。已收 CJ Top 2。</div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>VRChat 社群抗議 AI 生成內容：縮圖誤導、搜尋被灌</h3>
+        <div class="sum">志願者 Patroll 退出社群工作並號召抵制；VRChat 承諾立即禁止欺騙性縮圖，並用約一週諮詢是否標示或禁止玩家端 AI 生成世界 / 素材。細節見頭版 CJ 線。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>UGC + AI 的「信任」議題正在公開發酵；把「AI 標示 + 品質排序」做進產品與敘事是現成的差異化。</div>
         <div class="footrow">
-          <div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-          <div class="src">GAMESINDUSTRY.BIZ · <a href="https://www.gamesindustry.biz/paramount-pictures-adapting-live-action-movie-set-in-cyberpunk-2077-universe-co-produced-by-cd-projekt-red" target="_blank">原文 ↗</a></div>
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中</span></span></div></div>
+          </div>
+          <div class="src">KOTAKU · 10/12 · <a href="https://kotaku.com/vr-chat-community-protests-an-influx-of-ai-slop-onto-platform-hurting-discoverability-2000742109" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>手機動向</span></span>Rainbow Six Mobile 全球上線 7 個月即關服：大廠手遊生死比 PC 更快</h3>
-        <div class="sum">Ubisoft 宣布關閉 Rainbow Six Mobile，距全球上線僅七個月。GamesIndustry.biz 與 Game Developer 均有報導。上線七個月即關服在手機遊戲市場並不罕見，但 Rainbow Six 是知名 IP，此事引發廣泛討論。（關服賠償細節<b>目前無法完全證實</b>。）</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>手機遊戲的生死週期比 PC 更極端。大廠 IP 加持也不保证生存。<b>速度（快出、快迭代、跟梗走）</b>比品牌資源更能決定小遊戲的命運。已收小編線第 3 條。</div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>競品</span></span>Astrocade 自稱月用戶 1,000 萬（約 4 個月前約 500 萬）；Google Playground 與 Unity Spark 下場</h3>
+        <div class="sum">Kotaku 10/7 引 Astrocade CEO 對 GamesBeat 的說法：月用戶 1,000 萬、iOS app 準備中；同日 Google 推出實驗性 Playground（文字生成瀏覽器遊戲、連結分享），Unity Spark 為其專屬創作介面、無明確上線日。數字為公司自稱。這兩題 6 天前已進過報，此處僅列進展。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>賽道被驗證且巨頭下場，差異化要押在 Trend Response Time 與社群 remix，而不是「能用文字生遊戲」本身。</div>
         <div class="footrow">
-          <div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-          <div class="src">GAMESINDUSTRY.BIZ · <a href="https://www.gamesindustry.biz/ubisoft-announces-shutdown-of-rainbow-six-mobile-seven-months-after-global-launch" target="_blank">原文 ↗</a></div>
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">KOTAKU / VGC · 10/7 · <a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
-      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        📊 其他觀察（radar 標題層）：Phasmophobia 3,000 萬銷量（Eurogamer）；RE 電影 $320M 票房（Reddit）；Undead Labs 裁員（GamesIndustry.biz）；Double Fine 工會化失敗報告（Game Developer）；HN 本日遊戲類：GameBoy on E-Paper ESP32 139 points（硬體 hack）；「Show HN: Yia-yia game single prompt with Opus 5.5」1 point——HN AI 遊戲熱度仍低迷。
-      </div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>開發者</span></span>HN 257 分：把 PS2 遊戲靜態重編譯成 WebAssembly 在瀏覽器跑</h3>
+        <div class="sum">Show HN 專案「PS2 games statically recompiled to WebAssembly」<b>257 分 / 139 則留言</b>（今日 HN 遊戲相關最高）。同日 HN 另有「Show HN：兩款瀏覽器遊戲、設在同一份真實高斯潑濺掃描中」（3 分，體量小）。另 Naavik 近期文章標題「From Disney to miHoYo: The Road Toward AI-Enabled Fandom」（標題層，未讀全文）與 GameGen 的粉絲向定位相關。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「瀏覽器零安裝直接玩」仍是開發者圈最有共鳴的點，與 GameGen web-first playable link 路線一致；可作為「連結即玩」的旁證，不是題材。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HACKER NEWS · 10/13 · <a href="https://github.com/snuri00/ps2-web-recomp" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
     </section>
 
-    <!-- 迷因題材 -->
+    <!-- 迷因題材 / 迷因遊戲 -->
     <section id="meme">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因遊戲</span></span>「GTA 6 全網炸鍋」：IP 地雷本身就是迷因能量，轉換成原創的姿勢</h3>
-        <div class="sum">GTA 6 洩露事件今日多個平台同時爆，CyberLeek 揚言釋出完整可玩版本，RPS / Eurogamer / VGC 均報導。「GTA 6 leak」的社群能量極大，但直接使用任何 GTA 資產是高風險 IP 地雷。迷因轉換：「IP 地雷」本身可作為梗——「有人冒著被告風險洩露整款遊戲，而我只需要一個梗和 60 秒就能做出遊戲」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>借勢不碰資產。勾子是「不需要偷來的東西，只需要今天的梗」。把 GTA 6 的能量轉成 GameGen 的定位對比，不觸碰任何 GTA 素材、角色或場景。</div>
-        <div class="footrow">
-          <div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 不碰素材</span></span></div></div></div>
-          <div class="src">EUROGAMER / VGC · <a href="https://www.eurogamer.net/gta-6-leaker-cyberleek-threatens-playable-build-leak" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
-
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>迷因遊戲</span></span>itch meme 標籤：動物角色（倉鼠、Bongo Cat）持續熱門——泛化動物是安全創作起點</h3>
-        <div class="sum">itch meme 標籤本日（前日快照）：「This Role: You are Hamster」、「Bongo (and other instruments) Cat」持續熱門。動物角色沒有版權風險（只要不直接挪用特定商業 IP 的角色設計），可快速泛化成任何情境。萬聖節版：「你扮演一隻在鬼屋求生的倉鼠」。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>動物角色 = 零門檻共感 + 低 IP 風險。今天的蹭法：萬聖節鬼屋 + 倉鼠求生 = 一行規則可做成 60 秒遊戲。KYM 當日新梗與 Threads 繁中資料今日仍未取得。</div>
-        <div class="footrow">
-          <div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 泛化</span></span></div></div></div>
-          <div class="src">ITCH.IO · 10/12 前日快照 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div>
-        </div>
-      </article>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>今日無可驗證的新鮮梗</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ Know Your Meme「popular」頁本次回傳的是歷史常青清單（Navy Seal Copypasta、Trollface 等），無 first-seen 日期，<b>不符新鮮度 guard、不採用</b>；napoleoncat 類常青整理頁依規定禁用。Reddit r/gaming 當日榜為新聞與討論串，未見可遊戲化的新梗。<b>目前無法完全證實今日有近 14 天內的新梗</b>，骨架保留、不以舊梗補位。可關注：Epic「no more hand-written code」若在社群長出吐槽梗（尚未觀察到）。</div>
+      </div>
     </section>
 
     <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <div class="boards reveal">
-<div class="board b-rblx"><div class="bh"><span>unityroom 今週ピックアップ</span><span class="metric">10/12 前日快照</span></div><ol><li class="hot"><span class="nm">ちょうどいい音がすると思ったら母でした</span><span class="vn">8.9万</span></li><li class="hot"><span class="nm">いちばん遠い言葉</span><span class="vn">30.8万</span></li><li><span class="nm">この家には4人しか住んでいません -パズルホラー-</span><span class="vn">12.2万</span></li><li><span class="nm">寿司将棋（手機對應）</span><span class="vn">1.8万</span></li><li><span class="nm">伸びろ！ブッチッ波！</span><span class="vn">13.2万</span></li><li><span class="nm">Neighbor Houses.</span><span class="vn">1.7万</span></li></ol><div class="bf">unityroom 首頁 · 10/12 前日快照 · 玩法未逐款開頁驗證 · <a href="https://unityroom.com/" target="_blank">原始 ↗</a></div></div>
-<div class="board b-steam"><div class="bh"><span>今日機制洞察</span><span class="metric">萬聖前夕靈感</span></div><ol><li class="hot"><span class="nm">計時恐怖合作（Phasmophobia 模型）</span><span class="vn">60→30 秒</span></li><li class="hot"><span class="nm">季節皮 × 固定 loop（Roblox 29款🎃）</span><span class="vn">換皮即新品</span></li><li><span class="nm">動物角色求生（倉鼠鬼屋）</span><span class="vn">零 IP 風險</span></li><li><span class="nm">反差猜謎（unityroom 媽媽聲音）</span><span class="vn">日常驚嚇</span></li><li><span class="nm">有限場次爬升（EloHell，延燒）</span><span class="vn">60 場→30 秒版</span></li></ol><div class="bf">綜合 Eurogamer / itch / unityroom / Steam 今日資料</div></div>
+      <div class="story rl reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag rl"><span>今日無顯著更新</span></span>機制靈感庫（unityroom）</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ unityroom 本次未抓取，<b>目前無法完全證實</b>今日有新的得獎機制。替代參考：Roblox 趨勢榜「偷蛋 / 養寵 / 整理經營」與 Steam 新品「Witch Cabin Cleanup、Magic Cursor、Blocky Miner」標題層，皆為低 IP 風險的泛化機制方向。IP 地雷提醒：Disney / Marvel / Star Wars 角色、Pokémon 類元素一律用泛化皮。</div>
       </div>
-      <article class="story rl reveal">
-        <h3><span class="tag rl"><span>洞察</span></span>萬聖前夕機制最佳組合：計時 + 合作/社交 + 季節皮，三要素任選二即可出品</h3>
-        <div class="sum">Phasmophobia 3,000 萬銷量驗證「恐怖 + 合作」；Roblox 29款🎃驗證「季節皮 + 固定 loop」；itch 動物角色延續驗證「泛化角色 + 簡單情境」。機制最短路徑：①倉鼠/南瓜人在鬼屋躲鬼（動物 + 計時 + 躲避）；②和朋友比誰撐越久（合作 + 分享卡）；③隔週換成聖誕版（季節皮複用）。<b>機制本身不受版權保護，照抄 loop 換泛化皮即可。</b></div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>萬聖節窗口只剩約兩週，今天做、這週發、下週換聖誕皮。這是「換皮 = 新品」策略的最佳示範週。</div>
-        <div class="footrow">
-          <div class="scores"><div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-          <div class="src">綜合多源 · <a href="https://www.eurogamer.net/phasmophobia-30-million-sales-crimson-eye-event" target="_blank">Phasmophobia ↗</a></div>
-        </div>
-      </article>
     </section>
 
     <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話：本次未能取得（需登入／JS 渲染）</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ 排程環境未登入 Threads，<b>目前無法完全證實</b>繁中圈當日熱話，骨架保留、不補估計。可追長線題材：萬聖節前（恐怖 / 鬼屋 / Halloween）；EA 收購事件繁中輿論（需手動確認）；Rainbow Six Mobile 台灣玩家反應（服務是否含台灣市場待確認）。</div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話今日未取得</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ Threads 需登入 / JS 渲染，本次排程無人可授權登入，<b>目前無法完全證實</b>當日繁中熱話，骨架保留、不以舊資料補位。建議題材變體（待驗證）：「不准手寫 code」的開發者崩潰吐槽、AI 遊戲平台翻倍 vs 品質擔憂的繁中討論。</div>
       </div>
     </section>
 
-    <!-- Trend-to-Game -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>Phasmophobia 萬聖節 × 3,000 萬銷量</td><td><span class="tmpl">合作躲避 · 計時 30 秒</span></td><td>「我撐了 N 秒」分享卡</td><td class="rk-low">低 · 泛化鬼怪</td><td>★ 本日 Demo 首選，今天做週末發，不碰 Phasmophobia 商標</td></tr>
-          <tr><td>EA 財務動盪（沙烏地收購後違約疑雲）</td><td><span class="tmpl">「創作者平台獨立」敘事</span></td><td>「不依賴大廠」定位貼</td><td class="rk-mid">中 · 待財報驗證</td><td>不唱衰 EA，只陳述機會視窗；債務數字需驗再引用</td></tr>
-          <tr><td>Rainbow Six Mobile 7 個月關服</td><td><span class="tmpl">「快、輕、跟梗」速率優勢</span></td><td>對比反差「7 個月 vs 60 秒」</td><td class="rk-low">低</td><td>反差訊息，已收小編線第 3 條</td></tr>
-          <tr><td>Cyberpunk 2077 電影（IP 跨媒體）</td><td><span class="tmpl">「原創 IP 種子」敘事</span></td><td>「今天的梗 = 明天的 IP」</td><td class="rk-low">低</td><td>已收 CJ Top 2，不提 Cyberpunk 素材</td></tr>
-          <tr><td>GTA 6 洩露者威脅（IP 地雷）</td><td><span class="tmpl">「原創無地雷」對比</span></td><td>「不需要偷來的素材」</td><td class="rk-hi">高 · 直接碰 GTA</td><td>只借能量，絕不碰任何 GTA 素材；風險標高</td></tr>
-          <tr><td>itch 動物角色（倉鼠、Bongo Cat）</td><td><span class="tmpl">泛化動物 · 萬聖皮</span></td><td>「倉鼠在鬼屋」截圖</td><td class="rk-low">低</td><td>零 IP 風險，泛化動物 + 季節皮</td></tr>
+          <tr><td>Epic「AI-first、不准手寫 code」（HN 70 分 / 6+ 媒體）</td><td><span class="tmpl">點擊 / 放置管理</span></td><td>「我沒手寫一行就 ship N 次」分享卡</td><td class="rk-mid">中 · 勿提 Epic / Disney 等 IP</td><td>★ 本日 Demo 首選，泛化公司與角色</td></tr>
+          <tr><td>VRChat AI 內容抗議</td><td><span class="tmpl">標示 AI 透明牌</span></td><td>「我們公開說這是 AI 做的」</td><td class="rk-low">低</td><td>定位素材，不參戰反 AI 情緒</td></tr>
+          <tr><td>Astrocade 月用戶翻倍（自稱）</td><td><span class="tmpl">投梗留言 → 當日上線</span></td><td>「你的梗上線了」回覆連結</td><td class="rk-low">低</td><td>X 互動貼，強調當天速度</td></tr>
+          <tr><td>萬聖節季 × 今日梗</td><td><span class="tmpl">恐怖氛圍小品</span></td><td>驚嚇瞬間好剪短影音</td><td class="rk-low">低</td><td>10/31 前預排 3 款泛化小遊戲</td></tr>
+          <tr><td>Roblox「偷蛋」群聚</td><td><span class="tmpl">單鍵搶奪 / 躲避</span></td><td>搶到 / 被抓瞬間</td><td class="rk-low">低</td><td>只借機制，不用 Roblox 美術</td></tr>
         </tbody>
       </table>
       </div>
     </section>
 
-    <!-- CJ LinkedIn -->
+    <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>大廠動盪期是創作者工具的機會窗口</td><td>EA 槓桿收購面臨債券持有人爭議（Game Developer）；Reddit 聲稱 $15 億違約（未獨立驗證）</td><td>"When big platforms wobble, creators ask: where do I build next? Every platform crisis is someone else's opportunity."</td><td><a href="https://www.gamedeveloper.com/business/electronic-arts-leveraged-buyout-faces-a-bondholder-battle" target="_blank">Game Developer</a></td></tr>
-          <tr><td>遊戲是新一代 IP 孵化器</td><td>Paramount × CDPR 打造 Cyberpunk 2077 真人電影；Witcher、Minecraft 等持續外溢</td><td>"Games are the new IP pipeline. Every 60-second game you make is a seed. The next franchise starts somewhere."</td><td><a href="https://www.gamesindustry.biz/paramount-pictures-adapting-live-action-movie-set-in-cyberpunk-2077-universe-co-produced-by-cd-projekt-red" target="_blank">GamesIndustry.biz</a></td></tr>
-          <tr><td>手機遊戲速死：7 個月 = 護城河在速率不在品牌</td><td>Rainbow Six Mobile 全球上線 7 個月即關服（GamesIndustry + Game Developer）</td><td>"A AAA mobile game with a $200M IP lasted 7 months. Speed and lean execution beat brand every time in this market."</td><td><a href="https://www.gamesindustry.biz/ubisoft-announces-shutdown-of-rainbow-six-mobile-seven-months-after-global-launch" target="_blank">GamesIndustry.biz</a></td></tr>
-          <tr><td>恐怖合作遊戲的長線價值</td><td>Phasmophobia 3,000 萬銷量確認；萬聖節活動持續（Eurogamer）</td><td>"30 million people bought a 4-person ghost hunting game on PC. 'Scary with friends' is a perennial mechanic. The template isn't dated — the skin just needs updating."</td><td><a href="https://www.eurogamer.net/phasmophobia-30-million-sales-crimson-eye-event" target="_blank">Eurogamer</a></td></tr>
+          <tr><td>AAA 內部 AI 化，玩家端是空位</td><td>Epic 被報導 AI-first、「no more handwritten code」（Bloomberg，10/12；Epic 未逐項證實）</td><td>"Even the Fortnite maker is rebuilding around AI. The open question is who gets to make the games."</td><td><a href="https://www.videogameschronicle.com/news/epic-games-reportedly-orders-staff-to-implement-ai-first-development/" target="_blank">↗</a></td></tr>
+          <tr><td>UGC + AI 的下一關是發現與信任</td><td>VRChat 社群抗議 AI 縮圖誤導搜尋，平台諮詢標示（10/12）</td><td>"Volume isn't a moat. Discovery and trust are."</td><td><a href="https://kotaku.com/vr-chat-community-protests-an-influx-of-ai-slop-onto-platform-hurting-discoverability-2000742109" target="_blank">↗</a></td></tr>
+          <tr><td>賽道被驗證且巨頭下場（🔄 背景）</td><td>Astrocade 自稱月用戶 1,000 萬；Google Playground / Unity Spark（10/7）</td><td>"The social AI arcade thesis is validated. The race is speed to the trend."</td><td><a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Epic AI-first、VRChat 發現與信任）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 開原文驗證日期 2026-10-12 + 主張比對（見文末 Evidence Log）；Epic 內部細節為 Bloomberg 報導，貼文請保留「reportedly」。對外用字已過濾賭場語言。
+      </div>
       </div>
     </section>
 
@@ -484,32 +564,31 @@
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Phasmophobia 萬聖節：「3,000 萬人驗證恐怖合作永不過時——你的 60 秒鬼屋版長什麼樣？」</li><li>Rainbow Six Mobile 7 個月：「大廠 IP 也能 7 個月不見，速度是護城河」</li><li>GTA 6 事件借勢：「IP 地雷到處，原創是唯一安全牌——一個梗 + 60 秒」（不碰 GTA 素材）</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「鬼屋 30 秒求生」泛化鬼怪 + 合作計時 + 分享卡（本日首選，萬聖時效高）</li><li>「倉鼠鬼屋」泛化動物 + 季節皮（低成本、零 IP 風險）</li><li>大廠動盪主題諷刺小遊戲（需謹慎，不點名 EA）</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>EA 債務事件後續：財報驗證、創作者遷徙動向</li><li>GTA 6 洩露事件走向：Rockstar 法律行動 vs 社群反應</li><li>Cyberpunk 2077 電影：導演、時程等細節公開時補充 CJ 素材</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>任何 GTA 6 視覺素材、場景、角色（IP 地雷最高警戒）</li><li>Phasmophobia 商標、角色設計；Cyberpunk 2077 素材</li><li>以 Reddit 標題為依據引用 EA 具體債務數字（需財報驗證）</li><li>躲避遊戲出現骰子、籌碼、老虎機等賭場視覺；文案避免 big win / payout</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>投梗互動貼：「AI 遊戲平台自稱月用戶翻倍，我們讓你的梗今天就上線」</li><li>速度對比：「Google 打字做遊戲、我們從今天的熱點開始」</li><li>堀井雄二貼文需先人工確認原文再發（目前僅標題層）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「No Hand-Written Code」AI-first 開發部門模擬器（泛化公司）—— 本日首選</li><li>萬聖節 × 今日梗的泛化恐怖氛圍小品（10/31 前）</li><li>整理 / 清潔 / 單操作類泛化模板</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>VRChat 約一週後公布的 AI 標示 / 禁止決定（約 10/19 前後）</li><li>Epic 是否正式證實 Bloomberg 報導；Unreal 用戶端 AI 功能後續</li><li>Astrocade iOS app 上線時間、Unity Spark 上線日</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Epic / Disney / Marvel / Star Wars 名稱與角色直接挪用 → 全部泛化</li><li>不要把 Bloomberg 的內部細節寫成已證實事實，保留「reportedly」</li><li>不要參戰「AI 該不該存在」，站「讓更多人能做遊戲 + 公開標示」</li><li>對外文案避開賭博語言（Twitch 榜上有 Slots 類別，勿蹭）</li></ul></div>
       </div>
     </section>
 
-    <!-- Evidence Log -->
+    <!-- 彈藥 Evidence Log -->
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>EA 財務危機（CJ#1）</td><td><a href="https://www.gamedeveloper.com/business/electronic-arts-leveraged-buyout-faces-a-bondholder-battle" target="_blank">Game Developer</a>（radar 標題層，未 fetch）+ <a href="https://www.reddit.com/r/gaming/comments/1x2u8zg/" target="_blank">Reddit</a>（貼文標題）　⚠️ 債務數字為 Reddit 聲稱，未財報驗證　🆕 今日新</td></tr>
-        <tr><td>Cyberpunk 2077 電影（CJ#2）</td><td><a href="https://www.gamesindustry.biz/paramount-pictures-adapting-live-action-movie-set-in-cyberpunk-2077-universe-co-produced-by-cd-projekt-red" target="_blank">GamesIndustry.biz</a>（radar 標題層，未 fetch）　⚠️ 細節未驗　🆕 今日新</td></tr>
-        <tr><td>Phasmophobia 3,000 萬（小編#1、Demo）</td><td><a href="https://www.eurogamer.net/phasmophobia-30-million-sales-crimson-eye-event" target="_blank">Eurogamer</a>（radar 標題層，未 fetch）　⚠️ 活動日期細節未驗　🆕 今日新</td></tr>
-        <tr><td>GTA 6 洩露者 CyberLeek（小編#2）</td><td><a href="https://www.eurogamer.net/gta-6-leaker-cyberleek-threatens-playable-build-leak" target="_blank">Eurogamer</a> + <a href="https://www.videogameschronicle.com/news/group-threatens-to-leak-full-gta-6-build-if-physical-plans-arent-reversed/" target="_blank">VGC</a>（radar 標題層，兩方一致）　⚠️ 事件真實性待驗　🆕 今日新</td></tr>
-        <tr><td>Rainbow Six Mobile 關服（小編#3）</td><td><a href="https://www.gamesindustry.biz/ubisoft-announces-shutdown-of-rainbow-six-mobile-seven-months-after-global-launch" target="_blank">GamesIndustry.biz</a> + <a href="https://www.gamedeveloper.com/mobile/ubisoft-to-sunset-rainbow-six-mobile-just-seven-months-after-launch" target="_blank">Game Developer</a>（兩方一致）　⚠️ 細節未 fetch　🆕 今日新</td></tr>
-        <tr><td>Steam / Roblox / Twitch 數據</td><td>heat_latest.json（fetched_at 2026-10-12T07:30:41+08:00）　<b>前日（10/12）快照</b>，非 10/13 即時數字　標 ⚠️ 前日資料</td></tr>
-        <tr><td>itch / unityroom</td><td>heat_latest.json 10/12 前日快照　玩法未逐款驗證　<span class="pp">summary</span></td></tr>
-        <tr><td>KYM 當日新梗 / Threads</td><td>未取得，骨架保留、不補估計</td></tr>
+        <tr><td>Epic AI-first / 延後 Disney 射擊遊戲</td><td><a href="https://www.videogameschronicle.com/news/epic-games-reportedly-orders-staff-to-implement-ai-first-development/" target="_blank">VGC</a>（web_fetch）　原文日期 2026-10-12（頁面 20:43，metadata 19:43 UTC）　驗：Bloomberg 報導、no more handwritten code、art full AI workflows、發言人與 Sweeney 引言、VGC 註明未獨立證實<span class="ok">✓</span>　Eurogamer / GI.biz / Polygon 被擋，以 HN / Reddit / 多站標題互證事件存在</td></tr>
+        <tr><td>VRChat AI 抗議</td><td><a href="https://kotaku.com/vr-chat-community-protests-an-influx-of-ai-slop-onto-platform-hurting-discoverability-2000742109" target="_blank">Kotaku</a>（web_fetch）　原文日期 2026-10-12　驗：Patroll 退出、縮圖誤導、橫幅抗議、禁止欺騙性縮圖、AI 使用政策諮詢約一週<span class="ok">✓</span>（單一來源）</td></tr>
+        <tr><td>Astrocade 月用戶 1,000 萬</td><td><a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">Kotaku</a>（web_fetch）　原文日期 2026-10-07（&gt;48h，標 🔄）　驗：CEO 對 GamesBeat 稱 1,000 萬、約 500 萬 → 1,000 萬、iOS app、playables<span class="ok">✓</span>　公司自稱數字，摘要層用</td></tr>
+        <tr><td>Google Playground / Unity Spark</td><td><a href="https://videogameschronicle.com/news/google-officially-reveals-ai-game-creation-platform-playground" target="_blank">VGC</a> / <a href="https://gamedeveloper.com/programming/unity-unveils-unity-spark-an-prompt-based-tool-for-google-s-ai-games-platform" target="_blank">Game Developer</a>（web_fetch）　原文日期 2026-10-07（標 🔄）　驗：實驗性、文字生成、連結分享、Spark 專屬 Playground、Asset Store、排行榜 / 配對整合、無明確日期<span class="ok">✓</span>　摘要層用</td></tr>
+        <tr><td>堀井雄二 30 分鐘 AI 遊戲</td><td><a href="https://www.gamesindustry.biz/dragon-quest-creator-yuji-horii-releases-game-he-says-he-made-with-ai-in-about-30-minutes" target="_blank">GamesIndustry.biz</a> / Eurogamer（僅 radar 標題，原文被擋）　發布日未驗<span class="pp">summary</span>　不標 🆕</td></tr>
+        <tr><td>Roblox / Twitch / Steam 數字層</td><td>Roblox Charts、TwitchTracker 為瀏覽器 10/13 真抓；Steam 為 heat_latest.json 2026-10-13T07:30:40+08:00 官方 API 直抓（免敘事閘）<span class="ok">✓</span></td></tr>
+        <tr><td>HN / Reddit 客觀熱度</td><td>heat_latest.json：PS2→WASM 257 分 / 139 留言；Epic（AV Club）70 分 / 50 留言；Reddit r/gaming 當日榜含 Epic 串<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥 CJ/小編/Demo 均為 radar 標題層（未 fetch 全文）；EA 債務數字為 Reddit 聲稱，需財報驗證才可對外引用 · Steam＝官方 API 10/12 07:30 前日快照（10/13 radar 未取得新資料）· Roblox／Twitch＝10/12 前日快照 · KYM 當日新梗／Threads 未取得，標暫缺 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 摘要層 · Steam＝官方 API 10-13 即時真數字（radar 07:30）· Roblox / Twitch 為瀏覽器 10-13 真抓 · Threads / unityroom / 新梗因無法取得或不符新鮮度，標暫缺不補位 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
     <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/10/13 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
