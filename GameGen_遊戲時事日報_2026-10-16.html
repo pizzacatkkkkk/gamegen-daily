@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -227,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 16 · 彈藥工廠模式 · Steam 官方真數字（radar 10/15 07:30 最新）· Roblox / Twitch 今日資料不足（標暫缺）· 來源 20+ 站</span>
+        <span class="dateflag">2026 / 10 / 16 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）+ Twitch / Roblox 瀏覽器真抓 · 來源 20+ 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -235,68 +237,73 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>《勇者鬥惡龍》創作者堀井雄二用 Claude AI 不到 1 小時做出新遊戲——傳奇創作者親身驗證「AI 60 分鐘做遊戲」成立。</b>Polygon 2026-10-13 報導：RPG 類型的奠基者堀井雄二，使用 Claude AI 工具在<span class="hl">不到 1 小時內開發並釋出一款瀏覽器遊戲</span>，雖然引發部分批評，但他本人表示對 AI 創作潛力持正面態度。這是 GameGen 核心命題最有力的一次外部背書——如果做了 40 年遊戲的傳奇創作者都在用 AI 做遊戲，那個「AI 做不出好遊戲」的反對聲音，今天更難站穩。</p>
-        <p>同日，PlayStation 之父久多良木健（Ken Kutaragi）接受 Automaton Media 訪問時直言：「<span class="hl">遊戲業跟 AI 的演進根本脫節，好像完全沒有在進步</span>」（Automaton，pub 2026-10-15）。三天之內 Epic、堀井雄二、久多良木健都在說同一件事——<b>AI × 遊戲的敘事窗口正在打開</b>，現在不跑就錯過了。GTA 6 洩露者同步向 Take-Two 祭出「死亡開關」威脅，11 月文化事件進入最後衝刺。</p>
-        <div class="pull">▸ 今天就能蹭：CJ 貼「傳奇創作者堀井雄二 + PlayStation 之父久多良木健，同一週都在說 AI 遊戲」；小編貼「《勇者鬥惡龍》作者 60 分鐘 AI 做遊戲——你現在想 Vibe Code 什麼主題？」徵題材互動。Demo：「RPG 村莊第一關 Vibe Code 挑戰」（蹭 JRPG 復古話題 + Halloween 近逼）。</div>
+        <p><b>平台與獨立開發者同一週往同一個方向走：把「創作 + 分享 + 每日回訪」做成產品，而不是只賣一款遊戲。</b>10/13 <span class="hl">Google Play 同日推出「Create」（用 AI Studio 做個人 App，目前僅自己的裝置可用）＋ 48 小時 2–5 人 Sprints ＋ 30 秒 Playbacks 錄影</span>；同一天 Naavik 訪談的獨立開發者 Abe Train（Globle 作者）說，他最好的成長來自<span class="hl">玩家自發拍的內容</span>（泰國 TikToker、老師），不是廣告。另一側，10/15 <span class="hl">Sega 把《Total War: Shogun 2 – Complete Edition》下架</span>（上線約兩天；Steam 2,000+ 評論僅 19% 好評，被指疑似 AI 放大圖資）——品質翻車的代價是即時的。</p>
+        <p>對 GameGen 的訊號：巨頭把「創作」放進商店、但<b>分享被擺到「之後」</b>（Google 個人 App 「coming months」才開放給親友）；獨立開發者證明<b>每日一局 + 玩家自帶傳播</b>能養出百萬級日玩家。空位＝「今天的梗，今天就能玩、能分享、能 remix」。</p>
+        <div class="pull">▸ 今天就能蹭：做一個「今日梗每日猜」——每天一個 Trend 小遊戲、結束出可貼的結果格分享卡（Globle 式回訪 loop）＋ 一條 CJ 貼文「Google 先讓你自己做，卻還沒讓你分享」。</div>
       </div>
 
       <!-- 📰 今日彈藥 頭版 -->
       <div class="ammo">
         <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
 
+        <!-- CJ LinkedIn Top 2 -->
         <div class="ammo-grp l-cj reveal">
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>《勇者鬥惡龍》創作者堀井雄二用 Claude AI 不到 1 小時做出新遊戲，引發正反熱議——AI 遊戲創作的最強背書</div>
-            <div class="ln"><b>新聞事實：</b>Polygon 2026-10-13 報導：Dragon Quest（勇者鬥惡龍）原作創作者堀井雄二，使用 Claude AI 工具在不到 1 小時內開發並釋出一款瀏覽器遊戲，雖然部分玩家批評 AI 侵蝕傳統創作，堀井表示對 AI 創作潛力持正面看法。（Polygon 標題 + Tavily 摘要層，pub 2026-10-13；細節未 web_fetch，標摘要層）</div>
-            <div class="ln"><b>GameGen 角度：</b>堀井雄二是 JRPG 的奠基人之一，他的背書直接讓「60 分鐘 AI 做遊戲」從「技術展示」升格為「傳奇創作者的創作選擇」。<b>GameGen 的 Trend-to-Game 正好是同一個論題的實作版本</b>——梗進去→遊戲出來，不是技術花樣，是新的創作工作流。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Dragon Quest's creator just shipped a browser game with Claude AI in under an hour. A 40-year legend validating the 60-minute game creation workflow. If Yuji Horii can ship, what's stopping you?"<br><span style="color:var(--ink-dim)">中譯：《勇者鬥惡龍》創作者用 Claude AI 不到 1 小時做出新遊戲。40 年傳奇背書「60 分鐘 AI 做遊戲」可行。堀井雄二都動手了，你還在等什麼？</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.polygon.com/dragon-quest-creator-yuji-horii-new-ai-game/" target="_blank">Polygon ↗</a>　pub 2026-10-13　摘要層（Tavily 索引）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期（10/13）</span>獨立開發者靠「玩家自己拍的內容」長出百萬日玩家——創作者驅動分發，比廣告便宜</div>
+            <div class="ln"><b>新聞事實：</b>Naavik 訪談 Trainwreck Labs 創辦人 Abe Train（單人全職、少量外包）：旗艦《Globle》（每日地理猜謎）2022 初上線，靠 Reddit r/geography 一篇貼文起飛，據他回憶<b>巔峰逾 100 萬日玩家</b>（他用 "I believe"，現已不及）；他說最好的成長來自<b>玩家自發內容</b>（泰國 TikToker 玩 LinguaCon、老師帶學生玩 MetaZooa）；營收主要靠展示廣告與無廣告訂閱，對方稱三年累計破七位數美元（頁面未給拆帳）。（Naavik Podcast，pub 2026-10-13；逐字稿為機器產生，頁面註明可能有誤）</div>
+            <div class="ln"><b>GameGen 角度：</b>這是 Share-to-Player 與 Repeat 的真實樣本：<b>每日一局</b>給回訪理由、<b>結果可貼</b>給傳播理由、<b>玩家自帶內容</b>給免費分發。Trend-to-Game 天生比「每日猜謎」更有話題，缺的只是把「結果卡 + Remix 鈕」做成標配。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "One person built a seven-figure browser game business. His best growth wasn't ads — it was players making their own videos. Daily game + shareable result + creator-made clips. We're applying that loop to whatever's trending today."<br><span style="color:var(--ink-dim)">中譯：一個人做出七位數的瀏覽器遊戲生意，最好的成長不是廣告，是玩家自己拍的影片。每日一局＋可分享結果＋創作者自製內容。我們把這個循環套在「今天正在紅的東西」上。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://naavik.co/podcast/the-solo-developer-making-seven-figures-from-free-browser-games/" target="_blank">Naavik ↗</a>　pub 2026-10-13　verified ✓（營收數字為對方陳述，非獨立查證）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>PlayStation 之父久多良木健：「遊戲業根本沒跟上 AI 演進，好像完全沒在進步」</div>
-            <div class="ln"><b>新聞事實：</b>Automaton Media 英文版 2026-10-15 報導：PlayStation 創始人久多良木健（Ken Kutaragi）表示，電玩產業尚未跟上 AI 演進，直言「It's like there's no actual progress being made」。（Automaton 標題層，pub 2026-10-15；細節未 web_fetch，標摘要層）</div>
-            <div class="ln"><b>GameGen 角度：</b>這是本週第三位產業傳奇人物（Epic、堀井雄二、久多良木健）呼應 AI × 遊戲的主題。<b>三個聲音在同一週構成強有力的框架</b>：平台（Epic vibe coding）、創作者（堀井雄二 AI 遊戲）、硬體之父（久多良木健批評業界落後）。CJ 切角：「傳統遊戲業在 AI 面前反應遲鈍，但做了 40 年遊戲的人正在用它。」</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "PlayStation's creator Ken Kutaragi says gaming has made 'no actual progress' catching up to AI. Epic vibe-coded a launcher. Dragon Quest's creator shipped in an hour. Three legends, three signals — all pointing the same direction."<br><span style="color:var(--ink-dim)">中譯：PlayStation 之父久多良木健：遊戲業跟 AI 根本沒在進步。Epic vibe-coded 啟動器，堀井雄二 1 小時做遊戲，久多良木健點名業界落後——三位傳奇，三個訊號，同一個方向。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://automaton-media.com/en/news/playstation-creator-ken-kutaragi-suggests-the-video-game-industry-hasnt-caught-up-with-the-evolution-of-ai-its-like-theres-no-actual-progress-being-made/" target="_blank">Automaton ↗</a>　pub 2026-10-15　摘要層</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期（10/13）</span>Google Play 讓你「自己用 AI 做 App」，但分享要「之後」——創作入口有了，分發還是空位</div>
+            <div class="ln"><b>新聞事實：</b>Google Play 10/13 官方部落格宣布：用 Google AI Studio 做的<b>個人 Android App 只在自己裝置私下執行</b>（不需開發者帳號，10/13 起於含美國的部分市場、18 歲以上逐步開放）；「分享給親友」列為 <b>"the coming months"</b>；公開上架需專業開發者帳號並過審。同篇還有 <b>Sprints（48 小時、2–5 人微挑戰）</b>、<b>Sidekick 疊層 + 30 秒 Playbacks 錄影</b>、<b>Game Finder</b>（Gamer DNA 推薦，目前僅美國英文）。（blog.google，Sam Bright，pub 2026-10-13）</div>
+            <div class="ln"><b>GameGen 角度：</b>平台已承認「人人做遊戲 / App」是方向，並同步把<b>小群組挑戰（Sprints）與短錄影（Playbacks）</b>當社交機制——但創作成果目前封在私人裝置。GameGen 的位置是 Web-first playable link：<b>做完就是一個連結，貼進 Discord 就能玩</b>。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Google Play now lets you build your own app with AI — but sharing it with friends is 'coming months.' A game nobody else can play isn't a game yet. We start at the share link."<br><span style="color:var(--ink-dim)">中譯：Google Play 現在讓你用 AI 做自己的 App——但分享給朋友要「之後幾個月」。沒人能玩的遊戲還不算遊戲。我們從分享連結開始。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/" target="_blank">Google Blog ↗</a>　pub 2026-10-13　verified ✓</div>
           </div>
         </div>
 
+        <!-- 小編 X Top 3 -->
         <div class="ammo-grp l-ed reveal">
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Jeff Kaplan：從《鬥陣特攻》傳奇到獨立開發「同行不回我郵件」——謙卑現實訪談爆紅<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Reddit r/Games 今日高熱帖、PC Gamer、GameSpot 均有報導：Jeff Kaplan 離開 Overwatch 後嘗試獨立開發，坦言以前的業界同行如今不回他的郵件，稱這過程為「humbling」（令人謙卑）。（Reddit 今日榜標題層，pub 約 2026-10-15）</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Jeff Kaplan ran Overwatch. Now peers ignore his emails in indie dev. He calls it 'humbling.' Big-studio credibility doesn't port. But AI tools do. What are you shipping this week?"　<span style="color:var(--ink-dim)">中譯：Jeff Kaplan 主導過《鬥陣特攻》，現在做獨立遊戲同行不回信，他說「很謙卑」。大廠光環帶不走，但 AI 工具可以——你這週出了什麼？</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>「你的一人工作室第一款 AI 遊戲想做什麼題材？」徵貼，留言區直接成為題材池。不點名 Kaplan / Overwatch IP，以泛化小開發者故事包裝。</div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1x5xyp5/jeff_kaplan_was_an_industry_icon_now_peers_ignore/" target="_blank">Reddit ↗</a> / <a href="https://www.pcgamer.com/games/fps/ex-overwatch-director-jeff-kaplan-ignores-everything-about-the-hero-shooter-after-his-almost-clinical-departure-5-years-ago-i-dont-search-for-my-name-in-overwatch-i-dont-search-for-overwatch-i-sort-of-just-disconnect/" target="_blank">PC Gamer ↗</a>　Reddit 今日榜標題層</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span><span class="fresh f-upd">🔄 進展</span>Shogun 2 重製版上架約兩天就被 Sega 下架（Steam 19% 好評）→ 「上架 48 小時求生」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Sega 與 Creative Assembly 10/15 起將《Total War: Shogun 2 – Complete Edition》（10/13 上線）暫時下架並恢復 2011 原版；下架前 Steam「極度負面」，2,000+ 評論僅 19% 推薦；社群指出疑似 AI 放大圖資（含手指數量錯誤的貼文），但 <b>AI 使用尚未獲官方證實</b>（VGC，pub 2026-10-15）。<em>進展更新：10/14 已用過「AI slop」角度，今天新增「Sega 正式下架」。</em></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A remaster got pulled two days after launch — 19% positive on 2,000+ reviews. Players can spot sloppy in an hour. Make something tiny and fun instead. 👇"　<span style="color:var(--ink-dim)">中譯：重製版上線兩天就下架——2,000 多則評論只有 19% 好評。玩家一小時就看得出敷衍。去做個小而好玩的。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「上架 48 小時求生」泛化 clicker（修 bug、回評論、撐住好評率），結束出「好評率」分享卡；全用泛化角色，不用任何 Total War / Sega 美術與商標。</div>
+            <div class="meta">來源 <a href="https://www.videogameschronicle.com/news/sega-pulls-total-war-shogun-2-complete-edition-from-stores-over-bugs-and-ai-art/" target="_blank">VGC ↗</a>　pub 2026-10-15　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 洩露者向 Take-Two 祭出「死亡開關」——11 月文化事件倒數週期進入最後高潮<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>PC Gamer 與 Eurogamer 報導：GTA 6 洩露者威脅 Take-Two 啟動「dead man's switch（死亡開關）」，最新影片疑似包含最終任務場景，並暗示洩露行動可能告終。評測確認發售前公布（GameSpot）。（PC Gamer / Eurogamer 標題層；細節未 web_fetch）</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6 leaker: 'dead man's switch activated.' Reviews before launch confirmed. The hype machine is running hot. Most unhinged GTA 6 prediction you've seen? Tell us and we'll turn it into a 60-second game."　<span style="color:var(--ink-dim)">中譯：GTA 6 洩露者啟動死亡開關，評測發售前公布。最荒誕的 GTA 6 預測是什麼？說出來，60 秒做成遊戲。</span></div>
-            <div class="meta">來源 <a href="https://www.pcgamer.com/games/grand-theft-auto/gta-6-leaker-threatens-take-two-with-a-dead-mans-switch/" target="_blank">PC Gamer ↗</a> / <a href="https://www.eurogamer.net/gta-6-cyberleek-ending-crypto-coin-crash" target="_blank">Eurogamer ↗</a>　標題層</div>
+            <div class="ti"><span class="fresh f-hot">日期未驗</span>Jagex 宣布 RuneScape Reignited 不到兩週就取消 → 社群公投贏了<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>PC Gamer / RPS 標題皆稱 Jagex 在宣布 RuneScape Reignited 不到兩週後將其取消；Reddit r/gaming 與 r/Games 當日 top 榜均有此串（radar 數字層）。細節與確切日期<b>未逐句開原文，目前無法完全證實</b>。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Announced, hated, cancelled — in under two weeks. The community just out-voted a publisher. What if the community made its own version in an hour? 👇"　<span style="color:var(--ink-dim)">中譯：宣布、被討厭、取消——不到兩週。社群剛剛投票贏過發行商。如果社群自己一小時做一版呢？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>「我的 Reignited」——貼上你想要的泛化奇幻 MMO 一句設定，生 60 秒採集 / 升級小遊戲，出「我的版本」分享卡（不用 RuneScape 名稱 / 美術）。</div>
+            <div class="meta">來源 <a href="https://www.pcgamer.com/games/mmo/less-than-2-weeks-after-announcing-runescape-reignited-jagex-is-scrapping-the-whole-thing/" target="_blank">PC Gamer ↗</a>　摘要層 · 日期未驗</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>S&box（Garry's Mod 精神繼作）宣布免費化：「遊戲版 Netflix 行不通」，改走人工策展<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>GamesIndustry.biz 與 PC Gamer 報導：S&box 宣布轉型為免費遊玩，開發者直言「My idea of a Netflix for games doesn't work」，改以人工策展（human curation）取代演算法推薦。（GamesIndustry.biz 標題層；細節未 web_fetch）</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "S&box dropped the 'Netflix for games' plan — 'it doesn't work.' In an ocean of AI-made games, the moat is curation. What makes a game worth finding?"　<span style="color:var(--ink-dim)">中譯：S&box 宣告「遊戲版 Netflix 行不通」。AI 遊戲供給爆量的時代，護城河是策展——什麼讓一款遊戲值得被找到？</span></div>
-            <div class="meta">來源 <a href="https://www.gamesindustry.biz/sbox-plans-to-go-free-to-play-and-embrace-human-curation-saying-netflix-for-games-doesnt-work" target="_blank">GamesIndustry.biz ↗</a>　標題層</div>
+            <div class="ti"><span class="fresh f-hot">日期未驗</span>Epic 稱「vibe coded」新啟動器比 Steam 快 46%，Reddit 當日榜首卻是「Steam 啟動更快」→ 啟動器賽跑<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>GamesIndustry.biz 標題稱 Epic 宣稱其新「vibe coded」啟動器從冷啟動到商店頁<b>比 Steam 快 46%</b>；Reddit r/gaming 當日 top 串標題為「Steam 客戶端現在啟動比 Epic 新啟動器快」；HN 轉載 Ars Technica 報導。測法與確切日期<b>未開原文，目前無法完全證實</b>。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Epic says its vibe-coded launcher is 46% faster than Steam. Reddit says Steam wins. Settle it yourself — tap the moment it loads. 👇"　<span style="color:var(--ink-dim)">中譯：Epic 說它 vibe coded 的啟動器比 Steam 快 46%。Reddit 說 Steam 贏。自己來比——載入的瞬間點下去。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>泛化「兩個啟動器賽跑」反應小遊戲，結果出反應時間卡；不使用 Epic / Steam logo。</div>
+            <div class="meta">來源 <a href="https://www.gamesindustry.biz/epic-games-claims-its-new-vibe-coded-launcher-runs-46-faster-than-steam-from-cold-start-to-store-page" target="_blank">GamesIndustry.biz ↗</a>　摘要層 · 日期未驗</div>
           </div>
         </div>
 
+        <!-- Demo 線 1 -->
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「60 秒 JRPG 村莊第一關 Vibe Code 挑戰」——輸入你的勇者命運，AI 生成一關復古 RPG 旅程（蹭堀井雄二 AI 遊戲話題 + Halloween 近逼）<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>輸入一句今天的梗或荒誕設定（「上班族轉職當勇者」、「萬聖節南瓜王破關」）→ AI 60 秒生成一關像素風 RPG 闖關（移動 + 對話 + 小 Boss）→ 結束給「你的第一關」分享卡，附「AI 幫你完成第一關設計師的工作」的社群論述。</div>
-            <div class="ln"><b>為何是今天首選：</b>堀井雄二 AI 遊戲新聞帶動「JRPG × AI 創作」話題；萬聖節 10/31 距今 15 天，復古像素恐怖 RPG 主題正當時；itch.io 今日恐怖 meme 標籤持續活躍（Three Nights Lobotomized、Cirno Fumo Horror 等）。</div>
-            <div class="meta">綁堀井雄二 AI 遊戲（Polygon）+ itch.io meme 恐怖標籤　模板：像素 RPG 移動 + Boss 交戰均可　不使用 Dragon Quest / 勇者鬥惡龍 IP 名稱與美術</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>「今日梗每日猜」——Globle 式每日一局，題材換成當天趨勢，結果格可直接貼<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>每天 0 點（台北）發一局，題材取自當天熱點（例：今天可用「平台上架 / 下架」「啟動器速度」這類中性話題）；玩家 6 次內猜出答案或達成目標，結束產生<b>彩色結果格</b>（不洩題）＋「我的 Remix」按鈕，點了可換成自己的題目再開一局。</div>
+            <div class="ln"><b>為何是今天首選：</b>直接承接 CJ #1 的 Globle 驗證（每日回訪 + 結果可貼 + 玩家自帶內容），並補上 GameGen 獨有的「題材＝今天」；全程泛化、無 IP 挪用，分享卡不含任何金額 / 賠率語言。</div>
+            <div class="meta">綁 <a href="https://naavik.co/podcast/the-solo-developer-making-seven-figures-from-free-browser-games/" target="_blank">Naavik ↗</a>　模板：每日猜謎 + 結果格</div>
           </div>
         </div>
       </div>
@@ -310,33 +317,47 @@
       <div class="boards reveal">
 
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/15 07:30 最新實抓</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/16 即時</span></div>
           <ol>
-            <li class="up"><span class="nm">Counter-Strike（CS2）</span><span class="vn">495K ▲7.3%</span></li>
-            <li class="hot up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">106K ▲35.8%</span></li>
-            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">63K ▼7.5%</span></li>
-            <li><span class="nm">Rainbow Six Siege</span><span class="vn">62K ▼0.8%</span></li>
-            <li class="down"><span class="nm">Rust</span><span class="vn">56K ▼5.0%</span></li>
-            <li class="down"><span class="nm">Apex Legends</span><span class="vn">44.5K ▼3.1%</span></li>
+            <li class="up"><span class="nm">Counter-Strike</span><span class="vn">545K ▲10.2%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">102K ▼4.1%</span></li>
+            <li class="hot up"><span class="nm">Team Fortress 2</span><span class="vn">77K ▲21.6%</span></li>
+            <li class="hot up"><span class="nm">Rust</span><span class="vn">74K ▲31.9%</span></li>
+            <li class="hot up"><span class="nm">Warframe</span><span class="vn">70K ▲68.3%</span></li>
+            <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">67K ▲8.8%</span></li>
           </ol>
-          <div class="bf">Steam 官方 API · 10/15 07:30 最新快照 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 10/16 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX 趨勢榜</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">⚠️ Roblox 需瀏覽器 JS 渲染，今日未能取得 10/16 新數字。昨日（10/15）Top 6（快照）：收養我吧 257K、森林 99 夜 130K、丹迪世界 122K、胡斯山谷 101K、打破蛋 91K、先鋒隊 66K。今日資料不足，骨架保留。</div>
-          <div class="bf">roblox.com/charts（昨日快照）</div>
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">瀏覽器 10/16 真抓</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Steal An Egg</span><span class="vn">952K</span></li>
+            <li><span class="nm">Brookhaven RP</span><span class="vn">344K</span></li>
+            <li><span class="nm">Adopt Me!</span><span class="vn">264K</span></li>
+            <li><span class="nm">Murder Mystery 2</span><span class="vn">201K</span></li>
+            <li><span class="nm">Blox Fruits</span><span class="vn">147K</span></li>
+            <li><span class="nm">Jujutsu Shenanigans</span><span class="vn">138K</span></li>
+          </ol>
+          <div class="bf">RoMonitor Stats · 瀏覽器 10/16 真抓 · 平台近期平均 CCU 11.8M（站上顯示）· <a href="https://romonitorstats.com/" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-twch">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">⚠️ Twitch 今日未能重抓。昨日（10/15）Top 6（快照）：Just Chatting 263K、Minecraft 146K、GTA V 104K、Counter-Strike 95K、AION 2 89K、League of Legends 87K。今日資料不足，骨架保留。</div>
-          <div class="bf">TwitchTracker（昨日快照）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近 7 日平均觀眾</span></div>
+          <ol>
+            <li><span class="nm">Just Chatting</span><span class="vn">269K</span></li>
+            <li><span class="nm">Minecraft</span><span class="vn">171K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">104K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">102K</span></li>
+            <li><span class="nm">Counter-Strike</span><span class="vn">83.2K</span></li>
+            <li class="hot"><span class="nm">AION 2</span><span class="vn">79.9K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 瀏覽器 10/16 真抓（Taipei 時區，10 月榜）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ heat-radar 10/16 最新快照：heat_latest.json <code>fetched_at</code> 2026-10-15T07:30:38+08:00（昨晨數字）。Steam 為官方 API 真數字，但係昨日快照；Roblox / Twitch 今日未取得，填昨日備份並標記「今日資料不足」。hotspots_latest.json 於 2026-10-16 06:50:22 更新，用於今日新聞來源。
+        ✅ heat-radar 07:30 已跑（<code>fetched_at</code> 2026-10-16T07:30+08:00），Steam 為官方 API 即時真數字；Roblox 與 Twitch 為本次瀏覽器實抓。Roblox 前十另有 Dandy's World 113K、99 Nights in the Forest 123K、Break and Steal an Egg 107K、RIVALS 132K——「Steal」系仍占榜首與前十一席（<b>同一個 loop 多種換皮</b>）。Twitch 另見 Valor Mortis 30.3K、CreatorSMP 20.0K。
       </div>
     </section>
 
@@ -345,17 +366,11 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>暴衝</span></span>PUBG 昨日 Steam 單日暴衝 +35.8% 持續領跑；《明日方舟：無限塔》登上 Steam 新品熱賣——亞洲手遊 IP 跑 PC 化</h3>
-        <div class="sum">Steam velocity（10/15 07:30 最新快照）：<b>PUBG 105,910（+35.8%）</b>是近期最大單日漲幅；<b>CS:GO 495,176（+7.3%）</b>持續回升；Steam 新品熱賣名單出現 <b>Arknights: Endfield（明日方舟：無限塔）</b>，這是由中國頂流手遊 IP 製作的 PC 大作，與 Planet Zoo 2、Castlevania: Belmont's Curse、WARDOGS 同列熱賣新品。Steam Most Played 新面孔：AION 2（#6）、WARDOGS（#8）、ARC Raiders（#9）——軍事 / 生存類持續有新量。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>《明日方舟：無限塔》登榜是本週重要訊號：<b>亞洲手遊 IP 大規模 PC 化</b>的趨勢持續。對繁中社群，這是高吸引力話題；對 GameGen，「手遊玩家 × PC 創作」的交叉受眾值得關注。萬聖節前夕 PUBG 求生類持續熱，本週最順風的 Demo 方向仍是「求生 / 恐怖」。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Steam 日比三款過 ≥15% 旗標：Warframe +68.3%、Rust +31.9%、TF2 +21.6%</h3>
+        <div class="sum">官方 API 真·日比：<b>Warframe 69,910（昨 41,543，+68.3%）</b>、<b>Rust 74,395（+31.9%）</b>、<b>Team Fortress 2 76,692（+21.6%）</b>；絕對量最大的 CS 545,463（+10.2%）。排名跳動：RimWorld 89→73、Battlefield 6 35→21、Street Fighter 6 60→49；新進榜：Planet Zoo 2（#71）、Hood Warfare 2（#76）。<b>漲因目前無法完全證實</b>（Warframe 搜尋未找到可查證的當日事件，不臆測）。Twitch / Roblox 的 7 日漲幅與黑馬新進榜因無昨日快照可比，<b>目前無法完全證實</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>暴衝名單是老遊戲，沒有可蹭的「新事件」；建議只當「哪些社群在回流」的背景，不要硬編成趨勢。唯一值得追的是 Warframe 為何一天 +68%——若是活動 / 更新，可看有沒有玩家梗長出來。</div>
         <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/15 快照 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+          <div class="src">STEAM 官方 API · 10/16 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
@@ -363,11 +378,46 @@
     <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>早期</span></span>itch.io meme 持續萬聖節恐怖爆量；ANOMALITH 日廠新作試玩評價出爐；JRPG 復古浪潮升溫</h3>
-        <div class="sum" style="margin-bottom:10px">itch.io meme 標籤（heat_latest.json）持續：<b>Three Nights Lobotomized</b>、<b>Cirno Fumo: The Horror Game</b>、<b>Freddy Fazbear's Dating Simulator!</b>、<b>Kill the Ice Age Baby Adventure</b>——恐怖 × 二創梗持續主導；html5 熱門：<b>I Can Smell You from Here</b>（嗅覺梗互動）、<b>Say That You Love Me</b>、<b>The Freak Circus</b>。Automaton 早期訊號：<b>ANOMALITH</b>（FuRyu 新第三人稱射擊試玩正面）、<b>CRYMELIGHT</b>（Action Roguelike，少女情感主題）。Automaton 另報 Disgaea 作者新 SRPG《Demons' Night Fever》讓玩家扮演「壞人」——道德翻轉機制。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>JRPG / 像素復古浪潮被堀井雄二新聞催熱。今日 Demo 的最佳切角是<b>「AI 60 秒生成 JRPG 第一關」</b>——搭上 Dragon Quest 話題 + 萬聖節恐怖像素 RPG 雙重引擎。</div>
-        <div class="src" style="margin-top:8px"><a href="https://itch.io/games/html5" target="_blank">itch.io ↗</a> / <a href="https://automaton-media.com/en/" target="_blank">Automaton ↗</a>（heat_latest.json + hotspots_latest.json 10/16 06:50）</div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>ITCH.IO HTML5</span><span class="metric">popular 剛上榜</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Trust the System</span><span class="vn">html5</span></li>
+            <li><span class="nm">Say That You Love Me</span><span class="vn">html5</span></li>
+            <li><span class="nm">I Can Smell You from Here</span><span class="vn">html5</span></li>
+            <li><span class="nm">Physician Simulator (Demo)</span><span class="vn">html5</span></li>
+            <li><span class="nm">ROTETRA</span><span class="vn">html5</span></li>
+          </ol>
+          <div class="bf">itch.io /games/html5 · 10/16 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>HN SHOW HN 小遊戲</span><span class="metric">體量小、剛發</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Wordwonk — 每天一個新文字機制</span><span class="vn">1 pts</span></li>
+            <li><span class="nm">TowerPanic — 家庭派對遊戲</span><span class="vn">3 pts</span></li>
+            <li><span class="nm">Takes Takes — 另類西洋棋謎題</span><span class="vn">1 pts</span></li>
+            <li><span class="nm">A game inside Gmail</span><span class="vn">3 pts</span></li>
+            <li><span class="nm">Slop City — 嵌入社群貼文的 FOSS 遊戲</span><span class="vn">1 pts</span></li>
+          </ol>
+          <div class="bf">Hacker News（Algolia）· 10/16 heat-radar · 分數很低，僅作早期訊號</div>
+        </div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>ITCH 迷因標籤</span><span class="metric">tag-meme</span></div>
+          <ol>
+            <li><span class="nm">BAN THE TROLL</span><span class="vn">meme</span></li>
+            <li><span class="nm">This Role: You are Hamster</span><span class="vn">meme</span></li>
+            <li><span class="nm">Three Nights Lobotomized</span><span class="vn">meme</span></li>
+            <li><span class="nm">Jest Messters</span><span class="vn">meme</span></li>
+          </ol>
+          <div class="bf">itch.io /tag-meme · 10/16 heat-radar · <a href="https://itch.io/games/tag-meme" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        <b>共通 loop（根據現有資料推測，樣本小）：</b>「每日一局」（Wordwonk）、「對話 / 審問類敘事」（Say That You Love Me、Physician Simulator）、「單局可貼結果」的小謎題（Takes Takes）。與今天 CJ #1 的 Globle 每日猜謎同向，但 HN 分數僅 1–3，<b>不構成「爆了」的證據</b>。
       </div>
     </section>
 
@@ -376,57 +426,82 @@
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>今日最大</span></span>傳奇創作者三連：Epic（Vibe Code）、堀井雄二（AI 做遊戲）、久多良木健（業界落後）——AI × 遊戲的敘事窗口本週全面打開</h3>
-        <div class="sum">三個來自不同角度的 AI × 遊戲訊號在同一週匯聚：<b>①</b> Epic（10/14）：vibe coding 啟動器比 Steam 快 46%；<b>②</b> 堀井雄二（10/13）：Dragon Quest 創作者用 Claude 不到 1 小時做遊戲（Polygon 報導）；<b>③</b> 久多良木健（10/15）：PlayStation 之父公開批評遊戲業 AI 應用落後（Automaton 報導）。三個層次：平台 / 創作者 / 硬體之父，互為援引。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>本週是 GameGen 論述框架最強的一週——<b>「傳奇都在動手，業界還在觀望，我們已在出貨」</b>。CJ 最好在今天發這篇；下週 GTA 6 評測潮開始，話題會被搶走。去賭場化：以上均無博彩元素，一律安全。</div>
-        <div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-        <div class="src"><a href="https://www.polygon.com/dragon-quest-creator-yuji-horii-new-ai-game/" target="_blank">Polygon ↗</a> / <a href="https://automaton-media.com/en/news/playstation-creator-ken-kutaragi-suggests-the-video-game-industry-hasnt-caught-up-with-the-evolution-of-ai-its-like-theres-no-actual-progress-being-made/" target="_blank">Automaton ↗</a></div></div>
+        <h3><span class="tag ai"><span>AI 動向</span></span>Google Play 把「Create」放進商店：AI Studio 做個人 App、僅自己裝置可用；Sprints 與 Playbacks 同日上線</h3>
+        <div class="sum">10/13 Google Play 官方部落格：個人 AI App <b>私下執行、不需開發者帳號</b>，分享給親友「coming months」；<b>Sprints</b>＝48 小時 2–5 人微挑戰（全市場）；<b>Sidekick</b>疊層＋<b>30 秒 Playbacks</b>錄影（選定裝置）；<b>Game Finder</b> 以 Gamer DNA 推薦（僅美國英文）。獎勵、裝置清單、Playbacks 分享方式均未說明。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>平台把創作、群組挑戰、短錄影三件事湊在一起，等於承認「創作 → 小群組 → 分享」是留存迴圈；但創作成果目前不能對外傳。GameGen 的 Web 連結 + Discord 分享正好是它「還沒做」的那一段。</div>
+        <div class="footrow">
+          <div class="src">Google Blog · pub 2026-10-13 · <a href="https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/" target="_blank">原文 ↗</a></div>
+        </div>
       </article>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>產業</span></span>Jeff Kaplan：從鬥陣特攻傳奇到同行不回郵件的獨立開發現實——光環無法跨平台移植</h3>
-        <div class="sum">Reddit r/Games 今日高熱帖、PC Gamer、GameSpot 多篇：Jeff Kaplan（前 Overwatch 總監）離開 Blizzard 五年後分享獨立開發現實——<b>業界同行不再回他的郵件</b>，他稱這種轉變「almost clinical（近乎臨床式）」，並表示從未搜尋自己的名字與 Overwatch 的消息。另見：S&box 宣布「遊戲版 Netflix 不行」改走 F2P + 人工策展；Xbox CEO Asha Sharma 成立新部門「XP」探索遊戲周邊事業（Game Developer）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Kaplan 的故事佐證<b>「大廠頭銜失效、作品才是護城河」</b>的時代命題，而 AI 工具是讓個人開發者縮短作品產出週期的槓桿。GameGen 的立場：我們讓今天的梗今天出遊戲，這就是對「indie dev 光環不夠」的回應。S&box 的 F2P + 人工策展轉型，也間接印證 AI 供給爆量之後「被找到」比「被做出來」更難解決。</div>
-        <div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-        <div class="src"><a href="https://www.reddit.com/r/Games/comments/1x5xyp5/jeff_kaplan_was_an_industry_icon_now_peers_ignore/" target="_blank">Reddit ↗</a>　Reddit 今日榜標題層</div></div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Naavik：AI 讓逆向工程變便宜，護城河轉向 IP、品牌與分發；病毒式 mash-up 動輒千萬觀看</h3>
+        <div class="sum">Naavik（pub 2026-10-13，10/14 更新）：AI 工具讓還原商業遊戲便宜又快；文中舉例 Minecraft→Elden Ring mod <b>23.3M views</b>、Modern Warfare kickflip mash-up <b>7.4M views</b>、Universal Modder 5.8K / REA 32.8K GitHub stars，並點名無程式 mash-up 平台 Melty。觀看與星數<b>未獨立查證</b>，是否把人導入創作文中亦僅列為可能性。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>需求面（混搭 / remix 病毒傳播）被驗證；風險面是這些多半建在別人的商業 IP 上，不耐久（10/11 已用過相近 CJ 角度）。GameGen 的差異是「泛化元素 + 官方 remix 鈕」，把混搭需求放到合規軌道。</div>
+        <div class="footrow">
+          <div class="src">Naavik · pub 2026-10-13 · <a href="https://naavik.co/ai-gaming/viral-game-mash-ups-what-ai-decompilation-capabilities-mean-for-games/" target="_blank">原文 ↗</a></div>
+        </div>
       </article>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>GTA 6</span></span>洩露者「死亡開關」威脅 Take-Two + 評測先行公布——11 月全球最大文化事件衝刺週</h3>
-        <div class="sum">PC Gamer 與 Eurogamer 報導：GTA 6 洩露者威脅 Take-Two 啟動「dead man's switch」，最新影片疑似包含最終任務場景，暗示洩露行動可能告終。評測確認在發售前公布（GameSpot）。Rockstar 方面，RPS 報導「union busting」仲裁延至 11/18（GTA 6 發售前數日）；GamesIndustry.biz 報導 Rockstar 稱下一款遊戲不需再等 8 年。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>GTA 6 評測潮預計 11 月初爆發，<b>現在（10/16）是「評測前、全網最後純炒作」的黃金窗口</b>。泛化「大作倒數模擬器」貼文最後幾天可以無縫蹭話題。倒數計時 + 「你猜評分是幾分」投票貼 = 今日備用 X 互動。</div>
-        <div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · IP</span></span></div></div></div>
-        <div class="src"><a href="https://www.pcgamer.com/games/grand-theft-auto/gta-6-leaker-threatens-take-two-with-a-dead-mans-switch/" target="_blank">PC Gamer ↗</a> / <a href="https://www.eurogamer.net/gta-6-cyberleek-ending-crypto-coin-crash" target="_blank">Eurogamer ↗</a>　標題層</div></div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>競品背景</span></span>♨️ Astrocade 月活 1,000 萬（CEO 稱、Kotaku 10/7）——熱門多為複製與版權角色</h3>
+        <div class="sum">Kotaku（pub 2026-10-07）轉述 CEO Amir Sadeghian 對 GamesBeat 的說法：月活由約 500 萬四個月內到 1,000 萬（<b>未獨立查證</b>）；熱門內容含 Minecraft 類複製品、帶版權角色的遊戲與「Steal a Brainrot」類仿作，美術為 AI 生成；iOS app 籌備中。<b>延燒題材，10/12–14 已用過，今日僅列背景。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>對標線：對手靠量與換皮拉月活，GameGen 靠「當天梗 + 泛化角色 + 可分享」拉質；Roblox 榜首（Steal An Egg 952K）同樣是換皮 loop，代表需求真實，但差異化必須在 IP 與時效。</div>
+        <div class="footrow">
+          <div class="src">Kotaku · pub 2026-10-07 · <a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">原文 ↗</a></div>
+        </div>
       </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        另見（radar 數字層）：Reddit r/Games 當日 top 串含「AI Vibe-Coding Just Hit The Video Game Industry Like An Avalanche」；HN「Training a local model to play browser games on the fly」4 pts；Epic「AI-first」Disney 射擊遊戲（Kotaku 10/12，Bloomberg 報導）為 ♻️ 已用過，不再進彈藥。
+      </div>
     </section>
 
     <!-- 迷因題材 / 迷因遊戲 -->
     <section id="meme">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>10 月梗季</span></span>今日最強梗型：「AI 做遊戲 60 分鐘挑戰」反轉 + 萬聖節像素恐怖 RPG 持續加速</h3>
-        <div class="sum" style="margin-bottom:10px"><b>① 「60 分鐘 AI 遊戲挑戰」梗：</b>堀井雄二新聞帶動「如果你也用 60 分鐘做遊戲，你想做什麼？」的挑戰文化。這是今天最適合 GameGen 的互動框架——不嘲諷、不說教，直接邀請參與。<b>② 萬聖節像素 RPG 梗：</b>itch.io meme 標籤持續 Three Nights Lobotomized（類五夜 × 手術梗）、Cirno Fumo Horror；Minecraft Verity 角色登上 2026 萬聖節熱門服裝（GameSpot，10/16 距今 15 天）。<b>③ GTA 6 「你猜幾分」梗：</b>評測先行公布的新聞讓「猜評分」成為今日最熱的互動梗，留言量保證。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「AI 60 分鐘做遊戲挑戰」是本週可以建立的自有梗格式——不依附任何外部 IP，卻有足夠的話題性和互動空間。</div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>Roblox 榜首仍是「Steal」系：Steal An Egg 952K、Break and Steal an Egg 107K</h3>
+        <div class="sum">今日 Roblox 瀏覽器真抓：#1 Steal An Egg（952K CCU）、#10 Break and Steal an Egg（107K），前十另有 99 Nights in the Forest 123K、Dandy's World 113K。Kotaku（10/7）提到 Astrocade 上有「Steal a Brainrot」仿作——同一個「偷 / 搶 + 收集」迴圈被跨平台複製。<b>此為延燒（10/11 已用過）。</b></div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>可抄的是公式（偷 / 搶 + 收集 + 對手可反擊），不是角色與名稱；做成泛化「搶蛋」類迷因小遊戲即可，IP 風險低。</div>
+        <div class="footrow">
+          <div class="src">RoMonitor Stats · 瀏覽器 10/16 真抓 · <a href="https://romonitorstats.com/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Know Your Meme「Popular right now」今日未抓到（本次未取得該頁），<b>目前無法完全證實</b>今日有哪些「近 14 天內的新梗」；因此不把任何梗標為「今天的梗」。Shogun 2 AI 放大圖資貼文（手指數量錯誤）是社群嘲諷素材，但屬 10/14–15 延燒話題。
       </div>
     </section>
 
     <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>機制</span></span>今日可借用的原創機制（JRPG 復古 + 道德翻轉 + 嗅覺互動）</h3>
-        <div class="sum" style="margin-bottom:10px"><b>① 「對話選擇 × 命運分支」</b>（JRPG 村莊第一關）：NPC 對話 + 路徑選擇 + 簡短戰鬥，像素美術，一鍵操作。<b>② 「你是壞人」道德翻轉</b>（Disgaea 新作靈感）：玩家扮演反派，勝利條件倒置，荒誕喜劇感強。<b>③ 「嗅覺線索解謎」</b>（itch.io I Can Smell You 啟發）：文字描述氣味 + 玩家猜來源，純互動問答轉化為小遊戲格式。<b>④ 「死亡開關倒數」</b>（GTA 6 洩露梗泛化）：計時器 + 玩家在倒數前做決策，懸疑感強。皆為單一機制，一句 prompt 可參數化。</div>
-        <div class="obs"><span class="lbl">IP 地雷：</span>機制可借，作品不可：不使用 Dragon Quest / GTA 6 / Disgaea 的名稱、角色、美術；地圖與玩家一律泛化原創設計。</div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">原創 loop（HN / itch / Naavik）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">每日一局 + 結果格 — Globle / Wordwonk</span><span class="vn">★ 每日</span></li>
+            <li><span class="nm">Takes Takes — 另類棋類謎題</span><span class="vn">謎題</span></li>
+            <li><span class="nm">TowerPanic — 家庭派對</span><span class="vn">派對</span></li>
+            <li><span class="nm">Sprints — 48 小時 2–5 人微挑戰</span><span class="vn">群組</span></li>
+            <li><span class="nm">Playbacks — 30 秒錄影</span><span class="vn">短錄</span></li>
+          </ol>
+          <div class="bf">HN / Naavik / Google Blog · 10/16 · unityroom 今日未抓，暫缺</div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ <b>IP 二創地雷：</b>Naavik 提到的混搭 / 反編譯案例多建於商業 IP，且文中提及下架與法律原則；GameGen 一律走泛化元素。unityroom（今週ピックアップ）今日未抓到，<b>目前無法完全證實</b>。
       </div>
     </section>
 
     <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話暫缺</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ Threads 需登入且 JS 渲染，本次未取得繁中圈當日熱話，<b>目前無法完全證實</b>，骨架保留、不以舊資料補位。題材備案（非熱話，僅作發想）：把今日堀井雄二 AI 遊戲新聞角度換成繁中版討論——「你認為傳統遊戲設計師用 AI 做遊戲是拋棄傳統還是進化？」討論貼，直接引起 JRPG 老玩家的共鳴與爭議。</div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話今日未取得</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ Threads 需登入且 JS 渲染，本次未取得繁中圈當日熱話，<b>目前無法完全證實</b>，骨架保留、不以舊資料或估計補位。可借題變體（根據現有資料推測，非 Threads 熱度）：把「每日一局」套在三國 / 武俠 / 恐怖等繁中偏好題材。</div>
       </div>
     </section>
 
@@ -437,12 +512,12 @@
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>堀井雄二 AI 遊戲 60 分鐘</td><td><span class="tmpl">JRPG 第一關 Vibe Code 挑戰</span></td><td>「AI 60 分鐘做遊戲」分享卡</td><td class="rk-low">低（原創）</td><td>★ 本日 Demo 首選，不用 Dragon Quest IP</td></tr>
-          <tr><td>PlayStation 之父批業界落後</td><td><span class="tmpl">「AI 先行者」系列 CJ 論述</span></td><td>三傳奇訊號對比框架貼</td><td class="rk-low">低（引用觀點）</td><td>CJ 今日首選，不需獨立 Demo</td></tr>
-          <tr><td>GTA 6 洩露者死亡開關</td><td><span class="tmpl">「大作評測倒數猜分」</span></td><td>「你猜評分幾分」投票貼</td><td class="rk-mid">中 · GTA IP</td><td>泛化「大作倒數」，不用 GTA 名稱</td></tr>
-          <tr><td>Jeff Kaplan indie dev 現實</td><td><span class="tmpl">「一人工作室第一作」</span></td><td>「你的 AI 遊戲第一作題材是？」徵貼</td><td class="rk-low">低</td><td>互動徵貼 = remix 題材池</td></tr>
-          <tr><td>S&box 「Netflix for games 不行」</td><td><span class="tmpl">「AI 遊戲 vs 人工策展」討論貼</span></td><td>「什麼讓一款遊戲值得被找到？」</td><td class="rk-low">低</td><td>CJ 補充論述，配策展力角度</td></tr>
-          <tr><td>Arknights Endfield Steam 新品</td><td><span class="tmpl">「手遊 IP 你想在 PC 玩哪款？」</span></td><td>繁中社群投票貼</td><td class="rk-low">低（不抄 IP）</td><td>針對繁中 + 亞洲手遊社群高吸引力</td></tr>
+          <tr><td>「今日梗每日猜」（Globle 驗證 / Google Sprints 群組化）</td><td><span class="tmpl">每日猜謎 + 結果格</span></td><td>彩色結果格、Remix 換自己的題</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，題材取中性熱點，不洩題</td></tr>
+          <tr><td>Shogun 2 重製版上架兩天下架</td><td><span class="tmpl">「上架 48 小時求生」clicker</span></td><td>「好評率」分享卡</td><td class="rk-mid">中 · 真實公司 / AI 使用未證實</td><td>用泛化角色；不寫成 AI 已被證實</td></tr>
+          <tr><td>RuneScape Reignited 取消（日期未驗）</td><td><span class="tmpl">「我的 Reignited」泛化 MMO 採集</span></td><td>「我的版本」分享卡</td><td class="rk-mid">中 · 原 IP</td><td>泛化奇幻設定，不用 RuneScape 名 / 美術</td></tr>
+          <tr><td>Epic vs Steam 啟動速度（日期未驗）</td><td><span class="tmpl">啟動器賽跑反應遊戲</span></td><td>反應時間卡、吵架型留言</td><td class="rk-low">低</td><td>不用 Epic / Steam logo；測法未證實別寫死 46%</td></tr>
+          <tr><td>Google Play Sprints（48h、2–5 人）</td><td><span class="tmpl">小群組 48 小時挑戰頁</span></td><td>Discord 小隊排行榜</td><td class="rk-low">低</td><td>Challenge page + 排行榜，Discord 優先</td></tr>
+          <tr><td>Roblox「Steal」系換皮</td><td><span class="tmpl">泛化搶蛋 + 反擊</span></td><td>被偷瞬間好剪</td><td class="rk-low">低</td><td>抄公式不抄名；避開 Roblox 角色與商標</td></tr>
         </tbody>
       </table>
       </div>
@@ -455,14 +530,14 @@
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>傳奇創作者親驗 AI 60 分鐘做遊戲</td><td>Dragon Quest 創作者堀井雄二用 Claude AI 不到 1 小時發布瀏覽器遊戲（Polygon，pub 2026-10-13，摘要層）</td><td>"Dragon Quest's creator shipped a game with Claude in under an hour. If a 40-year legend can — what's stopping the rest of the industry?"</td><td><a href="https://www.polygon.com/dragon-quest-creator-yuji-horii-new-ai-game/" target="_blank">Polygon</a></td></tr>
-          <tr><td>PlayStation 之父：業界 AI 應用毫無進展</td><td>Ken Kutaragi（PlayStation 創始人）：「遊戲業跟 AI 演進脫節，根本沒在進步」（Automaton，pub 2026-10-15，摘要層）</td><td>"PlayStation's founder says gaming is making 'no progress' on AI. Epic shipped vibe-coded software. Dragon Quest's creator shipped a game. The gap between those who move and those who watch is widening daily."</td><td><a href="https://automaton-media.com/en/news/playstation-creator-ken-kutaragi-suggests-the-video-game-industry-hasnt-caught-up-with-the-evolution-of-ai-its-like-theres-no-actual-progress-being-made/" target="_blank">Automaton</a></td></tr>
-          <tr><td>AI 供給爆量後的發現缺口</td><td>S&box 放棄「Netflix for games」模型，改走人工策展（GamesIndustry.biz，標題層）</td><td>"S&box abandoned 'Netflix for games.' In the AI era, supply is solved — discovery isn't. Curation is the new moat."</td><td><a href="https://www.gamesindustry.biz/sbox-plans-to-go-free-to-play-and-embrace-human-curation-saying-netflix-for-games-doesnt-work" target="_blank">GamesIndustry.biz</a></td></tr>
-          <tr><td>大廠光環失效、AI 工具填補落差</td><td>Jeff Kaplan（前 Overwatch 總監）：業界同行不回郵件，稱獨立開發「humbling」（Reddit / PC Gamer，標題層）</td><td>"Overwatch's director can't get a callback in indie dev. Big studio titles don't port. But AI tools do — they let any team ship what a AAA once required."</td><td><a href="https://www.reddit.com/r/Games/comments/1x5xyp5/jeff_kaplan_was_an_industry_icon_now_peers_ignore/" target="_blank">Reddit</a></td></tr>
+          <tr><td>創作者驅動分發 vs 廣告</td><td>Abe Train（Trainwreck Labs）：最好成長來自玩家自發內容；Globle 據他回憶巔峰逾 100 萬日玩家（10/13，對方陳述）</td><td>"His best growth wasn't ads — it was players making their own videos."</td><td><a href="https://naavik.co/podcast/the-solo-developer-making-seven-figures-from-free-browser-games/" target="_blank">↗</a></td></tr>
+          <tr><td>平台給創作、不給分享</td><td>Google Play 個人 AI App 僅自己裝置；分享親友「coming months」；Sprints、Playbacks 同日（10/13）</td><td>"A game nobody else can play isn't a game yet. We start at the share link."</td><td><a href="https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/" target="_blank">↗</a></td></tr>
+          <tr><td>品質翻車的即時代價</td><td>Shogun 2 重製版上線約兩天下架；Steam 2,000+ 評論 19% 推薦（10/15）</td><td>"Players spot sloppy in an hour. Fast is only an advantage if it's also fun."</td><td><a href="https://www.videogameschronicle.com/news/sega-pulls-total-war-shogun-2-complete-edition-from-stores-over-bugs-and-ai-art/" target="_blank">↗</a></td></tr>
+          <tr><td>混搭需求已驗證，IP 路線不耐久</td><td>Naavik 列 23.3M / 7.4M views 的 mash-up 與反編譯案例（10/13，觀看數未獨立查證；10/11 已用過相近角度）</td><td>"Remix demand is real. Building it on someone else's IP isn't durable."</td><td><a href="https://naavik.co/ai-gaming/viral-game-mash-ups-what-ai-decompilation-capabilities-mean-for-games/" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（堀井雄二 AI 遊戲、久多良木健批評業界）已附 EN hook + 中譯。堀井雄二細節為 Polygon 摘要層（Tavily 索引，pub 2026-10-13），貼文務必寫「據 Polygon 報導 / reportedly」。
+        📄 頭版 🎯 CJ Top 2（創作者驅動分發、Google Play 創作有分享缺口）已附 EN hook + 中譯，可交 CW 的 CJ 每日包；兩條皆 web_fetch 開原文驗日期 2026-10-13 + 主張比對（見 Evidence Log）。Abe Train 的營收數字為對方陳述；對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
@@ -471,10 +546,10 @@
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>堀井雄二 AI 遊戲：「《勇者鬥惡龍》作者 60 分鐘做遊戲——你想 Vibe Code 什麼題材？」徵貼</li><li>Jeff Kaplan 謙卑現實：「大廠光環帶不走，你的第一款 AI 遊戲想做什麼？」</li><li>GTA 6 倒數：「你猜 GTA 6 媒體分數幾分？」投票貼（泛化）</li><li>S&box F2P：「AI 遊戲供給爆量，什麼讓一款遊戲值得被找到？」討論貼</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「60 秒 JRPG 第一關 Vibe Code 挑戰」像素 RPG（本日首選）</li><li>「大作倒數猜分計時器」互動 clicker（GTA 6 泛化版，備用）</li><li>「你是壞人」道德翻轉一關（Disgaea 機制泛化）</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>堀井雄二 AI 遊戲的玩家反饋與評測（日本社群反應）</li><li>GTA 6 評測公布日期（11 月初？）</li><li>Arknights: Endfield 首週 Steam CCU 峰值</li><li>S&box 人工策展模型的實際執行方式</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Dragon Quest / GTA 6 / Overwatch / Arknights 的名稱、角色、美術直接挪用</li><li>堀井雄二 AI 遊戲細節為摘要層，貼文須標「據報導」，不作事實斷言</li><li>久多良木健發言細節未 web_fetch，引用時標「摘要層」</li><li>對外文案的賭場語言與金額承諾</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Shogun 2 下架：「上架兩天、19% 好評。做個小而好玩的。」＋ 48 小時求生 gif</li><li>啟動器賽跑：「Epic 說快 46%，Reddit 說 Steam 贏，自己點。」（先確認測法再引數字）</li><li>RuneScape Reignited 取消：「我的 Reignited」（日期未驗，發前先開原文）</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「今日梗每日猜」每日一局 + 結果格 + Remix 鈕——本日首選</li><li>啟動器賽跑反應遊戲（純泛化）</li><li>48 小時小群組挑戰頁（Discord 小隊排行榜）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Google Play 個人 App「分享給親友」何時開放；Sprints 的玩法與獎勵細節</li><li>Shogun 2 後續：是否官方證實 AI 放大圖資、何時重新上架</li><li>Warframe 日比 +68.3% 的原因（目前無法完全證實）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Shogun 2「AI 圖資」尚未官方證實，勿寫成已確認</li><li>RuneScape / Epic 兩條為日期未驗，發文前先開原文</li><li>Total War、RuneScape、Epic / Steam 的美術與 logo 一律不用，改泛化</li><li>對外文案避開賭場語言（payout / big win / guaranteed）</li></ul></div>
       </div>
     </section>
 
@@ -482,21 +557,23 @@
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>堀井雄二 Claude AI 遊戲</td><td><a href="https://www.polygon.com/dragon-quest-creator-yuji-horii-new-ai-game/" target="_blank">Polygon ↗</a>　Tavily 摘要層，pub 2026-10-13　細節未 web_fetch<span class="pp">摘要層</span>　🆕</td></tr>
-        <tr><td>久多良木健 AI 批評</td><td><a href="https://automaton-media.com/en/news/playstation-creator-ken-kutaragi-suggests-the-video-game-industry-hasnt-caught-up-with-the-evolution-of-ai-its-like-theres-no-actual-progress-being-made/" target="_blank">Automaton ↗</a>　hotspots_latest.json rss:automaton，pub 2026-10-15T14:00:00+00:00　標題層<span class="pp">標題層</span>　🆕</td></tr>
-        <tr><td>Jeff Kaplan 獨立開發謙卑現實</td><td>Reddit r/Games 今日榜（heat_latest.json）/ <a href="https://www.pcgamer.com/games/fps/ex-overwatch-director-jeff-kaplan-ignores-everything-about-the-hero-shooter-after-his-almost-clinical-departure-5-years-ago-i-dont-search-for-my-name-in-overwatch-i-dont-search-for-overwatch-i-sort-of-just-disconnect/" target="_blank">PC Gamer ↗</a>　標題層<span class="pp">標題層</span></td></tr>
-        <tr><td>GTA 6 洩露者死亡開關</td><td><a href="https://www.pcgamer.com/games/grand-theft-auto/gta-6-leaker-threatens-take-two-with-a-dead-mans-switch/" target="_blank">PC Gamer ↗</a> / <a href="https://www.eurogamer.net/gta-6-cyberleek-ending-crypto-coin-crash" target="_blank">Eurogamer ↗</a>　標題層<span class="pp">標題層</span></td></tr>
-        <tr><td>S&box F2P 人工策展</td><td><a href="https://www.gamesindustry.biz/sbox-plans-to-go-free-to-play-and-embrace-human-curation-saying-netflix-for-games-doesnt-work" target="_blank">GamesIndustry.biz ↗</a>　標題層<span class="pp">標題層</span></td></tr>
-        <tr><td>Arknights Endfield Steam 新品</td><td>heat_latest.json steam_new_top（10/15 07:30 實抓）　Steam App <a href="https://store.steampowered.com/app/4732690" target="_blank">4732690 ↗</a><span class="ok">Steam ✓</span></td></tr>
-        <tr><td>數字層</td><td>heat_latest.json 2026-10-15T07:30:38+08:00：Steam CCU 全部 / 日比（官方 API）✓；PUBG 105,910 / +35.8% ✓；Roblox / Twitch 今日未取得，填昨日備份<span class="ok">Steam ✓ / 其他暫缺</span></td></tr>
+        <tr><td>Abe Train / Trainwreck Labs（CJ #1、Demo）</td><td><a href="https://naavik.co/podcast/the-solo-developer-making-seven-figures-from-free-browser-games/" target="_blank">Naavik Podcast</a>（web_fetch）　原文日期 2026-10-13　驗：Globle 起飛於 r/geography、巔峰逾 100 萬（"I believe"）、玩家自發內容（TikToker / 老師）帶最佳成長、廣告與訂閱收入、累計破七位數為主持人陳述且無拆帳<span class="ok">✓</span>（逐字稿為機器產生）</td></tr>
+        <tr><td>Google Play 10/13 更新（CJ #2）</td><td><a href="https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/" target="_blank">Google Blog</a>（web_fetch）　原文日期 2026-10-13　驗：個人 AI App 僅自己裝置、分享「coming months」、Sprints 48 小時 2–5 人、Playbacks 30 秒、Game Finder 僅美國英文<span class="ok">✓</span></td></tr>
+        <tr><td>Shogun 2 下架（X #1）</td><td><a href="https://www.videogameschronicle.com/news/sega-pulls-total-war-shogun-2-complete-edition-from-stores-over-bugs-and-ai-art/" target="_blank">VGC</a>（web_fetch）　原文日期 2026-10-15　驗：下架、Steam 19% / 2,000+ 評論、AI 放大為「疑似」未證實<span class="ok">✓</span>　🔄 進展（10/14 已用 AI slop 角度）</td></tr>
+        <tr><td>RuneScape Reignited 取消（X #2）</td><td><a href="https://www.pcgamer.com/games/mmo/less-than-2-weeks-after-announcing-runescape-reignited-jagex-is-scrapping-the-whole-thing/" target="_blank">PC Gamer</a> / RPS（radar 故事源標題）+ Reddit 當日 top 序　日期未驗<span class="pp">summary</span>（摘要層，未逐句 fetch）</td></tr>
+        <tr><td>Epic 啟動器 46%（X #3）</td><td><a href="https://www.gamesindustry.biz/epic-games-claims-its-new-vibe-coded-launcher-runs-46-faster-than-steam-from-cold-start-to-store-page" target="_blank">GamesIndustry.biz</a>（radar 標題；web_fetch 被擋）+ Reddit / HN 標題　日期未驗<span class="pp">summary</span>（摘要層）</td></tr>
+        <tr><td>Naavik mash-up（背景）</td><td><a href="https://naavik.co/ai-gaming/viral-game-mash-ups-what-ai-decompilation-capabilities-mean-for-games/" target="_blank">Naavik</a>（web_fetch）　原文日期 2026-10-13（10/14 更新）　驗：23.3M / 7.4M views 為文中陳述、未獨立查證<span class="pp">partial</span>　10/11 已用相近角度，不入頭版</td></tr>
+        <tr><td>Astrocade 月活 1,000 萬（背景）</td><td><a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">Kotaku</a>（web_fetch）　原文日期 2026-10-07（&gt;7 天，♨️）　驗：CEO 轉述、未獨立查證<span class="pp">partial</span></td></tr>
+        <tr><td>Epic AI-first / 堀井雄二</td><td>Kotaku 10/12（web_fetch，Bloomberg 轉述）；Kotaku 10/12 堀井雄二約 30 分鐘（Polygon 被擋，改用 Kotaku）　<span class="pp">♻️ 已用過，未進頭版</span></td></tr>
+        <tr><td>Steam / Roblox / Twitch 數字層</td><td>Steam＝heat_latest.json 2026-10-16T07:30 官方 API 直抓；Roblox＝RoMonitor Stats 瀏覽器 10/16 真抓；Twitch＝TwitchTracker 瀏覽器 10/16 真抓（免敘事閘）<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期與主張比對（見 Evidence Log）· CJ Top 2 標題層 / Tavily 摘要層交叉 · Steam＝官方 API 10/15 07:30 最新快照 · Roblox / Twitch 今日資料不足，填昨日快照並標記 · Threads 與 KYM 新梗未能驗證，標暫缺 · 對外發布前一律過賭場語言 + 真人 / IP 風險濾鏡</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/10/16 · 對外發布前一律過賭場語言 + 真人 / IP 風險濾鏡</div>
+    <div class="legend"><b>方法</b>　頭版彈藥依分層驗證：CJ Top 2 全 web_fetch 驗原文日期＋主張比對（見 Evidence Log），小編 / Demo 為摘要層（Shogun 2 已 fetch，其餘標日期未驗）· Steam＝官方 API 10/16 即時真數字（radar 07:30）· Roblox / Twitch＝瀏覽器 10/16 真抓 · Threads / KYM / unityroom / TikTok Creative Center 今日未取得，標暫缺 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️），日期未驗不標 🆕</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/10/16 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
