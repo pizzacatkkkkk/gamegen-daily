@@ -24,6 +24,7 @@
   .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
   .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
   a{color:inherit}
+
   nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
   .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
   .brand{display:flex;align-items:center;gap:10px}
@@ -38,6 +39,7 @@
   .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
     border-left:2px solid var(--ink);padding-left:18px}
   @media(max-width:820px){.nav-links{display:none}}
+
   .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
   .hero::before{content:"";position:absolute;inset:0;opacity:.5;
@@ -53,6 +55,7 @@
   .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
   .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
   .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
     letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
   .hero h1 .yl{color:var(--yellow)}
@@ -60,6 +63,7 @@
     letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
   .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
   .hero .tagline b{background:var(--ink);padding:1px 8px}
+
   .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
     box-shadow:8px 8px 0 rgba(0,0,0,.85)}
   .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
@@ -69,6 +73,8 @@
   .lead b{color:var(--ink);font-weight:900}
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -85,7 +91,7 @@
   .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
   .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
     border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
-  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
   .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
   .ammo-item .ln b{color:var(--ink);font-weight:900}
   .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
@@ -94,6 +100,7 @@
   .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
   .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
     background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
   main{max-width:880px;margin:0 auto;padding:0 26px 90px}
   section{padding:56px 0 0;scroll-margin-top:64px}
   .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
@@ -104,10 +111,12 @@
   .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
   .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
   .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
   .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
     padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
   .tag>span{display:inline-block;transform:skewX(8deg)}
   .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
   .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
     position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -118,6 +127,7 @@
   .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
   .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
   .story .obs b{font-weight:900}
+
   .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .scores{display:flex;gap:18px}
   .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
@@ -131,6 +141,7 @@
   .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
   .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
   .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
   .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
     border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
@@ -142,6 +153,8 @@
   .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -162,6 +175,7 @@
   .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
   .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
   .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
   .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
   .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
@@ -174,6 +188,7 @@
   .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
   .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
   .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
   .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
   .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
@@ -181,6 +196,7 @@
   .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
   .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
   .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
   footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
     background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
   footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
@@ -190,8 +206,10 @@
   footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
   footer .legend b{background:var(--ink);padding:1px 7px}
   footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
   .reveal.in{opacity:1;transform:none}
+
   @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
 </style>
 </head>
@@ -211,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 21 · 彈藥工廠模式 · Steam 數字 10/20 07:30 真抓 · Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
+        <span class="dateflag">2026 / 10 / 21 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30 已跑）+ Twitch / Roblox 瀏覽器真抓 · 來源 20+ 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -219,70 +237,73 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>AI 在遊戲業的戰線今天同時開闢三個方向：</b>Epic Games 旗下迪士尼合作射擊專案據報切換到「AI 優先」（不再手寫代碼）；日本演員工會發表嚴格 AI 配音規範草案，特別針對已故演員聲音的保護；而 Moonlighter 開發商 Digital Sun 則因害怕 AI 在上市前秒抄遊戲，縮小了公開試玩範圍。製作端全面擁抱、人才端開始立法防守、開發端選擇防守退縮——三條線在同一天激盪。</p>
-        <p>監管面同步動作：<b>PEGI 宣布將含開箱機制（loot box）的純數位遊戲評級提升至 16+</b>，這是歐洲最大遊戲分級機構首次對 loot box 做出主動分級調整，行業影響等同一次立法。</p>
-        <p>Steam 今日最清晰的有機社群訊號：<b>Team Fortress 2 逆勢暴衝 +9.4%</b>，在全榜其他 14 款主要遊戲清一色下滑（War Thunder -24.6% 為最大跌幅）的情況下獨自上漲，且沒有任何更新觸發。<b>COD: MW4 已進入 Steam 熱賣榜</b>，10/23 正式上線，低系統需求加 MrBeast 活動，今天是發文窗口最佳時機。</p>
-        <div class="pull">▸ 今天最強切角：PEGI loot box 16+ 是 B2B CJ 最強素材（監管 + 透明機制設計）；TF2 無觸發自發回流是「做值得玩家回來的東西」的最新案例；COD MW4 10/23 上線是今日 Demo 窗口。</div>
+        <p><b>Sony 最高主管說「創意屬於人類，不是 AI」；同一天一份 101 人訪談報告說，94% 的工作室在用 AI、但過半只用得很淺。</b>10/20：<span class="hl">Sony 的 Hiroki Totoki</span> 在 Paley International Summit 與 Take-Two CEO Zelnick 同台，主張 AI 不會取代遊戲開發者（Zelnick 的版本是「不擁抱 AI 的開發者才會被取代」，GameSpot 另報 GTA 6 沒有 AI）；同日 <span class="hl">Vivrato 的 VAIA 報告</span>：97% 受訪者用過 AI、94% 在九個製作階段至少一段用 AI，但 <b>52% 把「AI 嵌入管線的深度」評在 3/10 以下</b>。</p>
+        <p>兩則放一起看：大廠在辯「AI 該不該碰創意」，產線端的 AI 其實還是<b>淺層、內部用的工具</b>。沒人在服務的是<span class="hl">玩家自己當創作者</span>這一側——「AI 做 build、人類出點子」。這正是 Trend-to-Game 的位置。（注意：兩項數字皆為單一來源、受訪者自評，非產業全貌。）</p>
+        <div class="pull">▸ 今天就能蹭：CJ 貼文「Creativity is for humans — then give humans the tool」＋ 小編用「Needle In A Haystack 連環山寨」講「點子 3 天被抄、護城河是下一個 twist 的出貨速度」＋ Demo：「找針模擬器 · 今日梗版」。</div>
       </div>
 
+      <!-- 📰 今日彈藥 頭版 -->
       <div class="ammo">
         <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
 
+        <!-- CJ LinkedIn Top 2 -->
         <div class="ammo-grp l-cj reveal">
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>PEGI 把含 loot box 的純數位遊戲評級提升至 16+——歐洲最大分級機構首次主動介入開箱機制</div>
-            <div class="ln"><b>新聞事實：</b>歐洲遊戲分級機構 PEGI 宣布開始將現有含 loot box 機制的純數位遊戲評級提升至 16+。這是 PEGI 首次針對開箱機制本身（而非遊戲暴力或性內容）做出主動分級調整。（GamesIndustry.biz，2026-10-20/21）</div>
-            <div class="ln"><b>GameGen 角度：</b>PEGI 調高分級 = 透明的獎勵機制正在成為競爭優勢，不只是道德問題。「讓玩家知道自己在得到什麼」的設計者，比「隱藏機率」的設計者多了一個監管護城河。<b>GameGen 的開放式遊戲生成，結構上天然符合這個方向</b>。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "PEGI just started bumping loot box games to age 16+ ratings. Transparent reward mechanics aren't just ethical — they're now a competitive moat. The studios that design with visibility built in are ahead of the regulation, not behind it."<br><span style="color:var(--ink-dim)">中譯：PEGI 開始把含 loot box 的遊戲評級提升至 16+。透明的獎勵機制不只是道德問題——它現在是競爭護城河。設計時把透明度建進去的工作室，走在法規前面，不是追著跑。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/pegi-begins-moving-existing-digital-only-games-with-loot-boxes-up-to-a-16-rating" target="_blank">GamesIndustry.biz ↗</a>　pub 2026-10-20/21　partial（標題層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Sony 老闆：「創意屬於人類，不是 AI」——那就該問：哪些人類拿得到工具？</div>
+            <div class="ln"><b>新聞事實：</b>Sony 的 Hiroki Totoki 10/20 在 Paley International Summit 與 Take-Two CEO Strauss Zelnick 同台，說 “Creativity is for humans, not AI.”（GameSpot 引 IGN 報導）；他稱 AI 不會取代遊戲開發者、鼓勵員工以特定方式用 AI、Sony 會保護創作者權利。Zelnick 則說不採用 AI 的開發者可能被採用的取代，並稱 AI 資料集是向後看、創意是向前看；GameSpot 另註記 Take-Two 工作流程有用 AI、但 GTA 6 沒有 AI（GameSpot，pub 2026-10-20）。</div>
+            <div class="ln"><b>GameGen 角度：</b>連 Sony 都把「創意」劃給人類——那接下來的問題是<b>哪些人類</b>。對大多數玩家來說，創作從來只有「消費按鈕」、沒有工具。GameGen 的主張與這句話一致而且更具體：<b>AI 負責 build，人類出點子、出梗、出玩法</b>。不跟「AI 會不會取代開發者」開戰，站在「把創作工具給玩家」。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Sony's top exec: 'Creativity is for humans, not AI.' Agreed. So which humans get the tools? For most players, creativity has only ever had a play button. We're building the make button — AI does the build, you bring the idea."<br><span style="color:var(--ink-dim)">中譯：Sony 最高主管說「創意屬於人類，不是 AI」。同意。那哪些人類拿得到工具？對多數玩家來說，創意從來只有「播放鍵」。我們在做「創作鍵」——AI 負責 build，你負責出點子。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamespot.com/articles/playstation-boss-creativity-is-for-humans-not-ai/" target="_blank">GameSpot ↗</a>　pub 2026-10-20　verified ✓（web_fetch）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>日本演員工會提案嚴格 AI 配音規範，特別保護已故演員聲音——人才端開始立法防守 AI</div>
-            <div class="ln"><b>新聞事實：</b>日本演員工會（Eurogamer 報導）發表 AI 配音使用嚴格規範草案，要求對 AI 生成配音設置高門檻，尤其是使用已故演員聲音的部分。這是日本演藝界對生成式 AI 最明確的制度性反制行動。（Eurogamer，2026-10-20/21）</div>
-            <div class="ln"><b>GameGen 角度：</b>人才端的立法防守，說明「聲音即 IP」的邊界正在被重新畫定。對遊戲開發者的啟示：使用 AI 生成聲音的短期成本優勢，正在累積長期授權風險。<b>用原創聲音 / 明確授權的工具，現在就是差異化</b>。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Japan's acting union just proposed strict new AI voice guidelines — especially to protect deceased actors' voices. 'Voice is IP' is becoming law. The studios using AI-generated voices cheaply today are building unauthorized-use liability tomorrow."<br><span style="color:var(--ink-dim)">中譯：日本演員工會提出嚴格 AI 配音規範草案——特別保護已故演員的聲音。「聲音即 IP」正在成為法律。今天用 AI 配音省錢的工作室，正在累積明天的侵權風險。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.eurogamer.net/japanese-voice-acting-union-generative-ai" target="_blank">Eurogamer ↗</a>　pub 2026-10-20/21　partial（摘要層）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>94% 工作室在用 AI、52% 說嵌入度 ≤3/10——AI 還困在後台，玩家端是空位</div>
+            <div class="ln"><b>新聞事實：</b>VAIA 報告（顧問公司 Vivrato，創辦人 Adam Boyes 為前 PlayStation 高層）：4–9 月做了 <b>101 場</b>一對一保密訪談（以北美、歐洲工作室為主，44 題、涵蓋九個製作階段）。97% 受訪者用過 AI；94% 在至少一個製作階段使用；<b>52% 把 AI 嵌入管線的深度評在 3/10 以下</b>；歐洲 70% 用於美術 / 素材 / 動畫，北美為 53%（VGC，pub 2026-10-20；樣本與評分皆為受訪者自述）。</div>
+            <div class="ln"><b>GameGen 角度：</b>採用率很高、深度很淺——AI 在大廠是「內部提效工具」，面向玩家的創作層幾乎沒人做。輸出側（AI 為人生成遊戲、玩家 remix）仍是空位；GameGen 的 KPI（Create Rate / Play-to-Remix）正是量測這一層。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "New survey of 101 studio leaders: 94% use AI somewhere in production, but 52% rate how deeply it's wired in at 3/10 or lower. Inside studios, AI is still back-office. The player-facing side — where anyone can make and remix a game — is wide open."<br><span style="color:var(--ink-dim)">中譯：101 位工作室主管的新調查：94% 在製作中某處用 AI，但 52% 把嵌入深度評在 3/10 以下。在工作室內部，AI 仍是後台工具。面向玩家、人人能做能 remix 的那一側——完全敞開。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.videogameschronicle.com/news/report-finds-that-94-of-studios-use-ai-but-more-than-half-say-it-isnt-deeply-embedded-into-production/" target="_blank">VGC ↗</a>　pub 2026-10-20　verified ✓（web_fetch）　⚠️ 單一顧問公司、n=101</div>
           </div>
         </div>
 
+        <!-- 小編 X Top 3 -->
         <div class="ammo-grp l-ed reveal">
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>COD: Modern Warfare 4 進 Steam 熱賣榜——10/23 上線，低配需求 + MrBeast 活動，今日發文窗口<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Call of Duty: Modern Warfare 4 已進入 Steam 熱賣榜（heat_latest.json steam_new_top，2026-10-20）。GameSpot 報導不需昂貴主機或高端 PC 即可遊玩（「You Don't Need An Expensive Console Or High-End PC To Play Call Of Duty: Modern Warfare 4」）。MrBeast 與 19 位創作者的 DMZ 合作影片已於 10/19 上線，遊戲 10/23 正式發售（據 GameSpot 報導，預購者 10/20 開放）。</div>
-            <div class="ln"><b>GameGen 角度：</b>「低配即可玩」+ 全球最大 YouTuber 加持 = 最大化可及人群的射擊遊戲發布策略。今日最強 Demo 窗口：泛化 60 秒撤離小遊戲（不使用 COD / MW4 品牌素材）。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "COD: Modern Warfare 4 launches Oct 23. Low specs. MrBeast + 19 creators already dropped the hype video. The game was designed to reach everyone — not just the hardware haves. Make your own 60-second extraction run today. 👇"<br><span style="color:var(--ink-dim)">中譯：COD: MW4 10/23 上線。低配即可。MrBeast + 19 位創作者的炒作影片已上線。這款遊戲設計成讓所有人都玩得到——不只是有高端硬體的人。今天做你自己的 60 秒撤離小遊戲。👇</span></div>
-            <div class="meta">來源 <a href="https://www.gamespot.com/articles/you-dont-need-an-expensive-console-or-high-end-pc-to-play-call-of-duty-modern-warfare-4/" target="_blank">GameSpot ↗</a> / <a href="https://store.steampowered.com/app/4435490" target="_blank">Steam ↗</a>　pub 2026-10-20　partial（摘要層）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新（3 天前）</span>Needle In A Haystack 連環山寨：「山寨被山寨」→ 護城河是下一個 twist 的速度<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Studio Bitdot 的 <i>Needle In A Haystack Simulator</i> 8 月在社群爆紅（原作尚未上市）；NoGlyph 的同名山寨 9/29 上 Steam，其後 <i>A Game About Needle In A Haystack</i>（Little Field Studios）10/16 上架，NoGlyph 10/17 貼文稱對方有 13 個同名 class、一半以上函式相同；Kotaku 數到 Steam 上至少 <b>14 款</b>山寨（Kotaku，pub 2026-10-18）。Kotaku 稱模式像 AI 反編譯、但 NoGlyph 貼文並未直接指控、Kotaku 也未獨立證實 AI 涉入。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A viral sim got cloned 14+ times on Steam — and one clone got cloned by another. If an idea can be copied in days, the only moat is how fast you ship the next twist. Take today's meme, make your own version in a minute. 👇"　<span style="color:var(--ink-dim)">中譯：一款爆紅小遊戲在 Steam 被山寨 14 次以上——連山寨都被山寨。點子幾天就被抄，唯一的護城河是下一個 twist 出多快。拿今天的梗，一分鐘做出你自己的版本。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入一個梗 → 「在 500 萬個東西裡找出唯一那個」的泛化版（不挪 Bitdot 美術 / 名稱）→ 出「我花了 X 秒」分享卡。⚠️ 定位提醒：講「twist 速度」，<b>不</b>鼓勵山寨。</div>
+            <div class="meta">來源 <a href="https://kotaku.com/devs-behind-needle-in-a-haystack-clone-complain-their-clone-has-been-cloned-by-vibe-coder-2000747284" target="_blank">Kotaku ↗</a>　pub 2026-10-18　verified ✓（web_fetch）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>TF2 逆勢暴衝 +9.4%——全榜唯一上漲，沒有任何更新觸發，純社群自發回流<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Steam 今日同時在線數據（heat_latest.json，2026-10-20 07:30）：Team Fortress 2 今日 90,850 人，前日 83,063 人，<b>+9.4%</b>。同榜 14 款其他主要遊戲全數下滑（War Thunder -24.6% 最大跌幅）。沒有任何 TF2 新更新或 Valve 官方公告觸發。</div>
-            <div class="ln"><b>GameGen 角度：</b>TF2 的純自發回流是 2026 年最清晰的「有機社群 > 推廣預算」訊號。<b>23 年老遊戲，沒有廣告，沒有更新，玩家就是回來了</b>。做值得玩家記得的東西，比做值得演算法推薦的東西更難，也更值錢。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Team Fortress 2 just spiked +9.4% — the only game rising on Steam today. No update. No announcement. No marketing. Just players deciding to come back. A 23-year-old game reminding us what a real community looks like."<br><span style="color:var(--ink-dim)">中譯：TF2 今日暴衝 +9.4%——Steam 今日唯一上漲的遊戲。沒有更新。沒有公告。沒有行銷。只是玩家自己決定回來。一款 23 歲的遊戲，提醒我們真正的社群長什麼樣子。</span></div>
-            <div class="meta">來源 <a href="https://store.steampowered.com/app/440" target="_blank">Steam TF2 ↗</a>　pub heat_latest 2026-10-20T07:30　<span class="ok">✓</span>（真數字）</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>傳聞：下一代 Xbox 2028、可能 $1,200–1,800 → 主機越來越貴，瀏覽器街機還是免費<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Fortune 報導（GameSpot 10/20 轉述）：代號 Project Helix 的下代 Xbox「could cost between $1,200 and $1,800」、可能 2028 上市，若微軟補貼價格可更低；另稱可能在 2027 底前推掌機。<b>全為傳聞、微軟未證實</b>（GameSpot，pub 2026-10-20）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Rumor: the next Xbox could run $1,200–$1,800. Meanwhile the arcade in your browser is still free. Make a game instead. 👇"　<span style="color:var(--ink-dim)">中譯：傳聞：下一代 Xbox 可能要 $1,200–1,800。你瀏覽器裡的街機還是免費的。改去做一款遊戲吧。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>零安裝、一句 prompt 一款遊戲；貼文務必標「rumor」。</div>
+            <div class="meta">來源 <a href="https://www.gamespot.com/articles/next-gen-xbox-could-be-1800-and-launch-in-2028-report/" target="_blank">GameSpot ↗</a>　pub 2026-10-20　verified ✓（web_fetch，傳聞）</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Epic 迪士尼射擊專案轉「AI 優先」——不再手寫代碼，員工震驚，專案延期<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>The Verge / Game Developer（2026-10-13-14）報導：Epic Games 正在進行的迪士尼合作射擊遊戲專案，已被要求轉向「AI 優先」開發模式，代碼和美術均以 AI 生成為主，不再手寫代碼（Bloomberg 原報導）。專案已從原訂 3 月發布窗口延遲。員工表達震驚。</div>
-            <div class="ln"><b>GameGen 角度：</b>Epic 的 AI-First 命令與 TF2 的有機社群訊號是今日的最強對比——<b>頂層強制採用 AI 是否能做出讓玩家主動回來的遊戲，市場即將給出答案</b>。工具降本不等於產品有靈魂。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Epic told devs on their Disney shooter: no more hand-written code. AI-first. Project delayed. On the same day, TF2 — a 23-year-old Valve game — spiked +9.4% with zero announcements. Top-down AI mandates vs. bottom-up community loyalty. Which one wins players back?"<br><span style="color:var(--ink-dim)">中譯：Epic 告訴迪士尼射擊遊戲的開發者：不再手寫代碼，全面 AI 優先。結果：專案延遲。同一天，TF2——23 年老 Valve 遊戲——在零公告下暴衝 +9.4%。由上而下的 AI 命令 vs. 由下而上的社群忠誠。哪一個能讓玩家回來？</span></div>
-            <div class="meta">來源 <a href="https://www.theverge.com/games/1010097/epic-games-disney-project-ai-coding-art" target="_blank">The Verge ↗</a> / <a href="https://www.gamedeveloper.com/programming/no-more-hand-written-code-epic-s-disney-project-reportedly-shifts-to-ai-first-development" target="_blank">Game Developer ↗</a>　pub 2026-10-13/14　partial（摘要層）</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新（2 天前）</span>Steam 玩家在 Next Fest 要求「No-AI 篩選」→ 我們不躲，直接標明「AI 做的」並讓人 remix<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>IGN 標題：Steam 玩家在 Steam Next Fest 充斥「slop」之際，懇求加入 no-AI 篩選器（IGN，pub 2026-10-19；本日 IGN 被擋、僅憑 Tavily 標題 / 摘要，細節目前無法完全證實）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Steam players are asking for a 'no AI' filter. Fair. Our take: don't hide it, label it — AI-made, 60 seconds to play, one tap to remix. 👇"　<span style="color:var(--ink-dim)">中譯：Steam 玩家想要「無 AI」篩選。合理。我們的做法：不躲，直接標明——AI 做的、60 秒能玩、一鍵 remix。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>每款遊戲頁固定顯示「AI-made」標＋Remix 按鈕。</div>
+            <div class="meta">來源 <a href="https://www.ign.com/articles/steam-fans-are-begging-for-a-no-ai-filter-as-steam-next-fest-is-filled-with-slop" target="_blank">IGN ↗</a>　摘要層（pub 2026-10-19）</div>
           </div>
         </div>
 
+        <!-- Demo 線 1 -->
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「60 秒撤離」loop——蹭 COD MW4 10/23 上線窗口，今天是最強 Demo 時機<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法概念：</b>極簡撤離 loop：玩家在限時 60 秒內從區域收集物資並找到撤離點。地圖每局隨機改變，加入一個動態威脅（追擊 / 封鎖路徑 / 補給耗損）。分享格式：「我在 XX 秒撤離成功，你呢？」配文：「COD: MW4 10/23 上線，先在這個 60 秒版本熱身一下。」⚠️ 不使用任何 COD / Activision / MW4 品牌素材。</div>
-            <div class="ln"><b>為何是今天：</b>COD MW4 10/23 正式上線在即，媒體報導密集，MrBeast 活動已引燃社群熱度，10/23 前是搭窗口的最佳 72 小時。</div>
-            <div class="meta">⚠️ 不使用 COD / Activision 任何品牌素材　模板：限時撤離 / 資源收集 loop</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>「找針模擬器 · 今日梗版」：輸入一個梗，在 500 萬個東西裡找出唯一那個<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入梗 / 主題 → 生成「一大堆相似物件裡藏一個異物」的 60 秒找碴 / 挖掘遊戲（泛化素材，不用 Bitdot 的名稱 / 美術）→ 結束出「我花了 X 秒、擊敗 N% 玩家」分享卡 + 「換個梗再來」Remix 按鈕。蹭的是 Needle 爆紅的<b>玩法公式</b>（大量堆疊 + 單一目標），不是它的 IP。</div>
+            <div class="ln"><b>為何是今天首選：</b>題材已被 Kotaku / GamesRadar 驗證會爆；一鍵換梗＝Create→Share→Remix 全 loop；風險在「別變成第 15 個山寨」，所以賣點是<b>每天換梗的速度</b>。</div>
+            <div class="meta">綁 <a href="https://kotaku.com/devs-behind-needle-in-a-haystack-clone-complain-their-clone-has-been-cloned-by-vibe-coder-2000747284" target="_blank">Kotaku ↗</a>　模板：找碴 / 單目標挖掘</div>
           </div>
         </div>
       </div>
@@ -290,303 +311,261 @@
   </header>
 
   <main>
-    <!-- 01 即時熱榜 -->
+    <!-- 即時熱榜 -->
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
       <div class="boards reveal">
+
         <div class="board b-steam">
-          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/20 07:30 真抓</span></div>
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/21 即時</span></div>
           <ol>
-            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">515K ▼3.9%</span></li>
-            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">102K ▼4.0%</span></li>
-            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">90K ▲9.4%</span></li>
-            <li><span class="nm">Rainbow Six Siege</span><span class="vn">65K ▼11.8%</span></li>
-            <li><span class="nm">Rust</span><span class="vn">63K ▼1.3%</span></li>
-            <li><span class="nm">Warframe</span><span class="vn">54K ▼9.8%</span></li>
+            <li class="down"><span class="nm">Counter-Strike（appid 730）</span><span class="vn">431K ▼16.4%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">103K ▲0.8%</span></li>
+            <li class="hot up"><span class="nm">Call of Duty: MWII</span><span class="vn">85K ▲66.5%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">70K ▼23.0%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">61K ▼5.9%</span></li>
+            <li class="hot up"><span class="nm">HELLDIVERS 2</span><span class="vn">54K ▲72.1%</span></li>
           </ol>
-          <div class="bf">Steam 官方 API · 10/20 07:30 真數字（週三早晨）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+          <div class="bf">Steam 官方 API · 10/21 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
+
         <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。近期萬聖節相關遊戲持續活躍，今日具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+          <div class="bh"><span>ROBLOX 熱門</span><span class="metric">Charts · Top Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">謀殺之謎 2（Murder Mystery 2）</span><span class="vn">685.8K</span></li>
+            <li><span class="nm">[🎃] 對手</span><span class="vn">145.2K</span></li>
+            <li><span class="nm">打破並偷走一顆蛋</span><span class="vn">82.2K</span></li>
+            <li><span class="nm">貓之戰 🐾</span><span class="vn">54.8K</span></li>
+            <li><span class="nm">Pet Simulator 99!</span><span class="vn">38.3K</span></li>
+            <li><span class="nm">[🎃] 點擊模擬器重生版</span><span class="vn">31.1K</span></li>
+          </ol>
+          <div class="bf">roblox.com/charts（電腦 / 全地區）· 瀏覽器 10/21 真抓 · 數字為頁面顯示之同時在線 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
         </div>
+
         <div class="board b-dim">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
-          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。COD MW4 預購解鎖（10/20）及 10/23 發售可能帶動直播熱度，具體數字尚未更新。</div>
-          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近 7 天平均觀眾</span></div>
+          <ol>
+            <li><span class="nm">Just Chatting</span><span class="vn">282K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">159K</span></li>
+            <li><span class="nm">Minecraft</span><span class="vn">129K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">94.1K</span></li>
+            <li><span class="nm">ARC Raiders</span><span class="vn">44.6K</span></li>
+            <li><span class="nm">Slots</span><span class="vn">28.5K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 瀏覽器 10/21 真抓（近 7 天平均）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
         </div>
+
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 今日 Steam 數字為 2026-10-20T07:30 真抓（heat_latest.json）。TF2 +9.4% 為今日唯一上漲，War Thunder -24.6% 最大跌幅。Steam 最多人玩榜新進：AION 2（#8）、WARDOGS（#7）、Aniimo（#38）。熱賣新品：COD: Modern Warfare 4、Star Wars: Galactic Racer。Roblox / Twitch / Threads 今日無瀏覽器工具，均標記「資料不足」。
+        ✅ 本機 heat-radar 07:30 已跑（<code>fetched_at</code> 2026-10-21T07:30+08:00），Steam 為官方 API 即時真數字。Roblox / Twitch 由內建瀏覽器今早真抓。⚠️ Steam 隔夜變動大（CS 431K −16.4%、TF2 −23%）屬日內快照時間差，勿過度解讀；CoD MWII / Helldivers 2 的暴增原因<b>目前無法完全證實</b>。
       </div>
     </section>
 
-    <!-- 02 暴衝訊號 -->
+    <!-- 暴衝訊號 -->
     <section id="surge">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>速度觀察</span></span>TF2 +9.4% 逆勢唯一上漲——全榜最大升幅，無任何更新觸發</h3>
-        <div class="sum">Steam 在線速度（heat_latest.json，10/20 07:30）：今日最大升幅為 <b>Team Fortress 2 +9.4%</b>（90,850 人，前日 83,063 人）——全榜唯一正增長。其餘 14 款主要遊戲均下滑：War Thunder -24.6%（最大跌幅）、Baldur's Gate 3 -23.0%、GTA V Legacy -22.8%、Stardew Valley -19.5%。沒有任何 TF2 官方更新或 Valve 公告能解釋此回流。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>TF2 今日無觸發自發回流是今日最清晰的有機社群訊號。<b>23 年老遊戲，在全榜一片紅之中獨自上漲</b>，說明它的社群基盤仍然活著。這是「忠誠社群 > 推廣預算」最新的活案例。GameGen 的啟示：每一個改進工具、降低摩擦的功能，都在為將來的無觸發自發回流鋪底。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Helldivers 2 +72.1%、CoD MWII +66.5%：雙雙過 ≥15% 旗標，但原因未明</h3>
+        <div class="sum">今日 Steam 真·日比兩款過旗標：<b>HELLDIVERS 2 53,935 人（昨日 31,343，+72.1%）</b>、<b>Call of Duty: Modern Warfare II 84,843 人（昨日 50,956，+66.5%）</b>。同日有報導指 Helldivers 2 換用 Easy Anti-Cheat、Steam 負評湧入（Eurogamer / PC Gamer），但是否與在線暴增相關<b>目前無法完全證實</b>；MWII 暴增原因亦未查證。排名跳動（≥5 名）：<b>TBH: Task Bar Hero 82→65、Bongo Cat 67→56</b>、Wuthering Waves 81→73、Delta Force 36→30、Aniimo 38→32、BeamNG.drive 46→40。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Helldivers / MWII 是「老遊戲 + 事件」回流，不是新梗在爆，題材價值低。值得盯的是 <b>TBH: Task Bar Hero、Bongo Cat</b> 的排名上升——名稱顯示為桌面 / 工作列常駐類小品（玩法細節<b>目前無法完全證實</b>），若確認，代表「輕量常駐 + 低干擾」的小遊戲仍有需求，與 GameGen 的 30–90 秒小遊戲同向。</div>
         <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/20 07:30 · <a href="https://store.steampowered.com/app/440" target="_blank">原文 ↗</a></div>
+          <div class="src">STEAM 官方 API · 10/21 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>新進榜</span></span>AION 2 衝至 Steam 最多人玩 #8——韓系 MMO 最快入榜紀錄，Farming Simulator 25 排名 +6</h3>
-        <div class="sum">Steam 最多人玩榜（steam_most_played，10/20）：<b>AION 2</b> 進入第 8 名——新世代韓系 MMO，進榜速度引人注目。同榜新進：Hogwarts Legacy（#97）、Satisfactory（#100）。排名跳幅：<b>Farming Simulator 25 +6 名</b>（71 → 65）——農業模擬系列持續強韌。COD: Modern Warfare 4 進入熱賣新品榜，Star Wars: Galactic Racer 同列。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>AION 2 快速衝榜說明 2026 年 MMO 市場仍有增量空間，特別是有完整商業化、亞洲服務支撐的新作。Farming Simulator 的韌性則印證「模擬 / 經營」類在週間有穩定需求。<b>COD MW4 進熱賣榜與 10/23 上線時間對齊，今日為發文與 Demo 的最佳窗口</b>。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Roblox「Up-and-Coming」：後座集會 21.2K、AI警察 自行車世界 25.6K、貓之戰 54.8K</h3>
+        <div class="sum">roblox.com/charts 的 Up-and-Coming 分類（瀏覽器 10/21 真抓）前幾名：<b>後座集會 21.2K</b>、<b>🚨[AI警察] 自行車世界 25.6K</b>、製作地毯！7.9K、<b>貓之戰 54.8K</b>、拯救堅硬螃蟹 16K、實際手機掉落測試 7.5K、修好我的手機吧！8.9K（中文名為頁面顯示之翻譯）。是否「新進榜」需比對昨日快照，本次<b>無法完全證實</b>；Twitch 7 天漲幅同理暫缺（TwitchTracker 僅提供平均值）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Roblox 新秀名稱多是「一句話概念」（掉手機測試、修手機、做地毯、吃光雜貨店）——和 Trend-to-Game 的「一個梗一個 loop」同構。可參考命名公式：<b>動詞 + 荒謬物件</b>。不照抄其內容（IP / UGC 授權風險）。</div>
         <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">STEAM 官方 API · 10/20 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+          <div class="src">ROBLOX CHARTS · 10/21 瀏覽器真抓 · <a href="https://www.roblox.com/charts" target="_blank">原文 ↗</a></div>
         </div>
       </article>
     </section>
 
-    <!-- 03 早期訊號 -->
+    <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>早期</span></span>HN：美國議員提案「遊戲所有權法案」（2pts）；itch.io：Booster Pack Heroes 在 html5·popular 榜活躍；GitHub：ComfyUI 持續 trending</h3>
-        <div class="sum">Hacker News 今日遊戲相關訊號：<b>「US Rep proposes bill to give video game buyers 'ownership,' not 'a license'」</b>（Ars Technica，2pts/1c）——立法者首次明確針對遊戲數位所有權提案，對平台政策影響深遠。「I spent 3 years reverse engineering and rebuilding a dead MMO. AI can now do it in a day.」（Reddit r/gamedev，HN 引申討論）——3 年工作被 AI 壓縮至 1 天，社群強烈討論。itch.io 今日：Booster Pack Heroes（html5·popular，集換卡牌機制）、RarityRNG 持續在 viral 榜。GitHub trending：ComfyUI（Comfy-Org）持續活躍，claude-code（anthropics）再度上榜。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>美國遊戲所有權法案是本月第二個監管層訊號（加上 PEGI loot box 分級），說明立法者對遊戲產業的關注度正在系統性上升。<b>「你買的遊戲，你擁有它」的法案如果通過，數位授權模式將面臨根本性挑戰</b>。ComfyUI 持續 trending 說明 AI 生成工具鏈仍在快速迭代。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">HACKER NEWS / ITCH.IO / GITHUB · 10/20 · <a href="https://arstechnica.com/gaming/2026/10/us-rep-proposes-bill-to-give-video-game-buyers-ownership-not-a-license/" target="_blank">Ars Technica ↗</a></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>Show HN 小體量款</span><span class="metric">瀏覽器即玩</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Megapop — 瀏覽器 Populous 式神遊戲（WebGPU、無引擎）</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">Tune-a-Fish — 每日音樂小遊戲</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">Game Student Protest</span><span class="vn">Show HN</span></li>
+            <li><span class="nm">Needle In A Haystack 系山寨（Steam ≥14 款）</span><span class="vn">⚠️ 山寨潮</span></li>
+          </ol>
+          <div class="bf">Hacker News（heat_latest.json，10/21）· HN 分數僅 2–3，屬弱訊號 · <a href="https://news.ycombinator.com/" target="_blank">原始 ↗</a></div>
         </div>
-      </article>
+      </div>
+      <div class="story ig reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        <b>共通 loop 歸納：</b>「瀏覽器即玩 + 每日一題（Tune-a-Fish）+ 單一概念放大（Needle 的 500 萬根乾草）」。HN 上另有一串「瀏覽器遊戲拿不到 AdSense 核准」的討論（弱訊號）——提醒 <b>web-first 小遊戲的變現與流量來源要先設計</b>。itch.io 分類頁本次未深掃，<b>目前無法完全證實</b>是否有更早期爆款。Megapop / Tune-a-Fish 僅憑標題，玩法細節未驗。
+      </div>
     </section>
 
-    <!-- 04 高討論文章 -->
+    <!-- 高討論文章 -->
     <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業大事</span></span>Andy Serkis 在《幽影秘境 33》的配音演出被 Reddit 評為遊戲史上最頂級——情感表演的 AI 難以複製性</h3>
-        <div class="sum">Reddit r/gaming 今日熱帖（top-of-day）：「Even putting recency bias aside, Andy Serkis gave us one of the great game voice performances of all time [Clair Obscur: Expedition 33]」——貼文獲得大量社群認同，評論聚焦「Andy Serkis 的動作捕捉與配音不可分割」「這種情感密度是 AI TTS 無法複製的」。《幽影秘境 33》在 Steam 持續保持高評價。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>同一天，日本演員工會立法防守 AI 配音——Andy Serkis 的案例是最好的反向論據：<b>真正偉大的聲音表演，其價值來自整體人格投入，不只是聲波</b>。遊戲業正在經歷「AI 快速降低製作成本」與「頂尖人類表演重新被珍視」的雙軌並進。GameGen 的用戶生成遊戲，恰好在這條邊界上——支持原創角色與表演，而不是批量複製。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">REDDIT R/GAMING · <a href="https://www.reddit.com/r/gaming/comments/1x9uznv/even_putting_recency_bias_aside_andy_serkis_gave/" target="_blank">原文 ↗</a></div>
-        </div>
+        <h3><span class="tag ai"><span>AI 動向</span></span>Sony Totoki：「創意屬於人類，不是 AI」；Zelnick：不採用 AI 的開發者會被取代</h3>
+        <div class="sum">10/20 Paley International Summit 同台。Totoki 稱 AI 不會取代遊戲開發者、Sony 保護創作者權利；Zelnick 稱 AI 資料集向後看、創意向前看，且 GTA 6 沒有 AI（GameSpot）。業界批評仍集中在工作保障、法律與品質。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>頭版 CJ 線 #1。兩位大廠 CEO 的共識是「人類創意為主、AI 為工具」，GameGen 的主張可借力，不必站隊「AI vs 人」。</div>
+        <div class="footrow"><div class="src">GAMESPOT · 10/20 · <a href="https://www.gamespot.com/articles/playstation-boss-creativity-is-for-humans-not-ai/" target="_blank">原文 ↗</a></div></div>
       </article>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業結構</span></span>Liquid Swords 破產、員工兩月未領薪——《Samson》主機版表現較佳但仍不夠，中型 AA 工作室困境</h3>
-        <div class="sum">GamesIndustry.biz / GameSpot（2026-10-20/21）：Samson 工作室 Liquid Swords 申請破產，員工兩個月未領薪資。GameSpot 報導指《Samson》在主機版表現優於 PC，但整體銷售仍不足以支撐工作室。這是 2026 年中型遊戲工作室（AA 級別）倒閉潮的又一案例。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>AA 中型工作室正在消失——太大的成本，太小的安全網。<b>獨立工作室（indie）和 AAA 頭部正在擠壓中間</b>。GameGen 工具降低進入成本，讓個人和小團隊能在不燒巨資的情況下測試創意。Liquid Swords 的案例是今天最好的「為什麼工具很重要」論據。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">GAMESINDUSTRY.BIZ / GAMESPOT · <a href="https://www.gamesindustry.biz/samson-studio-liquid-swords-files-for-bankruptcy-staff-reportedly-unpaid-for-two-months" target="_blank">GI.biz ↗</a> / <a href="https://www.gamespot.com/articles/open-world-crime-game-samson-did-better-on-console-but-not-enough-to-save-its-developer-from-shutting-down/" target="_blank">GameSpot ↗</a></div>
-        </div>
+        <h3><span class="tag ai"><span>AI 動向</span></span>VAIA 報告：94% 工作室在用 AI，52% 評嵌入深度 ≤3/10</h3>
+        <div class="sum">Vivrato 對 101 位北美 / 歐洲工作室主管的訪談（4–9 月）。歐洲 70% 把 AI 用在美術 / 素材 / 動畫，北美 53%。自評式、單一顧問公司樣本。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>頭版 CJ 線 #2。數字可當「大廠 AI 還在後台」的佐證，但引用時一律標來源與 n=101。</div>
+        <div class="footrow"><div class="src">VGC · 10/20 · <a href="https://www.videogameschronicle.com/news/report-finds-that-94-of-studios-use-ai-but-more-than-half-say-it-isnt-deeply-embedded-into-production/" target="_blank">原文 ↗</a></div></div>
       </article>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業觀察</span></span>Ken Kutaragi（PS 之父）：抵制停售光碟是「心態問題」——數位所有權論戰再起</h3>
-        <div class="sum">Eurogamer（2026-10-20/21）：PlayStation 創辦人久多良木健表示光碟成了「擁有遊戲的象徵（metaphor for 'owning' games）」，並說玩家對停止銷售光碟的不滿是「心態問題（mentality issue）」。發言引發廣泛討論，恰好與美國議員提出遊戲所有權法案同日形成對比。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Kutaragi 的發言 vs. 美國議員的遊戲所有權法案，是今日最有張力的話題對撞。<b>「平台說：擁有是你的錯覺；立法者說：不，擁有是你的權利」</b>。這個爭論短期不會有結論，但它影響的是整個數位遊戲市場的交易模式。今天是最好的借勢發文時機。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
-          </div>
-          <div class="src">EUROGAMER / ARS TECHNICA · <a href="https://www.eurogamer.net/ken-kutaragi-playstation-discs" target="_blank">Eurogamer ↗</a> / <a href="https://arstechnica.com/gaming/2026/10/us-rep-proposes-bill-to-give-video-game-buyers-ownership-not-a-license/" target="_blank">Ars Technica ↗</a></div>
-        </div>
+        <h3><span class="tag ai"><span>AI 動向</span></span>Needle In A Haystack 山寨潮：Steam ≥14 款、「山寨被山寨」、代碼抄襲爭議</h3>
+        <div class="sum">Kotaku 10/18：原作 8 月爆紅；Steam 上至少 14 款山寨，Little Field 的遊戲被 NoGlyph 指控與其代碼高度相同。GamesRadar 9/23 已報原作開發者為山寨潮「向 Steam 商店正式道歉」，並引用玩家說法「Robloxification of Steam」。Kotaku 提到另有 Roblox 創作者據報用單一影片在 24 小時內複製一款未上市獨立遊戲（轉述 GameSpark）。AI 涉入未獨立證實。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是 GameGen 必須避開的負面敘事：「AI 讓山寨氾濫」。差異化＝<b>梗的時效 + 原創 twist + 明示 AI + 遊戲頁可追溯 remix 來源</b>，要主動寫進內容規則。</div>
+        <div class="footrow"><div class="src">KOTAKU · 10/18 · <a href="https://kotaku.com/devs-behind-needle-in-a-haystack-clone-complain-their-clone-has-been-cloned-by-vibe-coder-2000747284" target="_blank">原文 ↗</a> · <a href="https://www.gamesradar.com/games/simulation/the-robloxification-of-steam-creator-of-viral-game-apologizes-after-slop-rip-offs-flood-valves-store/" target="_blank">GamesRadar 9/23 ↗</a></div></div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>競品背景</span></span>Astrocade 稱月活約 1,000 萬（CEO 自述、未獨立證實）</h3>
+        <div class="sum">Kotaku 10/07 轉述 CEO Amir Sadeghian 對 GamesBeat 的說法：4 個月內從約 500 萬升至約 1,000 萬月活，準備 iOS app；Kotaku 指不少熱門內容是 Minecraft / Roblox 類仿作。♨️ 距今 14 天，列背景、不進頭版。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>競品數字為自述；其「仿作多」的品質問題正好是 GameGen「trend 時效 + 原創 twist」的對照組。</div>
+        <div class="footrow"><div class="src">KOTAKU · 10/07 · <a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">原文 ↗</a></div></div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>UGC 平台</span></span>Mattel 新遊戲工作室：「玩家想參與品牌，而不只是消費」，並上 Roblox</h3>
+        <div class="sum">GamesIndustry.biz 訪談標題：Mattel 談其新的 Game Studios 部門、為何選擇上 Roblox、從 NetEase 學到什麼（本日 GI.biz 被擋，僅憑 radar 標題，細節<b>目前無法完全證實</b>）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>品牌 × UGC 平台的訊號，可作 B2B Campaign 線索（品牌想讓玩家參與），細節待查證後再用於對外內容。</div>
+        <div class="footrow"><div class="src">GAMESINDUSTRY.BIZ · radar 標題 · <a href="https://www.gamesindustry.biz/players-want-to-engage-with-brands-not-just-consume-them-mattel-on-its-new-game-studios-arm-why-its-releasing-on-roblox-and-what-it-learnt-from-netease" target="_blank">原文 ↗</a></div></div>
       </article>
     </section>
 
-    <!-- 05 迷因 -->
+    <!-- 迷因題材 / 迷因遊戲 -->
     <section id="meme">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>行業段子</span></span>「我花了 3 年重建死亡 MMO。AI 現在一天就做完。」——Reddit r/gamedev 今日最強情緒帖</h3>
-        <div class="sum">Reddit r/gamedev 今日 top 帖（heat_latest.json 確認）：「I spent 3 years reverse engineering and rebuilding a dead MMO. AI can now do it in a day.」——作者分享自身經歷，引發大量 gamedev 社群回應，話題圍繞「3 年的手工與 1 天的 AI 之間，差的到底是什麼？」「是不是 3 年都白費了？」「還是說那 3 年正是 AI 做不到的部分？」</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>這個帖子的情感核心是「人類時間的意義」，不只是技術比較。<b>AI 能複製「可運作的結果」，但複製不了「為什麼當初要做」這個問題</b>。迷因切角：「AI 一天重建了那個 MMO。但重建 MMO 的那個人花了 3 年弄懂它為什麼值得被留下來。那 3 年 AI 沒辦法替他學。」⚠️ 不點名任何真實 MMO 遊戲或個人。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不點名真實 MMO 或個人</span></span></div></div>
-          </div>
-          <div class="src">REDDIT R/GAMEDEV · <a href="https://www.reddit.com/r/gamedev/comments/1x9u9j0/i_spent_3_years_reverse_engineering_and/" target="_blank">原文 ↗</a></div>
-        </div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因</span></span>Know Your Meme「Popular right now」：Scientists Reveal the Hi（4 天前）、AI Rumpelstiltskin（13 天前）、Malfoid（19 天前）</h3>
+        <div class="sum">KYM 首頁頁面標示：<b>Scientists Reveal the Hi</b>（貓咪迷因格式，4 天前）、<b>AI Rumpelstiltskin “Tip Toein’ In My Jordans”</b>（AI 生成舞蹈片段，13 天前）、<b>Malfoid / Female Draco Malfoy</b>（性別反轉同人梗，19 天前）；Rage Guy、MLP jar meme 為長青舊梗，不計。以上日期為 KYM 頁面相對日期（非逐條 first-seen 查驗）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>新鮮度：Scientists Reveal the Hi 約 🔄（~4 天）；其餘 ♨️ 延燒。<b>不得寫成「今天的梗」</b>。貓咪格式最易遊戲化（反應速度 / 猜圖），但玩法未驗；Malfoid 涉及哈利波特 IP，僅可泛化不可挪用角色。</div>
+        <div class="footrow"><div class="src">KNOW YOUR MEME · 10/21 · <a href="https://knowyourmeme.com/memes/popular" target="_blank">原文 ↗</a></div></div>
       </article>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>解謎迷因</span></span>《馬力歐 64》銘牌被計算分析「破解」——L is Real 2401 不是答案，28 年謎題有新說法</h3>
-        <div class="sum">VGC（2026-10-20/21）：有人使用計算分析工具嘗試確定《超級瑪利歐 64》庭園內著名神秘銘牌的文字，結論：<b>不是「L is Real 2401」</b>。分析結果揭示了一個不同的解讀，但社群對「電腦真的比 28 年的人眼更準嗎」仍有爭論。這個 28 年謎題今日成為 Twitter / X 上的熱門話題。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>《馬力歐 64》銘牌的謎題之所以活了 28 年，不是因為答案很難找——而是因為<b>「不確定性本身就是樂趣</b>」。itch.io 的 RarityRNG 病毒榜同樣印證：玩家願意為「可能性」而不是「確定結果」投入時間。GameGen 工具能製作「不知道結局」的互動型態遊戲。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不使用 Nintendo 素材</span></span></div></div>
-          </div>
-          <div class="src">VGC · <a href="https://www.videogameschronicle.com/news/someone-has-used-computational-analysis-to-decide-what-mario-64s-infamous-plaque-says-and-its-not-l-is-real-2401/" target="_blank">原文 ↗</a></div>
-        </div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>梗→遊戲</span></span>案例：Needle In A Haystack Simulator 從社群爆紅到 Steam 山寨潮</h3>
+        <div class="sum">原作 8 月在社群爆紅，9/29 起出現 Steam 同名山寨，10/16 已有「山寨的山寨」（Kotaku）。這是「社群內容 → 遊戲 → 被複製」的完整週期，約 2 個月，Steam 端複製在 1–2 週內成群。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>梗的壽命 vs 複製速度＝Trend Response Time 的重要性。第一個做的不一定贏，<b>最快帶 twist 出貨並有分享 loop 的贏</b>。</div>
+        <div class="footrow"><div class="src">KOTAKU · 10/18 · <a href="https://kotaku.com/devs-behind-needle-in-a-haystack-clone-complain-their-clone-has-been-cloned-by-vibe-coder-2000747284" target="_blank">原文 ↗</a></div></div>
       </article>
     </section>
 
-    <!-- 06 機制靈感庫 -->
+    <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
       <div class="boards reveal">
         <div class="board b-rblx">
-          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <div class="bh"><span>unityroom 今週ピックアップ</span><span class="metric">日本獨立小品（僅標題）</span></div>
           <ol>
-            <li class="hot"><span class="nm">60 秒撤離 loop（COD MW4 上線窗口公式）</span><span class="vn">資源撤離</span></li>
-            <li class="up"><span class="nm">集換卡牌 draft（Booster Pack Heroes itch 公式）</span><span class="vn">開包機制</span></li>
-            <li class="hot"><span class="nm">RNG 稀有度揭示（RarityRNG viral 公式）</span><span class="vn">開箱稀有度</span></li>
-            <li><span class="nm">謎題殘餘解碼（馬力歐 64 銘牌謎題衍生）</span><span class="vn">神秘解謎</span></li>
-            <li><span class="nm">MMO 重建 loop（3 年 → 1 天衍生）</span><span class="vn">城市重建</span></li>
+            <li class="hot"><span class="nm">イロまぜインク店（色彩混合 + 商店，體驗版）</span><span class="vn">調色</span></li>
+            <li><span class="nm">みんなのドミノ オンライン（多人線上骨牌）</span><span class="vn">多人</span></li>
+            <li><span class="nm">エッグサモナー（Egg Summoner）</span><span class="vn">召喚</span></li>
+            <li><span class="nm">剣と魔法と剣と剣（生存 roguelike 動作）</span><span class="vn">roguelike</span></li>
+            <li><span class="nm">ニワテツ（庭園鐵道）</span><span class="vn">模擬</span></li>
           </ol>
-          <div class="bf">itch.io + 今日新聞衍生 · 10/20 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+          <div class="bf">unityroom · 10/21 · 頁面僅有標題，玩法細節未驗 · <a href="https://unityroom.com/" target="_blank">原始 ↗</a></div>
         </div>
       </div>
-
-      <article class="story rl reveal" style="margin-top:18px">
-        <h3><span class="tag rl"><span>洞察</span></span>60 秒撤離 loop 設計公式——COD MW4 10/23 發售窗口</h3>
-        <div class="sum">撤離 loop 的設計要素：<b>（1）時限壓力</b>——60 秒倒計時驅動每一個行動決策；<b>（2）資源優先序</b>——拿什麼、放棄什麼，是核心選擇；<b>（3）動態威脅</b>——封鎖路徑 / 追擊 / 補給耗損等隨機事件；<b>（4）分享格式</b>——「我帶著 X 在 YY 秒撤離成功」的成就指標天然高分享性。這個機制公式完全不依賴 COD IP，只借用「高壓撤離」的情感設定。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>撤離 loop 的最大優點：<b>零 IP 依賴、玩法規則 3 秒內可理解、分享格式標準化</b>。今日蹭 COD MW4 10/23 上線是最佳窗口，配文：「COD MW4 10/23 上線前，先在這個 60 秒版本熱身一下。」搭便車效率最高，10/23 後熱度快速降溫。</div>
-        <div class="footrow">
-          <div class="scores">
-            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
-            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用 COD 素材</span></span></div></div>
-          </div>
-          <div class="src">STEAM NEW TOP · <a href="https://store.steampowered.com/app/4435490" target="_blank">COD MW4 Steam ↗</a></div>
-        </div>
-      </article>
+      <div class="story ig reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        <b>可借用機制：</b>「多人共玩的簡單物理（骨牌）」「調色 / 配方組合」「大量堆疊找單一目標（Needle）」。<b>IP 二創地雷：</b>Needle 系山寨潮顯示直接複製機制 + 素材會引發抄襲爭議；借機制不借名稱 / 美術 / 代碼。
+      </div>
     </section>
 
-    <!-- 07 繁中 Threads 熱話 -->
+    <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
-        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：PEGI loot box 分級調整（台灣玩家對 gacha / 課金機制關注度高）、COD MW4 10/23 上線（台灣有活躍的 FPS 社群）、AI 一天重建 MMO 的話題（技術討論熱點）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話暫缺</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ Threads 需登入且為 JS 渲染，本次排程不登入使用者帳號，<b>目前無法完全證實</b>繁中圈當日熱話與題材變體（三國 / 武俠 / 恐怖 / 捕捉 RPG），骨架保留、不以舊資料補位。可由 Pizza 手動貼 1–3 則當日 Threads 熱話，我再換算成 Trend-to-Game 題材。</div>
       </div>
     </section>
 
-    <!-- 08 Trend-to-Game 題材 -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>COD MW4 10/23 上線（今日最強窗口）</td><td><span class="tmpl">60 秒撤離 loop</span></td><td>「MW4 上線前，先在這個版本熱身」</td><td class="rk-low">低 · 不用 COD 素材</td><td>★ 今日 Demo 首選，10/23 後熱度降溫，今明天窗口最強</td></tr>
-          <tr><td>TF2 +9.4% 無觸發自發回流</td><td><span class="tmpl">社群忠誠 / 留存設計</span></td><td>「23 年老遊戲，玩家自己回來了」</td><td class="rk-low">低 · 不用 TF2 素材</td><td>CJ + X 均適合，今日訊號最新鮮</td></tr>
-          <tr><td>PEGI loot box 16+ 分級調整（監管訊號）</td><td><span class="tmpl">透明獎勵設計</span></td><td>「透明機制是護城河，不是道德問題」</td><td class="rk-low">低</td><td>CJ 頭條素材，監管 + 設計雙切角，今日多媒體確認</td></tr>
-          <tr><td>日本演員工會 AI 配音規範（人才保護）</td><td><span class="tmpl">原創人聲 / 表演捕捉</span></td><td>「聲音即 IP，立法剛剛跟上」</td><td class="rk-low">低</td><td>CJ / X 均適合，與 Andy Serkis 故事搭配使用效果最強</td></tr>
-          <tr><td>AI 3 年 → 1 天 MMO 重建（情感話題）</td><td><span class="tmpl">快速原型 / 城市重建 loop</span></td><td>「AI 複製了結果，沒複製那 3 年的理解」</td><td class="rk-mid">中 · 不點名真實 MMO / 個人</td><td>X 迷因貼文，今日 gamedev 社群情緒高，今天窗口</td></tr>
+          <tr><td>Needle In A Haystack 連環山寨（Steam ≥14 款）</td><td><span class="tmpl">找碴 / 單目標挖掘（換梗版）</span></td><td>「我花了 X 秒」分享卡</td><td class="rk-mid">中 · 山寨敘事</td><td>★ 本日 Demo 首選：賣「每天換梗」，不挪原作名稱 / 美術</td></tr>
+          <tr><td>Sony/Take-Two：「創意屬於人類」</td><td><span class="tmpl">一句話做遊戲（人出點子、AI build）</span></td><td>「這是我的點子」署名卡</td><td class="rk-low">低</td><td>CJ 線素材，非玩法；站「把創作工具給玩家」</td></tr>
+          <tr><td>下代 Xbox $1,200–1,800（傳聞）</td><td><span class="tmpl">「玩家破產」吐槽 clicker</span></td><td>「主機越來越貴」共鳴梗</td><td class="rk-low">低</td><td>主打零安裝即玩，貼文標 rumor</td></tr>
+          <tr><td>Steam 玩家要 No-AI 篩選</td><td><span class="tmpl">明示「AI-made」標 + Remix</span></td><td>「我們大方說是 AI 做的」</td><td class="rk-low">低</td><td>定位素材；勿參戰 AI 該不該存在</td></tr>
+          <tr><td>Roblox 新秀「動詞 + 荒謬物件」命名風</td><td><span class="tmpl">掉手機測試 / 修手機 / 做地毯</span></td><td>荒謬 loop 好剪短片</td><td class="rk-mid">中 · UGC 素材</td><td>只借命名公式與 loop，不抄內容</td></tr>
+          <tr><td>KYM：Scientists Reveal the Hi（貓咪格式，~4 天）</td><td><span class="tmpl">單鍵反應 / 猜圖</span></td><td>貓咪反應截圖</td><td class="rk-mid">中 · 玩法未驗</td><td>先確認格式再做，避免誤用</td></tr>
+          <tr><td>Task Bar Hero / Bongo Cat 排名上升</td><td><span class="tmpl">桌面常駐微遊戲</span></td><td>桌面截圖</td><td class="rk-mid">中 · 玩法未驗</td><td>先查玩法再決定；目前僅為訊號</td></tr>
+          <tr><td>unityroom：多人骨牌 / 調色店</td><td><span class="tmpl">多人共玩簡單物理 / 配方</span></td><td>連鎖倒下瞬間</td><td class="rk-low">低</td><td>借機制，原創素材</td></tr>
         </tbody>
       </table>
       </div>
     </section>
 
-    <!-- 09 CJ LinkedIn 題材 -->
+    <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>PEGI 把 loot box 遊戲評級提升至 16+——透明機制現在是合規護城河</td><td>PEGI 宣布開始將含 loot box 的純數位遊戲評級提升至 16+（GamesIndustry.biz，2026-10-20/21）</td><td>"PEGI just started bumping loot box games to age 16+ ratings. Transparent reward mechanics aren't just ethical — they're now a competitive moat. The studios that design with visibility built in are ahead of the regulation, not behind it."</td><td><a href="https://www.gamesindustry.biz/pegi-begins-moving-existing-digital-only-games-with-loot-boxes-up-to-a-16-rating" target="_blank">↗</a></td></tr>
-          <tr><td>日本演員工會提案 AI 配音嚴格規範——人才端 IP 保護立法加速</td><td>日本演員工會發表嚴格 AI 配音規範草案，特別保護已故演員聲音（Eurogamer，2026-10-20/21）</td><td>"Japan's acting union just proposed strict new AI voice guidelines — especially to protect deceased actors' voices. 'Voice is IP' is becoming law. The studios using AI-generated voices cheaply today are building unauthorized-use liability tomorrow."</td><td><a href="https://www.eurogamer.net/japanese-voice-acting-union-generative-ai" target="_blank">↗</a></td></tr>
-          <tr><td>TF2 +9.4% 無觸發自發回流——有機社群的長尾資產價值</td><td>TF2 今日 +9.4%，全榜唯一上漲，無任何更新觸發（heat_latest.json Steam 官方 API，2026-10-20 07:30）</td><td>"TF2 just spiked +9.4% — the only Steam game rising today. No update. No marketing. Just players coming back to a 23-year-old game. The best community you build isn't the one that shows up for the launch. It's the one that shows up on a random Tuesday for no reason at all."</td><td><a href="https://store.steampowered.com/app/440" target="_blank">↗</a></td></tr>
+          <tr><td>大廠說「創意屬於人類」→ 哪些人類拿得到工具</td><td>Sony Totoki 10/20：“Creativity is for humans, not AI.”；Zelnick：不採用 AI 的開發者可能被取代、GTA 6 沒有 AI</td><td>"Creativity is for humans. So which humans get the tools?"</td><td><a href="https://www.gamespot.com/articles/playstation-boss-creativity-is-for-humans-not-ai/" target="_blank">↗</a></td></tr>
+          <tr><td>採用率高、深度淺：AI 仍在後台</td><td>VAIA（n=101）：94% 至少一階段用 AI、52% 嵌入深度 ≤3/10（10/20）</td><td>"94% use it, 52% barely wire it in. The player-facing side is wide open."</td><td><a href="https://www.videogameschronicle.com/news/report-finds-that-94-of-studios-use-ai-but-more-than-half-say-it-isnt-deeply-embedded-into-production/" target="_blank">↗</a></td></tr>
+          <tr><td>點子幾天被複製 → 護城河是出貨速度</td><td>Needle In A Haystack：Steam ≥14 款山寨、山寨被山寨（Kotaku 10/18，🔄）</td><td>"When an idea copies in days, the moat is how fast you ship the next twist."</td><td><a href="https://kotaku.com/devs-behind-needle-in-a-haystack-clone-complain-their-clone-has-been-cloned-by-vibe-coder-2000747284" target="_blank">↗</a></td></tr>
+          <tr><td>主機價格壓力 → 免費即時娛樂</td><td>Fortune 傳聞（GameSpot 10/20）：下代 Xbox 2028、$1,200–1,800（未證實）</td><td>"If consoles hit $1,200+, free-and-instant wins the margin of attention."（標 rumor）</td><td><a href="https://www.gamespot.com/articles/next-gen-xbox-could-be-1800-and-launch-in-2028-report/" target="_blank">↗</a></td></tr>
+          <tr><td>品牌想讓玩家參與（B2B Campaign 線索）</td><td>Mattel 新 Game Studios、上 Roblox（GI.biz 標題，細節待證）</td><td>待細節查證後再用</td><td><a href="https://www.gamesindustry.biz/players-want-to-engage-with-brands-not-just-consume-them-mattel-on-its-new-game-studios-arm-why-its-releasing-on-roblox-and-what-it-learnt-from-netease" target="_blank">↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（PEGI loot box 16+、日本演員工會 AI 規範）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。對外用字已過濾所有開箱/賭博語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
+        📄 頭版 🎯 CJ Top 2（Sony「創意屬於人類」、VAIA 94%/52%）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 web_fetch 驗原文日期 2026-10-20 + 主張比對（見文末 Evidence Log）。用 VAIA 數字時務必標「Vivrato、n=101、受訪者自評」。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
 
-    <!-- 10 建議動作 -->
+    <!-- Actions -->
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
-          <li>TF2 今日 +9.4% 無觸發：「23 年老遊戲，今天玩家自己回來了，沒有任何更新。那才叫社群。」</li>
-          <li>AI 3 年 → 1 天重建 MMO：「AI 一天重建了那個 MMO。那 3 年弄懂它為什麼值得留下來，AI 沒辦法替你學。」（今日 gamedev 情緒最高，今天窗口）</li>
-          <li>COD MW4 10/23 上線：「低配即可玩、MrBeast 活動已上線、10/23 開打。先在 60 秒版本熱身一下。👇」（今明天窗口）</li>
-          <li>Ken Kutaragi vs 美國議員：「PS 之父說不買光碟是心態問題。同一天，美國議員說：買遊戲就是擁有遊戲。有趣的一天。」</li>
-        </ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
-          <li>★ 60 秒撤離 loop——蹭 COD MW4 10/23 上線窗口，今天是最佳時機。60 秒倒計時 + 資源收集 + 撤離點 + 動態威脅，分享格式：「在 XX 秒撤離成功」。不用 COD IP。</li>
-          <li>Booster Pack Heroes 類集換 draft——蹭 itch.io html5·popular 熱度，開包機制 + 稀有度揭示 + 組合分享。</li>
-          <li>謎題碑文解碼小遊戲——蹭馬力歐 64 銘牌話題，「找出密碼」機制 + 今日限時話題窗口。不使用 Nintendo 素材。</li>
-        </ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
-          <li>COD MW4 10/23 正式上線後的 Steam 排名與在線數——低配策略是否真的帶來更大玩家基數？</li>
-          <li>TF2 自發回流是否持續——本週能否維持在 90K+ 在線？若是，社群忠誠度論據更強。</li>
-          <li>PEGI loot box 16+ 執行進度——哪些遊戲首批被升級分級？透明機制設計者的市場反應。</li>
-          <li>AION 2 在 Steam 最多人玩榜的走勢——韓系 MMO 的新作入榜能否持續？</li>
-        </ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
-          <li>COD MW4 話題：不引用任何 Activision / COD / Infinity Ward 品牌素材，只借「撤離」情感設定。</li>
-          <li>AI 3 年 → 1 天話題：不點名任何真實 MMO 名稱或 Reddit 原貼作者，純概念借用。</li>
-          <li>Mario 64 銘牌話題：不使用 Nintendo / Super Mario 任何品牌素材，只借「解謎」機制。</li>
-          <li>PEGI / 日本演員工會話題：對外不寫成「確定法規」，應寫「PEGI 宣布開始調整 / 工會提出草案」。</li>
-          <li>所有來源均為摘要層——建議發文前確認原文細節。</li>
-        </ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Needle 山寨潮：「山寨被山寨，護城河是下個 twist 的速度」＋ Demo gif（講速度，不鼓勵山寨）</li><li>下代 Xbox 傳聞：「主機 $1,200+？瀏覽器街機還是免費」（標 rumor）</li><li>Steam No-AI 篩選：「不躲，直接標 AI-made，能玩能 remix」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「找針模擬器 · 今日梗版」（輸入梗 → 60 秒找碴 → 分享卡 + 換梗 Remix）—— 本日首選</li><li>「玩家破產」吐槽 clicker（蹭主機漲價傳聞）</li><li>多人骨牌 / 調色配方（借 unityroom 機制）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Needle 山寨潮：Steam 是否出手處理、原作 Bitdot 是否回應</li><li>Task Bar Hero / Bongo Cat：確認玩法與排名是否續升</li><li>Helldivers 2 / MWII 在線暴增原因（目前無法完全證實）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>別變「第 15 個山寨」：不挪 Bitdot 名稱 / 美術 / 代碼</li><li>VAIA 數字必標 Vivrato、n=101、自評；Xbox 價格必標 rumor</li><li>Malfoid 等同人梗涉 IP，僅可泛化</li><li>對外文案避開賭場語言；Twitch 的 Slots 類別數字僅作市場觀察，不入對外文案</li></ul></div>
       </div>
     </section>
 
+    <!-- 彈藥 Evidence Log -->
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>PEGI loot box 遊戲評級提升至 16+</td><td><a href="https://www.gamesindustry.biz/pegi-begins-moving-existing-digital-only-games-with-loot-boxes-up-to-a-16-rating" target="_blank">GamesIndustry.biz</a>　驗：標題確認「PEGI begins moving existing digital-only games with loot boxes up to a 16 rating」　<span class="pp">partial</span>（標題層）　pub 2026-10-20/21</td></tr>
-        <tr><td>日本演員工會 AI 配音嚴格規範草案</td><td><a href="https://www.eurogamer.net/japanese-voice-acting-union-generative-ai" target="_blank">Eurogamer</a>　驗：標題確認「Japanese acting union fights back against AI-generated voice use, proposing strict new guidelines, especially regarding the use of a deceased actor's voice」　<span class="pp">partial</span>（摘要層）　pub 2026-10-20/21</td></tr>
-        <tr><td>COD: Modern Warfare 4 進 Steam 熱賣榜 / 低配需求 / 10/23 上線</td><td><a href="https://www.gamespot.com/articles/you-dont-need-an-expensive-console-or-high-end-pc-to-play-call-of-duty-modern-warfare-4/" target="_blank">GameSpot</a> / <a href="https://store.steampowered.com/app/4435490" target="_blank">Steam 熱賣榜</a>（heat_latest.json steam_new_top 確認）　驗：steam_new_top 列出 COD MW4，GameSpot 標題確認低配需求　<span class="pp">partial</span>（摘要層）　pub 2026-10-20</td></tr>
-        <tr><td>TF2 +9.4% 無觸發</td><td>heat_latest.json steam_velocity（2026-10-20T07:30:28+08:00 官方 API）：today=90,850 yesterday=83,063 pct=+9.4　<span class="ok">✓</span>（今日真數字）　pub 今日</td></tr>
-        <tr><td>Epic 迪士尼專案 AI 優先</td><td><a href="https://www.theverge.com/games/1010097/epic-games-disney-project-ai-coding-art" target="_blank">The Verge</a> / <a href="https://www.gamedeveloper.com/programming/no-more-hand-written-code-epic-s-disney-project-reportedly-shifts-to-ai-first-development" target="_blank">Game Developer</a>　驗：兩媒體確認，Bloomberg 為原始來源　<span class="pp">partial</span>（摘要層）　pub 2026-10-13/14</td></tr>
-        <tr><td>Liquid Swords 破產、員工兩月未領薪</td><td><a href="https://www.gamesindustry.biz/samson-studio-liquid-swords-files-for-bankruptcy-staff-reportedly-unpaid-for-two-months" target="_blank">GamesIndustry.biz</a> / <a href="https://www.gamespot.com/articles/open-world-crime-game-samson-did-better-on-console-but-not-enough-to-save-its-developer-from-shutting-down/" target="_blank">GameSpot</a>　驗：兩媒體確認　<span class="pp">partial</span>（摘要層）　pub 2026-10-20/21</td></tr>
-        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-10-20T07:30 官方 API　CS:GO 515K -3.9% / PUBG 102K -4.0% / TF2 90K +9.4% / R6S 65K -11.8% / Rust 63K -1.3% / Warframe 54K -9.8% / War Thunder 26K -24.6%　<span class="ok">✓</span>（今日真數字）；steam_movers：Farming Simulator 25 +6；新進榜：Hogwarts Legacy #97、Satisfactory #100；most_played 新進：AION 2 #8、WARDOGS #7</td></tr>
+        <tr><td>Sony Totoki「Creativity is for humans, not AI」</td><td><a href="https://www.gamespot.com/articles/playstation-boss-creativity-is-for-humans-not-ai/" target="_blank">GameSpot</a>（web_fetch）　原文日期 2026-10-20　驗：Totoki 引言、Paley International Summit、Zelnick 觀點、GTA 6 無 AI、GameSpot 引 IGN<span class="ok">✓</span></td></tr>
+        <tr><td>VAIA 報告 94% / 52%</td><td><a href="https://www.videogameschronicle.com/news/report-finds-that-94-of-studios-use-ai-but-more-than-half-say-it-isnt-deeply-embedded-into-production/" target="_blank">VGC</a>（web_fetch）　原文日期 2026-10-20　驗：Vivrato、Adam Boyes、101 場訪談、97%/94%/52%、歐 70% vs 北美 53%（北美數字為推定）<span class="ok">✓</span></td></tr>
+        <tr><td>Needle In A Haystack 山寨潮</td><td><a href="https://kotaku.com/devs-behind-needle-in-a-haystack-clone-complain-their-clone-has-been-cloned-by-vibe-coder-2000747284" target="_blank">Kotaku</a>（web_fetch）　原文日期 2026-10-18（🔄 3 天）　驗：Bitdot 原作 8 月爆紅、NoGlyph 9/29、Little Field 10/16、≥14 款、13 個同名 class；AI 涉入未證實。另 <a href="https://www.gamesradar.com/games/simulation/the-robloxification-of-steam-creator-of-viral-game-apologizes-after-slop-rip-offs-flood-valves-store/" target="_blank">GamesRadar</a> 2026-09-23（web_fetch）：原作約 500 萬根乾草、道歉推文<span class="ok">✓</span></td></tr>
+        <tr><td>下代 Xbox $1,200–1,800（傳聞）</td><td><a href="https://www.gamespot.com/articles/next-gen-xbox-could-be-1800-and-launch-in-2028-report/" target="_blank">GameSpot</a>（web_fetch，轉述 Fortune）　原文日期 2026-10-20　驗：Project Helix、2028、$1,200–1,800、補貼可更低、2027 底掌機；全為傳聞<span class="ok">✓</span></td></tr>
+        <tr><td>Steam No-AI 篩選（IGN）</td><td><a href="https://www.ign.com/articles/steam-fans-are-begging-for-a-no-ai-filter-as-steam-next-fest-is-filled-with-slop" target="_blank">IGN</a>　2026-10-19（Tavily 日期）　<span class="pp">summary</span>（摘要層：IGN 被擋，僅標題）</td></tr>
+        <tr><td>Astrocade 1,000 萬月活（競品背景）</td><td><a href="https://kotaku.com/ai-generated-games-platform-already-has-10-million-monthly-users-2000741894" target="_blank">Kotaku</a>（web_fetch）　原文日期 2026-10-07（&gt;14 天 ♨️）　驗：CEO 對 GamesBeat 自述 ~1,000 萬月活、未獨立證實<span class="pp">partial</span>　列背景</td></tr>
+        <tr><td>Mattel × Roblox</td><td><a href="https://www.gamesindustry.biz/players-want-to-engage-with-brands-not-just-consume-them-mattel-on-its-new-game-studios-arm-why-its-releasing-on-roblox-and-what-it-learnt-from-netease" target="_blank">GamesIndustry.biz</a>　radar 標題；站被擋　<span class="pp">summary</span></td></tr>
+        <tr><td>Steam / Roblox / Twitch 數字層</td><td>heat_latest.json 2026-10-21T07:30+08:00（Steam 官方 API）；Roblox charts、TwitchTracker 為瀏覽器 10/21 真抓、unityroom / KYM 為 web_fetch 10/21　數字層免敘事閘；KYM 日期為相對日期，first-seen 未逐條驗<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 10/20 07:30 真數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 10/20 07:30 + 多源新聞 · 2026/10/21 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 web_fetch 驗、小編 / Demo 以 Kotaku / GameSpot 已驗為主，IGN 條目為摘要層 · Steam＝官方 API 10-21 即時真數字（radar 07:30）· Roblox / Twitch＝內建瀏覽器 10-21 真抓 · Threads 因需登入標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）· 評分只引可量測數字，不做黑箱直覺分</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/10/21 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
