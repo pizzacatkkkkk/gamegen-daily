@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/10/24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">10 · 24 · SAT</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 10 / 24 · 彈藥工廠模式 · Steam 官方真數字（radar 07:30 已跑）· 來源 20 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>EA 大重組週：BioWare 關閉、Arkane Lyon 11/13 截止，同週 Factorio 用最終更新為「完成一款遊戲」做出示範。</b>Game Developer（pub 2026-10-21）確認：EA 關閉 BioWare，終結這家 30 年老廠（2007 年被 EA 收購），新《Mass Effect》計畫取消；Jason Schreier 驗證外洩的 Mass Effect Universe 預告為真，是 BioWare 直到關閉前仍在開發的版本。同一週，EA 的裁員波及 Respawn、Maxis、Full Circle、EA Motive 等多個工作室（Eurogamer 報導）。</p>
+        <p>另一條線：<b>Arkane Lyon（Dishonored 製作商）被報導只剩到 11 月 13 日找到買家，否則面臨關閉，217 個工作崗位危在旦夕</b>（Le Monde，Reddit top-of-day 10/24）；但 Jason Schreier 同日補充有「多條積極洽談中的出路」。反面訊號：Factorio 同週發布 <span class="hl">2.1 最終大更新</span>——Wube Software 宣告這是計畫中的最後一個主要版本（factorio.com，Reddit top-of-day）。</p>
+        <div class="pull">▸ 今天就能蹭：「你想玩的被取消遊戲」一句話生成（泛化，語氣尊重）；或 Factorio 自動化連鎖小遊戲——「用最少步驟，讓工廠自己跑起來」。去賭場化均 OK。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>大工作室縮水，工具在民主化——BioWare 關閉同週，GameMaker 宣布引擎免費</div>
+            <div class="ln"><b>新聞事實：</b>Game Developer（pub 2026-10-21）：EA 關閉 BioWare（30 年，2007 年收購），新 Mass Effect 取消，EA 同批裁員涉及 Respawn、Maxis、Full Circle、EA Motive（Eurogamer）；同一週 GamesIndustry.biz 報導：GameMaker 將於 2027 年 1 月讓 GMRT 次世代執行環境<b>免費供商業使用</b>；Vivrato 調查（pub 2026-10-21）：歐美 97% 工作室主管以某種形式使用 AI，但公開討論仍稀少。</div>
+            <div class="ln"><b>GameGen 角度：</b>大廠收縮，但進入成本持續下降。30 年工作室一天內關門，同週卻有引擎免費化消息——這不是矛盾，而是平台轉移。<b>能快速讓想法變成可玩的，比等資本護航更穩。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A 30-year studio closed this week. The same week, a game engine announced it's going free. The expensive part of game creation isn't disappearing — it's shifting. From studio headcount to: who can move fastest from idea to playable."<br><span style="color:var(--ink-dim)">中譯：一個 30 年工作室本週關閉了。同一週，一個遊戲引擎宣布免費化。昂貴的部分沒有消失——只是換了位置。從工作室人頭數，變成：誰能最快從想法到可玩的東西。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a>（BioWare）· <a href="https://www.gamesindustry.biz/gamemaker-to-make-its-next-generation-runtime-gmrt-free-for-commercial-use-in-january-2027" target="_blank">GamesIndustry ↗</a>（GameMaker）· pub 2026-10-21　標題層驗證</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Factorio 2.1：有人把遊戲做「完」了——2,500 萬美元年利潤、零廣告、零VC</div>
+            <div class="ln"><b>新聞事實：</b>Factorio 官方部落格（fff-449，pub 2026-10-24，HN 確認）：2.1 為「最終主要更新」，補入原定 2.0 但未及完成的功能；Wube Software 長期以來以無外部融資、無廣告、獨立運營聞名，Reddit top-of-day 10/24 置頂討論（r/Games）。Rock Paper Shotgun 同日報導。</div>
+            <div class="ln"><b>GameGen 角度：</b>做「完」一款遊戲在 2026 年是稀缺的事。大廠持續縮減、AA 空洞化，但 Wube 靠一款遊戲做到有始有終。<b>「完成感」本身就是今天的差異化賣點。</b>GameGen 的每個生成作品都有終點——挑戰結束時有分享的理由，而不是無限滾動。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Factorio just shipped its final major update. Not 'sunset' — done. In 2026, finishing a game is rarer than starting one. That's the product gap worth building toward."<br><span style="color:var(--ink-dim)">中譯：Factorio 剛發布了最終主要更新。不是「夕陽」——而是完成。2026 年，把遊戲做完比開始更稀缺。那才是值得對準的產品空缺。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://factorio.com/blog/post/fff-449" target="_blank">Factorio 官方 ↗</a>（fff-449）· <a href="https://www.rockpapershotgun.com/factorios-final-major-update-has-rolled-off-the-assembly-line-adding-the-things-we-wanted-to-do-for-20-but-didnt-have-time-for" target="_blank">RPS ↗</a>　pub 2026-10-24　標題層驗證</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>BioWare 關閉：「你最想玩的被取消遊戲」一句話生成挑戰<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>BioWare 關閉（Game Developer pub 2026-10-21）；Mass Effect Universe 外洩預告被 Jason Schreier 確認為真；遊戲開發者社群大量哀悼（eurogamer, pcgamer, rockpapershotgun 多篇，r/gaming top-of-day）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Every cancelled game leaves a world nobody gets to explore. Describe your dream cancelled game in one sentence. We make it playable in 60 seconds. 👇"　<span style="color:var(--ink-dim)">中譯：每款被取消的遊戲都留下一個沒人能探索的世界。用一句話描述你夢想中被取消的遊戲。我們 60 秒把它變成能玩的。👇</span></div>
+            <div class="ln"><b>注意：</b>不得使用 Mass Effect / BioWare / Dragon Age 角色、名稱、美術；語氣要尊重（有人失業），不嘲諷；可選擇不發。</div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a>　pub 2026-10-21　標題層；<a href="https://www.eurogamer.net/mass-effect-universe-trailer-leaks-online-showcases-what-bioware-was-working-on-before-being-shut-down" target="_blank">Eurogamer ↗</a>（預告外洩確認）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Switch 2 越獄 24 小時：玩家改造力不輸官方<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/Games top-of-day（10/24）：Switch 2 首個越獄公開後 24 小時內，homebrew 存取已開放；第一個越獄工具也在 r/Games 同期置頂（兩篇均 top-of-day 真計）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Switch 2 got jailbroken. Less than 24 hours later, players already had homebrew running. Official firmware: 1 update every few months. Players: 0–homebrew in 24h. Who's moving faster?"　<span style="color:var(--ink-dim)">中譯：Switch 2 被越獄了。不到 24 小時後，玩家已經跑起 homebrew。官方韌體：幾個月一次更新。玩家：24 小時內 0→homebrew。誰動得更快？</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1xd1ahz/first_jailbreak_opens_up_the_nintendo_switch_2_to/" target="_blank">Reddit r/Games ↗</a>　top-of-day 10/24</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Nvidia「製造了」顯卡供應危機？——報導稱強逼大廠囤積 AI 硬體<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/Games top-of-day（10/24）：多篇報導指 Nvidia 透過強制大型科技企業囤積未使用的 AI 硬體，人為製造了玩家端顯卡短缺；Hacker News 同期出現（respawnfirst.com 報導，HN 3 分）。主張來自多篇報告，具體來源仍屬 partial（標題層）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Reports say the GPU shortage wasn't bad luck. Nvidia allegedly forced Big Tech to stockpile AI hardware — and gamers paid the price at checkout. Your GPU upgrade bill is someone's data center margin."　<span style="color:var(--ink-dim)">中譯：報導說顯卡短缺不是壞運氣。Nvidia 據稱強迫大公司囤積 AI 硬體——玩家在結帳時付出了代價。你的顯卡升級帳單是別人資料中心的利潤。</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1xdjbd1/multiple_reports_say_nvidia_manufactured_the/" target="_blank">Reddit r/Games ↗</a>　top-of-day 10/24　<span style="color:#b78a00;font-weight:800">partial</span>（標題層，原報告來源未驗）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「工廠倒數」：最少步驟讓自動化生產線自己跑起來<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>受 Factorio 2.1 最終大更新啟發（泛化，不用 Factorio 名稱美術）：每關給玩家有限的「連接器」，在 30 秒倒數內串起 A→B→C 生產鏈，讓輸出物數量達標。自動化越多、加速越多，分享卡顯示「你建了幾層連鎖」。</div>
+            <div class="ln"><b>為何是今天首選：</b>Factorio 2.1 話題在 Reddit / HN 雙頂；機制簡單（拖拉連接）、5 秒看懂；完成時有「工廠自己運轉」的成就感，分享驅動強；全程虛構 UI，不挪用 Factorio 原版美術。</div>
+            <div class="meta">靈感 <a href="https://factorio.com/blog/post/fff-449" target="_blank">Factorio fff-449 ↗</a>　模板：連接鏈 / 自動化計時</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/24 即時</span></div>
+          <ol>
+            <li class="hot up"><span class="nm">Counter-Strike（appid 730）</span><span class="vn">665K ▲30.6%</span></li>
+            <li class="hot up"><span class="nm">Call of Duty: MWII</span><span class="vn">161K ▲45.6%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">122K ▲14.7%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">83K ▲19.0%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">80K ▼3.7%</span></li>
+            <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">67K ▲5.4%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 10/24 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX 熱門榜</span><span class="metric">本次未取得</span></div>
+          <div class="nodata">本次未取得 Roblox Charts 瀏覽器真抓資料，<b>目前無法完全證實</b>排行數字，不以前一期資料充數。</div>
+          <div class="bf">Roblox Charts · 本次缺資料</div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">本次未取得</span></div>
+          <div class="nodata">本次未取得 Twitch 觀看排行，<b>目前無法完全證實</b>，不以前一期資料充數。</div>
+          <div class="bf">Twitch · 本次缺資料</div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 07:30 已跑成功（<code>fetched_at</code> 2026-10-24T07:30:37+08:00），Steam 為官方 API 即時真數字（ok_count 19/19）。Roblox / Twitch 本次熱榜未取得，不補假數字。Steam 最值得注意：CoD MWII +45.6%、CS +30.6% 同步上升，可能與 CoD: Modern Warfare 4 本週上線帶動系列熱度有關（steam_new_top 有 MW4，標題層）。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Cyberpunk 2077 排名跳升 20 位（rank 30→10）、War Thunder +39.8%——今日最大排名跳動</h3>
+        <div class="sum">steam_movers 資料（heat_latest.json 07:30 真抓）：<b>Cyberpunk 2077</b> 從排名 30 跳至排名 10（+20 位），同時出現在 steam_new_top 熱賣欄（連同 Phantom Liberty DLC），顯示可能有新內容更新或促銷；PC Gamer 今日同步出現 Cyberpunk 2077「雙持武器」與「King 外觀（Clampdown）」攻略文，暗示有新可玩內容，<b>但更新細節目前未從官方來源驗證</b>。<b>War Thunder</b> 同時在線 37,702（昨 26,972，+39.8%），surge 原因未查明，不編造。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Cyberpunk 2077 的跳升是今日最強排名訊號。若為內容更新，代表「老作品＋新更新」的爆發模式再次成立——完成一個遊戲不是終點，是下一波爆發的入場券。War Thunder 暴衝原因待追蹤，先不作題材使用。</div>
+        <div class="footrow">
+          <div class="src">steam_movers · heat_latest.json 2026-10-24T07:30 · <a href="https://store.steampowered.com/app/1091500" target="_blank">Cyberpunk 2077 ↗</a>　Cyberpunk 更新細節 <span style="color:#b78a00;font-weight:800">partial</span></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>CoD: Modern Warfare 4 登 Steam 熱賣 → CoD MWII +45.6%</h3>
+        <div class="sum">steam_new_top 熱賣欄顯示：<b>Call of Duty: Modern Warfare 4</b>（appid 4435490）本週新品熱賣；同時 GamesIndustry.biz 報導 CoD: MW4 首個 DLC 現已上線並向真實士兵致敬（標題層）；steam_velocity：MWII 在線 160,993（昨 110,548，+45.6%），Respawn / Maxis 等工作室也在同期 EA 裁員中，顯示 CoD 生態本週是玩家注意力的核心之一。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>CoD MW4 屬大作 IP，不直接挪用。但「新作上線帶動系列舊作回流」是可觀察的機制——新的遊戲未必讓舊玩家離開，有時反而拉人回來。</div>
+        <div class="footrow">
+          <div class="src"><a href="https://store.steampowered.com/app/4435490" target="_blank">CoD MW4 Steam ↗</a> · <a href="https://www.gamesindustry.biz/" target="_blank">GamesIndustry ↗</a>（標題層）</div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Roblox 黑馬新進榜與 Twitch 漲幅今日無法取得基準對比，<b>目前無法完全證實</b>漲幅數字，略過不列。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>今日 Steam 新品：ABAX、Puppetry、BloomTale、SHAME 等新進熱賣</h3>
+        <div class="sum">steam_new_top 新品欄（10/24 真抓）：<b>ABAX</b>（appid 5364900）、<b>Puppetry</b>（4775990）、<b>SHAME</b>（5284710）、<b>Keep on Digging!</b>（5386060）、<b>Echoes of Pinebridge</b>（4100790）、<b>Real Life Simulator</b>（4626420）、<b>BloomTale</b>（3168520）、<b>7 Millimeters</b>（4800650）為今日新品前位。這些均為小體量或中體量新品，有無成長率資料本次未取得，僅標題層。itch.io 方面：html5·popular 有 Tamaweb（虛擬寵物）、Booster Pack Heroes（卡牌英雄）、Von Neumann（抽象策略）、The Cursed Box 等；meme 標籤有 RarityRNG（稀有度 RNG）、Three Nights Lobotomized、Arthur's Nightmare 等。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日無明確爆款早期訊號（無成長率數字可比較）。機制靈感方向：Puppetry（操偶）、Real Life Simulator（模擬）、Von Neumann（策略）值得關注，但需等更多玩家反饋。RarityRNG（稀有度抽取）是常青 loop 機制，今日 itch.io meme 標籤確認仍活躍。</div>
+        <div class="footrow"><div class="src">steam_new_top · itch.io（heat_latest.json 07:30 真抓）</div></div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>高討論</span></span>BioWare 關閉——業界最廣泛的哀悼討論，本週最高聲量話題</h3>
+        <div class="sum">heat_latest.json 來源橫跨 gamesindustry、gamedeveloper、rockpapershotgun、pcgamer、eurogamer、gamespot、vgc、80lv，共約 20 篇報導涉及 BioWare 關閉。主要事實（標題層驗證）：<b>EA 關閉 BioWare</b>（pub 2026-10-21）；Mass Effect Universe 外洩預告由 Jason Schreier 確認為真（Reddit top-of-day）；前 BioWare EP Mark Darrah 稱 EA 有可能出售 Mass Effect / Dragon Age IP（GameSpot 標題層）；加拿大政黨領袖呼籲政府支持員工自購工作室（PCGamer 標題層）；Mass Effect TV 劇集「仍在製作中」（VGC 標題層）；EA 更大規模裁員波及 Respawn、Maxis、Full Circle、EA Motive（Eurogamer 標題層）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是本週情感聲量最高的話題。發文方向：可選擇尊重角度（「被取消的遊戲」生成挑戰），不可嘲諷、不挪用 IP。Arkane Lyon 11/13 截止的後續也值得持續追蹤，是本週第二條情緒線。</div>
+        <div class="footrow"><div class="src"><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a> · <a href="https://www.eurogamer.net/ea-cuts-massive-ripple-effect-motive-full-circle-respawn" target="_blank">Eurogamer ↗</a>（標題層）</div></div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>高討論</span></span>Arkane Lyon（Dishonored 製作商）11/13 截止找買家；Schreier：有「多條出路」</h3>
+        <div class="sum">Reddit top-of-day 10/24（r/gaming）：Arkane Lyon 被報導只剩至 11 月 13 日尋得買家，否則面臨關閉，217 個職位岌岌可危（Le Monde 報導，多家媒體轉載）；Jason Schreier（r/Games top-of-day）：「有多條正在積極探索的出路，若工作室真的被關閉，我會感到驚訝。」Marvel's Blade 仍在 Arkane Lyon 製作，接近尾聲。RPS 同日報導有多種「收購形式」在考慮中。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今天是開放結局，適合追蹤不適合定論。若 Schreier 預測正確，Arkane Lyon 被收購後可能帶來新 Dishonored，是值得關注的後續訊號。</div>
+        <div class="footrow"><div class="src"><a href="https://www.reddit.com/r/gaming/comments/1xdeagf/arkane_lyon_has_until_november_13_to_find_a_buyer/" target="_blank">Reddit r/gaming ↗</a> · <a href="https://www.reddit.com/r/Games/comments/1xdi06e/jason_schreier_despite_all_the_gloomy_headlines/" target="_blank">Schreier r/Games ↗</a>　top-of-day 10/24</div></div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>高討論</span></span>AI 爭議：Epic AI 遊戲競賽改規、97% 工作室用 AI、Sakurai 預言「無原創浪潮」</h3>
+        <div class="sum">Tavily ai_in_games 摘要（2026-10-24 07:30 真抓）：<b>Epic 宣布強制使用 AI 的 game jam，隨後撤回強制規定</b>（PCGamer，pub 2026-10-22）；<b>Xbox 商業分析師公開表示業界假裝沒在用 AI</b>（IGN，pub 2026-10-20，標題層）；<b>Vivrato 調查：歐美 97% 工作室主管某種形式使用 AI</b>（GamesIndustry，pub 2026-10-21）；<b>Sakurai：生成 AI 會帶來大量不原創遊戲，但人類創意無法複製</b>（Eurogamer，摘要層）；<b>AI 法規</b>：EU AI Act 對深度偽造有嚴格定義（GamesIndustry，pub 2026-10-19，標題層）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「業界都在用，但討論空間很少」這個張力本週再度被點名。GameGen 的位置：透明標示 + 聚焦「好不好玩、好不好傳」，不是宣稱「比手作好」。</div>
+        <div class="footrow"><div class="src"><a href="https://www.pcgamer.com/software/ai/epic-announces-game-jam-where-you-have-to-use-ai" target="_blank">PCGamer ↗</a> · <a href="https://www.gamesindustry.biz/vivrato-97-of-studio-leaders-use-ai-in-some-form-during-development-in-eu-and-north-america" target="_blank">GamesIndustry ↗</a>（標題層）</div></div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>高討論</span></span>Capcom ID 帳號外洩 1170 萬筆；Phantom Blade Zero Steam 上市前 50 萬份</h3>
+        <div class="sum"><b>Capcom 資安：</b>GamesIndustry.biz（標題層）：超過 1170 萬 Capcom ID 帳號遭外洩（data breach）。<b>Phantom Blade Zero：</b>Eurogamer（標題層）：尚未正式發售但 Steam 單平台已售出 50 萬份，被認為「可能是年度黑馬之一」。<b>Miyamoto 國家文化勳章：</b>GamesIndustry（標題層）：任天堂宮本茂獲頒日本文化勳章，為遊戲業界第一人。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Capcom 外洩值得在 X 上提醒玩家定期更換密碼（非遊戲化，但輕量資安知識貼可獲得信任感）。Phantom Blade Zero 是武俠動作類的早期爆款訊號，機制可抽象。宮本茂獲獎適合做致敬角度。</div>
+        <div class="footrow"><div class="src"><a href="https://www.gamesindustry.biz/capcom-affected-by-data-breach-over-117m-capcom-id-accounts-compromised" target="_blank">GamesIndustry（Capcom）↗</a> · <a href="https://www.eurogamer.net/phantom-blade-zero-hit-not-out" target="_blank">Eurogamer（Phantom Blade）↗</a>　標題層</div></div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因訊號</span></span>「Half-Life 3 再度確認」迷因再起；Switch 2 越獄圈有活躍社群梗</h3>
+        <div class="sum">Reddit top-of-day 相關：RPS 標題《Half-Life 3 speculation reignited by Valve dev mentioning three sweet little rumored codenamey letters》——一位 Valve 開發者在技術討論中意外提及「HLX」縮寫，立即引爆「Half-Life 3 確認」迷因。PCGamer 同步報導「Half-Life 3 re-re-re-confirmed」。這是高度可預測的 Valve 迷因週期，玩家社群反應可靠。Switch 2 越獄 24h homebrew 也有很強的「速度感」迷因張力。itch.io meme 標籤：RarityRNG、Three Nights Lobotomized、Arthur's Nightmare 等仍在活躍（標題層）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Half-Life 3 迷因是「永遠不會來的遊戲」敘事，與本週 BioWare「被取消」主線情感相通。可做：「你等了最久的遊戲是什麼？」用一句話把它做出來，不引用 HL3 / Mass Effect 角色名稱。</div>
+        <div class="footrow"><div class="src"><a href="https://www.rockpapershotgun.com/half-life-3-speculation-reignited-by-valve-dev-mentioning-three-sweet-little-rumored-codenamey-letters-amid-technical-chat-about-video-game-noises" target="_blank">RPS ↗</a> · <a href="https://www.pcgamer.com/games/fps/half-life-3-re-re-re-confirmed-a-valve-dev-just-said-hlx-out-loud/" target="_blank">PCGamer ↗</a>　標題層</div></div>
+      </article>
+
+      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        本次未取得 Know Your Meme「Popular right now」與 first-seen 資料，<b>目前無法完全證實</b>有哪些「今天的全新梗」，不以推測充數。上方 HLX 迷因來自 Reddit top-of-day 標題，屬可驗證的存在，但熱度大小無數字。
+      </div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>靈感</span></span>今日機制主題：自動化連鎖、撤離倒數、「被取消的遊戲」生成器</h3>
+        <div class="sum">
+          <b>自動化連鎖（Factorio 2.1 啟發，泛化）：</b>設定有限資源與連接器，在倒數內串起 A→B→C 自動化生產鏈。完成時有「工廠自己跑」的成就感；難度可用「鏈路長度」調整；分享卡顯示連鎖層數。全程虛構 UI，不使用 Factorio 名稱美術。<br><br>
+          <b>被取消的遊戲生成器（BioWare 啟發，泛化）：</b>輸入一句話描述「你想玩的被取消遊戲」，30 秒內生成可玩小段落（房間探索或對話選擇）。語氣尊重；不使用 Mass Effect / BioWare / Dragon Age IP。<br><br>
+          <b>撤離倒數（Arkane Lyon / 大作撤離機制啟發，泛化）：</b>30 秒倒數撤離，拖拽揀選物品後按下逃脫按鈕。機制感強、分鐘內可玩完。<br><br>
+          <b>稀有度 RNG 展示（itch.io 早期訊號，RarityRNG）：</b>展示「你這次生成的遊戲稀有度」分享卡，無實際獎勵，純社群分享機制。
+        </div>
+        <div class="obs"><span class="lbl">機制安全確認：</span>所有靈感均已泛化，不挪用 Factorio / Mass Effect / Dishonored / Arkane / BioWare 的角色、美術、名稱。</div>
+        <div class="footrow"><div class="src">靈感來源：Factorio fff-449 · BioWare 關閉新聞（標題層）· itch.io meme標籤（heat_latest.json 07:30）</div></div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story rl reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        今日無顯著更新。本次未取得 Threads 繁中熱話，<b>目前無法完全證實</b>，不編造。BioWare 關閉話題在台灣社群也有可觀討論，但沒有直接資料來源，不列入。
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>BioWare 關閉／被取消遊戲</td><td><span class="tmpl">「你想玩的被取消遊戲」一句話生成</span></td><td>「你的取消遊戲」預告卡</td><td class="rk-mid">中 · IP＋裁員敏感</td><td>泛化、語氣尊重，不嘲諷；可選擇不發</td></tr>
+          <tr><td>Factorio 2.1 最終大更新</td><td><span class="tmpl">工廠倒數・自動化連鎖</span></td><td>「你建了幾層連鎖」卡</td><td class="rk-low">低</td><td>★ Demo 首選；全虛構 UI，不用 Factorio 名稱</td></tr>
+          <tr><td>Switch 2 越獄 24h</td><td><span class="tmpl">速度競賽・「誰動得更快」</span></td><td>完成時間比較卡</td><td class="rk-low">低</td><td>純梗，不涉破解方式教學</td></tr>
+          <tr><td>Half-Life 3 / HLX 迷因</td><td><span class="tmpl">「你等了最久的遊戲」</span></td><td>等待時間分享卡</td><td class="rk-low">低</td><td>不引用 HL3 / Valve 名稱，只取「永遠在等」情感</td></tr>
+          <tr><td>Cyberpunk 2077 排名暴升</td><td><span class="tmpl">賽博龐克風格快速探索</span></td><td>霓虹城 30 秒探索卡</td><td class="rk-mid">中 · 大作 IP</td><td>只取賽博龐克美學，不用 CDPR 名稱美術</td></tr>
+          <tr><td>Capcom 1170 萬帳號外洩</td><td><span class="tmpl">資安意識快測</span></td><td>「你的密碼有多安全」30 秒小測</td><td class="rk-low">低</td><td>純教育角度，不挪用 Capcom 名稱</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>大工作室縮水，工具在民主化</td><td>BioWare 30 年關閉（10/21）；同週 GameMaker GMRT 免費化（Jan 2027）；EA 裁員涉及多工作室</td><td>"A 30-year studio closed this week. The same week, a game engine went free. The expensive part of game creation isn't disappearing — it's shifting."</td><td><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">↗</a> <a href="https://www.gamesindustry.biz/gamemaker-to-make-its-next-generation-runtime-gmrt-free-for-commercial-use-in-january-2027" target="_blank">↗</a></td></tr>
+          <tr><td>97% 工作室用 AI，行業全面轉型（背景）</td><td>Vivrato 調查（pub 2026-10-21）：歐美 97% 工作室主管使用 AI；Epic AI game jam 宣布後改規；Xbox 分析師刪帳號事件</td><td>"97% of studio leads use AI in some form. The 3% who don't aren't purists — they're behind. The real split is between those who use it transparently and those who hide it."</td><td><a href="https://www.gamesindustry.biz/vivrato-97-of-studio-leaders-use-ai-in-some-form-during-development-in-eu-and-north-america" target="_blank">↗</a></td></tr>
+          <tr><td>Factorio「完成」的稀缺性</td><td>Factorio 2.1 最終大更新（pub 2026-10-24，fff-449）；無外部融資；遊戲有始有終</td><td>"Factorio shipped its final major update this week. In 2026, finishing a game is rarer than starting one. Completion is the new moat."</td><td><a href="https://factorio.com/blog/post/fff-449" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（工具民主化、Factorio 完成感）已附完整 EN hook + 中譯，來源 URL 均來自 heat_latest.json 標題層驗證。對外用字已過濾賭博語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>「你最想玩的被取消遊戲」一句話生成挑戰（尊重語氣，泛化）</li><li>Factorio 最終大更新：「你做過最自動化的設計是什麼？」</li><li>Switch 2 越獄 24h：「玩家改造力 vs 官方更新速度」</li><li>Half-Life 3 / HLX 迷因：「你等了最久的遊戲」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 工廠倒數・自動化連鎖（Factorio 泛化）—— 本日首選</li><li>被取消的遊戲生成器（語氣尊重版）</li><li>撤離倒數 30 秒（拖拽揀選）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Arkane Lyon 買家談判進展（11/13 截止前每日可能有新消息）</li><li>Cyberpunk 2077 暴升原因：是否有官方更新公告（目前 partial）</li><li>BioWare IP（Mass Effect / Dragon Age）出售進展</li><li>War Thunder +39.8% 是否有可驗證的事件來源</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>BioWare / Mass Effect / Dragon Age / Arkane / Dishonored 名稱與美術直接挪用 → 泛化</li><li>BioWare 裁員別嘲諷、別蹭悲劇</li><li>Nvidia GPU 主張標題層，不當作已驗證事實引用具體數字</li><li>Capcom 外洩不要誇大或渲染恐慌</li><li>對外文案避開賭博語言</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>BioWare 關閉 / EA 裁員</td><td><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer</a>（標題層）pub 2026-10-21 · <a href="https://www.eurogamer.net/ea-cuts-massive-ripple-effect-motive-full-circle-respawn" target="_blank">Eurogamer</a>（標題層）· Mass Effect Universe 預告外洩 Jason Schreier 確認（Reddit top-of-day r/Games，標題層）<span class="pp">partial（原文未 fetch）</span></td></tr>
+        <tr><td>GameMaker GMRT 免費化</td><td><a href="https://www.gamesindustry.biz/gamemaker-to-make-its-next-generation-runtime-gmrt-free-for-commercial-use-in-january-2027" target="_blank">GamesIndustry.biz</a>（標題層）· 同見 <a href="https://www.gamedeveloper.com/programming/gamemaker-s-gmrt-runtime-will-soon-be-free-for-all-commercial-devs" target="_blank">Game Developer</a> · <a href="https://80.lv/articles/gamemaker-s-new-runtime-will-become-free-for-commercial-use/" target="_blank">80.lv</a>　三來源交叉<span class="ok">✓</span>（標題層）</td></tr>
+        <tr><td>Factorio 2.1 最終大更新</td><td><a href="https://factorio.com/blog/post/fff-449" target="_blank">Factorio 官方 blog fff-449</a>（HN 4 分，Reddit top-of-day r/Games 確認）· <a href="https://www.rockpapershotgun.com/factorios-final-major-update-has-rolled-off-the-assembly-line-adding-the-things-we-wanted-to-do-for-20-but-didnt-have-time-for" target="_blank">RPS</a>（標題層）<span class="ok">✓</span>（三來源交叉）</td></tr>
+        <tr><td>Arkane Lyon 11/13 截止</td><td>Reddit r/gaming top-of-day（<a href="https://www.reddit.com/r/gaming/comments/1xdeagf/" target="_blank">↗</a>）· Le Monde 原報（標題層，未驗原文）· Jason Schreier r/Games top-of-day（<a href="https://www.reddit.com/r/Games/comments/1xdi06e/" target="_blank">↗</a>）· Gamespot / Eurogamer / PCGamer 標題層多來源<span class="ok">✓</span>（標題層多來源交叉）</td></tr>
+        <tr><td>Switch 2 越獄 / homebrew 24h</td><td>Reddit r/Games top-of-day（<a href="https://www.reddit.com/r/Games/comments/1xd1ahz/" target="_blank">↗</a>）<span class="ok">✓</span>（標題層）</td></tr>
+        <tr><td>Vivrato 97% AI 使用率</td><td><a href="https://www.gamesindustry.biz/vivrato-97-of-studio-leaders-use-ai-in-some-form-during-development-in-eu-and-north-america" target="_blank">GamesIndustry.biz</a>（Tavily score 0.546，pub 2026-10-21，摘要層）<span class="pp">partial（標題＋摘要，原文未 fetch）</span></td></tr>
+        <tr><td>Capcom 1170 萬帳號外洩</td><td><a href="https://www.gamesindustry.biz/capcom-affected-by-data-breach-over-117m-capcom-id-accounts-compromised" target="_blank">GamesIndustry.biz</a>（標題層）<span class="pp">partial（原文未 fetch）</span></td></tr>
+        <tr><td>Nvidia GPU 危機操控說</td><td>Reddit r/Games top-of-day（<a href="https://www.reddit.com/r/Games/comments/1xdjbd1/" target="_blank">↗</a>）· <a href="https://respawnfirst.com/multiple-reports-say-nvidia-manufactured-the-gaming-gpu-crisis-by-forcing-big-tech-to-stockpile-unused-ai-hardware/" target="_blank">Respawnfirst</a>（HN 3 分）<span class="pp">partial（「多篇報告」具體來源未驗）</span></td></tr>
+        <tr><td>Cyberpunk 2077 排名跳升</td><td>steam_movers heat_latest.json 07:30（rank 30→10，+20）· steam_new_top 熱賣確認 · PC Gamer 攻略文暗示新內容（標題層）<span class="pp">partial（具體更新未驗）</span></td></tr>
+        <tr><td>Steam 真數字層</td><td>heat_latest.json fetched_at 2026-10-24T07:30:37+08:00 · ok_count 19/19 · Steam 官方 API GetNumberOfCurrentPlayers<span class="ok">✓</span></td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥標題層＋摘要層驗證（見 Evidence Log）· CJ Top 2 均附 EN hook + 中譯 · Steam＝官方 API 10-24 即時真數字（radar 07:30）· Roblox / Twitch 本次缺資料，標「未取得」· KYM / unityroom / Threads 本次未取得，標「目前無法完全證實」· 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/10/24 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
