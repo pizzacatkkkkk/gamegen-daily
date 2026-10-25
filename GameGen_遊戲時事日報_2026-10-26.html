@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/10/26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  /* 今日彈藥 頭版 */
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  /* live ranking boards */
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">10 · 26 · MON</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 10 / 26 · 彈藥工廠模式 · Steam 真數字（radar 10/25 07:30）+ 昨晨 Twitch / Roblox / unityroom 瀏覽器真抓 · 來源 20+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>本週是 AAA 工作室最密集的「宣告死亡」期：BioWare 正式關閉後，更多細節持續曝光——被取消的 Mass Effect 5 pitch 據 GameSpot 報導被形容為「外太空 John Wick」；Shepard 飾演者稱「抱著希望遊戲能活下去」；Battlefield 6 據報取消了與 Mass Effect 的聯動企劃。</b>與此同時，製作過 Prey 和 Dishonored 的 <span class="hl">Arkane Lyon 只剩數週找到買家，否則 11 月面臨關閉</span>（GameSpot / VGC，約 10/25）。</p>
+        <p>同一週同步出現：<b>Capcom 遭資料外洩，逾 1,170 萬 Capcom ID 帳號受害</b>（GamesIndustry.biz）；日本演員工會公布新規，<span class="hl">嚴禁未授權 AI 複製已故聲優聲音</span>（Reddit r/Games 當日 top-of-day，PC Gamer 同題）。訊號一致：<b>大製作工作室的護城河（IP、預算、品牌）正在大量失效；稀缺的是「梗活著的那幾天內讓玩家玩到並分享出去的能力」。</b></p>
+        <div class="pull">▸ 今天就能蹭：CJ 貼文「30年、400人、然後是一個季度的決定：遊戲的價值在哪裡？」＋ Demo：<b>「60 秒工作室投球」</b>——在老闆掛電話前把你的遊戲概念賣出去（萬聖節前夕緊張感 + 產業諷刺，泛化角色，非指涉任何真實公司）。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <!-- CJ LinkedIn Top 2 -->
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>BioWare 30 年後關門：那款「外太空 John Wick」的 Mass Effect 將永遠留在硬碟</div>
+            <div class="ln"><b>新聞事實：</b>EA 2026-10-21 宣布關閉 BioWare（成立 1995 年，Dragon Age、Mass Effect 系列）；Game Developer、NYT 多家媒體均有報導，分析師稱「完全預見」（GamesIndustry.biz，radar 標題層）。<b>後續細節（約 10/24-25）：</b>被取消的 Mass Effect 5 pitch 據 GameSpot 報導被形容為「John Wick in Space」——強動作序列、個人復仇線、宇宙規模；Shepard 飾演者稱「抱著希望遊戲能活下去」（GameSpot，標題層確認，「John Wick in Space」等細節未完全驗原文）；Battlefield 6 據報取消 Mass Effect 聯動（GameSpot，radar 標題層）。</div>
+            <div class="ln"><b>GameGen 角度：</b>30 年工作室、知名 IP、EA 背書——都保不住一個 Studio。這不是個案，本週 Arkane Lyon 同樣面臨 11 月關閉期限。<b>GameGen 的護城河不是預算，是 Trend Response Time</b>——梗活著的時候快速生出可玩的東西，加上讓玩家 remix 的迴圈；這兩件事不需要 400 人的工作室。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "BioWare is closed. The Mass Effect that never shipped was 'John Wick in Space.' 30 years. 400 people. Then one quarter's decision. What does that say about where value actually lives in games?"<br><span style="color:var(--ink-dim)">中譯：BioWare 關了。那款沒有發行的 Mass Effect 被描述為「外太空 John Wick」。30 年、400 人，然後是一個季度的決定。這告訴我們遊戲的價值到底在哪裡？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a> / <a href="https://www.gamespot.com/articles/the-next-mass-effect-sounded-like-john-wick-in-space/" target="_blank">GameSpot ↗</a>　pub 2026-10-21（後續報導約 10/24-25）　🔄 標題層 partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>日本演員工會明令禁止 AI 複製已故聲優聲音——聲音成為下一個法律戰場</div>
+            <div class="ln"><b>新聞事實：</b>日本演員工會公布新指引：嚴禁未授權 AI 複製已故聲優聲音，包含對現役演員聲音的防護規範（Reddit r/Games 當日 top-of-day；PC Gamer 同題報導。pub 日期未取得，約 2026-10-25 前後。radar 摘要層，原文未完全驗）。</div>
+            <div class="ln"><b>GameGen 角度：</b>聲音授權是繼視覺 AI 之後下一個遊戲產業的法律地雷。<b>GameGen 以文字／視覺為主，不碰 AI 語音克隆</b>——但這對 IP 談判（含日本廠商授權）與 CW 音頻素材選擇有直接影響；現在先建立「不使用 AI 聲音」的明確政策，是主動避免法律麻煩的第一步。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Japan's actors union just banned AI cloning of deceased voice actors. Voice is the next legal battleground. If you're building with AI audio, know exactly what lines you're standing near."<br><span style="color:var(--ink-dim)">中譯：日本演員工會剛剛禁止 AI 複製已故聲優的聲音。聲音是下一個法律戰場。如果你在用 AI 音訊做東西，要清楚自己站在哪條線旁邊。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/Games/comments/1xec8x8/japan_actors_union_reveals_new_guidelines_to/" target="_blank">Reddit r/Games ↗</a> / <a href="https://www.pcgamer.com/software/ai/japan-actors-union-pushes-for-heavy-restrictions-on-ai-copying-dead-actors/" target="_blank">PC Gamer ↗</a>　pub 日期未取得，約 10/25 前後　🆕 摘要層 partial</div>
+          </div>
+        </div>
+
+        <!-- 小編 X Top 3 -->
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Arkane Lyon（Dishonored、Prey 製作商）只剩數週找買家，否則 11 月關閉<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>GameSpot / VGC 報導：Arkane Lyon 只剩數週時間找買家，11 月面臨關閉期限（radar 標題層確認，pub 日期約 10/25；原文未完全驗）。Prey（2017）和 Dishonored 系列在玩家中評價極高，消息引發廣泛哀悼。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Arkane Lyon — Dishonored, Prey — has weeks to find a buyer or it closes in November. Great games don't save studios. What does?"　<span style="color:var(--ink-dim)">中譯：製作 Dishonored 和 Prey 的 Arkane Lyon 只剩數週找買家，否則 11 月關閉。優秀的遊戲救不了工作室，那什麼才能？👇</span></div>
+            <div class="meta">來源 <a href="https://www.gamespot.com/articles/arkane-lyon-could-be-shut-down-within-weeks-as-deadline-to-find-a-buyer-looms/" target="_blank">GameSpot ↗</a> / <a href="https://www.videogameschronicle.com/news/arkane-has-until-november-to-find-a-buyer-or-face-closure-its-claimed/" target="_blank">VGC ↗</a>　radar 標題層 · 摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Capcom 遭資料外洩：1,170 萬 Capcom ID 帳號受害<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>GamesIndustry.biz 報導：Capcom 遭資料外洩，逾 1,170 萬 Capcom ID 帳號受害（radar 標題層確認，pub 日期未取得，約 10/25 前後；原文未完全驗）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Capcom just had 11.7M accounts breached. Players don't forget a data breach — but they forget a good game in 3 months. Treat player data like your most irreplaceable IP."　<span style="color:var(--ink-dim)">中譯：Capcom 1,170 萬帳號遭外洩。玩家不會忘記資料外洩，但會在三個月後忘記一款好遊戲。把玩家資料當成你最無可取代的 IP 來對待。</span></div>
+            <div class="meta">來源 <a href="https://www.gamesindustry.biz/capcom-affected-by-data-breach-over-117m-capcom-id-accounts-compromised" target="_blank">GamesIndustry.biz ↗</a>　radar 標題層 · 摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Cozy 遊戲在 Steam 自 2024 年成長逾 250%——淘金熱還是過剩？<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>PC Gamer 報導：「cozy」標籤在 Steam 自 2024 年起成長超過 250%，投稿作者信箱的 cozy 宣傳稿也增加 200%（radar 標題層確認，pub 日期未取得，原文未完全驗）。同期 Steam most-played 榜上 Stardew Valley（+18.5%）與 Slay the Spire 2 等依然持續吸引玩家。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "'Cozy' grew 250%+ on Steam since 2024. Gold rush. Most will fail. The survivors aren't cozier — they're faster to spread."　<span style="color:var(--ink-dim)">中譯：Cozy 遊戲 2024 後在 Steam 成長 250%。淘金熱，大多數會失敗。存活的不是更 cozy，而是傳播更快。</span></div>
+            <div class="meta">來源 <a href="https://www.pcgamer.com/games/life-sim/are-we-in-the-cozy-gaming-gold-rush-era-cozy-has-grown-over-250-percent-on-steam-and-200-percent-in-my-inbox-since-2024/" target="_blank">PC Gamer ↗</a>　radar 標題層 · 摘要層</div>
+          </div>
+        </div>
+
+        <!-- Demo 線 1 -->
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「60 秒工作室投球」：在老闆掛電話前把你的遊戲概念賣出去<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入一行遊戲概念（例如「貓咪打 CEO」）→ 60 秒倒計時 + 隨機跳出「虛假董事會反饋」（「太小眾」「沒有 IP 授權」「下季再說」）→ 玩家點擊「堅持」或「妥協」選項，看概念能不能存活過 60 秒 → 出「你的遊戲存活了幾秒」分享卡；朋友對比分數。<b>泛化角色，非指涉任何真實公司或個人。</b></div>
+            <div class="ln"><b>為何是今天首選：</b>BioWare 關閉 + Arkane Lyon 11 月期限 = 業界熱話，產業諷刺遊戲化有話題土壤；萬聖節前夕「倒計時緊張感」與 60 秒單鍵機制吻合；Create→Share→Remix loop 乾淨（換一行概念重玩）；IP 風險最低（泛化角色、虛構公司名稱）。備案：「BioWare 宇宙接班人」：輸入一句 RPG 設計想法，生成 Dragon Age 血統認證評分卡（僅用類型名稱，不使用 BioWare 官方 IP 的具體設定）。</div>
+            <div class="meta">綁 <a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a>（話題土壤）　模板：倒計時 / 多選一 / 分享存活秒數</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 昨晨 10/25 radar</span></div>
+          <ol>
+            <li class="up"><span class="nm">Counter-Strike（appid 730）</span><span class="vn">682K ▲2.4%</span></li>
+            <li class="hot up"><span class="nm">Call of Duty MW II（1938090）</span><span class="vn">175K ▲9.0%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">130K ▲6.6%</span></li>
+            <li class="hot up"><span class="nm">Team Fortress 2</span><span class="vn">88K ▲10.0%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">84K ▲1.2%</span></li>
+            <li class="hot up"><span class="nm">Baldur's Gate 3</span><span class="vn">43K ▲21.2%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 10/25 07:30 真數字（今日 radar 未回傳）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">Top Trending · 10/25 瀏覽器真抓</span></div>
+          <ol>
+            <li class="hot up"><span class="nm">謀殺之謎2（Murder Mystery 2）</span><span class="vn">1.6M</span></li>
+            <li class="up"><span class="nm">[🎃 新任務] 盛裝打扮以吸引目光</span><span class="vn">118.6K</span></li>
+            <li class="up"><span class="nm">[1.5倍 🎃萬聖節] 躲避</span><span class="vn">99.6K</span></li>
+            <li class="up"><span class="nm">空洞</span><span class="vn">90K</span></li>
+            <li class="up"><span class="nm">[新關卡] 不要噴水 🎃</span><span class="vn">72.4K</span></li>
+            <li class="up"><span class="nm">貓之戰 🐾</span><span class="vn">63.3K</span></li>
+          </ol>
+          <div class="bf">roblox.com/charts（繁中介面，10/25 瀏覽器真抓）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近 7 天平均觀眾 · 10/25</span></div>
+          <ol>
+            <li><span class="nm">Just Chatting</span><span class="vn">297K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">145K</span></li>
+            <li><span class="nm">Minecraft</span><span class="vn">101K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">85.9K</span></li>
+            <li><span class="nm">World of Warcraft</span><span class="vn">76.4K</span></li>
+            <li><span class="nm">ARC Raiders</span><span class="vn">36.4K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 10/25 瀏覽器真抓 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 本機 heat-radar 最後一次成功回傳為 2026-10-25T07:30（19/19 源）；今日（10/26）radar 未回傳新數字，Steam / Roblox / Twitch 使用昨晨資料——數字為官方 API 真實值，但非今日即時。Roblox 榜以 Halloween 活動地圖為主（多款帶 🎃），週一入榜態勢可能已微調。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>Steam 日比過 ≥15% 旗標：Baldur's Gate 3 +21.2%、Stardew Valley +18.5%；PEAK 排名 +18（10/25 資料）</h3>
+        <div class="sum">Steam 真·日比（官方 API，10/25 07:30 vs 前日）：<b>Baldur's Gate 3 43,065 人（+21.2%）</b>，<b>Stardew Valley 39,521 人（+18.5%）</b>。BG3 在 BioWare 關閉後一週衝高，有可能是玩家悼念 RPG 大作；但也可能是週末回流，兩者皆有可能，<b>無法確認因果</b>。排名跳動：<b>PEAK 78→60（+18）</b>、How to Fish 88→78（+10）、R.E.P.O. 58→50（+8）。新進榜：Worst Class Ever Demo（#90）、<b>FINAL FANTASY RESONANCE（#94）</b>——FF 旗下新作首週進入百大。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>BG3 在 BioWare 關閉後週末上升值得注意——這是「懷念 RPG 情懷」的真實消費行動；Stardew Valley +18.5% 符合週末農場遊週期。<b>FINAL FANTASY RESONANCE 新進榜</b>是今天最值得追的新訊號，下週若仍在前 50 才算穩定熱度。</div>
+        <div class="footrow">
+          <div class="src">STEAM 官方 API · 10/25 07:30（radar 昨晨）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ Twitch 7 天漲幅% 與 Roblox 黑馬新進榜需比對「昨日快照」，目前沒有逐日存檔，<b>無法完全證實漲幅</b>。今日 Steam 數字為 10/25 07:30 昨晨數字，今日 radar 未回傳。
+      </div>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>早期</span></span>itch.io html5 熱門：Tamaweb 虛擬寵物、Breadwinner、Troll the King（延燒）</h3>
+        <div class="sum">itch.io <code>/games/html5</code> 當日前段（10/25 昨晨資料）：<b>Tamaweb: Virtual Pet Game</b>（網頁寵物養成）、Von Neumann、Legendum、Trauma lab、The Freak Circus、Breadwinner、Abattlacus、diagnosis lovesick (demo)、Troll the King。迷因類：This Role: You are Hamster（倉鼠扮演）、Three Nights Lobotomized（前額葉手術梗）、Kill the Ice Age Baby Adventure（冰河時代嬰兒 IP 二創）。共通 loop：<b>養成 / 放置 / 單頁恐怖小品 / 懷舊梗角色扮演</b>。（與前日同一批居多，體量與成長未逐款驗證。）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Tamaweb 類「網頁寵物」可做「梗寵物」：輸入梗 → 養成專屬寵物 → 養成天數卡分享。itch.io meme 類的「This Role: You are Hamster」說明「你扮演什麼動物」仍是高分享率架構。</div>
+        <div class="footrow"><div class="src">itch.io html5 popular · radar 10/25 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div></div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>Steam 新品</span></span>Steam 新品榜：FINAL FANTASY RESONANCE 新進 Most Played #94；Call of Duty: Modern Warfare 4 熱賣榜</h3>
+        <div class="sum">Steam 最近 24 小時新品前列（10/25 radar）：新品榜 Ad Nauseam - The Wrong Side、AVXRPG、PixelBoss: Shattered Depths、Foulbreaker、SLICEFALL 等；熱賣榜出現 <b>Call of Duty: Modern Warfare 4</b>、Cyberpunk 2077（含 Ultimate Edition）、<b>FINAL FANTASY RESONANCE</b>。MW4 首個 DLC 本週上線（GameSpot 確認）。（體量未逐款驗證，熱賣榜排序非嚴格銷量排名。）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>MW4 首 DLC = IP 活躍延伸，但避開所有 CoD 具體設定；FF RESONANCE 首週進榜值得追。SLICEFALL 等類型命名可作 loop 靈感（切割＝「切割本週壞消息」）。</div>
+        <div class="footrow"><div class="src">Steam 熱賣 / 新品 · radar 10/25 · <a href="https://store.steampowered.com/charts/topsellers" target="_blank">原文 ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · 產業動向</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>產業震盪</span></span>BioWare 終章後續：「外太空 John Wick」Mass Effect 5 + Arkane Lyon 11 月期限（頭版 CJ 線 #1 / X 線 #1）</h3>
+        <div class="sum">Game Developer / NYT（pub 2026-10-21）宣告 BioWare 關閉。後續：<b>GameSpot 報導 ME5 pitch 形容為「John Wick in Space」</b>（強動作、宇宙復仇線）；Shepard 飾演者回應洩漏預告「持著希望」；Battlefield 6 取消 Mass Effect 聯動；VGC podcast 確認 ME4 取消。同週 <b>Arkane Lyon（Prey、Dishonored）只剩數週找買家，11 月期限</b>（GameSpot / VGC，標題層）。分析師 / GamesIndustry.biz 稱 BioWare 關閉「完全預見」，Mass Effect 系列是「門面項目」而非真正商業 IP。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這是本週業界最大情緒事件。<b>情緒張力在「沒能誕生的遊戲」</b>——這種「已知方向但未能實現」的遺憾比關閉本身更有感染力；CJ 切角是「大製作時代的護城河失效了」，X 切角是「悼念文化 = 創作機會」。</div>
+        <div class="footrow"><div class="src"><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a> · <a href="https://www.gamespot.com/articles/the-next-mass-effect-sounded-like-john-wick-in-space/" target="_blank">GameSpot ↗</a> · <a href="https://www.videogameschronicle.com/news/arkane-has-until-november-to-find-a-buyer-or-face-closure-its-claimed/" target="_blank">VGC ↗</a></div></div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>資安</span></span>Capcom 資料外洩 1,170 萬帳號 / Netflix 傳與 Xbox 談 5 億美元影視合約</h3>
+        <div class="sum"><b>Capcom 外洩：</b>GamesIndustry.biz 報導，超過 1,170 萬 Capcom ID 帳號受到資料外洩影響（標題層確認，pub 日期未取得，約 10/25；原文未完全驗）。<b>Netflix×Xbox 5 億美元：</b>Eurogamer / VGC 報導，Netflix 據報向 Xbox 提出 5 億美元、7 年的影視版權協議；VGC 另稱 Xbox 最初開口要 8 億（標題層，兩家媒體均未完全驗原文）。Minecraft 和 Diablo 的劇集已在製作中。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Capcom 外洩對 GameGen 的啟示：帳號安全是玩家留存的基石，不是加分項。Netflix×Xbox IP 授權金規模說明：遊戲 IP 的影視價值正在讓大廠重新評估版權策略。</div>
+        <div class="footrow"><div class="src"><a href="https://www.gamesindustry.biz/capcom-affected-by-data-breach-over-117m-capcom-id-accounts-compromised" target="_blank">GamesIndustry.biz ↗</a> · <a href="https://www.eurogamer.net/netflix-500m-xbox-film-tv-rights" target="_blank">Eurogamer ↗</a></div></div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI×遊戲</span></span>日本演員工會 AI 聲音新規（頭版 CJ 線 #2）／宮本茂獲文化勳章同時談 AI</h3>
+        <div class="sum">日本演員工會新規禁止未授權 AI 複製已故聲優聲音（Reddit r/Games 當日 top-of-day；PC Gamer 同題）——聲音版權的法律戰線正式形成。同日，<b>宮本茂獲頒日本政府文化勳章</b>（GamesIndustry.biz）；他近期在多個採訪中談到生成式 AI：「即便 gen-AI 包辦一切，設計師還是有位置」、區別「creating」與「doing the work」。（Reddit r/gamedev 當日高討論，Eurogamer、VGC 同報。）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>宮本茂的說法是「AI 做功夫，人類做創作」——這對 GameGen 的對外溝通是好的援引框架，不參戰「該不該用 AI」，而是強調「誰在出梗、誰在設計體驗」。</div>
+        <div class="footrow"><div class="src"><a href="https://www.reddit.com/r/Games/comments/1xec8x8/japan_actors_union_reveals_new_guidelines_to/" target="_blank">Reddit r/Games ↗</a> · <a href="https://www.videogameschronicle.com/news/shigeru-miyamoto-explains-why-ai-wont-make-human-creativity-obsolete/" target="_blank">VGC ↗</a></div></div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>客觀訊號</span></span>HN / Reddit 當日高討論</h3>
+        <div class="sum"><b>HN：</b>〈Sid Meier 親述 Civilization 完整歷史〉9 分（YouTube）；〈創投遊戲：你的 LP 想把錢要回來〉5 分（vc.tilo.coffee）；〈BioWare 將關閉〉2 分（NYT 10/21）。<b>Reddit r/gaming 當日 top 序（10/25）：</b>#1 CS 的 VAC ban 滿 19 年、#2 電玩改編電影 2019 前從無 Rotten Tomatoes「fresh」評級（之後有 9 部）、#4 Marvel's Wolverine 9 月美國新遊戲銷售冠軍（混合評價但銷量第一）、#7 Xbox 首任 COO Helen Chiang 上任 3 個月後離職、#8 宮本茂談生成式 AI、#10 日本演員工會 AI 聲音新規。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「電玩改編電影 2019 前無 fresh 評級」這個 TIL 本身就是一個遊戲題材：「你能讓你的 IP 改編電影拿到新鮮認證嗎？」——作快問快答互動貼文。Xbox COO 上任 3 個月後離職，搭配 BioWare / Arkane，本週「高層出走 / 工作室消失」成為 meta 迷因。</div>
+        <div class="footrow"><div class="src">radar hackernews / reddit 10/25 · <a href="https://vc.tilo.coffee/" target="_blank">創投遊戲 ↗</a> · <a href="https://www.eurogamer.net/xbox-coo-helen-chiang-leaves-microsoft" target="_blank">Eurogamer Xbox COO ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>觀察</span></span>itch.io meme 類：「You are Hamster」/ 「Lobotomized」/ Halloween 消耗期前最後一週</h3>
+        <div class="sum">itch.io meme 類持續熱（10/25 昨晨資料）：<b>This Role: You are Hamster</b>（角色扮演梗）、Three Nights Lobotomized（前額葉手術梗）、Jest Messters、Arthur's Nightmare、Kill the Ice Age Baby Adventure（IP 二創，風險高）、Kromer Kollector Neo、Asgore Runs Over Dess（Undertale 二創，IP 二創）。共通梗：<b>扮演奇怪角色 / 短暫恐怖存活 / 懷舊 IP 失控諷刺</b>。<br><b>注意：</b>Kirby 二創、Ice Age Baby 二創、Undertale 二創均涉現有 IP，不進 GameGen Demo 首選；梗架構可借，具體角色不用。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日「迷因」取 <b>BioWare 關閉後的行業哀歌梗</b>（「你的遊戲能活多久？」）與 <b>Halloween 最後一週的倒計時緊張感</b>；搭配今日 Demo 首選「60 秒工作室投球」。KYM 今日新鮮清單未取得，不硬套。</div>
+        <div class="footrow"><div class="src">itch.io meme/viral · radar 10/25 · <a href="https://itch.io/games/tag-meme" target="_blank">原文 ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>機制</span></span>unityroom 人気の新着：一筆 / 打字 / 倒計時 / 放置（延燒）</h3>
+        <div class="sum">unityroom 首頁（10/25 瀏覽器真抓，昨晨）：今週ピックアップ：<b>剣と魔法と剣と剣</b>（ローグライクアクション 69.9 萬）、ニワテツ（庭園鉄道）、みんなのドミノ オンライン。人気の新着：<b>ひと筆ハンマー</b>（10.4 萬）、<b>この家には4人しか住んでいません</b>（パズルホラー 17.0 萬）、<b>伸びろ！ブッチッ波！</b>（16.8 萬）、<b>スライム放置ゲームもどき</b>（4.3 萬）、タイピングキャッスル（11.9 萬）。定番仍是<b>タイピング系</b>（累積 452-466 萬次遊玩）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>可借機制：<b>打字 / 一筆畫 / 倒計時存活 / 放置</b>。「パズルホラー」小品（4 人住宅恐怖）與今日「60 秒工作室投球」的倒計時緊張感一致。⚠️「宝くじ×パチンコ クリッカー」屬博彩題材，<b>對外絕不引用</b>。</div>
+        <div class="footrow"><div class="src"><a href="https://unityroom.com/" target="_blank">unityroom ↗</a> · 瀏覽器 10/25 真抓（遊玩數為頁面顯示）</div></div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>地雷</span></span>IP 二創 + 本週高風險提醒</h3>
+        <div class="sum">itch.io 熱門含「Kill the Ice Age Baby」（IP 二創）、「Asgore Runs Over Dess」（Undertale 二創）、「Kirby ~ Soft &amp; Wet」（任天堂 IP 二創）；BioWare 關閉後出現大量 Mass Effect / Dragon Age 二創潮，不進 Demo 首選；日本演員工會新規（本日 CJ #2）提醒：聲音複製是下一個雷區，對日本遊戲廠商 IP 談判尤其敏感。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>泛化角色 + 梗事件本身即可。本週「工作室關閉」梗使用泛化虛構公司與角色，無需 BioWare / EA 具體元素即可傳播。</div>
+        <div class="footrow"><div class="src">itch.io / radar 10/25 · IP 清單僅作警示用</div></div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>Threads 繁中熱話：未取得當日熱榜</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次排程環境未取得公開的 Threads 繁中熱榜（個人化動態無公開排序可驗），<b>今日無法完全證實繁中圈當日熱話，不編造</b>。推測母題（非已驗證）：BioWare 關閉在繁中玩家社群的 RPG 悼念串（Dragon Age / Mass Effect 繁中玩家社群活躍）；萬聖節前夕 (10/31) 的鬼屋 / 怪談遊戲推薦文；Capcom 外洩的帳號安全提醒文。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>BioWare / Arkane 工作室關閉潮（跨媒體持續 🔄）</td><td><span class="tmpl">倒計時 / 決策存活</span></td><td>「你的遊戲存活幾秒」卡</td><td class="rk-low">低</td><td>★ 本日 Demo 首選「60 秒工作室投球」，泛化虛構角色與公司，勿指涉 BioWare / EA 真實人員</td></tr>
+          <tr><td>Cozy 遊戲在 Steam 成長 250%（PC Gamer 🆕）</td><td><span class="tmpl">養成 / 放置</span></td><td>養成天數 / 梗寵物卡</td><td class="rk-low">低</td><td>梗主題寵物養成；「輸入梗 → 專屬寵物」是最低門檻切入 cozy 領域</td></tr>
+          <tr><td>Roblox Halloween「別出聲」地圖仍熱（Don't Splash 72.4K ♻️）</td><td><span class="tmpl">單鍵按住 / 計時存活</span></td><td>靜音存活秒數卡</td><td class="rk-low">低</td><td>昨日 Demo 首選，今日降為備案；不複製 Roblox 現有地圖設定</td></tr>
+          <tr><td>日本演員工會 AI 聲音禁令（Reddit 當日 top 🆕）</td><td><span class="tmpl">明示生成 + 聲音來源標示</span></td><td>「這款遊戲怎麼做出來的」標示頁</td><td class="rk-low">低</td><td>作 CJ 貼文素材，不進遊戲玩法；GameGen 明確標注不使用 AI 語音</td></tr>
+          <tr><td>friendslop 爬榜（PEAK +18名、R.E.P.O. +8）</td><td><span class="tmpl">4 人合作混亂 60 秒</span></td><td>「我們團滅幾次」卡</td><td class="rk-low">低</td><td>備案，輸入朋友群內梗 → 合作小遊戲；不用 PEAK 角色</td></tr>
+          <tr><td>電玩改編電影 TIL（r/gaming #2 🆕）</td><td><span class="tmpl">快問快答 / 測驗</span></td><td>「你的 IP 能拿到新鮮認證嗎？」</td><td class="rk-low">低</td><td>互動問答貼文，無需做成遊戲；與粉絲討論哪部改編最值得</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>大製作時代的護城河正在失效</td><td>BioWare 30 年關閉，ME5 pitch「John Wick in Space」永遠不會上市；Arkane Lyon 11 月期限（2026-10-21 起持續更新）</td><td>"30 years. 400 people. One quarter. What does that say about where value lives in games?"</td><td><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a></td></tr>
+          <tr><td>聲音是下一個 AI 法律戰場</td><td>日本演員工會嚴禁未授權 AI 複製已故聲優聲音（約 10/25 前後）</td><td>"Voice is the next legal battleground. Know what lines you're standing near before you use AI audio."</td><td><a href="https://www.pcgamer.com/software/ai/japan-actors-union-pushes-for-heavy-restrictions-on-ai-copying-dead-actors/" target="_blank">PC Gamer ↗</a></td></tr>
+          <tr><td>Cozy 淘金熱：速度而非更 cozy</td><td>'cozy' 在 Steam 自 2024 成長 250%（PC Gamer）；Stardew Valley 同期 +18.5%</td><td>"The cozy gold rush is real. Most will fail. Survivors aren't cozier — they're faster to spread."</td><td><a href="https://www.pcgamer.com/games/life-sim/are-we-in-the-cozy-gaming-gold-rush-era-cozy-has-grown-over-250-percent-on-steam-and-200-percent-in-my-inbox-since-2024/" target="_blank">PC Gamer ↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（BioWare 30 年後關門、日本演員工會 AI 聲音禁令）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包；CJ #1 屬「持續發酵事件」（pub 10/21，後續細節約 10/24-25），CJ #2 為新聞事件標題層。今天避開昨日已用的：Future? No Thanks! AI 配音退款、GameMaker GMRT 免費、Next Fest AI 篩選器。對外用字已過濾賭場語言。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Arkane Lyon 11 月關閉期限：「優秀的遊戲救不了工作室，那什麼才能？」</li><li>Capcom 外洩：「把玩家資料當最無可取代的 IP 來對待」</li><li>cozy 250% 淘金熱：「存活的不是更 cozy，而是傳播更快」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「60 秒工作室投球」（倒計時 + 董事會反饋選項）—— 本日首選</li><li>備案：Roblox「別出聲」60 秒潛行（昨日首選，今日仍可做）</li><li>「梗寵物」網頁養成（輸入梗 → 專屬寵物 → 養成卡）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Arkane Lyon：11 月是否真的找到買家或關閉宣告</li><li>FINAL FANTASY RESONANCE：首週能否穩進 Steam 前 50</li><li>Capcom 外洩後續：受害帳號範圍與官方處理方式</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>BioWare / EA / Arkane 具體人員的個人評論，只引事實</li><li>Mass Effect / Dragon Age / Prey / Dishonored 具體 IP 元素直接挪用 → 用泛化設定</li><li>日本演員 AI 聲音：任何涉及聲優聲音複製的使用，即便是「致敬」性質也需先確認授權狀態</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>BioWare 關閉（pub 2026-10-21）</td><td><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer</a> / <a href="https://www.nytimes.com/2026/10/21/arts/bioware-closing-baldurs-gate.html" target="_blank">NYT</a>（radar 標題層）　pub 2026-10-21　多家媒體一致報導<span class="ok">✓</span>　後續細節（ME5「John Wick in Space」、Shepard 演員反應、BF6 聯動取消）來自 <a href="https://www.gamespot.com/articles/the-next-mass-effect-sounded-like-john-wick-in-space/" target="_blank">GameSpot</a>（標題層，原文未完全驗）<span class="pp">partial</span>　🔄</td></tr>
+        <tr><td>Arkane Lyon 11 月關閉期限</td><td><a href="https://www.gamespot.com/articles/arkane-lyon-could-be-shut-down-within-weeks-as-deadline-to-find-a-buyer-looms/" target="_blank">GameSpot</a> / <a href="https://www.videogameschronicle.com/news/arkane-has-until-november-to-find-a-buyer-or-face-closure-its-claimed/" target="_blank">VGC</a>（radar 標題層，pub 約 10/25，原文未完全驗）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>日本演員工會 AI 聲音禁令</td><td><a href="https://www.reddit.com/r/Games/comments/1xec8x8/japan_actors_union_reveals_new_guidelines_to/" target="_blank">Reddit r/Games</a>（radar top-of-day）；<a href="https://www.pcgamer.com/software/ai/japan-actors-union-pushes-for-heavy-restrictions-on-ai-copying-dead-actors/" target="_blank">PC Gamer</a> 同題（pub 日期未取得，標題層，原文未完全驗）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Capcom 外洩 1,170 萬帳號</td><td><a href="https://www.gamesindustry.biz/capcom-affected-by-data-breach-over-117m-capcom-id-accounts-compromised" target="_blank">GamesIndustry.biz</a>（radar 標題層，pub 日期未取得，原文未完全驗）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Cozy 遊戲 Steam 250% 成長</td><td><a href="https://www.pcgamer.com/games/life-sim/are-we-in-the-cozy-gaming-gold-rush-era-cozy-has-grown-over-250-percent-on-steam-and-200-percent-in-my-inbox-since-2024/" target="_blank">PC Gamer</a>（radar 標題層，pub 日期未取得，原文未完全驗）<span class="pp">partial</span>　🆕</td></tr>
+        <tr><td>Steam / Roblox / Twitch 數字層</td><td>heat_latest.json 2026-10-25T07:30（今日 radar 未回傳）· Steam 官方 API；TwitchTracker、roblox.com/charts 10/25 瀏覽器真抓<span class="ok">✓</span>　數字為昨晨，非今日即時</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥依分層驗證：CJ #1 BioWare 關閉為多家媒體一致報導（2026-10-21 起持續發酵），後續細節（ME5 pitch、演員反應）為標題層 partial；其他條目均為標題層確認，原文未完全驗，標注 partial。Steam＝官方 API 10/25 07:30 真數字（今日 radar 未回傳）· Twitch / Roblox / unityroom 為 10/25 瀏覽器真抓 · KYM 新鮮清單與 Threads 未取得，標暫缺 · 評分採可量測數字，無黑箱直覺分。</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 昨晨真數字 · 2026/10/26 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
