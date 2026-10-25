@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -227,7 +229,7 @@
     <div class="hero-in">
       <div class="badge-row">
         <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-        <span class="dateflag">2026 / 10 / 25 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30）· 來源 15+ 站 · Roblox / Twitch 今日暫缺</span>
+        <span class="dateflag">2026 / 10 / 25 · 彈藥工廠模式 · Steam 即時真數字（radar 07:30）+ Twitch / Roblox / unityroom 瀏覽器真抓 · 來源 20+ 站</span>
       </div>
       <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
       <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
@@ -235,9 +237,9 @@
 
       <div class="lead">
         <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-        <p><b>EA 正式關閉 BioWare，30 年老牌工作室謝幕，《質量效應》宇宙成絕唱。</b>約 <span class="hl">400 人</span>裁員，下一款 Mass Effect 專案取消，洩漏的內部預告片顯示「宇宙版 John Wick」方向胎死腹中（NYT 首報 10/21；Game Developer / GamesIndustry.biz / Eurogamer 多源跟進）。同日 Steam：<b>BG3 在線 +21.2%（43,065 人）、Stardew Valley +18.5%（39,521 人）</b>——玩家用遊玩時間自發致敬，不需要公告。</p>
-        <p>另一條線：<b>Arkane Lyon 11 月 13 日截止日</b>，217 個職位岌岌可危；Xbox 首位 COO Helen Chiang 三個月即離職，Microsoft 重組持續。<b>日本演員工會</b>同日公佈 AI 聲音複製新指引，包含禁止複製已故聲優。GameMaker 宣布 GMRT 2027 年 1 月起商業免費。</p>
-        <div class="pull">▸ 今天就能蹭：CJ 貼文「護城河不是技藝，是社群——BioWare 用 30 年示範了什麼」＋ Demo：<b>告別時代60秒RPG</b>（輸入你最喜歡的 RPG 角色原型 → 生成泛化太空/地城 60 秒告別對話分支場景 → 出「你的 RPG 隊伍組成」分享卡，全泛化零 IP 風險）</div>
+        <p><b>公開罵 AI 的獨立開發者，被抓到遊戲裡用了 AI 配音——他的處理方式是：全撤掉、換回真人錄音、願意退款。</b>《Future? No Thanks!》作者 Paolo Pedercini（PC Gamer，10/24）：第一篇部落格承認遊戲用了 <span class="hl">文字轉語音（TTS）配音</span>與「極小部分」AI 生成程式碼（修 shader / 除錯）；backlash 後第二篇宣布<b>移除 TTS、換成今年稍早錄好的真人配音</b>，並讓「覺得被背叛」的玩家 email 申請退款；他先前曾稱生成式 AI 為「technofascist, anti-human and anti-art project」。</p>
+        <p>另一條獨立時間線（各有各的日期）：10/23 Game Developer 報導 <span class="hl">GameMaker 的 GMRT 執行環境 2027/1/1 起免費商用</span>（PC / 行動 / 瀏覽器 / GX Games）；r/gaming 當日第 5 高票串在問「Steam Next Fest 8,000+ 款，Valve 該不該加 AI 篩選器？」。訊號一致：<b>做遊戲的工具越來越免費、越來越多人用 AI——玩家在意的是「有沒有被騙」，不是「有沒有用 AI」。</b></p>
+        <div class="pull">▸ 今天就能蹭：CJ 貼文「透明比純淨更重要」＋ Demo：<b>「別出聲」60 秒潛行小遊戲</b>（Roblox 榜上 Halloween「別出聲 / 別濺水」類地圖正熱）——按住潛行、放開就出聲，出「靜音存活秒數」分享卡。</div>
       </div>
 
       <!-- 📰 今日彈藥 頭版 -->
@@ -249,19 +251,19 @@
           <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>EA 關閉 BioWare：30 年，400 人，Mass Effect 宇宙成絕唱——護城河不在技藝，在社群</div>
-            <div class="ln"><b>新聞事實：</b>EA 正式關閉 BioWare，約裁員 400 人，Mass Effect Universe（下一款 Mass Effect）同步取消。BioWare 1995 年由 Ray Muzyka 和 Greg Zeschuk 創立，2007 年被 EA 收購，代表作 Baldur's Gate、KOTOR、Mass Effect、Dragon Age 系列。Mass Effect Universe 內部預告片已外洩，描述為「太空版 John Wick」方向。（NYT 2026-10-21 首報；Game Developer / GamesIndustry.biz 2026-10-25 多源；Shepard 聲優表示「抱著希望遊戲能活下去」）</div>
-            <div class="ln"><b>GameGen 角度：</b>BioWare 有最強的 IP 忠粉，但平台方能一刀切。真正的護城河不是「做好遊戲的能力」，而是讓<b>玩家自己是創作者</b>——社群綁在創作迴圈裡，不綁在任何一個工作室名字上。GameGen 的差異正是：梗你來選，60 秒我們來做，創作者的名字在分享卡上。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "EA just closed BioWare after 30 years. Mass Effect, Dragon Age — done. The lesson isn't 'make better games.' Studios die when creators and platforms stop being aligned. The real moat is community, not craft."<br><span style="color:var(--ink-dim)">中譯：EA 關掉了 BioWare，30 年，結束了。Mass Effect、Dragon Age——都沒了。教訓不是「做更好的遊戲」；工作室在創作者與平台失調時就死了。真正的護城河是社群，不是技藝。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a> / <a href="https://www.gamesindustry.biz/biowares-end-is-a-tragically-familiar-tale-opinion" target="_blank">GI.biz ↗</a>　多源確認　pub 2026-10-21–25　partial ✓</div>
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>反 AI 的獨立開發者被抓到用 AI 配音：撤掉、換回真人、開放退款——玩家要的是透明，不是純淨</div>
+            <div class="ln"><b>新聞事實：</b>《Future? No Thanks!》（生態社會主義諷刺遊戲）開發者 Paolo Pedercini 先在部落格揭露遊戲用了 TTS 配音與「極小部分」AI 生成程式碼（主要是修 shader 與小除錯）；backlash 後第二篇宣布移除 TTS 配音、改回今年稍早錄好的真人演員配音，並讓「覺得被背叛」的玩家以 email 申請退款；他稱拿掉後遊戲「只差 0.001%」，下一個專案會完全手寫程式。他先前曾稱生成式 AI 為「technofascist, anti-human and anti-art project」（PC Gamer，pub 2026-10-24；RPS 10/23 為首發報導，原文被擋）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這個案子裡爭議的核心是<b>「事前沒說」與立場落差</b>，不是技術本身。對 GameGen 的啟示：<b>生成內容要有來源標示與可 remix 的透明度</b>——把「這款遊戲是誰的梗、怎麼生成的、能不能改」寫在 challenge page 上，等於提前拆掉這顆雷。我們賣的是「今天的梗今天能玩」，不是「純手工」或「全 AI」。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A dev who called gen-AI 'anti-art' got caught using AI voices. His fix: swap in human actors, offer refunds, say so openly. Lesson for anyone building with AI: players don't need you to be pure. They need you to be upfront."<br><span style="color:var(--ink-dim)">中譯：一位公開稱生成式 AI「反藝術」的開發者被發現用了 AI 配音。他的處理：換回真人演員、開放退款、公開說明。給所有用 AI 做東西的人：玩家不需要你純淨，他們需要你坦白。</span></div>
+            <div class="meta">去賭場化 ✅（「退款」為原文事實，勿延伸成金流話術）　來源 <a href="https://www.pcgamer.com/gaming-industry/game-development/i-drank-from-the-chalice-of-blood-indie-dev-scrubs-his-game-of-ai-generated-voice-lines-having-previously-described-the-technology-as-anti-human-and-anti-art" target="_blank">PC Gamer ↗</a>　pub 2026-10-24　🔄（昨日僅標題層提及，今日補驗全文）　verified ✓</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GameMaker GMRT 次世代執行環境 2027 年 1 月起商業免費——工具門檻再降，速度才是真差異</div>
-            <div class="ln"><b>新聞事實：</b>GameMaker 宣布其「next-generation runtime」GMRT 將於 2027 年 1 月起對商業開發者免費，只有 Enterprise tier 仍需付費。（GamesIndustry.biz / Game Developer / 80lv 多源 2026-10-24–25）</div>
-            <div class="ln"><b>GameGen 角度：</b>工具門檻的每一次降低，都是下一個「一人工作室年收七位數」的土壤。但對 GameGen 而言，工具免費只是入場券——<b>快到能在梗還熱的時候上線</b>，才是差異化護城河。Trend Response Time 是比工具成本更稀缺的資源。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "GameMaker's next-gen runtime is going free for commercial use in January. Lower barriers = more creators. The question isn't who can build — it's who can build today's meme today."<br><span style="color:var(--ink-dim)">中譯：GameMaker 的次世代執行環境明年一月起商業免費。門檻降低＝更多創作者。問題不在於誰能做——而是誰能在今天的梗還熱的時候做出來。</span></div>
-            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/gamemaker-to-make-its-next-generation-runtime-gmrt-free-for-commercial-use-in-january-2027" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.gamedeveloper.com/programming/gamemaker-s-gmrt-runtime-will-soon-be-free-for-all-commercial-devs" target="_blank">Game Developer ↗</a>　pub 2026-10-24　摘要層</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>GameMaker 宣布 2027 年 1 月起，用 GMRT 發行商業遊戲完全免費——工具門檻繼續歸零</div>
+            <div class="ln"><b>新聞事實：</b>Game Developer（pub 2026-10-23）：GameMaker 的新執行環境 GMRT（2026 年 4 月宣布，加入 2D 開發工具並支援以 Claude Code 輔助編程）將自 <b>2027-01-01</b> 起，於 PC、行動、瀏覽器與 GX Games 上發行遊戲<b>不再收費</b>（先前須 Professional 授權）；發行到 PS5 / Xbox Series X|S / Switch 2 仍需 enterprise 授權，原文未給價格。現有 Professional 授權者可繼續用 GMS2 runtime 並取得其原始碼。公司稱目的是讓獨立開發「更 accessible」。</div>
+            <div class="ln"><b>GameGen 角度：</b>引擎、執行環境、AI 輔助編程都在變免費，<b>「做出一款遊戲」的成本趨近零</b>；稀缺的變成「選對今天的題材」與「做完能被分享出去」。GameGen 的護城河不是生成能力，是 <b>Trend Response Time</b> 加上分享 / remix 的社交迴圈。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GameMaker's new runtime goes free for commercial use in Jan 2027. Tools keep getting cheaper. The scarce part isn't making a game anymore — it's making the right one on the day the joke is alive."<br><span style="color:var(--ink-dim)">中譯：GameMaker 的新執行環境 2027 年 1 月起商業免費。工具一直變便宜，稀缺的已經不是做出遊戲，而是在梗還活著的那天做出對的那一款。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/programming/gamemaker-s-gmrt-runtime-will-soon-be-free-for-all-commercial-devs" target="_blank">Game Developer ↗</a> / <a href="https://www.gamesindustry.biz/gamemaker-to-make-its-next-generation-runtime-gmrt-free-for-commercial-use-in-january-2027" target="_blank">GamesIndustry.biz ↗</a>（標題層佐證）　pub 2026-10-23（約 2 天前 · 🔄）　verified ✓</div>
           </div>
         </div>
 
@@ -270,25 +272,27 @@
           <div class="gt">📣 小編 · X 線　TOP 3</div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>BioWare 關閉當天，BG3 Steam +21.2%、Stardew Valley +18.5%——玩家用遊玩時間致敬，不需要公告<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>heat_latest.json 2026-10-25 07:30 官方 API 真數字：BG3（appid 1086940）43,065 人 vs 昨日 35,522（+21.2%）；Stardew Valley（appid 413150）39,521 人 vs 昨日 33,356（+18.5%）。BG3 由 Larian Studios 開發（非 BioWare），但為 Baldur's Gate 授權繼承者，玩家視為精神延續。Stardew Valley 為一人開發者 ConcernedApe 作品。兩款均非大廠作品。</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "BioWare closed today. Baldur's Gate 3 is up 21% on Steam. Stardew Valley up 18.5%. Players don't need announcements to gather — they vote with playtime. Community &gt; brand."<br><span style="color:var(--ink-dim)">中譯：BioWare 今天關了。BG3 在 Steam 漲了 21%，星露谷漲了 18.5%。玩家不需要公告就能集結——他們用遊玩時間投票。社群 &gt; 品牌。</span></div>
-            <div class="ln"><b>Create-loop 勾子：</b>「你最想在今天玩的遊戲是什麼？輸入一個 RPG 記憶 → 生成你專屬的 60 秒告別場景」。</div>
-            <div class="meta">來源 Steam 官方 API（heat_latest.json 10/25 07:30）　<a href="https://store.steampowered.com/app/1086940" target="_blank">BG3 ↗</a> / <a href="https://store.steampowered.com/app/413150" target="_blank">Stardew ↗</a>　verified ✓</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>r/gaming 當日第 5 高票：「Next Fest 8,000+ 款遊戲，Steam 該加 AI 篩選器嗎？」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>heat-radar 10/25 07:30：r/gaming「top-of-day」第 5 位為帖子〈8,000+ games in Next Fest. Should Steam add an AI filter?〉。這是 radar 的排序數字（客觀）；帖內票數與留言未逐則驗證，<b>目前無法完全證實具體票數</b>。（昨日 GameSpot 已報 Next Fest 被 AI 複製遊戲灌爆，此為社群延燒。）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "8,000+ games in Next Fest and players want an AI filter. Fair question. Our answer: don't hide how it's made — show who made the joke, and let anyone remix it. Poll: filter AI games, yes or no? 👇"　<span style="color:var(--ink-dim)">中譯：Next Fest 8,000 多款遊戲，玩家想要 AI 篩選器。合理的問題。我們的答案：別藏製作方式——標出誰出的梗，讓所有人能 remix。投票：要不要篩掉 AI 遊戲？👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>留言投票 →「梗作者署名卡」：每款遊戲自動附「梗作者 / 生成方式 / remix 次數」標示，展示透明度。</div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1xdy3za/8000_games_in_next_fest_should_steam_add_an_ai_filter/" target="_blank">Reddit r/gaming ↗</a>　radar 10/25 · 摘要層</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>日本演員工會嚴禁未授權 AI 語音複製，包含明確禁止複製已故聲優<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>Japan Actors Union（日本俳優連合）發佈新指引，嚴禁以 AI 複製演員聲音而不取得授權，並明確禁止複製已故聲優（seiyuu）的聲音。同期 PC Gamer 也報導另一起「indie dev 承認用了 AI 語音後向玩家道歉並退款」事件（Future? No Thanks!，RPS 確認）。（Reddit r/Games 2026-10-25 top-of-day；PC Gamer 標題層）</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "Japan's Actors Union just banned AI cloning of voices — including those who have passed. AI ethics is getting real rules. The safest creative AI: make the tool invisible, make consent visible."<br><span style="color:var(--ink-dim)">中譯：日本演員工會剛禁止 AI 複製聲音，包括已故聲優。AI 倫理正在從指引變成規定。最安全的創意 AI：讓工具隱形，讓同意可見。</span></div>
-            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1xec8x8/japan_actors_union_reveals_new_guidelines_to/" target="_blank">Reddit r/Games ↗</a> / <a href="https://www.pcgamer.com/software/ai/japan-actors-union-pushes-for-heavy-restrictions-on-ai-copying-dead-actors/" target="_blank">PC Gamer ↗</a>　標題層・部分核實</div>
+            <div class="ti"><span class="fresh f-upd">🔄 近期</span>《PEAK》Steam 在線排名一天爬 18 名（#78→#60）；開發商稱累計銷量 2,300 萬，聊「friendslop」之後的路<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam 排名跳動（官方榜，10/25 07:30 vs 前日）：PEAK 78→60（+18 名）、How to Fish 88→78（+10）、R.E.P.O. 58→50（+8）——三款都是「朋友合作搞笑」型。GamesIndustry.biz podcast 標題：Landfall 的 Rebecca Lautner 談 Peak 賣 2,300 萬套與「friendslop 之後」（<b>標題層，原文被擋，日期與語境無法完全證實</b>）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Peak, R.E.P.O., How to Fish — the 'friendslop' crowd is climbing Steam again. Short, chaotic, better with friends. Name your squad's worst idea and we'll turn it into a 60-second co-op game. 👇"　<span style="color:var(--ink-dim)">中譯：Peak、R.E.P.O.、How to Fish——「friendslop」一派又在爬 Steam。短、亂、跟朋友玩更好笑。說出你們這群人最爛的點子，我們把它變成 60 秒合作小遊戲。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入朋友群的內梗 → 生成 4 人合作混亂小遊戲 → 「我們團滅了幾次」分享卡（遊戲內用泛化角色，不用 Peak 等現有角色）。</div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/app/3527290" target="_blank">Steam PEAK ↗</a> / <a href="https://www.gamesindustry.biz/podcast-landfalls-rebecca-lautner-on-peaks-23-million-sales-and-looking-past-friendslop" target="_blank">GamesIndustry.biz ↗</a>　排名＝radar 官方數字；podcast＝標題層・日期未驗</div>
           </div>
 
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Half-Life 3 傳言再燃：Valve 開發者技術討論中意外提及疑似代號<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>事實：</b>RPS 報導：一名 Valve 開發者在關於遊戲音效的公開技術討論中，提及三個被玩家認為與 Half-Life 3 代號相關的字母，再次引燃全球粉絲猜測。Eurogamer 同日跟進。（RPS / Eurogamer 標題層，2026-10-25；具體語境未完整核實）</div>
-            <div class="hook"><span class="en">Hook (EN):</span> "A Valve developer said three letters in a tech talk and the whole internet lit up. Some memes have no expiry date. That's what real community looks like — years of shared hope."<br><span style="color:var(--ink-dim)">中譯：一名 Valve 開發者在技術討論中說了三個字母，整個網路就爆了。有些梗永遠不過期——那就是真社群的樣子：多年的共同期待。</span></div>
-            <div class="meta">來源 <a href="https://www.rockpapershotgun.com/half-life-3-speculation-reignited-by-valve-dev-mentioning-three-sweet-little-rumored-codenamey-letters-amid-technical-chat-about-video-game-noises" target="_blank">RPS ↗</a> / <a href="https://www.eurogamer.net/half-life-3-developer-references-codename-public" target="_blank">Eurogamer ↗</a>　標題層・日期未完整核實</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Roblox 熱門榜出現一串「別出聲」地圖：[新關卡] Don't Splash 72.4K、《它能聽到水聲》9.4K、《靜音：他們可以聽到》6.4K<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>roblox.com/charts（電腦 / 全地區，Top Trending，10/25 瀏覽器真抓；繁中介面譯名，與英文原名可能有出入）：「[新關卡] 不要噴水 🎃」72.4K 在線、「它能聽到水聲（請不要濺水）🎃」9.4K、「靜音：他們可以聽到。（測試版）」6.4K，同榜 Halloween 地圖佔多數。共通 loop：<b>不能出聲 / 不能弄出動靜，否則被怪物發現</b>。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Roblox's trending list is full of 'don't make a sound' horror maps this week. How long can you stay quiet? Tell us the noise you can't resist and we'll build the 60-second version. 👇"　<span style="color:var(--ink-dim)">中譯：Roblox 本週熱門榜滿是「不能出聲」的恐怖地圖。你能安靜多久？告訴我們你忍不住的那個聲音，我們做出 60 秒版。👇</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>輸入「你忍不住的聲音」（打噴嚏 / 手機震動）→ 60 秒潛行遊戲 → 「靜音存活秒數」分享卡，朋友挑戰比分。</div>
+            <div class="meta">來源 <a href="https://www.roblox.com/charts" target="_blank">Roblox Charts ↗</a>　瀏覽器 10/25 真抓　摘要層</div>
           </div>
         </div>
 
@@ -296,10 +300,10 @@
         <div class="ammo-grp l-dm reveal">
           <div class="gt">🕹️ Demo 線　TOP 1</div>
           <div class="ammo-item">
-            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「告別時代60秒RPG」：輸入你最喜歡的 RPG 角色原型 → 生成泛化太空/地城告別對話 → 出「你的 RPG 隊伍組成」分享卡（蹭 BioWare 謝幕情緒，全泛化）<span class="deca">去賭場化 OK</span></div>
-            <div class="ln"><b>玩法：</b>輸入你最喜歡的 RPG 角色原型（神射手 / 治療師 / 話癆隊友 / 安靜殺手 / 叛徒轉正 / 太空指揮官）→ 生成一段泛化 60 秒分支對話場景（離開飛船或地城的最後一刻）→ 出「你的 RPG 隊伍分配」圖文分享卡，帶#ThanksForTheAdventure 標籤。全泛化，不使用 Mass Effect / Dragon Age / Baldur's Gate 具體 IP，不放 BioWare 名稱。</div>
-            <div class="ln"><b>為何是今天首選：</b>BioWare 關閉帶來全球玩家的情緒共鳴，BG3 +21.2% 已驗證社群集結。「告別」這個情緒框架今天有最強的鉤子，門檻最低（只需一個角色原型輸入），Create→Share→Remix 迴圈乾淨。備案：Factorio 2.1「最後大更新」同日 HN + Reddit 雙平台高討論，可做「60 秒工廠衝刺：計時結束前把流水線搭完」。</div>
-            <div class="meta">情緒鉤子：BioWare 關閉 / BG3 致敬浪潮　模板：分支對話 / 角色選擇</div>
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「別出聲」：一句話生一款 60 秒潛行遊戲，放開按鍵就出聲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>輸入「你忍不住的聲音」（打噴嚏 / 手機震動 / 嚼洋芋片）→ 玩家按住按鍵潛行、放開就發出聲音；巡邏的泛化「怪物」每隔幾秒轉頭，被聽到就結束 → 出「靜音存活秒數」＋「忍住了幾次」分享卡（純梗分數）。可 remix 換聲音與怪物。</div>
+            <div class="ln"><b>為何是今天首選：</b>Roblox 榜上「別出聲」類 Halloween 地圖熱度有真數字（72.4K）；單鍵 + 計時 30 秒可上手，Create→Share→Remix loop 乾淨；IP 風險最低（泛化怪物、泛化場景，<b>不複製任何 Roblox 現有地圖名稱 / 角色</b>）。備案：「朋友團滅」4 人合作混亂小遊戲（蹭 friendslop 爬榜）。</div>
+            <div class="meta">綁 <a href="https://www.roblox.com/charts" target="_blank">Roblox Charts ↗</a>　模板：單鍵按住 / 計時存活</div>
           </div>
         </div>
       </div>
@@ -315,31 +319,45 @@
         <div class="board b-steam">
           <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 10/25 即時</span></div>
           <ol>
-            <li class="hot up"><span class="nm">Counter-Strike（appid 730）</span><span class="vn">681K ▲2.4%</span></li>
-            <li class="hot up"><span class="nm">Call of Duty MW2（appid 1938090）</span><span class="vn">175K ▲9.0%</span></li>
+            <li class="up"><span class="nm">Counter-Strike（appid 730）</span><span class="vn">682K ▲2.4%</span></li>
+            <li class="hot up"><span class="nm">Call of Duty（appid 1938090）</span><span class="vn">175K ▲9.0%</span></li>
             <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">130K ▲6.6%</span></li>
-            <li class="up"><span class="nm">Team Fortress 2</span><span class="vn">88K ▲10.0%</span></li>
+            <li class="hot up"><span class="nm">Team Fortress 2</span><span class="vn">88K ▲10.0%</span></li>
             <li class="up"><span class="nm">Rust</span><span class="vn">84K ▲1.2%</span></li>
-            <li class="up"><span class="nm">Rainbow Six Siege</span><span class="vn">71K ▲7.2%</span></li>
+            <li class="hot up"><span class="nm">Baldur's Gate 3</span><span class="vn">43K ▲21.2%</span></li>
           </ol>
           <div class="bf">Steam 官方 API · 10/25 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-rblx">
-          <div class="bh"><span>ROBLOX CCU</span><span class="metric">10/25 今日資料不足</span></div>
-          <div class="nodata">⚠️ 今日 radar（07:30）未收錄 Roblox 即時抓取，無法提供當日榜單真數字，不編造。昨日（10/24）：Halloween 活動地圖佔 Top Trending 多數，Murder Mystery 2 領銜（941K）。</div>
-          <div class="bf">Roblox 資料暫缺 · 需手動驗證 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">Top Trending · 10/25 瀏覽器真抓</span></div>
+          <ol>
+            <li class="hot up"><span class="nm">謀殺之謎2（Murder Mystery 2）</span><span class="vn">1.6M</span></li>
+            <li class="up"><span class="nm">[🎃 新任務] 盛裝打扮以吸引目光</span><span class="vn">118.6K</span></li>
+            <li class="up"><span class="nm">[1.5倍 🎃萬聖節] 躲避</span><span class="vn">99.6K</span></li>
+            <li class="up"><span class="nm">空洞</span><span class="vn">90K</span></li>
+            <li class="up"><span class="nm">[新關卡] 不要噴水 🎃</span><span class="vn">72.4K</span></li>
+            <li class="up"><span class="nm">貓之戰 🐾</span><span class="vn">63.3K</span></li>
+          </ol>
+          <div class="bf">roblox.com/charts（繁中介面譯名，10/25 瀏覽器真抓；榜單呈現順序非嚴格 CCU 排序）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
         </div>
 
         <div class="board b-dim">
-          <div class="bh"><span>TWITCH 觀看</span><span class="metric">10/25 今日資料不足</span></div>
-          <div class="nodata">⚠️ 今日 radar 未收錄 Twitch 即時抓取，無法提供當日數字，不編造。昨日（10/24）近 7 天均觀眾：Just Chatting 292K、League of Legends 128K、Minecraft 108K、GTA V 87.7K、WoW 80K、CoD MW4 39.1K。</div>
-          <div class="bf">Twitch 資料暫缺 · <a href="https://twitchtracker.com/games" target="_blank">TwitchTracker ↗</a></div>
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近 7 天平均觀眾 · 10/25</span></div>
+          <ol>
+            <li><span class="nm">Just Chatting</span><span class="vn">297K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">145K</span></li>
+            <li><span class="nm">Minecraft</span><span class="vn">101K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">85.9K</span></li>
+            <li><span class="nm">World of Warcraft</span><span class="vn">76.4K</span></li>
+            <li><span class="nm">ARC Raiders</span><span class="vn">36.4K</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 10/25 瀏覽器真抓 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
         </div>
 
       </div>
       <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ✅ 本機 heat-radar 10/25 07:30 已跑成功。Steam 為官方 API 即時真數字；今天是週日，Steam 整體日比偏向「週末在線高峰」，BG3 +21.2% 與 Stardew Valley +18.5% 幅度明顯高於其他（可能為 BioWare 關閉情緒帶動，但無法完全排除週末因素）。Roblox / Twitch 今日暫缺。
+        ✅ 本機 heat-radar 10/25 07:30 已跑成功（19/19 源）。Steam 為官方 API 即時真數字；今天是週日，整體偏「週末回流」，不等於新事件。Roblox 榜以 Halloween 活動地圖為主（多款帶 🎃）。
       </div>
     </section>
 
@@ -348,16 +366,16 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>暴衝</span></span>BG3 +21.2%、Stardew Valley +18.5%——BioWare 關閉日兩款「精神繼承者」同步逆勢領漲</h3>
-        <div class="sum">Steam 真·日比（官方 API，10/25 07:30 vs 昨日）：<b>Baldur's Gate 3（appid 1086940）43,065 人（+21.2%）</b>、<b>Stardew Valley（appid 413150）39,521 人（+18.5%）</b>、<b>Team Fortress 2 88,011（+10.0%）</b>、<b>GTA V Legacy 40,433（+9.4%）</b>、CoD MW2 175,403（+9.0%）。排名跳動：<b>PEAK 78→60（+18 名）</b>、How to Fish 88→78（+10 名）、R.E.P.O. 58→50（+8 名）、Civ VI 74→68（+6 名）。新進榜：Worst Class Ever Demo（第 90）、FINAL FANTASY RESONANCE（第 94）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日最特殊訊號是 BG3 和 Stardew Valley 同步大幅上漲——兩款均非 BioWare 作品，但均為玩家心目中的「精神繼承」。BG3 是 Baldur's Gate 授權繼承者，Stardew Valley 是「一人工作室做出一生代表作」的象徵。<b>玩家在 BioWare 關閉日用行動投票，無需公告。</b>PEAK 連日持續爬榜（合作爬山玩法），R.E.P.O. 同向。</div>
+        <h3><span class="tag ig"><span>暴衝</span></span>Steam 日比過 ≥15% 旗標：Baldur's Gate 3 +21.2%、Stardew Valley +18.5%；《PEAK》排名 +18</h3>
+        <div class="sum">Steam 真·日比（官方 API，10/25 07:30 vs 前日）：<b>Baldur's Gate 3 43,065 人（+21.2%）</b>、<b>Stardew Valley 39,521（+18.5%）</b>；其餘大作 +1~10%，屬週末回流。排名跳動：<b>PEAK 78→60（+18 名）</b>、How to Fish 88→78（+10）、R.E.P.O. 58→50（+8）；新進榜：Worst Class Ever Demo（#90）、FINAL FANTASY RESONANCE（#94）。BG3 與 Stardew 昨日已進過 X 彈藥（♻️，不再當新聞）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>有題材味道的是 PEAK / R.E.P.O. / How to Fish 這批「朋友合作搞笑」類同時爬榜——共通 loop 是<b>短局、混亂、多人</b>，可轉成 4 人合作迷你遊戲（已入 X 彈藥 #2）。大作 IP 不直接挪用。</div>
         <div class="footrow">
           <div class="src">STEAM 官方 API · 10/25 即時（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
         </div>
       </article>
 
       <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">
-        ⚠️ BG3 +21.2% 原因推測（BioWare 關閉社群致敬）尚無官方確認。Roblox / Twitch 暴衝數字因今日未抓取，<b>無法完全證實</b>。Steam 數字為官方 API 機械真數字，無疑義。
+        ⚠️ Twitch 7 天漲幅% 與 Roblox 黑馬新進榜需比對「昨日快照」，目前沒有逐日存檔，<b>無法完全證實漲幅</b>；上方 Twitch / Roblox 為今日榜單真數字。可觀察到：Twitch 榜上 ARC Raiders 36.4K、AION 2 27.7K、Deadlock 26.5K、Slots 26.9K（Slots 為博弈類目，僅記錄、不引用）。
       </div>
     </section>
 
@@ -365,62 +383,55 @@
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>Steam 新進榜</span></span>FINAL FANTASY RESONANCE 與 Worst Class Ever Demo 首次進入 Most Played 前 100</h3>
-        <div class="sum">radar 10/25 Most Played 新進榜：<b>FINAL FANTASY RESONANCE（appid 3259780，第 94）</b>同時出現在熱賣榜；<b>Worst Class Ever Demo（appid 5354030，第 90）</b>為 demo 版。FF Resonance 同日熱賣榜亦有出現，顯示新上市帶動雙榜同時收錄，但在線人數未公開。體量與持續性<b>目前無法完全證實</b>。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>FF Resonance 在熱賣 + Most Played 雙榜代表強勁上市；但 JRPG 機制（回合制）較難直接蹭做 60 秒 demo，可留意後續是否出現「限時活動」機制可借。Worst Class Ever Demo 名稱暗示教室/學生題材，可留意 loop 設計。</div>
-        <div class="footrow"><div class="src">Steam Most Played · radar 10/25 · <a href="https://store.steampowered.com/app/3259780" target="_blank">FF Resonance ↗</a></div></div>
+        <h3><span class="tag ai"><span>早期</span></span>itch.io html5 熱門：Tamaweb 虛擬寵物、Breadwinner、Von Neumann、Troll the King</h3>
+        <div class="sum">itch.io <code>/games/html5</code> 當日前段：<b>Tamaweb: Virtual Pet Game</b>（網頁寵物養成）、Von Neumann、Legendum、Trauma lab、The Freak Circus、Breadwinner、Abattlacus、diagnosis lovesick (demo)、Troll the King。另有「Kirby ~ Soft &amp; Wet」屬 IP 二創，風險高不建議參考。共通 loop：<b>養成 / 放置 / 單頁恐怖小品</b>。（與昨日同一批居多，體量與成長未逐款驗證。）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Tamaweb 這類「網頁寵物」仍是最容易複製的 loop：輸入梗 → 專屬寵物 → 養成卡分享。</div>
+        <div class="footrow"><div class="src">itch.io html5 popular · radar 10/25 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div></div>
       </article>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>itch.io</span></span>itch.io html5 熱門繼續由養成 / 放置 / 互動類主導</h3>
-        <div class="sum">itch.io html5 popular 持續前列：Tamaweb Virtual Pet Game、Breadwinner、Legendum、Von Neumann、Trauma lab、diagnosis lovesick (demo)。另有 meme 分類：This Role: You are Hamster、Three Nights Lobotomized、Kill the Ice Age Baby Adventure 等。<b>體量數字目前無法完全證實</b>（列表頁不顯示 CCU）。今日無全新 html5 熱門替換上述格局。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Tamaweb 類「網頁寵物」依然是最可複製的 loop，與今日 Demo「告別場景」的「角色情感連結」大類一致。</div>
-        <div class="footrow"><div class="src">itch.io html5 popular · radar 10/25 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div></div>
+        <h3><span class="tag ai"><span>Steam 新品</span></span>Steam 新品榜：Shear line、Foulbreaker、SLICEFALL、Unforgiving Dungeon 等</h3>
+        <div class="sum">radar 抓到 Steam 新品前列：Ad Nauseam - The Wrong Side、AVXRPG、PixelBoss: Shattered Depths、Quick Translate Engine、Behind the Corner、Grifford Academy、Shear line、Foulbreaker、SLICEFALL、Unforgiving Dungeon。內容與體量未逐款驗證，<b>目前無法完全證實</b>熱度。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>只當 loop 命名參考（SLICEFALL＝切割類），無客觀熱度數字不進彈藥。</div>
+        <div class="footrow"><div class="src">Steam 新品 · radar 10/25 · <a href="https://store.steampowered.com/app/3330380" target="_blank">Ad Nauseam ↗</a></div></div>
       </article>
     </section>
 
     <!-- 高討論文章 -->
     <section id="talk">
-      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>頭條</span></span>EA 關閉 BioWare：NY Times 首報（10/21），今日多源確認，產業哀悼潮</h3>
-        <div class="sum">NYT（2026-10-21）首報；Game Developer、GamesIndustry.biz、PC Gamer、Eurogamer、VGC、Gamespot、Reddit r/Games 多源跟進（10/21–25）。關鍵細節：約 400 人裁員；Mass Effect Universe 取消；洩漏內部預告顯示「太空 John Wick」方向；Shepherd 聲優表示「holding hope the game will live on」；加拿大政黨領袖呼籲政府協助員工買回工作室；Reddit 分析：「BioWare 的終章是悲劇性的熟悉故事」（GamesIndustry.biz 評論）。另：Battlefield 6 已移除 Mass Effect 聯動道具。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日沒有比這更大的遊戲業新聞。對外溝通方向：不蹭 IP 本身（版權敏感），站「社群力量 > 工作室品牌」的 insight，是今天最強的 CJ LinkedIn 切角。不做 BioWare/ME/DA 任何角色或場景的直接複製。</div>
-        <div class="footrow"><div class="src"><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer ↗</a> · <a href="https://www.gamesindustry.biz/biowares-end-is-a-tragically-familiar-tale-opinion" target="_blank">GI.biz ↗</a> · <a href="https://www.eurogamer.net/mass-effect-battlefield-6-crossover-bioware-closure" target="_blank">Eurogamer ↗</a></div></div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI×遊戲</span></span>〈Future? No Thanks!〉撤 AI 配音＋退款（頭版 CJ 線 #1）／Vivrato：97% 工作室領導者用 AI（10/21）</h3>
+        <div class="sum">PC Gamer 10/24、RPS 10/23（Tavily ai_in_games）。同一組結果：<b>GamesIndustry.biz 10/21 Vivrato：歐美 97% 工作室領導者在開發中以某種形式用 AI</b>（標題層，原文被擋）；10/20 IGN 報導 Xbox 業務分析師稱「業界假裝沒在用 AI」（昨日已入彈藥，♻️）；10/23 Polygon 對 Epic AI MegaJam 的批評（昨日已用）。主軸：<b>AI 使用已是常態，爭議落在「有沒有說、立場前後是否一致」</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>對外溝通站「透明 + 好玩 + 創作權給用戶」，不參戰「該不該用 AI」。每款遊戲掛梗作者與 remix 鏈，就是最好的透明度證明。</div>
+        <div class="footrow"><div class="src"><a href="https://www.pcgamer.com/gaming-industry/game-development/i-drank-from-the-chalice-of-blood-indie-dev-scrubs-his-game-of-ai-generated-voice-lines-having-previously-described-the-technology-as-anti-human-and-anti-art" target="_blank">PC Gamer ↗</a> · <a href="https://www.gamesindustry.biz/vivrato-97-of-studio-leaders-use-ai-in-some-form-during-development-in-eu-and-north-america" target="_blank">GamesIndustry.biz ↗</a></div></div>
       </article>
 
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>Microsoft 重組</span></span>Arkane Lyon 11 月 13 日截止日；Xbox 首位 COO 三個月即離職</h3>
-        <div class="sum">Arkane Lyon（Dishonored 開發商）11 月 13 日前必須找到買家，否則 Microsoft 關閉工作室，217 個工作位岌岌可危（Le Monde 首報；Eurogamer / Gamespot / VGC / RPS 多源）。Jason Schreier：「有多條出路正積極推進，我會感到意外如果工作室被關閉」。另：Marvel's Blade 製作接近尾聲可能增加資產吸引力。同期，Xbox 首任 COO Helen Chiang 僅三個月即離職（PC Gamer / Eurogamer / Reddit 多源）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Arkane Lyon 截止日為本週最大懸念之一，適合持續追蹤。如果工作室最終存活，可能帶動相關 IP 熱度。如果關閉，將觸發又一波「大廠重組 vs 獨立開發者」的討論。</div>
-        <div class="footrow"><div class="src"><a href="https://www.eurogamer.net/xbox-layoffs-marvels-blade-arkane-lyon-closure" target="_blank">Eurogamer ↗</a> · <a href="https://www.videogameschronicle.com/news/arkane-has-until-november-to-find-a-buyer-or-face-closure-its-claimed/" target="_blank">VGC ↗</a></div></div>
+        <h3><span class="tag ai"><span>工具</span></span>GameMaker GMRT 2027/1/1 起商業免費；Naavik〈Viral Game Mash-ups〉延燒（♻️）</h3>
+        <div class="sum">Game Developer 10/23 / GamesIndustry.biz 同題（頭版 CJ 線 #2）。Naavik 10/13〈Viral Game Mash-ups: What AI Decompilation Capabilities Mean For Games〉已進過彈藥（♻️），不重複當新聞；可作「remix 風潮」背景。同列 Naavik：〈Meta’s Role in Gaming Today: Muse, VR, and UA〉、〈Investigating the Collapse of Mobile MMORPGs〉（未讀全文，僅標題）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「混搭 / remix」是 Play-to-Remix 的產業語言；工具免費化讓「選題速度」成為差異點。</div>
+        <div class="footrow"><div class="src"><a href="https://www.gamedeveloper.com/programming/gamemaker-s-gmrt-runtime-will-soon-be-free-for-all-commercial-devs" target="_blank">Game Developer ↗</a> · <a href="https://naavik.co/ai-gaming/viral-game-mash-ups-what-ai-decompilation-capabilities-mean-for-games/" target="_blank">Naavik ↗</a></div></div>
       </article>
 
-      <article class="story ai reveal">
-        <h3><span class="tag ai"><span>產業動態</span></span>Capcom 資料外洩 1,170 萬帳號；Marvel's Wolverine 九月美國冠軍；Factorio 2.1 最終大更新</h3>
-        <div class="sum">三條獨立：(1) <b>Capcom 資料外洩</b>：超過 1,170 萬 Capcom ID 帳號受害（GamesIndustry.biz，標題層）。(2) <b>Marvel's Wolverine 九月美國銷售冠軍</b>，達到 Helldivers 2 後 Sony 發行遊戲月銷售最高（GamesIndustry.biz / Reddit 多源確認，報告為 NPD）。(3) <b>Factorio 2.1</b> 正式發佈，被宣告為「最後一次重大更新」（RPS / Reddit r/Games / HN 多源，今日高討論，pub 近期）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>Capcom 資安事件→對外勿使用 Capcom ID 相關資訊。Factorio 2.1「最後大更新」敘事是今日備案 Demo 素材（「計時工廠衝刺」）。Wolverine 銷售表現驗證「混合評價≠商業失敗」的 IP 加持效應。</div>
-        <div class="footrow"><div class="src"><a href="https://www.gamesindustry.biz/capcom-affected-by-data-breach-over-117m-capcom-id-accounts-compromised" target="_blank">Capcom ↗</a> · <a href="https://www.rockpapershotgun.com/factorios-final-major-update-has-rolled-off-the-assembly-line-adding-the-things-we-wanted-to-do-for-20-but-didnt-have-time-for" target="_blank">Factorio ↗</a></div></div>
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>客觀訊號</span></span>HN / Reddit 當日高討論</h3>
+        <div class="sum"><b>HN：</b>〈Sid Meier 親述 Civilization 完整歷史〉9 分；〈創投遊戲：你的 LP 想把錢要回來〉5 分（vc.tilo.coffee，遊戲化諷刺）；〈遊戲讓數據機 / 路由器當機〉3 分。<b>Reddit r/gaming 當日 top 序：</b>#1 CS 的 VAC ban 已滿 19 年、#2 電玩改編電影 2019 前從無 Rotten Tomatoes 「fresh」、#4 Marvel's Wolverine 為美國 9 月新作銷量第一、#5 Next Fest AI 篩選器討論（入彈藥）、#8 宮本茂談生成式 AI「creating vs doing the work」、#10 日本演員工會新規禁止未授權 AI 語音複製。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「創投遊戲」這種把產業痛點做成小遊戲的諷刺作品，正是 GameGen 一句話生成的典型；其餘多為懷舊 / 大作敘事，不進首選。</div>
+        <div class="footrow"><div class="src">radar hackernews / reddit · 10/25 07:30 · <a href="https://vc.tilo.coffee/" target="_blank">HN 熱帖 ↗</a></div></div>
       </article>
     </section>
 
-    <!-- 迷因題材 -->
+    <!-- 迷因題材 / 迷因遊戲 -->
     <section id="meme">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
       <article class="story ig reveal">
-        <h3><span class="tag ig"><span>新梗</span></span>VAC 封禁 19 年梗：「我的封禁跟我拿到的時候一樣大了」（Reddit r/gaming 當日熱帖）</h3>
-        <div class="sum">Reddit r/gaming 今日 top：用戶 posted「My VAC ban for Counter Strike is now the same age I was when I got it（Over 19 years）」，獲得高票。CS 在線 681K 仍穩居 Steam 第一，VAC 封禁作為一種「永久性懲罰」梗有長尾傳播力。情緒：懷舊 + 自嘲 + 計時器 loop（生日倒數的反向版）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「計時器 + 自嘲」是高擴散的 loop 公式。可做：「你的 [某種懲罰/承諾] 幾歲了？輸入年份 → 生成一個倒數計時遊戲」——不觸及 VAC/Valve IP，借「計時 milestone」機制。去賭場化 ✅（純趣味，無博彩）。</div>
-        <div class="footrow"><div class="src"><a href="https://www.reddit.com/r/gaming/comments/1xe1qqa/my_vac_ban_for_counter_strike_is_now_the_same_age/" target="_blank">Reddit r/gaming ↗</a> · 10/25 top-of-day</div></div>
-      </article>
-
-      <article class="story ig reveal">
-        <h3><span class="tag ig"><span>觀察</span></span>Reddit r/gaming 今日其他熱帖：「牛奶嘲諷我」、電影改編遊戲評分轉捩點（2019–2026 九部正評）、Outer Wilds 心痛發文</h3>
-        <div class="sum">「Even my milk is trash talking me now」（食物容器顯示遊戲相關訊息的搞笑截圖）、「TIL: 直到 2019 年沒有任何遊戲改編電影拿到 RT Fresh 評分，之後有 9 部」（TIL 類高票帖）、「Outer Wilds：你無法從我口中逼出答案」（情感類 gaming 帖）。共通情緒：懷舊、自嘲、驚喜。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>「牛奶嘲諷」梗屬於純隨機趣味，無遊戲化潛力。「9 部 Fresh 改編電影」是新的資訊，Minecraft/Diablo 影視持續推進（Netflix 報導）——跨媒體 IP 趨勢持續。Outer Wilds 高情緒帖因 BioWare 關閉日帶動「告別型遊戲」情緒共鳴。</div>
-        <div class="footrow"><div class="src">Reddit r/gaming · r/Games · 10/25 top-of-day</div></div>
+        <h3><span class="tag ig"><span>觀察</span></span>今日迷因源：KYM 首頁無法取得新鮮條目，無可驗證的「近 14 天新梗」</h3>
+        <div class="sum">⚠️ 已用瀏覽器開 Know Your Meme：<code>/memes/popular</code> 回傳的是常青老梗（Navy Seal Copypasta、Trollface 等）、<code>/memes/trending</code> 為 404，<b>今天未取得 Fresh / 新建條目清單，目前無法完全證實任何「今日新梗」</b>，依新鮮度 guard 不編造、不用常青 SEO 頁頂替。昨日的山羊梗 Nagi &amp; Pokke（起於 10/20）已進 Demo 線，今日起視為 ♨️ 延燒。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>今日的「梗」改取遊戲內生的 <b>Roblox Halloween「別出聲」類玩法</b>（真榜單數字）與 <b>friendslop 風潮</b>當題材，不硬套 KYM。</div>
+        <div class="footrow"><div class="src"><a href="https://knowyourmeme.com/memes/popular" target="_blank">Know Your Meme ↗</a> · 瀏覽器 10/25 真抓（未取得 Fresh 清單）</div></div>
       </article>
     </section>
 
@@ -428,17 +439,17 @@
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
       <article class="story ai reveal">
-        <h3><span class="tag ai"><span>機制</span></span>PEAK 持續爬榜（第 60，+18 名）；How to Fish 新進（第 78）；R.E.P.O. 穩升（第 50）</h3>
-        <div class="sum">Steam Most Played 排名跳動（10/25 vs 10/24）：<b>PEAK（appid 3527290）78→60（+18 名）</b>：合作爬山生存遊戲，PC Gamer 訪談顯示 Landfall 靠 PEAK 賣出 2,300 萬份（pub 2026-10-25）；<b>How to Fish（appid 4001890）88→78（+10 名）</b>：名稱暗示「釣魚教學」機制；<b>R.E.P.O.（appid 3241660）58→50（+8 名）</b>：多人合作恐怖撿廢品 loop。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span>PEAK 的「合作 + 一次失敗全重來」loop 是高 shareability 設計。How to Fish 的命名邏輯（「如何做 X」）是低門檻教學框架，可借做「如何 60 秒做一款遊戲」的入口流程。R.E.P.O. 的「合作撿廢品」與「物件丟擲物理」可觸發互動 loop 靈感。</div>
-        <div class="footrow"><div class="src">Steam Most Played · radar 10/25 · <a href="https://store.steampowered.com/app/3527290" target="_blank">PEAK ↗</a> · <a href="https://store.steampowered.com/app/4001890" target="_blank">How to Fish ↗</a></div></div>
+        <h3><span class="tag ai"><span>機制</span></span>unityroom「今週のピックアップ / 人気の新着」：打字 / 放置 / 一筆 / 單鍵</h3>
+        <div class="sum">unityroom 首頁（10/25 瀏覽器真抓）。今週のピックアップ：<b>【サバイバルローグライクアクション】剣と魔法と剣と剣</b>（69.9 萬次遊玩）、ニワテツ（庭園鉄道）、みんなのドミノ オンライン、エッグサモナー等。人気の新着：<b>ひと筆ハンマー</b>（10.4 萬）、<b>この家には4人しか住んでいません -パズルホラー-</b>（17.0 萬）、<b>伸びろ！ブッチッ波！</b>（16.8 萬）、<b>スライム放置ゲームもどき</b>（4.3 萬）、<b>タイピングキャッスル</b>（11.9 萬）、一筆進化（8.7 萬）。定番仍以<b>タイピング系</b>為主（ためてまわす鳥さんタイピング 452.7 萬、タイピング・アクション 466.4 萬）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>可借機制：<b>打字 / 單鍵 / 放置 / 一筆畫</b>；「パズルホラー」小品與今日「別出聲」Demo 氣質一致。⚠️「宝くじ×パチンコ クリッカー」屬賭博題材，<b>對外絕不引用</b>。</div>
+        <div class="footrow"><div class="src"><a href="https://unityroom.com/" target="_blank">unityroom ↗</a> · 瀏覽器 10/25 真抓（遊玩數為頁面顯示）</div></div>
       </article>
 
       <article class="story rl reveal">
-        <h3><span class="tag rl"><span>地雷</span></span>IP 二創與資安提醒</h3>
-        <div class="sum">itch.io 熱門仍含 Kirby 等 IP 二創；BioWare / Mass Effect / Dragon Age IP 今日最高風險（情緒敏感 + EA 版權仍有效）；Capcom ID 資安事件正在發酵；Reddit Hot 含 Outer Wilds IP（私人情緒帖不挪用）。</div>
-        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>今日最大 IP 地雷：Mass Effect / Dragon Age 任何角色或場景</b>——EA 剛關閉工作室不等於版權消失，法務風險最高。泛化「太空 RPG」「地城 RPG」即可，不需要任何 BioWare 標誌。</div>
-        <div class="footrow"><div class="src">綜合 10/25 雷達</div></div>
+        <h3><span class="tag rl"><span>地雷</span></span>IP 二創提醒</h3>
+        <div class="sum">itch.io 熱門含「Kirby ~ Soft &amp; Wet」類 IP 二創；Roblox 榜含 Murder Mystery 2 等既有品牌地圖；宮本茂與演員工會議題涉及真人與聲音肖像。<b>不挪用知名角色 / 影視 IP / 真人肖像與聲音</b>；日本演員工會新規（Reddit 當日）也提醒：聲音複製是下一個雷區。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>泛化角色 + 梗事件本身即可，不需要 IP 就能傳。</div>
+        <div class="footrow"><div class="src">itch.io / roblox.com/charts / Reddit radar · 10/25</div></div>
       </article>
     </section>
 
@@ -447,24 +458,24 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
 
       <div class="story ig reveal" style="padding:18px 20px">
-        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>Threads 繁中熱話：無法取得熱榜</h3>
-        <div class="sum" style="margin-bottom:0">⚠️ Threads 首頁僅載入個人化動態，無公開當日熱榜，<b>今日資料不足，骨架保留不編造</b>。根據今日重大新聞，繁中圈最可能出現的討論：<b>BioWare 關閉悼念帖</b>（質量效應/龍騰世紀繁中社群反應）、<b>Switch 2 越獄 24 小時</b>（hotspots 有此訊號，繁中科技圈關注度高）、<b>Factorio 2.1 最終更新</b>（異星工廠繁中玩家社群）。需人工搜尋 Threads 關鍵字「BioWare / 質量效應 / 異星工廠」驗證。</div>
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>Threads 繁中熱話：未取得當日熱榜</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ 本次排程環境未取得公開的 Threads 繁中熱榜（個人化動態無公開排序可驗），<b>目前無法完全證實</b>繁中圈當日熱話，骨架保留、不編造。可追的母題（推測，非已證實）：<b>「萬聖節」「不能出聲 / 鬼屋」</b>題材的繁中變體（廟會 / 夜市 / 校園怪談版「別出聲」）。</div>
       </div>
     </section>
 
-    <!-- Trend-to-Game -->
+    <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
       <div class="reveal">
       <table class="t2g">
         <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
         <tbody>
-          <tr><td>BioWare 謝幕 × BG3 致敬浪潮（🆕 今天）</td><td><span class="tmpl">60秒分支對話 / 角色選擇</span></td><td>「你的 RPG 隊伍組成」分享卡</td><td class="rk-low">低（全泛化）</td><td>★ 本日 Demo 首選；不用 ME/DA/BG 任何 IP；借「告別」情緒框架</td></tr>
-          <tr><td>Factorio 2.1「最後大更新」（🆕 今天，HN + Reddit 雙榜）</td><td><span class="tmpl">計時工廠衝刺</span></td><td>「流水線完成率」分享卡</td><td class="rk-low">低</td><td>備案；「最後一次」情緒與今日主題 BioWare 謝幕共振</td></tr>
-          <tr><td>PEAK 合作爬山持續爬榜（+18 名）</td><td><span class="tmpl">合作 / 一命通關</span></td><td>「登頂了嗎？」分享卡</td><td class="rk-low">低</td><td>借機制不借名稱；2,300 萬銷量驗證「合作 + 失去一切重來」loop</td></tr>
-          <tr><td>How to Fish 新進榜（+10 名）</td><td><span class="tmpl">釣魚放置 / 教學式 loop</span></td><td>「今日釣獲」分享卡</td><td class="rk-low">低</td><td>「如何 X」框架可拿來做 GameGen 教學入口</td></tr>
-          <tr><td>VAC 封禁 19 年梗（Reddit 今日熱帖）</td><td><span class="tmpl">計時 milestone 生成</span></td><td>「你的 [X] 幾歲了？」分享卡</td><td class="rk-low">低</td><td>借「計時 milestone」機制，勿用 VAC/Valve IP；去賭場化 ✅</td></tr>
-          <tr><td>日本演員工會 AI 聲音規範（🆕 今天）</td><td><span class="tmpl">透明標示 demo</span></td><td>「本遊戲所有音效來源」標示卡</td><td class="rk-low">低</td><td>把透明度做成 demo 賣點，勿複製任何真人聲音</td></tr>
+          <tr><td>Roblox「別出聲」Halloween 地圖潮（Don't Splash 72.4K 🆕）</td><td><span class="tmpl">單鍵按住 / 計時存活</span></td><td>「靜音存活秒數」＋「忍住幾次」卡</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，泛化怪物與場景，不複製 Roblox 現有地圖</td></tr>
+          <tr><td>friendslop 風潮（PEAK +18 名、R.E.P.O. +8、How to Fish +10）</td><td><span class="tmpl">4 人合作混亂 60 秒</span></td><td>「我們團滅了幾次」卡</td><td class="rk-low">低</td><td>備案；用朋友群內梗當題材，勿用 Peak 角色</td></tr>
+          <tr><td>Next Fest AI 篩選器爭議（r/gaming #5 🆕）</td><td><span class="tmpl">投票 + 梗作者署名</span></td><td>「梗作者 / 生成方式」透明卡</td><td class="rk-low">低</td><td>定位素材非玩法，站透明 + 好玩，不表態「該不該用 AI」</td></tr>
+          <tr><td>Future? No Thanks! 撤 AI 配音（10/24 🔄）</td><td><span class="tmpl">明示生成 + 來源標示</span></td><td>「這款怎麼做出來的」標示頁</td><td class="rk-mid">中 · 輿論敏感</td><td>只引事實，不評論個人；作 CJ 貼文素材</td></tr>
+          <tr><td>「創投遊戲」式產業諷刺（HN 5 分）</td><td><span class="tmpl">一句話諷刺模擬</span></td><td>結局分數卡</td><td class="rk-low">低</td><td>可用「創作者經濟」版本，勿影射真實公司</td></tr>
+          <tr><td>Tamaweb 類網頁寵物（itch.io html5 熱門）</td><td><span class="tmpl">養成 / 放置</span></td><td>寵物卡、養成天數</td><td class="rk-low">低</td><td>輸入梗 → 專屬寵物</td></tr>
         </tbody>
       </table>
       </div>
@@ -477,13 +488,13 @@
       <table class="t2g">
         <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
         <tbody>
-          <tr><td>護城河不是技藝，是社群</td><td>EA 關閉 BioWare，30 年，約 400 人裁員，Mass Effect Universe 取消（10/21–25 多源；BG3 同日 +21.2%）</td><td>"Studios die when creators and platforms stop being aligned. The real moat is community, not craft."</td><td><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">↗</a></td></tr>
-          <tr><td>工具免費是入場券，速度才是差異</td><td>GameMaker GMRT 2027/1 起商業免費；同期 Naavik 指護城河轉向分發速度（10/24）</td><td>"Lower barriers = more creators. The question isn't who can build — it's who can build today's meme today."</td><td><a href="https://www.gamesindustry.biz/gamemaker-to-make-its-next-generation-runtime-gmrt-free-for-commercial-use-in-january-2027" target="_blank">↗</a></td></tr>
-          <tr><td>玩家用行動投票，無需公告</td><td>BG3 +21.2%（43,065）、Stardew Valley +18.5%（39,521）同步漲，兩款均在 BioWare 關閉當天（Steam 官方 API 真數字）</td><td>"Players don't need announcements to gather — they vote with playtime. Community over brand."</td><td><a href="https://store.steampowered.com/app/1086940" target="_blank">↗</a></td></tr>
+          <tr><td>玩家要的是透明，不是純淨</td><td>《Future? No Thanks!》開發者撤 TTS 配音、換回真人、開放退款（10/24 🔄）</td><td>"Players don't need you to be pure. They need you to be upfront."</td><td><a href="https://www.pcgamer.com/gaming-industry/game-development/i-drank-from-the-chalice-of-blood-indie-dev-scrubs-his-game-of-ai-generated-voice-lines-having-previously-described-the-technology-as-anti-human-and-anti-art" target="_blank">PC Gamer ↗</a></td></tr>
+          <tr><td>工具歸零，稀缺的是選題與分發</td><td>GameMaker GMRT 2027/1/1 起於 PC / 行動 / 瀏覽器商業免費（10/23 🔄）</td><td>"Tools keep getting cheaper. The scarce part is making the right game on the day the joke is alive."</td><td><a href="https://www.gamedeveloper.com/programming/gamemaker-s-gmrt-runtime-will-soon-be-free-for-all-commercial-devs" target="_blank">Game Developer ↗</a></td></tr>
+          <tr><td>AI 普及是共識，爭議在「怎麼說」</td><td>Vivrato：歐美 97% 工作室領導者以某種形式用 AI（10/21，標題層）；Next Fest 玩家要 AI 篩選器（Reddit 10/25）</td><td>"97% use AI somewhere. The fights are about how — and whether you say so."</td><td><a href="https://www.gamesindustry.biz/vivrato-97-of-studio-leaders-use-ai-in-some-form-during-development-in-eu-and-north-america" target="_blank">GamesIndustry.biz ↗</a></td></tr>
         </tbody>
       </table>
       <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
-        📄 頭版 🎯 CJ Top 2（BioWare 關閉、GameMaker GMRT 免費）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。今天避開昨天已用過的「Epic AI MegaJam / Daily Lowball / 山羊工班」題。對外用字已過濾賭場語言。BioWare IP（質量效應、龍騰世紀）角色名稱不進 demo 腳本。
+        📄 頭版 🎯 CJ Top 2（Future? No Thanks! 撤 AI 配音、GameMaker GMRT 免費）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包；兩條皆已 web_fetch 驗原文日期與主張（見文末 Evidence Log）。今天避開昨日已用的 Epic MegaJam / Trainwreck Labs / BioWare。對外用字已過濾賭場語言。
       </div>
       </div>
     </section>
@@ -492,33 +503,32 @@
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
       <div class="actions">
-        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>BG3 +21.2% 致敬浪潮：「玩家不需要公告就能集結，用遊玩時間投票」</li><li>Stardew Valley +18.5%：「一個開發者，十年，大廠隕落日逆勢上漲——玩家獎勵用心，不是規模」</li><li>日本演員工會 AI 聲音規範：「AI 倫理從指引變成規定，最安全的創意 AI：讓工具隱形，讓同意可見」</li><li>Half-Life 3 再燃：「三個字母讓整個網路爆了——真社群的力量是多年的共同期待」</li></ul></div>
-        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「告別時代60秒RPG」：輸入角色原型 → 泛化告別對話分支 → 「你的隊伍組成」卡（今日情緒最強）</li><li>備案：「最後一次大更新計時工廠衝刺」蹭 Factorio 2.1（HN + Reddit 雙榜）</li><li>VAC milestone 梗：「你的 [某事] 幾歲了？」計時生成遊戲</li><li>Tamaweb 類網頁寵物：輸入梗 → 專屬寵物養成</li></ul></div>
-        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Arkane Lyon 11 月 13 日截止日（VGC/Eurogamer/RPS 多源）</li><li>BioWare 員工後續動向（加拿大政治介入 / 員工收購可能性）</li><li>FINAL FANTASY RESONANCE 在線人數走勢（新進 Steam Most Played，需看後續）</li><li>Netflix $500M Xbox 影視版權談判（Eurogamer/VGC 報導，潛在跨媒體 IP 動向）</li></ul></div>
-        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Mass Effect / Dragon Age / Baldur's Gate IP 直接挪用——EA 版權仍有效，今日情緒激動更易觸雷</li><li>Capcom ID 資安事件相關內容（1,170 萬帳號外洩，勿引用用戶資料）</li><li>日本聲優 AI 複製（工會剛發規範，零容忍）</li><li>Valve / Half-Life IP 角色及商標直接使用</li><li>所有對外文案：繼續過濾賭場語言</li></ul></div>
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>Next Fest AI 篩選器投票＋「梗作者署名卡」</li><li>friendslop：「說出你們這群人最爛的點子，我們做成 60 秒合作遊戲」</li><li>Roblox「別出聲」風潮：「你忍不住的那個聲音是什麼？」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「別出聲」60 秒潛行（按住潛行、放開出聲）—— 本日首選</li><li>4 人合作混亂小遊戲（團滅次數卡）</li><li>網頁寵物（Tamaweb 公式）：輸入梗 → 專屬寵物</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>Future? No Thanks! 後續：退款申請量、社群風向</li><li>Steam 是否回應 Next Fest AI 篩選器；Arkane Lyon 11 月期限（VGC / GameSpot 報導）</li><li>Roblox「別出聲」類地圖 Halloween 後是否續熱</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Roblox 現有地圖名稱 / Peak / Kirby 等 IP 直接挪用 → 用泛化皮</li><li>對個別開發者（Pedercini）的人身評論，只引事實</li><li>「宝くじ×パチンコ」類賭博題材與 Twitch 「Slots」類目，對外不引用</li></ul></div>
       </div>
     </section>
 
-    <!-- Evidence Log -->
+    <!-- 彈藥 Evidence Log -->
     <div class="evlog reveal">
       <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
       <table>
-        <tr><td>BioWare 關閉（頭版 CJ #1）</td><td><a href="https://www.gamedeveloper.com/business/ea-closes-mass-effect-dragon-age-creator-bioware-after-30-years-of-game-development" target="_blank">Game Developer</a> / <a href="https://www.gamesindustry.biz/biowares-end-is-a-tragically-familiar-tale-opinion" target="_blank">GI.biz</a> / <a href="https://www.eurogamer.net/mass-effect-battlefield-6-crossover-bioware-closure" target="_blank">Eurogamer</a>（radar 多源）　NYT 首報 2026-10-21；今日 radar 多源跟進　驗：約 400 人裁員、Mass Effect Universe 取消、內部預告片外洩<span class="pp">partial</span>（全文 fetch 被擋）　🆕（持續滾動）</td></tr>
-        <tr><td>GameMaker GMRT 商業免費（頭版 CJ #2）</td><td><a href="https://www.gamesindustry.biz/gamemaker-to-make-its-next-generation-runtime-gmrt-free-for-commercial-use-in-january-2027" target="_blank">GamesIndustry.biz</a> / <a href="https://www.gamedeveloper.com/programming/gamemaker-s-gmrt-runtime-will-soon-be-free-for-all-commercial-devs" target="_blank">Game Developer</a>（radar）　pub 2026-10-24　驗：GMRT 2027/1 商業免費<span class="pp">summary</span>　🆕</td></tr>
-        <tr><td>BG3 +21.2%（小編 X #1）</td><td>heat_latest.json 2026-10-25T07:30 官方 API　BG3 43,065 vs 35,522<span class="ok">✓</span>　🆕</td></tr>
-        <tr><td>Stardew Valley +18.5%（小編 X #1 附加）</td><td>heat_latest.json 2026-10-25T07:30 官方 API　39,521 vs 33,356<span class="ok">✓</span>　🆕</td></tr>
-        <tr><td>日本演員工會 AI 聲音規範（小編 X #2）</td><td><a href="https://www.reddit.com/r/Games/comments/1xec8x8/japan_actors_union_reveals_new_guidelines_to/" target="_blank">Reddit r/Games</a>（top-of-day）/ <a href="https://www.pcgamer.com/software/ai/japan-actors-union-pushes-for-heavy-restrictions-on-ai-copying-dead-actors/" target="_blank">PC Gamer</a>（標題層）　驗：標題層<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Half-Life 3 代號再燃（小編 X #3）</td><td><a href="https://www.rockpapershotgun.com/half-life-3-speculation-reignited-by-valve-dev-mentioning-three-sweet-little-rumored-codenamey-letters-amid-technical-chat-about-video-game-noises" target="_blank">RPS</a> / <a href="https://www.eurogamer.net/half-life-3-developer-references-codename-public" target="_blank">Eurogamer</a>（radar 標題層）　日期與完整語境未完整核實<span class="pp">partial</span>　🆕</td></tr>
-        <tr><td>Steam / 排名跳動數字</td><td>heat_latest.json 2026-10-25T07:30 官方 API（Steam velocity + rank jumps）<span class="ok">✓</span></td></tr>
-        <tr><td>Arkane Lyon 11/13 截止</td><td><a href="https://www.eurogamer.net/xbox-layoffs-marvels-blade-arkane-lyon-closure" target="_blank">Eurogamer</a> / <a href="https://www.videogameschronicle.com/news/arkane-has-until-november-to-find-a-buyer-or-face-closure-its-claimed/" target="_blank">VGC</a> / <a href="https://www.rockpapershotgun.com/arkane-survival-negotiations-reportedly-seeing-several-forms-of-takeover-considered-ahead-of-november-deadline-as-marvels-blade-production-nears-end" target="_blank">RPS</a>（標題層）<span class="pp">partial</span></td></tr>
+        <tr><td>Future? No Thanks! 撤 AI 配音＋退款</td><td><a href="https://www.pcgamer.com/gaming-industry/game-development/i-drank-from-the-chalice-of-blood-indie-dev-scrubs-his-game-of-ai-generated-voice-lines-having-previously-described-the-technology-as-anti-human-and-anti-art" target="_blank">PC Gamer</a>（web_fetch）　原文日期 2026-10-24　驗：TTS 配音＋極小部分 AI 程式碼、第二篇移除 TTS 換真人配音、玩家可 email 申請退款、「0.001%」、下一專案完全手寫、先前稱 gen-AI 為「technofascist, anti-human and anti-art」<span class="ok">✓</span>　RPS 首發 10/23 原文被擋（僅 radar/Tavily 標題與日期佐證）　🔄</td></tr>
+        <tr><td>GameMaker GMRT 2027/1/1 免費</td><td><a href="https://www.gamedeveloper.com/programming/gamemaker-s-gmrt-runtime-will-soon-be-free-for-all-commercial-devs" target="_blank">Game Developer</a>（web_fetch）　原文日期 2026-10-23　驗：GMRT 4 月宣布、含 Claude Code 輔助編程支援、PC / 行動 / 瀏覽器 / GX Games 免費、主機仍需 enterprise 授權、Pro 持有者可用 GMS2 runtime 並取得原始碼<span class="ok">✓</span>　GamesIndustry.biz 同題標題佐證（原文被擋）　🔄</td></tr>
+        <tr><td>Next Fest AI 篩選器討論</td><td><a href="https://www.reddit.com/r/gaming/comments/1xdy3za/8000_games_in_next_fest_should_steam_add_an_ai_filter/" target="_blank">Reddit r/gaming</a>（radar 10/25 top-of-day 第 5）　驗：僅標題與排序，票數 / 留言未驗<span class="pp">summary</span></td></tr>
+        <tr><td>PEAK 排名 +18 / friendslop</td><td><a href="https://store.steampowered.com/app/3527290" target="_blank">Steam</a>（heat_latest steam_movers，官方榜）；<a href="https://www.gamesindustry.biz/podcast-landfalls-rebecca-lautner-on-peaks-23-million-sales-and-looking-past-friendslop" target="_blank">GamesIndustry.biz podcast</a> 標題層，原文被擋，日期未驗<span class="pp">summary</span></td></tr>
+        <tr><td>Roblox「別出聲」地圖</td><td><a href="https://www.roblox.com/charts" target="_blank">roblox.com/charts</a>（瀏覽器真抓 10/25）　驗：Don't Splash 72.4K、9.4K、6.4K 為頁面顯示數字；中文為介面譯名<span class="pp">summary</span></td></tr>
+        <tr><td>Vivrato 97%</td><td><a href="https://www.gamesindustry.biz/vivrato-97-of-studio-leaders-use-ai-in-some-form-during-development-in-eu-and-north-america" target="_blank">GamesIndustry.biz</a>（Tavily published 2026-10-21，標題層，原文與 GamesBeat 皆被擋，未入頭版）<span class="pp">summary</span></td></tr>
+        <tr><td>Steam / Twitch / Roblox / unityroom 數字層</td><td>heat_latest.json 2026-10-25T07:30 官方 API（Steam）；TwitchTracker、roblox.com/charts、unityroom 10/25 瀏覽器真抓（榜單，非歷史日比）<span class="ok">✓</span></td></tr>
       </table>
     </div>
   </main>
 
   <footer>
     <div class="fmk"></div>
-    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 radar 多源 summary 層 · 小編 X #1 Steam 官方 API 真數字 ✓ · Roblox / Twitch 今日暫缺 · 新鮮度機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/10/25 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+    <div class="legend"><b>方法</b>　頭版彈藥依分層驗證：CJ Top 2 逐條 web_fetch 驗原文日期＋主張比對（見 Evidence Log）、小編 / Demo 為摘要層 · Steam＝官方 API 10-25 即時真數字（radar 07:30）· Twitch / Roblox / unityroom 為 10/25 瀏覽器真抓 · KYM 新鮮清單與 Threads 未取得，標暫缺 · 評分採可量測數字，無黑箱直覺分。</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 即時真數字 · 2026/10/25 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
