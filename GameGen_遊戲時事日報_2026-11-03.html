@@ -74,6 +74,7 @@
   .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
   .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
 
+  /* 今日彈藥 頭版 */
   .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
   .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
     border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
@@ -153,6 +154,7 @@
     padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
   .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
 
+  /* live ranking boards */
   .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:760px){.boards{grid-template-columns:1fr}}
   .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
@@ -225,50 +227,82 @@
 
   <header class="hero">
     <div class="hero-in">
-      <div class="badge-row"><span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
-<span class="dateflag">2026 / 11 / 03 · 彈藥工廠模式 · Steam 即時真數字 · 來源 20+ 站</span></div>
-<h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
-<div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
-<div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
-<div class="lead"><div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
-<p><b>同一天，一個工作室開出 400 萬份，另一個工作室關門。</b>幻刃零（Phantom Blade Zero）上市 72 小時<span class="hl">全平台突破 400 萬份</span>，Steam most_played 直衝 #5；同日，龍如系列創作者長澤智仁的 Nagoshi Studio<span class="hl">在股東會通過解散決議正式關閉</span>，三年、零作品上市（GamesIndustry.biz 2026-11-02-03）。</p>
-<p>兩則新聞是同一個問題的兩面：<b>在今天的市場，「資本 + 名氣 + 時間」不再保證上市，更不保證被玩到</b>——幻刃零的 400 萬份不靠 IP、不靠西方大廠，靠的是「品質到位 + 平台時機」。GameGen 的切入點從來不是「做更多款」，而是<b>讓一款遊戲在今天最燙的熱點裡快速被玩到、被轉出去</b>。</p>
-<div class="pull">▸ 今天就能蹭：CJ 貼「有錢不等於做得出來，分發才算數」+ X 發「50% Steam 遊戲有 AI 標籤，但下載沒翻倍」。⚠️ 幻刃零 400 萬份數字來自 Reddit + GameSpot，Nagoshi 倒閉為多源報導；BioWare 關閉換做星戰消息為未確認報導。</div></div>
-<div class="ammo"><div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
-<div class="ammo-grp l-cj reveal"><div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
-<div class="ammo-item"><div class="ti"><span class="fresh f-new">🆕 今天新</span>Phantom Blade Zero 72 小時 400 萬份：中國開發商首次玩出「大作叫好叫座」公式</div>
-<div class="ln"><b>新聞事實：</b>幻刃零（S-GAME 開發）2026-10-31 上市，3 日內全平台銷售突破 400 萬份（Reddit r/gaming、GameSpot 報導，pub 2026-11-01-02；多源一致）；Steam most_played 即時躍升 #5（heat_latest.json 2026-11-03 07:30 直讀），超越 Deadlock 與 CoD MW II；同期 Steam 熱賣榜第 3 位。</div>
-<div class="ln"><b>GameGen 角度：</b>不靠老 IP、不靠西方大廠，靠「品質 + 全球平台時機」的公式首次在中國獨立工作室身上實現。<b>注意力流向品質，而且很快。</b>GameGen 的 Trend-to-Game 讓小開發者在這類爆款浪頭上搭便車，不需要 AAA 預算。</div>
-<div class="hook"><span class="en">Hook (EN):</span> "Phantom Blade Zero hit 4 million sales in 72 hours. Not a legacy IP. Not a Western studio. This is what Chinese indie ambition + global platform timing looks like. Attention flows to quality — and it's fast."<br><span style="color:var(--ink-dim)">中譯：幻刃零 72 小時 400 萬份。不靠 IP，不靠西方大廠。這就是中國獨立野心遇上全球平台時機的結果。注意力流向品質——而且很快。</span></div>
-<div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/gaming/comments/1xlm7sr/phantom_blade_0_has_sold_over_4_million_copies/" target="_blank">Reddit ↗</a>　pub 2026-11-01　verified ✓（Reddit + GameSpot 兩源一致）</div></div>
-<div class="ammo-item"><div class="ti"><span class="fresh f-new">🆕 今天新</span>Nagoshi Studio 倒閉：NetEase 斷資金後 3 個月，「資本背書≠成功」</div>
-<div class="ln"><b>新聞事實：</b>長澤智仁（龍如系列創作者）2022 年離開 SEGA 創立 Nagoshi Studio，由 NetEase 資助開發《Gang of Dragon》；NetEase 大幅削減海外投資後斷資；2026-10-31 股東會通過解散決議，工作室正式關閉，<b>未有任何作品上市</b>（GamesIndustry.biz、PC Gamer、Eurogamer 報導，pub 2026-11-02-03；多源一致）。</div>
-<div class="ln"><b>GameGen 角度：</b>知名創作者 + 大資金 + 三年 = 零作品上市。<b>資本延長時間，不保證被玩到。</b>GameGen 的小批量 + 熱點速度模式規避了「燒三年等一款」的週期風險。</div>
-<div class="hook"><span class="en">Hook (EN):</span> "Nagoshi Studio just closed. Backed by a major publisher for three years. Zero shipped games. Capital doesn't make hits. Distribution, timing, and player love do."<br><span style="color:var(--ink-dim)">中譯：長澤智仁的工作室關門了。大發行商資助三年。零作品上市。有錢不等於做得出來。分發、時機、玩家的愛，才算數。</span></div>
-<div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/gang-of-dragon-developer-nagoshi-studio-shutters-months-after-netease-cut-funding" target="_blank">GamesIndustry.biz ↗</a>　pub 2026-11-02　verified ✓（三源一致）</div></div>
-</div>
-<div class="ammo-grp l-ed reveal"><div class="gt">📣 小編 · X 線　TOP 3</div>
-<div class="ammo-item"><div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam 上月超 50% 新遊戲附 AI 揭露標籤，但下載量沒翻倍</div>
-<div class="ln"><b>新聞事實：</b>Reddit r/Games 熱帖（2026-11-02，高討論量）：10 月 Steam 新上架遊戲超過 50% 帶 AI Generated 揭露標籤；討論焦點在 AI 揭露是否有效幫玩家篩選；具體計算方式未附原始數據，<b>未能交叉驗證——標注 partial</b>。Epic CEO 此前稱 AI 揭露「跟強制政治論文一樣帶政治立場」（PC Gamer 10/26）。</div>
-<div class="ln"><b>GameGen 角度：</b>AI 揭露快成基準線，不是差異化。<b>差異化在「AI 生成後多快被玩到」</b>——這才是 Play-to-Share 指標存在的位置。</div>
-<div class="hook"><span class="en">Hook (EN):</span> "50%+ of Steam games last month had an AI disclosure. Downloads didn't double. Generation is now table stakes. The real question: did anyone actually play it?"<br><span style="color:var(--ink-dim)">中譯：上月 Steam 新遊戲超半數有 AI 揭露標籤。下載量沒翻倍。生成已成基準。真正的問題：有人玩了嗎？</span></div>
-<div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/Games/comments/1xlwr42/more_than_50_of_all_games_released_on_steam_last/" target="_blank">Reddit ↗</a>　pub 2026-11-02　partial（數字未附原始計算）</div></div>
-<div class="ammo-item"><div class="ti"><span class="fresh f-new">🆕 今天新</span>Bloodborne 2026 年仍賣出約 25 萬份：11 年老遊戲、零新內容，仍在複利</div>
-<div class="ln"><b>新聞事實：</b>Eurogamer（2026-11-02）：Bloodborne 在 2026 年銷售約 25 萬份（一說 251,000）；2015 年 FromSoftware 的 PS4 獨占遊戲，從未登陸 PC；<b>Sony 正式數字未公開</b>，消息來源為第三方媒體報導，部分為未經稽核數字。</div>
-<div class="ln"><b>GameGen 角度：</b>強機制 + 社群 loop = 長尾複利。Play-to-Share 指標正是捕捉這種「無新內容仍在傳播」的動能，這也是 GameGen 設計每款遊戲時要有「分享門」的原因。</div>
-<div class="hook"><span class="en">Hook (EN):</span> "Bloodborne sold ~250K copies in 2026. 11 years old. PS4 exclusive. Zero new content. Great mechanic + community love = compound forever. Build for the loop."<br><span style="color:var(--ink-dim)">中譯：Bloodborne 2026 年仍賣約 25 萬份。11 年前。PS4 獨占。零新內容。強機制 + 社群的愛 = 永遠複利。為那個 loop 而做。</span></div>
-<div class="meta">去賭場化 ✅　來源 <a href="https://www.eurogamer.net/bloodborne-251-000-sales-in-2016-ps4" target="_blank">Eurogamer ↗</a>　pub 2026-11-02　partial（第三方數字，Sony 未公開確認）</div></div>
-<div class="ammo-item"><div class="ti"><span class="fresh f-new">🆕 今天新</span>EA 關閉 BioWare 換做《星球大戰：戰場前線 3》——IP 授權邏輯仍主導大廠決策</div>
-<div class="ln"><b>新聞事實：</b>多源報導（Game Developer、VGC、GameSpot 2026-11-02）：EA 關閉 BioWare 開發部門並放棄《質量效應》新作，資源重分配至《星球大戰：戰場前線 3》；<b>EA 未正式確認，多源引用未公開內部文件</b>——標注 partial。</div>
-<div class="ln"><b>GameGen 角度：</b>大廠的授權 IP 邏輯擠壓原創空間。獨立 + Trend-to-Game 速度正是填補大廠不會觸碰的「今天的熱點空缺」。</div>
-<div class="hook"><span class="en">Hook (EN):</span> "EA shut down BioWare to make Star Wars: Battlefront 3 instead of Mass Effect. IP rent beats original vision. That's exactly the gap indie + trend speed was made for."<br><span style="color:var(--ink-dim)">中譯：EA 關閉 BioWare 轉做《星戰：戰場前線 3》。授權 IP 勝過原創願景。這正是獨立 + 熱點速度存在的空缺。</span></div>
-<div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/report-ea-shut-down-bioware-in-favor-of-star-wars-battlefront-sequel-after-previously-decrying-licensed-games" target="_blank">Game Developer ↗</a>　pub 2026-11-02　partial（EA 未確認）</div></div>
-</div>
-<div class="ammo-grp l-dm reveal"><div class="gt">🕹️ Demo 線　TOP 1</div>
-<div class="ammo-item"><div class="ti"><span class="fresh f-new">🆕 今天新</span>「72 小時爆款 vs 三年零作」對比遊戲——Phantom Blade vs Nagoshi 敘事小遊戲<span class="deca">去賭場化 OK</span></div>
-<div class="ln"><b>玩法：</b>玩家扮演獨立開發者，面對「花三年打磨」或「今天搭熱點快速出」兩種選擇路線；隨機事件（資金斷了、熱點涼了、爆款出了）影響結局；最後出「你的遊戲上市了嗎」結果卡，附分享按鈕。</div>
-<div class="ln"><b>為何是今天首選：</b>綁今天最大的兩條新聞（幻刃零爆紅 + Nagoshi 關閉），自反性強（玩家邊玩邊思考 GameGen 的價值主張），泛化原創皮，<b>不挪用幻刃零或 Gang of Dragon 的任何美術與角色</b>。</div>
-<div class="meta">綁兩大今日新聞　模板：選擇分支 / 隨機事件 / 結果卡</div></div></div></div>
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 03 · 彈藥工廠模式 · Steam／Roblox／Twitch 即時真數字 · 來源 20+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>「做出一款遊戲」正在變免費，稀缺的是「被玩到」。</b>三條獨立訊號指向同一件事：<span class="hl">itch.io 每日新遊戲頁面兩個月內翻倍</span>（官方圖表：8 月約 3,000 → 10 月 6,000～近 8,000，但<b>下載與購買沒有翻倍</b>）；<span class="hl">Roblox Q3 財報信：AI 工具 Build 約 5 個月內被用來發布 7 萬款遊戲</span>，同一份財報 DAU 卻年減 9% 到 138M（低於預期 145M）；<span class="hl">Anthropic 在 Claude Code 加了兩句規則，禁止「重做特定現有遊戲」</span>（10/30 證實），明確保留「原創／同類型／用自己素材」的路。</p>
+        <p>供給端洪水、平台端開始踩煞車、需求端注意力沒跟著長——<b>贏的不是「生成了多少」，而是「今天的梗、今天就能玩、玩完能分享／remix」</b>。這正是 Trend-to-Game 的位置：類型 + 當下時刻 = 合法的原創，不是山寨。</p>
+        <div class="pull">▸ 今天就能蹭：CJ 發「供給翻倍、注意力沒有」雙數據貼；小編發 Roblox 榜單上 8 款布娃娃同機制的觀察；Demo 做「第 9 款布娃娃：你的變招是什麼」remix 測試。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>Roblox 用 AI 發了 7 萬款遊戲，DAU 卻年減 9%——創作變免費，發現與分發才是瓶頸</div>
+            <div class="ln"><b>新聞事實：</b>Roblox Q3 2026 股東信稱，AI 建置工具 Build 已有 50 萬+ 用戶、<b>發布超過 7 萬款遊戲</b>（Build 約 5 個月前上線；「每月 1.4 萬款」是 PC Gamer 自己除出來的）；頂尖創作者使用 AI 工具的時間自 Q2 起 3 倍、每日使用 MCP server 的人成長近 5 倍；前 100 名遊戲超過 80% 使用 AI 工具（時間範圍兩家媒體寫法不一：past month vs past quarter）。同一季 <b>DAU 年減 9%、138M，低於預期 145M</b>（PC Gamer、Game Developer，皆 pub 2026-10-30）。</div>
+            <div class="ln"><b>GameGen 角度：</b>平台自己都在炫耀「內容爆量」，同一頁財報卻是用戶數下滑——生成成本趨近零之後，<b>瓶頸從「做」移到「被看見、被玩、被分享」</b>。GameGen 把創作綁在「今天的梗」這個天然的分發鉤子上：有題材、有 30 秒可玩、有 share card，而不是再多 7 萬款沒人找得到的遊戲。（注意：DAU 下滑 Roblox 歸因於去年高基期，本貼不要暗示因果。）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Roblox says its AI tool helped publish 70,000 games in about five months. The same quarter, daily users fell 9% to 138M — below the 145M Wall Street expected. Making a game is getting free. Getting anyone to play it is not."<br><span style="color:var(--ink-dim)">中譯：Roblox 說它的 AI 工具約五個月內幫忙發布了 7 萬款遊戲。同一季日活年減 9% 到 1.38 億，低於市場預期的 1.45 億。做一款遊戲正在變免費，讓人玩它卻不是。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pcgamer.com/software/ai/ai-powered-game-development-is-leading-to-an-explosion-of-content-roblox-says-as-it-brags-about-70-000-games-published-on-its-platform-in-the-last-5-months-alone" target="_blank">PC Gamer ↗</a> · <a href="https://www.gamedeveloper.com/business/roblox-growth-slumps-but-the-company-is-betting-big-on-ai-to-compensate" target="_blank">Game Developer ↗</a>　pub 2026-10-30　verified ✓（兩篇皆 fetch；7 萬款僅 PC Gamer 有，DAU 僅 GD 有）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>itch.io：每日新遊戲頁面 2 個月翻倍，下載與購買沒有——供給 ×2，注意力 ×1</div>
+            <div class="ln"><b>新聞事實：</b>itch.io 官方 Bluesky 貼出圖表，「每日新建遊戲頁面兩個月內翻倍」；Game Developer 讀圖為 8 月約 3,000 → 10 月<b>近 8,000</b>，PC Gamer 讀為約 3,000 → <b>常態超過 6,000</b>（兩家對同一張圖讀法不同，引用請寫「6,000～8,000」）；itch 同時表示下載與購買數<b>沒有</b>翻倍。官方貼文<b>未直接說是 AI</b>，歸因是媒體推論（Game Developer pub 2026-11-02；PC Gamer pub 2026-11-01）。</div>
+            <div class="ln"><b>GameGen 角度：</b>最乾淨的一組「供給 vs 注意力」對照，而且來自平台自己。結論不是「AI 垃圾太多」（這是別人的戰場，也未證實），而是<b>「在洪水裡，唯一不被稀釋的是『時效 + 共鳴』」</b>：同一個梗在它最熱的 48 小時裡有一款可玩的遊戲，比第 8,000 個頁面更有機會被玩到。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "itch.io says new game pages per day have doubled in two months. Downloads and purchases haven't. Supply doubled; attention didn't. When anyone can ship a game, the scarce thing is shipping the right one on the right day."<br><span style="color:var(--ink-dim)">中譯：itch.io 說每日新遊戲頁面兩個月翻倍，下載與購買沒有。供給翻倍、注意力沒有。人人都能出遊戲時，稀缺的是在對的那天出對的那一款。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/pc/number-of-game-pages-doubles-on-itch-io-as-ai-clones-flood-the-store" target="_blank">Game Developer ↗</a> · <a href="https://www.pcgamer.com/gaming-industry/game-development/its-not-just-steam-new-game-pages-created-per-day-on-itch-io-has-doubled-in-the-last-two-months-with-ai-slop-the-likely-culprit" target="_blank">PC Gamer ↗</a>　pub 2026-11-02 / 11-01　verified ✓（兩篇皆 fetch）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-upd">🔄 進展更新</span>Claude Code 加規則：不重做特定現有遊戲，但「原創／同類型／自己的設計」歡迎<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>X 用戶 Chasm 發現 Claude Code 規則於約 10/27 更新；Anthropic 技術人員 Addy Osmani 公開說明「加了兩句話」，理由是用 Claude 侵害 IP 違反使用政策，並表示原創、同類型、用自己素材的遊戲「meant to keep working」（Game Developer，pub 2026-10-30；GamesIndustry.biz 擋抓，未讀原文）。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Rule of the new game-making era: build a genre, not a copy. Today's meme + a classic loop = original. Cloning one specific game = not. We're on the first side. 🎮"　<span style="color:var(--ink-dim)">中譯：新時代的做遊戲規則：做一個類型，不做一個複製品。今天的梗＋經典玩法＝原創。複製某一款特定遊戲＝不行。我們站第一邊。</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>貼一個今天的梗 → 選一個通用玩法殼 → 30 秒出遊戲，卡片註明「Genre + Meme，非複製」。</div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/programming/anthropic-appears-to-have-ordered-ai-tool-claude-to-stop-remaking-video-games" target="_blank">Game Developer ↗</a>　pub 2026-10-30　verified ✓（單源；不要寫成 GameGen 用了誰的模型）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今日榜單觀察</span>Roblox 熱門榜（Computer／全球／Top Trending）一頁裡至少 8 款「布娃娃」同機制<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>11/03 瀏覽器真抓 roblox.com/charts：Top Trending 清單裡含「布娃娃／布偶」字樣的遊戲至少 8 款（如 [💉注射]布娃娃遊樂場、逼真的布娃娃引擎、布偶物理學 2、布娃娃拳擊…），另有 5 款「動漫」開頭或含動漫字樣；榜首「不要噴濺」在線約 98.7K。以上為榜單標題計數，非銷量或 CCU 排名證明。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "I counted 8 ragdoll games on one Roblox trending page. Same physics, different twist. The twist is the whole game. What's your twist? 👇"　<span style="color:var(--ink-dim)">中譯：我在 Roblox 一頁熱門榜上數到 8 款布娃娃遊戲。同一套物理，不同變招。變招就是整個遊戲。你的變招是什麼？</span></div>
+            <div class="ln"><b>Create-loop 勾子：</b>留言一個變招動詞（彈、融化、反重力…）→ 小編挑一個當日做成 remix 版。</div>
+            <div class="meta">來源 <a href="https://www.roblox.com/charts" target="_blank">Roblox Charts ↗</a>　11/03 瀏覽器真抓　摘要層</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-hot">日期未驗</span>GitHub Trending 上出現 Claude-Code-Game-Studios（Donchitos）——AI 做遊戲的工具鏈在往「工作室」形態走<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>僅確認該 repo 出現在今日 heat-radar 的 GitHub Trending 清單；專案內容、星數、日期<b>目前無法完全證實</b>，未開原文。建議小編先不當事實貼，僅作選題備援，開貼前請先點進 repo 看 README。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "People are packaging whole game studios as prompts and repos. The difference between a tool and a toy: what happens after the game exists. Play, share, remix."　<span style="color:var(--ink-dim)">中譯：有人把整個遊戲工作室包成 prompt 和 repo。工具和玩具的差別：遊戲做出來之後發生什麼。玩、分享、remix。</span></div>
+            <div class="meta">來源 <a href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank">GitHub ↗</a>　radar 清單　未驗</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　今天就能做的首選</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今日榜單觀察</span>「第 9 款布娃娃：你的變招是什麼」——同一套通用物理，玩家換一個動詞就是新遊戲</div>
+            <div class="ln"><b>GameGen 角度：</b>直接把「機制被複製很多次，勝負在變招」做成產品展示：預設一個通用布娃娃關卡（原創人偶，不用 Roblox 美術），玩家輸入一個動詞變招（彈跳／融化／反重力），30 秒後得到 remix 版，分享卡顯示「我的變招 + 分數」，別人可一鍵換自己的變招。可直接量測 Play-to-Remix。</div>
+            <div class="ln"><b>去賭場化燈：</b>✅　<b>IP 風險：</b>低（布娃娃是通用機制；人偶、場景皆原創）。</div>
+            <div class="meta">依據：Roblox Charts 11/03 瀏覽器真抓（8 款布娃娃同榜）　KPI：Play-to-Remix / Share Rate</div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -277,21 +311,50 @@
     <section id="rank">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
       <div class="boards reveal">
-<div class="board b-steam"><div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 11/03 即時</span></div><ol>
-<li class="down"><span class="nm">Counter-Strike: GO</span><span class="vn">558K ▼7.7%</span></li>
-<li class="down"><span class="nm">CoD: Modern Warfare II</span><span class="vn">135K ▼18.7%</span></li>
-<li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">110K ▼2.7%</span></li>
-<li class="down"><span class="nm">Team Fortress 2</span><span class="vn">90K ▼7.7%</span></li>
-<li class="down"><span class="nm">Rust</span><span class="vn">64K ▼6.3%</span></li>
-<li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">60K ▼15.6%</span></li>
-<li class="hot"><span class="nm">Phantom Blade Zero</span><span class="vn">most_played #5</span></li></ol>
-<div class="bf">Steam 官方 API · 11/03 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div></div>
-<div class="board b-twch"><div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料</span></div>
-<div class="nodata">今日 Twitch 資料未深掃，<b>目前無法完全證實</b>，不補估計值。昨日快照：Just Chatting 294K、LoL 221K、Phantom Blade Zero 28.3K（11/02 真抓）。</div>
-<div class="bf">TwitchTracker · 今日未抓</div></div>
-<div class="board b-rblx"><div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料</span></div>
-<div class="nodata">今日 Roblox Charts 未深掃，<b>目前無法完全證實</b>，不補估計值。昨日快照：不要噴濺 116K、實用籃球訓練 116K、動漫冒險之旅 77K（11/02 真抓）。</div>
-<div class="bf">Roblox Charts · 今日未抓</div></div></div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 11/03 即時</span></div>
+          <ol>
+            <li class="down"><span class="nm">Counter-Strike（appid 730）</span><span class="vn">558K ▼7.7%</span></li>
+            <li class="down"><span class="nm">Call of Duty: Modern Warfare II</span><span class="vn">135K ▼18.7%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">110K ▼2.7%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">90K ▼7.7%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">64K ▼6.3%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">60K ▼15.6%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 11/03 即時真數字（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX 熱門榜</span><span class="metric">Computer · 全球 · Top Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">不要噴濺（榜首）</span><span class="vn">98.7K 在線</span></li>
+            <li><span class="nm">【Alpha版】實用籃球訓練</span><span class="vn">92K</span></li>
+            <li><span class="nm">[☀️更新21🏖️] 動漫冒險之旅</span><span class="vn">75.8K</span></li>
+            <li><span class="nm">Pet Simulator 99!</span><span class="vn">60.1K</span></li>
+            <li><span class="nm">[🎃] 餵食動物</span><span class="vn">49K</span></li>
+            <li><span class="nm">[Malcriada] The Block</span><span class="vn">29.2K</span></li>
+          </ol>
+          <div class="bf">Roblox Charts · 11/03 瀏覽器真抓（顯示為在線人數與好評率；名稱為繁中在地化標題）· <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-twch">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">近 7 天平均觀眾</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Just Chatting</span><span class="vn">289K</span></li>
+            <li><span class="nm">League of Legends</span><span class="vn">193K</span></li>
+            <li><span class="nm">Counter-Strike</span><span class="vn">88.1K</span></li>
+            <li><span class="nm">Grand Theft Auto V</span><span class="vn">84.7K</span></li>
+            <li><span class="nm">Minecraft</span><span class="vn">82.6K</span></li>
+            <li><span class="nm">Phantom Blade Zero</span><span class="vn">34.1K（#12）</span></li>
+          </ol>
+          <div class="bf">TwitchTracker · 11/03 瀏覽器真抓（近 7 天均值）· <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ 本機 heat-radar 11/03 07:30 已跑成功；Steam 為官方 API 真數字，全榜前 15 名日比皆為負（最大跌幅 Baldur's Gate 3 −24%），讀法保守：多為單日回落，未找到可解釋的單一事件。Roblox／Twitch 由內建瀏覽器今日實抓。Steam 榜上 appid 730 的標題為 API 回傳原文，不另做更名判讀。
+      </div>
     </section>
 
     <!-- 暴衝訊號 -->
@@ -299,34 +362,88 @@
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
 
       <article class="story ig reveal">
-<h3><span class="tag ig"><span>暴衝</span></span>Phantom Blade Zero 衝 most_played #5；生存類排名集體起跳</h3>
-<div class="sum">Steam most_played 今日快照：<b>Phantom Blade Zero 排 #5</b>（72 小時 400 萬份 → 直接衝榜），Deadlock #6、Slay the Spire 2 #15、Battlefield 6 #30 仍在榜。排名躍升（vs 昨日快照）：<b>Farming Simulator 25 +10 名（55→前），DayZ +9（59），Sons Of The Forest +9（73），7 Days to Die +7（77），Probably Stolen +5（24），Valheim +5（29）</b>。生存 / 開放世界類集體起跳，無新進榜。</div>
-<div class="obs"><span class="lbl">GameGen 觀察：</span>Phantom Blade Zero 爆衝是<b>今天唯一真正的新聞性暴衝</b>，帶動動作 RPG 話題；生存類（DayZ、Sons、7DTD）集體 +7～+9，疑為週期 / 季節回流，具體原因未能完全證實。Probably Stolen（賽博龐克店員模擬）+5 持續榜內表現，示範「小主題 + 強執行」可維持存在感。</div>
-<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-<div class="src">STEAM 官方 API · 11/03（radar 07:30）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div></div></article>
+        <h3><span class="tag ig"><span>暴衝</span></span>今日無 ≥15% 向上暴衝；排名跳動集中在生存／農場類</h3>
+        <div class="sum">Steam 真·日比今天沒有任何前段班過 +15% 旗標，反而 Baldur's Gate 3 −24%、HELLDIVERS 2 −23.8%、Left 4 Dead 2 −23.1% 是明顯下跌。排名跳動榜（heat-radar）：<b>Farming Simulator 25 #65→#55（+10）、DayZ #68→#59（+9）、Sons Of The Forest #82→#73（+9）、7 Days to Die #84→#77（+7）</b>，另有 Valheim #34→#29（+5）、Probably Stolen - Cyberpunk Shopkeeper Sim #29→#24（+5）。今日無新進榜。以上跳動缺 CCU 絕對數字，無法判斷量體。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>跳榜名單呈現「生存／農場／經營」同類型群聚，但<b>原因目前無法完全證實</b>（可能是季節或特價，未查）。不建議當 Trend-to-Game 題材主推，僅當「冬季前的囤糧／經營」玩法殼備選。</div>
+        <div class="footrow">
+          <div class="src">STEAM 官方 API + heat-radar · 11/03 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>類型延燒</span></span>Roblox 榜單：布娃娃（至少 8 款）與動漫（5 款）兩大模板的「同機制堆疊」</h3>
+        <div class="sum">Top Trending 頁面可見大量同模板遊戲：布娃娃類（布娃娃遊樂場、逼真的布娃娃引擎、布偶物理學 2、布娃娃拳擊、布偶沙盒…）與動漫類（動漫冒險之旅、+1 動漫眼睛、建立動漫角色…）。另外榜單上萬聖節 🎃 標記密集（榜單 11/03 仍未下架）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>平台上的爆款是「一個機制 × 很多變招」，這正是 remix 的需求證據，也是 Demo 首選的依據。計數為頁面標題計數，非官方分類。</div>
+        <div class="footrow">
+          <div class="src">ROBLOX CHARTS · 11/03 瀏覽器真抓 · <a href="https://www.roblox.com/charts" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
     </section>
 
     <!-- 早期訊號 -->
     <section id="early">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
-      <article class="story ig reveal">
-<h3><span class="tag ig"><span>早期</span></span>Steam 新品冒頭：Siren's Call、Castellan 登新品榜；itch.io 互動模擬 / 時尚題材冒頭</h3>
-<div class="sum">Steam 新品榜（heat_latest.json 直讀）：<b>Siren's Call: Second Wind、Castellan、marblebuilds、Abandon All Hope、Cabin in Time、Order My Lord! Tidy Up the Dungeon、Frankie Freako</b> 登今日新品。Steam 熱賣新品：<b>CoD Modern Warfare 4（#1）、Phantom Blade Zero（#3）、Moon Sweepers</b>。itch.io 近期冒頭：<b>Automated Love Obsession、Terraformental、The MachinEGG、Interact With Me!、OBSESSED With Fashion</b>（html5/popular 標籤）；體量與成長數字未驗。</div>
-<div class="obs"><span class="lbl">GameGen 觀察：</span>itch.io 冒頭款中「互動模擬 + 社群挑戰」（Interact With Me!、Automated Love Obsession）與「時尚主題」（OBSESSED With Fashion）最近重複出現——<b>社交 / 自我形象類 loop 有爆感</b>。Steam 新品以 narrative / puzzle 為主，門檻偏高。</div>
-<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-<div class="src">itch.io / Steam 新品榜 · radar 11/03 · <a href="https://itch.io/games/html5" target="_blank">原文 ↗</a></div></div></article>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 新品冒頭</span><span class="metric">New &amp; Trending</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Siren's Call: Second Wind</span><span class="vn">新品</span></li>
+            <li><span class="nm">Castellan</span><span class="vn">新品</span></li>
+            <li><span class="nm">Abandon All Hope</span><span class="vn">新品</span></li>
+            <li><span class="nm">Cabin in Time</span><span class="vn">新品</span></li>
+            <li><span class="nm">Order, My Lord! Tidy Up the Dungeon</span><span class="vn">新品</span></li>
+            <li><span class="nm">Plunder &amp; Booty</span><span class="vn">新品</span></li>
+          </ol>
+          <div class="bf">Steam 新品榜 · 11/03 heat-radar · <a href="https://store.steampowered.com/explore/new/" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-rblx">
+          <div class="bh"><span>ITCH.IO HTML5 熱門</span><span class="metric">html5 · popular</span></div>
+          <ol>
+            <li class="hot"><span class="nm">The Community Notes Are Wrong</span><span class="vn">梗向</span></li>
+            <li><span class="nm">Game About Botting in an MMORPG</span><span class="vn">梗向</span></li>
+            <li><span class="nm">NASUBI</span><span class="vn">html5</span></li>
+            <li><span class="nm">Interact With Me!</span><span class="vn">html5</span></li>
+            <li><span class="nm">The MachinEGG</span><span class="vn">html5</span></li>
+            <li><span class="nm">Sleigh the Spire 🎄🎁</span><span class="vn">節慶</span></li>
+          </ol>
+          <div class="bf">itch.io /games/html5 · 11/03 heat-radar · <a href="https://itch.io/games/html5" target="_blank">原始 ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story ig reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        共通 loop 只能就標題推測：網路情緒 × 一句話規則（Community Notes、MMORPG 機器人）。各款量體與玩法<b>目前無法完全證實</b>，只列名作靈感，未逐款開玩。
+      </div>
     </section>
 
     <!-- 高討論文章 -->
     <section id="talk">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
 
-      <article class="story rl reveal">
-<h3><span class="tag rl"><span>高討論</span></span>今日討論核心：工作室生死、AI 揭露爭議、BioWare 關閉真相</h3>
-<div class="sum">Reddit 今日高討論串：<b>Phantom Blade Zero 400 萬份</b>（r/gaming、r/Games 各一串，合計最高分）、<b>Nagoshi Studio 解散</b>（r/gaming、r/Games 兩串）、<b>Steam 50%+ AI 揭露</b>（r/Games）、<b>Xbox COO Helen Chiang 事件</b>（LinkedIn 貼文在 r/gaming 大量討論）、<b>Bloodborne 2026 年仍大賣</b>（r/Games）。HN 今日：BioWare co-founder 稱「公司高管從沒做過遊戲」（126 pts / 139 comments）、AI fan wiki 錯誤影響遊戲文化（100 pts / 110 comments）、Valve「把資本主義玩透了以致無法被取代」（40 pts）。</div>
-<div class="obs"><span class="lbl">GameGen 觀察：</span>今天的討論圍繞<b>兩個反差</b>：幻刃零爆紅 vs Nagoshi 倒閉、AI 工具氾濫 vs 玩家注意力不翻倍。BioWare / EA 議題延燒，說明<b>大廠 IP 授權邏輯的不滿情緒</b>會是未來幾天的持續話題。GameGen 角色：在這個敘事中站位「快速原創、不靠大 IP、讓熱點被玩到」。</div>
-<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-<div class="src">Reddit / HN / GamesIndustry.biz · 11/03 · <a href="https://www.gamesindustry.biz/gang-of-dragon-developer-nagoshi-studio-shutters-months-after-netease-cut-funding" target="_blank">原文 ↗</a></div></div></article>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Anthropic 對 Claude Code 加規則：不重做特定現有遊戲（7 家媒體同週報導）</h3>
+        <div class="sum">規則於約 10/27 更新，Game Developer（10/30）、Eurogamer、GamesIndustry.biz、GameSpot、80.lv、RPS、Polygon 皆有報導。Anthropic 方說法：加兩句話、理由是侵害 IP 違反使用政策，原創／同類型／自己素材的遊戲不受影響。文中未指名被複製的遊戲或複製者。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>平台與模型端開始畫線，「類型 + 今天的梗」是被明確保留的方向。對外敘事可強調 GameGen 做的是 genre remix，不碰特定遊戲複製；但不要宣稱與任何模型廠商的政策關係。</div>
+        <div class="footrow">
+          <div class="src">GAME DEVELOPER · 2026-10-30 · <a href="https://www.gamedeveloper.com/programming/anthropic-appears-to-have-ordered-ai-tool-claude-to-stop-remaking-video-games" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>競品／大廠</span></span>Naavik：〈Prompt-to-Game Is Here. Which Platforms Are Positioned to Win?〉</h3>
+        <div class="sum">radar 抓到 Naavik 這篇直接談「prompt 直出遊戲」的平台勝負；<b>只看到標題，內文未開，結論目前無法完全證實</b>。建議 Pizza 或 CJ 親自讀一遍，這很可能是對標 Astrocade／Roblox Build／Rosebud 的現成分析。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>若文章框架是「創作端」誰贏，GameGen 可補「分發端 + 時效」的反向切角。待讀後再決定是否進 CJ 線。</div>
+        <div class="footrow">
+          <div class="src">NAAVIK · radar 標題 · <a href="https://naavik.co/ai-gaming/prompt-to-game-is-here-which-platforms-are-positioned-to-win/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>高討論</span></span>HN／Reddit 當日討論：AI 粉絲 Wiki 錯誤百出（HN 100 pts／110 則）、Steam 上月新遊戲逾半有 AI 揭露（Reddit 當日 top）</h3>
+        <div class="sum">客觀訊號：Eurogamer〈AI fan wikis riddled with errors〉在 HN 100 分、110 則留言；Reddit r/Games 當日 top 序有「Steam 上月新遊戲超過 50% 有 AI 揭露」（昨日已進 X 線，不重複用）。玩家對 AI 內容的態度集中在「品質與可信度」，而非單純反 AI。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>可信度與品質是共同痛點。GameGen 的差異在「玩家自己看得到、玩得到」：30 秒可玩即驗證，不靠文字宣稱。</div>
+        <div class="footrow">
+          <div class="src">HN ALGOLIA · REDDIT RSS · 11/03 radar</div>
+        </div>
+      </article>
     </section>
 
     <!-- 迷因題材 / 迷因遊戲 -->
@@ -334,71 +451,111 @@
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
 
       <article class="story ai reveal">
-<h3><span class="tag ai"><span>迷因</span></span>itch.io 今日梗型遊戲：倉鼠身分、社群筆記爭議、AI 互動模擬</h3>
-<div class="sum">itch.io 梗/viral 標籤冒頭款（radar 直讀，first-seen 日期皆未驗，視為延燒）：<b>This Role: You are Hamster</b>（倉鼠角色扮演）、<b>The Community Notes Are Wrong</b>（挑戰社群筆記的互動遊戲）、<b>Automated Love Obsession</b>、<b>Interact With Me!</b>（AI 互動模擬）、<b>StreamRush</b>（串流主題）、<b>ClickBait</b>（反諷點擊誘餌）；另有 Squidward Commits Arson、Freddy Fazbear's Dating Simulator 等 IP 二創類（<b>GameGen 不挪用</b>）。</div>
-<div class="obs"><span class="lbl">GameGen 觀察：</span>今天出現的梗型遊戲中，<b>「挑戰平台規則 / 社群機制」主題</b>（The Community Notes Are Wrong、ClickBait）有強烈自反性，容易在推特 / Threads 上引爆討論。「倉鼠身分」等荒謬角色扮演仍佔大量名額——印證低門檻荒謬 loop 的持續熱度。</div>
-<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中</span></span></div></div></div>
-<div class="src">itch.io meme/viral 標籤 · radar 11/03 · <a href="https://itch.io/games/tag-meme" target="_blank">原文 ↗</a></div></div></article>
+        <h3><span class="tag ai"><span>迷因遊戲</span></span>itch 梗向小遊戲樣本：The Community Notes Are Wrong／Game About Botting in an MMORPG／This Role: You are Hamster</h3>
+        <div class="sum">來自 itch.io html5 熱門與 meme 標籤的當日清單。共通點：<b>網路文化詞彙 + 一句話規則</b>。Know Your Meme 的 popular 頁今日回傳的是歷史常青榜（Navy Seal Copypasta、Trollface…），<b>不是當日新梗</b>，依新鮮度規矩不採用；今日的新梗 first-seen 目前無法完全證實，故不寫「今天的梗」。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>可抄公式，不抄內容：把平台文化詞（Community Notes、機器人）包進最小玩法。Freddy Fazbear's Dating Simulator 等屬既有 IP 同人，只當現象，不做。</div>
+        <div class="footrow">
+          <div class="src">ITCH.IO · 11/03 heat-radar · <a href="https://itch.io/games/tag-meme" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
     </section>
 
     <!-- 機制靈感庫 -->
     <section id="lab">
       <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
-      <article class="story rl reveal">
-<h3><span class="tag rl"><span>機制</span></span>今日機制素材：高速動作 loop、生存蒐集、選擇分支 / 隨機事件</h3>
-<div class="sum">今日可借機制（不可借名稱與美術）：<b>① 高速動作 + 招式連段</b>（幻刃零的核心 loop，公式：「看到 → 識別 → 連段 → 爽感」，可泛化為任何題材）；<b>② 生存資源蒐集 loop</b>（DayZ / 7DTD / Sons 集體起跳，「計時 + 稀缺資源」公式）；<b>③ 選擇分支 / 隨機事件</b>（「爆款 vs 倒閉」敘事遊戲，今天最有話題的機制框架）；<b>④ 荒謬單動詞 loop</b>（倉鼠 / 偽造蛋延續熱度，低門檻高爽感）。IP 二創地雷：幻刃零、龍如系列、Persona 等 IP 美術與角色一律不挪用。</div>
-<div class="obs"><span class="lbl">GameGen 觀察：</span>今天最值得開發的機制組合：<b>「選擇分支 × 隨機事件 × 結果分享卡」</b>——用今天的 Nagoshi vs 幻刃零對比作敘事驅動力，機制輕量，分享動機強（「看看你的遊戲能不能上市」）。</div>
-<div class="footrow"><div class="scores"><div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div><div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div></div>
-<div class="src">Steam 排名動態 + itch.io meme 榜 · 11/03</div></div></article>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">unityroom 今週ピックアップ／人気</span></div>
+          <ol>
+            <li class="hot"><span class="nm">避けろ！三密！！— 躲避人群</span><span class="vn">★ 閃避</span></li>
+            <li><span class="nm">極めろ！収納効率 — 空間收納</span><span class="vn">排列</span></li>
+            <li><span class="nm">走れペンギン — 單鍵奔跑</span><span class="vn">跑酷</span></li>
+            <li><span class="nm">タイピング系（打字 loop）</span><span class="vn">打字</span></li>
+            <li><span class="nm">伸びろ！ブッチッ波！ — 伸縮點擊</span><span class="vn">點擊</span></li>
+          </ol>
+          <div class="bf">unityroom 首頁 · 11/03 瀏覽器真抓 · <a href="https://unityroom.com/" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story ig reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        人気の定番區前幾名幾乎都是<b>打字遊戲</b>（如 タイピングウォーズ、ためてまわす鳥さんタイピング、ホッピング忍者さん，頁面顯示遊玩數為「万」級）。數字單位為頁面顯示值，口徑未逐項確認。IP 二創地雷：名稱帶作品名者（如《Unterdale》類）勿借。
+      </div>
     </section>
 
     <!-- 繁中 Threads 熱話 -->
     <section id="zh">
       <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
 
-      <div class="reveal"><div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">今日資料不足：Threads 繁中熱話本次未深掃，<b>目前無法完全證實</b>，不編造。可預期討論方向：幻刃零銷售數字、Nagoshi Studio 倒閉的感嘆貼、女神異聞錄 1 重製版洩露話題（以上僅推測，非實際掃描結果）。</div></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話本次未取得</h3>
+        <div class="sum" style="margin-bottom:0">Threads 需登入與 JS 渲染，本次未登入環境無法取得當日繁中熱話，<b>目前無法完全證實</b>，不以舊資料補位。請 Pizza 手動掃一眼三國／武俠／恐怖／捕捉 RPG 題材變體，有料貼回即可進下一期。</div>
+      </div>
     </section>
 
     <!-- Trend -->
     <section id="tr">
       <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
-      <div class="reveal"><table class="t2g"><thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead><tbody>
-<tr><td>Phantom Blade Zero 爆衝 / 動作 RPG 爆發（11/01-03）</td><td><span class="tmpl">高速動作 loop</span></td><td>「連段截圖」「最高分分享卡」</td><td class="rk-low">低 · 泛化原創</td><td>★ 今日 Demo 首選（選擇分支 / 隨機事件版）；不用幻刃零任何美術</td></tr>
-<tr><td>Nagoshi Studio 倒閉 / 三年零作（11/02-03）</td><td><span class="tmpl">選擇分支 / 隨機事件</span></td><td>「你的遊戲上市了嗎」結果卡</td><td class="rk-low">低</td><td>綁幻刃零對比敘事，分享動機強</td></tr>
-<tr><td>Steam 50%+ AI 揭露、下載不翻倍（11/02-03）</td><td><span class="tmpl">「在垃圾堆找神作」</span></td><td>「我找到！」分享截圖</td><td class="rk-low">低</td><td>延續昨日 itch.io 敘事，今天加 Steam 數字強化</td></tr>
-<tr><td>Bloodborne 複利長尾（11/02）</td><td><span class="tmpl">放置 / 長尾 loop</span></td><td>「第 N 年第 N 個玩家」卡</td><td class="rk-mid">中 · IP 版權風險</td><td>泛化「11 年老遊戲仍在賣」主題，不挪角色</td></tr>
-<tr><td>女神異聞錄 1 洩露（11/02-03）</td><td><span class="tmpl">懷舊翻新 RPG 元素</span></td><td>「你的第一款 RPG 是哪年」互動</td><td class="rk-hi">高 · 未確認 + IP</td><td>話題借用謹慎，待 Atlus 官方確認再深介入</td></tr>
-<tr><td>BioWare 關閉換做星戰（11/02）</td><td><span class="tmpl">「大廠 IP vs 獨立原創」</span></td><td>「你支持哪邊」互動貼</td><td class="rk-low">低</td><td>EA 未確認，文案標 partial；角度拉回獨立 + 熱點速度</td></tr>
-</tbody></table></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Roblox 榜單 8 款布娃娃同機制（11/03 榜單）</td><td><span class="tmpl">通用布娃娃物理 + 變招 remix</span></td><td>「我的變招 + 分數」卡、一鍵換變招</td><td class="rk-low">低</td><td>★ 本日 Demo 首選，原創人偶，不碰 Roblox 美術</td></tr>
+          <tr><td>itch 頁面 2 個月翻倍（11/01–02）</td><td><span class="tmpl">30 秒滑頁篩選</span></td><td>「我 30 秒篩掉 N 款」分享卡</td><td class="rk-low">低（用虛構頁面，不點名真遊戲）</td><td>備選，需先確認不與昨日 haystack 題材撞型</td></tr>
+          <tr><td>Claude Code 禁複製特定遊戲（10/30）</td><td><span class="tmpl">「類型 + 梗」原創聲明卡</span></td><td>卡片註明 Genre + Meme，非複製</td><td class="rk-mid">中 · 勿宣稱與模型廠商關係</td><td>文案層使用，不做 demo</td></tr>
+          <tr><td>Steam 生存／農場跳榜（原因未證實）</td><td><span class="tmpl">泛化囤糧經營 clicker</span></td><td>「冬天到了」存活天數</td><td class="rk-low">低</td><td>低優先，先觀察</td></tr>
+        </tbody>
+      </table>
+    </div>
     </section>
 
     <!-- CJ LinkedIn 題材 -->
     <section id="cj">
       <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
-      <div class="reveal"><table class="t2g"><thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead><tbody>
-<tr><td>品質 + 時機 > IP 背書</td><td>幻刃零 72h 400 萬份，非 IP、非西方大廠（11/01-02）</td><td>"Quality + timing beats IP. Phantom Blade Zero proved it in 72 hours."</td><td><a href="https://www.reddit.com/r/gaming/comments/1xlm7sr/phantom_blade_0_has_sold_over_4_million_copies/" target="_blank">↗</a></td></tr>
-<tr><td>資本背書≠成功，分發才算數</td><td>Nagoshi Studio 三年零作品後關閉（11/02-03）</td><td>"Capital doesn't make hits. Distribution, timing, and player love do."</td><td><a href="https://www.gamesindustry.biz/gang-of-dragon-developer-nagoshi-studio-shutters-months-after-netease-cut-funding" target="_blank">↗</a></td></tr>
-<tr><td>AI 揭露快成基準線，差異化在「被玩到」</td><td>Steam 50%+ 新遊戲有 AI 揭露，下載沒翻倍（11/02）</td><td>"Generation is table stakes. Getting played is not."</td><td><a href="https://www.reddit.com/r/Games/comments/1xlwr42/more_than_50_of_all_games_released_on_steam_last/" target="_blank">↗</a></td></tr>
-<tr><td>老遊戲複利 = 設計好 loop 的報酬</td><td>Bloodborne 2026 年仍賣約 25 萬份（11/02）</td><td>"Great loop compounds forever. That's the only retention strategy that scales."</td><td><a href="https://www.eurogamer.net/bloodborne-251-000-sales-in-2016-ps4" target="_blank">↗</a></td></tr>
-</tbody></table><div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">📄 頭版 🎯 CJ Top 2 已為今日主要驗證對象（多源一致）；其餘條目為摘要層（partial），文案需標注。BioWare 關閉未獲 EA 確認，不列 CJ 首選。</div></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>創作變免費，瓶頸移到被玩到</td><td>Roblox Build 約 5 個月 7 萬款；同季 DAU −9% 至 138M（預期 145M）（10/30）</td><td>"Making a game is getting free. Getting anyone to play it is not."</td><td><a href="https://www.pcgamer.com/software/ai/ai-powered-game-development-is-leading-to-an-explosion-of-content-roblox-says-as-it-brags-about-70-000-games-published-on-its-platform-in-the-last-5-months-alone" target="_blank">↗</a></td></tr>
+          <tr><td>供給翻倍、注意力沒有</td><td>itch.io 每日新頁面 8 月→10 月翻倍；下載與購買未翻倍（11/01–02）</td><td>"Supply doubled; attention didn't."</td><td><a href="https://www.gamedeveloper.com/pc/number-of-game-pages-doubles-on-itch-io-as-ai-clones-flood-the-store" target="_blank">↗</a></td></tr>
+          <tr><td>平台與模型端開始畫線</td><td>Anthropic 對 Claude Code 加兩句規則，原創／同類型保留（10/30）</td><td>"Build a genre, not a copy."</td><td><a href="https://www.gamedeveloper.com/programming/anthropic-appears-to-have-ordered-ai-tool-claude-to-stop-remaking-video-games" target="_blank">↗</a></td></tr>
+          <tr><td>頂尖創作者已 AI 化，門檻不在工具</td><td>前 100 名遊戲逾 80% 用 AI 工具；MCP 每日使用者近 5 倍（Roblox 股東信，期間口徑未定）</td><td>"When the top 100 all use AI, the tool isn't the edge. The timing is."</td><td><a href="https://www.pcgamer.com/software/ai/ai-powered-game-development-is-leading-to-an-explosion-of-content-roblox-says-as-it-brags-about-70-000-games-published-on-its-platform-in-the-last-5-months-alone" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Roblox 7 萬款 vs DAU、itch 頁面翻倍）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。兩條皆已 fetch 原文驗日期與主張（見 Evidence Log）。注意：Roblox 80% 的期間（month／quarter）與 itch 圖表 10 月數值（6,000／近 8,000）兩處媒體口徑不一，貼文請用保守區間。
+      </div>
+    </div>
     </section>
 
     <!-- Actions -->
     <section id="ac">
       <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
-      <div class="actions"><div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>「72 小時 400 萬份 vs 三年零作」——今天最強對比貼（拉回分發與熱點速度）</li><li>Steam AI 揭露超 50%：「生成是基準，被玩到才是終點」</li><li>Bloodborne 2026 年仍大賣：「強 loop 永遠複利，為那個分享時刻而設計」</li><li>BioWare 關閉換星戰：「大廠的空缺正是獨立的機會」（標 partial）</li></ul></div>
-<div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★「你的遊戲上市了嗎」選擇分支小遊戲（綁幻刃零 vs Nagoshi 對比）</li><li>「在 AI 遊戲洪水裡找到神作」尋找 loop（延續昨日 itch/Steam 供給敘事）</li><li>「荒謬單動詞」loop（倉鼠 / 偽造蛋公式換泛化主題）</li></ul></div>
-<div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>幻刃零 400 萬份是否有官方更精確數字（S-GAME 尚未自己確認）</li><li>EA / BioWare 官方聲明（目前為媒體未確認報導）</li><li>女神異聞錄 1 重製版 Atlus 官方確認時機（高話題性，待確認再深介入）</li><li>Nagoshi 相關開發者後續動向（重組或加入新工作室）</li></ul></div>
-<div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>Bloodborne 25 萬份寫成「Sony 官方數字」（第三方報導，未稽核）</li><li>Steam AI 揭露 50%+ 數字寫成確定事實（Reddit 熱帖引用，無原始計算）</li><li>BioWare 關閉換星戰寫成 EA 確認（多源推論，EA 未回應）</li><li>幻刃零 / 龍如系列 / Persona 任何美術或角色直接挪用</li><li>對外文案賭場語言</li></ul></div></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>「Roblox 一頁熱門榜數到 8 款布娃娃，變招才是遊戲」+ 留言收變招</li><li>「Build a genre, not a copy」原創聲明貼（引 Game Developer 10/30）</li><li>itch 供給翻倍／注意力沒有，一句話版</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ 「第 9 款布娃娃：你的變招是什麼」通用物理 remix demo（本日首選）</li><li>備選：30 秒滑頁篩選（先確認不撞昨日 haystack）</li><li>unityroom 閃避／單鍵跑酷殼 + 今天的梗</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>itch.io 官方是否補公布下載／購買實數</li><li>Anthropic 規則後續：是否擴及 Claude 本體或其他廠商</li><li>Naavik prompt-to-game 平台排名文（讀後決定是否進 CJ 線）</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>不把 itch 翻倍直接寫成「AI 垃圾」——官方未說明原因</li><li>不暗示 Roblox DAU 下滑是 AI 造成</li><li>不宣稱 GameGen 與任何模型廠商的政策關係</li><li>Roblox 榜上作品美術／名稱不得挪用；對外避開賭場語言</li></ul></div>
+      </div>
     </section>
 
     <!-- 彈藥 Evidence Log -->
-    <div class="evlog reveal"><h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4><table><tr><td>幻刃零 72h 400 萬份</td><td><a href="https://www.reddit.com/r/gaming/comments/1xlm7sr/phantom_blade_0_has_sold_over_4_million_copies/" target="_blank">Reddit r/gaming</a>、<a href="https://www.gamespot.com/articles/phantom-blade-zero-put-up-some-massive-sales-numbers/" target="_blank">GameSpot</a>　pub 2026-11-01-02　驗：兩源一致「3 日 / 72 小時 / 400 萬份全平台」；S-GAME 官方未自行確認；Steam most_played #5 為 heat_latest.json 2026-11-03T07:30 直讀<span class="ok">✓</span>　🆕</td></tr><tr><td>Nagoshi Studio 關閉</td><td><a href="https://www.gamesindustry.biz/gang-of-dragon-developer-nagoshi-studio-shutters-months-after-netease-cut-funding" target="_blank">GamesIndustry.biz</a>、<a href="https://www.reddit.com/r/Games/comments/1xlnhww/nagoshi_studio_has_been_dissolved_by_a/" target="_blank">Reddit r/Games</a>、<a href="https://www.eurogamer.net/yakuza-creator-new-studio-closed-netease" target="_blank">Eurogamer</a>、PC Gamer　pub 2026-11-02　驗：三源一致「2026-10-31 股東會解散決議、NetEase 斷資」；未有作品上市；Gang of Dragon 開發中<span class="ok">✓</span>　🆕</td></tr><tr><td>Steam 50%+ AI 揭露</td><td><a href="https://www.reddit.com/r/Games/comments/1xlwr42/more_than_50_of_all_games_released_on_steam_last/" target="_blank">Reddit r/Games</a>　pub 2026-11-02　驗：僅 Reddit 熱帖引用，無原始計算來源；AI 揭露討論背景為多源延燒（PC Gamer Steam 週報 10/26）<span class="pp">partial</span>　🆕</td></tr><tr><td>Bloodborne 2026 年約 25 萬份</td><td><a href="https://www.eurogamer.net/bloodborne-251-000-sales-in-2016-ps4" target="_blank">Eurogamer</a>　pub 2026-11-02　驗：第三方引用；Sony 未公開數字；Reddit 熱帖同日討論<span class="pp">partial</span>　🆕</td></tr><tr><td>BioWare 關閉換星戰</td><td><a href="https://www.gamedeveloper.com/business/report-ea-shut-down-bioware-in-favor-of-star-wars-battlefront-sequel-after-previously-decrying-licensed-games" target="_blank">Game Developer</a>、VGC、GameSpot　pub 2026-11-02　驗：多媒體一致報導；EA 未確認<span class="pp">partial</span>　🆕</td></tr><tr><td>女神異聞錄 1 洩露</td><td><a href="https://www.videogameschronicle.com/news/a-trailer-for-a-remake-of-the-original-persona-appears-to-have-leaked/" target="_blank">VGC</a>、RPS　pub 2026-11-02-03　驗：影片洩露報告；Atlus 未確認；真實性未驗<span class="pp">partial</span>　🆕</td></tr><tr><td>Steam 即時數字</td><td>heat_latest.json 2026-11-03T07:30 官方 API（steam_live、steam_most_played 直讀）<span class="ok">✓</span></td></tr></table></div>
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Roblox 7 萬款／AI 使用／DAU</td><td><a href="https://www.pcgamer.com/software/ai/ai-powered-game-development-is-leading-to-an-explosion-of-content-roblox-says-as-it-brags-about-70-000-games-published-on-its-platform-in-the-last-5-months-alone" target="_blank">PC Gamer</a> / <a href="https://www.gamedeveloper.com/business/roblox-growth-slumps-but-the-company-is-betting-big-on-ai-to-compensate" target="_blank">Game Developer</a>（fetch）　原文日期 2026-10-30　驗：70,000 款／500,000+ 用戶、tripled／near 5x、80% top 100（PCG「past month」vs GD「past quarter」口徑不一）、DAU −9% 至 138M vs 145M 預期（僅 GD）<span class="ok">✓</span></td></tr>
+        <tr><td>itch.io 頁面翻倍</td><td><a href="https://www.gamedeveloper.com/pc/number-of-game-pages-doubles-on-itch-io-as-ai-clones-flood-the-store" target="_blank">Game Developer</a> / <a href="https://www.pcgamer.com/gaming-industry/game-development/its-not-just-steam-new-game-pages-created-per-day-on-itch-io-has-doubled-in-the-last-two-months-with-ai-slop-the-likely-culprit" target="_blank">PC Gamer</a>（fetch）　原文日期 2026-11-02／11-01　驗：官方 Bluesky 圖表、翻倍、下載與購買未翻倍；AI 歸因為媒體推論，圖表數值兩家讀法不同（近 8,000 vs 6,000+）<span class="ok">✓</span></td></tr>
+        <tr><td>Claude Code 禁複製特定遊戲</td><td><a href="https://www.gamedeveloper.com/programming/anthropic-appears-to-have-ordered-ai-tool-claude-to-stop-remaking-video-games" target="_blank">Game Developer</a>（fetch）　原文日期 2026-10-30　驗：規則約 10/27 更新、Anthropic 方 Osmani 說明「兩句話」；GamesIndustry.biz 擋抓未讀；其餘 5 家為 radar 標題<span class="ok">✓</span><span class="pp">單源原文</span></td></tr>
+        <tr><td>Roblox 榜單布娃娃 8 款</td><td><a href="https://www.roblox.com/charts" target="_blank">Roblox Charts</a>（內建瀏覽器 11/03 實抓）　驗：Top Trending 標題計數；非官方分類<span class="pp">摘要層</span></td></tr>
+        <tr><td>GitHub Trending Claude-Code-Game-Studios</td><td><a href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank">GitHub</a>（radar 清單）　日期、內容未驗<span class="pp">未驗</span></td></tr>
+        <tr><td>Naavik prompt-to-game</td><td><a href="https://naavik.co/ai-gaming/prompt-to-game-is-here-which-platforms-are-positioned-to-win/" target="_blank">Naavik</a>（radar 標題）　內文未開<span class="pp">未驗</span></td></tr>
+        <tr><td>Steam／Twitch／unityroom 數字層</td><td>heat_latest.json 2026-11-03T07:30（Steam 官方 API）；TwitchTracker／unityroom／Roblox Charts 為 11/03 瀏覽器實抓，免敘事閘<span class="ok">✓</span></td></tr>
+      </table>
+    </div>
   </main>
 
   <footer>
-    <div class="fmk"></div><div class="legend"><b>方法</b>　CJ Top 2 已多源交叉驗證（Reddit + GamesIndustry + PC Gamer + Eurogamer）；小編 / Demo 為摘要層 partial · Steam＝官方 API 11/03 即時真數字 · Twitch / Roblox 今日未抓，昨日快照標注 · KYM / TikTok / Threads / unityroom 本次未深掃，標「目前無法完全證實」· 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
-<div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/11/03 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 全 fetch 驗、小編／Demo 摘要層 · Steam＝官方 API 11-03 即時真數字 · Roblox／Twitch／unityroom 為內建瀏覽器今日實抓 · KYM 回傳常青榜、Threads 需登入，標暫缺，不以估計假裝 live · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · 2026/11/03 · 對外發布前一律過去賭場語言 + 真人 / IP 風險濾鏡</div>
   </footer>
 
 <script>
