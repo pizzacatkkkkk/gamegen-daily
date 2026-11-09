@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/11/10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">11 · 10 · TUE</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 10 · 彈藥工廠模式 · Steam 官方真數字 · 來源 20+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>GTA 6 下週上市。預售「遠超預期」。Take-Two CEO 說爆款遊戲「仍是人類的領域」——就在業界 AI 聲浪最高的這週。同一天，Devolver Digital——那個靠嘲笑 AAA 產業出名的獨立發行商——宣佈明天公布自家第一款 AAA 遊戲。</b></p>
+        <p>GTA 6 預售「tracking far in excess of expectations」（Eurogamer，Take-Two Q2 財報電話，2026-11-10）；Take-Two 預期 GTA 6 上市期間將帶來高達 35 億美元收益（PCGamer）——同一季度公司整體淨訂單下滑 18%、NBA 2K27 未達預期。CEO Strauss Zelnick 被問及 AI 時的回答：「<b>making hit games remains the purview of human beings</b>」（Eurogamer，標題層確認）。同日 Reddit r/gaming top-of-day：Devolver Digital Bluesky 貼文：「Heads up: Devolver Digital is announcing its first AAA game tomorrow.」（原文標題層）。<b>ROB RUN 今日 Steam 排名再升 +13（#28→#15），連續兩天暴衝，昨 +17 今 +13，兩天累計 +30 名，零媒體驅動——這才是真正的有機爆紅模板。</b>（Steam 官方 API 11/10 07:30 真數字）</p>
+        <div class="pull">▸ 今天就能蹭：「GTA 6 上市倒數計時器」任何文體 + Take-Two CEO「人類不可取代」金句截圖；「Devolver 第一款 AAA 是什麼？」猜測互動帖；ROB RUN 連兩天暴衝觀察分享。</div>
+      </div>
+
+      <!-- 📰 今日彈藥 頭版 -->
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 預售「遠超預期」+ $35 億收益預測——Take-Two CEO：「爆款遊戲仍是人類的領域」</div>
+            <div class="ln"><b>新聞事實：</b>Eurogamer（Take-Two Q2 財報電話，2026-11-10）：「GTA 6 pre-orders are tracking 'well above expectations'」，CEO Strauss Zelnick：「making hit games remains the purview of human beings」。PCGamer（同日）：Take-Two 預期 GTA 6 上市期間帶來高達 $3.5B 收益。GamesIndustry.biz：Take-Two Q2 淨訂單下滑 18% 至 $1.6B，NBA 2K27 未達預期。（標題層事實，財報電話引用為 Eurogamer 轉述，partial 確認）</div>
+            <div class="ln"><b>GameGen 角度：</b>業界對 AI 生成內容爭論最激烈的這週，整個遊戲產業最大的商業賭注的掌舵人說：爆款是人類的領域。這句話比任何研究報告都有力。GameGen 把今天的文化事件做成可玩遊戲，就是在製造下一個人類製作的爆款。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6 pre-orders are tracking 'far in excess' of expectations — in a quarter where Take-Two's bookings fell 18% and NBA 2K27 missed. One game is carrying the entire company. Take-Two's CEO was asked about AI this week and said: 'Making hit games remains the purview of human beings.' The biggest commercial bet in gaming history just made the case for human creativity."<br><span style="color:var(--ink-dim)">中譯：GTA 6 預購遠超預期——在 Take-Two 整體下滑 18% 的季度，一款遊戲撐起整個公司。CEO 被問到 AI 時說：「製造爆款遊戲仍是人類的領域。」史上最大商業賭注剛剛替人類創造力發言。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.eurogamer.net/gta-6-preorders-tracking-take-two-earnings-call" target="_blank">Eurogamer ↗</a>　<a href="https://www.pcgamer.com/games/grand-theft-auto/take-two-expects-to-make-as-much-as-usd3-5-billion-during-the-gta-6-launch-period/" target="_blank">PCGamer ↗</a>　pub 2026-11-10　verified partial</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>三天三家裁員：Tripwire 36 人、Bit Reactor（Star Wars）、Paramount/WBD 合併後遊戲部門——GTA 6 上市前夕的業界壓縮潮</div>
+            <div class="ln"><b>新聞事實：</b>PCGamer + GamesIndustry.biz（2026-11-10）：Tripwire Interactive（Killing Floor 製作商）一週前剛擴大發行業務後又裁員 36 人。Eurogamer + RPS（2026-11-09/10）：Star Wars Zero Company 開發商 Bit Reactor 裁員。PCGamer（2026-11-10）：Paramount 收購 Warner Bros. Discovery 一個月後，合併遊戲部門開始裁員。（多來源標題層確認）</div>
+            <div class="ln"><b>GameGen 角度：</b>GTA 6 上市前夕，業界同時出現連環裁員——有人在賭史上最大一把，更多人在縮减成本等待結果。這正是「長尾製作」vs「短平快文化連結」的分叉點：GameGen 不是在裁員，是在用更少人在更短時間內捕捉今天的文化情緒。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Three studios announced layoffs this week — right before GTA 6 launches. The industry is simultaneously making the biggest commercial bet in its history and cutting costs everywhere else. That's not contradiction. That's bifurcation. Big swings for blockbusters. Everyone else tightens. The studios surviving in between are the ones who build fast and cheap on today's culture."<br><span style="color:var(--ink-dim)">中譯：同一週，三家工作室裁員——就在 GTA 6 上市前夕。業界同時押下史上最大商業賭注，又在其他地方大幅縮减成本。這不是矛盾，是分叉。在中間生存下來的工作室，是那些快速低成本捕捉今天文化的。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pcgamer.com/gaming-industry/a-week-after-expanding-its-publishing-division-killing-floor-studio-tripwire-interactive-lays-off-36-people/" target="_blank">PCGamer ↗</a>　<a href="https://www.eurogamer.net/star-wars-zero-company-bit-reactor-layoffs" target="_blank">Eurogamer ↗</a>　pub 2026-11-10　verified partial</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 4</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Devolver Digital 宣佈明天公布自家第一款 AAA 遊戲<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/gaming + r/Games top-of-day（2026-11-10）：Devolver Digital Bluesky 貼文：「Heads up: Devolver Digital is announcing its first AAA game tomorrow.」Devolver 是靠嘲笑 AAA 文化和「反 AAA」品牌形象出名的獨立發行商，作品包括《Hotline Miami》《Devolver Direct》系列惡搞頒獎典禮。（原文標題層確認，Bluesky 為 Devolver 官方帳號轉述）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Devolver Digital — the studio famous for mocking AAA with fake press conferences for years — just announced it's making its first AAA game. Announcement tomorrow. If even Devolver goes AAA, what exactly does 'indie' mean in 2026? Drop your guesses 👇"<br><span style="color:var(--ink-dim)">中譯：Devolver Digital——那個靠假發表會嘲笑 AAA 文化出名的工作室——剛宣佈要做第一款 AAA 遊戲。明天公布。如果連 Devolver 都去了，2026 年的「獨立」到底還是什麼？留猜測👇</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1xrwy4i/devolver_digital_on_bluesky_heads_up_devolver/" target="_blank">Reddit r/gaming ↗</a>　pub 2026-11-10　verified partial（原文轉述 Bluesky）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>ROB RUN Steam 排名暴衝連兩天：昨 +17（#45→#28），今 +13（#28→#15）——兩天 +30 名，零媒體報導<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Steam 官方 API（heat_latest.json 2026-11-10T07:30+08:00）：ROB RUN（app 4262460）今日排名 #15，昨日 #28，今日 +13 名。steam_movers 顯示 baseline 已就位，rank_jump=13，前日 jump=17（11/09 資料）。兩天累計從 #45 升至 #15，共 +30 名。今日無媒體報導解釋成因。（Steam 官方 API 真數字 ✓，原因推測）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "ROB RUN went from #45 to #15 on Steam's most played chart in two days. +17 yesterday. +13 today. Zero press coverage. Zero PR push. Pure organic player word-of-mouth. We track unexplained surges like this because they reveal what players actually want — before the press does."<br><span style="color:var(--ink-dim)">中譯：ROB RUN 兩天從 Steam #45 衝到 #15。昨天 +17，今天 +13。沒有任何媒體報導，沒有 PR 活動。純玩家口碑有機傳播。我們追蹤這種無媒體驅動的爆衝——因為它們在媒體反應之前先揭露玩家真正想要什麼。</span></div>
+            <div class="meta">來源 <a href="https://store.steampowered.com/app/4262460" target="_blank">Steam 官方 API ↗</a>　pub 2026-11-10　verified yes（API 真數字）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>《決勝時刻》遊戲畫面被誤認為炸彈威脅，加州機場緊急疏散<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit r/gaming top-of-day（2026-11-10）：「Plane evacuated at California airport after 'Call of Duty' gameplay is mistaken for bomb threat」。標題層事實，Reddit 當日最高熱度貼文之一。（⚠️ 標題層事實，未直讀全文；發文前請確認媒體原始報導）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A California airport was evacuated because someone's Call of Duty gameplay was mistaken for a bomb threat. Games don't just simulate reality anymore — they intrude on it. The most realistic game becomes a real-world event. 2026 is wild. (⚠️ Headline-layer — verify before posting.)"<br><span style="color:var(--ink-dim)">中譯：加州機場因有人玩《決勝時刻》被誤認為炸彈威脅而疏散。遊戲不只是模擬現實——它已經闖入現實。最真實的遊戲變成了真實世界的事件。2026 年真的很狂。（⚠️ 標題層，發文前確認）</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/gaming/comments/1xs2f8e/plane_evacuated_at_california_airport_after_call/" target="_blank">Reddit r/gaming ↗</a>　pub 2026-11-10　verified partial（標題層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>BioWare 倒閉後第一個 N7 日——演員們集結：「Something's really possible」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Eurogamer（2026-11-10）：「'Something's really possible' - Mass Effect cast rally around efforts to save the franchise on the first N7 Day after BioWare's closure」。N7 Day 是每年 11 月 7 日的《質量效應》粉絲紀念日（本週剛過）。今年是 BioWare 關閉後第一個 N7 Day。（標題層事實，Eurogamer 確認）</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Today is the first N7 Day since BioWare closed. The Mass Effect cast is rallying. 'Something's really possible,' they said. No studio. No confirmed publisher. Just a cast and a community who refuse to let go. Some IPs are bigger than the studios that made them. What's the most beloved game universe you'd want to see rescued?"<br><span style="color:var(--ink-dim)">中譯：這是 BioWare 關閉後第一個 N7 日。質量效應演員們集結，說「Something's really possible」。沒有工作室，沒有確認的發行商，只有一群不肯放手的演員與社群。有些 IP 比製作它們的工作室更大。你最想看到哪個遊戲宇宙被拯救？</span></div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/mass-effect-cast-save-bioware-n7-day" target="_blank">Eurogamer ↗</a>　pub 2026-11-10　verified partial</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「GTA 6 上市前你有多了解它？」——30 秒互動問答（綁今日 GTA 6 下週上市熱度）<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法：</b>5 道關於 GTA 6 的問題（如：GTA 6 預計帶來多少收益？A. $1B B. $3.5B C. $10B；GTA 6 是在哪個城市取景？等）——結果頁給「你比媒體記者更了解 GTA 6！」或「你被 AI 生成謊言騙了！」分享卡。全程不涉及任何具體遊戲道具或角色設定，只考「已公開新聞事實」。</div>
+            <div class="ln"><b>為何是今天首選：</b>GTA 6 下週上市，今天全球玩家討論度最高的遊戲；問答型互動分享率天生高（人人都想知道自己答對幾題）；不需要授權任何 Take-Two IP；與 GameGen「今天的梗 → 今天就能玩」速度優勢直接呼應。</div>
+            <div class="meta">綁 <a href="https://www.eurogamer.net/gta-6-preorders-tracking-take-two-earnings-call" target="_blank">Eurogamer Take-Two ↗</a>　模板：問答 / 分享結果卡</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 11/10 資料</span></div>
+          <ol>
+            <li class="hot down"><span class="nm">Counter-Strike（CS:GO）</span><span class="vn">558K ▼6.2%</span></li>
+            <li class="down"><span class="nm">Call of Duty: Modern Warfare II</span><span class="vn">134K ▼20.7%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">100K ▼7.7%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">90K ▼5.4%</span></li>
+            <li class="down"><span class="nm">Rust</span><span class="vn">79K ▼7.8%</span></li>
+            <li class="down"><span class="nm">Rainbow Six Siege</span><span class="vn">54K ▼16.5%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 11/10 07:30 資料 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 最多遊玩（排名）</span><span class="metric">11/10 官方排名</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">#1</span></li>
+            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">#2</span></li>
+            <li><span class="nm">Dota 2</span><span class="vn">#3</span></li>
+            <li><span class="nm">Wallpaper Engine</span><span class="vn">#4</span></li>
+            <li><span class="nm">Phantom Blade Zero</span><span class="vn">#5</span></li>
+            <li class="hot up"><span class="nm">ROB RUN</span><span class="vn">#15 ▲▲</span></li>
+          </ol>
+          <div class="bf">ROB RUN 連兩日暴衝，今日 #15（昨 #28）· Steam API 11/10 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+
+        <div class="board b-dim">
+          <div class="bh"><span>ROBLOX / TWITCH</span><span class="metric">本次未抓取</span></div>
+          <div class="nodata">⚠️ Roblox 與 Twitch 需瀏覽器渲染，本次排程未執行真抓，<b>目前無法完全證實</b>當日榜單。可追週二訊號：GTA 6 下週上市前夕，GTA 相關 Twitch 類別本週可能升溫；Phantom Blade Zero 動作類別持續熱度；Devolver AAA 公告明天，可追 Twitch 實況反應。</div>
+          <div class="bf"><a href="https://twitchtracker.com/games" target="_blank">TwitchTracker ↗</a> · <a href="https://www.roblox.com/charts" target="_blank">Roblox Charts ↗</a></div>
+        </div>
+
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        📊 heat_latest.json 顯示 <code>fetched_at: 2026-11-10T07:30:41+08:00</code>，今日（11/10）資料已更新。Steam 在線人數整體持續下滑（週二效應延續）：CS:GO -6.2%、CoD MW2 -20.7% 為最大跌幅；整體無上漲項目。<b>最大亮點：ROB RUN 今日再升 +13（#28→#15），連兩天暴衝，兩天累計 +30 名；Path of Exile 2 升 +5（#100→#95），12 月 1.0 正式版上市前熱度提升。</b>新品熱賣：Casualties: Unknown、CoD MW4、DREADMOOR 仍在榜。Steam 新品今日前列：Terrablox、Tome of Talis: A Dice Conquest Game、Takeover 2。
+      </div>
+    </section>
+
+    <!-- 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>暴衝</span></span>ROB RUN 連兩日暴衝：+17 昨（#45→#28），+13 今（#28→#15）——兩天 +30 名無媒體驅動</h3>
+        <div class="sum">Steam 排名異動（heat_latest 11/10 資料，steam_movers baseline_ready）：<b>ROB RUN（app 4262460）今日 #15，前日 #28，+13 名</b>。昨日（11/09）為 +17 名（#45→#28）。兩天累計從 #45 升至 #15，共 +30 名。期間無媒體報導解釋成因——純玩家有機傳播。今日其他異動：<b>ARK: Survival Ascended +8（#100→#92）</b>、<b>Path of Exile 2 +5（#100→#95）</b>（12 月 1.0 前熱度），<b>Farming Simulator 25 +5（#62→#57）</b>。新進榜：PAYDAY 3 at #91。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>ROB RUN 兩天 +30 是本週最值得研究的現象。沒有發行商公告、沒有更新說明、沒有網紅推廣——純粹口碑傳播。這種「玩家自己找到它」的動力比任何付費推廣都更有說服力。Path of Exile 2 升溫可能預示 12 月 1.0 正式版的話題熱度提前積累。ARK +8 無明確成因，可追是否有社群活動或更新。</div>
+        <div class="footrow">
+          <div class="src">STEAM 官方 API · 11/10 07:30 資料 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>新品</span></span>Steam 熱賣：Casualties: Unknown、CoD MW4 持續在榜；新品前列：Terrablox、Tome of Talis</h3>
+        <div class="sum">Steam 熱賣榜（11/10）：Casualties: Unknown、CoD MW4、Steam Frame、DREADMOOR 持續在榜（與昨日相比，格局穩定）。Steam 新品 Top（11/10）：Terrablox、Tome of Talis: A Dice Conquest Game（骰子征服遊戲）、Takeover 2、Gopher It: Office Intern Simulator（辦公室實習生模擬）為今日新品前列。Steam 熱賣榜今日無明顯新進大型品項，GTA 6 下週上市前的「等待效應」可能壓制其他新品購買衝動。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Tome of Talis「骰子征服」型遊戲出現在新品前列，說明「桌遊機制 + 數字策略」的遊戲在今週有需求。GTA 6 下週上市的「等待效應」可能讓今週其他遊戲購買動機壓縮——玩家在等 GTA 6，不想先花錢在別的地方。這是 GameGen 瀏覽器遊戲的優勢：免費玩，不需要用戶「節省預算」。</div>
+        <div class="footrow"><div class="src">STEAM 官方 API · 11/10 · <a href="https://store.steampowered.com/charts/topsellers" target="_blank">原文 ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>早期</span></span>HN：「LLM 用一個 Byte 讓 2016 年的遊戲復活」+ Fable 5.2 一次搞定姪子的夢想遊戲</h3>
+        <div class="sum">HackerNews 今日（11/10）遊戲相關熱門：「An LLM revived a 2016 game with one byte」（1 分，2 則留言；balochy.de）——LLM 通過修改遊戲執行檔一個位元組修復了一款廢棄遊戲。「Fable 5.2 one-shotted my nephew's dream game」（1 分；notesbylex.com）——用 Fable 5.2 一次性生成姪子夢想的遊戲。「Indie Game Development with AI」（4 分；sandromaglione.com）。另有：Sortaballs v2（10 模式 1000+ 謎題）、Game Market Atlas（Steam 市場競爭評估工具）。（均為標題層事實）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「LLM 一個 Byte 復活遊戲」是本週 HN 最有意思的 AI + 遊戲故事——最小的介入，最大的影響。「Fable 5.2 一次搞定夢想遊戲」與 GameGen 的速度論述完全一致：AI 不是取代創意，是讓今天的想法今天就能玩到。Game Market Atlas 工具對 GameGen 有直接參考價值：Steam 競爭評估。</div>
+        <div class="footrow"><div class="src"><a href="https://balochy.de/blog/an-llm-revived-a-2016-game-with-one-byte/" target="_blank">balochy.de ↗</a> · HN 今日</div></div>
+      </article>
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>早期</span></span>Naavik：「Prompt-to-Game 已到——哪個平台能贏？」繼續延燒；Hasbro 新策略：更多 Magic，更少大賭注</h3>
+        <div class="sum">Naavik 本週持續熱門：「Prompt-to-Game Is Here. Which Platforms Are Positioned to Win?」（本週最強論述，與 GameGen 核心論述高度相關）；「Hasbro's New Playbook: More Magic, Fewer Big Bets」（Hasbro 策略轉向：聚焦 Magic 等核心 IP，減少新品豪賭）；「Love and Deepspace: The Price of Losing Trust」（情感互動遊戲信任危機）。（來源為 Naavik RSS 標題層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Naavik「Prompt-to-Game 誰能贏」的分析恰好在 Devolver 宣佈首款 AAA 的同一天持續延燒——格局重組的感覺正在加強。Hasbro「更多 Magic」策略說明頂級 IP 聚焦策略在桌遊行業也在複製；有核心粉絲基礎的 IP 比廣泛撒網更安全。Love and Deepspace 信任危機案例可用於論述「情感遊戲必須言行一致」。</div>
+        <div class="footrow"><div class="src"><a href="https://naavik.co/ai-gaming/prompt-to-game-is-here-which-platforms-are-positioned-to-win/" target="_blank">Naavik ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads · AI 動向</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>桜井政博（Sakurai）：自己不用 AI 製作遊戲，但警告完全迴避可能讓開發者在「要求過高的產業」中落後</h3>
+        <div class="sum">Reddit r/Games top-of-day（2026-11-10）：AUTOMATON WEST 報導《星之卡比》《任天堂明星大亂鬥》製作人桜井政博（Masahiro Sakurai）表示他本人不使用 AI 製作遊戲，但相信「avoiding it entirely could cause devs to fall behind」在「far-too-demanding industry climate」（要求過高的產業環境）中。同日 Jackbox Games 的「we have no intention of changing that」（完全拒絕 AI）形成對比。（標題層事實，AUTOMATON WEST 為日本遊戲業信譽媒體）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Sakurai 是業界最受尊重的創作者之一，他的 AI 立場是本週最有分量的中間派聲音——既不是 Epic Sweeney 式擁抱，也不是 Jackbox 式完全拒絕。「不用，但不建議完全迴避」這個立場恰好是大多數開發者真實的心聲。GameGen 可引用這個架構討論「AI 是工具，不是替代品」——Sakurai 的背書讓這個論點更有說服力。</div>
+        <div class="footrow"><div class="src"><a href="https://www.reddit.com/r/Games/comments/1xs16ns/masahiro_sakurai_doesnt_use_ai_for_his_games_but/" target="_blank">Reddit r/Games ↗</a> · AUTOMATON WEST</div></div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>業界</span></span>Hollow Knight Silksong 實體版暗示多個「免費內容包」及「Sea of Sorrow 巨型擴充」；PoE2 1.0 十二月確認</h3>
+        <div class="sum">Eurogamer（2026-11-10）：Hollow Knight Silksong 實體版包裝說明提及多個「free content packs」即將推出，並稱 Sea of Sorrow 為「giant expansion」——這是關於 Silksong 後續內容計畫最具體的官方暗示。RPS（2026-11-10）：「Path of Exile 2's 1.0 version is out this year after all, arriving in December with a full campaign, two neat new classes, and more.」PoE2 1.0 十二月正式版確認，今日 Steam 排名 +5 可能是提前積累熱度。（標題層確認）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Silksong 的「免費內容包」策略——先上線主遊戲，後續免費延伸——是長尾留存的經典設計。PoE2 1.0 十二月確認說明今日 Steam +5 是真實的「上市前熱度積累」訊號，不是偶然的。兩個訊號合起來：長期留存型內容策略在 2026 年底依然有效。</div>
+        <div class="footrow"><div class="src"><a href="https://www.eurogamer.net/hollow-knight-silksong-physical-free-content-packs-sea-of-sorrow" target="_blank">Eurogamer ↗</a> · <a href="https://www.rockpapershotgun.com/path-of-exile-2s-10-version-is-out-this-year-after-all-arriving-in-december-with-a-full-campaign-two-neat-new-classes-and-more" target="_blank">RPS ↗</a></div></div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>業界</span></span>Xbox 出售 Arkane；Ubisoft 競標中——遊戲工作室「二手市場」持續擴大</h3>
+        <div class="sum">Game Developer（2026-11-10）：「Ubisoft among the bidders for Arkane as Xbox looks to sell the studio.」Arkane Studios（《Prey》《Deathloop》《Redfall》製作商）正被 Xbox 出售，育碧在競標者之列。同日 Sony 財報確認次世代主機計畫如期進行；Nintendo 財報確認記憶體供應無慮。（標題層事實）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Xbox 在 EA 被收購、Unity 被洽購的同週出售 Arkane——遊戲業資產重組的速度在加快。育碧競標 Arkane 說明育碧在自家縮编的同時仍在尋找外部創意資產。這種「小工作室被大財團收購再被賣掉」的輪迴，正是中型獨立製作空間被壓縮的背景。GameGen 的「不需要被收購」立場在這個脈絡下是個真實的差異化選項。</div>
+        <div class="footrow"><div class="src"><a href="https://www.gamedeveloper.com/business/ubisoft-among-the-bidders-for-arkane-as-xbox-looks-to-sell-the-studio" target="_blank">Game Developer ↗</a></div></div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 動向</span></span>Steam 收緊 AI 遊戲提交規則；itch.io「No AI」篩選延燒；Microsoft 員工批公司強迫用戶「上癮」AI</h3>
+        <div class="sum">Tavily 本週追蹤（2026-11-04/06/10）：GameSpot：Steam 正在收緊 AI 生成遊戲的提交規則，回應 AI 垃圾內容氾濫（pub 2026-11-04）。itch.io「No AI」篩選已新增（80.lv，pub 2026-11-05）。RPS（2026-11-10）：Microsoft 員工公開信批評公司試圖讓客戶對 AI「上癮」，並讓員工成為「人權侵犯的共謀」。（多來源標題層確認）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Steam + itch.io 同週加強 AI 內容管制，說明「AI 垃圾遊戲」問題已進入平台政策層級。Microsoft 員工公開信罕見地從內部批評 AI 推進策略——這個訊號說明「AI 強制化」的社會阻力正在從外部蔓延到內部。GameGen 的策展型快速生成不是量產垃圾，是用 AI 製造今天的文化事件；這個差異化論述在今週的脈絡下比任何時候都更重要。</div>
+        <div class="footrow"><div class="src"><a href="https://www.gamespot.com/articles/steam-is-tightening-its-game-submission-rules-as-ai-slop-floods-the-store" target="_blank">GameSpot ↗</a> · <a href="https://www.rockpapershotgun.com/microsoft-workers-accuse-company-of-trying-to-get-customers-addicted-to-ai-while-forcing-it-on-their-own-staff-and-making-them-party-to-human-rights-violations" target="_blank">RPS ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 迷因題材 / 迷因遊戲 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因</span></span>《決勝時刻》遊戲畫面被誤認為炸彈威脅，加州機場緊急疏散整架飛機</h3>
+        <div class="sum">Reddit r/gaming top-of-day（2026-11-10）：「Plane evacuated at California airport after 'Call of Duty' gameplay is mistaken for bomb threat」。今日 Reddit 最高熱度貼文之一。梗型：<b>「超真實遊戲 / 遊戲入侵現實 / AI 生成遊戲的現實感有多可怕」</b>。（⚠️ 標題層事實，Reddit 轉述；發文前建議確認媒體原始報導）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「遊戲畫面被誤認為真實威脅」是今日最高病毒性的迷因故事，幾乎注定被全球媒體大量轉載。這個故事的 GameGen 連結角度：「遊戲的真實感已經到了入侵現實的程度——這正是我們在製作的東西的對立面：GameGen 製作的是讓你知道自己在玩遊戲的文化事件遊戲，不是讓你忘記這是遊戲的超真實模擬。」或者簡單蹭一句：「你在玩的東西，別人以為是真的。」</div>
+        <div class="footrow"><div class="src"><a href="https://www.reddit.com/r/gaming/comments/1xs2f8e/plane_evacuated_at_california_airport_after_call/" target="_blank">Reddit r/gaming ↗</a>　pub 2026-11-10</div></div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因</span></span>Zelda: OOT 重製版——速通玩家已找到破解方法；玩家用遊戲內樂器創作翻唱</h3>
+        <div class="sum">Reddit r/Games top-of-day（2026-11-10）：「The Legend of Zelda: Ocarina of Time Speedrunners Have Already Found New Ways to Break the Remake」。GameSpot（同日）：「Zelda: Ocarina Of Time Players Are Creating Incredible Cover Songs In The Game」——玩家用遊戲內 ocarina 樂器演奏翻唱曲，大量上傳社群。兩種截然不同的玩家創意：破壞遊戲 vs. 用遊戲創作音樂。（標題層確認）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>OOT 重製版今週雙線迷因：速通玩家找到漏洞（破壞型玩家創意）＋一般玩家用遊戲樂器演奏（創作型玩家創意）。兩種行為都是「玩家自己製造內容」的最高形式。GameGen 的遊戲設計如果能讓玩家「自製迷因」而不只是「玩完走人」，才是真正的長尾存活策略。Switch 2 今週也因 Zelda 創下 2026 年最佳銷售週（GameSpot）。</div>
+        <div class="footrow"><div class="src"><a href="https://www.reddit.com/r/Games/comments/1xrkpis/the_legend_of_zelda_ocarina_of_time_speedrunners/" target="_blank">Reddit r/Games ↗</a> · <a href="https://www.gamespot.com/articles/zelda-ocarina-of-time-players-are-creating-incredible-cover-songs-in-the-game/" target="_blank">GameSpot ↗</a></div></div>
+      </article>
+
+      <article class="story rl reveal">
+        <h3><span class="tag rl"><span>迷因</span></span>GTA 5 Trevor 應該在 GTA 6 坐馬桶上「交棒」；$3,000 GTA 6 聯名外套秒售罄</h3>
+        <div class="sum">GameSpot（2026-11-10）：「GTA 5's Trevor Should Be In GTA 6 Sitting On The Toilet To 'Pass The Torch,' Actor Says」——Trevor 的配音員希望在 GTA 6 中客串，以「坐廁所」的方式完成世代交接。同日：「GTA 6 Jacket That Costs $3,000 Sells Out Immediately」——Rockstar 與設計師合作的 GTA 6 聯名外套 $3,000 美元立刻售罄。Rockstar 也宣佈 GTA 6 上市前夕在邁阿密舉辦音樂節（Eurogamer）。梗型：<b>「GTA 6 經濟學 / 粉絲消費力 / 馬桶交棒」</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>$3,000 外套秒售罄說明 GTA 6 粉絲的消費力已超出遊戲範疇。「馬桶交棒」梗高病毒性——今天可以直接用於任何「世代交接」型內容（如「舊遊戲讓位新遊戲」「舊梗讓位新梗」）。GTA 6 邁阿密音樂節說明 Rockstar 在把 GTA 6 的上市做成文化節慶，不只是遊戲發售——GameGen 的「今天的文化事件做成遊戲」論述可以呼應這個趨勢。</div>
+        <div class="footrow"><div class="src"><a href="https://www.gamespot.com/articles/gta-5s-trevor-should-be-in-gta-6-sitting-on-the-toilet-to-pass-the-torch-actor-says/" target="_blank">GameSpot ↗</a> · <a href="https://www.eurogamer.net/rockstar-gta-6-miami-music-festival" target="_blank">Eurogamer ↗</a></div></div>
+      </article>
+
+      <div class="story ig reveal" style="padding:14px 18px;font-size:13px;color:var(--ink-soft)">⚠️ Know Your Meme「Popular right now」本次未抓取，<b>目前無法完全證實</b>是否有更新鮮的全球梗；以上梗皆來自 radar 的 Reddit 當日 top 序與新聞標題層。itch.io 今日 meme 板持續：睡眠麻痺惡魔約會遊戲、水豚/倉鼠身份代入梗仍在熱門。</div>
+    </section>
+
+    <!-- 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>機制</span></span>HN: 「LLM 一個 Byte 復活遊戲」+ Sortaballs v2「10 模式 1000 謎題」+ itch.io 骰子征服新品</h3>
+        <div class="sum">今日機制靈感：HN：「An LLM revived a 2016 game with one byte」——最小介入，最大效果；遊戲設計的「一個關鍵改變」機制（挑戰玩家找到唯一的正確 Byte）。HN：Sortaballs v2——10 種遊戲模式 + 1000+ 謎題，極度豐富的內容體量。Steam 新品：Tome of Talis: A Dice Conquest Game（骰子 + 卡牌征服）。今日梗拆機制：「GTA 6 知識問答」→ 5 題選擇 + 分享結果卡；「Devolver 第一款 AAA 是什麼？」→ 猜謎型互動貼文（不需要做成遊戲，純社群互動）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「一個 Byte 改變遊戲」的機制公式最具可玩性：給玩家一個限制條件（只能改一個東西），讓他們找到唯一解——這是謎題設計的核心。Sortaballs v2 的「10 模式 1000 謎題」說明豐富內容 + 低門檻進入是長期留存的公式。今日首選 Demo 建議：GTA 6 知識問答（5 題，30 秒，結果分享卡），門檻最低、話題最熱。</div>
+        <div class="footrow"><div class="src"><a href="https://balochy.de/blog/an-llm-revived-a-2016-game-with-one-byte/" target="_blank">balochy.de ↗</a> · <a href="https://sortaballs.vercel.app" target="_blank">Sortaballs ↗</a></div></div>
+      </article>
+    </section>
+
+    <!-- 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>暫缺</span></span>繁中 Threads 熱話本次未抓取</h3>
+        <div class="sum" style="margin-bottom:0">⚠️ Threads 需登入 / JS 渲染，本次排程未取得當日繁中熱話，<b>目前無法完全證實</b>，不以舊資料補位。可追母題：「GTA 6 下週上市」在台灣 PC / 主機玩家圈是今日最大討論點（下週是否能玩到的問題，以及台灣售價與版本差異）；「Devolver 第一款 AAA 明天公布」在台灣獨立遊戲圈應有反應（Devolver 在台灣有一定知名度）；「CoD 被誤認為炸彈威脅」是今天最具病毒性的遊戲新聞，繁中社群可能快速擴散。</div>
+      </div>
+    </section>
+
+    <!-- Trend -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>GTA 6 下週上市（全球最高熱度）</td><td><span class="tmpl">「GTA 6 知識問答」5 題選擇型</span></td><td>「你比媒體記者更了解 GTA 6！」結果分享卡</td><td class="rk-low">低 · 只考已公開新聞事實，不涉及 IP 設定</td><td>★ 本日 Demo 首選；今日最高話題熱度</td></tr>
+          <tr><td>Devolver Digital 第一款 AAA 明天公布</td><td><span class="tmpl">「猜 Devolver AAA 是什麼」互動帖</span></td><td>「你覺得 Devolver 的第一款 AAA 是什麼類型？投票」</td><td class="rk-low">低 · 純猜測型互動，不引用 IP</td><td>明天公布後跟進；今天先用猜測型互動帖</td></tr>
+          <tr><td>ROB RUN 兩天 +30 名無媒體驅動</td><td><span class="tmpl">「有機爆紅分析」教育型貼文</span></td><td>「這款遊戲沒有 PR，沒有網紅，它是怎麼做到的？」</td><td class="rk-low">低 · Steam 官方 API 真數字</td><td>適合 CJ 教育型論述；ROB RUN 機制值得研究</td></tr>
+          <tr><td>CoD 被誤認炸彈威脅（機場疏散）</td><td><span class="tmpl">「遊戲 vs. 現實」反差梗貼文</span></td><td>「你在玩的東西，別人以為是真的」</td><td class="rk-mid">中 · 標題層事實，確認媒體原始報導再發</td><td>今日病毒性最高的遊戲故事；確認後立即蹭</td></tr>
+          <tr><td>N7 Day + BioWare 閉門後演員集結</td><td><span class="tmpl">「IP 比工作室更大」情感型貼文</span></td><td>「有些遊戲宇宙不會因為工作室關閉就消失」</td><td class="rk-low">低 · 情感向，不涉及 IP 商業授權</td><td>適合溫暖型內容；與粉絲情感共鳴</td></tr>
+          <tr><td>Sakurai AI 中間派立場</td><td><span class="tmpl">「AI 是工具，不是替代品」論述貼</span></td><td>Sakurai 名言引用 + GameGen 立場</td><td class="rk-low">低</td><td>適合 CJ 教育型；Sakurai 背書讓論點更有力</td></tr>
+          <tr><td>業界三連裁員潮（GTA 6 前夕）</td><td><span class="tmpl">「誰在賭、誰在縮」行業觀察貼</span></td><td>「一款遊戲撐起整個公司 vs. 其他人都在縮减成本」對比</td><td class="rk-low">低</td><td>適合 CJ 行業分析；不點名批評裁員的工作室</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>GTA 6 預售爆單 + Take-Two CEO：爆款是人類的領域</td><td>Eurogamer（Take-Two Q2 財報電話，2026-11-10）：GTA 6 預售「far in excess of expectations」；CEO Zelnick：「making hit games remains the purview of human beings」。Take-Two 預估 GTA 6 帶來高達 $3.5B（PCGamer，同日）。同季度整體 -18%，NBA 2K27 未達預期</td><td>"GTA 6 pre-orders are tracking 'far in excess' of expectations — in a quarter where Take-Two's bookings fell 18%. One game is carrying the entire company. The CEO was asked about AI and said: 'Making hit games remains the purview of human beings.' The biggest commercial bet in gaming history just made the case for human creativity."</td><td><a href="https://www.eurogamer.net/gta-6-preorders-tracking-take-two-earnings-call" target="_blank">Eurogamer ↗</a>　<a href="https://www.pcgamer.com/games/grand-theft-auto/take-two-expects-to-make-as-much-as-usd3-5-billion-during-the-gta-6-launch-period/" target="_blank">PCGamer ↗</a></td></tr>
+          <tr><td>業界三連裁員潮——GTA 6 上市前夕的結構壓縮</td><td>PCGamer + GamesIndustry.biz（2026-11-10）：Tripwire 36 人；Eurogamer（2026-11-09/10）：Bit Reactor（Star Wars）；PCGamer（2026-11-10）：Paramount/WBD 合併後遊戲部門裁員。同週 Naavik：「Prompt-to-Game Is Here. Which Platforms Are Positioned to Win?」</td><td>"Three studios announced layoffs this week — right as GTA 6 launches. The industry is simultaneously making the biggest commercial bet in its history and cutting everywhere else. That's not contradiction. That's bifurcation. Big swings for blockbusters. Everyone else tightens. The studios surviving in between build fast and cheap on today's culture."</td><td><a href="https://www.pcgamer.com/gaming-industry/a-week-after-expanding-its-publishing-division-killing-floor-studio-tripwire-interactive-lays-off-36-people/" target="_blank">PCGamer ↗</a>　<a href="https://www.eurogamer.net/star-wars-zero-company-bit-reactor-layoffs" target="_blank">Eurogamer ↗</a></td></tr>
+          <tr><td>Sakurai：不用 AI，但完全迴避可能落後——中間派立場與 GameGen 論述</td><td>Reddit r/Games top-of-day（2026-11-10），AUTOMATON WEST：Sakurai 本人不用 AI 製作遊戲，但警告「avoiding it entirely could cause devs to fall behind」in a「far-too-demanding industry climate」。同日對比：Jackbox「we have no intention of changing that」（完全拒絕）vs. Epic Sweeney（全面擁抱）</td><td>"Masahiro Sakurai (Kirby, Smash Bros) says he doesn't use AI for his games — but warns that avoiding it entirely could leave developers behind. His nuance is rare: not a mandate, not a ban. Just honesty. The studios that survive aren't the ones who refuse AI or blindly adopt it. They're the ones who use it to move faster on ideas that only humans can have."</td><td><a href="https://www.reddit.com/r/Games/comments/1xs16ns/masahiro_sakurai_doesnt_use_ai_for_his_games_but/" target="_blank">Reddit / AUTOMATON ↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（GTA 6 CEO 金句、業界三連裁員）已附 EN hook + 中譯，兩條皆附原始來源 URL。去賭場化 ✅。第三條 Sakurai AI 立場為 Reddit 標題層事實，發佈前建議讀 AUTOMATON WEST 原文確認完整立場。Take-Two CEO 引言由 Eurogamer 財報電話轉述，partial 確認；用於發文前請確認完整上下文。
+      </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul><li>GTA 6 下週上市前的「你有多了解它？」問答帖（今日最高熱度）</li><li>Devolver 第一款 AAA 明天公布：「你猜是什麼類型？」投票</li><li>CoD 被誤認為炸彈威脅：「遊戲不只是遊戲，它已經闖入現實」（確認原始報導後）</li><li>N7 Day：「有些 IP 比工作室更大」情感型貼文</li><li>ROB RUN 兩天 +30 無媒體驅動：「真正的病毒傳播是什麼樣子」</li></ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul><li>★ GTA 6 知識問答（5 題，30 秒，結果分享卡）— 本日首選，今日最高話題熱度</li><li>「你是哪種開發者：Devolver 型 / AAA 型？」身份測驗型互動（明天公布後更強）</li><li>「ROB RUN 為什麼暴衝」遊戲機制猜測互動（適合開發者受眾）</li></ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul><li>明天 Devolver Digital AAA 遊戲公布——跟進內容與類型，製作第一個反應貼</li><li>ROB RUN 是否持續暴衝至 Top 10——第三天是否維持有機動力</li><li>Path of Exile 2 熱度積累——12 月 1.0 前的話題時機</li><li>Hollow Knight Silksong Sea of Sorrow 擴充的官方正式公告</li><li>Assassin's Creed 古羅馬傳聞的官方確認</li></ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul><li>GTA 6 IP（GTA / Rockstar / Trevor 等角色名）不進入 Demo 遊戲內容；只能討論新聞事實</li><li>CoD 炸彈威脅新聞：標題層事實，發文前確認媒體原始報導，避免傳播未核實細節</li><li>Sakurai AI 立場為標題層轉述，完整立場請讀 AUTOMATON WEST 原文後再引用</li><li>不嘲諷被裁員的具名工作室員工</li><li>對外文案全程避開賭場語言</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 彈藥 Evidence Log -->
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>GTA 6 預售「遠超預期」</td><td><a href="https://www.eurogamer.net/gta-6-preorders-tracking-take-two-earnings-call" target="_blank">Eurogamer</a>（Take-Two 財報電話轉述）　pub 2026-11-10　未直讀財報原文<span class="pp">partial</span></td></tr>
+        <tr><td>Take-Two CEO：「爆款是人類的領域」</td><td><a href="https://www.eurogamer.net/gta-6-ai-strauss-zelnick-earnings-call-purview" target="_blank">Eurogamer</a>（標題層引言）　pub 2026-11-10　<span class="pp">partial</span></td></tr>
+        <tr><td>Take-Two 預期 GTA 6 帶來 $3.5B</td><td><a href="https://www.pcgamer.com/games/grand-theft-auto/take-two-expects-to-make-as-much-as-usd3-5-billion-during-the-gta-6-launch-period/" target="_blank">PCGamer</a>（標題層）　pub 2026-11-10　<span class="pp">partial</span></td></tr>
+        <tr><td>Devolver Digital 宣佈首款 AAA 明天公布</td><td><a href="https://www.reddit.com/r/gaming/comments/1xrwy4i/devolver_digital_on_bluesky_heads_up_devolver/" target="_blank">Reddit r/gaming</a>（Devolver Bluesky 原文轉述）　pub 2026-11-10　<span class="pp">partial</span></td></tr>
+        <tr><td>Tripwire 裁員 36 人</td><td><a href="https://www.gamesindustry.biz/tripwire-interactive-lays-off-36" target="_blank">GamesIndustry</a>　pub 2026-11-10　<span class="ok">✓ partial</span></td></tr>
+        <tr><td>Bit Reactor（Star Wars Zero Company）裁員</td><td><a href="https://www.eurogamer.net/star-wars-zero-company-bit-reactor-layoffs" target="_blank">Eurogamer</a>　pub 2026-11-10　<span class="pp">partial</span></td></tr>
+        <tr><td>Paramount/WBD 合併後遊戲部門裁員</td><td><a href="https://www.pcgamer.com/gaming-industry/a-month-after-paramount-acquired-warner-bros-discovery-its-merged-game-division-is-laying-people-off/" target="_blank">PCGamer</a>　pub 2026-11-10　<span class="pp">partial</span></td></tr>
+        <tr><td>CoD 被誤認炸彈威脅、機場疏散</td><td><a href="https://www.reddit.com/r/gaming/comments/1xs2f8e/plane_evacuated_at_california_airport_after_call/" target="_blank">Reddit r/gaming top-of-day</a>（標題層）　pub 2026-11-10　⚠️ 未直讀全文<span class="pp">partial</span></td></tr>
+        <tr><td>N7 Day：演員集結「Something's really possible」</td><td><a href="https://www.eurogamer.net/mass-effect-cast-save-bioware-n7-day" target="_blank">Eurogamer</a>（標題層）　pub 2026-11-10　<span class="pp">partial</span></td></tr>
+        <tr><td>ROB RUN Steam 排名 #28→#15（+13）</td><td>heat_latest.json steam_movers 2026-11-10T07:30:41+08:00 官方 API　rank_jump=13　<span class="ok">✓</span></td></tr>
+        <tr><td>Sakurai 不用 AI 但警告迴避風險</td><td><a href="https://www.reddit.com/r/Games/comments/1xs16ns/masahiro_sakurai_doesnt_use_ai_for_his_games_but/" target="_blank">Reddit / AUTOMATON WEST</a>（標題層）　pub 2026-11-10　<span class="pp">partial</span></td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-11-10T07:30:41+08:00 官方 API　CS:GO 558K / CoD MW2 134K 為真·日比　<span class="ok">✓</span></td></tr>
+        <tr><td>Roblox / Twitch 榜</td><td>⚠️ 本次未抓取，<b>目前無法完全證實</b></td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版 CJ Top 2 開原文驗日期＋主張比對（見 Evidence Log）· 小編 / Demo 摘要層 · Steam＝官方 API 11-10 07:30 資料 · Twitch / Roblox 本次未抓，標無法完全證實 · 新鮮度由日期機械判定（≤24h 🆕 / ≤7 天 🔄 / &gt;7 天 ♨️）· 2026-11-10 製</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
