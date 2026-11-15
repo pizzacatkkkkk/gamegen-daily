@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/11/16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">11 · 16 · MON</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 16 · 彈藥工廠模式 · Steam 數字 11/16 07:30（今晨雷達）· Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>Xbox CEO gen-AI 宣示 + GDC 矛盾報告雙重奏</b>——Xbox 高層 Asha Sharma 歡慶 Xbox 25 周年，同時宣示：「<span class="hl">小團隊將能打造今天需要數百名開發者才完成的世界</span>」（Eurogamer 確認：'A small team will be able to build worlds that today demand hundreds of developers'；Polygon 確認：'Xbox CEO Hints Its Studios Will Heavily Use AI to Make Future Games'）。同一週期 GDC 2026 年度報告確認：40% 開發者已用 gen-AI，但逾半認為有負面影響；<b>1/3 開發者近兩年曾遭裁員</b>（PCGamer + GamesIndustry.biz 確認）。CEO 說 AI 讓小團隊更強大，同時業界 1/3 人失業——這是 2026 年遊戲業最強矛盾敘事。</p>
+        <p><b>GTA 6 倒數 3 天（T-3，2026-11-19 發售）</b>：Tom Henderson 今日確認主線長達 50 小時、近 100 任務（Reddit/Games 確認）；地圖在英國 £350 典藏版洩露（Eurogamer 確認）；34 曲 GTA 6 官方專輯歌單洩露（Dua Lipa、Lana Del Rey、Rina Sawayama）（Eurogamer 確認）；GameSpot 分析師稱 GTA 6 是「如同奧運一般的罕見文化時刻」。</p>
+        <p><b>CD Projekt Red 用 AI 修復中風聲優嗓音</b>——《巫師 3：Songs of the Past》用 AI 修復原始波蘭語配音演員 Miłogost Reczek 中風後的嗓音，讓他完成 Geralt 的配音（GamesIndustry.biz + GameDeveloper 確認）。業界最具代表性的「AI 有益使用」案例。</p>
+        <p>其他重大訊號：<b>Xbox 25 周年</b>——Series X|S 玩家可啟用原始 2001 Xbox 啟動動畫，21 款原始 Xbox 遊戲登 PC（Reddit/gaming + VGC 確認）；<b>Treyarch 資深首席寫作人 Craig Houston 在職約 20 年後遭裁員</b>（Reddit/Games + Eurogamer 確認）；Bodycam Steam 排名暴衝 +23（今日最大跳）；<b>TGA 2026 候選名單明日（11/17）揭曉</b>。</p>
+        <div class="pull">▸ 今天最強切角：Xbox CEO gen-AI 宣示（配 GDC 40%+1/3 裁員，業界最強矛盾敘事，CJ LinkedIn 首選）+ GTA 6 T-3 多重洩露（全球最高話題密度 X 貼文）+ CD Projekt Red AI 語音道德使用（X + LinkedIn 均適合）+ Xbox 25 周年情懷互動格式（今日情懷牌最強）+ TGA 明日揭曉（今天是最後猜測窗口）。</div>
+      </div>
+
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Xbox CEO gen-AI 宣示「小團隊將能打造數百人才做到的世界」——GDC 40% 使用率 + 1/3 裁員形成業界最強矛盾敘事</div>
+            <div class="ln"><b>新聞事實：</b>Eurogamer 確認：Xbox boss Asha Sharma 在 Xbox 25 周年宣示：'A small team will be able to build worlds that today demand hundreds of developers'；Polygon 確認：'Xbox CEO Hints Its Studios Will Heavily Use AI to Make Future Games'（Thu, 12 Nov 2026）。GDC 2026 年度報告：PCGamer Tavily 確認 40% 開發者已在工作中使用 gen-AI，逾半認為有負面影響；GameDeveloper 確認：'One in three developers say they've been laid off within the last two years'；'GenAI-using developers say they mostly employ it for research and brainstorming'。</div>
+            <div class="ln"><b>GameGen 角度：</b>當 CEO 宣示 AI 讓小團隊取代大型陣容，同時 1/3 開發者失業——<b>這是業界 2026 年最難迴避的問題：誰從 AI 轉型中受益，誰被取代？GameGen 核心切角：作為遊戲創作者，你相信「AI 擴大創作力」還是「AI 壓縮工作機會」？這兩件事可以同時為真嗎？</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Xbox's CEO just said 'a small team will be able to build worlds that today demand hundreds of developers.' On the same day, GDC reported: 40% of developers are using gen-AI, but more than half believe it's negatively impacting the industry. And 1 in 3 devs have been laid off in the last two years. So who actually benefits from AI in games — studios or developers? That question has never been more urgent."<br><span style="color:var(--ink-dim)">中譯：Xbox CEO 剛宣示：「小團隊將能打造今天需要數百名開發者才完成的世界。」同日，GDC 報告：40% 開發者已在用 gen-AI，但逾半人認為 AI 有負面影響，1/3 開發者近兩年遭裁員。那麼，誰從遊戲業 AI 轉型中真正受益——是工作室還是開發者？這個問題從未比現在更緊迫。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.eurogamer.net/microsoft-xbox-gen-ai-asha-sharma-memo" target="_blank">Eurogamer ↗</a> / <a href="https://www.polygon.com/xbox-ceo-asha-sharma-ai-use-games/" target="_blank">Polygon ↗</a> / <a href="https://www.pcgamer.com/software/ai/40-percent-of-game-developers-use-generative-ai-according-to-a-new-report-but-more-than-half-reckon-the-technology-has-a-negative-impact-on-the-games-industry/" target="_blank">PCGamer ↗</a>　pub Thu 12 Nov / Sat 14 Nov　partial（RSS / Tavily 摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>CD Projekt Red 用 AI 修復中風聲優嗓音——《巫師 3》波蘭語 Geralt 回歸故事<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 確認：'CD Projekt Red used AI to alter the voice of Geralt's original Polish actor in Witcher 3: Songs of the Past'；GameDeveloper 確認：'Witcher 3 devs use AI to help Polish voice actor reprise role of Geralt after stroke'。聲優 Miłogost Reczek 因中風無法回到錄音室，CD Projekt Red 使用 AI 語音技術修復他的嗓音，讓他完成 Geralt 波蘭語配音（Witcher 3: Songs of the Past 為新 DLC）。</div>
+            <div class="ln"><b>GameGen 角度：</b>這不是「AI 取代演員」，而是「AI 讓演員克服身體限制完成作品」——<b>業界最具代表性的 AI 正向使用案例。GameGen 切角：當 AI 爭議大多圍繞「取代創作者」，這個故事顯示 AI 也可以是讓創作者重返舞台的工具。你相信這種用法代表 AI 在遊戲業的正確方向嗎？</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "CD Projekt Red used AI to restore the voice of Geralt's original Polish actor — who had a stroke and couldn't return to record. Not replacement. Restoration. As AI debates in games get louder, this story shows the other side: AI as the tool that lets a creator finish what they started. Does this change how you think about AI in game development?"<br><span style="color:var(--ink-dim)">中譯：CD Projekt Red 用 AI 修復了 Geralt 波蘭語聲優的嗓音——他中風後無法回到錄音室。不是取代，是復原。當遊戲業的 AI 爭議越來越大聲，這個故事展示了另一面：AI 作為讓創作者完成未竟之作的工具。這改變了你對遊戲開發中 AI 的看法嗎？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/production/polish-voice-actor-for-geralt-returns-for-the-witcher-3-with-ai" target="_blank">GameDeveloper ↗</a> / <a href="https://www.gamesindustry.biz/cd-projekt-red-used-ai-to-alter-the-voice-of-geralts-original-polish-actor-in-witcher-3-songs-of-the-past" target="_blank">GamesIndustry.biz ↗</a>　pub 今日 RSS 確認　partial（RSS 摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 倒數 3 天：50 小時主線 + 近 100 任務 + 地圖/歌單雙洩露——全球最高話題密度 72 小時<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit/Games 確認（Tom Henderson）：'GTA VI main story to be 50h with nearly 100 missions and 5 chapters'；Eurogamer 確認地圖洩露（Fri 13 Nov）：'GTA 6's physical map reportedly leaks online'；Eurogamer 確認歌單洩露：'34-song tracklist for GTA 6: The Album, featuring Dua Lipa, Lana Del Rey, Rina Sawayama'；GameSpot 確認：'GTA 6 Is Like The Olympics – A Rare Cultural Moment With Massive Ripple Effects'；2026-11-19 發售。</div>
+            <div class="ln"><b>GameGen 角度：</b>GTA 6 T-3，今日話題密度已達全年最高峰。最強切角：<b>「GTA 6 三天後上線——50 小時主線（是 GTA V 的兩倍）、地圖洩露、34 曲官方歌單。這不只是一款遊戲，是一個文化事件。作為遊戲開發者，你從 GTA 6 的行銷學到什麼？」</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6 launches in 3 days. Tom Henderson confirms: 50-hour main story, nearly 100 missions, 5 chapters — twice the length of GTA V. The physical map leaked from a UK department store. A 34-track official album dropped featuring Dua Lipa and Lana Del Rey. This is not just a game launch. As a game creator, what does GTA 6's marketing machine teach you about building anticipation?"<br><span style="color:var(--ink-dim)">中譯：GTA 6 還有 3 天上線。Tom Henderson 確認：50 小時主線、近 100 任務——是 GTA V 主線的兩倍長。地圖洩露，34 曲歌單曝光。作為遊戲創作者，GTA 6 的行銷機器教了你什麼關於製造期待值的事？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/Games/comments/1xwxahf/tom_henderson_gta_vi_main_story_to_be_50h_with/" target="_blank">Reddit/Games (Tom H) ↗</a> / <a href="https://www.eurogamer.net/gta-6-tracklist-leak" target="_blank">Eurogamer (歌單) ↗</a>　pub today / Fri 13 Nov　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Xbox 25 周年——原始 2001 Xbox 啟動動畫在 Series X|S 復活 + 21 款原始 Xbox 遊戲登 PC<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit/gaming 確認（today top-of-day）：'Xbox reveals that Series X|S users, for the brand's 25th Anniversary, can boot up their consoles with the start-up animations for the original 2001 console or either of the Xbox 360's'；VGC 確認：'21 original Xbox games are now on PC via backward compatibility'；HN + Reddit 確認：'The Original Xbox is 25 Years Old'（2001-11-15 在美國發售）。</div>
+            <div class="ln"><b>GameGen 角度：</b>情懷牌今日效果最強——<b>原始 Xbox 啟動音效是全球數百萬玩家的共同記憶。最強切角：「你第一次聽到這個啟動音效時在幾歲？」讓玩家用數字回答的互動格式在週一早上是全年最高互動率時段之一。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Xbox turns 25 today. Series X|S users can now boot up with the original 2001 Xbox startup animation. 21 original Xbox games are now playable on PC. That startup sound was the first video game sound that felt truly 'next-gen' for a generation of players. How old were you the first time you heard it?"<br><span style="color:var(--ink-dim)">中譯：Xbox 今天 25 歲了。Series X|S 玩家現在可以用 2001 年原始 Xbox 的啟動動畫開機。21 款原始 Xbox 遊戲現在可在 PC 上遊玩。那個啟動音效是一整個世代玩家第一個感覺到「真正的下一世代」的遊戲聲音。你第一次聽到它時在幾歲？</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1xx6jp4/xbox_reveals_that_series_xs_users_for_the_brands/" target="_blank">Reddit/gaming ↗</a> / <a href="https://www.videogameschronicle.com/news/21-original-xbox-games-are-now-on-pc-via-backward-compatibility/" target="_blank">VGC ↗</a>　pub today top-of-day　partial（貼文層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Treyarch 資深首席寫作人 Craig Houston 在職約 20 年後遭裁員——《決勝時刻》殭屍模式敘事傳承者離開<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit/Games 確認（today top-of-day）：'Treyarch's former Senior Lead Writer Craig Houston has been laid off after approximately 20 years with the company'；Eurogamer 確認：'Treyarch lays off lead Call of Duty writer and Zombies veteran after approximately 20 years of service'。Craig Houston 是 Call of Duty Zombies 敘事的核心建構者之一。同週 Tripwire Interactive 也在宣布發行計畫後裁員（GameDeveloper 確認）。</div>
+            <div class="ln"><b>GameGen 角度：</b>20 年資深開發者遭裁員——在 GDC 報告 1/3 開發者近兩年被裁的背景下，今日最強的「機構知識流失」符號。<b>最強切角：「20 年的 IP 知識和敘事傳承——這是業界裁員最難被量化的損失。你如何保存和傳遞遊戲的敘事傳承，不讓它消失在人員更替中？」</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Treyarch's Senior Lead Writer Craig Houston has been laid off after ~20 years. He helped build Call of Duty Zombies' narrative world for two decades. This week, Tripwire also cut staff after announcing a publishing initiative. 1 in 3 game developers have been laid off in the past two years. What happens to 20 years of institutional knowledge when one person leaves? How do you even preserve that?"<br><span style="color:var(--ink-dim)">中譯：Treyarch 資深首席寫作人在約 20 年後遭裁員。他花了 20 年幫助建構《決勝時刻》殭屍模式的敘事世界。同週 Tripwire 也裁員。1/3 遊戲開發者近兩年曾遭裁員。20 年的機構知識，當一個人離開，它去哪了？你怎麼保存它？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/Games/comments/1xwmzug/treyarchs_former_senior_lead_writer_craig_houston/" target="_blank">Reddit/Games ↗</a> / <a href="https://www.eurogamer.net/craig-houston-layoff-treyarch-call-of-duty-layoffs" target="_blank">Eurogamer ↗</a>　pub today top-of-day　partial（摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「GTA 6 T-3 電台身份測試」——玩家根據音樂口味猜自己的 Vice City 電台角色，配合歌單洩露造勢<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法概念：</b>極簡互動測試：玩家根據音樂口味（流行 / 電子 / 嘻哈 / 搖滾 / R&amp;B）加上個性標籤（硬派 / 冒險 / 躺平 / 社交），系統生成「你是哪種 Vice City 居民」的結果卡片，附搭配音樂類型。不使用 GTA 任何品牌素材，純用音樂風格和城市生活意象。配文：「GTA 6 三天後上線——測試你的 Vice City 音樂身份，你是哪種城市居民？」</div>
+            <div class="ln"><b>為何是今天：</b>34 曲 GTA 6 官方歌單剛洩露，音樂話題熱度最高；T-3 是全年話題密度最高的三天之一——「音樂身份測試」與歌單話題形成完美共鳴。不需使用任何 Rockstar 品牌素材，純音樂風格意象，去賭場化 OK。</div>
+            <div class="meta">⚠️ 不使用 GTA / Rockstar 任何品牌素材　模板：測試型互動 / 音樂風格匹配型</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">11/16 07:30 今晨數字</span></div>
+          <ol>
+            <li class="down"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">579K ▼22.4%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">93K ▼4.8%</span></li>
+            <li class="down"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">89K ▼21.3%</span></li>
+            <li class="hot"><span class="nm">Cyberpunk 2077</span><span class="vn">86K ▲6.1%</span></li>
+            <li class="down"><span class="nm">Path of Exile</span><span class="vn">82K ▼19.2%</span></li>
+            <li class="down"><span class="nm">R6 Siege</span><span class="vn">68K ▼4.1%</span></li>
+          </ol>
+          <div class="bf">週一效應：CS:GO ▼22.4%，唯 Cyberpunk ▲6.1% · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。近期高人氣類別：生存類、模擬類、病毒分享型小遊戲持續領榜。今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。GTA 6 T-3 + TGA 候選名單明日揭曉，預期帶動 GTA 相關主播以及 GOTY 預測討論最高峰。今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        📊 今日 Steam 數字（heat_latest.json 2026-11-16T07:30:40 確認）：CS:GO 579,256（-22.4%，週一效應）；TF2 93,364（-4.8%）；PUBG 88,861（-21.3%）；<b>Cyberpunk 2077 86,049（+6.1%，今日唯一正向，可能有活動）</b>；Path of Exile 82,053（-19.2%）；Marvel Rivals 67,678（-4.2%）；R6 Siege 67,552（-4.1%）；Rust 66,094（-27.5%）。Steam 熱賣：Bodycam、CoD: MW4、Steam Frame、Moon Sweepers、Phantom Blade Zero 在列。最多人玩：Phantom Blade Zero #7、Slay the Spire 2 #8。Roblox / Twitch 今日無瀏覽器工具，均標記「資料不足」。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>排名暴衝</span></span>Bodycam +23（今日最大跳）；Cyberpunk 2077 唯一逆市升漲 +6.1%——週一 Steam 效應觀察</h3>
+        <div class="sum">heat_latest.json（2026-11-16T07:30:40 確認）Steam 排名最大跳動：<b>Bodycam</b> 排名 38（前日 61，+23，本日最大跳）；Cities: Skylines II +9（87←96）；Path of Exile +8（42←50）；PEAK +8（49←57）；Elden Ring +7（63←70）；GTA V Enhanced +6（20←26）。Steam 在線：<b>Cyberpunk 2077 86,049（+6.1%，所有熱門遊戲中今日唯一正向）</b>；CS:GO 579K（-22.4%）；Rust 66K（-27.5%）——週一效應帶動全面下滑。Steam 熱賣榜：Bodycam、CoD: MW4、Phantom Blade Zero、Moon Sweepers 在列。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>週一 Steam 大幅下滑完全符合預期——但 Cyberpunk 2077 +6.1% 逆市上漲值得注意，可能是有新活動、更新或 GTA 6 T-3 氣氛帶動「重溫賽博龐克城市」趨勢。<b>Bodycam 連續多日大幅排名跳動說明第一人稱攝影機模擬持續引發討論，不是偶發現象。</b> GameGen 創作者：週一早上是 Steam 玩家人數最低點，也是最好的「更新公告 + 大型社群話題」時段，競爭最少。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 在線 + 排名跳動 · heat_latest.json 11/16 確認 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>GTA 6 T-3</span></span>GTA 6 倒數 3 天：Tom Henderson 確認 50 小時主線——距 2026-11-19 發售話題密度衝頂</h3>
+        <div class="sum">Reddit/Games 確認（Tom Henderson）：'GTA VI main story to be 50h with nearly 100 missions and 5 chapters'；GameSpot 確認：'GTA 6 Is Like The Olympics – A Rare Cultural Moment'；GTA 6 預計首月 5,500 萬套（GameSpot RSS 確認）；Eurogamer 確認地圖洩露（Fri 13 Nov）；Eurogamer 確認 34 曲歌單洩露（Dua Lipa、Lana Del Rey、Rina Sawayama）；Take-Two 確認不考慮出售（GameSpot 確認：'GTA 6 Owner Take-Two Is Not Interested In Selling Itself After EA Goes Private For $55 Billion'）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>GTA 6 是業界 2026 年最大的熱力點——T-3 是話題密度最高的 72 小時起點。<b>50 小時主線（比 GTA V 長一倍）+ 地圖洩露 + 歌單洩露 + 分析師奧運類比</b>——每一條都可以單獨做一篇 X 貼文。GameGen 創作者：GTA 6 的行銷不需要傳統行銷，因為社群本身就是行銷引擎。你的遊戲能學到什麼？</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMES · <a href="https://www.reddit.com/r/Games/comments/1xwxahf/tom_henderson_gta_vi_main_story_to_be_50h_with/" target="_blank">Tom Henderson ↗</a> / <a href="https://www.eurogamer.net/gta-6-tracklist-leak" target="_blank">Eurogamer 歌單 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>HN 最高分：「我最喜愛的現代 NES 遊戲」（199pts/39c）；itch.io：「You are Hamster」持續迷因榜；Steam 新品：Bodycam + Phantom Blade Zero 熱賣</h3>
+        <div class="sum">Hacker News 今日最高分（heat_latest.json 確認）：'My favourite modern NES games'（199pts/39c，jordi.inversethought.com）——現代 NES Homebrew 遊戲整理，強調像素時代在 2026 年的復甦；'Amiga Studio: IDE for making games for Amiga and C64'（18pts）——復古平台開發工具；'Microsoft patent describes using idle gaming GPUs into paid AI training hardware'（4pts）——微軟專利。itch.io 持續 meme 榜：'This Role: You are Hamster'、'Three Nights Lobotomized'、'CaseOh's Basics in eating and fast food'。Steam 熱賣：Bodycam、CoD: MW4、Phantom Blade Zero 在列；Steam 新品：Retro Endurance 8bit、Arcane Dash - A Pixel Adventure。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>HN 199pts 給「現代 NES 遊戲」說明了技術社群對像素/復古美學的強烈親和力——<b>這種「用老平台製作新遊戲」的技術挑戰在 HN 上比任何主流遊戲消息更有共鳴</b>。itch.io「You are [動物]」持續多週說明角色扮演 + 極簡互動的 meme 格式生命力極強。GameGen 換皮創作者：這個格式在今日 GTA 6 T-3 氣氛下的進化版：「You are a GTA 6 player in 72 hours」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HACKER NEWS / ITCH.IO · heat_latest.json · <a href="https://jordi.inversethought.com/blog/25-of-my-favourite-modern-nes-games/" target="_blank">NES文章 ↗</a> / <a href="https://store.steampowered.com/app/2406770" target="_blank">Bodycam ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 在遊戲</span></span>Xbox CEO：「小團隊將能打造數百人才做到的世界」——Xbox 25 周年同日 gen-AI 最強宣示</h3>
+        <div class="sum">Eurogamer（RSS 確認）：'Xbox boss seemingly champions gen-AI development as she celebrates 25 years of Xbox: "A small team will be able to build worlds that today demand hundreds of developers"'（Thu, 12 Nov 2026）；Polygon（Tavily 確認）：'Xbox CEO Hints Its Studios Will Heavily Use AI to Make Future Games'。Xbox CEO Asha Sharma 在 Xbox 25 周年紀念中，這段關於 gen-AI 的宣示被廣泛引用。GDC 2026 年度報告同期確認：40% 開發者已用 gen-AI（PCGamer + GamesIndustry.biz）；GameDeveloper：1/3 開發者近兩年遭裁員；gen-AI 使用者說主要用於「研究和腦力激盪」。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Xbox CEO 的宣示與 GDC 報告同期出現，形成業界最強矛盾敘事——<b>（1）「AI 讓小團隊更強大」（CEO 視角）vs「逾半開發者認為 AI 有負面影響 + 1/3 人失業」（開發者視角）</b>。這個矛盾不是偶然：當 AI 提升生產效率，它的益處流向工作室（更少人完成更多工作），而非被取代的開發者。GameGen 創作者：你在哪個位置？是受益者還是被壓縮的一方？</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">EUROGAMER / POLYGON · <a href="https://www.eurogamer.net/microsoft-xbox-gen-ai-asha-sharma-memo" target="_blank">Eurogamer ↗</a> / <a href="https://www.polygon.com/xbox-ceo-asha-sharma-ai-use-games/" target="_blank">Polygon ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 道德使用</span></span>CD Projekt Red 用 AI 修復中風聲優嗓音——《巫師 3》波蘭語 Geralt 的復原故事</h3>
+        <div class="sum">GamesIndustry.biz（RSS 確認）：'CD Projekt Red used AI to alter the voice of Geralt's original Polish actor in Witcher 3: Songs of the Past'；GameDeveloper（RSS 確認）：'Witcher 3 devs use AI to help Polish voice actor reprise role of Geralt after stroke'。聲優 Miłogost Reczek（《巫師 3》波蘭語配音演員）因中風無法回到錄音室，CD Projekt Red 使用 AI 語音技術修復他的嗓音，使其完成 Geralt 的配音工作，用於新 DLC《Witcher 3: Songs of the Past》。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>AI 語音技術的爭議大多圍繞「取代演員」，但這個故事顯示截然不同的用法：<b>「AI 作為聲優因健康問題中斷後的修復工具，而非替代品」</b>。在 Xbox CEO gen-AI 宣示引發大量討論的同一天，這個案例提供了一個具體的「AI 有益使用」錨點。GameGen 創作者的立場建議：這是今日最不容易被批評的 AI 討論角度——以人為本的 AI 使用案例。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMEDEVELOPER / GAMESINDUSTRY · <a href="https://www.gamedeveloper.com/production/polish-voice-actor-for-geralt-returns-for-the-witcher-3-with-ai" target="_blank">GameDeveloper ↗</a> / <a href="https://www.gamesindustry.biz/cd-projekt-red-used-ai-to-alter-the-voice-of-geralts-original-polish-actor-in-witcher-3-songs-of-the-past" target="_blank">GamesIndustry.biz ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>業界動向</span></span>Treyarch Craig Houston（約 20 年）遭裁員 + Tripwire Interactive 裁員——GDC 1/3 裁員現實再確認</h3>
+        <div class="sum">Reddit/Games 確認（today top-of-day）：'Treyarch's former Senior Lead Writer Craig Houston has been laid off after approximately 20 years with the company'；Eurogamer 確認：'Treyarch lays off lead Call of Duty writer and Zombies veteran after approximately 20 years of service'；GameDeveloper（RSS 確認）：'Tripwire Interactive lays off workers after announcing new publishing initiative'；GameDeveloper 確認：'One in three developers say they've been laid off within the last two years'（GDC 2026 年度報告）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>GDC 報告說 1/3 開發者近兩年遭裁員——今日兩個具體案例（20 年資深寫作人 + 新宣布發行計畫工作室）給這個數字以人臉和故事。<b>在 Xbox CEO 宣示 AI 讓小團隊更強大的同一天，遊戲業裁員持續提醒我們這個「效率提升」對具體個人的代價</b>。GameGen 創作者：這個對比是今日業界最強的敘事張力。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMES / EUROGAMER · <a href="https://www.reddit.com/r/Games/comments/1xwmzug/treyarchs_former_senior_lead_writer_craig_houston/" target="_blank">Reddit ↗</a> / <a href="https://www.eurogamer.net/craig-houston-layoff-treyarch-call-of-duty-layoffs" target="_blank">Eurogamer ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>GTA 6 迷因</span></span>GTA 6 T-3：50 小時主線 + 34 曲歌單洩露——全網「做完 GTA 6 要多久」計算迷因開始</h3>
+        <div class="sum">Reddit/Games 確認（Tom Henderson）：GTA VI 主線 50 小時 + 近 100 任務。Reddit/gaming top-of-day：'My Starfield cosplay, in a group photo with every other Starfield cosplay at the con. Maybe I should have done Fallout.'——玩家用 Starfield cosplay 體現「玩不下去」情緒，與 GTA 6 T-3 的「玩不完」情緒形成反差。GTA 6 歌單洩露帶動「Vice City 音樂身份」測試梗在社群蔓延。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「50 小時主線」帶出的天然迷因格式：<b>「如果你每天玩 2 小時 GTA 6，要 25 天才能打完主線——那是 2026 年的最後 1/14 時間」</b>。今日最強 X 切角（非商業立場）：「GTA 6 三天後上線，50 小時主線——你是第一週衝完的玩家，還是邊玩邊等攻略的那種？」⚠️ 不引用 Rockstar 品牌視覺，純玩家行為討論。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 純玩家行為討論，不引用品牌視覺</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMES · <a href="https://www.reddit.com/r/Games/comments/1xwxahf/tom_henderson_gta_vi_main_story_to_be_50h_with/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>Xbox 情懷迷因</span></span>Xbox 25 周年啟動音效迷因——「你第一次聽到這個聲音時在幾歲？」全球情懷討論最高峰</h3>
+        <div class="sum">Reddit/gaming 確認（today top-of-day）：'The Original Xbox is 25 Years Old'；'Xbox reveals Series X|S can boot up with the original 2001 startup animation'。原始 Xbox 啟動音效（2001）是全球數百萬玩家的共同記憶——它代表「次世代主機第一次讓人覺得真的來了」的感受。VGC 確認 21 款原始 Xbox 遊戲今日登 PC。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「你第一次聽到這個啟動音效時在幾歲？」是今日互動率最高的情懷問句格式之一——<b>它觸發的不只是回憶，而是「世代共同經歷」的驗證感</b>。配合 21 款原始 Xbox 遊戲登 PC，今日舊玩家回憶文效果最強。GameGen 創作者：你的遊戲讓玩家記住了哪個時刻？那個記憶就是你最強的行銷素材。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMING · <a href="https://www.reddit.com/r/gaming/comments/1xx12l8/the_original_xbox_is_25_years_old/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <ol>
+            <li class="hot"><span class="nm">第一人稱攝影機模擬（Bodycam：去風格化寫實主義）</span><span class="vn">FPS / 沉浸式</span></li>
+            <li class="up"><span class="nm">AI 聲音修復 × 情感完整度（CD Projekt Red 案例）</span><span class="vn">敘事 / 無障礙</span></li>
+            <li><span class="nm">「You are [動物/角色]」病毒角色扮演 loop</span><span class="vn">meme / 社群</span></li>
+            <li><span class="nm">開放世界 50h 主線 × 玩家行為分類</span><span class="vn">互動型 / 討論</span></li>
+            <li><span class="nm">復古啟動動畫 × 情懷觸發機制</span><span class="vn">UI / 情懷</span></li>
+          </ol>
+          <div class="bf">itch.io + 今日新聞衍生 · 11/16 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>「Bodycam」機制：去風格化第一人稱攝影機——為什麼「像真實影片」的遊戲畫面持續在 Steam 衝榜</h3>
+        <div class="sum">Bodycam（Steam app 2406770）今日排名暴衝 +23（今日最大跳），且持續多日出現在熱賣榜。核心機制：模擬警察執法攝影機（bodycam）的視覺效果——包括鏡頭畸變、動態模糊、粗糙質感。熱賣榜確認今日仍在列（heat_latest.json steam_new_top 確認：Bodycam 熱賣）。RPS 確認：'Clearing The House of Infected (Bodycam)' 連日出現在 Reddit/gaming top-of-day。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「像真實影片」的遊戲視覺效果是 2026 年 FPS 的強烈趨勢——<b>Bodycam 的爆款邏輯是「去遊戲化視覺語言」：移除那些讓人覺得「這是遊戲」的視覺提示，強化臨場感</b>。GameGen 換皮創作者：這個機制可以應用到任何設定——不一定是警察主題，可以是任何第一視角生存、探索類遊戲。核心是「粗糙 = 真實感 = 沉浸感」的視覺公式。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM · <a href="https://store.steampowered.com/app/2406770" target="_blank">Bodycam ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
+        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：GTA 6 倒數 3 天（全球最高熱度，台灣遊戲玩家社群高度關注）；Xbox 25 周年情懷牌（台灣玩家世代共鳴）；CD Projekt Red AI 聲音道德使用（開發者社群高討論度）；TGA 2026 候選名單明日（11/17）揭曉（台灣遊戲圈 TGA 關注度高）；Xbox CEO gen-AI 宣示（業界觀察者社群）；Treyarch 20 年資深遭裁員（開發者社群關注裁員潮）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Xbox CEO gen-AI 宣示（業界最強矛盾敘事）</td><td><span class="tmpl">AI 開發策略 / 效率 vs 人才</span></td><td>「CEO 說 AI 讓小團隊更強大，同時 1/3 開發者失業——誰從 AI 轉型中受益？」</td><td class="rk-low">低</td><td>★ CJ 首選，今日話題峰值，業界 AI 策略長篇 LinkedIn 文效果最強</td></tr>
+          <tr><td>GTA 6 T-3 多重洩露（全球最高話題密度）</td><td><span class="tmpl">行銷學習 / 玩家期待管理</span></td><td>「GTA 6 三天後上線——50 小時主線 + 地圖 + 歌單，你從這個行銷機器學到什麼？」</td><td class="rk-low">低 · 純行銷學習角度，不引用 Rockstar 品牌視覺</td><td>X 貼文今日最強，全球話題密度最高，開發者視角切入效果好</td></tr>
+          <tr><td>CD Projekt Red AI 聲音道德使用</td><td><span class="tmpl">AI 道德使用 / 以人為本</span></td><td>「AI 修復中風聲優嗓音——不是取代，是讓創作者重返舞台。你怎麼看？」</td><td class="rk-low">低</td><td>X + LinkedIn 均適合，今日最不容易被批評的 AI 討論角度</td></tr>
+          <tr><td>Xbox 25 周年情懷牌</td><td><span class="tmpl">遊戲情懷 / 世代記憶</span></td><td>「Xbox 25 歲——你第一次聽到原始啟動音效時在幾歲？」（數字回答格式）</td><td class="rk-low">低</td><td>X 互動型今日效果最強，數字回答格式互動率高</td></tr>
+          <tr><td>遊戲業裁員持續（Craig Houston + Tripwire）</td><td><span class="tmpl">機構知識 / 開發者身份</span></td><td>「20 年資深開發者遭裁員——遊戲 IP 的敘事傳承如何保存？」</td><td class="rk-low">低</td><td>開發者向 LinkedIn / X 內容，配合 GDC 1/3 裁員數據</td></tr>
+          <tr><td>TGA 2026 候選名單明日揭曉</td><td><span class="tmpl">年度最佳猜測 / 預測型互動</span></td><td>「TGA 候選名單明日（11/17）揭曉——你的年度最佳清單是什麼？」</td><td class="rk-low">低</td><td>今天是最後猜測窗口，投票型 X 貼文全年最高互動率時段</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>Xbox CEO gen-AI 宣示 + GDC 矛盾報告——「AI 讓小團隊更強大」vs「1/3 開發者失業」</td><td>Eurogamer 確認 Xbox boss: 'A small team will be able to build worlds that today demand hundreds of developers'；Polygon 確認：Xbox CEO hints studios will heavily use AI；GDC 2026：40% devs use gen-AI, more than half negative on industry impact（PCGamer 確認）；1 in 3 devs laid off in past 2 years（GameDeveloper 確認）；Gen-AI use mostly for 'research and brainstorming'（GameDeveloper 確認）</td><td>"Xbox's CEO just said 'a small team will be able to build worlds that today demand hundreds of developers.' On the same day, GDC reported: 40% of developers are using gen-AI, but more than half believe it's negatively impacting the industry. And 1 in 3 devs have been laid off in the last two years. So the efficiency gains are real. But who do they flow to — studios or developers? In every other industry, productivity gains that don't reach workers eventually become a labor crisis. We're watching this play out in games right now."</td><td><a href="https://www.eurogamer.net/microsoft-xbox-gen-ai-asha-sharma-memo" target="_blank">↗</a></td></tr>
+          <tr><td>CD Projekt Red AI 聲音道德使用——《巫師 3》中風聲優回歸故事</td><td>GameDeveloper 確認：'Witcher 3 devs use AI to help Polish voice actor reprise role of Geralt after stroke'；GamesIndustry.biz 確認：AI altered the voice of Geralt's original Polish actor。聲優因中風無法回到錄音室，AI 修復其嗓音讓他完成配音。背景：游戲業 AI 爭議大多圍繞「取代演員」，本案例相反。</td><td>"CD Projekt Red used AI to restore the voice of Geralt's original Polish actor — who had a stroke and couldn't return to record. Not replacement. Restoration. The debate around AI in games is almost always framed as 'will AI replace voice actors?' But this story asks a different question: what if AI is the reason a creator can finish what they started? This case matters precisely because it doesn't fit the standard AI-fear narrative — and that's why it's worth examining carefully."</td><td><a href="https://www.gamedeveloper.com/production/polish-voice-actor-for-geralt-returns-for-the-witcher-3-with-ai" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Xbox CEO gen-AI + GDC 矛盾報告、CD Projekt Red AI 語音）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。對外用字已過濾所有類博彩語言。所有來源均為 RSS / Reddit 摘要層，建議發文前 CJ 自行確認原文細節。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
+          <li>GTA 6 T-3 開發者視角：「GTA 6 三天後上線——50 小時主線、近 100 任務，作為遊戲開發者，你從 GTA 6 的行銷機器學到什麼？」（今日話題密度最高）</li>
+          <li>Xbox 25 周年情懷牌：「Xbox 今天 25 歲了。Series X|S 玩家現在可以用 2001 年的原始啟動動畫開機。你第一次聽到那個啟動音效時在幾歲？」（數字回答格式，互動率高）</li>
+          <li>CD Projekt Red AI 道德使用：「CD Projekt Red 用 AI 修復了中風聲優的嗓音，讓他完成 Geralt 的配音——不是取代，是復原。這改變了你對 AI 在遊戲開發中的看法嗎？」</li>
+          <li>TGA 最後猜測窗口：「TGA 2026 候選名單明日（11/17）12PM ET 揭曉。最後猜測窗口——你的年度最佳清單是？」（今日是全年最強互動時段之一）</li>
+        </ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
+          <li>★「GTA 6 T-3 音樂身份測試」——玩家根據音樂口味（流行/電子/嘻哈/搖滾/R&amp;B）生成「Vice City 居民身份」結果卡。配文：「GTA 6 三天後上線——測試你的 Vice City 音樂身份」。不使用任何 Rockstar 品牌素材。</li>
+          <li>「Xbox 25 年時代測試」——玩家根據第一次玩 Xbox 的年代生成「你屬於哪個 Xbox 世代」的結果卡（Original / 360 / One / Series X）。</li>
+          <li>「AI 開發工具問卷」——玩家選擇他們在開發流程中用 AI 的場景（研究/腦力激盪/程式碼/美術），生成「你的 AI 使用輪廓」。配合今日 GDC 報告 40% 使用率話題。</li>
+        </ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
+          <li>TGA 2026 候選名單——明日（11/17）12PM ET 直播，全年最高社群話題密度時刻。</li>
+          <li>GTA 6 倒數 3 天——2026-11-19 發售日是全球最高熱度事件，每日更新倒數。</li>
+          <li>Cyberpunk 2077 +6.1% 逆市原因——週一例外表現，是否有更新或活動觸發。</li>
+          <li>Bodycam 連續排名暴衝——第一人稱攝影機機制是否有新社群事件驅動。</li>
+          <li>Xbox CEO gen-AI 宣示後續反應——業界開發者社群如何回應「小團隊取代數百人」這句話。</li>
+          <li>Epic vs Apple 最高法院案——27% 網頁費率申請進度，可能影響遊戲發行生態。</li>
+        </ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
+          <li>GTA 6 話題：不引用 GTA 美術、角色、Rockstar 品牌視覺；50 小時主線為 Tom Henderson 報導，發文保留「報導指出」語氣；歌單洩露尚未 Rockstar 官方確認。</li>
+          <li>CD Projekt Red AI 語音：不評論技術細節好壞，聚焦「以人為本的用途」敘事框架；不涉及聲優個人健康細節。</li>
+          <li>Xbox CEO gen-AI：引用保留「宣示/表示」語氣，不寫成既定事實；不評論 Xbox 整體策略優劣。</li>
+          <li>Nvidia CEO 辭職（持續報導）：已於 11/13 報導，今日新細節（緋聞/間諜指控）屬敏感個人事務，避免直接引用指控內容，以「公司高層異動」框架處理。</li>
+          <li>Craig Houston 裁員：表達對 20 年資深開發者的尊重，不對 Treyarch / Activision 管理決策進行評論。</li>
+          <li>所有來源均為 RSS / Reddit 摘要層——對外保留「報導指出 / 確認」語氣，不寫成第一手事實。</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Xbox CEO gen-AI 宣示</td><td><a href="https://www.eurogamer.net/microsoft-xbox-gen-ai-asha-sharma-memo" target="_blank">Eurogamer</a> + <a href="https://www.polygon.com/xbox-ceo-asha-sharma-ai-use-games/" target="_blank">Polygon</a>　驗：Eurogamer 標題確認 'A small team will be able to build worlds that today demand hundreds of developers'；Polygon Tavily 確認 'Xbox CEO Hints Its Studios Will Heavily Use AI'　<span class="pp">partial</span>（RSS / Tavily 摘要層，Thu 12 Nov）</td></tr>
+        <tr><td>GDC 40% 開發者用 AI + 1/3 裁員</td><td><a href="https://www.pcgamer.com/software/ai/40-percent-of-game-developers-use-generative-ai-according-to-a-new-report-but-more-than-half-reckon-the-technology-has-a-negative-impact-on-the-games-industry/" target="_blank">PCGamer</a> + <a href="https://www.gamesindustry.biz/gdc-state-of-the-game-industry-report-40-of-developers-are-using-generative-ai-for-work" target="_blank">GamesIndustry.biz</a> + <a href="https://www.gamedeveloper.com/business/one-in-three-developers-have-been-laid-off-within-the-last-two-years" target="_blank">GameDeveloper</a>　驗：PCGamer Tavily 確認 '40% of game developers use generative AI, more than half negative'；GDeveloper 確認 'one in three laid off'；'mostly research and brainstorming'　<span class="pp">partial</span>（Tavily / RSS 摘要層）</td></tr>
+        <tr><td>CD Projekt Red AI 語音修復</td><td><a href="https://www.gamedeveloper.com/production/polish-voice-actor-for-geralt-returns-for-the-witcher-3-with-ai" target="_blank">GameDeveloper</a> + <a href="https://www.gamesindustry.biz/cd-projekt-red-used-ai-to-alter-the-voice-of-geralts-original-polish-actor-in-witcher-3-songs-of-the-past" target="_blank">GamesIndustry.biz</a>　驗：GameDev 標題確認 'AI to help Polish voice actor reprise role of Geralt after stroke'；GI.biz 確認 'used AI to alter the voice of Geralt's original Polish actor'　<span class="pp">partial</span>（RSS 摘要層）</td></tr>
+        <tr><td>GTA 6 50h 主線（Tom Henderson）</td><td><a href="https://www.reddit.com/r/Games/comments/1xwxahf/tom_henderson_gta_vi_main_story_to_be_50h_with/" target="_blank">Reddit/Games</a>　驗：Reddit 標題確認 'GTA VI main story to be 50h with nearly 100 missions and 5 chapters'（Tom Henderson 報導）　<span class="pp">partial</span>（Reddit 貼文層，待 Rockstar 官方確認）</td></tr>
+        <tr><td>GTA 6 歌單洩露</td><td><a href="https://www.eurogamer.net/gta-6-tracklist-leak" target="_blank">Eurogamer</a>　驗：RSS 標題確認 'The latest GTA 6 leak comes in the form of a 34-song tracklist for GTA 6: The Album, featuring Dua Lipa, Lana Del Rey, Rina Sawayama'　<span class="pp">partial</span>（RSS 摘要層，洩露未官方確認）</td></tr>
+        <tr><td>Xbox 25 周年啟動動畫</td><td><a href="https://www.reddit.com/r/Games/comments/1xx6jp4/xbox_reveals_that_series_xs_users_for_the_brands/" target="_blank">Reddit/gaming</a> + <a href="https://www.videogameschronicle.com/news/21-original-xbox-games-are-now-on-pc-via-backward-compatibility/" target="_blank">VGC</a>　驗：Reddit top-of-day 確認 'can boot up with the start-up animations for the original 2001 console'；VGC 確認 '21 original Xbox games now on PC'　<span class="pp">partial</span>（貼文層）</td></tr>
+        <tr><td>Treyarch Craig Houston 裁員</td><td><a href="https://www.reddit.com/r/Games/comments/1xwmzug/treyarchs_former_senior_lead_writer_craig_houston/" target="_blank">Reddit/Games</a> + <a href="https://www.eurogamer.net/craig-houston-layoff-treyarch-call-of-duty-layoffs" target="_blank">Eurogamer</a>　驗：Reddit top-of-day 確認 'laid off after approximately 20 years'；Eurogamer 確認同事實　<span class="pp">partial</span>（摘要層）</td></tr>
+        <tr><td>Bodycam +23 排名 / Cyberpunk +6.1%</td><td>heat_latest.json 2026-11-16T07:30:40+08:00（今晨確認）　Bodycam 排名 38（prev 61，+23）；Cyberpunk 2077 86,049（+6.1%）；steam_movers 確認今日最大跳　<span class="ok">✓</span>（今晨數字）</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文標題＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 RSS / Reddit 摘要層 · Steam＝heat_latest.json 11/16 07:30 今晨確認 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 11/16 07:30 今晨 + 多源新聞 · 2026/11/16 · 對外發布前一律過濾類博彩語言 + 真人 / IP 風險</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
