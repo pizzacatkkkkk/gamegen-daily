@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/11/15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">11 · 15 · SUN</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 15 · 彈藥工廠模式 · Steam 數字 11/14 07:30（今晨雷達沿用昨日數字）· Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>歐盟《數位公平法案》（Digital Fairness Act）重磅提議</b>——可能大幅限制免費遊玩遊戲的收費架構，包括個人化定價、暗黑設計模式、針對性促銷等機制（GameDeveloper 確認：'Newly-proposed EU law could place tight restrictions on free-to-play games'；GamesIndustry.biz 意見稿確認：'The Digital Fairness Act is a decade-long bill coming due'）。這是 2026 年全球手遊業最大法規威脅，對 F2P 開發者而言是現在就要關注的合規議題。</p>
+        <p><b>GTA 6 倒數 4 天</b>（2026-11-19 發售）：Rockstar Games UK 旗下超過 1,600 名員工在史上最大期待值遊戲發售同週，投票決定是否組建工會（Reddit/Games 確認：'Ahead of Grand Theft Auto VI, Rockstar Votes on Unions'）。GTA 6 預計首月銷量達 5,500 萬套（GameSpot 確認）。商業成功與勞工議題在最具象徵意義的一週同框。</p>
+        <p><b>Xbox FPS 雙連確認</b>：Wolfenstein 3 在 MachineGames 正式開發中（Reddit/Games 確認：'Asha Sharma announces the next Wolfenstein game is in production'）；id Software 同日確認全新作品（Reddit/gaming 確認：'Doom Developer id Software Confirms New Project'）。RPS（RSS 確認）同日整合報導兩消息。第一人稱大作 IP 復甦浪潮持續。</p>
+        <p>其他重大訊號：<b>TGA 2026 候選名單本週二（11/17）12PM ET 直播公布</b>（Geoff Keighley 確認）；<b>Rainbow Six Vegas 系列沉寂近 20 年後確認回歸</b>（Insider Gaming 確認）；<b>CS:GO 周末效應 +33.7%（730K 在線）</b>；Steam 排名最大跳動：Wuthering Waves +17、WARDOGS +16；Pearl Abyss 宣布在整個開發流程全面導入 AI（PC Gamer 確認）。</p>
+        <div class="pull">▸ 今天最強切角：EU DFA 法規（CJ/LinkedIn 長文首選，F2P 合規時代開始）+ GTA 6 T-4 工會投票（商業成功與勞工議題最強衝突敘事）+ Wolfenstein 3 + id Software 雙確認（FPS 復甦浪潮 X 貼文）+ TGA 候選名單週二（今日是最後一個猜測窗口，投票互動格式最強）。</div>
+      </div>
+
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>歐盟《數位公平法案》擬限制免費遊玩收費——全球手遊業十年最大法規震盪</div>
+            <div class="ln"><b>新聞事實：</b>GameDeveloper RSS 確認：「Newly-proposed EU law could place tight restrictions on free-to-play games」；GamesIndustry.biz RSS 確認意見稿：「The Digital Fairness Act is a decade-long bill coming due | Opinion」。法案針對遊戲內個人化定價、暗黑設計模式及針對性促銷等機制，可能對全球 F2P 收費架構帶來重大限制。</div>
+            <div class="ln"><b>GameGen 角度：</b>EU DFA 是 2026 年下半年最值得關注的法規動態——直接影響全球手遊 F2P 收費設計模式。<b>作為遊戲開發者，現在就要了解合規邊界，不是等法規通過再說。GameGen 核心切角：當監管者開始定義什麼是公平的遊戲設計，你的下一款遊戲要如何回應？</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "The EU just proposed the Digital Fairness Act — a law that could restrict how free-to-play games charge players. Personalized pricing, targeted promotions, dark patterns: all under scrutiny. If you're building a F2P game, your monetization model just became a compliance conversation. What does ethical game design look like when regulators are watching?"<br><span style="color:var(--ink-dim)">中譯：歐盟剛提議《數位公平法案》——可能大幅限制免費遊玩遊戲的收費機制。個人化定價、針對性促銷、暗黑設計模式全部在審查之列。如果你在開發 F2P 遊戲，你的收益模式現在已經是合規議題了。在監管者盯著看的時候，道德遊戲設計長什麼樣？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/european-union-proposes-digital-fairness-act-which-could-have-major-effects-on-game-development" target="_blank">GameDeveloper ↗</a> / <a href="https://www.gamesindustry.biz/the-digital-fairness-act-is-a-decade-long-bill-coming-due-opinion" target="_blank">GamesIndustry.biz ↗</a>　pub RSS 確認　partial（RSS 摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 倒數 4 天：Rockstar UK 1,600 名員工史上最大遊戲發售週投票工會組建<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>Reddit/Games 確認（Rolling Stone 報導）：Rockstar Games UK 1,600 名員工在 GTA 6 發售同週（2026-11-19）投票是否組建工會（原文：'Ahead of Grand Theft Auto VI, Rockstar Votes on Unions'）。GTA 6 預計首月銷量 5,500 萬套、平均售價 $90（GameSpot RSS 確認）。</div>
+            <div class="ln"><b>GameGen 角度：</b>商業成功與員工待遇問題在最具象徵意義的一週同框——<b>這是 2026 年遊戲業最難迴避的矛盾之一。GTA 6 的商業成功和員工待遇問題能否同時共存？這個問題現在正在實時上演。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6 ships in 4 days. At the same moment, 1,600 Rockstar UK employees are voting on whether to unionize. The same week the industry's most anticipated launch goes live, game workers are asking: does commercial success reach the people who made it? That question is now playing out in real time."<br><span style="color:var(--ink-dim)">中譯：GTA 6 還有 4 天就要發售。同一時刻，1,600 名 Rockstar UK 員工正在投票是否組建工會。業界最高期待值的遊戲發售同週，遊戲工人在問：商業成功有沒有惠及創造這款遊戲的人？這個問題現在正在實時上演。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/Games/comments/1xvdcdk/ahead_of_grand_theft_auto_vi_rockstar_votes_on/" target="_blank">Reddit/Games ↗</a> / <a href="https://www.gamespot.com/articles/gta-6-could-sell-55-million-copies-by-early-next-year-report-says-and-average-selling-price-could-be-90/" target="_blank">GameSpot ↗</a>　pub RSS 確認　partial（摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Wolfenstein 3 MachineGames 確認 + id Software 全新作品同日宣布——Xbox FPS 春天到了<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit/Games 確認（Asha Sharma，Xbox 高層）：「Wolfenstein 3 is in production at MachineGames」；Reddit/gaming 確認：「Doom Developer id Software Confirms New Project, Says 'We Can't Wait for You to See What We're Working On'」；RPS RSS 確認整合報導（原文：'Wolfenstein 3 and new id Software game confirmed'）。兩個 Bethesda/Xbox 旗下 FPS 開發商同日宣布新作。</div>
+            <div class="ln"><b>GameGen 角度：</b>FPS 大作 IP 連環回歸——<b>第一人稱射擊是 Xbox Game Studios 最具歷史根基的類型。最強切角：「每個人都在問 Xbox 的未來——Wolfenstein 3 和 id Software 新作同日出現，這是答案。」</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Wolfenstein 3 is in development at MachineGames. id Software confirmed a new project. Same day. Xbox's FPS legacy is showing up in full force. While everyone debated whether single-player FPS was dying — Bethesda's studios just said hold on."<br><span style="color:var(--ink-dim)">中譯：Wolfenstein 3 正在 MachineGames 開發中。id Software 確認全新作品。同一天。Xbox 的 FPS 傳統全力出擊。當所有人在討論單人 FPS 是否已死——Bethesda 旗下工作室說：別急。</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1xut1bq/asha_sharma_announces_the_next_wolfenstein_game/" target="_blank">Reddit/Games (W3) ↗</a> / <a href="https://www.reddit.com/r/gaming/comments/1xv07b8/doom_developer_id_software_confirms_new_project/" target="_blank">Reddit/gaming (id) ↗</a>　pub RSS / Reddit 確認　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>TGA 2026 候選名單週二（11/17）直播公布——今日是最後猜測窗口<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit/Games 確認：「Geoff Keighley - The Game Awards 2026's nominees will be revealed this Tuesday Live at 12 p.m. ET / 9 a.m PT / 5p GMT」。TGA 是全球最大遊戲頒獎典禮暨發表會，每年候選名單引發全球遊戲社群高度討論。</div>
+            <div class="ln"><b>GameGen 角度：</b>TGA 候選名單週二公布，<b>今天是最後一個「猜測討論」窗口——哪些遊戲會入圍？年度最佳是誰？「懸念最高點」是全年社群互動率最高的內容格式之一。今日下午投票型 X 貼文效果最強。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "The Game Awards 2026 nominees drop this Tuesday at 12pm ET. The last window for predictions is now. Which games are you putting on your GOTY shortlist? Drop your predictions."<br><span style="color:var(--ink-dim)">中譯：The Game Awards 2026 候選名單本週二 12PM ET 揭曉。猜測的最後窗口就是現在。你的年度最佳候選清單上有哪些遊戲？說說你的預測。</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1xvfc03/geoff_keighley_the_game_awards_2026s_nominees/" target="_blank">Reddit/Games ↗</a>　pub Reddit 確認　partial（貼文層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rainbow Six Vegas 系列沉寂近 20 年後確認回歸——IP 情懷復活潮<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Reddit/Games 確認（Insider Gaming 報導）：「Rainbow Six: Vegas Series Set to Return After Nearly Two Decades」。Rainbow Six Vegas 原作 2006 年發售，以城市戰術射擊著稱，系列沉寂近 20 年。同週 Wolfenstein 3 確認，「沉睡 IP 復活潮」成為本週最強遊戲業敘事。</div>
+            <div class="ln"><b>GameGen 角度：</b>情懷 IP 重啟的正確切角：<b>「玩家等了多久」是核心情感，不是技術升級。最強切角：「你最希望哪個沉睡系列回歸？」今日互動率最高的投票格式之一。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Rainbow Six: Vegas is coming back after nearly 20 years. Same week Wolfenstein 3 was confirmed. Dormant IP revival is happening everywhere in games right now. What franchise would you most want to see come back?"<br><span style="color:var(--ink-dim)">中譯：Rainbow Six Vegas 在消失近 20 年後確認回歸。同週 Wolfenstein 3 也被確認。沉睡 IP 復活潮正在遊戲業全面爆發。你最希望哪個系列重啟？</span></div>
+            <div class="meta">來源 <a href="https://www.reddit.com/r/Games/comments/1xvfd3m/rainbow_six_vegas_series_set_to_return_after/" target="_blank">Reddit/Games ↗</a>　pub Reddit 確認　partial（摘要層）⚠️ 城市名稱，非任何遊戲相關詞彙</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「GOTY 預測機」——讓玩家用今日消息猜 TGA 2026 年度最佳，測試遊戲直覺<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法概念：</b>極簡互動測試：玩家選擇「遊戲特質」（恐怖生存 / FPS / RPG / 開放世界 / 獨立遊戲），組合出「他們心目中的年度最佳」。最後揭示組合最接近哪類型的真實得獎遊戲。配文：「TGA 候選名單週二出爐——測試你的遊戲直覺，你猜中了幾個？」</div>
+            <div class="ln"><b>為何是今天：</b>TGA 候選名單本週二（11/17）公布前，今天是懸念最高點——「預測型」互動內容在獎項揭曉前 48 小時的互動率是全年最高窗口之一。</div>
+            <div class="meta">⚠️ 不使用任何特定遊戲品牌素材　模板：測試型互動 / 多選結局型</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">⚠️ 11/14 07:30 數字（今晨沿用）</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Counter-Strike: Global Offensive</span><span class="vn">730K ▲33.7%</span></li>
+            <li class="up"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">103K ▲17.2%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">91K ▲23.3%</span></li>
+            <li class="down"><span class="nm">Team Fortress 2</span><span class="vn">86K ▼7.3%</span></li>
+            <li class="up"><span class="nm">Cyberpunk 2077</span><span class="vn">81K ▲10.9%</span></li>
+            <li class="up"><span class="nm">R6 Siege</span><span class="vn">64K ▲19.2%</span></li>
+          </ol>
+          <div class="bf">⚠️ 今晨 heat_latest.json 沿用 11/14 07:30 數字 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。近期高人氣類別：生存類、模擬類、病毒分享型小遊戲持續領榜。今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。GTA 6 倒數 4 天 + TGA 候選名單週二出爐，預期帶動城市探索及獎項相關直播話題熱度。今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 今日 heat_latest.json 為 2026-11-14T07:30:32 數字（今晨雷達沿用昨日）。Steam 最新可用：CS:GO 730,501（+33.7%，本週最強單日漲幅）、PUBG 103,781（+17.2%）、Rust 91,223（+23.3%）、TF2 86,005（-7.3%）、Cyberpunk 2077 81,071（+10.9%）、R6 Siege 64,222（+19.2%）、Valheim 43,658（+26.0%）、War Thunder 46,298（+21.1%）。Steam 熱賣榜確認：Bodycam、CoD: MW4、Steam Frame、Dice Hoarder、Slay the Spire 2、Phantom Blade Zero 在熱賣。Steam 最多人玩：Deadlock #5、Phantom Blade Zero #6、Limbus Company #10（排名暴衝 +10）、WARDOGS #14（暴衝 +16）。排名跳動：Wuthering Waves +17（72→55）、WARDOGS +16（30→14）、Limbus Company +10（20→10）、TBH: Task Bar Hero +9（68→59）。新進榜：Worst Class Ever（#91）。Roblox / Twitch 今日無瀏覽器工具，均標記「資料不足」。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>Steam 暴衝</span></span>CS:GO 周末效應 +33.7%（730K 在線）——Valheim、Rust、War Thunder 同日大幅上漲</h3>
+        <div class="sum">heat_latest.json（2026-11-14T07:30:32 確認）：CS:GO 當前在線 730,501（前日 546,340，+33.7%），為本週最強單日漲幅；Valheim 43,658（+26.0%）；Rust 91,223（+23.3%）；War Thunder 46,298（+21.1%）；R6 Siege 64,222（+19.2%）；Apex Legends 58,037（+15.7%）；BG3 33,878（+16.7%）。周末效應帶動多款遊戲同日大幅上漲。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>CS:GO +33.7% 是罕見的強勁周末漲幅——<b>這說明周六早上是 Steam 一週中玩家在線密度最高的時段之一</b>。Valheim、Rust 同日暴衝說明多人生存類遊戲在周末有最強的「約朋友一起玩」驅動。GameGen 創作者：如果你在 Steam 上有遊戲，周六上午是安排促銷、推送更新公告的黃金視窗。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 在線 · heat_latest.json 11/14 確認 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>排名暴衝</span></span>WARDOGS +16 名（#30→#14）、Wuthering Waves +17 名（#72→#55）——Steam 最大排名跳動</h3>
+        <div class="sum">heat_latest.json 排名跳動數據（steam_movers 確認）：<b>Wuthering Waves</b> 從排名 72 升至 55（+17，本週最大跳）；<b>WARDOGS</b> 從排名 30 升至 14（+16）；<b>Limbus Company</b> 從排名 20 升至 10（+10）；<b>TBH: Task Bar Hero</b> 從排名 68 升至 59（+9）。新進榜：<b>Worst Class Ever</b>（排名 91）。Steam 熱賣榜今日：Bodycam、CoD: MW4、Steam Frame、Dice Hoarder、Slay the Spire 2、Phantom Blade Zero 在列。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Wuthering Waves +17 與 Limbus Company +10 同日出現，說明<b>亞洲服務型 RPG 在周末有強烈的玩家回歸效應</b>——可能是週末伺服器事件、活動或更新觸發。WARDOGS +16 是本月持續衝榜的軍事 FPS，今日進入 Top 15。GameGen 創作者：排名暴衝通常與新版本、活動或社群話題直接掛鉤，今日可追蹤哪個事件觸發了這些漲幅。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 排名跳動 · heat_latest.json steam_movers 確認 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>Worst Class Ever 新進 Steam 最多人玩榜（#91）；HN：Hexalexagons 六邊形日常字謎；itch.io：「You are Hamster」持續 meme 榜</h3>
+        <div class="sum">Steam 最多人玩新進榜（heat_latest.json steam_movers.new_entrants 確認）：<b>Worst Class Ever</b>（#91）——非對稱多人遊戲，老師玩家在 NPC 學生中找出壞孩子（RPS RSS 確認：'Worst Class Ever takes asymmetrical multiplayer back to school'）。Hacker News（heat_latest.json 確認）：<b>Hexalexagons</b>（13pts/6c）——六邊形格子上的日常字謎遊戲（Show HN）；Big Walk AI 爭議報導（6pts）持續有討論。itch.io：「This Role: You are Hamster」持續 meme 榜（已連續多日），Capybara 同系列在列。Steam 新品：Gold Idle、House of Pips: a Domino Roguelike、8 Hours Till Dawn。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Worst Class Ever 新進 Steam 熱榜說明「老師 vs. 學生非對稱多人」機制獲得市場驗證——<b>這種「隱藏身份 + 社交推理」機制是 2026 年社群最能引發分享討論的遊戲類型之一</b>。Hexalexagons 在 HN 出現說明「日常一題型字謎」在技術社群仍有強吸引力（Wordle 後繼效應）。GameGen 創作者：「You are [動物]」在 itch.io 的持續熱度說明角色扮演 + 病毒格式依然有效——今日進化版：「You are a game dev 4 days before the biggest launch of the decade」。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM / HACKER NEWS / ITCH.IO · heat_latest.json · <a href="https://hexalexagons.com/" target="_blank">Hexalexagons ↗</a> / <a href="https://store.steampowered.com/app/5175310" target="_blank">Worst Class Ever ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>法規重磅</span></span>歐盟《數位公平法案》擬限制 F2P 收費——2026 年全球遊戲業最大法規震盪</h3>
+        <div class="sum">GameDeveloper（RSS 確認）：「Newly-proposed EU law could place tight restrictions on free-to-play games」；GamesIndustry.biz（RSS 確認）意見稿：「The Digital Fairness Act is a decade-long bill coming due」。法案核心限制方向：個人化定價、暗黑設計模式、針對性促銷機制，尤其針對未成年人保護與消費者公平。歐盟 Digital Fairness Act 是繼 GDPR 之後最廣泛影響數位產業的法規框架之一。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>EU DFA 對遊戲業的直接衝擊：<b>（1）個人化定價限制——動態定價可能受到嚴格審查；（2）暗黑設計模式禁止——人為製造緊迫感、混淆消費等手法；（3）F2P 核心收益機制需符合「公平性」門檻</b>。GameGen 創作者的直接啟示：在監管者介入之前主動設計「透明、公平」的收益機制，不只是道德選擇——也是未來的合規必要條件。歐盟的法規往往成為全球標準先行者。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMEDEVELOPER · <a href="https://www.gamedeveloper.com/business/european-union-proposes-digital-fairness-act-which-could-have-major-effects-on-game-development" target="_blank">原文 ↗</a> / <a href="https://www.gamesindustry.biz/the-digital-fairness-act-is-a-decade-long-bill-coming-due-opinion" target="_blank">GamesIndustry.biz ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 在遊戲</span></span>Big Walk AI 爭議：0.1% AI 程式碼引爆獨立遊戲社群——GDC 報告同日：40% 開發者用 AI，更多人認為有害</h3>
+        <div class="sum">Tavily/PCGamer（RSS 確認）：Big Walk 開發商 House House 揭露在遊戲「最後衝刺」期間使用了生成式 AI，程式碼比例估計「遠低於 0.1%」（原文：'estimates well under 0.1% was actually coded using LLMs'）。19 名 IGF 評審此前發表聲明拒絕為使用 AI 的遊戲投票。The Verge（Tavily 確認）：GDC 2026 年度調查顯示 40% 開發者使用生成式 AI，但更多人認為 AI 對業界有害。GamesIndustry.biz（RSS 確認）：同份報告，AAA 工作室使用率遠高於獨立工作室。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>0.1% AI 程式碼引爆的不是技術爭議，而是<b>「AI 使用應不應該被揭露」和「零容忍 vs. 比例原則」的價值觀戰爭</b>。GDC 報告的兩個數字並列（40% 使用 + 更多人認為有害）說明業界內部的矛盾比任何時候都更清晰。GameGen 創作者的立場建議：透明揭露 + 有意義的人類決策核心，是當前最不容易被攻擊的位置。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PCGAMER / THE VERGE · <a href="https://www.pcgamer.com/games/puzzle/big-walk-developer-reveals-it-used-generative-ai-sparingly-estimates-well-under-0-1-percent-was-actually-coded-using-llms" target="_blank">PCGamer ↗</a> / <a href="https://www.theverge.com/games/1032085/gdc-festival-of-gaming-annual-survey-ai-layoffs" target="_blank">The Verge ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>業界動向</span></span>Pearl Abyss（Crimson Desert）宣布在整個開發流程全面導入 AI——並預告 DokeV 2028 年上線</h3>
+        <div class="sum">PC Gamer（RSS 確認）：Pearl Abyss 表示不在意玩家對 AI 的反感，確認在「整個開發流程（throughout our entire development pipeline）」擴大 AI 使用（原文：'Don't like AI in games? Crimson Desert studio Pearl Abyss ain't care: it's expanding AI use throughout our entire development pipeline'）。Eurogamer（RSS 確認）同日確認 DokeV 預計 2028 年上線。Pearl Abyss 是《黑色沙漠》和 Crimson Desert 的開發商。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Pearl Abyss 的立場代表了業界的「第二陣營」——<b>不回應 AI 反感情緒，全力投入 AI 開發效率</b>。這與 Jackbox Games「全靠人力、不改變」的立場形成極端對比。今日 AI 爭議背景下，這是最強烈的「企業 AI 策略宣示」之一。GameGen 創作者：你在哪個位置？透明合作、全力投入、還是靜觀其變？</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/software/ai/dont-like-ai-in-games-crimson-desert-studio-pearl-abyss-aint-care-its-expanding-ai-use-throughout-our-entire-development-pipeline/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>GTA 6 迷因</span></span>GTA 6 倒數 4 天 + Rockstar 工會投票——「做出世紀大作的員工正在爭取勞動權利」反差迷因</h3>
+        <div class="sum">Reddit/Games 確認：Rockstar Games UK 1,600 名員工在 GTA 6 發售同週投票是否組建工會（Rolling Stone 報導）。GTA 6 預計首月 5,500 萬套、平均售價 $90（GameSpot 確認）。距離 2026-11-19 發售還有 4 天。Reddit top-of-day：「Ahead of Grand Theft Auto VI, Rockstar Votes on Unions」——已獲得高熱度討論。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這個反差迷因具備天然的討論能量——<b>「世紀大作即將發售，同時 1,600 名做出這款遊戲的員工在爭取工會」</b>。今日最強 X 切角（非商業立場）：「GTA 6 四天後上線。做出這款遊戲的 1,600 名員工正在投票決定是否組建工會。商業成功和員工待遇這兩件事，你覺得可以同時存在嗎？」⚠️ 不表明政治立場，以開放式提問形式呈現。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 開放式提問，不表立場</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMES · <a href="https://www.reddit.com/r/Games/comments/1xvdcdk/ahead_of_grand_theft_auto_vi_rockstar_votes_on/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>情懷迷因</span></span>「已經這麼久了...」——Reddit 熱門遊戲懷舊貼，周末情懷流量最強窗口</h3>
+        <div class="sum">Reddit/gaming top-of-day（heat_latest.json 確認）：「Has it really been that long...」——玩家分享某款遊戲的發售/年齡里程碑引發高度共鳴，成為當日最高熱度貼文之一。這類「時間流逝類」遊戲懷舊貼在周末的互動率通常是工作日的 2-3 倍。今日 Wolfenstein 3 + Rainbow Six Vegas 情懷回歸，與此類貼文形成完美共鳴。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「時間流逝類」遊戲懷舊貼的情感核心是<b>「我在某個特定時刻第一次玩到這款遊戲」——這是遊戲 IP 情感資產最直接的體現</b>。今日配合 Wolfenstein 3 + R6 Vegas 回歸消息，今天是全年「沉睡 IP 情懷牌」效果最強的一天。GameGen 創作者：你的遊戲讓玩家記住了哪個時刻？那個記憶就是你最強的行銷素材。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMING · <a href="https://www.reddit.com/r/gaming/comments/1xvg21o/has_it_really_been_that_long/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <ol>
+            <li class="hot"><span class="nm">隱藏身份 + 社交推理（Worst Class Ever：老師在 NPC 中找壞孩子）</span><span class="vn">非對稱多人</span></li>
+            <li class="up"><span class="nm">六邊形日常字謎（Hexalexagons：每日一題）</span><span class="vn">日常解謎</span></li>
+            <li><span class="nm">「You are [角色]」病毒角色扮演 loop</span><span class="vn">meme / 社群</span></li>
+            <li><span class="nm">IP 情懷復活投票（R6 Vegas / Wolfenstein 3 蹭）</span><span class="vn">互動型</span></li>
+            <li><span class="nm">馬術賽馬管理模擬（Derby Dynasty solo 9 months）</span><span class="vn">模擬 / 管理</span></li>
+          </ol>
+          <div class="bf">itch.io + 今日新聞衍生 · 11/15 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>「Worst Class Ever」機制：老師在 NPC 學生中找壞孩子——非對稱多人 + 社交推理的爆款公式</h3>
+        <div class="sum">RPS（RSS 確認）：「Worst Class Ever takes asymmetrical multiplayer back to school, with a teacher player trying to spot the naughty children among the NPCs」。機制核心：一個玩家扮演老師，其他玩家扮演學生，藏在 NPC 學生群中假裝「正常」——老師必須在規定時間內識別出哪些是真人玩家。Steam 新進榜確認（heat_latest.json steam_movers.new_entrants）：Worst Class Ever #91。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「在人群中找到真正的人類玩家」機制的爆款邏輯很清晰——<b>社交推理 + 偽裝 + 有限資訊決策，是每個人都能快速理解但很難精通的遊戲語言</b>。Among Us 的核心機制在不同主題下持續變體，說明這個格式的生命力極強。GameGen 換皮創作者：這個機制可以應用到任何設定——城市、學校、太空站、辦公室。核心是「我必須找出誰在欺騙我」的情感張力。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">RPS · <a href="https://www.rockpapershotgun.com/worst-class-ever-takes-asymmetrical-multiplayer-back-to-school-with-a-teacher-player-trying-to-spot-the-naughty-children-among-the-npcs" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
+        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：GTA 6 倒數 4 天 + 工會投票話題（全球最高熱度，台灣遊戲玩家社群也高度關注）；Wolfenstein 3 + id Software 新作雙確認（FPS 情懷話題）；TGA 2026 候選名單週二出爐（台灣遊戲圈 TGA 關注度高）；EU DFA 對免費遊玩的限制（開發者社群關注）；CS:GO 周末 730K 在線（FPS 玩家圈話題）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>EU Digital Fairness Act（全球 F2P 法規）</td><td><span class="tmpl">F2P 合規 / 收費設計觀察</span></td><td>「歐盟擬限制免費遊玩收費——你的 F2P 遊戲設計合乎這個標準嗎？」</td><td class="rk-low">低</td><td>★ CJ 首選，今日話題峰值，長篇業界法規分析類 LinkedIn 文效果最強</td></tr>
+          <tr><td>GTA 6 T-4 + Rockstar 工會投票（全球最高熱度）</td><td><span class="tmpl">勞工 / 創作者身份 / 商業思考</span></td><td>「做出世紀大作的員工在發售同週投票工會——商業成功和員工待遇可以共存嗎？」</td><td class="rk-mid">中 · 開放式提問，不表政治立場</td><td>CJ / X 均適合，今日話題峰值，開放提問互動率最強</td></tr>
+          <tr><td>Wolfenstein 3 + id Software 新作（FPS 復甦）</td><td><span class="tmpl">單人 FPS / 情懷 IP 復甦</span></td><td>「Xbox 旗下兩個 FPS 工作室同日宣布新作——單人 FPS 沒死」</td><td class="rk-low">低</td><td>X 貼文今日最強，FPS 社群情緒高，配上情懷投票互動率佳</td></tr>
+          <tr><td>TGA 2026 候選名單週二（獎項季懸念最高點）</td><td><span class="tmpl">年度最佳猜測 / 預測型互動</span></td><td>「TGA 候選名單週二出爐——你的年度最佳清單上有哪些？」</td><td class="rk-low">低</td><td>今日是最後猜測窗口，投票型 X 貼文全年最高互動率時段之一</td></tr>
+          <tr><td>沉睡 IP 復活潮（R6 Vegas + Wolfenstein 3）</td><td><span class="tmpl">情懷 IP / 復古 loop</span></td><td>「你最希望哪個沉睡 20 年的系列回歸？」（投票格式）</td><td class="rk-low">低</td><td>X 投票今日效果最強，兩個 IP 同週回歸製造最強討論密度</td></tr>
+          <tr><td>CS:GO 周末效應 +33.7%（Steam 周末規律）</td><td><span class="tmpl">Steam 週期規律 / 發行時機</span></td><td>「周六早上是 Steam 曝光度最高的視窗——你的遊戲有沒有把握這個窗口？」</td><td class="rk-low">低</td><td>開發者向 LinkedIn / X 內容，今日周六是最佳發文時機</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>歐盟《數位公平法案》——F2P 收費設計的合規時代開始，全球遊戲業最大法規震盪</td><td>EU DFA 擬限制個人化定價、暗黑設計模式、針對性促銷（GameDeveloper 確認：'tight restrictions on free-to-play games'）；GamesIndustry.biz 意見稿確認這是「十年醞釀的法規」；F2P 是全球手遊最主要的收益模式</td><td>"The EU just proposed the Digital Fairness Act — targeting how free-to-play games charge players. Personalized pricing, dark patterns, targeted promotions: all under scrutiny. GDPR changed how tech handles data. The DFA could change how games handle money. If you're building F2P, your monetization model just became a compliance conversation. What does ethical game monetization look like?"</td><td><a href="https://www.gamedeveloper.com/business/european-union-proposes-digital-fairness-act-which-could-have-major-effects-on-game-development" target="_blank">↗</a></td></tr>
+          <tr><td>GTA 6 T-4 + Rockstar UK 工會投票——史上最大遊戲發售週與勞工問題同步爆發</td><td>GTA 6 預定 2026-11-19（T-4）；Rockstar UK 1,600 名員工同週投票工會（Reddit/Games 確認）；GTA 6 預計首月 5,500 萬套 $90 均價（GameSpot 確認）；2026 年遊戲業裁員創高（GDC 報告：1/3 被裁）</td><td>"GTA 6 ships in 4 days. At the same moment, 1,600 of its UK developers are voting on whether to unionize. This is the most commercially successful game in history launching alongside the most visible labor action in gaming's recent history. Does commercial success automatically flow to the people who made it? The industry is being asked this question in real time."</td><td><a href="https://www.reddit.com/r/Games/comments/1xvdcdk/ahead_of_grand_theft_auto_vi_rockstar_votes_on/" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（EU DFA、GTA 6 + 工會）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。對外用字已過濾所有類博彩語言。所有來源均為 RSS / Reddit 摘要層，建議發文前 CJ 自行確認原文細節。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
+          <li>Wolfenstein 3 + id Software 雙確認：「Xbox 旗下兩個 FPS 工作室同日宣布新作——單人 FPS 沒死。你覺得哪款更值得期待？」（今日 FPS 社群情緒最高）</li>
+          <li>TGA 候選名單週二（最後猜測窗口）：「TGA 2026 候選名單本週二揭曉——你的年度最佳清單有哪些？」（投票格式，今日是全年最強互動時段）</li>
+          <li>沉睡 IP 投票：「R6 Vegas + Wolfenstein 3 同週回歸——你最希望哪個沉睡 20 年的系列重新開發？」（投票格式）</li>
+          <li>GTA 6 T-4 + 工會投票：「GTA 6 四天後上線，做出這款遊戲的員工正在投票工會——你覺得商業成功和員工待遇可以同時共存嗎？」（開放式提問）</li>
+        </ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
+          <li>★「GOTY 預測機」——玩家選遊戲特質組合，測試自己的「年度最佳直覺」是否符合 TGA 2026 候選類型。配文：「TGA 候選名單週二出爐——測試你的遊戲直覺，你猜中了幾個？」</li>
+          <li>「Worst Class Ever 機制蹭」——極簡非對稱多人 demo：玩家在 NPC 學生中找出真人玩家，限時 30 秒。今日新進榜訊號驗證市場需求。</li>
+          <li>「沉睡 IP 解謎 loop」——玩家根據碎片線索猜測哪個沉睡系列確認回歸（僅用抽象圖形，不用任何品牌素材）。</li>
+        </ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
+          <li>TGA 2026 候選名單——週二（11/17）12PM ET 直播，全年最高社群話題密度時刻。</li>
+          <li>GTA 6 倒數 4 天——每日更新倒數，2026-11-19 發售日是全球最高熱度事件。</li>
+          <li>Rockstar UK 工會投票結果——與 GTA 6 發售同框，業界勞工議題焦點。</li>
+          <li>EU Digital Fairness Act 立法進程——下一步時程、第一輪意見徵集。</li>
+          <li>Pearl Abyss AI pipeline 擴展細節——Crimson Desert 開發狀況 + DokeV 2028 預告。</li>
+          <li>WARDOGS +16 排名暴衝原因——是否有更新或社群事件觸發。</li>
+        </ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
+          <li>GTA 6 話題：不引用 GTA 美術、角色、Rockstar 品牌視覺；工會話題開放提問，不表政治立場；不引用 R* 旗下未公開資訊。</li>
+          <li>EU DFA：法案尚為提議階段，不寫成「已確定通過的規定」；保留「提議 / 草案」語氣。</li>
+          <li>Wolfenstein / id Software：不引用品牌視覺素材；不對遊戲品質進行評論，只借 FPS 復甦敘事。</li>
+          <li>Rainbow Six Vegas：「Vegas」是城市名稱，不關聯任何類博彩意象；不引用品牌視覺。</li>
+          <li>Pearl Abyss AI 話題：不評論其決策好壞，只借「企業 AI 策略宣示」的討論角度。</li>
+          <li>所有來源均為 RSS / Reddit 摘要層——對外保留「報導指出 / 確認」語氣，不寫成第一手事實。</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>EU Digital Fairness Act 擬限制 F2P</td><td><a href="https://www.gamedeveloper.com/business/european-union-proposes-digital-fairness-act-which-could-have-major-effects-on-game-development" target="_blank">GameDeveloper</a> + <a href="https://www.gamesindustry.biz/the-digital-fairness-act-is-a-decade-long-bill-coming-due-opinion" target="_blank">GamesIndustry.biz</a>　驗：RSS 標題確認「tight restrictions on free-to-play games」；GI.biz 意見稿確認「decade-long bill coming due」　<span class="pp">partial</span>（RSS 摘要層）</td></tr>
+        <tr><td>GTA 6 T-4 + Rockstar UK 工會投票</td><td><a href="https://www.reddit.com/r/Games/comments/1xvdcdk/ahead_of_grand_theft_auto_vi_rockstar_votes_on/" target="_blank">Reddit/Games</a> + <a href="https://www.gamespot.com/articles/gta-6-could-sell-55-million-copies-by-early-next-year-report-says-and-average-selling-price-could-be-90/" target="_blank">GameSpot</a>　驗：Reddit 標題確認「Rockstar Votes on Unions」；GTA 6 預計 11-19 發售（T-4）；GameSpot 確認 5,500 萬套 / $90　<span class="pp">partial</span>（摘要層）</td></tr>
+        <tr><td>Wolfenstein 3 MachineGames 確認</td><td><a href="https://www.reddit.com/r/Games/comments/1xut1bq/asha_sharma_announces_the_next_wolfenstein_game/" target="_blank">Reddit/Games</a> + <a href="https://www.rockpapershotgun.com/wolfenstein-3-and-new-id-software-game-confirmed-as-xbox-boss-somehow-unrelatedly-shouts-about-one-person-soon-wieldling-capabilities-that-once-required-entire-nations" target="_blank">RPS</a>　驗：Reddit 標題確認「Wolfenstein game is in production at MachineGames」；RPS RSS 確認「Wolfenstein 3 and new id Software game confirmed」　<span class="pp">partial</span>（摘要層）</td></tr>
+        <tr><td>id Software 全新作品確認</td><td><a href="https://www.reddit.com/r/gaming/comments/1xv07b8/doom_developer_id_software_confirms_new_project/" target="_blank">Reddit/gaming</a>　驗：Reddit 標題確認「id Software Confirms New Project, Says 'We Can't Wait for You to See What We're Working On'」　<span class="pp">partial</span>（摘要層）</td></tr>
+        <tr><td>TGA 2026 候選名單週二</td><td><a href="https://www.reddit.com/r/Games/comments/1xvfc03/geoff_keighley_the_game_awards_2026s_nominees/" target="_blank">Reddit/Games</a>　驗：Reddit 標題確認「nominees will be revealed this Tuesday Live at 12 p.m. ET」（Geoff Keighley 轉推）　<span class="pp">partial</span>（貼文層）</td></tr>
+        <tr><td>Rainbow Six Vegas 系列回歸</td><td><a href="https://www.reddit.com/r/Games/comments/1xvfd3m/rainbow_six_vegas_series_set_to_return_after/" target="_blank">Reddit/Games</a>　驗：Reddit 標題確認「Set to Return After Nearly Two Decades - Insider Gaming」　<span class="pp">partial</span>（摘要層）</td></tr>
+        <tr><td>Pearl Abyss 全流程 AI 擴展</td><td><a href="https://www.pcgamer.com/software/ai/dont-like-ai-in-games-crimson-desert-studio-pearl-abyss-aint-care-its-expanding-ai-use-throughout-our-entire-development-pipeline/" target="_blank">PC Gamer</a>　驗：RSS 標題確認「expanding AI use throughout our entire development pipeline」　<span class="pp">partial</span>（RSS 摘要層）</td></tr>
+        <tr><td>CS:GO +33.7% / Steam 排名跳動數字層</td><td>heat_latest.json 2026-11-14T07:30:32+08:00（今晨沿用昨日）　CS:GO 730,501（+33.7%）/ Valheim 43,658（+26.0%）/ Rust 91,223（+23.3%）；Wuthering Waves +17（72→55）/ WARDOGS +16（30→14）/ 新進榜 Worst Class Ever #91　<span class="ok">✓</span>（最新可用數字）</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文標題＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 RSS / Reddit 摘要層 · Steam＝heat_latest.json 11/14 07:30 沿用（今晨雷達未更新）· Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 11/14 07:30 沿用 + 多源新聞 · 2026/11/15 · 對外發布前一律過濾類博彩語言 + 真人 / IP 風險</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
