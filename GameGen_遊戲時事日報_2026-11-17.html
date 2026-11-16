@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/11/17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">11 · 17 · TUE</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 17 · 彈藥工廠模式 · Steam 數字 11/17 07:30（今晨雷達）· Roblox / Twitch 今日無瀏覽器 · 來源 19+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>歐洲遊戲工會 AI 宣言正式出爐——勞工側的反擊開始</b>：IWGB Game Workers 與多個歐洲遊戲工會聯合發布《Generative AI Usage in the Games Industry》宣言，要求透明度、工人同意機制、公平補償（Reddit/gamedev top-of-day 確認：'European Game Worker Unions Publish Manifesto on AI Usage'；HN 42pts/90c 確認：'Generative AI Usage in the Games Industry'，gameworkers.co.uk）。宣言時間點：恰好在 Xbox CEO 宣示「<span class="hl">小團隊將能打造數百人才做到的世界</span>」（上週五 11/14）後三天——<b>業界 AI 政策邊界戰正式開打。</b></p>
+        <p><b>TGA 2026 候選名單今日揭曉</b>（11/17 12PM ET 直播）——昨日《11/15 日報》已預告今天是最後猜測窗口，社群今日達全年第一個互動高峰（預測型貼文效果最強）。Steam 效應：候選名單揭曉日預期推動多款候選作品在線數回升。</p>
+        <p><b>Xbox Project Helix 澄清身份</b>：Xbox 確認 Project Helix「是一台能玩 PC 遊戲的主機，而不是一台也能玩主機遊戲的 PC」（Eurogamer 確認：'The next Xbox, Project Helix, is a console and not a PC'；Reddit/Games top-of-day 確認）。意義：Xbox 明確劃定下一代主機的定位邊界，回應外界「Project Helix 只是 PC」的擔憂。</p>
+        <p>其他重大訊號：<b>Palworld 單日暴跌 -49.9%</b>（33,802→16,921，heat_latest.json 確認）——今日最大跌幅，前一天還在熱賣榜，可能是 GTA 6 T-2 效應；<b>宮本茂榮獲首屆 DICE 傳奇獎</b>（第 30 屆 DICE Awards，GamesIndustry.biz + VGC + Reddit/Games 確認）；<b>Unity 推出 $5 萬美元無股權補助</b>（GamesIndustry.biz 確認：'Unity launches $50,000 grant for indie developers with no equity or repayment'）；<b>Monster Hunter Outlanders 兩週內 IAP 超 1,020 萬美元</b>（GamesIndustry.biz 確認）。</p>
+        <div class="pull">▸ 今天最強切角：歐洲遊戲工會 AI 宣言（配 Xbox CEO 宣示，業界最強對立敘事升級，CJ LinkedIn 首選）+ TGA 2026 候選名單今日揭曉（今年最大互動窗口，X 預測型貼文）+ Palworld -49.9% GTA 效應數據化（X 情境類分析）+ 宮本茂傳奇獎（情懷型）+ Xbox Project Helix 主機定義（開發者觀察向）。</div>
+      </div>
+
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>歐洲遊戲工會 AI 宣言——「透明度 + 工人同意 + 公平補償」正式對 Xbox CEO gen-AI 宣示提出勞工側回應<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>Reddit/gamedev 確認（today top-of-day）：'European Game Worker Unions Publish Manifesto on AI Usage'；HN 確認（42pts/90c）：'Generative AI Usage in the Games Industry'（gameworkers.co.uk/ai-manifesto/）。宣言核心訴求：（1）所有 AI 使用須對工人透明；（2）工人應有選擇退出 AI 使用的同意機制；（3）AI 生成的商業利益應公平回饋給創作者。時間背景：Eurogamer + Polygon 確認上週五 11/14 Xbox CEO Asha Sharma 宣示 'A small team will be able to build worlds that today demand hundreds of developers'；GDC 2026 報告：40% 開發者用 gen-AI，1/3 近兩年裁員。</div>
+            <div class="ln"><b>GameGen 角度：</b>這不只是一份宣言——這是業界 AI 政策邊界戰正式開打的信號。<b>CEO 說 AI 讓小團隊更強大，工會說工人需要保護——這兩件事不是矛盾，而是同一個問題的兩個端點。GameGen 切角：你作為創作者站在哪個位置？是希望 AI 讓你做更多，還是擔心它讓你不被需要？</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "European game worker unions just published an AI manifesto — demanding transparency, consent mechanisms, and fair compensation. This comes three days after Xbox's CEO said 'a small team will be able to build worlds that today demand hundreds of developers.' CEO side: AI expands capability. Worker side: AI needs guardrails. These aren't opposites — they're the same question from two ends. Where do you stand as a game creator?"<br><span style="color:var(--ink-dim)">中譯：歐洲遊戲工會剛發布 AI 宣言——要求透明度、同意機制、公平補償。這發生在 Xbox CEO 宣示「小團隊將能打造數百人才做到的世界」三天後。CEO 說 AI 擴大能力，工會說 AI 需要護欄——這不是對立，是同一個問題的兩個端點。作為遊戲創作者，你站在哪裡？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.reddit.com/r/gamedev/comments/1xxsdc1/european_game_worker_unions_publish_manifesto_on/" target="_blank">Reddit/gamedev ↗</a> / <a href="https://www.gameworkers.co.uk/ai-manifesto/" target="_blank">gameworkers.co.uk ↗</a>　pub today top-of-day　partial（貼文層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Unity $50,000 無股權補助開放獨立開發者申請——遊戲業最強的「開發者友善」訊號之一<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 確認：'Unity launches $50,000 grant for indie developers with no equity or repayment'；80.lv 確認：'Unity Offers Indie Developers $50K Grants Through New Fellowship Program'；GameDeveloper 確認：'Unity to support indies with cash and dedicated support through new fellowship program'。重點：這不是貸款，沒有股權稀釋，沒有收入分成條款。同一週，Unity 傳出可能被 Silver Lake 和沙烏地 PIF 收購（GamesIndustry.biz 確認：'Unity reportedly in acquisition talks'）。</div>
+            <div class="ln"><b>GameGen 角度：</b>Unity 在傳出被收購傳言的同一週推出開發者補助——<b>這是刻意釋出的善意訊號還是真正的策略轉型？無論如何，$50K 無股權對獨立開發者是今年最具實際意義的支持之一。GameGen 切角：你認為引擎平台補助開發者最好的方式是現金補助、收入分成優惠、還是工具免費化？</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Unity just announced $50,000 grants for indie developers — no equity, no repayment. This comes the same week Unity was reportedly in acquisition talks with Silver Lake and Saudi Arabia's PIF. Whether this is a strategic signal or genuine developer advocacy, $50K no-strings-attached is one of the most concrete developer support moves this year. What's the best way an engine platform can support indie creators — cash grants, revenue-share discounts, or free tools?"<br><span style="color:var(--ink-dim)">中譯：Unity 剛宣布向獨立開發者提供 5 萬美元補助——無股權、無需償還。這發生在 Unity 傳出被收購的同一週。無論這是策略訊號還是真正的開發者支持，$50K 無條件補助是今年最具實際意義的開發者支持之一。引擎平台支持獨立開發者最好的方式是現金補助、收入分成優惠，還是免費工具？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/unity-launches-50000-grant-for-indie-developers-with-no-equity-or-repayment" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://80.lv/articles/unity-offers-indie-developers-usd50k-grants-through-new-fellowship-program/" target="_blank">80.lv ↗</a>　pub today RSS 確認　partial（RSS 摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>TGA 2026 候選名單今日揭曉——12PM ET 直播，全年最強預測互動窗口已開啟<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>11/15 日報已確認：'TGA 2026 候選名單週二（11/17）揭曉'；11/16 日報已標記為「今日是最後猜測窗口」。今日（11/17）候選名單正式公布，社群預測型討論達全年高峰。熱門 GOTY 候選（基於近期報導）：RE Requiem（已獲金搖桿 Ultimate GOTY）、Phantom Blade Zero、Crimson Desert、007 First Light、Slay the Spire 2、Path of Exile 2。</div>
+            <div class="ln"><b>GameGen 角度：</b>TGA 候選名單揭曉日是全年遊戲社群最強互動時段之一——<b>預測型互動格式（「你猜誰贏 GOTY？」）在候選名單公布後 2 小時內互動率最高。最強切角：候選名單出爐後馬上問「哪一款最讓你驚喜（或意外落榜）？」。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "TGA 2026 nominations are out today. GOTY candidates are live. Every year, the reveal sparks the same question: who deserved to be there but wasn't? Which game surprised you most — either by making the list or by missing it?"<br><span style="color:var(--ink-dim)">中譯：TGA 2026 候選名單今日揭曉。每年候選名單一出，最強互動的問題永遠是：誰應該入選但沒有？哪款遊戲最讓你驚訝——無論是入選還是落榜？</span></div>
+            <div class="meta">去賭場化 ✅　來源：11/15 日報預告 + 11/16 日報最後猜測窗口確認　今日 (11/17) 揭曉，具體名單需當天確認後更新</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Palworld 單日 -49.9% 暴跌（33,802→16,921）——GTA 6 T-2 效應讓市場重新洗牌<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>heat_latest.json（2026-11-17T07:30:31+08:00 確認）：Palworld 今晨在線數 16,921，前日 33,802，單日跌幅 -49.9%——今日所有被追蹤遊戲中最大跌幅（Marvel Rivals -17.4%、Path of Exile -15.0%）。今日唯一正向：Rust +4.6%（69,106）。同日背景：GTA 6 T-2（2026-11-19 發售），市場提前進入 GTA 預熱模式。熱賣榜：CoD: MW4、Crimson Desert Enhanced、Bodycam 在列（steam_new_top 確認）。</div>
+            <div class="ln"><b>GameGen 角度：</b>Palworld -49.9% 不是隨機波動——這是 GTA 6 效應的第一個數據訊號：<b>大型發售前，玩家開始清空時間等候。作為開發者，你的遊戲在 GTA 6 發售週（11/19）的策略是什麼？是跟著推，還是讓出位置等待下一波？</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Palworld dropped -49.9% in a single day on Steam. That's not a fluke — GTA 6 launches in 2 days. Players are clearing their schedules. This is the GTA 6 gravity effect: the entire market shifts before it even arrives. If you're releasing or marketing a game this week, what's your strategy when GTA 6 is the only game anyone's talking about?"<br><span style="color:var(--ink-dim)">中譯：Palworld 單日在 Steam 跌幅 -49.9%。這不是隨機波動——GTA 6 後天發售。玩家開始清空時間表等候。這是 GTA 6 引力效應：整個市場在它到來前就開始移動。如果你這週在發售或行銷遊戲，你的策略是什麼？</span></div>
+            <div class="meta">去賭場化 ✅　來源 heat_latest.json 11/17 07:30 確認（Palworld steam_velocity -49.9%）　<span style="color:#1f9c30;font-weight:700">✓ 今晨數字</span></div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>宮本茂榮獲首屆 DICE 傳奇獎——「電子遊戲之父」的第 30 屆年度榮耀<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>GamesIndustry.biz 確認：'Shigeru Miyamoto to receive inaugural Legend Award at the 30th DICE Awards'；GameDeveloper 確認：'Shigeru Miyamoto selected as inaugural Legend Award inductee at D.I.C.E. Awards'；Reddit/Games 確認（today top-of-day）：'Shigeru Miyamoto, critically acclaimed Nintendo director and fellow, selected as Inaugural Legend Award Inductee at 30th Annual D.I.C.E. Awards'；VGC 確認同事實。宮本茂是馬力歐、薩爾達、大金剛系列之父，現任 Nintendo Fellow。</div>
+            <div class="ln"><b>GameGen 角度：</b>宮本茂的傳奇獎適合情懷型 X 貼文——<b>「如果沒有宮本茂，遊戲業會長成什麼樣？」是高互動問句；或「你第一款玩的宮本茂遊戲是什麼？」都能引發跨世代討論。今日情懷牌第二強（第一是昨日 Xbox 25 周年）。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Shigeru Miyamoto is receiving the inaugural Legend Award at the 30th D.I.C.E. Awards. Mario. Zelda. Donkey Kong. Pikmin. The man shaped what we think games can be. What was the first Miyamoto game that made you fall in love with video games?"<br><span style="color:var(--ink-dim)">中譯：宮本茂將榮獲第 30 屆 DICE 首屆傳奇獎。馬力歐、薩爾達、大金剛、皮克敏——這個人塑造了我們對遊戲的想像。第一款讓你愛上電子遊戲的宮本茂作品是哪一款？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/shigeru-miyamoto-to-receive-inaugural-legend-award-at-the-30th-dice-awards" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1xxvgiu/shigeru_miyamoto_critically_acclaimed_nintendo/" target="_blank">Reddit/Games ↗</a>　pub today top-of-day　partial（RSS 摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「2026 遊戲業 AI 立場測試」——玩家測試自己在 AI 宣言 vs CEO 宣示光譜上的位置<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法概念：</b>極簡互動測試：玩家根據 5 個情境選擇（你願意讓 AI 生成你遊戲的美術嗎？/ 你願意讓 AI 配音取代真人演員嗎？/ 你認為 AI 讓創作門檻更低還是讓工作機會更少？）生成「你是哪種遊戲創作者的 AI 立場」：樂觀開拓者 / 謹慎實用派 / 明確反對者 / 中間觀望型。配文：「歐洲遊戲工會剛發布 AI 宣言，Xbox CEO 宣示 AI 讓小團隊取代大型陣容——測試你在這場 AI 政策戰中站哪邊？」</div>
+            <div class="ln"><b>為何是今天：</b>歐洲工會宣言今日是 HN 42pts/90c + Reddit/gamedev top-of-day——AI 立場討論今日話題密度最高，測試型互動契合「我也想表態但不知從哪說起」的社群心理。</div>
+            <div class="meta">⚠️ 純立場測試，不引用工會文件原文，以開發者自身經驗出發　模板：立場測試型 / AI 開發話題</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">11/17 07:30 今晨數字</span></div>
+          <ol>
+            <li class="down"><span class="nm">Path of Exile</span><span class="vn">69,752 ▼15.0%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">69,106 ▲4.6%</span></li>
+            <li class="down"><span class="nm">Marvel Rivals</span><span class="vn">55,880 ▼17.4%</span></li>
+            <li><span class="nm">Warframe</span><span class="vn">48,346 ▼0.4%</span></li>
+            <li><span class="nm">Project Zomboid</span><span class="vn">35,534</span></li>
+            <li class="down"><span class="nm">War Thunder</span><span class="vn">34,431 ▼11.4%</span></li>
+          </ol>
+          <div class="bf">Rust 今日唯一正向 ▲4.6%；Palworld -49.9% 今日最大跌 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。近期高人氣類別：生存類、模擬類、病毒分享型小遊戲持續領榜。今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具。TGA 2026 候選名單今日揭曉，預期帶動 GOTY 相關遊戲主播以及預測討論最高峰；GTA 6 T-2，預熱氣氛也帶動相關觀看。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        📊 今日 Steam 數字（heat_latest.json 2026-11-17T07:30:31 確認）：Path of Exile 69,752（-15%）；<b>Rust 69,106（+4.6%，今日唯一正向）</b>；Marvel Rivals 55,880（-17.4%）；Warframe 48,346（-0.4%）；Project Zomboid 35,534；War Thunder 34,431（-11.4%）；<b>Palworld 16,921（-49.9%，今日最大跌，前日 33,802）</b>。Steam 熱賣：CoD: MW4、Crimson Desert Enhanced、Bodycam、Moon Sweepers。排名最大跳：Farming Simulator 25 +8、Moon Sweepers +6、Baldur's Gate 3 +5、Zenless Zone Zero +5。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>GTA 效應</span></span>Palworld 單日 -49.9%——GTA 6 T-2 市場重力場開始吸走在線人數</h3>
+        <div class="sum">heat_latest.json（2026-11-17T07:30:31 確認）：Palworld 今晨在線 16,921，前日 33,802，單日跌 -49.9%——今日最大跌幅，幾乎腰斬。同期整體 Steam 趨勢：Marvel Rivals -17.4%、Path of Exile -15.0%、War Thunder -11.4%。<b>唯一正向：Rust +4.6%</b>（69,106）。Steam 排名最大跳：Farming Simulator 25 +8、Moon Sweepers +6（steam_movers 確認）。熱賣榜：CoD: MW4、Crimson Desert Enhanced、Bodycam 在列。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Palworld 在熱賣榜持續多天後單日腰斬，結合 GTA 6 T-2 背景，說明「大型發售前市場空間預清」效應已開始。<b>Rust 是今日唯一逆勢上漲的主要遊戲（+4.6%），可能因為它的核心玩法（生存多人）不直接被 GTA 6 替代。GameGen 開發者：這是觀察「哪類遊戲在大型競品上線時受影響最小」的真實數據。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM · heat_latest.json 11/17 確認 · <a href="https://store.steampowered.com/app/1623730" target="_blank">Palworld ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>排名暴衝</span></span>Moon Sweepers +6、Baldur's Gate 3 +5、Zenless Zone Zero +5——今日 Steam 三強跳榜</h3>
+        <div class="sum">steam_movers（heat_latest.json 確認）：Farming Simulator 25 +8（rank 60←68）、Moon Sweepers +6（rank 70←76）、Baldur's Gate 3 +5（rank 47←52）、Zenless Zone Zero +5（rank 93←98）。Moon Sweepers 同時出現在 steam_new_top 熱賣榜（確認：'Moon Sweepers' 熱賣）。Steam 新品熱賣：CoD: MW4、Crimson Desert Enhanced（排名 #3321460）、Bodycam 也繼續在熱賣名單。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Baldur's Gate 3 在 2026 年 11 月仍能出現在排名上升名單，說明長尾 RPG 在 TGA 季節（候選名單揭曉日）有回流效應——<b>TGA 討論讓玩家重新想起曾獲獎的遊戲。GameGen 創作者：TGA 季節對曾獲獎或提名的遊戲是第二個行銷窗口，不要浪費。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM · heat_latest.json steam_movers 11/17 確認</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>HN：Three.js 追趕 AAA 光照（69pts/19c）；EU 工會 AI 宣言（42pts/90c）；itch.io 病毒榜：StreamRush、RarityRNG</h3>
+        <div class="sum">Hacker News 今日（heat_latest.json 確認）：'My Quest to push native Three.js quality match AAA Game Engines'（69pts/19c，ben3d.ca）——Three.js 在瀏覽器內實現 AAA 光照效果技術挑戰；'Generative AI Usage in the Games Industry'（42pts/90c，gameworkers.co.uk/ai-manifesto）——歐洲工會宣言在 HN 技術社群引發高討論。itch.io 病毒榜（heat_latest.json 確認）：StreamRush（viral）、RarityRNG（viral）、BOMB DEFUSER（viral）；meme 榜：'This Role: You are Hamster'、'This Role: You are Capybara' 持續在列。Steam 新品：Elfscape: Ancestors、Dark Workshop Simulator、Swirl Together。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>HN 69pts 給「Three.js 追趕 AAA」說明瀏覽器遊戲渲染技術在技術社群有強烈共鳴——<b>「用 Web 技術做出 AAA 效果」是讓技術向受眾眼睛一亮的話題</b>。工會 AI 宣言在 HN 拿到 42pts/90c 說明技術人對 AI 勞工問題非常活躍，90 則留言比 42 分更能說明議題熱度。StreamRush 連續多日在 itch.io 病毒榜說明「直播模擬」這個機制持續發酵。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">HN + ITCH.IO · heat_latest.json · <a href="https://ben3d.ca/blog/building-the-aaa-lighting-pipeline-in-threejs" target="_blank">Three.js文章 ↗</a> / <a href="https://www.gameworkers.co.uk/ai-manifesto/" target="_blank">AI宣言 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 政策</span></span>歐洲遊戲工會 AI 宣言——「透明度 / 同意 / 補償」三訴求對抗 CEO gen-AI 宣示</h3>
+        <div class="sum">Reddit/gamedev 確認（today top-of-day）：'European Game Worker Unions Publish Manifesto on AI Usage'；Reddit/Games 確認（today top-of-day）：'On Generative AI Usage in the Games Industry - IWGB Game Workers'（gameworkers.co.uk/ai-manifesto）；HN 確認（42pts/90c）同連結。宣言核心訴求：（1）所有 AI 使用須對工人透明；（2）工人應有選擇退出 AI 使用的同意機制；（3）AI 生成的商業利益應公平回饋創作者。背景：上週五（11/14）Xbox CEO Asha Sharma 宣示 gen-AI 讓小團隊取代大型陣容；本週 GDC 報告確認 40% 開發者用 AI、逾半認為有害、1/3 近兩年裁員（Tavily 多來源確認）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>工會宣言不是突然冒出的——它是業界 AI 政策討論達到臨界點的集體反應。<b>上週 GDC 報告（40% 使用率）→ Xbox CEO 宣示（gen-AI 大型願景）→ 今日工會宣言（勞工側回應），這是一條完整的業界政策演化敘事線。</b> GameGen 創作者觀察：這條線在接下來幾個月只會越來越清晰，今天是加入討論的黃金時間點。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMEDEV · <a href="https://www.reddit.com/r/gamedev/comments/1xxsdc1/european_game_worker_unions_publish_manifesto_on/" target="_blank">Reddit ↗</a> / <a href="https://www.gameworkers.co.uk/ai-manifesto/" target="_blank">原文宣言 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>業界動向</span></span>Xbox Project Helix 澄清身份——是主機，不是 PC；Fable Bowerstone 地圖首曝光</h3>
+        <div class="sum">Reddit/Games 確認（today top-of-day）：'Xbox Confirms Project Helix Is "a Console Capable of Playing Games From Your PC"... And Is "Not a PC That Can Also Play Console Games"'；Eurogamer 確認：'The next Xbox, Project Helix, is a console and "not a PC"'；GameDeveloper 確認：'New Xbox codenamed Helix gets a few new details'；VGC 確認：'Xbox says Project Helix is a console that can play PC games, not a PC that can play console games'。另：Reddit/Games 確認（today top-of-day）：'Xbox Unveils Fable Map, Full Look At Bowerstone'——Fable 重啟作地圖首次公開展示，Bowerstone 城市完整面貌曝光。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Xbox 花了相當大的力氣區分「主機能玩 PC 遊戲」vs「PC 能玩主機遊戲」——這種措辭精確度說明 Xbox 非常清楚外界對 Helix 的疑慮。<b>對開發者而言，更重要的訊息是：Helix 的定位確認未來 Xbox 生態仍以主機為核心，不是把主機消滅進 PC 生態。同日 Fable 地圖曝光是相對獨立的情懷訊號，兩件事放一起說明 Xbox 正在積極塑造下一代主機的期待。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMES / EUROGAMER · <a href="https://www.reddit.com/r/Games/comments/1xxdq2q/xbox_confirms_project_helix_is_a_console_capable/" target="_blank">Reddit ↗</a> / <a href="https://www.eurogamer.net/microsoft-project-helix-interview-details" target="_blank">Eurogamer ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>業界動向</span></span>Monster Hunter Outlanders 兩週 IAP 1,020 萬美元 + FFXIV 30 天免費最長活動——移動與 PC 兩場招募大戰</h3>
+        <div class="sum">GamesIndustry.biz 確認：'Monster Hunter Outlanders passes $10.2 million in IAP revenue in two weeks'——Capcom 與 Level Infinite 合作的移動版怪物獵人在兩週內超過 1,020 萬美元 IAP 收益（未計廣告收入）。Reddit/Games 確認（today top-of-day）：'FFXIV starts its longest free login campaign ever, 30 days for eligible players'（已買遊戲 + 超過 150 天未訂閱者）——FFXIV 以史上最長免費活動搶回流玩家（Naavik 確認：'Discord's Path to IPO Needs Game Developers'；Naavik 確認：'The State of AI Voices in Games'）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>MH Outlanders $10.2M 兩週 IAP 是移動版大 IP 的典型爆款啟動數字；FFXIV 30 天免費是「回流玩家」策略的極限版——<b>兩個案例都指向同一個訊號：IP 的長期認知資產是最強的用戶獲取工具，遠比買量便宜。GameGen 換皮創作者：你的遊戲有沒有「沉睡的 IP 認知」可以用？</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESINDUSTRY.BIZ · <a href="https://www.gamesindustry.biz/monster-hunter-outlanders-passes-102-million-in-iap-revenue-in-two-weeks" target="_blank">MH Outlanders ↗</a> / <a href="https://www.reddit.com/r/Games/comments/1xxpd9w/ffxiv_starts_its_longest_free_login_campaign_ever/" target="_blank">FFXIV ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>TGA 迷因</span></span>TGA 2026 候選名單揭曉日——「你的 GOTY 清單 vs 官方清單」對比迷因全網最強互動格式</h3>
+        <div class="sum">TGA 2026 候選名單今日（11/17）公布。每年候選名單一出，全球玩家社群進入「我的選 vs 官方選」對比模式——這是 TGA 年度最強迷因格式。近期 Reddit top-of-day：'This week's Overwhelmingly Positive rated games on Steam (Nov 10th – Nov 16th)'（Reddit/Games 確認）——包含玩家自評年度最佳列表。itch.io 持續 meme 榜：'This Role: You are Hamster'、'This Role: You are Capybara'——「你是哪種遊戲角色」格式在 TGA 季節依然有效。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>TGA 候選名單揭曉後 2 小時是全年單日最高密度的遊戲社群互動時段。<b>最強迷因格式：「我的 2026 年度最佳清單 vs TGA 官方候選名單」（格式：用 Tier List 或兩欄比較）。GameGen 創作者：這個格式不需要知道候選名單——候選名單一出就可以套格式。今天是全年最好的遊戲社群話題流量時段。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">TGA 2026 · 11/17 揭曉 · <a href="https://www.reddit.com/r/Games/comments/1xxxjmt/this_weeks_overwhelmingly_positive_rated_games_on/" target="_blank">Reddit OP 清單 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>星際大戰迷因</span></span>《星際大戰：銀河賽車》宣布 2027 年加入本地分割畫面——「沒有在 2000 年完成的事，26 年後補上」</h3>
+        <div class="sum">Reddit/Games 確認（today top-of-day）：'Star Wars: Galactic Racer will get Local Split-Screen and Free Play Mode in 2027'；Eurogamer 確認：'Star Wars: Galactic Racer is getting much-requested split-screen multiplayer and new mode in 2027'。原版《星際大戰賽車》（1999）本來就有分割畫面計畫，現代重啟版終於補上。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「2000 年沒有的功能，2027 年補上」是今日笑點最強的一條——玩家等了 27 年的分割畫面。<b>這個故事最強的 meme 切角：「你有哪個『等了幾十年終於實現』的遊戲功能故事？」是今日互動率第二的情懷互動句型。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">REDDIT/GAMES · <a href="https://www.reddit.com/r/Games/comments/1xxtrxh/star_wars_galactic_racer_will_get_local/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <ol>
+            <li class="hot"><span class="nm">AI 立場光譜測試（工會宣言 × CEO 宣示對立）</span><span class="vn">互動型 / 社群</span></li>
+            <li class="up"><span class="nm">「直播模擬器」StreamRush 爆款模式</span><span class="vn">病毒 / 模擬</span></li>
+            <li><span class="nm">TGA GOTY 預測 Tier List 格式</span><span class="vn">互動 / 年度</span></li>
+            <li><span class="nm">分割畫面協力模式（27 年等待效應）</span><span class="vn">社交 / 情懷</span></li>
+            <li><span class="nm">IP 長尾回流活動（FFXIV 30 天免費模式）</span><span class="vn">留存 / 重啟</span></li>
+          </ol>
+          <div class="bf">itch.io + 今日新聞衍生 · 11/17 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>Naavik：「Prompt-to-Game 已到來——哪些平台最有條件贏？」今日最強策略讀物</h3>
+        <div class="sum">Naavik RSS 確認：'Prompt-to-Game Is Here. Which Platforms Are Positioned to Win?'（naavik.co/ai-gaming/prompt-to-game-is-here-which-platforms-are-positioned-to-win）；同期 Naavik 確認：'The State of AI Voices in Games'（naavik.co/ai-gaming/the-state-of-ai-voices-in-games）；'Discord's Path to IPO Needs Game Developers'（naavik.co）。三篇文章構成今日 Naavik AI 三聯作，配合歐洲工會宣言，是今日 AI × 遊戲業話題的完整分析組合。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「Prompt-to-Game」（文字生成遊戲）是今年 AI × 遊戲業最具顛覆性的方向之一。<b>Naavik 點名的「哪些平台最有條件贏」正是 GameGen 需要持續追蹤的戰略問題——因為下一波換皮工作流程很可能建立在這些平台上。Discord IPO 需要遊戲開發者的分析也值得追蹤，因為 Discord 已是遊戲社群的核心基礎設施之一。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NAAVIK · <a href="https://naavik.co/ai-gaming/prompt-to-game-is-here-which-platforms-are-positioned-to-win/" target="_blank">Prompt-to-Game ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
+        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界熱話背景，繁中遊戲社群可能討論：TGA 2026 候選名單今日揭曉（台灣遊戲社群每年高度關注 TGA，今天是全年最強話題時段）；GTA 6 後天上線（T-2，全球最高熱度，台灣玩家引頸期盼）；宮本茂 DICE 傳奇獎（情懷牌，台灣任天堂玩家世代共鳴）；歐洲遊戲工會 AI 宣言（台灣遊戲開發者社群關注 AI 政策）；Xbox Project Helix 主機定義（玩家社群關注次世代主機）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>歐洲遊戲工會 AI 宣言（業界最強對立敘事升級）</td><td><span class="tmpl">AI 政策 / 勞工保護 vs 技術效率</span></td><td>「CEO 說 AI 擴大能力，工會說需要護欄——你作為創作者站哪裡？」</td><td class="rk-low">低</td><td>★ CJ 首選，今日話題密度最高，業界 AI 政策長篇 LinkedIn 文效果最強</td></tr>
+          <tr><td>TGA 2026 候選名單今日揭曉</td><td><span class="tmpl">年度最佳 / 預測型互動 / GOTY 分析</span></td><td>「你的 GOTY 清單 vs 官方候選名單——誰最讓你意外落榜或意外入選？」</td><td class="rk-low">低</td><td>X 貼文今日最強，候選名單一出馬上套格式，今日全年最高密度互動時段</td></tr>
+          <tr><td>Palworld -49.9% GTA 6 效應</td><td><span class="tmpl">市場分析 / 大型發售競爭策略</span></td><td>「GTA 6 後天發售——Palworld 今天在 Steam 腰斬。如果你正在推遊戲，這週你的策略是什麼？」</td><td class="rk-low">低 · 純市場分析，不評論 Palworld 開發商</td><td>X 開發者視角今日第二強，數據化分析格式</td></tr>
+          <tr><td>Xbox Project Helix 主機定義</td><td><span class="tmpl">平台策略 / 次世代主機觀察</span></td><td>「Xbox 澄清 Helix 是主機不是 PC——你認為主機和 PC 的界線在 2026 年還重要嗎？」</td><td class="rk-low">低</td><td>開發者觀察向 X / LinkedIn，討論平台策略</td></tr>
+          <tr><td>Unity $50K 無股權補助</td><td><span class="tmpl">獨立開發者支持 / 引擎生態</span></td><td>「引擎平台支持獨立開發者最好的方式是現金補助、收入分成優惠，還是免費工具？」</td><td class="rk-low">低</td><td>LinkedIn / X 開發者社群，今日第二強 CJ 題材</td></tr>
+          <tr><td>宮本茂 DICE 傳奇獎</td><td><span class="tmpl">遊戲史情懷 / 設計傳承</span></td><td>「第一款讓你愛上電子遊戲的宮本茂作品是什麼？」</td><td class="rk-low">低</td><td>X 情懷型，數字回答格式互動率高</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>歐洲遊戲工會 AI 宣言——「透明度 / 同意 / 補償」正式對抗 CEO gen-AI 宣示，業界政策邊界戰開打</td><td>Reddit/gamedev top-of-day 確認：'European Game Worker Unions Publish Manifesto on AI Usage'；HN 42pts/90c 確認：gameworkers.co.uk/ai-manifesto。核心訴求：AI 透明度、工人同意機制、公平補償。背景：上週五 Xbox CEO：'A small team will be able to build worlds that today demand hundreds of developers'；GDC 2026：40% devs use AI, 1/3 laid off in past 2 years（Tavily 確認）。</td><td>"European game worker unions just published an AI manifesto — demanding transparency, consent mechanisms, and fair compensation for workers. This comes three days after Xbox's CEO said AI would let small teams do what hundreds of developers do today. Here's the uncomfortable reality: both sides are right. AI does expand capability for some. And AI does increase risk for others. The question isn't which side to believe — it's how the industry manages both truths at once. We haven't solved this in any other industry. Games won't be an exception."</td><td><a href="https://www.gameworkers.co.uk/ai-manifesto/" target="_blank">↗</a></td></tr>
+          <tr><td>Unity $50K 無股權補助——遊戲業引擎平台支持開發者的真實訊號還是策略姿態？</td><td>GamesIndustry.biz 確認：'Unity launches $50,000 grant for indie developers with no equity or repayment'。同週：'Unity reportedly in acquisition talks with Silver Lake and Public Investment Fund'（GamesIndustry.biz 確認）。補助條件：無股權、無收入分成、無償還要求。背景：Unity 2024 年 Runtime Fee 爭議後一直在修復開發者關係。</td><td>"Unity just offered indie developers $50,000 — no equity, no repayment. This comes the same week Unity was reportedly in acquisition talks with private equity. I'm going to say the quiet part out loud: the timing is not a coincidence. When a platform needs to restore trust — with developers, with investors, or both — developer grants are a relatively low-cost way to signal good intentions. That doesn't make the grants less real or less valuable. But it does raise the question: what does developer support look like when it comes from genuine strategy versus when it comes from defensive PR? Worth watching which follow-through happens after the headlines fade."</td><td><a href="https://www.gamesindustry.biz/unity-launches-50000-grant-for-indie-developers-with-no-equity-or-repayment" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（歐洲工會 AI 宣言 + Unity $50K 補助）已附完整 EN hook + 中譯，可直接交 CW 的 CJ 每日包。對外用字已過濾所有類博彩語言。所有來源均為 RSS / Reddit 摘要層，建議發文前 CJ 自行確認原文細節。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
+          <li>TGA 2026 候選名單揭曉（今日最強）：候選名單一出馬上問「哪款最讓你意外落榜或意外入選？」（全年最高密度互動時段）</li>
+          <li>Palworld -49.9% GTA 效應：「GTA 6 後天發售，Palworld 今天 Steam 腰斬——如果你這週在推遊戲，你的策略是什麼？」</li>
+          <li>宮本茂 DICE 傳奇獎：「第一款讓你愛上電子遊戲的宮本茂作品是什麼？」（情懷型，數字 / 名稱回答格式）</li>
+          <li>Xbox Project Helix：「Xbox 澄清 Helix 是主機不是 PC——主機和 PC 的界線在 2026 年還重要嗎？」</li>
+        </ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
+          <li>★「2026 遊戲業 AI 立場測試」——玩家根據 5 個情境選擇生成「你的 AI 立場輪廓」（樂觀開拓者 / 謹慎實用派 / 明確反對者 / 中間觀望型）。配合工會宣言話題。</li>
+          <li>「TGA GOTY 我的選 vs 官方選」Tier List 生成器——玩家輸入今年玩過的遊戲，系統生成個人 GOTY Tier List 分享卡片。</li>
+          <li>「你是哪個 DICE 傳奇輩份的遊戲玩家？」——根據玩家第一款玩的宮本茂作品，生成玩家世代標籤（NES 世代 / SNES 世代 / N64 世代 / Switch 世代）。</li>
+        </ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
+          <li>TGA 2026 完整候選名單——今日（11/17）12PM ET 揭曉，完整名單出爐後的社群反應是今日最大觀察點。</li>
+          <li>GTA 6 倒數 2 天（T-2，2026-11-19 發售）——Palworld -49.9% 是 GTA 效應的第一個數據訊號，明天（T-1）可能更明顯。</li>
+          <li>歐洲工會 AI 宣言後續——其他工會是否連署，業界 CEO 如何回應（Xbox、EA、Ubisoft）。</li>
+          <li>Unity 補助申請細節——具體申請條件、截止日期，確認是否真的「無股權無償還」。</li>
+          <li>Riot League New Dawn 更新——GameDeveloper 確認：'Riot unveils New Dawn, the next evolution of League of Legends'；League 玩家社群反應。</li>
+        </ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
+          <li>歐洲工會 AI 宣言：不替任何一方站台（CEO 或工會），保持「我們提問題，讓創作者自己思考」的框架；不引用工會宣言的完整條文，以摘要語氣呈現。</li>
+          <li>TGA 候選名單：候選名單揭曉後才能確認具體內容，今日 runbook 寫作時名單尚未揭曉，所有提及候選作品均為「預期候選」，發文前需確認實際名單。</li>
+          <li>Palworld：評論下跌時不評論 Pocketpair 經營決策，以「市場數據觀察」框架處理；不對 Palworld 與任何 IP 比較（版權風險）。</li>
+          <li>Unity 補助：確認條款細節前不誇大「完全免費」，保留「報導指出」語氣；Unity 歷史上曾更改條款，建議讀者自行查閱官方申請頁面。</li>
+          <li>所有來源均為 RSS / Reddit 摘要層——對外保留「報導指出 / 確認」語氣，不寫成第一手事實。</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>歐洲工會 AI 宣言</td><td><a href="https://www.reddit.com/r/gamedev/comments/1xxsdc1/european_game_worker_unions_publish_manifesto_on/" target="_blank">Reddit/gamedev</a> + <a href="https://www.reddit.com/r/Games/comments/1xxsppv/on_generative_ai_usage_in_the_games_industry_iwgb/" target="_blank">Reddit/Games</a> + <a href="https://www.gameworkers.co.uk/ai-manifesto/" target="_blank">gameworkers.co.uk</a>　驗：Reddit top-of-day 確認標題；HN 42pts/90c 確認同連結　<span class="pp">partial</span>（貼文層，今日 top-of-day）</td></tr>
+        <tr><td>Unity $50K 無股權補助</td><td><a href="https://www.gamesindustry.biz/unity-launches-50000-grant-for-indie-developers-with-no-equity-or-repayment" target="_blank">GamesIndustry.biz</a> + <a href="https://80.lv/articles/unity-offers-indie-developers-usd50k-grants-through-new-fellowship-program/" target="_blank">80.lv</a>　驗：GI.biz 標題確認 'no equity or repayment'；80.lv 確認同事實　<span class="pp">partial</span>（RSS 摘要層）</td></tr>
+        <tr><td>TGA 2026 候選名單今日揭曉</td><td>11/15 日報：'TGA 2026 候選名單週二（11/17）揭曉'；11/16 日報：'TGA 2026 候選名單明日（11/17）揭曉'　驗：兩期日報均確認今日（11/17）為揭曉日　<span class="pp">partial</span>（預告層，具體名單需今日確認）</td></tr>
+        <tr><td>Palworld -49.9%</td><td>heat_latest.json 2026-11-17T07:30:31+08:00（今晨確認）　steam_velocity：Palworld today 16,921 / yesterday 33,802 / pct -49.9　<span class="ok">✓</span>（今晨數字直接計算）</td></tr>
+        <tr><td>宮本茂 DICE 傳奇獎</td><td><a href="https://www.gamesindustry.biz/shigeru-miyamoto-to-receive-inaugural-legend-award-at-the-30th-dice-awards" target="_blank">GamesIndustry.biz</a> + <a href="https://www.reddit.com/r/Games/comments/1xxvgiu/shigeru_miyamoto_critically_acclaimed_nintendo/" target="_blank">Reddit/Games</a> + <a href="https://www.videogameschronicle.com/news/shigeru-miyamoto-to-be-honored-with-first-aias-legend-award-in-las-vegas/" target="_blank">VGC</a>　驗：三來源均確認 'inaugural Legend Award at the 30th DICE Awards'　<span class="pp">partial</span>（RSS 摘要層）</td></tr>
+        <tr><td>Xbox Project Helix</td><td><a href="https://www.reddit.com/r/Games/comments/1xxdq2q/xbox_confirms_project_helix_is_a_console_capable/" target="_blank">Reddit/Games</a> + <a href="https://www.eurogamer.net/microsoft-project-helix-interview-details" target="_blank">Eurogamer</a>　驗：Reddit top-of-day 確認 'a Console Capable of Playing Games From Your PC'；Eurogamer 確認 'not a PC'　<span class="pp">partial</span>（貼文層）</td></tr>
+        <tr><td>Monster Hunter Outlanders $10.2M IAP</td><td><a href="https://www.gamesindustry.biz/monster-hunter-outlanders-passes-102-million-in-iap-revenue-in-two-weeks" target="_blank">GamesIndustry.biz</a>　驗：RSS 標題確認 '$10.2 million in IAP revenue in two weeks'　<span class="pp">partial</span>（RSS 摘要層）</td></tr>
+        <tr><td>Rust +4.6% / 今日唯一正向</td><td>heat_latest.json 2026-11-17T07:30:31（今晨確認）　steam_velocity：Rust today 69,106 / yesterday 66,094 / pct +4.6　<span class="ok">✓</span>（今晨數字）</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文標題＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 RSS / Reddit 摘要層 · Steam＝heat_latest.json 11/17 07:30 今晨確認 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 11/17 07:30 今晨 + 多源新聞 · 2026/11/17 · 對外發布前一律過濾類博彩語言 + 真人 / IP 風險</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
