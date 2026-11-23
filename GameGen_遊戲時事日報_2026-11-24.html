@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/11/24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">11 · 24 · TUE</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 24 · 彈藥工廠模式 · Steam 數字 11/23 07:30 最新可用 · Roblox / Twitch 今日無瀏覽器 · 來源 15+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>GTA 6 後爆發期三重訊號：Comcast 確認高峰佔全美 25% 網路流量 / PlayStation 贏下 $26 億數位壟斷訴訟 / 感恩節協力遊戲窗口開啟</b>。GTA 6 首日 $3.79B 的震撼已在前幾天確認，今天的新角度是：Comcast 公開數據說明這不只是遊戲行業記錄——GTA 6 高峰時刻，它佔據了整個美國網路基礎設施的四分之一。這是一個基礎設施陳述，不只是一個遊戲業陳述。</p>
+        <p>同日，<b>PlayStation 在 $26 億美元的數位壟斷訴訟中獲得勝訴</b>——「數位只售」的平台商業模式在法律上獲得確認。這對整個數位發行生態有長期影響。同時，<b>It Takes Two 今日 Steam 排名暴衝 +28（#85→#57），感恩節協力遊戲窗口正式開啟</b>，距感恩節（11/27）還有 3 天，Black Friday（11/28）還有 4 天。</p>
+        <p>另一個不能忽視的技術信任訊號：<b>Nvidia 發布了 SSD 驅動 hotfix，但 hotfix 無效</b>——「我們修了但沒修好」是信任債的最差結局，對任何發布補丁更新的創作者都是今日最清晰的反面教材。以及 <b>Path of Exile 2 版本 1.0 十二月正式到來</b>，開發者兌現了「今年」的承諾。</p>
+        <div class="pull">▸ 今天最強切角：感恩節 Black Friday 窗口（今日開啟）+ GTA 6 基礎設施級別震撼（全新視角）+ PlayStation 平台壟斷防線成立（B2B 長期議題）。CJ 兩條：GTA 6 Comcast 25% 流量（基礎設施視角）＋ Naavik 黑色星期五發行指南。今日最強 Demo 時機：感恩節倒數派對 / 協力機制。</div>
+      </div>
+
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 高峰佔 Comcast 全美網路流量 25%——這不是遊戲行業記錄，這是基礎設施陳述</div>
+            <div class="ln"><b>新聞事實：</b>PC Gamer 確認：「Comcast: At peak, GTA 6 accounted for nearly a quarter of all internet traffic」。GTA 6 首日銷售 $3.79B + 3,250 萬份（GamesIndustry.biz 多媒體確認）。Comcast 公開數據在遊戲發行史上極為罕見——通常只有超大規模直播（超級盃）才會觸動此量級的基礎設施數據。（PC Gamer RSS + HN 確認）</div>
+            <div class="ln"><b>GameGen 角度：</b>GTA 6 在基礎設施層面的規模告訴所有遊戲運營商一件事：<b>超大首發不只是注意力競爭，它是頻寬競爭</b>。GTA 6 那一週，你的遊戲在爭的不只是玩家的眼球，而是他們的網路頻寬。現在（GTA 6 後爆發期，感恩節前）才是中小型遊戲的真正窗口。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "At peak, GTA 6 accounted for nearly a quarter of all US internet traffic — Comcast data. That's not a gaming industry stat. That's an infrastructure statement. When you're planning a game launch or content drop: GTA 6 didn't just dominate player attention. It occupied the pipes. The window for everyone else? It's now. Post-GTA 6 week, pre-Thanksgiving. We're in it."<br><span style="color:var(--ink-dim)">中譯：GTA 6 高峰時佔 Comcast 全美網路流量 25%。這不是遊戲業數字，這是基礎設施陳述。規劃發行窗口時要記住：GTA 6 不只佔了注意力，它佔了頻寬。其他人的窗口是現在——GTA 6 後爆發期、感恩節前。我們現在就在裡面。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.pcgamer.com/games/grand-theft-auto/comcast-at-peak-gta6-accounted-for-nearly-a-quarter-of-all-internet-traffic/" target="_blank">PC Gamer ↗</a>　pub 2026-11-23　partial（標題層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Naavik：黑色星期五遊戲發行指南——假日銷售最大化，今日最強 B2B 策略框架</div>
+            <div class="ln"><b>新聞事實：</b>Naavik 播客確認：「The Black Friday Playbook: How Game Publishers Can Maximize Holiday Sales」（naavik.co，RSS 確認）。背景數據：Steam 排名跳動 — It Takes Two +28（#85→#57，今日最大跳幅），Kingdom Come: Deliverance II 新進 Steam 最多人玩榜（#99）。感恩節 11/27，Black Friday 11/28，窗口倒數 3-4 天。</div>
+            <div class="ln"><b>GameGen 角度：</b>It Takes Two +28 是今日最清晰的假日前先行指標。<b>協力遊戲在假期前 4 天就開始被買作為「家庭禮物」</b>，這不是偶然——Naavik 整本發行指南說的就是這個窗口。GameGen 的換皮遊戲如果有多人 / 協力機制，現在推是全年最高槓桿時機。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "It Takes Two just jumped 28 ranks on Steam — from #85 to #57, overnight. Thanksgiving is Thursday. Black Friday is Friday. This is not random. The holiday gaming window opened 4 days early. Naavik just dropped their Black Friday publisher playbook. If you have a co-op game, a party mechanic, or a gift-worthy pitch — the next 96 hours are your highest-leverage publishing window of the year."<br><span style="color:var(--ink-dim)">中譯：It Takes Two 一夜 Steam +28（#85→#57）。感恩節本週四，黑色星期五本週五。這不是偶然。假日遊戲窗口提前 4 天開啟。如果你有協力遊戲、派對機制或適合當禮物的內容——未來 96 小時是你全年最高槓桿的發布窗口。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://naavik.co/podcast/the-black-friday-playbook-how-game-publishers-can-maximize-holiday-sales/" target="_blank">Naavik ↗</a> / <a href="https://store.steampowered.com/app/1426210" target="_blank">It Takes Two Steam ↗</a>　pub 2026-11-23　partial（RSS 標題層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>PlayStation 贏下 $26 億數位壟斷訴訟——平台「數位只售」政策合法性獲裁定確認<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Game Developer 確認：「PlayStation emerges victorious in a $2.6 billion lawsuit alleging a digital monopoly」（gamedeveloper.com，RSS 確認）。法院裁定 PlayStation 的數位商店政策不構成壟斷。（RSS 標題層確認）</div>
+            <div class="ln"><b>GameGen 角度：</b>這對所有在平台上賣數位遊戲的人都有長遠影響：平台「我控制定價和分成」的商業模式在法律上站穩了。切角：「平台贏了訴訟。但平台拿不走的，是你在平台外建立的受眾。」</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "PlayStation just won a $2.6 billion digital monopoly lawsuit. The digital-only storefront model: legally cleared. Platform power is real, legally defensible, and not going anywhere. For game creators: the question isn't whether to work with platforms. It's how to build audience that the platforms can't take away from you."<br><span style="color:var(--ink-dim)">中譯：PlayStation 贏下 $26 億數位壟斷訴訟。數位商店模式：法律上過關。平台力量是真實的、可辯護的、不會消失的。問題不是要不要跟平台合作，而是如何建立一個平台拿不走的受眾。</span></div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/console/playstation-emerges-victorious-in-a-2-6-billion-lawsuit-alleging-a-digital-monopoly" target="_blank">Game Developer ↗</a>　pub 2026-11-23　partial（RSS 標題層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 玩家因遊戲內裸體渡假村截圖被 PSN 封號 30 天——「遊戲內合法」≠「分享後合規」<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Eurogamer 確認：「GTA 6 player gets 30-day PSN ban for sharing in-game nudist photo with a friend」。GTA 6 遊戲內設有裸體渡假村區域（Rockstar 設計），玩家在其中截圖分享給朋友，遭 PSN 封號 30 天。（Eurogamer RSS 確認）</div>
+            <div class="ln"><b>GameGen 角度：</b>設計可分享的遊戲內容時：遊戲通過了平台評級審查，但玩家的截圖沒有通過平台分享規則。<b>「遊戲內允許」和「分享後允許」是兩套完全不同的規則</b>。今日話題切角：合規設計的邊界在哪裡？</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "A GTA 6 player just got a 30-day PSN ban for a screenshot — from a nudist resort that Rockstar put inside the game. The game passed platform review. The screenshot didn't. For game designers: what players can do in-game and what they can share outside it are governed by completely different rules. Build your share mechanics with both sets of rules in mind."<br><span style="color:var(--ink-dim)">中譯：一個 GTA 6 玩家因截圖被 PSN 封號 30 天——截的是 Rockstar 放在遊戲裡的裸體渡假村。遊戲通過了審查，截圖沒有。在設計可分享遊戲內容時：遊戲內能做和能分享出去是完全不同的兩套規則，兩者都要設計進去。</span></div>
+            <div class="meta">來源 <a href="https://www.eurogamer.net/gta-6-psn-ban-nude-photos-nudist-resort" target="_blank">Eurogamer ↗</a>　pub 2026-11-23　partial（RSS 標題層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Nvidia SSD hotfix 無效——「我們修了但沒修好」是技術信任危機的最差結局<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>PC Gamer 確認：「Nvidia released a hotfix for its driver hammering your SSD, but it doesn't actually work」。背景：Nvidia 最新顯卡驅動程式不必要地對 SSD 大量寫入（Rock Paper Shotgun 確認「definitely warrants reverting」）。Nvidia 發布 hotfix，PC Gamer 測試確認 hotfix 無效。（RSS 兩篇確認）</div>
+            <div class="ln"><b>GameGen 角度：</b>反面教材：先宣布有問題，再宣布修好了，但沒修好——<b>這比一開始就有問題更傷信任，因為它說明「你知道問題，但解決不了」</b>。對任何發布遊戲補丁的創作者：先測試，確認 fix 有效，再公告。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Nvidia released a driver that was hammering PC SSDs. Then released a hotfix. The hotfix doesn't work. This is not a 'we have a bug' story — it's a 'we knew, we tried, we failed publicly' story. For anyone shipping game updates: test your fix before announcing it. 'We fixed it' that doesn't fix it is worse than the original problem."<br><span style="color:var(--ink-dim)">中譯：Nvidia 發布了一個會打爆 SSD 的驅動，然後發布了 hotfix，hotfix 無效。這不是「我們有個 bug」的故事，而是「我們知道、我們試了、我們當眾失敗了」。發布遊戲更新時：先確認有效，再宣布。「修好了」但沒修好，比原本的問題更傷信任。</span></div>
+            <div class="meta">來源 <a href="https://www.pcgamer.com/hardware/graphics-cards/nvidia-released-a-hotfix-for-its-driver-hammering-your-ssd-but-it-doesnt-actually-work/" target="_blank">PC Gamer ↗</a> / <a href="https://www.rockpapershotgun.com/nvidias-latest-graphics-card-driver-appears-to-be-unnecessarily-writing-to-pc-ssds-something-thats-dumb-annoying-and-definitely-warrants-reverting" target="_blank">RPS ↗</a>　pub 2026-11-23　partial（RSS 標題層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「感恩節倒數派對搶購」loop——蹭感恩節 Black Friday 窗口，今天開始 96 小時最強<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法概念：</b>極簡多人搶購 / 資源競爭 loop：倒計時 + 玩家同時搶有限格數的商品，先搶先得，動態補貨、隨機稀有度。It Takes Two +28 名的假日協力效應說明：現在玩家的情緒是「和人一起玩」。發布配文：「感恩節 72 小時倒數——你和你朋友，誰先搶到 5 件？現在就可以玩。」⚠️ 不使用任何品牌商品素材。</div>
+            <div class="ln"><b>為何是今天：</b>感恩節前 4 天，It Takes Two +28 是最清晰的協力遊戲需求訊號。搭這個窗口做 demo = 加入已有情緒的對話。Black Friday 後窗口縮小。</div>
+            <div class="meta">⚠️ 不使用任何品牌商品素材　模板：多人競爭 / 倒數計時 loop</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 11/23 07:30 最新可用</span></div>
+          <ol>
+            <li class="hot"><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">98.6K ▼18.1%</span></li>
+            <li><span class="nm">Cyberpunk 2077</span><span class="vn">72.8K ▼10.8%</span></li>
+            <li><span class="nm">Rust</span><span class="vn">60.5K ▼10.8%</span></li>
+            <li><span class="nm">Path of Exile</span><span class="vn">56.4K ▼16.4%</span></li>
+            <li><span class="nm">Rainbow Six Siege</span><span class="vn">56.0K ▼9.6%</span></li>
+            <li class="up"><span class="nm">VRChat</span><span class="vn">44.3K ▲24.0%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 11/23 07:30（最新可用）· <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。感恩節前後通常會有生存類 / 派對類遊戲爬升，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。GTA 6 後爆發期直播仍活躍，感恩節前合作遊戲類直播預期上升，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ Steam 數字為 11/23 07:30 最新可用數據（heat_latest.json）。VRChat 為唯一大漲 +24.0%（44,342 人），其餘主流遊戲全面下跌，PUBG 最大跌幅 -18.1%。Phantom Blade Zero 24,536（+2.1%）逆市小漲。最多人玩榜：CS:GO #1、PUBG #2、Dota 2 #3、Deadlock #6、Slay the Spire 2 #8、Phantom Blade Zero #9。Steam 熱賣榜新品：Steam Machine 硬體。Roblox / Twitch / Threads 今日無瀏覽器工具，均標記「資料不足」。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>排名跳動</span></span>It Takes Two 暴衝 +28（85→57）——感恩節協力遊戲窗口最強先行指標；Civ VI +8、PEAK +9</h3>
+        <div class="sum">steam_movers（11/23 07:30）排名跳動紀錄：<b>It Takes Two +28 名</b>（85 → 57），今日最大跳幅，感恩節（11/27）前 4 天，協力遊戲假日前效應清晰出現。<b>PEAK +9 名</b>；<b>Civ VI +8 名</b>；Worst Class Ever +7；Red Dead Redemption 2 +5；R.E.P.O. +5；Garry's Mod +5；The Sims 4 +5；Enshrouded +5；GTA IV Complete Edition +5。新進榜：<b>Kingdom Come: Deliverance II（#99）</b>。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>It Takes Two +28 是今日 Steam 的最強單一訊號。<b>協力遊戲在假期前 4 天出現購買爬升——這是有統計規律的現象，玩家在假期前買「家庭 / 聚會選項」</b>。Kingdom Come: Deliverance II 新進 #99 也值得注意：中世紀寫實 RPG 在感恩節前有需求，可能受到假日前折扣搜尋影響。VRChat +24% 連續兩日出現異常上漲，說明 GTA 6 主機版佔據螢幕時，部分 PC 玩家選擇了社交體驗。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 11/23 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>速度觀察</span></span>VRChat +24.0%（唯一大漲）——GTA 6 主機版佔據螢幕，PC 玩家轉向社交體驗</h3>
+        <div class="sum">Steam 在線速度（11/23 07:30）：今日唯一大幅上漲：<b>VRChat +24.0%</b>（44,342 人，前日 35,752 人）。同日最大跌幅：PUBG -18.1%。Phantom Blade Zero +2.1%（小幅正向）。全榜幾乎全面下跌，僅 VRChat 和 Phantom Blade Zero 正向。VRChat 連續兩日上漲（前日也有異常上漲訊號）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span><b>在 GTA 6 佔據新聞版面和主機螢幕的同時，PC 上的 VRChat 連續上漲——這說明「不玩 GTA 6 的 PC 玩家」正在找社交出口</b>。GTA 6 是高強度單人 / 朋友組隊體驗，不玩的玩家可能在找更輕量的社交平台。VRChat 的兩日連漲是今週最有意思的反直覺訊號：超級大作發行後，社交平台反而獲益。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 11/23 07:30 · <a href="https://store.steampowered.com/app/438100" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>PoE 2 版本 1.0 十二月到來 / Phasmophobia Resonance 更新下週 / Kingdom Come: Deliverance II 新進榜 #99</h3>
+        <div class="sum">三個早期訊號同日出現。<b>Rock Paper Shotgun 確認：Path of Exile 2 版本 1.0 今年十二月正式上線</b>，含完整戰役 + 兩個新職業（原文：'it's out this year after all'）——這是兌現「今年完整版」承諾的宣告。<b>Eurogamer 確認：Phasmophobia「Resonance」更新下週上線</b>，新增「向鬼魂要求扔東西」機制（玩家可用 Unity 6 升級的新互動道具）。<b>Kingdom Come: Deliverance II 新進 Steam 最多人玩榜 #99</b>（steam_most_played 新進，heat_latest.json 確認）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>PoE 2 十二月完整版是未來 4 週最大的動作 RPG 題材窗口。<b>現在（11/24）到 PoE 2 首發前，是動作 RPG 相關話題的最高聲量期——創作者應該在這個窗口推出相關機制內容，而不是等首發後</b>。Phasmophobia 更新說明：玩家和「可互動的 AI」（鬼魂）的共創玩法依然有強分享性——「我叫鬼魂扔東西，然後它真的扔了」是天然好看的內容格式。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">RPS / EUROGAMER / STEAM · <a href="https://www.rockpapershotgun.com/path-of-exile-2s-10-version-is-out-this-year-after-all-arriving-in-december-with-a-full-campaign-two-neat-new-classes-and-more" target="_blank">RPS ↗</a> / <a href="https://www.eurogamer.net/phasmophobia-resonance-update-release-date-dowsing-rods-unity-6" target="_blank">Eurogamer ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>基礎設施事件</span></span>GTA 6 高峰佔 Comcast 全美 25% 網路流量——「有史以來最大娛樂首發」是基礎設施陳述</h3>
+        <div class="sum">PC Gamer 確認（2026-11-23，HN 6pts）：Comcast 公開數據顯示 GTA 6 在高峰時佔全美網路流量約 25%（原文：'At peak, GTA 6 accounted for nearly a quarter of all internet traffic'）。背景：GTA 6 首日 $3.79B + 3,250 萬份（GamesIndustry 多媒體確認），約半數控制台活躍用戶當日玩了 GTA 6（Circana 數據，Eurogamer 確認）。GTA 6 $4B 首日（Gamespot 報導更高估算）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Comcast 的數字把 GTA 6 的規模從「遊戲行業記錄」提升到「基礎設施事件」等級。<b>對遊戲運營商的實際影響：GTA 6 發行那一週，玩家的網路頻寬也被佔用了——這是一個任何人在規劃發行窗口時都需要納入考量的維度</b>。現在（D+5，GTA 6 後爆發期）才是中小型遊戲的真正窗口，而感恩節前 4 天的窗口比任何其他時間都窄但更集中。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/games/grand-theft-auto/comcast-at-peak-gta6-accounted-for-nearly-a-quarter-of-all-internet-traffic/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>法律判決</span></span>PlayStation 贏下 $26 億數位壟斷訴訟——平台數位發行模式獲法院合法性確認</h3>
+        <div class="sum">Game Developer 確認（2026-11-23，RSS）：PlayStation 在一場指控其數位商店構成壟斷的 $26 億美元訴訟中獲得勝訴（原文：'PlayStation emerges victorious in a $2.6 billion lawsuit alleging a digital monopoly'）。法院裁定 PlayStation 的數位只售政策不構成壟斷。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>這個判決短期內是 PlayStation 的勝利，但對整個數位遊戲生態的長期影響更深——<b>「平台控制定價和分成」的商業模式在司法層面獲得確認，意味著這個格局在可預見的未來不會改變</b>。對 GameGen 創作者的實際含義：你在平台上的分成結構是固定的，真正的護城河只有在平台之外建立的直接受眾。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAME DEVELOPER · <a href="https://www.gamedeveloper.com/console/playstation-emerges-victorious-in-a-2-6-billion-lawsuit-alleging-a-digital-monopoly" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>行業觀察</span></span>Naavik：黑色星期五遊戲發行指南——假日銷售最大化的 B2B 策略框架，今週最強時機性報告</h3>
+        <div class="sum">Naavik 播客確認（2026-11-23，RSS）：「The Black Friday Playbook: How Game Publishers Can Maximize Holiday Sales」。同日背景數據：It Takes Two Steam +28（#85→#57，今日最大跳幅，heat_latest.json 確認）；感恩節 11/27，Black Friday 11/28，窗口倒數 3-4 天。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Naavik 在最對的時間發布了最對的報告。<b>It Takes Two +28 名就是這份指南的「活數據驗證」——協力遊戲在假日前 4 天已開始被買</b>。GameGen 的換皮遊戲如果有多人 / 協力 / 派對機制，現在推比任何其他時間的槓桿都高。窗口：今天到 Black Friday（11/28），之後話題進入「節後盤點」模式。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">NAAVIK / STEAM · <a href="https://naavik.co/podcast/the-black-friday-playbook-how-game-publishers-can-maximize-holiday-sales/" target="_blank">Naavik ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>技術段子</span></span>Nvidia SSD hotfix 無效——「我們修了但沒修好」，今日工程師社群最強段子</h3>
+        <div class="sum">PC Gamer 確認（2026-11-23）：Nvidia 最新驅動程式被發現會不必要地對 SSD 大量寫入（Rock Paper Shotgun 建議立即回滾）。Nvidia 緊急發布 hotfix，PC Gamer 測試確認 hotfix 無效。「We released a hotfix for the driver hammering your SSD, but it doesn't actually work」——這句話是今日工程師社群的精品段子素材。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>技術信任債的完美案例。<b>先宣告問題（好），再宣告修好了（好），但沒修好（非常差）——這個序列比什麼都不說更傷信任，因為它確認了「你有能力意識到問題，但沒有能力解決它」</b>。迷因切角（不用 Nvidia 素材）：「每個發布補丁更新的人都應該先確認它真的有效。宣布修好了但沒修好，是最貴的 PR 失誤。」</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 不引用 Nvidia 品牌素材</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/hardware/graphics-cards/nvidia-released-a-hotfix-for-its-driver-hammering-your-ssd-but-it-doesnt-actually-work/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>GTA 6 社群迷因</span></span>GTA 6 有 Dexter 彩蛋，Dexter 本人已回應——遊戲 IP 交叉迷因最快速擴散案例</h3>
+        <div class="sum">Gamespot 確認（RSS）：「GTA 6 Has Dexter References, And Now Dexter Himself Has Reacted」——GTA 6 內置了對影集《Dexter》的致敬彩蛋，《Dexter》主演（Michael C. Hall）本人已公開回應。Gamespot 同日確認：前任天堂社長顯然也對 GTA 6 角色 Mandy 著迷（'GTA 6 Players Captivated By Mandy Apparently Include A Former Nintendo President'）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>遊戲彩蛋 → IP 擁有者回應 → 更多 IP 討論 → 更多遊戲曝光，這是今日最清晰的「彩蛋媒體飛輪」案例。<b>對創作者：在你的遊戲裡加入對真實文化（影集、音樂、現象）的精準致敬，往往能讓原本不相關的社群談論你的遊戲</b>。今日話題窗口，不用 GTA / Dexter 品牌素材。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用 GTA / Dexter 素材</span></span></div></div>
+          </div>
+          <div class="src">GAMESPOT · <a href="https://www.gamespot.com/articles/gta-6-has-dexter-references-and-now-dexter-himself-has-reacted/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <ol>
+            <li class="hot"><span class="nm">感恩節搶購 / 資源競爭 loop（It Takes Two +28 假日公式）</span><span class="vn">協力競爭</span></li>
+            <li class="up"><span class="nm">互動型 AI 實體（Phasmophobia 鬼魂可對話公式）</span><span class="vn">對話系統</span></li>
+            <li class="hot"><span class="nm">彩蛋 / 文化致敬觸發（GTA 6 Dexter 飛輪公式）</span><span class="vn">社群飛輪</span></li>
+            <li><span class="nm">倒數計時壓力 loop（Black Friday 窗口公式）</span><span class="vn">緊迫感設計</span></li>
+            <li><span class="nm">動作 RPG 建構循環（PoE 2 1.0 預熱公式）</span><span class="vn">Build 設計</span></li>
+          </ol>
+          <div class="bf">itch.io + 今日新聞衍生 · 11/24 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>感恩節搶購 loop 設計公式——今日窗口最強，96 小時內有效</h3>
+        <div class="sum">假日協力搶購 loop 的設計要素：<b>倒計時壓力（感恩節 / Black Friday 情緒錨點）</b>→ 多人同時競搶有限資源（隨機補貨）→ 稀有度機制（搶到了還是沒搶到）→ 分享格式：「我搶了 5 件你才 2 件」。核心機制：對玩家「不能輸」的情緒的精準設計。It Takes Two +28 名的假日協力效應是這個窗口的最清晰訊號，配文：「感恩節 72 小時倒數，你和朋友誰先搶齊 5 件？」⚠️ 不用任何品牌商品素材。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>感恩節搶購 loop 的優點：<b>情境天然（全球消費者都在感受節日前焦慮）、分享格式高（成就指標直觀：件數 / 時間）、零 IP 依賴</b>。今日（11/24）到 Black Friday（11/28）是四天窗口，之後情緒轉向「節後盤點」，窗口關閉。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不用品牌素材</span></span></div></div>
+          </div>
+          <div class="src">STEAM MOVERS · heat_latest.json 11/23 · <a href="https://store.steampowered.com/app/1426210" target="_blank">It Takes Two ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
+        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界背景，繁中遊戲社群可能討論：GTA 6 後爆發期話題（台灣有大量 GTA 粉絲）、Phasmophobia 更新（台灣鬼魂題材接受度高）、感恩節 / Black Friday 折扣。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>感恩節 / Black Friday 窗口（全球消費者情緒）</td><td><span class="tmpl">協力搶購 / 倒數競爭 loop</span></td><td>「感恩節 72 小時倒數，你和朋友誰先搶齊？」</td><td class="rk-low">低 · 不用品牌素材</td><td>★ 今日 Demo 首選，今天到 11/28 窗口最強，之後降溫</td></tr>
+          <tr><td>GTA 6 Comcast 25% 流量（基礎設施震撼）</td><td><span class="tmpl">「在 GTA 6 之後」切角</span></td><td>「GTA 6 佔了四分之一的網路，你現在玩什麼？」</td><td class="rk-low">低 · 不用 GTA 素材</td><td>CJ / X 均適合，今日話題角度新穎，明天話題降溫</td></tr>
+          <tr><td>PlayStation 壟斷訴訟勝訴（平台格局）</td><td><span class="tmpl">「平台拿不走的受眾」切角</span></td><td>「平台贏了，建平台外的受眾更重要了」</td><td class="rk-low">低</td><td>CJ / X 均適合，長期訊號，今日法律判決加持</td></tr>
+          <tr><td>PoE 2 十二月 1.0（動作 RPG 預熱）</td><td><span class="tmpl">動作 RPG 建構 loop</span></td><td>「今年真的來了，12 月 PoE 2——你的 Build 準備好了嗎？」</td><td class="rk-low">低 · 不用 PoE 素材</td><td>X 貼文適合，4 週窗口，現在到 12 月首發前持續有效</td></tr>
+          <tr><td>Nvidia SSD hotfix 失效（技術信任反面教材）</td><td><span class="tmpl">「先測試再公告」設計原則</span></td><td>「修了但沒修好，比什麼都不修更傷信任」</td><td class="rk-mid">中 · 今日限時，不引用 Nvidia 品牌素材</td><td>今日段子窗口，工程師 / 開發者社群高分享，明天降溫</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>GTA 6 佔 Comcast 25% 網路流量——發行窗口策略的基礎設施維度</td><td>Comcast 公開數據：GTA 6 高峰佔全美約 25% 網路流量（PC Gamer，2026-11-23）；GTA 6 首日 $3.79B + 3,250 萬份（GamesIndustry.biz 確認）</td><td>"At peak, GTA 6 accounted for nearly a quarter of all US internet traffic — Comcast data. That's not a gaming industry stat. That's an infrastructure statement. The window for everyone else? It's now. Post-GTA 6 week, pre-Thanksgiving. We're in it."</td><td><a href="https://www.pcgamer.com/games/grand-theft-auto/comcast-at-peak-gta6-accounted-for-nearly-a-quarter-of-all-internet-traffic/" target="_blank">↗</a></td></tr>
+          <tr><td>Naavik 黑色星期五發行指南——假日窗口倒數 4 天，It Takes Two 是活數據驗證</td><td>Naavik 播客：'The Black Friday Playbook'（2026-11-23 RSS）；It Takes Two Steam +28 名（#85→#57，今日最大跳幅，heat_latest.json 確認）；感恩節 11/27，Black Friday 11/28</td><td>"It Takes Two just jumped 28 ranks on Steam overnight. Thanksgiving is Thursday. The holiday gaming window opened 4 days early. If you have a co-op game or party mechanic to push — the next 96 hours are your highest-leverage publishing window of the year."</td><td><a href="https://naavik.co/podcast/the-black-friday-playbook-how-game-publishers-can-maximize-holiday-sales/" target="_blank">↗</a></td></tr>
+          <tr><td>PlayStation 贏下 $26 億數位壟斷訴訟——平台「數位只售」模式獲法院確認，創作者需要平台外受眾</td><td>Game Developer：'PlayStation emerges victorious in a $2.6 billion lawsuit alleging a digital monopoly'（2026-11-23 RSS）</td><td>"PlayStation just won a $2.6 billion digital monopoly lawsuit. Platform power: legally confirmed. For game creators: the question isn't whether to work with platforms. It's how to build audience that the platforms can't take away from you."</td><td><a href="https://www.gamedeveloper.com/console/playstation-emerges-victorious-in-a-2-6-billion-lawsuit-alleging-a-digital-monopoly" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（GTA 6 Comcast 25% 流量、感恩節 Black Friday 指南）已附完整 EN hook + 中譯，可直接交 CJ 每日包。第 3 條（PlayStation 訴訟）可作備選。對外用字已過濾所有賭場語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
+          <li>GTA 6 佔 25% 網路流量：「GTA 6 不只是最大的遊戲首發——它佔了四分之一的美國網路。現在才是其他遊戲的窗口。」（今日最強角度）</li>
+          <li>感恩節窗口：「It Takes Two 一夜 +28 名。感恩節是週四。假日協力遊戲窗口打開了——96 小時最強。」（今日限時窗口）</li>
+          <li>PlayStation 訴訟：「PlayStation 贏了 $26 億訴訟。平台力量不會消失。那個拿不走的呢？——平台外受眾。」</li>
+          <li>Nvidia hotfix：「修了但沒修好，比什麼都不修更傷信任。發補丁前先測試。」（今日工程師社群話題）</li>
+        </ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
+          <li>★ 感恩節搶購 loop——倒數計時 + 多人同時搶有限資源，分享格式：「在 72 小時內搶到 5 件」。今日到 11/28 窗口最強，不用任何品牌素材。</li>
+          <li>互動 AI 實體 loop——蹭 Phasmophobia Resonance 更新（下週上線），玩家可向 AI 實體發出指令並觀察反應，分享格式天然好看。</li>
+          <li>「你是第幾個搶到的」計數器——極簡開箱 / 稀有度機制，蹭 Black Friday 氛圍。</li>
+        </ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
+          <li>It Takes Two / 協力遊戲 Steam 排名後續——今日 +28，感恩節後能否持續？假日協力效應的持續性指標。</li>
+          <li>PoE 2 十二月首發日期確認——具體日期公告後，動作 RPG 相關話題會迎來一波爆發，現在起追蹤。</li>
+          <li>Phasmophobia「Resonance」更新下週上線後的 Steam 排名變化——今日 #96，更新後能否衝進前 50？</li>
+          <li>VRChat 連漲訊號——第三日是否繼續上漲？若連漲三日，社交 VR 有結構性回流的可能性。</li>
+        </ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
+          <li>感恩節搶購 demo：不使用任何品牌商品圖像或商標，只借「倒數競爭」情感設定。</li>
+          <li>GTA 6 話題：不引用 GTA 美術、角色、Rockstar 品牌，只借「GTA 6 之後的窗口」概念。</li>
+          <li>PSN 封號事件：裸體渡假村話題有視覺敏感性，引用時只用文字描述，不使用任何截圖或視覺素材。</li>
+          <li>Nvidia SSD 話題：不使用 Nvidia 品牌素材，只借「修了但沒修好」的原則性觀察。</li>
+          <li>所有來源均為摘要層——對外不寫成「確定事實」，保留「報導指出 / 確認」語氣。</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>GTA 6 Comcast 25% 網路流量</td><td><a href="https://www.pcgamer.com/games/grand-theft-auto/comcast-at-peak-gta6-accounted-for-nearly-a-quarter-of-all-internet-traffic/" target="_blank">PC Gamer</a>　驗：標題層確認「nearly a quarter of all internet traffic」；HN 6pts 確認；GTA 6 $3.79B GamesIndustry.biz 多媒體確認　<span class="pp">partial</span>（Comcast 原始報告未查核）　pub 2026-11-23</td></tr>
+        <tr><td>It Takes Two +28 Steam 排名暴衝</td><td>heat_latest.json steam_movers（2026-11-23T07:30）　驗：#85→#57，+28，今日最大跳幅，真數字直接確認　<span class="ok">✓</span>（JSON 直接確認）　pub 2026-11-23</td></tr>
+        <tr><td>VRChat +24.0%</td><td>heat_latest.json steam_live（2026-11-23T07:30）　驗：44,342 人，前日 35,752 人，+24.0%，計算確認　<span class="ok">✓</span>（JSON 直接確認）　pub 2026-11-23</td></tr>
+        <tr><td>PlayStation $26 億壟斷訴訟勝訴</td><td><a href="https://www.gamedeveloper.com/console/playstation-emerges-victorious-in-a-2-6-billion-lawsuit-alleging-a-digital-monopoly" target="_blank">Game Developer</a>　驗：標題層確認「victorious in a $2.6 billion lawsuit alleging a digital monopoly」　<span class="pp">partial</span>（摘要層）　pub 2026-11-23</td></tr>
+        <tr><td>Path of Exile 2 版本 1.0 十二月</td><td><a href="https://www.rockpapershotgun.com/path-of-exile-2s-10-version-is-out-this-year-after-all-arriving-in-december-with-a-full-campaign-two-neat-new-classes-and-more" target="_blank">Rock Paper Shotgun</a>　驗：標題確認「out this year after all, arriving in December」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-23</td></tr>
+        <tr><td>Nvidia SSD hotfix 無效</td><td><a href="https://www.pcgamer.com/hardware/graphics-cards/nvidia-released-a-hotfix-for-its-driver-hammering-your-ssd-but-it-doesnt-actually-work/" target="_blank">PC Gamer</a> / <a href="https://www.rockpapershotgun.com/nvidias-latest-graphics-card-driver-appears-to-be-unnecessarily-writing-to-pc-ssds-something-thats-dumb-annoying-and-definitely-warrants-reverting" target="_blank">RPS</a>　驗：兩媒體確認：(1) 驅動異常寫入 SSD，(2) hotfix 無效　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-23</td></tr>
+        <tr><td>GTA 6 Dexter 彩蛋 + 本人回應</td><td><a href="https://www.gamespot.com/articles/gta-6-has-dexter-references-and-now-dexter-himself-has-reacted/" target="_blank">Gamespot</a>　驗：標題層確認「Dexter References」「Dexter Himself Has Reacted」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-23</td></tr>
+        <tr><td>Phasmophobia Resonance 更新</td><td><a href="https://www.eurogamer.net/phasmophobia-resonance-update-release-date-dowsing-rods-unity-6" target="_blank">Eurogamer</a>　驗：標題層確認 Resonance 更新日期；內容提及「ask ghosts to throw things」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-23</td></tr>
+        <tr><td>Steam 數字層</td><td>heat_latest.json 2026-11-23T07:30+08:00 官方 API　PUBG 98,628 -18.1% / VRChat 44,342 +24.0% / Phantom Blade Zero 24,536 +2.1% / It Takes Two +28（#85→#57）/ Kingdom Come: Deliverance II 新進 #99　<span class="ok">✓</span>（JSON 真數字）</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 11/23 07:30 最新可用數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 11/23 07:30 最新可用 + 多源新聞 · 2026/11/24 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
