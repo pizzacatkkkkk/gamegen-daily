@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/11/27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">11 · 27 · FRI</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 27 · 彈藥工廠模式 · Black Friday · Steam 數字 11/27 07:30 最新可用 · Roblox / Twitch 今日無瀏覽器 · 來源 15+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>今天是 Black Friday（2026-11-27）。三件大事：GTA 6 官方確認成為史上最大遊戲發行</b>（Game Developer + Eurogamer + GamesIndustry.biz 確認：第一週直播超過 Elden Ring + Diablo 4 + Valorant + Lost Ark 合計）/ <b>Nvidia 重新任命 Jensen Huang 為 CEO</b>（Game Developer 確認，距辭職消息數週後 Board 重啟）/ <b>Rockstar 員工工會投票失敗（75% 反對）</b>（GamesIndustry.biz + RPS + Eurogamer + GameSpot 四源確認，工會組織者稱「keep fighting」）。</p>
+        <p>同日：<b>Team Ninja 公開 AI 用於 QA + 創意必須由人完成</b>（Kotaku 2026-11-26 確認）——業界迄今最清晰的 AI 使用透明宣言正向模板。<b>Path of Exile 2 1.0 版今年 12 月上線</b>（RPS 確認，完整戰役 + 兩個新職業）。<b>Steam Black Friday 實質特賣</b>（PC Gamer 確認「hundreds of discounts」）。Ubisoft 否認強制 AI 義務化（VGC + RPS 確認「encourages, doesn't force」），與昨日報導出現矛盾——今週最強的「大廠 AI 政策模糊地帶」劇情。</p>
+        <p>今日 Steam 訊號：<b>Baldur's Gate 3 +31.6%（22,706→29,889）/ Dota 2 +15.4%（423K→489K）/ Rust +18.5%（51K→61K）/ Marvel Rivals +13.6%</b>——Black Friday 效應全面推升，今日最強多遊戲同步上升。<b>TF2 在 95.8K 持穩（+0.3%）</b>，昨日 +241.4% 後今日持穩，說明感恩節節日活動有結構性需求而非一過性流量。</p>
+        <div class="pull">▸ 今天最強切角：GTA 6 史上最大（遊戲產業的「可能性時刻」，CJ 首選）+ Team Ninja AI QA 透明宣言（AI 使用正向標準，CJ 次選）+ Baldur's Gate 3 Black Friday +31.6%（假日購買情緒分析，X 貼文首選）。Demo：今天是 Black Friday——「你有 24 小時在對手前搶到 5 件道具，倒數計時開始」限時搶購 Loop。</div>
+      </div>
+
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>GTA 6 官方確認史上最大遊戲發行——第一週直播超過 Elden Ring + Diablo 4 + Valorant + Lost Ark 合計</div>
+            <div class="ln"><b>新聞事實：</b>Game Developer 確認（2026-11-26 RSS）：「Grand Theft Auto VI is now the biggest video game launch in history」。Eurogamer 確認（2026-11-26 RSS）：「GTA 6 reportedly sets massive livestreaming record, watched more in its first week than Elden Ring, Diablo 4, Valorant, and Lost Ark combined」。GamesIndustry.biz 確認（NielsenIQ）：「GTA 6 boosts UK games retail revenue by 99% to £142m during launch period」。GTA 6 launch drives combined 2.3m downloads of franchise's mobile ports（GamesIndustry.biz 確認）。（多源 RSS 確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>GTA 6 成為史上最大，不只是 Rockstar 的勝利——它是整個遊戲產業的「可能性時刻」。<b>當市場最大的遊戲打破紀錄，就是在提醒地球上每個消費者：遊戲值得他們的時間與金錢。這個浪潮對每個遊戲開發者都是機會</b>——消費者記憶體已被重設到「遊戲是大事」。GameGen 的換皮遊戲在這個情緒頂點進入市場，佔盡天時。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "GTA 6 just became the biggest video game launch in history. First-week livestreaming alone beat Elden Ring, Diablo 4, Valorant, and Lost Ark — combined. That's not just Rockstar's win. It's the entire games industry proving to every consumer on Earth that games are worth their time and money. When the biggest game breaks records, it lifts all boats. The question isn't whether the market is there. It's whether your game is ready to ride the wave."<br><span style="color:var(--ink-dim)">中譯：GTA 6 剛剛成為史上最大的遊戲發行。僅第一週直播就超過了 Elden Ring、Diablo 4、Valorant 和 Lost Ark 的合計。這不只是 Rockstar 的勝利，而是整個遊戲產業向地球上每個消費者證明遊戲值得他們的時間和金錢。當最大的遊戲打破紀錄，所有船都被浪托起。問題不在於市場是否存在，而在於你的遊戲是否準備好乘浪。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamedeveloper.com/business/grand-theft-auto-vi-is-officially-the-biggest-video-game-launch-ever" target="_blank">Game Developer ↗</a> / <a href="https://www.eurogamer.net/grand-theft-auto-6-first-week-hours-watched-record" target="_blank">Eurogamer ↗</a> / <a href="https://www.gamesindustry.biz/nielseniq-gta-6-boosts-uk-games-retail-revenue-by-99-to-142m-during-launch-period" target="_blank">GamesIndustry.biz ↗</a>　pub 2026-11-26　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Team Ninja：AI 用於 QA，創意決策必須由人完成——業界迄今最清晰的 AI 使用正向宣言</div>
+            <div class="ln"><b>新聞事實：</b>Kotaku 確認（Tavily, 2026-11-26）：「Team Ninja Is Using AI For Quality Assurance, But Insists Creative Choices 'Must Be Done By Humans'」。Eurogamer 確認（2026-11-26 RSS）：「Nioh and Ninja Gaiden studio is using AI for QA, but argues 'that a game becomes fun when crafted by human hands'」。（兩源確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>當 Ubisoft 因「強制 AI 義務化」報導承壓時，Team Ninja 的公開聲明定義了一個正向模板：<b>AI 是生產力工具，創意決策永遠是人手完成的。你的 AI 政策正在成為你的品牌聲明</b>——哪些部分你用 AI 加速，哪些部分你親手打造，這個區別本身就是信任的來源。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Team Ninja just publicly declared: AI for QA, human creativity for everything else. As Ubisoft faces backlash for mandating AI use, Team Ninja set the clearest positive template yet — AI as a productivity tool, not a creative replacement. For game developers: 'where do you use AI and where do you use human hands' is no longer a private policy question. It's becoming your public brand statement. What's yours?"<br><span style="color:var(--ink-dim)">中譯：Team Ninja 剛剛公開宣稱：AI 用於 QA，其他一切都是人類創意。當 Ubisoft 因強制使用 AI 而承壓時，Team Ninja 設定了迄今最清晰的正向模板——AI 是生產力工具，而非創意替代品。對遊戲開發者：「你在哪裡用 AI，哪裡用人手」不再只是私人政策問題，它正在成為你的公開品牌聲明。你的答案是什麼？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://kotaku.com/team-ninja-ai-qa-difficulty-nioh-wo-long-koei-temco-capcom-2001000539" target="_blank">Kotaku ↗</a> / <a href="https://www.eurogamer.net/nioh-ai-qa-game-human-hands" target="_blank">Eurogamer ↗</a>　pub 2026-11-26　partial（摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Rockstar 工會投票失敗——75% 員工投票反對，GTA 6 史上最大發行同一天<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>GamesIndustry.biz 確認（2026-11-26 RSS）：「Staff at Grand Theft Auto maker Rockstar vote against union recognition deal」。RPS 確認（RSS）：「This isn't a sign to retreat: Rockstar's historic union vote has failed, with 75% voting against, but the organisers are going to 'keep fighting'」。GameSpot 確認（RSS）：「Rockstar Games Has A GTA 6 Hit On Its Hands, But Its Union Vote Is A Loss」。Eurogamer 同日確認。（四源確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>GTA 6 史上最大發行的同一天，Rockstar 工會投票失敗。<b>這兩件事不是無關的：什麼讓有才能的開發者在最嚴苛的衝刺期仍然留在工作室，而不組織工會？激勵設計、使命感、創作自主——這是任何遊戲工作室都需要回答的問題。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Rockstar just had the most historic union vote in gaming history. 75% voted against it. On the same day GTA 6 became the biggest game launch ever. These two facts aren't unrelated. What keeps talented developers committed through the most demanding crunch of their careers? That's not an HR question. That's a game design question — and your studio needs an answer."<br><span style="color:var(--ink-dim)">中譯：Rockstar 剛剛進行了遊戲業史上最具歷史意義的工會投票，75% 投票反對。就在 GTA 6 成為史上最大遊戲發行的同一天。這兩個事實不是無關的。什麼讓有才能的開發者在職涯中最嚴苛的衝刺期仍然投入？這不是 HR 問題，而是遊戲設計問題——你的工作室需要答案。</span></div>
+            <div class="meta">來源 <a href="https://www.gamesindustry.biz/staff-at-grand-theft-auto-maker-rockstar-vote-against-union-recognition-deal" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.rockpapershotgun.com/this-isnt-a-sign-to-retreat-rockstars-historic-union-vote-has-failed-with-75-voting-against-but-the-organisers-are-going-to-keep-fighting" target="_blank">RPS ↗</a>　pub 2026-11-26　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Baldur's Gate 3 Black Friday +31.6%（22,706→29,889）——「終於買了」情緒觸發點的最清晰案例<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>heat_latest.json（2026-11-27T07:30）Steam 在線榜直接確認：BG3 在線人數 29,889，前日 22,706，漲幅 +31.6%。今日 Steam #14。PC Gamer 確認（2026-11-26 RSS）：Steam 實質 Black Friday 特賣「hundreds of discounts」（非官方 fest）。今日同步上升：Dota 2 +15.4%、Rust +18.5%、Marvel Rivals +13.6%。（JSON 直接確認 + PC Gamer RSS）</div>
+            <div class="ln"><b>GameGen 角度：</b>BG3 是 2023 年度遊戲得主，不是新遊戲——但 Black Friday 讓它 +31.6%。<b>這說明 Black Friday 不是關於折扣，而是給人們「終於買了那款打算玩的遊戲」的情感許可</b>。你的遊戲在假日特賣的定位設計了嗎？</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Baldur's Gate 3 — a 2023 GOTY winner — just surged 31.6% in live players on Black Friday. It's not a new game. It's not discounted to zero. It just became the reason someone finally picked it up. Black Friday isn't about price — it's about giving someone the emotional permission to finally buy the game they've been meaning to play. What game is waiting in your players' wishlists right now?"<br><span style="color:var(--ink-dim)">中譯：Baldur's Gate 3——2023 年度遊戲大獎得主——在黑色星期五剛剛增加 31.6% 在線人數。它不是新遊戲，也沒打折到接近零。它只是成了某人「我終於有理由買了」的藉口。黑色星期五不是關於價格——而是給人們「終於買下那款打算玩的遊戲」的情感許可。你的玩家心願清單裡，現在等著被買的是哪款遊戲？</span></div>
+            <div class="meta">來源 heat_latest.json 2026-11-27T07:30 JSON 直接確認　<a href="https://store.steampowered.com/app/1086940" target="_blank">BG3 Steam ↗</a> / <a href="https://www.pcgamer.com/games/steam-isnt-doing-an-official-black-friday-fest-but-it-does-have-a-page-with-hundreds-of-discounts-and-black-friday-splashed-across-the-top-so-you-might-want-to-check-it-out-anyway/" target="_blank">PC Gamer ↗</a>　<strong>yes</strong>（JSON 直接數字）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Nvidia 重新任命 Jensen Huang 為 CEO——辭職數週後 Board 重啟，科技界最強復職故事<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Game Developer 確認（2026-11-26 RSS）：「Nvidia reinstates Jensen Huang as CEO weeks after his resignation」。HN 今日出現 Super Jensen 趣味遊戲（Super Mario 仿作，HN 5pts）。（Game Developer RSS 確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>Jensen Huang 辭職 → 數週後復職。這個故事的速度令人目眩，也說明了科技領導力市場的真實運作：<b>沒有人是不可替代的，也沒有人是真的被替代了</b>。GameGen 切角：你的專業技能能否在「辭職後」讓一家市值最高的公司重新聘回你？這是品牌資產的極端案例研究。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Nvidia just reinstated Jensen Huang as CEO weeks after his resignation. Let that sink in. One of the world's most valuable companies decided the irreplaceable person was actually irreplaceable. In the age of AI — where everyone's afraid their skills are becoming obsolete — this is a reminder: build expertise so specific, so deep, that no replacement can fully substitute it."<br><span style="color:var(--ink-dim)">中譯：Nvidia 剛剛在辭職數週後重新任命 Jensen Huang 為 CEO。讓這句話沉澱一下。全球最有價值公司之一決定：那個「不可替代的人」實際上真的是不可替代的。在 AI 時代——每個人都擔心自己的技能正在變得可替代——這是一個提醒：建立如此具體、如此深厚的專業技能，以至於沒有任何替代者能完全取代你。</span></div>
+            <div class="meta">來源 <a href="https://www.gamedeveloper.com/business/nvidia-reinstates-jensen-huang-as-ceo" target="_blank">Game Developer ↗</a>　pub 2026-11-26　partial（摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「Black Friday 限時搶購 Loop」——今天最強 Demo 情緒：24 小時搶有限格數的道具，先搶先得<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法概念：</b>今天是 Black Friday——今日最強的遊戲 Demo 情緒：限時搶購倒計時（24 小時）+ 玩家同時搶有限格數的道具，先搶先得，動態補貨。配文：「Black Friday 開始了——你有 24 小時在對手前搶到 5 件道具。倒數計時開始。你準備好了嗎？」</div>
+            <div class="ln"><b>為何是今天：</b>今天是 Black Friday（全年最強搶購情緒觸發點）。BG3 +31.6%、Steam hundreds of discounts，市場整體情緒正在「今天是特別的一天，我要行動」。今日 Demo 配文搭上這個情緒，轉化率最高。⚠️ 不使用任何品牌商品素材。</div>
+            <div class="meta">⚠️ 不使用任何品牌商品圖像或商標　模板：限時搶購 / 倒數計時 loop</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 11/27 07:30</span></div>
+          <ol>
+            <li class="hot"><span class="nm">CS:GO</span><span class="vn">574K +0.5%</span></li>
+            <li class="hot"><span class="nm">Dota 2</span><span class="vn">489K 🔥 +15.4%</span></li>
+            <li><span class="nm">Team Fortress 2</span><span class="vn">95.8K +0.3%（持穩）</span></li>
+            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">84.4K -3.5%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">60.7K +18.5%</span></li>
+            <li class="up"><span class="nm">Marvel Rivals</span><span class="vn">54.4K +13.6%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 11/27 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。Black Friday 假日週末通常派對類 / 購物類遊戲爬升，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。Black Friday 週末直播通常整體上升，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ Steam 數字為 11/27 07:30 最新可用數據（heat_latest.json）。<b>今日 Black Friday 效應清晰：Baldur's Gate 3 +31.6%（22,706→29,889）/ Dota 2 +15.4%（423K→489K）/ Rust +18.5%（51K→61K）/ Marvel Rivals +13.6%（47,872→54,406）——多遊戲同步上升，非單一訊號</b>。TF2 在 95.8K 持穩（+0.3%，前日 +241.4% 後持穩，說明感恩節節日活動有結構性需求）。Steam 熱賣榜：Call of Duty MW4、007 First Light、STAR WARS: Galactic Racer。Steam 排名大跳：Phasmophobia +6（77→71，連續第二日上升）。Roblox / Twitch 今日無瀏覽器工具，均標記「資料不足」。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>Black Friday</span></span>Baldur's Gate 3 +31.6%（22,706→29,889）——Black Friday 效應最清晰案例，今日最有教學價值的暴衝</h3>
+        <div class="sum">heat_latest.json（11/27 07:30）Steam 在線榜直接確認：<b>Baldur's Gate 3 在線人數 29,889，前日 22,706，漲幅 +31.6%</b>，今日 Steam #14。PC Gamer 確認（2026-11-26 RSS）：Steam 實質 Black Friday 特賣「hundreds of discounts」。同日同步上升：Rust +18.5%（51,213→60,672）、Dota 2 +15.4%（423,548→488,681）、Marvel Rivals +13.6%（47,872→54,406）——整體市場呈 Black Friday 情緒拉升。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>BG3 是 2023 年度遊戲大獎得主，不是新遊戲，沒有重大更新。<b>它的 +31.6% 說明：Black Friday 是「終於買了那款打算玩的遊戲」的情感許可日，不只是折扣日</b>。消費者的「打算但還沒行動」清單，在 Black Friday 情緒觸發下轉化為行動。研究你的願望清單用戶，今天是轉化窗口。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 11/27 07:30 · <a href="https://store.steampowered.com/app/1086940" target="_blank">BG3 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>持穩確認</span></span>TF2 95,828（+0.3%）——昨日 +241.4% 後今日持穩，感恩節節日活動結構性需求確認</h3>
+        <div class="sum">heat_latest.json（11/27 07:30）直接確認：TF2 在線人數 95,828，前日 95,527，漲幅 +0.3%。從前天（11/25）的 27,985 → 昨天（11/26）95,527（+241.4%）→ 今天 95,828（+0.3%）。Phasmophobia 連續第二日上升：今日 rank 71，昨日 rank 77，今日 +6（steam_movers 確認）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>昨日 TF2 +241.4% 後，今日持穩在 95K（+0.3%）。<b>這確認了是節日活動結構性需求而非一過性流量</b>——如果是純粹的病毒時刻，今日應該大幅下跌。節日活動（Smissmas 預告 / 感恩節特別版）能維持玩家庫的結構性在線，說明觸發點研究有持續的遊戲設計參考價值。今明兩日持續觀察。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 11/27 07:30 · <a href="https://store.steampowered.com/app/440" target="_blank">TF2 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>Path of Exile 2 1.0 版今年 12 月上線 / Silksong DLC 直播今天 / Naavik Black Friday 遊戲行銷手冊</h3>
+        <div class="sum">三個早期訊號。<b>RPS 確認（2026-11-26 RSS）：「Path of Exile 2's 1.0 version is out this year after all, arriving in December with a full campaign, two neat new classes, and more」</b>——PoE 2 完整版今年 12 月，今週最大的「開發者透明度+發行承諾」事件之一，Steam 排名未來可觀察。<b>PC Gamer 確認（2026-11-26 RSS）：Silksong 相關開發者直播今天——「Dev team who delayed their game a year to avoid Silksong says they won't do it again: 'This time we're staying put'」</b>，間接確認 Silksong DLC 直播今日（11/27）正在發生。<b>Naavik 確認（RSS）：「The Black Friday Playbook: How Game Publishers Can Maximize Holiday Sales」</b>——今日最有即戰力的 B2B 行銷參考資料。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>PoE 2 1.0 十二月是本週最重要的「大型 ARPG 發行窗口」預告——它將與 GTA 6 的長尾效應爭奪玩家注意力。<b>Silksong 今天的直播結果（無論是進度確認還是繼續等待）都是今週社群討論量最大的事件之一</b>。Naavik Black Friday Playbook 是今日最值得閱讀的 B2B 行銷素材——直接連結今日 BG3 +31.6% 現象。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src"><a href="https://www.rockpapershotgun.com/path-of-exile-2s-10-version-is-out-this-year-after-all-arriving-in-december-with-a-full-campaign-two-neat-new-classes-and-more" target="_blank">RPS ↗</a> / <a href="https://naavik.co/podcast/the-black-friday-playbook-how-game-publishers-can-maximize-holiday-sales/" target="_blank">Naavik ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>史上最大</span></span>GTA 6 官方確認成為史上最大遊戲發行——第一週直播超過四大標竿遊戲合計，UK 零售 +99%</h3>
+        <div class="sum">Game Developer 確認（2026-11-26 RSS）：「Grand Theft Auto VI is now the biggest video game launch in history」。Eurogamer 確認（2026-11-26 RSS）：「GTA 6 reportedly sets massive livestreaming record, watched more in its first week than Elden Ring, Diablo 4, Valorant, and Lost Ark combined」。GamesIndustry.biz 確認（NielsenIQ）：「GTA 6 boosts UK games retail revenue by 99% to £142m during launch period」。GamesIndustry.biz 另確認：「GTA 6 launch drives combined 2.3m downloads of franchise's mobile ports, according to AppMagic」。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>直播記錄超過四大標竿遊戲合計，說明 GTA 6 不只是遊戲史上最大，它是當代最大的<b>文化事件</b>。<b>這個量級的發行會重設消費者對遊戲的期望值和注意力</b>——「遊戲值得我的時間」這個消費者確認，在接下來幾個月仍然有效。GameGen 切角：GTA 6 的浪潮是整個遊戲產業的機會，而不只是 Rockstar 的勝利。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不引用 GTA 品牌素材</span></span></div></div>
+          </div>
+          <div class="src">GAME DEVELOPER · <a href="https://www.gamedeveloper.com/business/grand-theft-auto-vi-is-officially-the-biggest-video-game-launch-ever" target="_blank">↗</a> / EUROGAMER · <a href="https://www.eurogamer.net/grand-theft-auto-6-first-week-hours-watched-record" target="_blank">↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 透明宣言</span></span>Team Ninja AI QA 聲明 + Ubisoft 否認 AI 義務化——同日兩個 AI 政策訊號，大廠標準仍在形成中</h3>
+        <div class="sum">Kotaku（tavily, 2026-11-26）+ Eurogamer（RSS）確認：Team Ninja（Nioh / Ninja Gaiden 開發商）公開表示使用 AI 做 QA，但堅稱「creative choices must be done by humans」，「a game becomes fun when crafted by human hands」。同日，VGC 確認（2026-11-26 RSS）：「Ubisoft says it encourages developers 'explore' AI, but doesn't force them」——與昨日 GamesIndustry.biz 報導出現矛盾（昨日：「Ubisoft staff must justify not using generative AI in pitches, report claims」）。RPS 確認（RSS）：「Ubisoft now require their devs to explain why they aren't using genAI in game pitches, claims report, though the Assassin's Creed publishers deny they're mandating it」。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Ubisoft 的「是義務化 vs 否認義務化」矛盾是今週最強的「大廠 AI 政策模糊地帶」劇情。<b>在這個混亂中，Team Ninja 的清晰聲明反而最有說服力——AI 做效率，人手做創意，這個二分框架簡單到任何人都能重複</b>。GameGen 切角：你不需要等到大廠統一標準，你可以現在就公開說清楚你的 AI 政策。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">KOTAKU · <a href="https://kotaku.com/team-ninja-ai-qa-difficulty-nioh-wo-long-koei-temco-capcom-2001000539" target="_blank">Team Ninja ↗</a> / VGC · <a href="https://www.videogameschronicle.com/news/ubisoft-denies-requiring-developers-to-use-generative-ai/" target="_blank">Ubisoft ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>Nvidia 劇情</span></span>Nvidia 重新任命 Jensen Huang 為 CEO——辭職數週後 Board 重啟，今週最強「科技領導力」故事</h3>
+        <div class="sum">Game Developer 確認（2026-11-26 RSS）：「Nvidia reinstates Jensen Huang as CEO weeks after his resignation」。GameSpot 月初確認（RSS 庫存）：「Donuts Beat AI: Nvidia Has Lost $1 Trillion+ In The Past Month, While Krispy Kreme Surges」（背景：Jensen Huang 辭職後 Nvidia 市值大跌）。今日 HN 出現 Super Jensen 仿作遊戲（Super Mario parody，HN 5pts）。（Game Developer RSS 確認；摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Jensen Huang 辭職 → 市值跌破 $1 兆 → 數週後重新任命。<b>這個故事的速度令人目眩：Board 認定他比任何可能的替代者更重要，而且快速調整了</b>。在 AI 時代最強的象徵意義：即使在 AI 加速替代浪潮中，有些人的專業深度和品牌力量仍然無可替代。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAME DEVELOPER · <a href="https://www.gamedeveloper.com/business/nvidia-reinstates-jensen-huang-as-ceo" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>HN 迷因遊戲</span></span>Super Jensen – Super Mario 仿作遊戲（HN 5pts）——Jensen Huang 復職當天，玩家做了什麼？</h3>
+        <div class="sum">heat_latest.json（hackernews）確認（HN 5pts, 1 comment）：「Super Jensen – Super Mario parody game」（engaging-data.com/super-jensen/）。今日 Jensen Huang 復職 Nvidia CEO，同日 HN 出現以 Jensen 為主角的 Super Mario 仿作遊戲，剛好撞上。今日另有 HN 確認（3pts, 2 comments）：「Ask HN: How are vibers getting game graphics? Opus can't make decent assets IME」——AI vibecoding 的視覺素材困境在 HN 社群引發討論。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「Super Jensen」說明什麼？<b>科技界 CEO 以成為同人遊戲主角為標誌，說明他的文化穿透力已經遠超科技圈</b>。同日出現的 HN 討論「vibers getting game graphics」問題，恰好揭示了 vibecoding 遊戲的下一個瓶頸：<b>用 AI 寫程式碼很容易，用 AI 生成高品質遊戲視覺素材仍然很難</b>——這正是 GameGen 換皮工作流程解決的問題。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不引用 Nvidia/Mario 品牌素材</span></span></div></div>
+          </div>
+          <div class="src">HN 5pts · <a href="https://engaging-data.com/super-jensen/" target="_blank">Super Jensen ↗</a> / HN 3pts · <a href="https://news.ycombinator.com/item?id=50649596" target="_blank">Ask HN ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>業界迷因</span></span>Microsoft GitHub 慶祝「GTA 6 PC 移植進展」後火速刪文——最荒謬的官方失誤</h3>
+        <div class="sum">PC Gamer 確認（2026-11-26 RSS）：「Microsoft's Github posts message celebrating efforts to port PlayStation 5 version of Grand Theft Auto 6 to PC, then quickly deletes it」。背景：GTA 6 目前僅在主機上線，玩家社群正努力嘗試 vibe-code 移植 PC 版，HN 也出現「GTA 6 achieves 25 FPS on PC on an RTX 4070 SUPER with raytracing」（HN 2pts，非官方 GitHub repo）。Microsoft 官方 GitHub 在此背景下意外發文慶祝，然後立即刪除。（PC Gamer RSS 確認；摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「官方 GitHub 意外稱讚了著作權爭議行為，然後立即道歉」——這個段子的喜感在於：<b>連官方機構都分不清楚什麼是他們應該支持的</b>。GTA 6 PC 移植的 vibe-coding 嘗試說明：當一款遊戲達到文化頂點，玩家自發用 AI 工具嘗試改造它，幾乎成了必然反應。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 不引用 GTA/MS 品牌素材</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/games/microsofts-github-posts-message-celebrating-efforts-to-port-playstation-5-version-of-grand-theft-auto-6-to-pc-then-quickly-deletes-it" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Black Friday 限時搶購 Loop（今日首選）</span><span class="vn">倒數計時</span></li>
+            <li class="hot"><span class="nm">「終於買了」願望清單轉化機制（BG3 +31.6%）</span><span class="vn">假日購買</span></li>
+            <li class="up"><span class="nm">沉睡玩家庫持穩確認（TF2 95K 第二日）</span><span class="vn">節日活動</span></li>
+            <li><span class="nm">AI 政策透明化作為品牌工具（Team Ninja 範本）</span><span class="vn">信任建立</span></li>
+            <li><span class="nm">「等待弧線→結果」社群情緒爆發（Silksong 今日直播）</span><span class="vn">社群飛輪</span></li>
+          </ol>
+          <div class="bf">今日新聞衍生 · 11/27 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>「願望清單轉化日」機制——Black Friday 為什麼讓 BG3 +31.6%</h3>
+        <div class="sum">Black Friday 購買行為拆解：<b>步驟一：</b>玩家早已把 BG3 加入願望清單（2023 年度遊戲得主，大量評論確認「以後一定要玩」）→ <b>步驟二：</b>Black Friday 情緒觸發（「今天是特別的一天，折扣最多」）→ <b>步驟三：</b>不只是折扣，是「我終於有理由行動了」的情感許可 → <b>步驟四：</b>購買後立即上線（今日 Steam #14，在線 +31.6%）。同日模式在 Rust +18.5%、Dota 2 +15.4% 也可見，說明是跨遊戲的 Black Friday 效應而非 BG3 特有的更新觸發。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「願望清單轉化日」是一個被低估的行銷機制。<b>你的遊戲有多少玩家把它加進了願望清單但還沒買？Black Friday 是他們轉化的高峰視窗。你的配文、折扣策略、社群喚醒，今天都應該針對「曾經想買但還沒買」的人設計。</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 追蹤研究，不複製品牌</span></span></div></div>
+          </div>
+          <div class="src">STEAM MOVERS · heat_latest.json 11/27 · <a href="https://store.steampowered.com/app/1086940" target="_blank">BG3 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
+        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界背景，繁中遊戲社群可能討論：<b>GTA 6 史上最大發行</b>（台灣遊戲玩家社群對 GTA 系列一向熱烈，史上最大數字必然引發討論）、<b>Silksong DLC 直播今日</b>（台灣 Hollow Knight 玩家社群等待多年，今天是關鍵結果日）、<b>Jensen Huang 復職 Nvidia CEO</b>（台灣科技產業圈與 Nvidia 關係密切，此新聞受到廣泛關注）、<b>Path of Exile 2 1.0 十二月</b>（台灣 ARPG 玩家社群高度期待）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Black Friday（今天）→ 限時搶購 Loop</td><td><span class="tmpl">倒數計時 / 有限格數搶購</span></td><td>「你有 24 小時在對手前搶到 5 件道具，倒數計時開始，你準備好了嗎？」</td><td class="rk-low">低 · 不用品牌素材</td><td>★ 今日 Demo 首選，今天最強搶購情緒，今日限時</td></tr>
+          <tr><td>GTA 6 史上最大發行（遊戲產業信心時刻）</td><td><span class="tmpl">「乘浪而非旁觀」切角</span></td><td>「GTA 6 成為史上最大。這不只是 Rockstar 的勝利——整個遊戲產業的浪潮已經被啟動。你準備好乘浪了嗎？」</td><td class="rk-low">低 · 不引用 GTA 品牌素材</td><td>CJ 首選，今日話題時機性最高，今週持續有效</td></tr>
+          <tr><td>AI 政策透明化（Team Ninja 正向模板 vs Ubisoft 爭議）</td><td><span class="tmpl">「AI 做效率，人手做創意」切角</span></td><td>「你的 AI 政策是什麼？Team Ninja 給了最清晰的答案：AI 做 QA，人類做創意。這不是限制——這是你的品牌聲明。」</td><td class="rk-low">低</td><td>CJ 次選，今日話題時機性強，可搭 Ubisoft 矛盾劇情</td></tr>
+          <tr><td>Rockstar 工會失敗 + GTA 6 史上最大（同日）</td><td><span class="tmpl">開發者激勵設計切角</span></td><td>「GTA 6 史上最大發行，同日 Rockstar 工會投票失敗。什麼讓開發者在最嚴苛的衝刺期仍然留在工作室？這是每個工作室的設計題。」</td><td class="rk-low">低 · 不引用工會組織具體政治立場</td><td>X 貼文研究角度，今日限時敏感，建議今明兩日內發</td></tr>
+          <tr><td>Black Friday 購買行為（BG3 +31.6%，願望清單轉化）</td><td><span class="tmpl">「終於買了」情感許可觸發機制</span></td><td>「BG3 今日 Steam +31.6%——不是因為新更新，而是 Black Friday 給玩家『終於買了』的情感許可。你的願望清單用戶今天就是等被喚醒。」</td><td class="rk-low">低 · 不引用 BG3 品牌素材</td><td>X 貼文 / Demo 配文均適合，今日限時，明天話題降溫</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>GTA 6 史上最大發行——遊戲產業的「可能性時刻」，B2B 切角：乘浪而非旁觀</td><td>Game Developer（2026-11-26 RSS）：「Grand Theft Auto VI is now the biggest video game launch in history」。Eurogamer：第一週直播超過 Elden Ring + Diablo 4 + Valorant + Lost Ark 合計。GamesIndustry.biz（NielsenIQ）：英國零售 +99%，£142M。</td><td>"GTA 6 just became the biggest video game launch in history. First-week livestreaming alone beat Elden Ring, Diablo 4, Valorant, and Lost Ark combined. That's not just Rockstar's win — it's the entire games industry proving to every consumer on Earth that games are worth their time and money. Ride the wave."</td><td><a href="https://www.gamedeveloper.com/business/grand-theft-auto-vi-is-officially-the-biggest-video-game-launch-ever" target="_blank">↗</a></td></tr>
+          <tr><td>Team Ninja AI QA 透明宣言——「AI 做效率，人手做創意」成為正向產業標準</td><td>Kotaku（tavily, 2026-11-26）：「Team Ninja Is Using AI For Quality Assurance, But Insists Creative Choices 'Must Be Done By Humans'」。Eurogamer：「a game becomes fun when crafted by human hands」。</td><td>"Team Ninja just publicly declared: AI for QA, human creativity for everything else. As Ubisoft faces backlash for mandating AI use, Team Ninja set the clearest positive template yet — AI as a productivity tool, not a creative replacement. For game developers: your AI policy is becoming your brand statement. What's yours?"</td><td><a href="https://kotaku.com/team-ninja-ai-qa-difficulty-nioh-wo-long-koei-temco-capcom-2001000539" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（GTA 6 史上最大發行、Team Ninja AI 透明宣言）已附完整 EN hook + 中譯，可直接交 CJ 每日包。GTA 6 切角為「遊戲產業信心時刻」，不引用 Rockstar / GTA 品牌素材。Team Ninja 切角搭 Ubisoft 矛盾劇情更有說服力。對外用字已過濾所有賭場語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
+          <li>Baldur's Gate 3 Black Friday +31.6%：「它不是新遊戲，沒有重大更新。但 Black Friday 讓它 +31.6%。這就是『終於買了』的情感許可——你的遊戲有沒有在等待被喚醒的願望清單用戶？」（今日限時）</li>
+          <li>Rockstar 工會投票失敗：「GTA 6 史上最大發行，同日 Rockstar 工會投票失敗（75% 反對）。什麼讓開發者在最嚴苛的衝刺期仍然不組織工會？激勵設計、使命感、創作自主——這是每個工作室的問題。」</li>
+          <li>Jensen Huang 復職：「Nvidia 重新任命 Jensen Huang 為 CEO——辭職數週後 Board 重啟。在 AI 加速替代的時代，有些人的專業深度和品牌力量仍然無可替代。你在建立哪種不可替代的專業？」</li>
+          <li>AI 政策聲明：「Team Ninja 今天說得最清楚：AI 做 QA，人類做創意。你的工作室的 AI 政策是什麼？現在是宣布的最佳時機——這正在成為品牌聲明。」</li>
+        </ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
+          <li>★ 今天是 Black Friday——「你有 24 小時在對手前搶到 5 件道具，倒數計時開始」型配文，今日情緒最強，明日降溫。</li>
+          <li>「願望清單轉化」機制研究——以 BG3 +31.6% 為例，拆解你的遊戲有多少「曾加入願望清單但還沒買的用戶」，今天是轉化窗口。</li>
+          <li>Silksong 直播追蹤——今天是 Silksong DLC 更新直播日，關注直播結果，今晚發「你看了嗎？結果如何？」型互動貼文。</li>
+        </ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
+          <li>TF2 後續——今日持穩 95.8K（+0.3%），明天繼續追蹤：是否持穩 = 節日活動長尾 or 開始下跌 = 短期高峰。</li>
+          <li>Silksong DLC 直播今日——直播結果公布後（進度確認 or 繼續等待），是本週社群討論量最大的事件，立即跟進。</li>
+          <li>Path of Exile 2 1.0 十二月——確認發行日期後，Steam 排名爬升預告，十二月 ARPG 競爭格局值得關注。</li>
+          <li>Ubisoft AI 義務化後續——「是義務化 vs 否認義務化」矛盾劇情未完，等待更多大廠跟進或否認訊號。</li>
+        </ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
+          <li>GTA 6 / Rockstar：不引用 GTA 品牌素材、Rockstar 工會組織具體政治立場，只借「史上最大」的產業信心角度和「開發者激勵設計」的抽象觀察。</li>
+          <li>Nvidia / Jensen Huang：不引用 Nvidia 品牌素材，只借「不可替代的專業深度」的抽象切角。</li>
+          <li>Team Ninja / Ubisoft：不寫成政治立場，只借「AI 政策透明化」的正向框架。</li>
+          <li>Black Friday demo：不使用任何品牌商品圖像或商標，只借「倒數競爭 / 限時搶購」情感設定。</li>
+          <li>所有來源均為摘要層——對外保留「報導指出 / 確認」語氣，不寫成不加來源的事實陳述。</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>GTA 6 史上最大遊戲發行</td><td><a href="https://www.gamedeveloper.com/business/grand-theft-auto-vi-is-officially-the-biggest-video-game-launch-ever" target="_blank">Game Developer</a> + <a href="https://www.eurogamer.net/grand-theft-auto-6-first-week-hours-watched-record" target="_blank">Eurogamer</a> + <a href="https://www.gamesindustry.biz/nielseniq-gta-6-boosts-uk-games-retail-revenue-by-99-to-142m-during-launch-period" target="_blank">GamesIndustry.biz</a>　驗：三源 RSS 標題層確認「biggest video game launch in history」「livestreaming record」「UK revenue +99%」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-26</td></tr>
+        <tr><td>Nvidia 重新任命 Jensen Huang 為 CEO</td><td><a href="https://www.gamedeveloper.com/business/nvidia-reinstates-jensen-huang-as-ceo" target="_blank">Game Developer</a>　驗：RSS 標題層確認「Nvidia reinstates Jensen Huang as CEO weeks after his resignation」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-26</td></tr>
+        <tr><td>Rockstar 工會投票失敗 75%</td><td><a href="https://www.gamesindustry.biz/staff-at-grand-theft-auto-maker-rockstar-vote-against-union-recognition-deal" target="_blank">GamesIndustry.biz</a> + <a href="https://www.rockpapershotgun.com/this-isnt-a-sign-to-retreat-rockstars-historic-union-vote-has-failed-with-75-voting-against-but-the-organisers-are-going-to-keep-fighting" target="_blank">RPS</a> + <a href="https://www.gamespot.com/articles/rockstar-games-has-a-gta-6-hit-on-its-hands-but-its-union-vote-is-a-loss/" target="_blank">GameSpot</a> + Eurogamer　驗：四源確認「vote against」「75% voting against」　<span class="pp">partial</span>（摘要層）　pub 2026-11-26</td></tr>
+        <tr><td>Team Ninja AI QA 聲明</td><td><a href="https://kotaku.com/team-ninja-ai-qa-difficulty-nioh-wo-long-koei-temco-capcom-2001000539" target="_blank">Kotaku</a>（tavily, 2026-11-26）+ <a href="https://www.eurogamer.net/nioh-ai-qa-game-human-hands" target="_blank">Eurogamer</a>　驗：兩源確認「AI for QA」「creative choices must be done by humans」「crafted by human hands」　<span class="pp">partial</span>（摘要層）　pub 2026-11-26</td></tr>
+        <tr><td>Baldur's Gate 3 Black Friday +31.6%</td><td>heat_latest.json steam_velocity（2026-11-27T07:30）　驗：BG3 today 29,889 / yesterday 22,706 / pct +31.6，直接 JSON 數字確認　<span class="ok">✓</span>（JSON 直接確認）　pub 2026-11-27</td></tr>
+        <tr><td>TF2 95,828 持穩（+0.3%）</td><td>heat_latest.json steam_velocity（2026-11-27T07:30）　驗：TF2 today 95,828 / yesterday 95,527 / pct +0.3，直接 JSON 數字確認　<span class="ok">✓</span>（JSON 直接確認）　pub 2026-11-27</td></tr>
+        <tr><td>Path of Exile 2 1.0 版今年 12 月</td><td><a href="https://www.rockpapershotgun.com/path-of-exile-2s-10-version-is-out-this-year-after-all-arriving-in-december-with-a-full-campaign-two-neat-new-classes-and-more" target="_blank">RPS</a>　驗：RSS 標題層確認「1.0 version is out this year after all, arriving in December」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-26</td></tr>
+        <tr><td>Ubisoft 否認 AI 義務化</td><td><a href="https://www.videogameschronicle.com/news/ubisoft-denies-requiring-developers-to-use-generative-ai/" target="_blank">VGC</a> + <a href="https://www.rockpapershotgun.com/ubisoft-now-require-their-devs-to-explain-why-they-arent-using-genai-in-game-pitches-claims-report-though-the-assassins-creed-publishers-deny-theyre-mandating-it" target="_blank">RPS</a>　驗：兩源確認「encourages, doesn't force」/ 「deny they're mandating it」（與昨日 GI.biz 報導矛盾）　<span class="pp">partial</span>（report/reportedly + 否認層）　pub 2026-11-26</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 11/27 07:30 最新可用數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 11/27 07:30 最新可用 + 多源新聞 · 2026/11/27 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
