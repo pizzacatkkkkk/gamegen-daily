@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/11/26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">11 · 26 · THU</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 26 · 彈藥工廠模式 · Steam 數字 11/26 07:30 最新可用 · Roblox / Twitch 今日無瀏覽器 · 來源 15+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>今天是美國感恩節（Thanksgiving），Black Friday 在明天（11/27）。三件大事：TF2 Steam 在線暴增 +241.4%（27,985→95,527，今日最強異常訊號）/ Epic 正式確認 UE6 移除 Blueprints 與 Actor Gameplay Framework（遊戲引擎歷史性轉型）/ EA Sports FC 27 以 AI 復活已故播報員 John Motson（AI 倫理大討論，家人稱「感人」球迷稱「噁心」）。</b></p>
+        <p>同日：<b>Ubisoft 爆出「開發者需說明不用 AI 的理由」政策</b>（GamesIndustry.biz + VGC 兩源確認）——AI 義務化的第一個公開訊號。Atari Homebrew Awards 因 AI 遊戲氾濫宣告取消（Kotaku 確認）；AI 殺死又一個程式設計競賽（PC Gamer 確認）。<b>Phasmophobia 玩家募款超 $230,000 助心臟慈善</b>（今日 Steam 排名 +22，99→77），連動效應清晰。</p>
+        <p><b>Hollow Knight Silksong Sea of Sorrow DLC 更新直播明天（11/27）</b>——Team Cherry 剛確認，Eurogamer + VGC 兩源。今日還有：Jensen Huang 復職 Nvidia CEO（今日多媒體再確認）；GTA 6 vibe-coder 社群進展（玩家 AI 工具搶先把 GTA 6 移植到 PC 的嘗試正在進行中，Eurogamer 確認）。PS Plus 十二月遊戲含 Tony Hawk's Pro Skater 3+4（VGC 確認）。</p>
+        <div class="pull">▸ 今天最強切角：UE6 移除 Blueprints（B2B 開發工具轉型，CJ 首選）+ Ubisoft AI 義務化（大廠標準轉變）+ TF2 +241.4%（沉睡玩家庫研究）。Demo：今天是感恩節，Black Friday 明天起，今天是假日協力窗口最後一天，明天起進入限時搶購模式。Silksong 更新明天——今晚發「明天你會不會看直播？」等話題暖場。</div>
+      </div>
+
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Unreal Engine 6 宣布移除 Blueprints——遊戲開發工作流程歷史性轉型，AI 優先時代正式啟動</div>
+            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 確認（2026-11-25 RSS）：「Unreal Engine 6 won't include Blueprints or Actor Gameplay Framework」。Game Developer 同日確認（RSS）：「Epic Games no longer plans to include Blueprints or Actor Gameplay Framework in Unreal Engine 6」，轉向 AI 輔助編碼工作流程。（兩源 RSS 標題層確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>Blueprints 是 UE 生態最廣泛使用的視覺化腳本系統，移除意味著 UE6 開發者必須轉向 AI 輔助 C++ 工作流程。<b>換皮開發流程中使用 UE 的團隊需提前規劃技術轉型；但對 AI 優先的小型工作室，這反而是降低大廠技術護城河的機會</b>——AI 編碼取代了過去需要 Blueprint 專家的部分。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Epic just confirmed Unreal Engine 6 will remove Blueprints and the Actor Gameplay Framework entirely. For game developers: this is the biggest shift in Unreal's workflow philosophy in decades. Blueprint-based no-code development is out. AI-assisted C++ is in. The studios that adapt first won't just survive the transition — they'll own the next era of Unreal game development."<br><span style="color:var(--ink-dim)">中譯：Epic 剛確認 Unreal Engine 6 將完全移除 Blueprints 和 Actor Gameplay Framework。對遊戲開發者：這是 Unreal 工作流程哲學數十年來最大的轉型。基於 Blueprint 的無程式碼開發結束了，AI 輔助 C++ 開始了。最先適應的工作室不只是撐過轉型——他們將掌握下一個 Unreal 遊戲開發時代。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/unreal-engine-6-wont-include-blueprints-or-actor-gameplay-framework" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.gamedeveloper.com/programming/unreal-engine-6-to-remove-blueprints-and-actor-gameplay-framework-from-the-beginning" target="_blank">Game Developer ↗</a>　pub 2026-11-25　partial（RSS 標題層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Ubisoft 強制開發者說明「不用 AI 的理由」——AI 義務化正在成為大廠標準，今日最強 B2B 文化切角</div>
+            <div class="ln"><b>新聞事實：</b>GamesIndustry.biz 確認（2026-11-25 RSS）：「Ubisoft staff must justify not using generative AI in pitches, report claims」。VGC 同日確認（RSS）：「Ubisoft is reportedly requiring developers to justify not using generative AI」。（兩源確認；均為 report/reportedly，未第三方查核全文）</div>
+            <div class="ln"><b>GameGen 角度：</b>「預設使用 AI，不用要說明理由」是 Ubisoft 的新標準。<b>這是大廠 AI 義務化的第一個公開確認訊號——未來的遊戲提案場景裡，說明你「如何用 AI」可能比說明你「做了什麼」更重要</b>。對換皮遊戲開發流程：AI 優先的作法從差異化變成了基本門票。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Ubisoft now reportedly requires staff to justify not using generative AI in their pitches. Let that sink in. The default is now AI-assisted. The exception needs justification. This isn't just one studio's policy — it's the first publicly reported signal that AI-first development is becoming the baseline standard at large publishers. How ready is your team?"<br><span style="color:var(--ink-dim)">中譯：Ubisoft 據報現在要求員工說明「不使用生成式 AI」的理由。讓這句話沉澱一下。現在的預設值是 AI 輔助。例外需要說明理由。這不只是一家工作室的政策——這是大型發行商中 AI 優先開發正在成為基準標準的第一個公開訊號。你的團隊準備好了嗎？</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.gamesindustry.biz/ubisoft-staff-must-justify-not-using-generative-ai-in-pitches-report-claims" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.videogameschronicle.com/news/ubisoft-is-reportedly-requiring-developers-to-justify-not-using-generative-ai/" target="_blank">VGC ↗</a>　pub 2026-11-25　partial（report/reportedly）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>TF2 Steam 在線 +241.4%——2007 年的老遊戲今日暴增到 95,527，今日最強異常訊號<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>heat_latest.json（2026-11-26T07:30）Steam 在線榜直接確認：Team Fortress 2 在線人數 95,527，前日 27,985，漲幅 +241.4%。為今日 Steam 在線榜第 3 名，今日所有遊戲中漲幅最大（Dota 2 +83.4%、Wallpaper Engine +47.1%、Rust +35.7% 均遠低於此）。暴增原因無官方聲明，今日尚未確認。（heat_latest.json 直接 JSON 確認）</div>
+            <div class="ln"><b>GameGen 角度：</b>2007 年的遊戲仍能爆出 +241% 暴增，說明老遊戲的「沉睡玩家庫」機制有多強大。<b>觸發點研究是今日最有價值的病毒設計素材——什麼喚醒了這些沉睡玩家？節日活動？更新？病毒貼文？</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Team Fortress 2 — a game from 2007 — just surged 241% in live Steam players overnight. 27K to 95K in one day. Something woke up the sleeping player base. What was the trigger? A holiday event? A content drop? A viral moment? Whatever it was, TF2 at 95K proves dormant player libraries are your biggest untapped growth lever."<br><span style="color:var(--ink-dim)">中譯：Team Fortress 2——2007 年的遊戲——昨夜 Steam 在線人數暴增 241%。從 27K 到 95K，一天之內。某件事喚醒了沉睡的玩家庫。觸發點是什麼？節日活動？內容更新？病毒時刻？無論是什麼，TF2 的 95K 證明了：沉睡玩家庫是你最大的未開發成長槓桿。</span></div>
+            <div class="meta">來源 heat_latest.json 2026-11-26T07:30 JSON 直接確認　<a href="https://store.steampowered.com/app/440" target="_blank">TF2 Steam ↗</a>　<strong>yes</strong>（JSON 直接數字）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>EA Sports FC 27 以 AI 復活已故播報員——家人稱「感人」，部分球迷稱「噁心」，AI 倫理邊界論戰<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>GamesIndustry.biz 確認（2026-11-25 RSS）：EA Sports FC 27 利用生成式 AI 重建已故播報員 John Motson 的聲音，他於三年前最後出現在 FIFA 系列後離世。GameSpot 確認：「Three Years After His Death, EA Is Using AI To Bring Back A Famed Commentator In FC 27」。PC Gamer 確認：家人稱「touching tribute」，部分球迷稱「gross and bleak」。RPS + Eurogamer 同日確認。（五源 RSS 確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>遊戲場景是第一個大規模測試「AI 復活已故人物」倫理邊界的媒介。<b>這個爭議的核心問題：誰有權決定「他的聲音應該繼續存在」？當你用 AI 重現某人的風格，你需要誰的同意？</b>今日最強的倫理論戰切角。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "EA is using AI to bring back John Motson's voice in EA Sports FC 27 — three years after he passed away. The family calls it 'a touching tribute.' Some fans call it 'gross and bleak.' Video games just became the first major media to publicly test where the ethical line is for AI-resurrecting the deceased. Where do you stand?"<br><span style="color:var(--ink-dim)">中譯：EA 在 EA Sports FC 27 中用 AI 復活已故播報員 John Motson 的聲音——距他去世三年。家人稱這是「感人的致敬」。部分球迷稱之為「噁心」和「令人不安」。電玩遊戲剛成為第一個大規模公開測試 AI 復活已故者倫理界線的媒介。你站哪一邊？</span></div>
+            <div class="meta">來源 <a href="https://www.gamesindustry.biz/ea-sports-fc-27-adds-ai-recreated-voice-of-late-commentator-john-motson" target="_blank">GamesIndustry.biz ↗</a> / <a href="https://www.pcgamer.com/software/ai/deceased-bbc-football-commentator-resurrected-with-ai-for-ea-sports-fc-the-family-says-its-a-touching-tribute-but-some-fans-call-it-gross-and-bleak/" target="_blank">PC Gamer ↗</a>　pub 2026-11-25　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>美國財政部 CIO 在資安遭駭期間 vibecoding 文明遊戲複製版——2026 年最荒謬同步事件<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>HN 確認（heat_latest.json hackernews，9 點）：「US Treasury CIO vibecoding a Civilization game clone during Treasury DB breach」（Bluesky crampell.bsky.social）。PC Gamer 確認（RSS）：「As the US Treasury suffers a cybersecurity breach, its chief tech guy is vibecoding a Civilization clone」。（HN + PCGamer 標題層確認；事件真實性摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>「機構遭受資安攻擊，負責人同時在 vibecode 文明遊戲」這個並置是今日最強段子。<b>AI 遊戲開發（vibecoding）正在滲透到所有職業的業餘時間——在混亂中建文明，或者根本不在狀況內？無論哪種解讀都值得一發。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "The US Treasury just suffered a cybersecurity breach. What was the CIO doing at the same time? Vibecoding a Civilization clone. This is either the most on-brand moment in government tech history or proof that AI game development is so accessible it's just what tech people do now. Building a civilization game while yours gets breached."<br><span style="color:var(--ink-dim)">中譯：美國財政部剛剛遭受資安攻擊。同一時間 CIO 在做什麼？Vibecoding 文明遊戲複製版。這要麼是政府科技史上最具代表性的時刻，要麼是 AI 遊戲開發已經如此普及——它已成為科技人的日常消遣。在你的文明遭受攻擊時，建造一個文明遊戲。</span></div>
+            <div class="meta">來源 <a href="https://bsky.app/profile/crampell.bsky.social/post/3n344qkrlnc2c" target="_blank">Bluesky ↗</a> / <a href="https://www.pcgamer.com/software/ai/as-the-us-treasury-suffers-a-cybersecurity-breach-its-chief-tech-guy-is-vibecoding-a-civilization-clone/" target="_blank">PC Gamer ↗</a>　HN 9pts　pub 2026-11-25　partial（標題層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「感恩節協力最後一天 → 明天 Black Friday 開搶」——今天是協力感恩窗口，明天起進入限時搶購模式<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法概念：</b>今天（感恩節）→ 協力家庭遊戲模式，今晚是最後一個「感恩節協力」情緒視窗。明天（Black Friday）起轉為「限時搶購競爭 loop」：倒計時 24 小時 + 玩家同時搶有限格數的道具，先搶先得，動態補貨。發布配文：「感恩節快樂！明天 Black Friday 倒數開始——你和你朋友，誰先搶到 5 件？」</div>
+            <div class="ln"><b>為何是今天：</b>今天是感恩節（協力情緒最高點）+ 明天開始 Black Friday 窗口（限時搶購情緒啟動）。今晚發「明天你會不會看 Silksong 更新直播？」也是極好的暖場配文——搭 Silksong 熱度。⚠️ 不使用任何品牌商品素材。</div>
+            <div class="meta">⚠️ 不使用任何品牌商品素材　模板：多人競爭 / 倒數計時 loop</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">同時在線 · 11/26 07:30</span></div>
+          <ol>
+            <li class="hot"><span class="nm">CS:GO</span><span class="vn">571K +34.8%</span></li>
+            <li class="hot"><span class="nm">Dota 2</span><span class="vn">423K +83.4%</span></li>
+            <li class="hot"><span class="nm">Team Fortress 2</span><span class="vn">95.5K 🔥 +241.4%</span></li>
+            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">87.5K +0.4%</span></li>
+            <li><span class="nm">R6 Siege</span><span class="vn">52K +31.5%</span></li>
+            <li><span class="nm">Rust</span><span class="vn">51.2K +35.7%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 11/26 07:30 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。感恩節假日通常派對類 / 生存類遊戲爬升，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。感恩節假日直播通常爬升，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ✅ Steam 數字為 11/26 07:30 最新可用數據（heat_latest.json）。<b>今日最大異常：Team Fortress 2 +241.4%（27,985→95,527），為今日所有遊戲最高漲幅，原因待確認</b>。CS:GO +34.8%、Dota 2 +83.4%、Wallpaper Engine +47.1% 亦同步上漲，整榜呈上升趨勢（Thanksgiving Day 效應？）。最多人玩榜：CS:GO #1、Dota 2 #2、PUBG #3。Steam 熱賣榜：Call of Duty MW4、007 First Light、STAR WARS Galactic Racer。Steam 排名大跳：Phasmophobia +22（99→77）、Yu-Gi-Oh! Master Duel +11（56→45）、Dead by Daylight +7（22→15）。Roblox / Twitch 今日無瀏覽器工具，均標記「資料不足」。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>神秘暴衝</span></span>Team Fortress 2 +241.4%——2007 年老遊戲今日以 95,527 在線衝至 Steam #3，今日最強異常</h3>
+        <div class="sum">heat_latest.json（11/26 07:30）Steam 在線榜直接確認：<b>Team Fortress 2 在線人數 95,527，前日 27,985，漲幅 +241.4%</b>，為今日 Steam 在線榜第 3 名，今日所有遊戲中漲幅最大。CS:GO（571,645）與 Dota 2（423,548）同步顯著上漲，整榜呈上升趨勢，可能與感恩節假日效應相關。TF2 暴增原因無官方聲明，今日尚未確認。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>TF2 是 2007 年發行的老遊戲，仍能在 2026 年爆出 +241% 暴增。<b>沉睡玩家庫（dormant player library）的威力：一個觸發點就能讓萬名玩家重新上線</b>。可能觸發原因：感恩節家庭歡聚效應（老玩家重啟）、節日限定活動（Smissmas 預告？）、病毒貼文帶動。追蹤後續 24 小時排名是本週最有教學價值的真實案例。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 11/26 07:30 · <a href="https://store.steampowered.com/app/440" target="_blank">TF2 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>排名跳動</span></span>Phasmophobia +22（99→77）玩家募款 $230K 創記錄 / Yu-Gi-Oh! Master Duel +11 / Dead by Daylight +7</h3>
+        <div class="sum">steam_movers（11/26 07:30）排名跳動：<b>Phasmophobia +22 名</b>（99→77，今日最大跳幅）；<b>Yu-Gi-Oh! Master Duel +11 名</b>（56→45）；<b>Dead by Daylight +7 名</b>（22→15）；Escape from Tarkov +6（98→92）；MahjongSoul +5（69→64）。<b>Phasmophobia 的 +22 與同日新聞連動：Eurogamer 確認玩家募款超 $230,000 助心臟慈善，超過去年的兩倍</b>（來源：heat_latest.json story_eurogamer）——慈善事件驅動排名跳升的清晰案例。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Phasmophobia 的 +22 是今日第二有趣的 Steam 訊號。<b>「玩家自主募款 $230K 助心臟慈善 → 更多玩家因此回來玩 → 排名跳 22 位」</b>這個因果鏈是遊戲社群自我驅動的教科書案例。Yu-Gi-Oh! Master Duel +11 無明顯觸發事件，可能與卡牌遊戲假日效應相關。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 11/26 07:30 · <a href="https://www.eurogamer.net/phasmophobia-ghost-hunts-for-hearts-230000-american-heart-association" target="_blank">Eurogamer ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>Silksong DLC 直播明天 / PS Plus 十二月含 Tony Hawk 3+4 / Atari Homebrew Awards 因 AI 氾濫取消 / 主機降價 2028 年前別想</h3>
+        <div class="sum">四個早期訊號同日出現。<b>Eurogamer + VGC 確認：Hollow Knight Silksong DLC 更新直播明天（11/27），Team Cherry 承諾 Sea of Sorrow 進度</b>——玩家等待了三年以上。<b>VGC + GameSpot + Eurogamer 確認：PS Plus 十二月 2026 遊戲包含 Tony Hawk's Pro Skater 3+4</b>，另有 Tony Hawk's Pro Skater 3+4。<b>Kotaku + PC Gamer 確認：Atari Homebrew Awards 因 AI 遊戲氾濫宣告取消（PC Gamer：「AI kills another coding competition」）</b>——繼以撒 review-bomb、三上真司 AI 言論後，本週第三個 AI 信任訊號。<b>GamesIndustry.biz 分析師確認：主機降價 2028 年前別期望</b>，新關稅壓力加劇。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Silksong 明天的直播是本週最強的「開發者透明度」事件——三年等待的玩家社群，今晚的暖場貼文視窗極強。<b>Atari Homebrew Awards 取消說明：AI 生成內容氾濫正在破壞以人工創作為基礎的社群活動；PS Plus Tony Hawk 說明：復古系列在假日季仍有強拉力</b>。主機降價遙遙無期 = 玩家留在手機 / PC 端的壓力持續。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src"><a href="https://www.eurogamer.net/hollow-knight-silksong-dlc-livestream-sea-of-sorrows-update" target="_blank">Eurogamer ↗</a> / <a href="https://kotaku.com/atari-homebrew-awards-canceled-over-torrent-of-ai-games-i-saw-no-path-forward-2001000096" target="_blank">Kotaku ↗</a> / <a href="https://www.gamesindustry.biz/analyst-dont-expect-hardware-price-cuts-until-at-least-2028" target="_blank">GI.biz ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>引擎轉型</span></span>UE6 移除 Blueprints 與 Actor Gameplay Framework——遊戲開發工作流程歷史性轉型，AI 優先時代正式啟動</h3>
+        <div class="sum">GamesIndustry.biz 確認（2026-11-25 RSS）：「Unreal Engine 6 won't include Blueprints or Actor Gameplay Framework」。Game Developer 同日確認（RSS）：「Epic Games no longer plans to include Blueprints or Actor Gameplay Framework in Unreal Engine 6」，轉向 AI 輔助編碼工作流程。Blueprints 是 UE 生態最廣泛使用的視覺化腳本系統，幾乎所有非程式設計師的 UE 開發者都依賴它。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Blueprints 移除是 Unreal 生態數十年來最重大的工作流程轉型。<b>對遊戲開發者的直接影響：UE6 轉向 AI 輔助 C++ 意味著未來的 UE 開發學習曲線重新設定</b>。但另一個角度：<b>AI 編碼工具讓過去需要 Blueprint 專家的部分自動化了——小型工作室反而可以跳過「Blueprints 學習期」直接進入 AI 輔助開發流程，降低大廠的技術護城河</b>。UE6 的 AI 優先哲學與 GameGen 的換皮工作流程方向高度一致。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESINDUSTRY.BIZ + GAME DEV · <a href="https://www.gamesindustry.biz/unreal-engine-6-wont-include-blueprints-or-actor-gameplay-framework" target="_blank">GI.biz ↗</a> / <a href="https://www.gamedeveloper.com/programming/unreal-engine-6-to-remove-blueprints-and-actor-gameplay-framework-from-the-beginning" target="_blank">Game Dev ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 倫理</span></span>EA Sports FC 27 AI 復活已故播報員 John Motson——遊戲成為 AI 倫理邊界第一個大規模測試場</h3>
+        <div class="sum">五源確認（GamesIndustry.biz, GameSpot, PC Gamer, RPS, Eurogamer, 2026-11-25 RSS）：EA Sports FC 27 利用生成式 AI 重建已故播報員 John Motson 的聲音。Motson 2023 年去世前最後一次出現在 FIFA 23。家人稱「touching tribute」（PC Gamer）；部分球迷稱「gross」和「bleak」（RPS 標題：「EA Sports FC 27 to resurrect John Motson with help from generative AI, because apparently football games need someone yelling about goals from beyond the grave」）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>遊戲業是第一個在消費者規模上「復活已故人物聲音」的媒介。<b>這個案例設定了一個重要的行業先例：當家人同意時，AI 復活已故人物聲音是否就合乎倫理？玩家的不舒適感說明：同意不等於接受</b>。對遊戲創作者的隱性影響：用 AI 工具重現他人風格的倫理門檻正在從「版權問題」升格為「道德問題」。今週第四個 AI 信任訊號（以撒 review-bomb、三上真司、Ubisoft AI 義務化、今日 EA）。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 不引用 EA/FIFA 品牌</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/software/ai/deceased-bbc-football-commentator-resurrected-with-ai-for-ea-sports-fc-the-family-says-its-a-touching-tribute-but-some-fans-call-it-gross-and-bleak/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>大廠 AI 策略</span></span>Ubisoft 強制開發者說明「不用 AI 的理由」——AI 義務化，同時 UE6 推進 AI 優先工作流程</h3>
+        <div class="sum">GamesIndustry.biz + VGC 確認（2026-11-25 RSS）：Ubisoft 要求員工在提案中說明不使用生成式 AI 的理由（report/reportedly）。同日，Epic 宣布 UE6 移除 Blueprints 轉向 AI 優先工作流程。上週背景：Ubisoft 錯失財測 + 裁員 166 人 + 成立 Motherbrain AI 子公司（上週確認）。今週第二個 Ubisoft AI 訊號。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「AI 義務化」和「AI 信任反彈」同週達到峰值——這不是矛盾，這是同一個故事的兩面。<b>大廠（Ubisoft、Epic）正在強制推進 AI 優先；玩家社群（以撒 review-bomb、三上真司）正在抵制不透明的 AI 使用</b>。GameGen 切角：你可以同時是「AI 優先開發」和「AI 使用透明」——這兩個不對立。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">GAMESINDUSTRY.BIZ · <a href="https://www.gamesindustry.biz/ubisoft-staff-must-justify-not-using-generative-ai-in-pitches-report-claims" target="_blank">↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>業界段子</span></span>美國財政部 CIO 在資安遭駭期間 vibecoding 文明遊戲複製版——今日最強「荒謬現實」段子</h3>
+        <div class="sum">HN 確認（9pts）+ PC Gamer 確認（RSS）：美國財政部遭受資安資料庫入侵時，其首席技術官（CIO）正在 vibecoding（用 AI 輔助）文明遊戲複製版。PC Gamer 標題：「As the US Treasury suffers a cybersecurity breach, its chief tech guy is vibecoding a Civilization clone」。（HN + PCGamer 標題層確認；事件真實性摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「在你的文明遭受攻擊時，建造一個文明遊戲」——這個並置是今日最強的「現實比遊戲劇本更荒謬」段子。<b>對遊戲創作者的隱性訊號：AI vibecoding 遊戲已經如此普及，它成了科技界人士的默認業餘消遣</b>。今日最強的分享格式：「什麼是你在最不合適的時候還在做的事？」（不引用財政部事件，只借「vibecoding 遊戲的普及性」切角）</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk mid"><span>中 · 不引用財政部具體事件</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/software/ai/as-the-us-treasury-suffers-a-cybersecurity-breach-its-chief-tech-guy-is-vibecoding-a-civilization-clone/" target="_blank">原文 ↗</a>　HN 9pts</div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>社群迷因</span></span>GTA 6 出現奇怪的紫色路燈——因為真實的佛羅里達州把路燈搞砸了</h3>
+        <div class="sum">PC Gamer 確認（2026-11-25 RSS）：「GTA 6 has weird purple streetlights because actual Florida screwed up its streetlights」。GTA 6 的遊戲場景中，真實佛羅里達的路燈缺陷被如實還原，玩家紛紛分享「這是 Rockstar 的藝術選擇還是真實事故？」。背景：佛羅里達州確實曾出現一批因製造問題導致發出紫色光的 LED 路燈。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「遊戲真實還原了現實的荒謬缺陷」是今日最好的「你以為是 bug，其實是現實」迷因格式。<b>對創作者：GTA 6 把社會文化細節（哪怕是怪異的）變成了真實性的証明——你的遊戲有沒有類似的「現實細節」能引發「你怎麼知道這個？」反應？</b></div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不引用 GTA 素材</span></span></div></div>
+          </div>
+          <div class="src">PC GAMER · <a href="https://www.pcgamer.com/games/grand-theft-auto/gta-6-has-weird-purple-streetlights-because-actual-florida-screwed-up-its-streetlights/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <ol>
+            <li class="hot"><span class="nm">感恩節協力最後一天 → 明天 Black Friday 搶購 loop</span><span class="vn">假日轉型</span></li>
+            <li class="hot"><span class="nm">沉睡玩家庫喚醒機制（TF2 +241.4% 研究）</span><span class="vn">病毒傳播</span></li>
+            <li class="up"><span class="nm">玩家自主慈善募款機制（Phasmophobia $230K）</span><span class="vn">社群飛輪</span></li>
+            <li><span class="nm">Silksong 等待弧線（三年期待感建立公式）</span><span class="vn">預告 / 發行前</span></li>
+            <li><span class="nm">Tamaweb 虛擬寵物瀏覽器版（itch.io 熱門）</span><span class="vn">寵物養成</span></li>
+          </ol>
+          <div class="bf">itch.io + 今日新聞衍生 · 11/26 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>「沉睡玩家庫」喚醒機制——TF2 +241.4% 的今日最強研究案例</h3>
+        <div class="sum">沉睡玩家庫喚醒 loop 的可能要素（待驗證）：<b>節日限定活動</b>（如 Smissmas 感恩節特別版）→ <b>老玩家情緒勾動</b>（懷舊 + 假日一起玩的記憶）→ <b>低進入門檻</b>（免費遊戲，隨時能回來）→ <b>社群效應</b>（有人貼文「今天打 TF2」）。TF2 從 27K 到 95K，一天 +241%。今日（11/26）到明天（11/27）的 24 小時是觀察視窗——如果維持，說明有結構性需求（節日活動）；如果崩潰，說明是一過性流量。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「沉睡玩家庫」比新用戶獲取更有效率——他們已經知道你的遊戲，只需要一個觸發點。<b>你的遊戲有沒有定期重新觸發舊玩家的機制？節日活動、懷舊版本、玩家自主募款……任何能喚醒他們記憶的事件</b>都是成本最低的再獲客手段。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 追蹤研究，不複製品牌</span></span></div></div>
+          </div>
+          <div class="src">STEAM MOVERS · heat_latest.json 11/26 · <a href="https://store.steampowered.com/app/440" target="_blank">TF2 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
+        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界背景，繁中遊戲社群可能討論：<b>UE6 移除 Blueprints</b>（台灣獨立遊戲開發者社群高度關注引擎動向）、<b>TF2 +241% 暴增</b>（老玩家社群話題）、<b>EA AI 播報員倫理論戰</b>（台灣電競 / 足球迷社群）、<b>Silksong 明天直播</b>（台灣 Hollow Knight 玩家社群等待多年）。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>感恩節（今天）→ Black Friday（明天）窗口</td><td><span class="tmpl">感恩節協力 → Black Friday 限時搶購 loop</span></td><td>「今天感恩節，明天 Black Friday 開搶——你和朋友誰先搶到 5 件？」</td><td class="rk-low">低 · 不用品牌素材</td><td>★ 今日 Demo 首選，今天最後一個感恩節協力情緒視窗，明天起進入搶購模式</td></tr>
+          <tr><td>TF2 +241.4%（沉睡玩家庫喚醒研究）</td><td><span class="tmpl">老遊戲節日活動 / 玩家庫喚醒機制</span></td><td>「2007 年的 TF2 今天 Steam #3——沉睡玩家庫的威力。你的遊戲上次重新喚醒玩家是什麼時候？」</td><td class="rk-low">低 · 不複製 Valve 品牌素材</td><td>X 貼文研究角度，今日限時，明天話題降溫（若排名下跌）</td></tr>
+          <tr><td>UE6 AI 優先 / 移除 Blueprints（開發者工具轉型）</td><td><span class="tmpl">「AI 優先開發」切角</span></td><td>「Epic 移除 Blueprints = 開發工作流程歷史性轉型。最先適應 AI 優先 UE6 的工作室將掌握下一個時代。」</td><td class="rk-low">低</td><td>CJ 首選，今日話題時機性最高，今週持續有效</td></tr>
+          <tr><td>AI 義務化 vs AI 信任反彈（本週雙峰訊號）</td><td><span class="tmpl">「AI 優先 + 透明使用」切角</span></td><td>「Ubisoft 強制用 AI + 玩家 review-bomb 隱藏 AI 音樂——同一週。你可以同時是 AI 優先和 AI 透明。」</td><td class="rk-low">低</td><td>X 貼文 / CJ 均適合，今週最強 AI 敘事弧線</td></tr>
+          <tr><td>Silksong 等待弧線（三年期待感）</td><td><span class="tmpl">「等待弧線 = 品牌資產」切角</span></td><td>「Silksong 明天更新直播——玩家等了三年。等待本身成了品牌。你的開發過程在建立期待嗎？」</td><td class="rk-low">低</td><td>今晚暖場貼文視窗極強，「你明天會看嗎？」型互動</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>UE6 移除 Blueprints——遊戲引擎 AI 優先轉型，開發工作流程歷史性重設</td><td>GamesIndustry.biz + Game Developer（2026-11-25 RSS 兩源確認）：Unreal Engine 6 will remove Blueprints and Actor Gameplay Framework，轉向 AI 輔助 C++ 工作流程</td><td>"Epic just confirmed Unreal Engine 6 will remove Blueprints entirely. Blueprint-based no-code development is out. AI-assisted C++ is in. The studios that adapt first won't just survive the transition — they'll own the next era of Unreal game development."</td><td><a href="https://www.gamesindustry.biz/unreal-engine-6-wont-include-blueprints-or-actor-gameplay-framework" target="_blank">↗</a></td></tr>
+          <tr><td>Ubisoft AI 義務化——「不用 AI 要說明理由」成為大廠新標準</td><td>GamesIndustry.biz + VGC（2026-11-25 RSS 兩源確認，report/reportedly）：Ubisoft 要求員工在提案中說明不使用生成式 AI 的理由</td><td>"Ubisoft now reportedly requires staff to justify not using generative AI in their pitches. The default is now AI-assisted. The exception needs justification. This isn't just one studio's policy — it's the first publicly reported signal that AI-first development is becoming the baseline standard at large publishers."</td><td><a href="https://www.gamesindustry.biz/ubisoft-staff-must-justify-not-using-generative-ai-in-pitches-report-claims" target="_blank">↗</a></td></tr>
+          <tr><td>EA AI 復活已故播報員——遊戲成為 AI 倫理邊界第一個大規模測試場</td><td>五源確認（GamesIndustry.biz, GameSpot, PC Gamer, RPS, Eurogamer, 2026-11-25）：EA Sports FC 27 以生成式 AI 重建 John Motson 聲音；家人稱「touching tribute」，球迷稱「gross and bleak」</td><td>"EA just became the first major game to AI-resurrect a deceased public figure's voice. The family approved it. Some fans call it 'gross and bleak.' Video games just became the first major medium to publicly test where the ethical line is for AI-resurrecting the deceased. The industry needs to decide where it stands."</td><td><a href="https://www.gamesindustry.biz/ea-sports-fc-27-adds-ai-recreated-voice-of-late-commentator-john-motson" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（UE6 Blueprints 移除、Ubisoft AI 義務化）已附完整 EN hook + 中譯，可直接交 CJ 每日包。第 3 條（EA AI 復活播報員）可作備選（需確認不引用 EA/FIFA 品牌素材）。對外用字已過濾所有賭場語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
+          <li>TF2 +241.4% 沉睡玩家庫研究：「2007 年的遊戲今天 Steam #3。沉睡玩家庫的威力。你的遊戲上次重新喚醒玩家是什麼時候？」（今日限時）</li>
+          <li>UE6 移除 Blueprints：「Epic 移除 Blueprint = 開發工作流程歷史性轉型。最先適應的工作室將掌握下一個時代。你準備好了嗎？」</li>
+          <li>Ubisoft AI 義務化：「Ubisoft 現在要求員工說明不用 AI 的理由。預設值變了——AI 優先，例外才需要說明。你的工作室的預設值是什麼？」</li>
+          <li>Silksong 暖場（今晚）：「Silksong DLC 更新直播明天——等了三年。你明天會看嗎？」（今晚發，明天話題最高）</li>
+        </ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
+          <li>★ 今天感恩節，明天 Black Friday——今天發「感恩節協力」配文，明天起切換到「限時搶購倒數」配文。今天是協力情緒最後一天，明天起是搶購模式。</li>
+          <li>沉睡玩家庫喚醒機制——以「TF2 感恩節 +241%」為例，拆解你的遊戲有哪些機制可以喚醒老玩家，產出一篇「我研究了今天 Steam 最強暴增的原因」分析。</li>
+          <li>Silksong 等待弧線研究——三年等待如何建立品牌期待感？今晚發暖場，明天看直播後產後續分析。</li>
+        </ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
+          <li>TF2 後續 24-48 小時排名——維持 = 感恩節節日活動結構性需求；崩潰 = 一過性流量。兩種結果都有教學價值。</li>
+          <li>Silksong DLC 直播明天（11/27）——明天直播內容確認後，今週最強玩家社群話題窗口開啟。</li>
+          <li>UE6 Blueprints 移除後續——Epic 官方公告具體技術細節時，CJ + X 雙線話題最強視窗。</li>
+          <li>Ubisoft AI 義務化後續——業界其他工作室跟進時，AI 義務化敘事將升格為「產業共識」。</li>
+        </ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
+          <li>EA Sports FC 27 / John Motson：不引用 EA 品牌、FIFA 品牌、Motson 聲音樣本，只借「AI 復活已故人物倫理」的原則性觀察。</li>
+          <li>TF2 / Valve：不引用 TF2 品牌素材，只借「沉睡玩家庫」的抽象機制研究。</li>
+          <li>感恩節搶購 demo：不使用任何品牌商品圖像或商標，只借「倒數競爭 / 協力感恩」情感設定。</li>
+          <li>Ubisoft AI 義務化報導：均為 report/reportedly，對外說成「據報導」或「有媒體報導」，不寫成「已確認」。</li>
+          <li>所有來源均為摘要層——對外保留「報導指出 / 確認」語氣，不寫成不加來源的事實陳述。</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>UE6 移除 Blueprints</td><td><a href="https://www.gamesindustry.biz/unreal-engine-6-wont-include-blueprints-or-actor-gameplay-framework" target="_blank">GamesIndustry.biz</a> + <a href="https://www.gamedeveloper.com/programming/unreal-engine-6-to-remove-blueprints-and-actor-gameplay-framework-from-the-beginning" target="_blank">Game Developer</a>　驗：兩源標題層確認「won't include Blueprints or Actor Gameplay Framework」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-25</td></tr>
+        <tr><td>TF2 +241.4% Steam 在線</td><td>heat_latest.json steam_velocity（2026-11-26T07:30）　驗：TF2 today 95,527 / yesterday 27,985 / pct 241.4，直接 JSON 數字確認　<span class="ok">✓</span>（JSON 直接確認）　pub 2026-11-26</td></tr>
+        <tr><td>Ubisoft AI 義務化</td><td><a href="https://www.gamesindustry.biz/ubisoft-staff-must-justify-not-using-generative-ai-in-pitches-report-claims" target="_blank">GamesIndustry.biz</a> / <a href="https://www.videogameschronicle.com/news/ubisoft-is-reportedly-requiring-developers-to-justify-not-using-generative-ai/" target="_blank">VGC</a>　驗：兩源確認，均標記 report/reportedly　<span class="pp">partial</span>（report/reportedly）　pub 2026-11-25</td></tr>
+        <tr><td>EA Sports FC 27 AI 復活 John Motson</td><td><a href="https://www.gamesindustry.biz/ea-sports-fc-27-adds-ai-recreated-voice-of-late-commentator-john-motson" target="_blank">GamesIndustry.biz</a> + <a href="https://www.gamespot.com/articles/three-years-after-his-death-ea-is-using-ai-to-bring-back-a-famed-commentator-in-fc-27/" target="_blank">GameSpot</a> + <a href="https://www.pcgamer.com/software/ai/deceased-bbc-football-commentator-resurrected-with-ai-for-ea-sports-fc-the-family-says-its-a-touching-tribute-but-some-fans-call-it-gross-and-bleak/" target="_blank">PC Gamer</a> + RPS + Eurogamer　驗：五源確認，家人 touching tribute / 球迷 gross and bleak 均標題層確認　<span class="pp">partial</span>（摘要層）　pub 2026-11-25</td></tr>
+        <tr><td>US Treasury CIO vibecoding Civ clone</td><td><a href="https://bsky.app/profile/crampell.bsky.social/post/3n344qkrlnc2c" target="_blank">Bluesky</a> / <a href="https://www.pcgamer.com/software/ai/as-the-us-treasury-suffers-a-cybersecurity-breach-its-chief-tech-guy-is-vibecoding-a-civilization-clone/" target="_blank">PC Gamer</a>　HN 9pts（heat_latest.json hackernews 確認）　<span class="pp">partial</span>（標題層；事件真實性摘要層）　pub 2026-11-25</td></tr>
+        <tr><td>Hollow Knight Silksong DLC 直播 11/27</td><td><a href="https://www.eurogamer.net/hollow-knight-silksong-dlc-livestream-sea-of-sorrows-update" target="_blank">Eurogamer</a> / <a href="https://www.videogameschronicle.com/news/team-cherry-will-share-an-update-on-silksongs-dlc-on-november-27/" target="_blank">VGC</a>　驗：兩源確認「livestream for Friday, Sea of Sorrow DLC」/ 「November 27」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-25</td></tr>
+        <tr><td>Phasmophobia +22 + $230K 慈善</td><td>heat_latest.json steam_movers（2026-11-26T07:30）rank 77 prev 99 jump 22（JSON 直接確認）　<a href="https://www.eurogamer.net/phasmophobia-ghost-hunts-for-hearts-230000-american-heart-association" target="_blank">Eurogamer</a> 確認 $230K 慈善募款　<span class="ok">✓</span> + <span class="pp">partial</span>　pub 2026-11-25</td></tr>
+        <tr><td>Atari Homebrew Awards 取消</td><td><a href="https://kotaku.com/atari-homebrew-awards-canceled-over-torrent-of-ai-games-i-saw-no-path-forward-2001000096" target="_blank">Kotaku</a> / <a href="https://www.pcgamer.com/software/ai/ai-kills-another-coding-competition-i-was-not-at-all-interested-in-giving-awards-to-the-output-of-large-language-models/" target="_blank">PC Gamer</a>　驗：兩源確認「canceled over torrent of AI games」　<span class="pp">partial</span>（摘要層）　pub 2026-11-24/25</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 11/26 07:30 最新可用數字 · Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 11/26 07:30 最新可用 + 多源新聞 · 2026/11/26 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
