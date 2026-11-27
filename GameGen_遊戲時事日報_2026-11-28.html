@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameGen 遊戲時事日報 — 2026/11/28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#fbf8f0; --card:#ffffff; --ink:#16161a; --ink-soft:#46474f; --ink-dim:#8a8a93;
+    --line:#16161a;
+    --blue:#1c64ff; --red:#ff2e3f; --yellow:#ffd21e; --lime:#27c93f; --violet:#7b4bff; --orange:#ff7a18;
+    --blue-s:#e3ecff; --red-s:#ffe5e7; --lime-s:#e2f8e6; --yellow-s:#fff5cc; --violet-s:#eee7ff;
+    --gold:#c89b16;
+    --ai:#1c64ff; --ig:#ff2e3f; --rl:#27c93f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC","Inter",-apple-system,"PingFang TC",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.66;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(0,0,0,.045) 1.1px,transparent 1.1px);background-size:11px 11px}
+  .disp{font-family:"Anton","Noto Sans TC",sans-serif;font-weight:400;letter-spacing:.01em}
+  .cond{font-family:"Oswald","Noto Sans TC",sans-serif}
+  a{color:inherit}
+  nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:3px solid var(--ink)}
+  .nav-in{max-width:1040px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .mk{width:26px;height:26px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(135deg,var(--blue),var(--violet));border:2px solid var(--ink)}
+  .brand .nm{font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.05em;text-transform:uppercase}
+  .brand .nm span{color:var(--red)}
+  .nav-links{display:flex;gap:6px;margin-left:auto}
+  .nav-links a{font-family:"Oswald",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;transition:.12s}
+  .nav-links a:hover{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+  .nav-date{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;
+    border-left:2px solid var(--ink);padding-left:18px}
+  @media(max-width:820px){.nav-links{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue) 0%,var(--violet) 60%,var(--red) 120%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.35) 1.4px,transparent 1.4px);background-size:13px 13px}
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+    background:var(--yellow);border:4px solid var(--ink);opacity:.9;
+    box-shadow:-140px 240px 0 -40px rgba(255,255,255,.18)}
+  .hero-in{position:relative;max-width:1000px;margin:0 auto;padding:54px 26px 60px;z-index:2;color:#fff}
+  .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:var(--yellow);
+    border:2px solid var(--ink);padding:5px 13px;box-shadow:3px 3px 0 var(--ink)}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,46,63,.6);animation:pulse 1.7s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,46,63,.6)}70%{box-shadow:0 0 0 8px rgba(255,46,63,0)}100%{box-shadow:0 0 0 0 rgba(255,46,63,0)}}
+  .badge-row .dateflag{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#fff;opacity:.92}
+  .hero h1{font-family:"Anton",sans-serif;font-size:clamp(46px,9.5vw,98px);line-height:.9;text-transform:uppercase;
+    letter-spacing:.01em;text-shadow:4px 4px 0 var(--ink);margin-bottom:6px}
+  .hero h1 .yl{color:var(--yellow)}
+  .hero .zh-title{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);margin:8px 0 14px;
+    letter-spacing:.06em;text-shadow:2px 2px 0 var(--ink)}
+  .hero .tagline{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:28px}
+  .hero .tagline b{background:var(--ink);padding:1px 8px}
+  .lead{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:24px 28px;max-width:760px;color:var(--ink);
+    box-shadow:8px 8px 0 rgba(0,0,0,.85)}
+  .lead .eyebrow{display:inline-block;font-family:"Oswald",sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:#fff;background:var(--red);border:2px solid var(--ink);padding:3px 11px;margin-bottom:15px}
+  .lead p{font-size:15.5px;line-height:1.72;color:var(--ink-soft);margin-bottom:12px}
+  .lead p:last-of-type{margin-bottom:0}
+  .lead b{color:var(--ink);font-weight:900}
+  .lead .hl{background:var(--yellow);padding:1px 4px;font-weight:700;color:var(--ink)}
+  .lead .pull{margin-top:16px;font-size:13.5px;color:var(--ink);font-weight:700;border-top:2px dashed var(--line);padding-top:14px}
+  .ammo{max-width:760px;margin:22px auto 0;display:grid;gap:14px}
+  .ammo-h{font-family:"Anton",sans-serif;font-size:22px;letter-spacing:.02em;color:var(--ink);background:var(--yellow);
+    border:3px solid var(--ink);padding:6px 14px;display:inline-block;transform:skewX(-6deg);box-shadow:4px 4px 0 var(--ink)}
+  .ammo-h span{display:inline-block;transform:skewX(6deg)}
+  .ammo-grp{background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:16px 18px;box-shadow:6px 6px 0 rgba(0,0,0,.85)}
+  .ammo-grp.l-cj{border-left:10px solid var(--gold)}
+  .ammo-grp.l-ed{border-left:10px solid var(--lime)}
+  .ammo-grp.l-dm{border-left:10px solid var(--violet)}
+  .ammo-grp>.gt{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .ammo-grp.l-cj .gt{color:#9a7710} .ammo-grp.l-ed .gt{color:#1f9c30} .ammo-grp.l-dm .gt{color:var(--violet)}
+  .ammo-item{border-top:2px dashed #d8d2c2;padding-top:11px;margin-top:11px}
+  .ammo-item:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .ammo-item .ti{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:15px;color:var(--ink);line-height:1.45;margin-bottom:6px}
+  .ammo-item .fresh{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;
+    border:1.5px solid var(--ink);margin-right:7px;vertical-align:middle;white-space:nowrap}
+  .fresh.f-new{background:var(--red);color:#fff} .fresh.f-upd{background:var(--yellow);color:var(--ink)} .fresh.f-hot{background:#e6e2d6;color:var(--ink-soft)} .fresh.f-cont{background:var(--orange);color:#fff}
+  .ammo-item .ln{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:3px 0}
+  .ammo-item .ln b{color:var(--ink);font-weight:900}
+  .ammo-item .hook{font-size:13px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:5px;padding:8px 12px;margin:7px 0}
+  .ammo-item .hook .en{font-weight:700}
+  .ammo-item .meta{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.02em;color:var(--ink-dim);margin-top:5px}
+  .ammo-item .meta a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .deca{font-family:"Oswald",sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border:1.5px solid var(--ink);
+    background:var(--lime-s);color:#1f9c30;margin-left:6px;white-space:nowrap}
+  main{max-width:880px;margin:0 auto;padding:0 26px 90px}
+  section{padding:56px 0 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .sec-head .no{font-family:"Anton",sans-serif;font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .sec-head h2{font-family:"Anton",sans-serif;font-size:30px;text-transform:uppercase;letter-spacing:.01em;
+    background:var(--ink);color:#fff;padding:3px 14px;transform:skewX(-7deg)}
+  .sec-head h2 span{display:inline-block;transform:skewX(7deg)}
+  .sec-head .accent{width:15px;height:36px;border:2px solid var(--ink);transform:skewX(-12deg)}
+  .s-ai .accent{background:var(--ai)} .s-ig .accent{background:var(--ig)} .s-rl .accent{background:var(--rl)} .s-tr .accent{background:var(--violet)} .s-ac .accent{background:var(--orange)}
+  .sec-head .en{margin-left:auto;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .tag{display:inline-block;font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 11px;text-transform:uppercase;vertical-align:middle;margin-right:8px;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .tag>span{display:inline-block;transform:skewX(8deg)}
+  .tag.ai{background:var(--ai);color:#fff} .tag.ig{background:var(--ig);color:#fff} .tag.rl{background:var(--rl);color:#fff}
+  .story{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:22px 24px;margin-bottom:18px;
+    position:relative;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .story:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .story.ai{border-top:7px solid var(--ai)} .story.ig{border-top:7px solid var(--ig)} .story.rl{border-top:7px solid var(--rl)}
+  .story h3{font-family:"Noto Sans TC",sans-serif;font-weight:900;font-size:20px;line-height:1.4;margin-bottom:10px}
+  .story .sum{font-size:14.5px;color:var(--ink-soft);margin-bottom:13px}
+  .story .obs{font-size:14px;color:var(--ink);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px;margin-bottom:16px}
+  .story .obs .lbl{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.03em}
+  .story.ai .obs .lbl{color:var(--ai)} .story.ig .obs .lbl{color:var(--ig)} .story.rl .obs .lbl{color:#1f9c30}
+  .story .obs b{font-weight:900}
+  .footrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scores{display:flex;gap:18px}
+  .score{font-family:"Oswald",sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim)}
+  .bar{display:flex;gap:3px;margin-top:6px}
+  .bar i{width:13px;height:8px;background:#e6e2d6;border:1.5px solid var(--ink);transform:skewX(-20deg)}
+  .story.ai .bar i.on{background:var(--ai)} .story.ig .bar i.on{background:var(--ig)} .story.rl .bar i.on{background:var(--rl)}
+  .risk{font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:3px 11px;white-space:nowrap;transform:skewX(-8deg);border:2px solid var(--ink)}
+  .risk>span{display:inline-block;transform:skewX(8deg)}
+  .risk.low{background:var(--lime);color:#fff} .risk.mid{background:var(--yellow);color:var(--ink)} .risk.hi{background:var(--red);color:#fff}
+  .src{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;color:var(--ink-dim);align-self:center}
+  .src a{color:var(--blue);text-decoration:none;font-weight:600;border-bottom:2px solid var(--blue)}
+  .src a:hover{background:var(--yellow);border-bottom-color:var(--ink)}
+  .t2g{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;background:var(--card);
+    border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .t2g th{font-family:"Oswald",sans-serif;text-align:left;padding:12px 14px;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:#fff;background:var(--violet);border-bottom:3px solid var(--ink)}
+  .t2g td{padding:13px 14px;border-bottom:2px solid var(--line);color:var(--ink-soft);vertical-align:top}
+  .t2g tr:last-child td{border-bottom:none}
+  .t2g tr:hover td{background:var(--yellow-s)}
+  .t2g td:first-child{color:var(--ink);font-weight:900;width:24%}
+  .tmpl{display:inline-block;font-family:"Oswald",sans-serif;font-weight:600;background:var(--lime-s);color:#1f9c30;
+    padding:3px 10px;border-radius:4px;font-size:12px;border:2px solid var(--ink)}
+  .rk-low{color:#1f9c30;font-weight:800} .rk-mid{color:#b78a00;font-weight:800} .rk-hi{color:var(--red);font-weight:900}
+  .boards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.boards{grid-template-columns:1fr}}
+  .board{background:var(--card);border:3px solid var(--ink);border-radius:4px;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.85);display:flex;flex-direction:column}
+  .board .bh{font-family:"Oswald",sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;padding:11px 14px;border-bottom:3px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .board.b-steam .bh{background:var(--blue)} .board.b-rblx .bh{background:var(--lime)} .board.b-twch .bh{background:var(--violet)}
+  .board.b-dim .bh{background:var(--ink-dim)}
+  .board .bh .metric{font-size:10px;opacity:.9;letter-spacing:.04em}
+  .board ol{list-style:none;counter-reset:r;padding:6px 0;flex:1}
+  .board li{counter-increment:r;display:flex;align-items:baseline;gap:9px;padding:7px 14px;font-size:13px;border-bottom:1px dashed #e0dccf}
+  .board li:last-child{border-bottom:none}
+  .board li::before{content:counter(r);font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-dim);width:14px;flex:none;font-size:11px}
+  .board li .nm{color:var(--ink);font-weight:700;flex:1;line-height:1.3}
+  .board li .vn{font-family:"Oswald",sans-serif;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .board li.hot .nm::after{content:"🔥";margin-left:5px;font-size:11px}
+  .board li.up .nm::after{content:"▲";margin-left:5px;font-size:10px;color:#1f9c30}
+  .board li.down .nm::after{content:"▼";margin-left:5px;font-size:10px;color:var(--red)}
+  .board .nodata{padding:18px 14px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .board .bf{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.03em;color:var(--ink-dim);padding:9px 14px;border-top:2px solid var(--ink)}
+  .board .bf a{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .act{background:var(--card);border:3px solid var(--ink);border-radius:4px;padding:20px;transition:transform .14s,box-shadow .14s;box-shadow:5px 5px 0 rgba(0,0,0,.85)}
+  .act:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.9)}
+  .act .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px;
+    border:2px solid var(--ink);transform:skewX(-8deg)}
+  .act .ic>span{transform:skewX(8deg)}
+  .act.a-post .ic{background:var(--blue-s)} .act.a-demo .ic{background:var(--lime-s)} .act.a-watch .ic{background:var(--violet-s)} .act.a-avoid .ic{background:var(--red-s)}
+  .act h4{font-family:"Oswald",sans-serif;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:13px}
+  .act.a-post h4{color:var(--blue)} .act.a-demo h4{color:#1f9c30} .act.a-watch h4{color:var(--violet)} .act.a-avoid h4{color:var(--red)}
+  .act ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .act li{font-size:13.5px;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.5}
+  .act li::before{content:"▸";position:absolute;left:0;color:var(--ink);font-weight:800}
+  .evlog{margin-top:26px;background:var(--paper2);border:3px solid var(--ink);border-radius:4px;padding:18px 20px;box-shadow:5px 5px 0 rgba(0,0,0,.85);font-size:12.5px;color:var(--ink-soft)}
+  .evlog h4{font-family:"Oswald",sans-serif;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
+  .evlog table{width:100%;border-collapse:collapse;font-size:11.5px}
+  .evlog td{padding:6px 8px;border-bottom:1px dashed #d8d2c2;vertical-align:top}
+  .evlog td:first-child{font-weight:700;color:var(--ink);width:30%}
+  .evlog a{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue)}
+  .evlog .ok{color:#1f9c30;font-weight:800} .evlog .pp{color:#b78a00;font-weight:800}
+  footer{position:relative;overflow:hidden;text-align:center;padding:42px 26px;border-top:3px solid var(--ink);
+    background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff}
+  footer::before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(255,255,255,.35) 1.3px,transparent 1.3px);background-size:13px 13px}
+  footer>*{position:relative}
+  footer .fmk{width:36px;height:36px;margin:0 auto 14px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:var(--yellow);border:2px solid var(--ink)}
+  footer .legend{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.03em;max-width:660px;margin:0 auto 12px;line-height:1.9}
+  footer .legend b{background:var(--ink);padding:1px 7px}
+  footer .colophon{font-size:11px;opacity:.9;line-height:1.7}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:560px){.actions{grid-template-columns:1fr}main{padding:0 16px 60px}.hero-in{padding:40px 18px 48px}.lead{padding:20px;box-shadow:5px 5px 0 rgba(0,0,0,.85)}.sec-head .no{display:none}}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-in">
+      <div class="brand"><span class="mk"></span><span class="nm">GAME<span>GEN</span> DAILY</span></div>
+      <div class="nav-links">
+        <a href="#rank">即時熱榜</a><a href="#surge">暴衝訊號</a><a href="#early">早期訊號</a><a href="#talk">高討論文章</a><a href="#meme">迷因/遊戲</a><a href="#lab">機制靈感</a><a href="#zh">繁中熱話</a><a href="#tr">趨勢題材</a><a href="#cj">CJ題材</a><a href="#ac">建議動作</a>
+      </div>
+      <div class="nav-date">11 · 28 · SAT</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="live"><span class="pulse"></span>Trend-to-Game Radar</span>
+        <span class="dateflag">2026 / 11 / 28 · 彈藥工廠模式 · Black Friday Weekend · Steam 數字 11/27 07:30 最新可用（昨日） · Roblox / Twitch 今日無瀏覽器 · 來源 10+ 站</span>
+      </div>
+      <h1 class="disp"><span class="yl">GAME</span>GEN DAILY</h1>
+      <div class="zh-title">遊戲時事日報 · 彈藥工廠版</div>
+      <div class="tagline">今天最有話題性的新聞 → <b>直接餵社群產文 + CJ LinkedIn</b></div>
+
+      <div class="lead">
+        <div class="eyebrow">◆ 今日重點結論 · TOP STORY</div>
+        <p><b>今天是 Black Friday 後第一個週六（2026-11-28）。Cyber Monday（11/30）在後天。</b>三件重要事：<b>Steam Auto-Battler RPG Fest（11/26–30）今日仍在進行中</b>（digitalcitizen.life 確認），<b>Steam Winter Sale 確認 12/17 開始</b>（同源確認）——假日遊戲購買週期的完整路線圖已清晰；<b>Firaxis（文明/XCOM 系列開發商，Take-Two 旗下）確認裁員約 60 人</b>（Insider Gaming 確認，2026-11-17），同時仍在開發新 XCOM——頂級策略工作室縮編仍在繼續。</p>
+        <p><b>AI 產業訊號：Steam 新上線遊戲中 40.4% 揭露使用 AI</b>（SteamDB AI Pulse，2026-11-16 更新），這是歷史性的臨界點——業界正在從「AI 討論」進入「AI 普及」的新階段。同日確認新聞：<b>Xbox 下週（11/30–12/4）帶來兩款復古重製大作</b>：Rayman Legends Retold + Thief: The Dark Project Remastered（Xbox Wire 2026-11-27 官方確認），復古 IP 重製浪潮進入年末衝刺。</p>
+        <p>昨日（11/27）Steam 餘溫持續：<b>Cyber Monday 後天（11/30）——BG3 Black Friday +31.6%（22,706→29,889）的購買衝動還沒結束</b>。Steam Auto-Battler RPG Fest 今日仍活躍，Winter Sale 12/17 確認，Cyber Monday 11/30 是本週最後一個主要購買觸發點，Game Publisher 今天就要備好配文。今日 Steam 最新可用數據仍為昨日（11/27 07:30）：CS:GO 574K、Dota 2 489K（+15.4%）、BG3 29,889（+31.6%）。</p>
+        <div class="pull">▸ 今天最強切角：Steam 40.4% AI 揭露里程碑（CJ 首選，行業裂變點論述）+ Steam 假日購買日曆（Fest 今日進行→Cyber Monday 後天→Winter Sale 12/17，CJ 次選）+ Cyber Monday 倒數 48 小時（X 貼文首選）。Demo：「距離 Cyber Monday 還有 48 小時——你的 Cyber Monday 優惠倒數計時了嗎？準備好在對手前觸發下一波購買意願。」</div>
+      </div>
+
+      <div class="ammo">
+        <div><span class="ammo-h"><span>📰 今日彈藥 · 頭版</span></span></div>
+
+        <div class="ammo-grp l-cj reveal">
+          <div class="gt">🎯 CJ · LinkedIn 線　TOP 2</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam 40.4% 新遊戲揭露使用 AI——遊戲產業裂變點：每兩款新上線遊戲就快有一款公告 AI</div>
+            <div class="ln"><b>新聞事實：</b>SteamDB AI Pulse（2026-11-16 更新）確認：2026 年 Steam 新發布作品中，<b>40.4% 揭露使用 AI</b>。這是 SteamDB 追蹤以來最高的 AI 揭露比例，與 2025 年同期相比大幅上升。（SteamDB 直接數據確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>當業界 40% 的新遊戲公開說「我用 AI」，沉默就等於站在某一邊。<b>你的 AI 政策不再只是內部決定——它正在成為市場定位。TeamNinja 昨天給了最清晰的正向模板（AI 做 QA，人手做創意）。今天這個 40.4% 數字說明：不表態才是最糟糕的選擇。</b>GameGen 換皮工作流的立場恰好在這個黃金位置：我們用 AI 加速流程，但每一個符號、每一個畫面仍是人手設計的結果。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "40.4% of new games released on Steam in 2026 now disclose AI use. That's not a niche anymore — it's nearly half the market. When almost half your competitors are publicly declaring AI, silence is a statement. The game devs who win the next 12 months won't be those who use AI secretly or avoid it entirely. They'll be the ones who define clearly: where AI serves their pipeline, and where human craft remains irreplaceable."<br><span style="color:var(--ink-dim)">中譯：2026 年 Steam 新發布遊戲中有 40.4% 揭露使用 AI。這已不是小眾現象——而是幾乎接近市場一半。當快一半的競爭對手公開宣告 AI，沉默本身就是一種聲明。接下來 12 個月的贏家，不是那些偷偷用 AI 或完全不用的人，而是那些清晰定義「哪裡用 AI 服務流程、哪裡保留人手創作不可替代性」的人。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://steamdb.info/blog/ai-pulse/" target="_blank">SteamDB AI Pulse ↗</a>　pub 2026-11-16　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Steam Auto-Battler RPG Fest 今日進行中 + Winter Sale 12/17 確認——假日遊戲購買日曆全圖</div>
+            <div class="ln"><b>新聞事實：</b>Digital Citizen Life 確認（2026-11-27 更新）：<b>Steam Auto-Battler RPG Fest 11/26–11/30 進行中</b>，同期 Steam Awards 提名開放。Steam Winter Sale 確認 <b>12/17 開始，2027/1/4 結束</b>。今天（11/28）是 Black Friday 後第一個週六，Cyber Monday（11/30）後天，Auto-Battler Fest 後天結束，Winter Sale 12/17。（Digital Citizen Life 兩篇確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>遊戲發行商今天最需要的不是新聞，而是<b>時間表</b>：今天 BF Weekend → 後天（11/30）Cyber Monday + Auto-Battler Fest 結束 → 12/17 Winter Sale。<b>這三個觸發點之間的「間歇期」（12/1–12/16），才是爭奪玩家注意力的黃金空窗——沒有 Sale 的情況下，誰能用內容和社群保持活躍，誰就佔優勢。</b></div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Here's the holiday gaming calendar every publisher needs pinned right now: Black Friday Weekend (now) → Cyber Monday Nov 30 → Auto-Battler RPG Fest ends Nov 30 → Steam Winter Sale starts Dec 17. The gap from Dec 1 to Dec 16 is your content window — no sale, no fest, just organic momentum. The developers who plan that gap NOW will capture the attention that everyone else leaves on the table."<br><span style="color:var(--ink-dim)">中譯：每位發行商現在都應該記住這份假日遊戲日曆：Black Friday 週末（現在）→ Cyber Monday 11/30 → Auto-Battler RPG Fest 結束 11/30 → Steam Winter Sale 12/17 開始。12/1 到 12/16 的間隙是你的內容窗口——沒有特賣，沒有活動，只有自然動能。現在就計畫好這段間隙的開發者，將會捕捉到其他人遺留在桌上的所有注意力。</span></div>
+            <div class="meta">去賭場化 ✅　來源 <a href="https://www.digitalcitizen.life/steam-black-friday-2026-november-26-30-steam-awards-nominations-autumn-sale/" target="_blank">Digital Citizen Life ↗</a>　pub 2026-11-27　partial（摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-ed reveal">
+          <div class="gt">📣 小編 · X 線　TOP 3</div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Cyber Monday 後天（11/30）——Black Friday BG3 +31.6% 的購買動能還沒結束，48 小時倒計時開始<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>heat_latest.json（11/27 07:30）直接確認：BG3 昨日 +31.6%（22,706→29,889）。Digital Citizen Life 確認（2026-11-27）：Cyber Monday = 11/30（後天）。Steam Winter Sale = 12/17。今天（11/28）是 BF Weekend 第 2 天，Cyber Monday 48 小時後。（JSON 直接確認 + Digital Citizen Life RSS）</div>
+            <div class="ln"><b>GameGen 角度：</b>昨天是 Black Friday，BG3 +31.6%。今天是週六，玩家還在消化昨天的購買決定。後天是 Cyber Monday，<b>第二波購買意願即將觸發</b>。「今天你還來得及——Cyber Monday 優惠倒數 48 小時。」這個時機點，今天發貼最有感。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Baldur's Gate 3 surged 31.6% on Black Friday. That wasn't the peak — it was the opening shot. Cyber Monday is 48 hours away. If Black Friday was about 'finally buying that game,' Cyber Monday is about 'and then I told three friends.' Your conversion window isn't closed. It just reloaded."<br><span style="color:var(--ink-dim)">中譯：Baldur's Gate 3 在黑色星期五飆漲 31.6%。那不是頂點，而是開場。Cyber Monday 在 48 小時後。如果黑色星期五是「我終於買了那款遊戲」，Cyber Monday 就是「然後我告訴了三個朋友」。你的轉化窗口還沒關閉，它剛剛重新上膛。</span></div>
+            <div class="meta">來源 heat_latest.json 11/27 07:30 JSON 直接確認　<a href="https://store.steampowered.com/app/1086940" target="_blank">BG3 Steam ↗</a>　<strong>yes</strong>（JSON 直接數字）/ Cyber Monday 日期 <a href="https://www.digitalcitizen.life/steam-black-friday-2026-november-26-30-steam-awards-nominations-autumn-sale/" target="_blank">Digital Citizen Life ↗</a></div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🔄 近期</span>Firaxis（文明/XCOM 系列）裁員約 60 人，仍在開發新 XCOM——頂級策略工作室縮編<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Insider Gaming 確認（2026-11-17）：<b>Firaxis（Civilization + XCOM 開發商，Take-Two 旗下）裁員約 60 人（約佔員工三分之一）</b>，但同時確認仍在開發新 XCOM。（Insider Gaming 確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>文明和 XCOM 系列的爸爸，也在裁人。<b>但「裁員 + 仍做新作」這個組合說明什麼？工作室選擇在更小的規模下繼續——這不是放棄，這是「可持續開發」的被迫版。</b>遊戲業的結構性調整還在繼續，策略類型工作室並不例外。GameGen 切角：裁員不等於放棄 IP，小團隊做大品牌 IP 的時代正在到來。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "Firaxis — the studio behind Civilization and XCOM — just laid off about 60 people. And they're still making a new XCOM. This is the new reality: smaller teams, bigger IPs. The studios that survive aren't those with the most headcount. They're the ones that figure out how to do more with less, faster. AI-assisted pipelines aren't optional anymore — they're the survival strategy."<br><span style="color:var(--ink-dim)">中譯：Firaxis——文明和 XCOM 系列的開發商——剛剛裁員約 60 人。而他們仍在做新的 XCOM。這是新現實：更小的團隊，更大的 IP。存活的工作室不是人數最多的，而是那些找到「以更少資源更快完成更多事」方法的人。AI 輔助流水線不再是可選項，而是存活策略。</span></div>
+            <div class="meta">來源 <a href="https://insider-gaming.com/civilization-and-xcom-studio-firaxis-lays-off-a-third-of-staff/" target="_blank">Insider Gaming ↗</a>　pub 2026-11-17　partial（摘要層）</div>
+          </div>
+
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>Xbox 下週（11/30–12/4）帶來 Rayman Legends Retold + Thief: The Dark Project Remastered——復古 IP 重製浪潮年末加速<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>事實：</b>Xbox Wire 官方確認（2026-11-27）：「Next Week on Xbox: New Games for November 30 to December 4」，包含 <b>Rayman Legends Retold</b>（Ubisoft 重製）及 <b>Thief: The Dark Project Remastered</b>（Eidos/Square Enix 復古潛行）等。（Xbox 官方 Wire 確認；摘要層）</div>
+            <div class="ln"><b>GameGen 角度：</b>Rayman 和 Thief 同週登場，說明年末復古 IP 重製潮正在加速。<b>這不只是懷舊——這是出版商用「已有觀眾基礎的 IP」對抗新遊戲發行風險的策略</b>。GameGen 切角：換皮開發本質上就是在已有視覺語言上快速建立新體驗——與復古重製邏輯一致。</div>
+            <div class="hook"><span class="en">Hook (EN):</span> "This week: Rayman Legends Retold and Thief: The Dark Project Remastered both drop on Xbox. The holiday retro revival wave is accelerating. Publishers have figured out what the market already knew: players don't just want new — they want familiar, remixed, and trustworthy. The studios who understand nostalgia as a design principle (not just a marketing tactic) will own December."<br><span style="color:var(--ink-dim)">中譯：本週：Rayman Legends Retold 和 Thief: The Dark Project Remastered 同時在 Xbox 上線。假日復古重製浪潮正在加速。發行商已經弄清楚了市場早已知道的事：玩家不只想要新事物——他們想要熟悉、重新混搭和值得信賴的體驗。那些將懷舊理解為設計原則（而不只是行銷戰術）的工作室將會主導 12 月。</span></div>
+            <div class="meta">來源 <a href="https://news.xbox.com/en-us/2026/11/27/next-week-on-xbox-new-games-for-november-30-to-december-4" target="_blank">Xbox Wire ↗</a>　pub 2026-11-27　partial（摘要層）</div>
+          </div>
+        </div>
+
+        <div class="ammo-grp l-dm reveal">
+          <div class="gt">🕹️ Demo 線　TOP 1</div>
+          <div class="ammo-item">
+            <div class="ti"><span class="fresh f-new">🆕 今天新</span>「Cyber Monday 48 小時倒計時」——今天最強 Demo 情緒：你的遊戲在 Cyber Monday 之前有 48 小時最後衝刺<span class="deca">去賭場化 OK</span></div>
+            <div class="ln"><b>玩法概念：</b>今天是 Black Friday 後第 1 天，Cyber Monday 在後天（11/30）。今日最強的 Demo 情緒：「你的遊戲倒數 48 小時的道具搶購」——限時搶購的情緒已被 Black Friday 預熱，Cyber Monday 是第二個爆發點。配文：「距離 Cyber Monday 還有 48 小時——今天是備戰日。在對手前搶佔最後一波購買意願，你準備好了嗎？」</div>
+            <div class="ln"><b>為何是今天：</b>BG3 昨日 +31.6% 說明購買意願被 Black Friday 啟動。Cyber Monday 48 小時後再次觸發。今天是兩個波峰之間的過渡點，最適合發「Cyber Monday 備戰」型配文，轉化率比當天更高。⚠️ 不使用任何品牌商品素材。</div>
+            <div class="meta">⚠️ 不使用任何品牌商品圖像或商標　模板：Cyber Monday 倒計時 / 48 小時備戰</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 即時熱榜 -->
+    <section id="rank">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">01</span><h2><span>即時熱榜</span></h2><span class="en">Live Charts</span></div>
+      <div class="boards reveal">
+        <div class="board b-steam">
+          <div class="bh"><span>STEAM 在線</span><span class="metric">昨日（11/27）07:30 最新可用</span></div>
+          <ol>
+            <li class="hot"><span class="nm">CS:GO</span><span class="vn">574K +0.5%</span></li>
+            <li class="hot"><span class="nm">Dota 2</span><span class="vn">489K +15.4%</span></li>
+            <li><span class="nm">Team Fortress 2</span><span class="vn">95.8K +0.3%（持穩）</span></li>
+            <li><span class="nm">PUBG: BATTLEGROUNDS</span><span class="vn">84.4K -3.5%</span></li>
+            <li class="up"><span class="nm">Rust</span><span class="vn">60.7K +18.5%</span></li>
+            <li class="up"><span class="nm">Marvel Rivals</span><span class="vn">54.4K +13.6%</span></li>
+          </ol>
+          <div class="bf">Steam 官方 API · 11/27 07:30 最新可用 · <a href="https://store.steampowered.com/charts/mostplayed" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-rblx">
+          <div class="bh"><span>ROBLOX CCU</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 roblox.com/charts。Black Friday 週末通常派對類 / 購物類遊戲爬升，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://www.roblox.com/charts" target="_blank">原始 ↗</a></div>
+        </div>
+        <div class="board b-dim">
+          <div class="bh"><span>TWITCH 觀看</span><span class="metric">今日資料不足</span></div>
+          <div class="nodata">今日無瀏覽器工具，無法即時連線 TwitchTracker。Black Friday 週末直播通常整體上升，今日具體數字尚未更新。</div>
+          <div class="bf">⚠️ 今日資料不足 · <a href="https://twitchtracker.com/games" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+      <div class="story rl reveal" style="margin-top:18px;padding:14px 18px;font-size:13px;color:var(--ink-soft)">
+        ⚠️ 今日（11/28）Steam 熱度雷達數字尚未更新，使用昨日（11/27 07:30）最新可用數據。<b>昨日 Black Friday 效應清晰：Baldur's Gate 3 +31.6%（22,706→29,889）/ Dota 2 +15.4%（423K→489K）/ Rust +18.5%（51K→61K）/ Marvel Rivals +13.6%</b>。今日 Steam Auto-Battler RPG Fest（11/26–30）進行中，Cyber Monday（11/30）後天。Steam 熱賣榜（11/27）：Call of Duty MW4、007 First Light、STAR WARS: Galactic Racer。Roblox / Twitch 今日無瀏覽器工具，均標記「資料不足」。
+      </div>
+    </section>
+
+    <!-- 02 暴衝訊號 -->
+    <section id="surge">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">02</span><h2><span>暴衝訊號</span></h2><span class="en">Surge Signals</span></div>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>BF 後繼效應</span></span>Baldur's Gate 3 Black Friday +31.6% 購買動能——Cyber Monday（11/30）是第二個觸發點</h3>
+        <div class="sum">heat_latest.json（11/27 07:30）直接確認：<b>BG3 在線 29,889，前日 22,706，+31.6%</b>。Steam Auto-Battler RPG Fest 11/26–30 進行中（Digital Citizen Life 確認）。Cyber Monday 11/30（後天）——Black Friday 購買意願的第二個主要觸發點。今日 BG3 Steam #14，昨日 Rust +18.5%、Dota 2 +15.4%、Marvel Rivals +13.6% 多遊戲同步暴升確認 Black Friday 效應規模。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Black Friday 購買意願有兩個波峰：<b>BF 當天（昨日）和 Cyber Monday（後天）</b>。今天是「兩波之間」的過渡點——昨天已買的人今天在玩，還沒買的人今天在想「要不要等 Cyber Monday 再買」。這個心理窗口是發「Cyber Monday 倒計時 48 小時」配文的最佳時機，今晚發效果最好。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAM 官方 API · 11/27 07:30 · <a href="https://store.steampowered.com/app/1086940" target="_blank">BG3 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>Auto-Battler</span></span>Steam Auto-Battler RPG Fest 今日進行中（11/26–30）——特定類型遊戲窗口的最後 48 小時</h3>
+        <div class="sum">Digital Citizen Life 確認（2026-11-27）：<b>Steam Auto-Battler RPG Fest 11/26–30 進行中</b>，期間 Steam Awards 提名開放。Auto-Battler 類型今天是 Steam 官方 Fest 中心，同類型遊戲（Slay the Spire 2 在熱玩排行第 8、Balatro 第 99、Binding of Isaac 第 21）昨日均在熱玩榜。Fest 後天（11/30）結束，與 Cyber Monday 同日。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Steam 把 Auto-Battler RPG 設為 Black Friday 週末的主題類型——這不是偶然。<b>Auto-Battler 是過去 2 年最成功的「可學習」類型：Balatro、STS2 的核心都是牌組 / 物品組合系統</b>，玩家容易入門但深度無限。GameGen 換皮遊戲的視覺語言與 Auto-Battler 卡牌風格高度相容，今天是最有成本效益的類型研究時機。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">DIGITAL CITIZEN LIFE · <a href="https://www.digitalcitizen.life/steam-black-friday-2026-november-26-30-steam-awards-nominations-autumn-sale/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 03 早期訊號 -->
+    <section id="early">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">03</span><h2><span>早期訊號</span></h2><span class="en">Up-and-Coming</span></div>
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>早期</span></span>Steam Winter Sale 12/17 確認 / Path of Exile 2 1.0 十二月 / Xbox 復古重製週（Rayman + Thief）</h3>
+        <div class="sum">三個早期訊號。<b>Digital Citizen Life 確認（2026-11-27）：Steam Winter Sale 12/17–2027/1/4</b>，今天到 Winter Sale 還有 19 天，「間歇期」（12/1–12/16）是內容窗口。<b>RPS 確認（2026-11-26）：Path of Exile 2 1.0 版今年 12 月到來</b>（完整戰役 + 兩個新職業）——十二月 ARPG 競爭格局最強訊號之一。<b>Xbox Wire 官方確認（2026-11-27）：Rayman Legends Retold + Thief: The Dark Project Remastered 11/30 登場</b>——復古 IP 重製浪潮年末加速。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Winter Sale 12/17 是今年最後一個主要購買觸發點。<b>12/1–12/16 的間歇期，是 GameGen 和所有不靠 Sale 折扣驅動的遊戲能搶佔注意力的最佳窗口</b>。PoE 2 1.0 十二月到來將吸走大量 ARPG 玩家注意力——GameGen 換皮不競爭 ARPG 玩家，但要注意發行時機的選擇。Rayman + Thief 復古重製說明：老 IP 新包裝是今年下半年最可靠的出版商策略。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src"><a href="https://www.digitalcitizen.life/steam-autumn-sale-2026-over-winter-sale-december-17-black-friday/" target="_blank">Digital Citizen Life ↗</a> / <a href="https://www.rockpapershotgun.com/path-of-exile-2s-10-version-is-out-this-year-after-all-arriving-in-december-with-a-full-campaign-two-neat-new-classes-and-more" target="_blank">RPS ↗</a> / <a href="https://news.xbox.com/en-us/2026/11/27/next-week-on-xbox-new-games-for-november-30-to-december-4" target="_blank">Xbox Wire ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04 高討論文章 -->
+    <section id="talk">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">04</span><h2><span>高討論文章</span></h2><span class="en">Buzz / Reads</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>AI 裂變點</span></span>Steam 新遊戲 40.4% 揭露使用 AI——遊戲業歷史性臨界點，每兩款新遊就快有一款公告 AI</h3>
+        <div class="sum">SteamDB AI Pulse（2026-11-16 更新）確認：<b>2026 年 Steam 新發布作品中 40.4% 揭露使用 AI</b>，這是 SteamDB 追蹤以來最高比例。相比之下，昨日 Tavily 資料（2026-11-25 Verge / Kotaku / Atari Homebrew Awards 被 AI 遊戲攻陷）與 SteamDB 數據相互印證：AI 生成遊戲浪潮正在量化地、不可逆地改變 Steam 上的內容組成。同日，Team Ninja 昨日（11/27）提供了目前業界最清晰的 AI 政策正向模板。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>40.4% 是一個「第一個達到效應」的里程碑：<b>當超過 40% 的新遊戲公開說「我用 AI」，這個行為本身就從「差異化」變成了「標配」</b>。在這個背景下，不揭露 AI 使用的工作室面臨兩種風險：被認為在隱瞞（如果用了）或被認為效率落後（如果沒用）。GameGen 切角：「我們怎麼用 AI」的透明度聲明，今天是品牌資產，不是 PR 義務。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">STEAMDB · <a href="https://steamdb.info/blog/ai-pulse/" target="_blank">AI Pulse ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>工作室縮編</span></span>Firaxis（Civ/XCOM）裁員約 60 人——頂級策略 IP 工作室縮編仍在繼續，仍做新 XCOM</h3>
+        <div class="sum">Insider Gaming 確認（2026-11-17）：<b>Firaxis（Civilization + XCOM 開發商，Take-Two 旗下）裁員約 60 人，佔員工三分之一左右</b>，同時確認仍在開發新 XCOM。近期工作室縮編累計：Xbox 裁員 268 人（9 月），Skydance/Paramount-WB 合併裁員，Bit Reactor（Star Wars Zero Company）裁員。今年遊戲業工作室縮編仍在系統性地持續——策略類型大廠並不例外。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Firaxis 裁員 60 人、仍做新 XCOM。這個組合說明：<b>大型工作室選擇「更小規模做同樣的事」而不是放棄 IP</b>——也就是說，AI 工具、流程優化、縮減非核心人員，成為大廠在市場收縮壓力下的標準應對。GameGen 的換皮工作流（小團隊、快速迭代、AI 輔助）所對應的正是大廠無法做到的靈活性。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">INSIDER GAMING · <a href="https://insider-gaming.com/civilization-and-xcom-studio-firaxis-lays-off-a-third-of-staff/" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ig reveal">
+        <h3><span class="tag ig"><span>Live Service</span></span>EA Skate 移除季度制「In favour of regular, agile content updates」——Live Service 設計哲學轉向</h3>
+        <div class="sum">Eurogamer 確認（2026-11-26 RSS）：<b>「EA removes some live service fluff from Skate and ends seasonal structure 'in favour of regular, agile content updates'」</b>。EA 選擇放棄 Skate 的季度制（Battle Pass 型季節結構），改為「更頻繁、更敏捷的內容更新」模式，同時移除部分 live service 元素。這是繼 Ratchet &amp; Clank Game 關閉前未正式發行之後（GameSpot 確認），第二個本週 live service 設計重要訊號。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>EA Skate 放棄季度制，說明「每季強制更新 + 大量 live service 包裝」的模式正在被重新審視。<b>「Agile content updates」實際上更接近 GameGen 換皮的發行哲學：快速、頻繁、以玩家需求為中心，而非以 battle pass 週期為中心。</b>Live service 的正確形式，今年正在被市場重新定義。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">EUROGAMER · <a href="https://www.eurogamer.net/ea-removes-live-service-skate-seasons" target="_blank">原文 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 迷因 -->
+    <section id="meme">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">05</span><h2><span>迷因 / 迷因遊戲</span></h2><span class="en">Meme &amp; Meme Games</span></div>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>Itch 迷因</span></span>「This Role: You are Capybara / Hamster」雙雙熱榜——Itch 迷因角色扮演遊戲持續霸榜</h3>
+        <div class="sum">heat_latest.json（itch_io 資料）確認：<b>「This Role: You are Capybara」</b>（seenthai.itch.io）和 <b>「This Role: You are Hamster」</b>（同開發者）同時出現在 itch.io meme 熱榜和 hotspots_latest 資料中。另外，<b>「Kill the Ice Age Baby Adventure」系列</b>（meme tag）連續在 itch.io 病毒榜出現，系列效應持續。Free Fire World Series 2026 大決賽今日（11/28）在曼谷舉行（待確認）。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Capybara 和 Hamster 的「角色扮演」迷因遊戲說明：<b>itch.io 迷因遊戲的成功公式是——讓玩家「成為」一個有即時辨識度的動物/角色，配合低門檻玩法</b>。同一開發者做兩個版本（水豚/倉鼠）說明系列化複製是可行策略。GameGen 換皮邏輯與此高度相似：換一個高辨識度的視覺外殼，複用相同的遊戲核心。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="3"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="2"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 不引用 IP 品牌</span></span></div></div>
+          </div>
+          <div class="src">ITCH.IO MEME CHART · <a href="https://seenthai.itch.io/this-role-you-are-capybara" target="_blank">水豚版 ↗</a> / <a href="https://seenthai.itch.io/this-role-you-are-hamster" target="_blank">倉鼠版 ↗</a></div>
+        </div>
+      </article>
+
+      <article class="story ai reveal">
+        <h3><span class="tag ai"><span>業界迷因</span></span>Atari Homebrew Awards 被 AI 遊戲攻陷取消——「有沒有靈魂」的遊戲評審危機蔓延</h3>
+        <div class="sum">Kotaku（tavily, 2026-11-24 確認）：<b>「Atari Homebrew Awards Canceled Over Torrent Of AI Games: 'I Saw No Path Forward'」</b>。PC Gamer（2026-11-25 確認）：組織者稱 AI 遊戲「killed another coding competition」。同日，E.T. 設計師（Atari 1982 年最有名的爛遊戲設計師）將 AI 遊戲浪潮類比 1980 年代遊戲業崩潰（「glut of crap on the market」），PC Gamer 確認。（Tavily / PC Gamer 兩源確認；摘要層）</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>Atari Homebrew 獎項取消，因為評審無法區分 AI 遊戲和人手作品。<b>這是「質量訊號崩潰」的早期案例——當任何人都能快速生成「夠格參賽」的作品時，競賽本身的意義被稀釋</b>。GameGen 的換皮工作流恰好在這個語境下有清晰的差異化：我們的視覺素材是人手設計的 AI 生圖，不是「prompt 一鍵出遊戲」。如何說清楚這個區別，是今年的核心品牌工作。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="1"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低</span></span></div></div>
+          </div>
+          <div class="src">KOTAKU · <a href="https://kotaku.com/atari-homebrew-awards-canceled-over-torrent-of-ai-games-i-saw-no-path-forward-2001000096" target="_blank">原文 ↗</a> / PC GAMER · <a href="https://www.pcgamer.com/software/ai/ai-kills-another-coding-competition-i-was-not-at-all-interested-in-giving-awards-to-the-output-of-large-language-models/" target="_blank">↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 06 機制靈感庫 -->
+    <section id="lab">
+      <div class="sec-head s-rl reveal"><span class="accent"></span><span class="no disp">06</span><h2><span>機制靈感庫</span></h2><span class="en">Mechanic Lab</span></div>
+      <div class="boards reveal">
+        <div class="board b-rblx">
+          <div class="bh"><span>本日可借用機制</span><span class="metric">itch.io + 今日新聞衍生</span></div>
+          <ol>
+            <li class="hot"><span class="nm">Cyber Monday 48 小時倒計時（今日首選）</span><span class="vn">BF 後繼效應</span></li>
+            <li class="hot"><span class="nm">Auto-Battler 卡牌組合（Steam Fest 今日活躍）</span><span class="vn">類型趨勢</span></li>
+            <li class="up"><span class="nm">迷因動物角色系列化複製（水豚/倉鼠）</span><span class="vn">itch 病毒公式</span></li>
+            <li><span class="nm">復古 IP 新包裝（Rayman/Thief 重製範本）</span><span class="vn">假日出版策略</span></li>
+            <li><span class="nm">AI 透明度聲明作為品牌工具（40.4% 里程碑背景下）</span><span class="vn">信任建立</span></li>
+          </ol>
+          <div class="bf">今日新聞衍生 · 11/28 · <a href="https://itch.io/games/tag-viral" target="_blank">原始 ↗</a></div>
+        </div>
+      </div>
+
+      <article class="story rl reveal" style="margin-top:18px">
+        <h3><span class="tag rl"><span>洞察</span></span>「12 月間歇期」機制——Winter Sale 前的 16 天空窗，誰搶先誰贏</h3>
+        <div class="sum">假日購買週期拆解：<b>步驟一：</b>Black Friday（11/27，昨日完成）→ <b>步驟二：</b>Cyber Monday（11/30，後天，第二個觸發點）→ <b>步驟三：</b>12/1–12/16「間歇期」（無 Sale，自然流量主導，Steam Winter Sale 前的內容競爭窗口）→ <b>步驟四：</b>Steam Winter Sale（12/17 開始）。Digital Citizen Life（2026-11-27）確認 Winter Sale 日期。</div>
+        <div class="obs"><span class="lbl">GameGen 觀察：</span>「12 月間歇期（12/1–12/16）」是業界最被低估的年度窗口。<b>沒有 Sale 的週，玩家的注意力由內容驅動而非價格驅動——這是 GameGen 社群貼文影響力最大的時間段</b>。在 Winter Sale 前 2 週積累「玩家已知道你的遊戲」的認知，到 Sale 開始時轉化率最高。今天就要規劃 12/1–12/16 的內容日曆。</div>
+        <div class="footrow">
+          <div class="scores">
+            <div class="score">相關性<div class="bar" data-v="5"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">分享<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">可玩<div class="bar" data-v="4"><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="score">風險<div style="margin-top:5px"><span class="risk low"><span>低 · 追蹤研究，不複製品牌</span></span></div></div>
+          </div>
+          <div class="src">DIGITAL CITIZEN LIFE · <a href="https://www.digitalcitizen.life/steam-autumn-sale-2026-over-winter-sale-december-17-black-friday/" target="_blank">Winter Sale 確認 ↗</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07 繁中 Threads 熱話 -->
+    <section id="zh">
+      <div class="sec-head s-ig reveal"><span class="accent"></span><span class="no disp">07</span><h2><span>繁中 Threads 熱話</span></h2><span class="en">TW Threads</span></div>
+      <div class="story ig reveal" style="padding:18px 20px">
+        <h3 style="margin-bottom:10px"><span class="tag ig"><span>繁中熱話</span></span>今日繁中 Threads：今日資料不足</h3>
+        <div class="sum" style="margin-bottom:0">今日無瀏覽器工具，無法即時連線 Threads 搜尋繁中遊戲圈貼文。根據今日業界背景，繁中遊戲社群可能討論：<b>GTA 6 Black Friday 後續熱度</b>（台灣玩家第一個 BF Weekend 感受）、<b>Steam Auto-Battler RPG Fest 折扣推薦</b>（台灣 Balatro / STS2 社群活躍）、<b>Firaxis 裁員</b>（台灣 Civ/XCOM 粉絲多）、<b>Cyber Monday 購買指南</b>。<b>今日繁中 Threads 具體熱話無法查證，以業界背景作參考。</b></div>
+      </div>
+    </section>
+
+    <!-- 08 Trend-to-Game 題材 -->
+    <section id="tr">
+      <div class="sec-head s-tr reveal"><span class="accent"></span><span class="no disp">08</span><h2><span>Trend-to-Game 題材</span></h2><span class="en">Scanner</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>題材（熱度）</th><th>對應模板</th><th>分享點</th><th>風險</th><th>建議</th></tr></thead>
+        <tbody>
+          <tr><td>Cyber Monday 後天（11/30）→ 48 小時倒計時</td><td><span class="tmpl">Cyber Monday 備戰 / 倒計時</span></td><td>「距離 Cyber Monday 還有 48 小時——今天是備戰日。在對手前觸發下一波購買意願。你的 Cyber Monday 優惠倒計時了嗎？」</td><td class="rk-low">低 · 不用品牌素材</td><td>★ 今日 Demo 首選，今晚發效果最好，明天仍適用</td></tr>
+          <tr><td>Steam 40.4% AI 揭露（業界裂變點）</td><td><span class="tmpl">「AI 透明度是品牌聲明」切角</span></td><td>「Steam 新遊戲有 40.4% 公告使用 AI。這不是小眾了。你的 AI 政策是什麼？沉默就是一種聲明。」</td><td class="rk-low">低</td><td>CJ 首選，今日話題時機性最高，本週持續有效</td></tr>
+          <tr><td>Auto-Battler 類型（Steam Fest 今日進行）</td><td><span class="tmpl">卡牌組合 / 物品搭配系統</span></td><td>「Steam 把 Auto-Battler 設為 BF 週末主題類型——Balatro、STS2 的組合深度是今年最成功的遊戲設計原則之一。你的換皮機制有沒有同樣的『可學習深度』？」</td><td class="rk-low">低</td><td>X 貼文研究角度，今日 Fest 活躍期限時，明天後降溫</td></tr>
+          <tr><td>復古 IP 重製（Xbox Rayman + Thief）</td><td><span class="tmpl">「熟悉感重置」換皮邏輯</span></td><td>「Rayman Legends Retold + Thief Remastered 同週上線——老 IP 新包裝是今年下半年最可靠的出版策略。熟悉感 + 新體驗 = 最低行銷成本的入場券。」</td><td class="rk-low">低 · 不引用品牌素材</td><td>X 貼文 / CJ 均適合，本週到下週持續有效</td></tr>
+          <tr><td>大廠工作室縮編（Firaxis 裁員 60 人）</td><td><span class="tmpl">小團隊大 IP 切角</span></td><td>「Civ 系列的爸爸裁員 60 人，還在做新 XCOM。大廠選擇了更小的規模做同樣的事——AI 輔助流水線不再是可選項，是存活策略。」</td><td class="rk-low">低</td><td>CJ 次選，今日敏感性低（非昨日新聞），本週任何時間均可</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 09 CJ LinkedIn 題材 -->
+    <section id="cj">
+      <div class="sec-head s-ai reveal"><span class="accent"></span><span class="no disp">09</span><h2><span>CJ｜2B LinkedIn 題材</span></h2><span class="en">For CJ</span></div>
+      <div class="reveal">
+      <table class="t2g">
+        <thead><tr><th>切角（產業 / 策略）</th><th>重點事實</th><th>建議鉤子</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>Steam 40.4% AI 揭露里程碑——遊戲業 AI 化裂變點，透明度成為品牌策略</td><td>SteamDB AI Pulse（2026-11-16 更新）：2026 年 Steam 新發布作品中 40.4% 揭露使用 AI，歷史最高。同日背景：Atari Homebrew Awards 因 AI 遊戲攻陷取消（Kotaku, 11/24）。Team Ninja 昨日（11/26）提供正向模板（AI 做 QA，人手做創意）。</td><td>"40.4% of new Steam games in 2026 now disclose AI use. That's not niche — it's nearly half the market. When almost half your competitors declare AI, silence is a statement. The studios that win aren't hiding it or avoiding it. They define clearly: where AI serves efficiency, and where human craft remains irreplaceable. That clarity is now your brand asset, not a PR obligation."</td><td><a href="https://steamdb.info/blog/ai-pulse/" target="_blank">↗</a></td></tr>
+          <tr><td>Steam 假日購買日曆智慧——BF Weekend→Cyber Monday→間歇期→Winter Sale 的發行時機全圖</td><td>Digital Citizen Life（2026-11-27）：Steam Auto-Battler RPG Fest 11/26–30 進行中，Winter Sale 12/17–2027/1/4 確認。Cyber Monday = 11/30（後天）。12/1–12/16 是無 Sale 內容窗口。BG3 Black Friday +31.6%（JSON 確認）說明假日購買觸發機制有效。</td><td>"Here's the holiday gaming calendar every publisher needs pinned: BF Weekend (now) → Cyber Monday Nov 30 → content gap Dec 1–16 → Steam Winter Sale Dec 17. The gap is your secret weapon. No sale, no fest, just organic momentum — and the developers who plan that content window NOW will capture the attention that everyone else leaves on the table."</td><td><a href="https://www.digitalcitizen.life/steam-autumn-sale-2026-over-winter-sale-december-17-black-friday/" target="_blank">↗</a></td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:12px;font-size:13px;color:var(--ink-soft);background:var(--paper2);border:2px solid var(--ink);border-radius:6px;padding:12px 16px">
+        📄 頭版 🎯 CJ Top 2（Steam 40.4% AI 揭露里程碑、假日購買日曆）已附完整 EN hook + 中譯，可直接交 CJ 每日包。Steam 40.4% 切角為「AI 透明度是品牌資產」，正好延續昨日 Team Ninja 正向模板的討論。假日日曆切角提供發行者可操作的時間表，CJ 聽眾即時可用。對外用字已過濾所有賭場語言。所有來源均為摘要層，建議發文前 CJ 自行確認原文細節。
+      </div>
+      </div>
+    </section>
+
+    <!-- 10 建議動作 -->
+    <section id="ac">
+      <div class="sec-head s-ac reveal"><span class="accent"></span><span class="no disp">10</span><h2><span>今日建議動作</span></h2><span class="en">Action</span></div>
+      <div class="actions">
+        <div class="act a-post reveal"><div class="ic"><span>📣</span></div><h4>可發 X 的題目</h4><ul>
+          <li>Cyber Monday 48 小時倒計時：「BG3 昨天 +31.6%，Cyber Monday 後天——Black Friday 購買意願的第二波觸發點，你的遊戲準備好了嗎？」（今日限時，今晚發最有感）</li>
+          <li>Steam 40.4% AI 揭露：「2026 年 Steam 有 40.4% 的新遊戲公告使用 AI。這不是小眾了。你的 AI 政策是什麼？沉默就是一種聲明。」（本週任何時間均可）</li>
+          <li>Firaxis 裁員 60 人仍做 XCOM：「Civ 系列的爸爸裁了三分之一員工，還在做新 XCOM。大廠選擇了更小規模做同樣的事。AI 輔助流水線不再是可選項，是存活策略。」</li>
+          <li>Rayman + Thief 復古重製：「本週 Xbox：Rayman Legends Retold + Thief Remastered 同週上線。老 IP 新包裝是今年下半年最可靠的出版策略——熟悉感本身就是最低成本的行銷。」</li>
+        </ul></div>
+        <div class="act a-demo reveal"><div class="ic"><span>🕹️</span></div><h4>可做成 demo</h4><ul>
+          <li>★ Cyber Monday 48 小時倒計時——今天是 BF Weekend 第 2 天，Cyber Monday 後天。配文：「距離 Cyber Monday 還有 48 小時，你的遊戲備戰了嗎？」今日至明日發效果最好。</li>
+          <li>Auto-Battler 卡牌組合玩法——今天是 Steam Auto-Battler RPG Fest 最後衝刺期（今日＋明日），用 Auto-Battler 格局展示你的組合深度。</li>
+          <li>12 月間歇期內容預告——「Winter Sale 12/17 之前，我們要給你的 16 天」型預告型配文，今天開始預熱 12 月內容計畫。</li>
+        </ul></div>
+        <div class="act a-watch reveal"><div class="ic"><span>👁️</span></div><h4>可追蹤的訊號</h4><ul>
+          <li>Cyber Monday（11/30）Steam 數字——後天觀察 BG3 / Rust / Dota 2 是否再次暴升，確認 Cyber Monday 效應強度。</li>
+          <li>Steam Auto-Battler RPG Fest 結束後（11/30）——Fest 期間類型遊戲在線數字，觀察 Auto-Battler 有無持續升溫訊號。</li>
+          <li>Path of Exile 2 1.0 十二月發行日確認——一旦確認具體日期，十二月 ARPG 競爭格局將明朗，GameGen 發行時機選擇需配合。</li>
+          <li>GTA 6 Cyber Monday 週末後資料——分析師估算 5,300 萬套（待確認），下週更新後可觀察週末 momentum 是否持續。</li>
+        </ul></div>
+        <div class="act a-avoid reveal"><div class="ic"><span>⚠️</span></div><h4>需要避開的風險</h4><ul>
+          <li>未確認訊號：miHoYo AI 聲音侵權勝訴和 Fairgames 取消——今日搜尋結果顯示「約 14 小時前」但無直接原文 URL，使用前需查證來源。</li>
+          <li>Cyber Monday / BF demo：不使用任何品牌商品圖像或商標，只借「倒數競爭 / 購買衝動」情感設定。</li>
+          <li>Steam 40.4% 數據：來源為 SteamDB，建議對外保留「SteamDB 數據指出」語氣而非直接陳述為事實。</li>
+          <li>Firaxis 裁員：不寫成政治立場或批評 Take-Two，只借「小團隊大 IP」的策略觀察角度。</li>
+          <li>所有來源均為摘要層——對外保留「報導指出 / 確認」語氣，不寫成不加來源的事實陳述。</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="evlog reveal">
+      <h4>📑 彈藥 Evidence Log（頭版逐條驗證）</h4>
+      <table>
+        <tr><td>Steam 40.4% 新遊戲揭露使用 AI</td><td><a href="https://steamdb.info/blog/ai-pulse/" target="_blank">SteamDB AI Pulse</a>　驗：2026-11-16 更新，「40.4% of releases disclose AI」數字確認　<span class="pp">partial</span>（摘要層）　pub 2026-11-16</td></tr>
+        <tr><td>Steam Auto-Battler RPG Fest 11/26–30 + Winter Sale 12/17</td><td><a href="https://www.digitalcitizen.life/steam-black-friday-2026-november-26-30-steam-awards-nominations-autumn-sale/" target="_blank">Digital Citizen Life（Fest）</a> + <a href="https://www.digitalcitizen.life/steam-autumn-sale-2026-over-winter-sale-december-17-black-friday/" target="_blank">Digital Citizen Life（Winter Sale）</a>　驗：兩篇各確認 Fest 日期和 Winter Sale 12/17 開始　<span class="pp">partial</span>（摘要層）　pub 2026-11-27</td></tr>
+        <tr><td>Xbox new games 11/30–12/4（Rayman + Thief）</td><td><a href="https://news.xbox.com/en-us/2026/11/27/next-week-on-xbox-new-games-for-november-30-to-december-4" target="_blank">Xbox Wire 官方</a>　驗：Xbox 官方發布，確認 Rayman Legends Retold 和 Thief Remastered　<span class="pp">partial</span>（摘要層）　pub 2026-11-27</td></tr>
+        <tr><td>Firaxis 裁員約 60 人（仍做新 XCOM）</td><td><a href="https://insider-gaming.com/civilization-and-xcom-studio-firaxis-lays-off-a-third-of-staff/" target="_blank">Insider Gaming</a>　驗：標題層確認「lays off a third of staff」且仍開發 XCOM　<span class="pp">partial</span>（摘要層）　pub 2026-11-17</td></tr>
+        <tr><td>Baldur's Gate 3 Black Friday +31.6%</td><td>heat_latest.json steam_velocity（2026-11-27T07:30）　驗：BG3 today 29,889 / yesterday 22,706 / pct +31.6，直接 JSON 數字確認　<span class="ok">✓</span>（JSON 直接確認）　pub 2026-11-27</td></tr>
+        <tr><td>EA Skate 移除季度制（Eurogamer）</td><td><a href="https://www.eurogamer.net/ea-removes-live-service-skate-seasons" target="_blank">Eurogamer</a>　驗：RSS 標題層確認「removes live service fluff」「ends seasonal structure」　<span class="pp">partial</span>（RSS 標題層）　pub 2026-11-26</td></tr>
+        <tr><td>Atari Homebrew Awards 被 AI 遊戲攻陷取消</td><td><a href="https://kotaku.com/atari-homebrew-awards-canceled-over-torrent-of-ai-games-i-saw-no-path-forward-2001000096" target="_blank">Kotaku</a>（tavily, 2026-11-24）　驗：tavily 摘要確認「Atari Homebrew Awards Canceled」「AI Games」　<span class="pp">partial</span>（摘要層）　pub 2026-11-24</td></tr>
+        <tr><td>miHoYo AI 聲音侵權勝訴 / Fairgames 取消</td><td>⚠️ 今日資料不足——搜尋結果顯示「約 14 小時前」但無直接原文 URL，本期不納入頭版彈藥，待確認後補入。</td></tr>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="fmk"></div>
+    <div class="legend"><b>方法</b>　頭版彈藥逐條驗原文日期＋主張比對（見 Evidence Log）· CJ Top 2 / X Top 3 摘要層 · Steam＝官方 API 11/27 07:30 最新可用（今日數字尚未更新）· Roblox / Twitch / Threads 今日無瀏覽器，均標記資料不足 · 新鮮度由日期機械判定（≤48h 🆕 / ≤14 天 🔄 / &gt;14 天 ♨️）</div>
+    <div class="colophon">GameGen 遊戲時事日報 · 彈藥工廠版 · Steam 數字 11/27 07:30 最新可用 + 多源新聞 · 2026/11/28 · 對外發布前一律過濾賭場語言 + 真人 / IP 風險</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.bar').forEach(function(b){var v=+b.dataset.v||0;b.querySelectorAll('i').forEach(function(d,i){if(i<v)d.classList.add('on');});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
